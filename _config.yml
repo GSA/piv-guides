@@ -1,0 +1,131 @@
+# Site settings
+title: PIV Enablement Guides
+name: PIV Enablement Guides
+email: icam@gsa.gov
+author:
+    name: FICAM
+description: PIV Guidance
+baseurl: '/piv-guides'
+#url: "http://yourdomain.com" # the base hostname & protocol for your site
+#twitter_username: jekyllrb
+github_username:  lachellel
+highlighter: pygments
+
+# Point the logo URL at a file in your repo or hosted elsewhere by your organization
+logourl:
+logoalt: Federal Identity Credential and Access Management
+
+# Repo list
+# List repos that you would like to appear on the homepage here
+repos:
+- name: playbook-piv
+  description: FICAM Playbook - PIV Guidance
+  url: https://github.com/gsa/piv-guides
+
+# Build settings
+markdown: kramdown
+
+exclude:
+- bin
+- config.rb
+- Gemfile
+- Gemfile.lock
+- gems
+- Procfile
+- Rakefile
+- README.md
+- script
+- vendor
+
+navigation:
+- text: Introduction
+  url: index.html
+  internal: true
+  coll: false
+- text: Elements of a PIV Card
+  url: elements
+  internal: true
+  coll: false
+#- text: PIV Infrastructure
+#  url: boxes
+#  internal: true
+#  coll: false
+#- text: PIV Authentication Mechanisms
+#  url: authen
+#  internal: true
+#  coll: false
+#- text: How do I enable Microsoft AD for Admin access?
+#  url: 4_adadmin
+#  internal: true
+#  coll: false
+#- text: How do I enable a domain to assert assurance in AD?
+#  url: 5_domainassert
+#  internal: true
+#  coll: false
+#- text: How do I enable Firefox to allow the use of PIV/CAC?
+#  url: 6_firefox
+#  internal: true
+#  coll: false
+#- text: How do I enable Internet Explorer to allow the use of PIV/CAC?
+#  url: 7_ie
+#  internal: true
+#  coll: false
+#- text: How do I enable Chrome to allow the use of PIV/CAC?
+#  url: 8_chrome
+#  internal: true
+#  coll: false
+#- text: How do I validate trust stores on a Windows platform?
+#  url: 9_trustwindows
+#  internal: true
+#  coll: false
+#- text: How do I validate trust stores on a Mac platform?
+#  url: 10_trustmac
+#  internal: true
+#  coll: false
+#- text: How do I enable PIV/CAC for SSH to a Unix-like system?
+#  url: 11_ssh
+#  internal: true
+#  coll: false
+#- text: How do I enable Remote Desktop Protocol (RDP) to allow PIV/CAC?
+#  url: 12_rdp
+#  internal: true
+#  coll: false
+#- text: How do I use PIV/CAC with a mainframe?
+#  url: 13_mainframe
+#  internal: true
+#  coll: false
+#- text: How do I enable a website to use PIV/CAC?
+#  url: 14_website
+#  internal: true
+#  coll: false
+- text: Developer Guides
+  url: devconfig/index/
+  internal: true
+  coll: true
+  collname: devconfig
+- text: User Guides
+  url: userconfig/index/
+  internal: true
+  coll: true
+  collname: userconfig
+
+
+collections:
+  userconfig:
+    label: "User Guides"
+    permalink: /userconfig/:path/
+    output: true
+  devconfig:
+    label: "Developer Guides"
+    permalink: /devconfig/:path/
+    output: true
+
+
+include:
+- _stylesheets
+- _javascript
+
+
+
+# Custom site configuration
+lang: en

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="utf-8"/>
+    <title>
+      {% if page.title == null %}
+        {{ site.name }}
+      {% else %}
+        {{ page.title }} - {{ site.name }}
+      {% endif %}
+    </title>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/normalize.css"/>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css"/>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/syntax.css"/>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/jquery-ui.min.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico?"/>
+
+	<script src="{{ site.baseurl }}/assets/js/jquery-1.11.2.min.js"></script>
+	<script src="{{ site.baseurl }}/assets/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="{{ site.baseurl }}/assets/js/accordion.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/jquery-ui.min.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="{{ site.baseurl }}/assets/js/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+    <div class="container">
+      <header role="banner">
+        <div class="wrap">
+          {% if site.logourl != null %}
+            <img class="logo" src="{{ site.logourl }}" alt="{{ site.logoalt }}">
+          {% endif %}
+          <h1 class="site-title"><div>{{ site.name }}</div></h1>
+		  <div style="float:right;">
+			<a href="/ficam-guides/"  class="btn btn-primary">Playbook Home Page</a>
+			</div>
+        </div>
+      </header>
+
+<div class="wrap content">
+
+        {% include sidebar.html %}
+
+        <section id="main" class="main-content" role="main">
+          {{ content }}
+        </section>
+
+      </div><!-- /.wrap content -->
+
+      <footer role="contentinfo">
+        <div class="wrap">
+          <p>This project is maintained by <a href="{{ site.author.url }}">{{ site.author.name }}</a>.</p>
+
+          <p>Hosted on <a href="http://pages.github.com/">GitHub Pages</a>.</p>
+        </div><!--/.wrap -->
+      </footer>
+    </div> <!-- /.container -->
+    </body>
+</html>

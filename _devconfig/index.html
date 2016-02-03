@@ -1,0 +1,19 @@
+---
+layout: default
+title: Introduction
+collection: devconfig
+---
+{% capture index %}{% include dev_index.md %}{% endcapture %}
+{{ index | markdownify }}
+
+<!--<div id="home">
+  <h2>Guides</h2>
+  <ul class="pages">
+    {% for page in site.devconfig %}
+      <li>
+        <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+-->
