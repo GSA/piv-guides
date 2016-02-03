@@ -12,13 +12,15 @@ github_username:  lachellel
 highlighter: pygments
 
 # Point the logo URL at a file in your repo or hosted elsewhere by your organization
-logourl:
+logourl: /piv-guides/img/logo.png
 logoalt: Federal Identity Credential and Access Management
+
+ficam_playbooks_url: /ficam-guides/
 
 # Repo list
 # List repos that you would like to appear on the homepage here
 repos:
-- name: playbook-piv
+- name: piv-guides
   description: FICAM Playbook - PIV Guidance
   url: https://github.com/gsa/piv-guides
 
