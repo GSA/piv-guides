@@ -17,9 +17,9 @@ $(function() {
 This guide will take you through the steps necessary to configure your Windows based computer network to accept and potentially require PIV cards for authentication.
 
 ##### Assumptions
-*  Your organization users are currently issued PIV cards
-*  Your organization is using Microsoft Active Directory to manage your Windows network users
-*  Your organization is using Microsoft Windows Server 2008 R2 or 2012
+*  Users have PIV cards
+*  You're using Microsoft Active Directory to manage your Windows network users
+*  Your Microsoft Windows Server versions are 2008 R2 or 2012
     *  Concepts will likely remain applicable to other versions of Windows Server, however, specific instructions may require modification
 
 #### Before you get started
@@ -138,9 +138,9 @@ Perform the following steps to manually view and publish a domain controller cer
 
 1.	Log on as domain administrator or a member of the Cert Publishers global group for the target domain controller. Technically, the publication can be performed at any computer that is a domain member, but for convenience, the domain controller is used in this scenario.
 2.	Verify that there are no certificates already published on the domain controller's Active Directory object.
-3.	Run the following command from a command-line prompt. Replace the <dcname> variable with the name of the target domain controller and <domainname> and <com> variable names with the appropriate domain suffix.
+3.	Run the following command from a command-line prompt. Replace the <dcname> variable with the name of the target domain controller and <domainname> and <gov> variable names with the appropriate domain suffix.
 
-        certutil -viewstore "ldap:///cn=<dcname>,ou=domain controllers,dc=<domainname>,dc=<com>?usercertificate"
+        certutil -viewstore "ldap:///cn=<dcname>,ou=domain controllers,dc=<domainname>,dc=<gov>?usercertificate"
 
 A window should appear with no certificates displayed. This is expected since no certificates have been published yet.
 6.	Click Cancel to close the window.
@@ -151,13 +151,13 @@ A window should appear with no certificates displayed. This is expected since no
 The command determines the proper Active Directory object by the subject information in the certificate. The publication will fail if no object can be found based on the subject information.
 9.	To verify that the certificate was published successfully, perform the following steps from a command-line prompt.
 
-        certutil -viewstore "ldap:///cn=<dcname>,dc=<domainname>,dc=<com>?usercertificate"
+        certutil -viewstore "ldap:///cn=<dcname>,dc=<domainname>,dc=<gov>?usercertificate"
 
 If the domain controller's computer object has no certificates in the userCertificate attribute, the certutil output will display an empty list in the window. If "?userCertificate" was omitted from the command line parameters or an invalid object class was specified, an error message will appear such as the following:
 
     CertUtil: -viewstore command FAILED: 0x80092009 (-2146885623)
     CertUtil: Cannot find the requested object.
-    certutil –viewstore "ldap:///cn=Administrator,cn=Users,dc=<domainname>,dc=<com>"
+    certutil –viewstore "ldap:///cn=Administrator,cn=Users,dc=<domainname>,dc=<gov>"
 
 
 > When does a CA need to contact a writeable Domain Controller?
