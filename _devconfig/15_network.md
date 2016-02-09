@@ -143,13 +143,15 @@ Perform the following steps to manually view and publish a domain controller cer
         certutil -viewstore "ldap:///cn=<dcname>,ou=domain controllers,dc=<domainname>,dc=<gov>?usercertificate"
 
 A window should appear with no certificates displayed. This is expected since no certificates have been published yet.
-6.	Click Cancel to close the window.
-7.	The certificate is published in Active Directory using the userCertificate attribute on the machine account object for the domain controller. Run the following command to write the certificate to the domain controller's Active Directory object. Replace the &lt;dcname&gt; variable with the name of the target domain controller.
+
+4.	Click Cancel to close the window.
+5.	The certificate is published in Active Directory using the userCertificate attribute on the machine account object for the domain controller. Run the following command to write the certificate to the domain controller's Active Directory object. Replace the &lt;dcname&gt; variable with the name of the target domain controller.
 
         certutil –f –dspublish <dcname>.cer machine
 
 The command determines the proper Active Directory object by the subject information in the certificate. The publication will fail if no object can be found based on the subject information.
-9.	To verify that the certificate was published successfully, perform the following steps from a command-line prompt.
+
+6.	To verify that the certificate was published successfully, perform the following steps from a command-line prompt.
 
         certutil -viewstore "ldap:///cn=<dcname>,dc=<domainname>,dc=<gov>?usercertificate"
 
