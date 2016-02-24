@@ -3,7 +3,7 @@ layout: page
 title: Guidance Document Template
 permalink: /template/
 ---
-This page serves as the template for creating your own guidance document to add to one of the FICAM Playbooks. For an example of a completed guidance document, visit the 'How do I PIV enable my network logon?' page [here]({{ site.baseurl }}/devconfig/15_network/). To create your own page, copy this file, save it with a new name (such as mypage.md instead of template.md, as you should not save your information within the template.md file), and change the title and permalink in the top section of this file. The title should be what you want to appear at the top of the page on the site, and the permalink text should match the name of the file, but in the format /mypage/ instead of mypage.md. Throughout this file, you will see text that explains how to correctly use this template and comments explaining the nature of the code that you will encounter.
+This page serves as the template for creating your own guidance document to add to one of the FICAM Playbooks. For an example of a completed guidance document, visit the 'How do I PIV enable my network logon?' page [here]({{ site.baseurl }}/devconfig/15_network/). To create your own page using the github website, copy the content from this file, paste it into a new file (new files can be created through the 'new file' link at the top of the pages folder), give the new file a name (at the top of the page there will be a box that says 'name your file'), and change the title and permalink at the very top section of the file (the permalink should match the new file name). The title should be what you want to appear at the top of the page on the site, and the permalink text should match the name of the file, but in the format /mypage/ instead of mypage.md. Throughout this file, you will see text that explains how to correctly use this template and comments explaining the nature of the code that you will encounter.
 
 <!--- For example, this code denotes a comment, and information written inside of it will not appear on the website but can be used as a reference for others viewing the file. -->
 
@@ -42,12 +42,13 @@ This text will provide any reference information that may be needed to complete 
 
 <!-- If you want to insert an image onto the page use the format below. The align feature at the end can either be "left", "center", or "right". -->
 
-![Alt text for the image goes here]({{site.baseurl}}/folder that image is in/imagename.png){:align="right"}
+![Alt text for an image goes here]({{site.baseurl}}/folder that image is in/imagename.png){:align="right"}
 
 #### Complete the following tasks:
 
 <!--- The code below triggers the start of the accordion dropdown for the main steps of the guidance document. -->
 <div id="accordion" markdown="1">
+
 
 ### 1. Title of Procedure 1
 <div markdown="1">

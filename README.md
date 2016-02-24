@@ -1,7 +1,4 @@
----
-layout: default
-permalink: /
----
+This work is in early Alpha stage and is led by the GSA FICAM Program in coordination with the ICAM Subcommittee of the Federal CIO Council.
 
 ## How to Contribute
 We welcome contributions in the form of requests, issues and pages.  
