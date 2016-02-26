@@ -13,6 +13,14 @@ $(function() {
   });
 });
 </script>
+
+
+<div style="float:right; padding:10px; margin-right:20px; border-radius:10px; width:180px; height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CCC; color:#666666">
+<div style="color:#000000">
+<em>Difficulty: Advanced</em>
+</div>
+</div>
+
 #### Overview
 This guide will take you through the steps necessary to configure your Windows based computer network to accept and potentially require PIV cards for authentication.
 
@@ -84,7 +92,7 @@ Work with the Federal Public Key Infrastructure management team to request a dom
 *  The certificate must have a CRL distribution-point extension that points to a valid certificate revocation list (CRL).
     *  Optionally, the certificate Subject section should contain the directory path of the server object (the distinguished name), for example:
 
-            CN=controller1.agency.gov OU=Domain Controllers DC=agency DC=gov
+			CN=controller1.agency.gov OU=Domain Controllers DC=agency DC=gov
 
     *  The certificate Key Usage section must contain:
 

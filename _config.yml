@@ -10,6 +10,7 @@ baseurl: '/piv-guides'
 #twitter_username: jekyllrb
 github_username:  lachellel
 highlighter: rouge
+branch: master
 
 # Point the logo URL at a file in your repo or hosted elsewhere by your organization
 logourl: /piv-guides/img/logo.png
