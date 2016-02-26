@@ -1,37 +1,30 @@
 This work is in early Alpha stage and is led by the GSA FICAM Program in coordination with the ICAM Subcommittee of the Federal CIO Council.
 
+# FICAM Playbooks
+This repository is for the collaborative development of the Federal Identity, Credential, and Access Management PIV Enablement Playbook, which contains information and guidance documents that provide federal agencies with information and step-by-step guidance on how to implement various PIV solutions at their organization.
+
+## General Practices
+This content is Vendor neutral. Marketing materials for Commercial Products should not be submitted. If you would like to contribute a page or content which includes Commercial Products and a specific references for development and engineering, please review the Commercial Product trademark or copyright guides from the Product Vendor and reference those guides in your Pull Request.  
+
+## Plain Language
+Contributors should consider the audience when submitting content. Plain language benefits a broad audience. Review your proposed content for use of acronyms and specialized jargon before submitting.
+
 ## How to Contribute
-We welcome contributions in the form of requests, issues and pages.  
+For information on how to contribute to the site, visit the Contribute page [here]({{site.baseurl}}/contribute.md/). The source repository exists [here](https://github.com/GSA/piv-guides/). 
 
-* _Requests:_ You've identified a useful addition to the playbook which benefits USG Agencies
-  * Open an Issue on this repository
-  * State the recommendation
-  * Include any links or other information
-  * Discuss the request with other contributors  
-
-* _Issues:_ You've identified an issue with the information
-  * Open an Issue on this repository
-  * Discuss the Issue with other contributors
-  * Follow the progress of the updates
-
-* _Pages:_ You'd like to contribute a Page and content
-  * Open an Issue on this repository, identifying the content you would like to contribute
-  * Limit each Issue to one content topic
-  * Fork the repository
-  * Add a new Page or modify an existing Page with your suggested content
-  * Submit a Pull Request, referencing the Issue Number
+Direct changes and line edits to the content may be submitted through a pull request by clicking 'Edit this page'. You do not need to install any software to submit content. You can use GitHub's in-browser editor to edit files and submit a pull request for your changes to be merged.
 
 ### Public domain
 
-This project is in the worldwide [public domain](LICENSE.md). As stated in [CONTRIBUTING](CONTRIBUTING.md):
+This project is in the worldwide [public domain](LICENSE.md). 
 
 > This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
 >
 > All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to comply with this waiver of copyright interest.
 
 ### Special Thanks
-This site is based on GitHub Pages and Jekyll templates.  The templates are based on [DOCter](https://github.com/cfpb/docter/) from [CFPB](http://cfpb.github.io/).  
+This site is based on GitHub Pages and Jekyll templates. The templates are based on [DOCter](https://github.com/cfpb/docter/) from [CFPB](http://cfpb.github.io/).  
 
-The README, LICENSING and CONTRIBUTING are based on [18F Pages](https://pages.18f.gov/).  
+The README and LICENSE are based on [18F Pages](https://pages.18f.gov/).  
 
-Special thanks to the teams at [18F](https://18f.gsa.gov/), [18F Pages](https://pages.18f.gov/), and [US Digital Services Playbooks](https://playbook.cio.gov/) for their open and transparent model which benefits citizens, government and technology.
+Special thanks to the teams at [18F](https://18f.gsa.gov/), [18F Pages](https://pages.18f.gov/), and [US Digital Services Playbooks](https://playbook.cio.gov/) for their open and transparent model which benefits citizens, government, and technology.
