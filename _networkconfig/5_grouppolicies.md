@@ -34,7 +34,3 @@ To enable or disable either of these policies:
 1.  In the console tree, edit the settings as appropriate.
 
 
-
-#### References
-
-Elements of this guide were derived from a [Microsoft Knowledgebase Article](https://support.microsoft.com/en-us/kb/281245)
