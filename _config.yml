@@ -60,6 +60,7 @@ navigation:
   url: networkconfig/index/
   internal: true
   coll: true
+  collname: networkconfig
 - text: Developer Guides
   url: devconfig/index/
   internal: true
