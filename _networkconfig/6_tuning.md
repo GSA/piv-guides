@@ -1,6 +1,6 @@
 ---
 layout: page_collection
-title: Checking Ports and Protocols
+title: Tuning
 collection: networkconfig
 permalink: networkconfig/tuning/
 ---

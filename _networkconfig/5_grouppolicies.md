@@ -1,6 +1,6 @@
 ---
 layout: page_collection
-title: Checking Ports and Protocols
+title: Group Policies
 collection: networkconfig
 permalink: networkconfig/grouppolicies/
 ---

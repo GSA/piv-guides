@@ -1,6 +1,6 @@
 ---
 layout: page_collection
-title: Checking Ports and Protocols
+title: MacOS X Considerations
 collection: networkconfig
 permalink: networkconfig/mac/
 ---

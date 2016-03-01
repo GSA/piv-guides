@@ -1,6 +1,6 @@
 ---
 layout: page_collection
-title: Checking Ports and Protocols
+title: Windows 10 Considerations
 collection: networkconfig
 permalink: networkconfig/windows10/
 ---

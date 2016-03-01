@@ -1,6 +1,6 @@
 ---
 layout: page_collection
-title: Checking Ports and Protocols
+title: Trust Stores
 collection: networkconfig
 permalink: networkconfig/trustedroots/
 ---

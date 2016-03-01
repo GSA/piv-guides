@@ -1,6 +1,6 @@
 ---
 layout: page_collection
-title: Checking Ports and Protocols
+title: Domain Controllers
 collection: networkconfig
 permalink: networkconfig/domaincontrollers/
 ---

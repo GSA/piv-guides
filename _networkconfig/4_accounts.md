@@ -1,6 +1,6 @@
 ---
 layout: page_collection
-title: Checking Ports and Protocols
+title: Accounts
 collection: networkconfig
 permalink: networkconfig/accounts/
 ---
