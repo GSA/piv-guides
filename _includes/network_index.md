@@ -1,31 +1,37 @@
+<div style="float:right; padding:10px; margin-right:20px; border-radius:10px; width:180px; height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CCC; color:#666666">
+<div style="color:#000000">
+<em>Difficulty: Moderate</em>
+</div>
+</div>
+
 ## Introduction to Network Authentication Guides
 
-This section is for configuring your Windows based computer network to accept and potentially require PIV cards for authentication.
+This section is for configuring your Windows based computer network to accept and potentially require PIV for authentication.
 
-There are many useful articles and guides available online for you to review and use.  These guides outline in detail the point and click options for configurations and using generic smartcards.  
+There are many useful articles available online for you to review and use.  These articles outline in detail the point and click options for configurations and using generic smartcards.  
 
-The information presented in this guide is to address some of your common questions and configurations *specific* to the US Federal Government, *PIV* smartcards, and US Federal civilian agency certificate authorities.  
+The information presented in this section and pages is to address some of your common questions and configurations **specific** to the US Federal Government, **PIV** smartcards, and US Federal civilian agency certificate authorities.  
 
 ### Assumptions
 *  Users have PIV cards and PIV card readers
 *  User workstations have the drivers to read the PIV cards
 *  You're using Microsoft Active Directory to manage your Windows network
-*  Domain Controllers are Microsoft 2008 R2 or above
+*  Domain Controllers are Microsoft 2008 R2 or more recent versions
 *  User workstations joined to the network are Windows 7 or above
   * There are options for workstations that are Mac OS based and joined to a Windows network - to be covered in a separate guide
 
 
 ### Before You Get Started
-One of the most common questions is "What are all the certificates and what do I do with them?" 
+One of the most common questions is "What are all the certificates and what do I do with them?"
 
 Explaining public key infrastructures and *the* Federal Public Key Infrastructure is an advanced topic and will be covered in additional guides.  For your needs, there are two basic principles to understand:
 
-1.  Trust 
+1.  Trust
 2.  Certificate *chains*
 
 In the Federal Agencies, certificates may be issued to People (YOU), or Devices (SSL, Domain Controllers, Mobile Devices, etc).
 
-Your PIV credentials contain certificates and private key pairs - that are issued to YOU as a person, and to the CARD as a Device that you have in your possession.  
+Your PIV credential contain certificates and private key pairs - that are issued to YOU as a person, and to the CARD as a Device that you have in your possession.  
 
 To Trust YOU and your certificates, the workstations and network need to be configured for this trust.  Certificate chains are one of the necessary methods to configure this trust.
 
@@ -40,13 +46,13 @@ Download the Federal Common Policy Certificate Authority (COMMON) trusted _root_
 Download the Intermediate Certificate Authority certificates
 
 * [Intermediate Certificate Authority certificates] (http://http.fpki.gov/fcpca/caCertsIssuedByfcpca.p7c)
-  * The file type (p7c) can be 
-  * 
+  * The file type (p7c) can be
+  *
   *   
 
 Identify and download any additional Intermediate Certificate Authority certificates
 
-* You can generally ask your agency's information security team for help on the additional 
+* You can generally ask your agency's information security team for help on the additional
 * You can also look at your PIV card and certificates
 
 Are you ready to get started?  

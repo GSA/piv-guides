@@ -7,7 +7,7 @@ author:
 description: PIV Guidance
 baseurl: '/piv-guides'
 #url: "http://yourdomain.com" # the base hostname & protocol for your site
-#github_username:  lachellel
+#github_username:
 highlighter: rouge
 branch: master
 
@@ -27,6 +27,10 @@ repos:
 # Build settings
 markdown: kramdown
 
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 exclude:
 - bin
 - config.rb
@@ -44,16 +48,20 @@ navigation:
   url: index.html
   internal: true
   coll: false
-- text: Elements of a PIV Card
+- text: Basics of a PIV Credential
   url: elements
-  internal: true
-  coll: false
-- text: Details of a PIV Card
-  url: details
   internal: true
   coll: false
 - text: Getting Started
   url: start
+  internal: true
+  coll: false
+- text: Details of a PIV Credential
+  url: details
+  internal: true
+  coll: false
+- text: Identifiers in a PIV Credential
+  url: identifiers
   internal: true
   coll: false
 - text: Network Authentication
@@ -71,6 +79,10 @@ navigation:
   internal: true
   coll: true
   collname: userconfig
+- text: Script and Code Samples
+  url: code
+  internal: true
+  coll: false
 - text: Contribute
   url: contribute
   internal: true
