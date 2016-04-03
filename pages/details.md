@@ -30,7 +30,7 @@ The easiest methods to view your certificate information is:
 * Choose an option from the table below and follow the steps.
 
 | Operating System     | Module   | Steps |
-| -------------             |:----:|:----:|
+| -------------             |----|----|
 | Microsoft       | Microsoft Management Console (MMC) and Certificate Snap-in  |  Open _Microsoft Management Console_ -> _File_ -> _Add/Remove Snap-In_ -> Select _Certificates_ snap-in -> _Add_ -> _My user account_ -> _Finish_ -> Expand _Certificates - Current User_ -> Select _Personal_ -> Select _Certificates_   |
 | Microsoft   | Internet Explorer Browser or Edge Browser  | Open _Internet Explorer Browser_ -> _Settings_ -> _Internt Options_ -> Choose _Content_ tab -> _Certificates_ -> Choose _Personal_ tab   |
 | Any   | Chrome Browser  | Open _Settings_ -> _Show Advanced Settings_ -> HTTPS / SSL: _Manage Certificates_ -> Choose the _Your Certificates_ tab  |
@@ -49,16 +49,16 @@ Don't worry - the public certificates are _public_.  The private keys are still 
 #### Understanding PIV Certificates
 Viewing the certificate information on your PIV credential may be interesting if you are a general user.  **Understanding** the certificate information is a **must** if you are a program manager, developer or engineer working on supporting, developing applications, and designing solutions for using PIV credentials.
 
-Within the US Federal Government, the certificate information and the PIV credential information is governed by Standards, Policies, and implementation specific choices (options) across all agency credential providers.   To fully understand all the possible variations, you would need to review current and historical Standards and Policy documentation and all implementation specific options from six years ago to today's current date.  We recognize this is challenging and likely not useful for the _majority_ of use cases you have.  
+Within the US Federal Government, the certificate information and the PIV credential information is governed by Standards, Policies, and implementation specific choices (options) across all agency credential providers.     
 
-**We present the common information in this section with special emphasis on what is true for ALL PIV credentials and certificates.**  
+**We present the common information in this section with special emphasis on what is true for ALL PIV credentials and certificates issued within the past six years.**  
 
-There are four sets of certificates and key pairs on a PIV credential.  Two sets are *ALWAYS* on every PIV credential issued in the past six years; two sets are *SOMETIMES* on a PIV credential.  You can review [the basics of a PIV Credential](../elements/) to view the four sets and purposes.  
+There are four sets of certificates and key pairs on a PIV credential.  Two sets are *ALWAYS* on every PIV credential and two sets are *SOMETIMES* on a PIV credential.  You can review [the basics of a PIV Credential](../elements/) to view the four sets and purposes.  
 
 The table below outlines the general information for the PIV credential certificates, certificate extensions, and design considerations.  All information is presented in human-readable formats.    
 
 | Certificate              | Required  | Key Usage  |  Extended Key Usage  | Subject Alternative Name | Considerations |
-| -------------            |:----:      |:----:               |:----:               |:----:|  :----:|
+| -------------            |:----:      |:----:               |:----:               |:----:|  ----|
 | PIV Authentication       |Always      | Digital Signature            | Client Authentication           | otherName = FASC-N; uniformResourceIdentifier = UUID; Principal Name = _prefix_@_suffix_  | Principal Name values are **not** required by Policy to be present in all Subject Alternative Name extensions.  The UUID value is only required to be present for certificates issued on October 15, 2015 or later.  |
 | Card Authentication      |Always      | Digital Signature            | id-PIV-cardAuth            |  otherName = FASC-N; uniformResourceIdentifier = UUID|   The UUID value is only required to be present for certificates issued on October 15, 2015 or later. |
 | Digital Signature        |Sometimes      | Digital Signature, Non-Repudiation            | _none required_            |  rfc822name = email address | Email address is **not** required by Policy. Email address may be multi-valued attributes and include email aliases. |
@@ -68,7 +68,7 @@ Additional useful information:
 
 *  All key pairs are 2048 bit (RSA) keys  
 *  All certificates issued and certified as _PIV_ are SHA-2 signed  
-  *  If you are working with _Common Access Cards_, you may still encounter SHA-1 signed  
+   *  If you are working with _Common Access Cards_, you may still encounter SHA-1 signed  
 *  There has been testing in some infrastructures to migrate to Elliptic Curve Cryptography (ECC), but there are no ECC certificates in production as of the date of this guide  
 *  There has been testing in some infrastructures for migration to 3072 bit (RSA) certificates, but there are no 3072 bit certificates in production as of the date of this guide  
 

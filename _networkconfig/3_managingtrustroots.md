@@ -13,13 +13,12 @@ permalink: networkconfig/trustedroots/
 
 ### Addition of US Federal Certificate chains to the Trusted Root Certificate Authorities
 
-The root certificate and intermediate CA certs are required by the domain controller to establish trust between the parent CA and the end users and applications. 
+The root certificate and intermediate certificates are required to be added to the _Trust Store_ on all domain controllers, workstations and servers in the domain.   
 
-This allows the domain controller to issue trusted certificates to PIV cards within the directory and confirm the validity of smart card certificates during an access attempt.
 
-Active Directory must be configured to trust a certification authority to authenticate users based on certificates from that CA. 
+Active Directory must be configured to trust a certification authority to authenticate users based on certificates from that CA.
 
-Both workstations and domain controllers must be configured to trust the certificates 
+Both workstations and domain controllers must be configured to trust the certificates
 
 This task will configure Active Directory to trust the Certification Authority chain that signed the users' authentication certificates. To configure Active Directory with the signing CA Certificate chain:
 
@@ -49,5 +48,3 @@ This task will configure Active Directory to trust the CA chain that signed the 
         certutil –dpublish –f "path_to_root_CA_cert" NTAuthCA
 
 3.	The CA is now trusted to issue certificates of this type
-
-

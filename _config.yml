@@ -64,6 +64,10 @@ navigation:
   url: identifiers
   internal: true
   coll: false
+- text: Certificate Trust for a PIV Credential
+  url: pivcertchains
+  internal: true
+  coll: false
 - text: Network Authentication
   url: networkconfig/index/
   internal: true
