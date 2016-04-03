@@ -44,7 +44,7 @@ You will find different kinds of pages in this Playbook.  First, we cover the ba
 
 1. What PIV is, contains and looks like
 1. The basics of using PIV credentials
-1. Using PIV for Network logon and authentication
+1. Using PIV for network authentication (smartcard logon)
 
 We also have sections for Developer Guides and User Guides.  We want you to contribute to both of these sections and share lessons learned when configuring systems or applications, tuning considerations, **code**, common challenges, troubleshooting errors, and any information you think is helpful for your colleagues.  
 
