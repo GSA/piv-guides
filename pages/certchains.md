@@ -67,10 +67,10 @@ PIV credential certificates will be _revoked_ when a user terminates employment 
 
 The table below outlines general information on each method, the certificate extension which contains the reference, the protocols, and design considerations.
 
-| Type | Certificate Extension | Protocol | Considerations|
+| Type | Certificate Extension | Protocol (Port) | Considerations|
 | ----- | -------| -------| ------|
-| OCSP | Authority Information Access | HTTP | All PIV certificates have OCSP references and OCSP URLs which are internet accessible and provided by the issuing certificate authority. Intermediate certificate authorities are not required to have OCSP available for the _intermediate_ certificates.|
-| CRL  | CRL Distribution Point (CDP) | HTTP | All PIV certificates have CRL capabilities provided by the issuing certificate authority.  All intermediate certificate authority certificates have CRL capabilities.  CRL files have an expiration time which varies between 6 hours to 18 hours. CRL file sizes range from a few kilobytes to over 30 megabytes (MB).
+| OCSP | Authority Information Access | HTTP (80) | All PIV certificates have OCSP references and OCSP responder web services which are internet accessible and provided by the issuing certificate authority. Intermediate certificate authorities are **not** required to have OCSP available for the _intermediate_ certificates.|
+| CRL  | CRL Distribution Point (CDP) | HTTP (80) | All PIV certificates have CRL references and CRLs files published to internet accessible web services by the issuing certificate authority.  All intermediate certificate authority certificates also have CRL references, files and internet accessible web services.  CRL files have an expiration time which varies between 6 hours to 18 hours. CRL file sizes distributed by issuing certificate authorities as of the date of this guide range from a few kilobytes to **over 30 megabytes (MB)**.
 
 <!-- TODO: Graphical  
 
