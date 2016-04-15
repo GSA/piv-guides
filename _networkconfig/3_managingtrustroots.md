@@ -6,15 +6,13 @@ permalink: networkconfig/trustedroots/
 ---
 <div style="float:right; padding:10px; margin-right:20px; border-radius:10px; width:180px; height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CCC; color:#666666">
 <div style="color:#000000">
-<em>Difficulty: Moderate</em>
+<em>Moderate</em>
 </div>
 </div>
 
+The root certificate and intermediate certificates are required to be added to the _Trust Store_ on all domain controllers, workstations and servers in the domain.
 
-### Addition of US Federal Certificate chains to the Trusted Root Certificate Authorities
-
-The root certificate and intermediate certificates are required to be added to the _Trust Store_ on all domain controllers, workstations and servers in the domain.   
-
+#### Addition of US Federal Certificate chains to the Trusted Root Certificate Authorities
 
 Active Directory must be configured to trust a certification authority to authenticate users based on certificates from that CA.
 
@@ -36,9 +34,9 @@ From here, follow these steps to import the intermediate certificate(s):
 2.	Follow the prompts in the Wizard to import the **Intermediate Certificate(s)** for the CA and click OK
 
 
-### Publish the CA Certificates to the NTAuth Store
+#### Publish the Federal Common Policy Certificate Authority (COMMON) root certificate to the NTAuth Store
 
-By publishing the CA certificate to the enterprise NTAuth store, the system administrator indicates that the CA is trusted to issue certain certificates. This allows the correct certificates to be issued to smartcards and thus enables logon through PIV card authentication.
+By publishing the CA certificate to the enterprise NTAuth store, the system administrator indicates that the CA is trusted for authentication using certain certificates.
 
 This task will configure Active Directory to trust the CA chain that signed the users' authentication certificates. To configure Active Directory with the signing CA Certificate chain:
 

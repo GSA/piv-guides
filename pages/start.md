@@ -19,9 +19,9 @@ A card reader is exactly what the name suggests: a piece of hardware which helps
 
 > *A card reader is the hardware that supplies power to the chip, and allows the computer operating system to talk to the PIV credential chip operating system.*
 
-Card readers are available in many shapes and sizes - to fit both the credential, and to plug into your computers.  There is a card reader that will work for any shape and size of the computer you use including card readers for USB and microUSB ports.  There are fold-up readers, there are readers that sit on your desk, there are keyboards with readers, there are readers that connect to tablets, and there are readers built into laptops.  
+Card readers are available in many shapes and sizes - to fit both the PIV credential, and to plug into your computers.  There is a card reader that will work for any shape and size of the computer you use including card readers for USB and microUSB ports.  There are fold-up readers, there are readers that sit on your desk, there are keyboards with readers, there are readers that connect to tablets, and there are readers built into laptops.  
 
-If you need to buy a reader for home use (or many for your agency), you will want to review card readers that specify the following:
+If you need to buy a reader for home use (or many for your agency), you will want to review card readers that specify:
 
 * **ISO 7816** support
 
@@ -29,7 +29,7 @@ You can buy a card reader for personal use from a number of commercial online re
 
 Before you buy a card reader, look around and ensure you don't already have one.  A large portion of government laptops have the card readers already, and desktops may have keyboards with readers built-in.  
 
-If you have a Mac OSX or Linux based computer, you probably don't have a card reader built in. Find a card reader option that you like and let's move to Middleware.
+If you have a Mac OSX or Linux based computer, you probably don't have a card reader built in. Find a card reader option that you like and let's move on to Middleware.
 
 #### Middleware
 _Middleware_ as a general computer term can encompass any software that provides integration points for an application. In the Standards for PIV credentials, the term _PIV middleware_ is used and a common question is "What is the difference between PIV Middleware and general smartcard middleware?" To simplify, we'll define the two terms as we use them for PIV credentials in these guides:
@@ -59,6 +59,6 @@ For common PIV credential usage scenarios, we outline the _general smartcard mid
 ### Next Steps
 You have a PIV credential, you have card reader(s), and you have middleware for your computers. **Now what?**
 
-* You can authenticate to websites that are PIV eanbled for authentication, digitally sign email and documents and files, and encrypt!
+* You can authenticate to websites that are PIV enabled for authentication, digitally sign email and documents and files, and encrypt!
 
 If you want to learn more about details of PIV credentials, certificates, and how to configure a network or web application, the next [section](../details) is for you.  

@@ -6,7 +6,11 @@
 
 ## Introduction to Network Authentication Guide
 
-The Network Authentication guides are for configuring your Windows _network domain_ for smartcard logon using PIV credentials.  There are many useful pages and technical articles available online which include details on configurations and using generic smartcards.  The information presented here is for common questions and configurations **specific** to the US Federal Government, **PIV** smartcards, and US Federal civilian agency certificate authorities.  
+The Network Authentication guides are for configuring your Windows _network domain_ for smartcard logon using PIV credentials.  
+
+There are many useful pages and technical articles available online which include details on configurations and using generic smartcards.  The information presented here is for common questions and configurations **specific** to the US Federal Government, **PIV** smartcards, and US Federal civilian agency certificate authorities.
+
+There are five configuration categories to step through with your colleagues.  We recommend working with your Network Engineers, Domain Admins, Account Management, and Information Security colleagues to review the information, perform the configurations, and troubleshoot any issues together.  
 
 1. [Checking Ports and Protocols](../networkconfig/ports/)
 2. [Domain Controller certificates](../networkconfig/domaincontrollers/)
@@ -19,4 +23,4 @@ The Network Authentication guides are for configuring your Windows _network doma
 *  You're using Microsoft Active Directory to manage your Windows network
 *  Domain Controllers are Microsoft 2008 R2 or 2012
 *  User workstations joined to the network are Windows 7, Windows 8 or Windows 10
-   * There are options for workstations that are Mac OS based and joined to a Windows network - to be covered in updated to this guide
+   * There are options for workstations that are Mac OS based and joined to a Windows network - to be covered in addendums to this guide

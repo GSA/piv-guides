@@ -9,14 +9,14 @@ permalink: /identifiers/
 </div>
 </div>
 
-In applications, you will need to associate the PIV credential with your users accounts.  This is not a unique process to PIV credentials and usage, and is a general concept that occurs in many applications including your personal email accounts, your bank accounts, or your favorite social media app.  The concept is sometimes called _account linking_.
+In applications including network domains, you will associate the PIV credential with your accounts.  This is not a unique process to PIV credentials and usage, and is a general concept that occurs in many applications including your personal email accounts, your bank accounts, or your favorite social media app.  The concept is called _account linking_.
+
+_Identifiers_ are the values in the credential that are used for account linking.  We focus on the **PIV Authentication** certificate and identifiers in this section to help you understand the options and design and implement for using PIV to authenticate to networks and applications.
 
 <!-- TODO: Insert note referencing FICAM architecture and designing to a centralized identity and access management model or federated model** -->
 
 #### Identifiers and How to Use
-_Identifiers_ are the values in the certificate that are used for account linking.  We focus on the **PIV Authentication** certificate and identifiers in this section to help you design and implement for using PIV to authenticate to networks and applications.
-
-The table below outlines identifiers available and design considerations for implementations.  
+The table below outlines identifiers available in the PIV Authentication certificate and design considerations for implementations.  
 
 | Identifiers              | Considerations |
 | -------------            |----            |----                   |----|
