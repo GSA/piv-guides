@@ -11,9 +11,9 @@ permalink: /details/
 
 You have a PIV credential, you have card reader(s), and you have middleware for your computers. **Now what?**
 
-* You can do a lot including logging into websites that are PIV ready, digitally signing email and documents and files, and encrypting
+* You can authenticate to websites that are PIV enabled for authentication, digitally sign email and documents and files, and encrypt!
 
-If you are interested in learning how to view the data stored on the PIV credential and information about the certificates, this page is for you.  On this page, we focus on the simple methods for:  
+If you are interested in learning how to view the data stored on the PIV credential and information about the certificates, this section will help you.  In this section, we focus on the simple methods for:  
 
 1.  [Viewing your certificates on the PIV credential using a traditional computer](#viewing-your-piv-credential),  
 <!-- TODO 1.  [Exporting PIV certificates to use in troubleshooting](#exporting-piv-certificates),    -->
@@ -25,14 +25,14 @@ Almost **all** the methods for using your PIV credential for networks, applicati
 
 The easiest methods to view your certificate information is:
 
-* Ensure your PIV credential is in the card reader.
+* Insert your PIV credential in your card reader.
 
 * Choose an option from the table below and follow the steps.
 
 | Operating System     | Module   | Steps |
 | -------------             |----|----|
+| Microsoft   | Internet Explorer Browser or Edge Browser  | Open _Internet Explorer Browser_ -> _Settings_ -> _Internet Options_ -> Choose _Content_ tab -> _Certificates_ -> Choose _Personal_ tab   |
 | Microsoft       | Microsoft Management Console (MMC) and Certificate Snap-in  |  Open _Microsoft Management Console_ -> _File_ -> _Add/Remove Snap-In_ -> Select _Certificates_ snap-in -> _Add_ -> _My user account_ -> _Finish_ -> Expand _Certificates - Current User_ -> Select _Personal_ -> Select _Certificates_   |
-| Microsoft   | Internet Explorer Browser or Edge Browser  | Open _Internet Explorer Browser_ -> _Settings_ -> _Internt Options_ -> Choose _Content_ tab -> _Certificates_ -> Choose _Personal_ tab   |
 | Any   | Chrome Browser  | Open _Settings_ -> _Show Advanced Settings_ -> HTTPS / SSL: _Manage Certificates_ -> Choose the _Your Certificates_ tab  |
 | Any   | Firefox Browser  | Open _Menu_ -> _Preferences_ -> _Advanced_ -> Choose _Certificates_ tab -> _View Certificates_ -> Choose the _Your Certificates_ tab|
 | MacOS X   | Key Chain  | Open _Applications_ -> _Utilities_ -> _Keychain Access_ -> Select _Login_ -> From Categories, select _My Certificates_  |

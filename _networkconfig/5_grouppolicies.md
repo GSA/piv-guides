@@ -1,6 +1,6 @@
 ---
 layout: page_collection
-title: Group Policies
+title: Group Policies and Enforcement
 collection: networkconfig
 permalink: networkconfig/grouppolicies/
 ---
@@ -14,44 +14,34 @@ The US Government publishes the [United States Government Configuration Baseline
 
 The information on this page is to answer common questions and identify the most commonly used configuration options.  For a full reference of options for each operating system, please refer to configurations guides published online.
 
-### Machine Based Enforcement versus User Based Enforcement
+* [Machine Based Enforcement versus User Based Enforcement](#machine-based-enforcement-versus-user-based-enforcement)
 
+#### Machine Based Enforcement versus User Based Enforcement
 
-Machine Based Enforcement (MBE)
+There are two options for requiring users to use PIV credentials to authenticate to the network domain:
 
-User Based Enforcement (UBE)
+* Machine Based Enforcement (MBE)
+* User Based Enforcement (UBE)
 
-**scforceoption** directs client Windows computers to enforce PIV logon for users. It is important to understand the ramifications of executing this step.
+These options are controlled by group policy applied to either Machine or User objects in your network domain. There is planning required to move to full User Based Enforcement and agencies are often using a combination of both Machine and User enforcement in their deployments.
 
-When you select the Smart Card is required for interactive logon check box in the Active Directory (AD) user account properties, Windows automatically resets the user password to a random complex password. In addition, Windows adds the SMARTCARD_REQUIRED flag to the UserAccountControl user account attribute and sets the DONT_EXPIRE_PASSWORD flag on the user account. The latter ensures that the user's password never expires after the Smart Card is required for interactive logon option is selected.
+Impacts and considerations are identified to help you plan and execute according to your agency network and user needs.  
 
-When a user logs on to Windows either locally or remotely using a Remote Desktop session, the Windows client automatically checks for the presence of the SMARTCARD_REQUIRED flag. If the Smart Card is required for interactive logon option is set for the user, Windows rejects the logon attempt if it's not made with smart card credentials.
+| Type | Impacts | Considerations |
+| ----- | -------| -------|
+| Machine Based Enforcement | The user is required to use their PIV credential to authenticate to each device where the policy is applied. | The user password is maintained. |
+| User Based Enforcement | The password stored for the user is removed, and changed to a long hash value unknown to the user.  Your users no longer have passwords for the network. | Any applications which were implemented to prompt your users for a username and password and which are using your network domain directories will no longer be accessible. |
 
-Again, upon activation of scforceoption, users will **no longer know the password** to their account and will be **required** to use their PIV for authentication. Care should be used if enabling this option.
+The applications which are impacted by User Based Enforcement are designed or deployed using what is referred to as: a) Form Based or Basic Authentication, or 2) LDAP simple binds.  The user will be presented with the application form to enter a username and password - and the user will no longer know the password to enter since the passwords have been removed.
 
+You want to analyze your applications and identify which are configured to use your users' network domain passwords.  There are methods to fix the applications by enabling Kerberos, SPNEGO (web applications), direct x509 authentication (client certificate authentication), or the SAML and Open ID Connect (OIDC) protocols.  These topics will be covered in the Applications section of the guides which are in-development and we invite *all* agencies to contribute to!
 
+#### Defining the policies for Machine Based Enforcement or User Based Enforcement
+The setting to enforce PIV logon is controlled by **scforceoption** in your network domain user and workstation policies.   
 
-### Configure group policies for PIV Authentication
-Group policy objects are used to manage configuration settings across Microsoft operating systems for workstations and servers joined to your network. Using group policy objects to manage all your configurations settings for PIV (smartcard logon) is not required; however, using group policy objects will provide a more streamlined process for efficiently applying configurations.
+* Machine Based Enforcement is when you apply the **scforceoption** to a workstation or server object in your network domain.
+* User Based Enforcement is when you apply the **scforceoption** to a user in your network domain.
 
+This is the only difference when implementing the policy: which objects in your domain you apply the policy to.  
 
-
-
-This task describes 2 common configurations related to domain Group Policy Objects (GPO).
-
-|  scforceoption  |  This security policy setting requires users to log on to a computer by using a smart card.  |  Enabled / Disabled  |
-
-**scforceoption** directs client Windows computers to enforce PIV logon for users. It is important to understand the ramifications of executing this step.
-
-When you select the Smart Card is required for interactive logon check box in the Active Directory (AD) user account properties, Windows automatically resets the user password to a random complex password. In addition, Windows adds the SMARTCARD_REQUIRED flag to the UserAccountControl user account attribute and sets the DONT_EXPIRE_PASSWORD flag on the user account. The latter ensures that the user's password never expires after the Smart Card is required for interactive logon option is selected.
-
-When a user logs on to Windows either locally or remotely using a Remote Desktop session, the Windows client automatically checks for the presence of the SMARTCARD_REQUIRED flag. If the Smart Card is required for interactive logon option is set for the user, Windows rejects the logon attempt if it's not made with smart card credentials.
-
-Again, upon activation of scforceoption, users will **no longer know the password** to their account and will be **required** to use their PIV for authentication. Care should be used if enabling this option.
-
-To enable or disable either of these policies:
-
-1.  Open the Group Policy Management Console
-1.  In the GPMC console tree, double-click Group Policy Objects in the forest and domain containing the GPO that you want to edit.
-1.  Right-click the GPO, and then click Edit.
-1.  In the console tree, edit the settings as appropriate.
+You can set the policy option on a single user by checking the _Smart Card is required for interactive logon_ check box in the user account properties.  You can also apply this setting using group policy objects. When the **scforceoption** setting is applied, the SMARTCARD_REQUIRED flag is added to the UserAccountControl (UAC) user account attribute, and the DONT_EXPIRE_PASSWORD attribute.
