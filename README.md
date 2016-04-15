@@ -1,7 +1,11 @@
 This work is in early Alpha stage and is led by the GSA FICAM Program in coordination with the ICAM Subcommittee of the Federal CIO Council.
 
-# FICAM Playbooks
-This repository is for the collaborative development of the Federal Identity, Credential, and Access Management PIV Playbooks and Guides.  This repository is for information and step-by-step guidance on how to use and enable applications to use PIV.  We are always looking for contributions - in the form of lessons learned, code, scripts, how-to guides, and links to government or open source repositories with handy tools.  
+# FICAM Guides
+This repository is for the collaborative development of the Federal Identity, Credential, and Access Management **PIV Guides**:   
+
+*  information and step-by-step guidance on how to use and enable applications to use PIV.  
+
+Please consider contributing -lessons learned, code, scripts, how-to guides, and links to government or open source repositories with handy tools.  
 
 ## General Practices
 This content is Vendor neutral. Marketing materials for Commercial Products should not be submitted. If you would like to contribute a page or content which includes Commercial Products and a specific references for development and engineering, please review the Commercial Product trademark or copyright guides from the Product Vendor and reference those guides in your Pull Request.  
