@@ -1,6 +1,13 @@
+---
+layout: default
+title: Introduction
+permalink: /userconfig/
+collection: userconfig
+---
+
 ## Introduction to PIV User Guides
 
-PIV User Guides are designed to help end users successfully understand and leverage their PIV card to access federal systems and facilities. These guides will be created as relevant topics are identified. 
+PIV User Guides are designed to help end users successfully understand and leverage their PIV card to access federal systems and facilities. These guides will be created as relevant topics are identified.
 
 User guides may cover the following topics:
 

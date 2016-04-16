@@ -1,6 +1,13 @@
+---
+layout: default
+title: Introduction
+permalink: /devconfig/
+collection: devconfig
+---
+
 ## Introduction to PIV Developer Guides
 
-PIV Developer Guides are designed to help system administrators configure their organization's systems to require PIV authentication. These guidance documents are often highly technical in nature and cover specific step-by-step procedures to configure a system successfully. All completed guidance documents can be found in the Developer Guides dropdown in the navigation bar to the left. 
+PIV Developer Guides are designed to help system administrators configure their organization's systems to require PIV authentication. These guidance documents are often highly technical in nature and cover specific step-by-step procedures to configure a system successfully. All completed guidance documents can be found in the Developer Guides dropdown in the navigation bar to the left.
 
 Future developer guides may cover the following topics:
 
