@@ -9,11 +9,8 @@ permalink: /details/
 </div>
 </div>
 
-You have a PIV credential, you have card reader(s), and you have middleware for your computers. **Now what?**
 
-* You can authenticate to websites that are PIV enabled for authentication, digitally sign email and documents and files, and encrypt!
-
-If you are interested in learning how to view the data stored on the PIV credential and information about the certificates, this section will help you.  In this section, we focus on the simple methods for:  
+This section will help you learn how to view the data stored on the PIV credential and information about the certificates, In this section, we focus on the simple methods for:  
 
 1.  [Viewing your certificates on the PIV credential using a traditional computer](#viewing-your-piv-credential),  
 <!-- TODO 1.  [Exporting PIV certificates to use in troubleshooting](#exporting-piv-certificates),    -->
