@@ -6,8 +6,7 @@ author:
     name: FICAM
 description: PIV Guidance
 baseurl: '/piv-guides'
-#url: "http://yourdomain.com" # the base hostname & protocol for your site
-#github_username:
+
 highlighter: rouge
 branch: master
 
@@ -22,7 +21,11 @@ ficam_playbooks_url: /ficam-guides/
 repos:
 - name: piv-guides
   description: FICAM Playbook - PIV Guidance
-  url: https://github.com/gsa/piv-guides
+  url: https://github.com/GSA/piv-guides
+
+# Sidebar uses a single github repository to link to issues.
+github:
+  repository_url: https://github.com/GSA/piv-guides
 
 # Build settings
 markdown: kramdown
@@ -45,7 +48,7 @@ exclude:
 
 navigation:
 - text: Introduction
-  url: index.html
+  url: ''
   internal: true
   coll: false
 - text: Basics of a PIV Credential

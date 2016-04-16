@@ -1,5 +1,5 @@
 <!-- TODO: Placholder for tuning ---
-layout: page_collection
+layout: default
 title: Tuning
 collection: networkconfig
 permalink: networkconfig/tuning/

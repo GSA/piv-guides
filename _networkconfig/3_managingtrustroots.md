@@ -1,5 +1,5 @@
 ---
-layout: page_collection
+layout: default
 title: Trust Stores
 collection: networkconfig
 permalink: networkconfig/trustedroots/

@@ -1,9 +1,10 @@
 ---
-layout: page
+layout: default
 title: Guidance Document Template
 permalink: /template/
 ---
-This page serves as the template for creating your own guidance document to add to one of the FICAM Guides.  
+
+This page serves as the template for creating your own guidance document to add to one of the FICAM Guides.
 
 To create your own page using the github website, copy the content from this file, paste it into a new file (new files can be created through the 'new file' link at the top of the pages folder), give the new file a name (at the top of the page there will be a box that says 'name your file'), and change the title and permalink at the very top section of the file (the permalink should match the new file name). The title should be what you want to appear at the top of the page on the site, and the permalink text should match the name of the file, but in the format /mypage/ instead of mypage.md.
 
@@ -49,13 +50,13 @@ This text will provide any reference information that may be needed to complete 
 > This text will appear as a green banner, for an 'informational' message. These flags can be used for notifications such as useful links or helpful tips.
 {:class="info"}
 
-This is the main body text that explains the purpose of the procedure and any context that you might need before diving into the individual steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.  
+This is the main body text that explains the purpose of the procedure and any context that you might need before diving into the individual steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
 
-**Text within double asterisks will appear as bolded.**  
+**Text within double asterisks will appear as bolded.**
 
-*Text within single asterisks will appear as italicized.*  
+*Text within single asterisks will appear as italicized.*
 
-```Text within three backticks style code or command line samples```  
+```Text within three backticks style code or command line samples```
 
 For more information on formatting in markdown, go [here.](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
 

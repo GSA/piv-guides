@@ -1,8 +1,9 @@
 ---
-layout: page
+layout: default
 title: Details of a PIV Credential
 permalink: /details/
 ---
+
 <div style="float:right; padding:10px; margin-right:20px; border-radius:10px; width:180px; height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CCC; color:#666666">
 <div style="color:#000000">
 <em>Advanced</em>
@@ -10,15 +11,15 @@ permalink: /details/
 </div>
 
 
-This section will help you learn how to view the data stored on the PIV credential and information about the certificates, In this section, we focus on the simple methods for:  
+This section will help you learn how to view the data stored on the PIV credential and information about the certificates, In this section, we focus on the simple methods for:
 
-1.  [Viewing your certificates on the PIV credential using a traditional computer](#viewing-your-piv-credential),  
+1.  [Viewing your certificates on the PIV credential using a traditional computer](#viewing-your-piv-credential),
 <!-- TODO 1.  [Exporting PIV certificates to use in troubleshooting](#exporting-piv-certificates),    -->
-1.  [Understanding the PIV Certificates](#understanding-piv-certificates-and-examples).    
+1.  [Understanding the PIV Certificates](#understanding-piv-certificates-and-examples).
 
 
-#### Viewing your PIV Credential  
-Almost **all** the methods for using your PIV credential for networks, applications, digital signatures and encryption is using the certificates and key pairs stored on your PIV credential. However, there are scenarios where the additional information such as biometrics are accessed and used. _We will cover how to view the information for these additional scenarios and for developers in a set of Developer Guides._  
+#### Viewing your PIV Credential
+Almost **all** the methods for using your PIV credential for networks, applications, digital signatures and encryption is using the certificates and key pairs stored on your PIV credential. However, there are scenarios where the additional information such as biometrics are accessed and used. _We will cover how to view the information for these additional scenarios and for developers in a set of Developer Guides._
 
 The easiest methods to view your certificate information is:
 
@@ -38,7 +39,7 @@ The easiest methods to view your certificate information is:
 
 <!-- TODO
 #### Exporting PIV Certificates
-We won't always be using graphical user interfaces to view the PIV credential certificates.  Throughout the guides, examples are provided of code, tools and common _command line_ options for viewing and troubleshooting configurations.  The examples may use files representing the _public_ certificate(s).    
+We won't always be using graphical user interfaces to view the PIV credential certificates.  Throughout the guides, examples are provided of code, tools and common _command line_ options for viewing and troubleshooting configurations.  The examples may use files representing the _public_ certificate(s).
 
 Don't worry - the public certificates are _public_.  The private keys are still stored safely on your PIV credential and can't be exported.   -->
 
@@ -46,13 +47,13 @@ Don't worry - the public certificates are _public_.  The private keys are still 
 #### Understanding PIV Certificates
 Viewing the certificate information on your PIV credential may be interesting if you are a general user.  **Understanding** the certificate information is a **must** if you are a program manager, developer or engineer working on supporting, developing applications, and designing solutions for using PIV credentials.
 
-Within the US Federal Government, the certificate information and the PIV credential information is governed by Standards, Policies, and implementation specific choices (options) across all agency credential providers.     
+Within the US Federal Government, the certificate information and the PIV credential information is governed by Standards, Policies, and implementation specific choices (options) across all agency credential providers.
 
-**We present the common information in this section with special emphasis on what is true for ALL PIV credentials and certificates issued within the past six years.**  
+**We present the common information in this section with special emphasis on what is true for ALL PIV credentials and certificates issued within the past six years.**
 
-There are four sets of certificates and key pairs on a PIV credential.  Two sets are *ALWAYS* on every PIV credential and two sets are *SOMETIMES* on a PIV credential.  You can review [the basics of a PIV Credential](../elements/) to view the four sets and purposes.  
+There are four sets of certificates and key pairs on a PIV credential.  Two sets are *ALWAYS* on every PIV credential and two sets are *SOMETIMES* on a PIV credential.  You can review [the basics of a PIV Credential](../elements/) to view the four sets and purposes.
 
-The table below outlines the general information for the PIV credential certificates, certificate extensions, and design considerations.  All information is presented in human-readable formats.    
+The table below outlines the general information for the PIV credential certificates, certificate extensions, and design considerations.  All information is presented in human-readable formats.
 
 | Certificate              | Required  | Key Usage  |  Extended Key Usage  | Subject Alternative Name | Considerations |
 | -------------            |:----:      |:----:               |:----:               |:----:|  ----|
@@ -63,11 +64,11 @@ The table below outlines the general information for the PIV credential certific
 
 Additional useful information:
 
-*  All key pairs are 2048 bit (RSA) keys  
-*  All certificates issued and certified as _PIV_ are SHA-2 signed  
-   *  If you are working with _Common Access Cards_, you may still encounter SHA-1 signed  
-*  There has been testing in some infrastructures to migrate to Elliptic Curve Cryptography (ECC), but there are no ECC certificates in production as of the date of this guide  
-*  There has been testing in some infrastructures for migration to 3072 bit (RSA) certificates, but there are no 3072 bit certificates in production as of the date of this guide  
+*  All key pairs are 2048 bit (RSA) keys
+*  All certificates issued and certified as _PIV_ are SHA-2 signed
+   *  If you are working with _Common Access Cards_, you may still encounter SHA-1 signed
+*  There has been testing in some infrastructures to migrate to Elliptic Curve Cryptography (ECC), but there are no ECC certificates in production as of the date of this guide
+*  There has been testing in some infrastructures for migration to 3072 bit (RSA) certificates, but there are no 3072 bit certificates in production as of the date of this guide
 
 In-depth details on the certificate profiles are contained in the current and historical Federal Public Key Infrastructure (FPKI) Policy documents.  The table below contains links to the most recent documents:
 

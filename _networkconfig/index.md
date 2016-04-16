@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Network Authentication
+title: Introduction to Network Authentication Guide
 permalink: /networkconfig/
 collection: networkconfig
 ---
@@ -10,8 +10,6 @@ collection: networkconfig
 <em>Moderate</em>
 </div>
 </div>
-
-## Introduction to Network Authentication Guide
 
 The Network Authentication guides are for configuring your Windows _network domain_ for smartcard logon using PIV credentials.
 

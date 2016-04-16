@@ -1,5 +1,5 @@
 <!-- TODO: References ---
-layout: page_collection
+layout: default
 title: References
 collection: networkconfig
 permalink: networkconfig/references/

@@ -1,5 +1,5 @@
 <!-- TODO: Placholder for Windows 10---
-layout: page_collection
+layout: default
 title: Windows 10 Considerations
 collection: networkconfig
 permalink: networkconfig/windows10/

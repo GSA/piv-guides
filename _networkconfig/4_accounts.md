@@ -1,5 +1,5 @@
 ---
-layout: page_collection
+layout: default
 title: Account Linking
 collection: networkconfig
 permalink: networkconfig/accounts/
@@ -10,12 +10,12 @@ permalink: networkconfig/accounts/
 </div>
 </div>
 
-For your network domains, you will need to associate the PIV credential to the user account(s).  This is the [account linking](../../identifiers) information discussed in the Identifiers section.  
+For your network domains, you will need to associate the PIV credential to the user account(s).  This is the [account linking](../../identifiers) information discussed in the Identifiers section.
 
-In the smartcard and PIV approach, there is a two step process that ensures the PIV credential you are presenting is authenticated (PIV Authentication) and has an identifier in the credential to find one or more accounts to determine authorization.  
+In the smartcard and PIV approach, there is a two step process that ensures the PIV credential you are presenting is authenticated (PIV Authentication) and has an identifier in the credential to find one or more accounts to determine authorization.
 
 1.  **Authentication:** A challenge response using the PIV Authentication key pair and certificate.  You are prompted to enter a PIN code; the PIN is stored only on the PIV credential and is used to unlock the private key and prove "something you know".  For the two-factor, the "something you have" **is** the private key stored on your PIV credential.  When the challenge response is successful and the PIV Authentication certificate has been validated as Trusted, then the _authentication_ succeeds.
-2.  **Authorization:**  The network domain uses one or more identifiers in the certificate you present to _find_ your account(s) and determine if you are authorized for access.  
+2.  **Authorization:**  The network domain uses one or more identifiers in the certificate you present to _find_ your account(s) and determine if you are authorized for access.
 
 Step 1 is processed by the network domain and components including the PIV credential, the operating systems, domain controllers, and network infrastructure.   For detailed information on how this works in network domains, you can search online for topics such as _PKINIT protocols_ to learn more.
 
@@ -52,10 +52,10 @@ For the altSecurityIdentities approach:
 >  _It is not required that you update your PIV credentials and certificates to not have a UPN value populated in order to use the altSecurityIdentities approach. This is a common misconception. If your PIV Authentication certificates do contain a UPN value in the _Subject Alternative Name_ extension, altSecurityIdentities will still work for you, your agency, and your users._
 
 
-#### Disable UPN Mapping  
+#### Disable UPN Mapping
 
   * This is a registry setting and you must disable this setting on all domain controllers
-     * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Kdc  
+     * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Kdc
      * Change the value of the DWORD UseSubjectAltName to 00000000
      * [Link to the description of the registry setting](https://technet.microsoft.com/en-us/library/ff520074(WS.10).aspx)
   * Management of registry settings should be deployed using group policy objects or other centralized management options
@@ -78,7 +78,7 @@ You need to link the PIV Authentication certificate to each of the user's accoun
 
 
 #### Enable Username Hints
-Enabling username hints will modify the logon prompts for _Windows_ workstations and servers joined to the network domain.  You will be prompted to provide both your PIN value and a Username Hint value.  
+Enabling username hints will modify the logon prompts for _Windows_ workstations and servers joined to the network domain.  You will be prompted to provide both your PIN value and a Username Hint value.
 
 * Management of smart card settings should be deployed using a group policy object for the domain(s)
 * Username Hint setting via graphical user interface:
