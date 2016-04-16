@@ -1,8 +1,9 @@
 ---
-layout: page
+layout: default
 title: Identifiers in a PIV Credential
 permalink: /identifiers/
 ---
+
 <div style="float:right; padding:10px; margin-right:20px; border-radius:10px; width:180px; height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CCC; color:#666666">
 <div style="color:#000000">
 <em>Advanced</em>
@@ -16,7 +17,8 @@ _Identifiers_ are the values in the credential that are used for account linking
 <!-- TODO: Insert note referencing FICAM architecture and designing to a centralized identity and access management model or federated model** -->
 
 #### Identifiers and How to Use
-The table below outlines identifiers available in the PIV Authentication certificate and design considerations for implementations.  
+
+The table below outlines identifiers available in the PIV Authentication certificate and design considerations for implementations.
 
 | Identifiers              | Considerations |
 | -------------            |----            |----                   |----|

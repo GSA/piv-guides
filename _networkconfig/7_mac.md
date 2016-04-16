@@ -1,5 +1,5 @@
 <!-- TODO: Placeholder for Mac ---
-layout: page_collection
+layout: default
 title: MacOS X Considerations
 collection: networkconfig
 permalink: networkconfig/mac/

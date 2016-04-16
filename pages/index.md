@@ -1,10 +1,8 @@
 ---
 layout: default
-title: Introduction
+title: Introduction to PIV Guides
 permalink: /
 ---
-
-## Introduction to PIV Guides
 
 Welcome to the **Personal Identity Verification** (PIV) Guides! On these pages you will find information on how to implement common PIV configurations at your organization.  These guides are [open source](https://github.com/gsa/piv-guides) and a _work in progress_ and we [welcome contributions]({{ site.baseurl }}/contribute/) from our colleagues.
 

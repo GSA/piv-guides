@@ -1,11 +1,9 @@
 ---
 layout: default
-title: Introduction
+title: Introduction to PIV Developer Guides
 permalink: /devconfig/
 collection: devconfig
 ---
-
-## Introduction to PIV Developer Guides
 
 PIV Developer Guides are designed to help system administrators configure their organization's systems to require PIV authentication. These guidance documents are often highly technical in nature and cover specific step-by-step procedures to configure a system successfully. All completed guidance documents can be found in the Developer Guides dropdown in the navigation bar to the left.
 
@@ -19,4 +17,4 @@ Future developer guides may cover the following topics:
 * How do I enable a domain to assert assurance in AD?
 * How do I validate trust stores on a Windows platform?
 
-To help contribute to this effort, please follow 'Submit Issues Here' link at the top right to access the GitHub page for this site and provide any feedback.
+You can [contribute]({{ site.baseurl }}/contribute/) to this effort, by providing feedback through [GitHub issues]({{site.github.repository_url}}/issues).

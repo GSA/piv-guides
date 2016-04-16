@@ -1,5 +1,5 @@
 ---
-layout: page_collection
+layout: default
 title: Domain Controllers
 collection: networkconfig
 permalink: networkconfig/domaincontrollers/
@@ -11,9 +11,9 @@ permalink: networkconfig/domaincontrollers/
 </div>
 
 
-To use smartcards and PIV credentials for network authentication, all the Domain Controllers need to have Domain Controller Authentication certificates.  
+To use smartcards and PIV credentials for network authentication, all the Domain Controllers need to have Domain Controller Authentication certificates.
 
->  When your users are using certificates to authenticate, the domain controllers are also authenticating as _devices_ using certificates.  Each works together  to create secure connections.  This is required for the protocols and if you want to learn more - search for information on _PKINIT_ protocols.  
+>  When your users are using certificates to authenticate, the domain controllers are also authenticating as _devices_ using certificates.  Each works together  to create secure connections.  This is required for the protocols and if you want to learn more - search for information on _PKINIT_ protocols.
 
 This section contains information on domain controller certificate profiles and issuing domain controller certificates.
 
@@ -33,7 +33,7 @@ The domain controller certificates need to be issued with a set of specific exte
             Client Authentication (1.3.6.1.5.5.7.3.2)
             Server Authentication (1.3.6.1.5.5.7.3.1)
 
-1. The certificate **Subject Alternative Name** extension must contain the Domain Name System (DNS) qualifier and name.  This must be the fully qualified domain controller name.  For example:  
+1. The certificate **Subject Alternative Name** extension must contain the Domain Name System (DNS) qualifier and name.  This must be the fully qualified domain controller name.  For example:
 
             DNS Name=controller1.intranet.agency.gov
 

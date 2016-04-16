@@ -1,5 +1,5 @@
 ---
-layout: page_collection
+layout: default
 title: Group Policies and Enforcement
 collection: networkconfig
 permalink: networkconfig/grouppolicies/
@@ -10,7 +10,7 @@ permalink: networkconfig/grouppolicies/
 </div>
 </div>
 
-The US Government publishes the [United States Government Configuration Baseline (USGCB)](http://usgcb.nist.gov/usgcb_content.html) for use by Executive Branch agencies to promote uniform configurations for [commonly used operating systems](https://cio.gov/cio-council-streamlines-configuration-baseline-process/).  The USGCB configuration guidelines for specific operating systems include references to some configurations related to smartcard (PIV) logon and should be referenced first.  
+The US Government publishes the [United States Government Configuration Baseline (USGCB)](http://usgcb.nist.gov/usgcb_content.html) for use by Executive Branch agencies to promote uniform configurations for [commonly used operating systems](https://cio.gov/cio-council-streamlines-configuration-baseline-process/).  The USGCB configuration guidelines for specific operating systems include references to some configurations related to smartcard (PIV) logon and should be referenced first.
 
 The information on this page is to answer common questions and identify the most commonly used configuration options.  For a full reference of options for each operating system, please refer to configurations guides published online.
 
@@ -25,7 +25,7 @@ There are two options for requiring users to use PIV credentials to authenticate
 
 These options are controlled by group policy applied to either Machine or User objects in your network domain. There is planning required to move to full User Based Enforcement and agencies are often using a combination of both Machine and User enforcement in their deployments.
 
-Impacts and considerations are identified to help you plan and execute according to your agency network and user needs.  
+Impacts and considerations are identified to help you plan and execute according to your agency network and user needs.
 
 | Type | Impacts | Considerations |
 | ----- | -------| -------|
@@ -37,11 +37,11 @@ The applications which are impacted by User Based Enforcement are designed or de
 You want to analyze your applications and identify which are configured to use your users' network domain passwords.  There are methods to fix the applications by enabling Kerberos, SPNEGO (web applications), direct x509 authentication (client certificate authentication), or the SAML and Open ID Connect (OIDC) protocols.  These topics will be covered in the Applications section of the guides which are in-development and we invite *all* agencies to contribute to!
 
 #### Defining the policies for Machine Based Enforcement or User Based Enforcement
-The setting to enforce PIV logon is controlled by **scforceoption** in your network domain user and workstation policies.   
+The setting to enforce PIV logon is controlled by **scforceoption** in your network domain user and workstation policies.
 
 * Machine Based Enforcement is when you apply the **scforceoption** to a workstation or server object in your network domain.
 * User Based Enforcement is when you apply the **scforceoption** to a user in your network domain.
 
-This is the only difference when implementing the policy: which objects in your domain you apply the policy to.  
+This is the only difference when implementing the policy: which objects in your domain you apply the policy to.
 
 You can set the policy option on a single user by checking the _Smart Card is required for interactive logon_ check box in the user account properties.  You can also apply this setting using group policy objects. When the **scforceoption** setting is applied, the SMARTCARD_REQUIRED flag is added to the UserAccountControl (UAC) user account attribute, and the DONT_EXPIRE_PASSWORD attribute.
