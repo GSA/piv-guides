@@ -81,9 +81,9 @@ You need to link the PIV Authentication certificate to each of the user's accoun
 | RFC822 name | X509:\<RFC822>      |   Not recommended |    Not recommended; not commonly populated in PIV Authentication certificates |
 
 #### Enable Username Hints
-Enabling username hints will modify the logon prompts for _Windows_ workstations and servers joined to the network domain.  You will be prompted to provide both your PIN value and a Username Hint value.
+You will want to enabling username hints for your network domain.  This will modify the logon prompts for _Windows_ workstations and servers joined to the network domain.  Your users will be prompted to provide both the PIV credential PIN value and a Username Hint value.
 
-* Management of smart card settings should be deployed using a group policy object for the domain
 * Username Hint setting via graphical user interface:
    * _Computer Configuration_ -> _Policies_-> _Administrative Templates_ -> _Windows Components_, and then expand _Smart Card_.
    * Select _Allow user name hint_
+* Management of smart card settings should be deployed using a group policy object for the domain

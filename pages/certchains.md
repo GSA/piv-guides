@@ -39,7 +39,7 @@ The certificate chain includes the Intermediate Certificate Authorities certific
 
 The Federal Common Policy Certificate Authority (COMMON) root certificate is included in Microsoft, Adobe and some Apple trust stores by default.  It is not included by default in Mozilla, java, _all_ mobile devices, or Linux based operating systems.  Therefore, if you are an engineer working on implementing PIV authentication, you may need to download and install the root certificate (COMMON) for your workstations, servers, applications and network domains.
 
-Many applications may require Intermediate Certificates to successfully trust ALL PIV credentials, and may not support the automatic retrieval of certificate chains.  You should consider the possible unintended consequences of installing intermediate certificates which _only_ represent intermediate certificate chains for your agency users.  It is increasingly more common for users from other agencies or partners to _authenticate_ to your networks or applications, and this usage is the foundation of PIV to promote trust, interoperability, secure authentication, and efficiency across the US Federal Government.  You may want to be able to Trust all PIV credentials from agencies, and credentials from our trusted partners.
+Many applications may require Intermediate Certificates to successfully trust ALL PIV credentials, and may not support the automatic retrieval of certificate chains.  You should consider the possible unintended consequences of installing intermediate certificates which _only_ represent intermediate certificate chains for your agency users.  You may want to be able to Trust all PIV credentials from agencies, and credentials from our trusted partners.  It is increasingly more common for users from other agencies or partners to _authenticate_ to your networks or applications, and this usage is the foundation of PIV to promote trust, interoperability, authentication, and efficiency across the US Federal Government.  
 
 General recommendations for trust and certificate chain management include:
 
@@ -92,20 +92,3 @@ The table below outlines general information on each protocol, the certificate e
 For a portion of your implementations such as network authentication, the _revocation_ checks will occur as part of the operating system or server native functionality.  Other implementations may want to consider services such as implementing Server Certificate Validation Protocol (SCVP).  These are advanced topics to consider and will be covered in other areas of guides.  
 
 We want to add more information to help you so check back often, or review the Issues posted and consider contributing!
-
-<!-- TODO: Graphical
-
-![image showing a certificate with the authority information access extension highlighted and a sample value representing an OCSP url](../img/piv_aia_ocsp_gsa_small.png){:style="float:center"}
-
-
-![image showing a certificate with the crl distribution point extension highlighted and a sample value representing an CRL http url](../img/piv_crl_gsa_small.png){:style="float:center"} -->
-
-
-<!-- TODO: Certutil   -->
-
-
-<!-- TODO: OpenSSL
-
-``` openssl x509 -in mypiv.crt -noout -ocsp_uri
-
-``` -->
