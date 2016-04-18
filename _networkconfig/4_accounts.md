@@ -26,33 +26,37 @@ The most common questions for US Federal Government and using PIV for network au
   1. [Disable User Principal Name (UPN) Mapping](#disable-upn-mapping)
   2. [Linking the PIV Authentication Certificate](#linking-the-piv-authentication-certificate)
   3. [Enable Username Hints](#enable-username-hints)
+* [Automation approaches to Account Linking](#automation-approaches-to-link-accounts)
 
 
 #### Principal Name versus altSecurityIdentities options
 There are two attributes in your network domain directories to choose from:
 
-1. Principal Name - _not recommended_
+1. Principal Name
 1. altSecurityIdentities - _recommended_
 
-For the User Principal Name approach:
+For the Principal Name approach:
 
 * Each PIV credential can only be associated with ONE account
 * The User Principal Name value from the _Subject Alternate Name_ in the PIV authentication certificate is required to be populated during PIV credential issuance
 * There is no flexibility for associating the PIV credential to separate privileged accounts
 * There is less flexibility for accepting PIV credentials issued by other government agencies or partners, including PIV-Interoperable credentials
 
+
 For the altSecurityIdentities approach:
 
 * Each PIV credential can be associated with MORE THAN ONE account
 * Six options from the certificate can be used to map to each account
 * This provides flexibility for managing privileged accounts and using one PIV credential to authenticate to more than one account
-* Users are presented a second _User Name Hint_ field to identify which account the user wants to access
+* Users are presented a second _User Name Hint_ field during network authentication to identify which account the user wants to access
+* There is more flexibility for accepting PIV credentials issued by other government agencies or partners, including PIV-Interoperable credentials
 
+It is not required that you update your PIV credentials and certificates to not have a UPN value populated to use the altSecurityIdentities approach. This is a common misconception. If your PIV Authentication certificates do contain a UPN value in the _Subject Alternative Name_ extension, altSecurityIdentities will still work for you, your agency, and your users.
 
->  _It is not required that you update your PIV credentials and certificates to not have a UPN value populated in order to use the altSecurityIdentities approach. This is a common misconception. If your PIV Authentication certificates do contain a UPN value in the _Subject Alternative Name_ extension, altSecurityIdentities will still work for you, your agency, and your users._
+If you have a large network with many domains, you will want to carefully plan for a migration from solely using Principal Name to the altSecurityIdentities approach.  You may find that you have many applications that rely upon the Principal Name values only.  You can still populate the Principal Name with the PIV Authentication certificate User Principal Name value for one of the user accounts (the non-privileged accounts) to maintain those applications but disable user principal name mapping for _network authentication_.
 
-
-#### Disable UPN Mapping
+#### Disable User Principal Name Mapping
+To implement the altSecurityIdentities approach, you will need to disable _subject alternate name_ for the network domain.  This is a fancy way of simply telling your network domain: _I don't always want to use the Subject Alternate Name values for my user certificates._
 
   * This is a registry setting and you must disable this setting on all domain controllers
      * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Kdc
@@ -69,18 +73,17 @@ You need to link the PIV Authentication certificate to each of the user's accoun
 
 | Options       | Tag     | Example | Considerations |
 | ------------- |-------------| -----|-----|
-| Subject     | X509:\<S> | X509:\<S>C=US,O=U.S. Government,OU=Government Agency,CN=JANE DOE OID.0.9.2342.19200300.100.1.1=25001003151020 |  For certificates which assert the UID identifier (0.9.2342.19200300.100.1.1) or other object identifier in the Common Name, the identifier is prepended with the _OID_ qualifier. |
+| Subject     | X509:\<S> | X509:\<S>C=US,O=U.S. Government,OU=Government Agency,CN=JANE DOE OID.0.9.2342.19200300.100.1.1=25001003151020 |  For certificates which assert the UUID identifier (0.9.2342.19200300.100.1.1) or other object identifier in the nommon name, the identifier is prepended with the _OID_ qualifier. |
 | Issuer and Subject     | X509:\<I>\<S>  | X509:\<I>C=US,O=U.S. Government,OU=Certification Authorities,OU=Government Demonstration CA\<S>C=US,O=U.S. Government,OU=Government Agency,CN=JANE DOE OID.0.9.2342.19200300.100.1.1=47001003151020 | Note the spaces carefully when testing and machine readable formats of the certificate extensions versus the human readable formats |
 | Issuer and Serial Number | X509:\<I>\<SR> | X509:\<I>C=US,O=U.S. Government,OU=Certification Authorities,OU=Government Demonstration CA\<SR>46a65d49 | Serial number is reversed byte order from human readable version, starting at most significant byte |
 | Subject Key Identifier     | X509:\<SKI> |   X509:\<SKI>df2f4b04462a5aba81fec3a42e3b94beb8f2e087 |  Not generally recommended; may be difficult to manage |
 | SHA1 hash of public key| X509:\<SHA1-PUKEY> |  X509:\<SHA1-PUKEY>50bf88e67522ab8ce093ce51830ab0bcf8ba7824 |  Not generally recommended; may be difficult to manage   |
 | RFC822 name | X509:\<RFC822>      |   Not recommended |    Not recommended; not commonly populated in PIV Authentication certificates |
 
-
 #### Enable Username Hints
 Enabling username hints will modify the logon prompts for _Windows_ workstations and servers joined to the network domain.  You will be prompted to provide both your PIN value and a Username Hint value.
 
-* Management of smart card settings should be deployed using a group policy object for the domain(s)
+* Management of smart card settings should be deployed using a group policy object for the domain
 * Username Hint setting via graphical user interface:
    * _Computer Configuration_ -> _Policies_-> _Administrative Templates_ -> _Windows Components_, and then expand _Smart Card_.
-   * Double-click _Allow user name hint_
+   * Select _Allow user name hint_

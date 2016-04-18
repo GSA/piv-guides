@@ -24,7 +24,7 @@ The full process of proving identity when issuing the certificates, auditing the
 
 ![Example of an identity certificate with intermediate and root](../img/certificatechain_small.png){:style="float:center"}
 
-For the US Federal Government, there is one Root Certificate Authority named _Federal Common Policy Certificate Authority (COMMON)_, and dozens of Intermediate Certificate Authorities.  The US Federal Government has also established Trust with other Certificate Authorities which serve specific business and international government communities.
+For the US Federal Government Executive branch agencies, there is one Root Certificate Authority named _Federal Common Policy Certificate Authority (COMMON)_, and dozens of Intermediate Certificate Authorities.  The US Federal Government has also established Trust with other Certificate Authorities which serve business communities, State and Local government communities, and international government communities.
 
 *  [A graph of the federal public key infrastructure, including the business communities](http://fpki-graph.fpki-lab.gov/)
 
@@ -37,17 +37,17 @@ The certificate chain includes the Intermediate Certificate Authorities certific
 
 ![Example of a PIV certificate chain to Common](../img/pivcertificatechain_small.png){:style="float:center"}
 
-The Federal Common Policy Certificate Authority (COMMON) root certificate is included in Microsoft, Adobe and some Apple trust stores by default.  It is not included by default in Mozilla, java, _all_ mobile devices, or linux operating systems.  Therefore, if you are an engineer or developer working on supporting PIV authentication, you may need to download and install the root certificate (COMMON) for your workstations, servers, applications and network domains.
+The Federal Common Policy Certificate Authority (COMMON) root certificate is included in Microsoft, Adobe and some Apple trust stores by default.  It is not included by default in Mozilla, java, _all_ mobile devices, or Linux based operating systems.  Therefore, if you are an engineer working on implementing PIV authentication, you may need to download and install the root certificate (COMMON) for your workstations, servers, applications and network domains.
 
 Many applications may require Intermediate Certificates to successfully trust ALL PIV credentials, and may not support the automatic retrieval of certificate chains.  You should consider the possible unintended consequences of installing intermediate certificates which _only_ represent intermediate certificate chains for your agency users.  It is increasingly more common for users from other agencies or partners to _authenticate_ to your networks or applications, and this usage is the foundation of PIV to promote trust, interoperability, secure authentication, and efficiency across the US Federal Government.  You may want to be able to Trust all PIV credentials from agencies, and credentials from our trusted partners.
 
 General recommendations for trust and certificate chain management include:
 
-* COMMON should always be used as the root certificate authority
+* COMMON should be used as the trusted root certificate authority
 * Management of root and intermediate certificate authority certificates and distribution to network domains, workstations, servers and applications should be managed with group policy objects, secure automated distributions mechanisms, and enterprise policies and procedures to ensure updates are managed effectively.
 * NIST published an [Information Technology Laboratory (ITL) bulletin](http://csrc.nist.gov/publications/nistbul/july-2012_itl-bulletin.pdf) in July 2012 which includes general practices to consider.
 
-Installation of the root certificate and intermediate certificates is dependent upon operating systems and applications. First you need to know where to download the certificates.
+Installation of the trusted root certificate and intermediate certificates is dependent upon operating systems and applications. First you need to know where to download the certificates.
 
 #### Download root and intermediate certificates
 
@@ -67,7 +67,7 @@ Download any additional Intermediate Certificate Authority certificates
 1. Download the file, open it, and view the intermediate certificate authority certificates
 1. Repeat the process using the AIA extension of the intermediate certificate authority certificates until the final reference finds an intermediate certificate authority certificate that is issued and signed by COMMON
 
-<!--TODO: openssl and certutil scripts to automate the retrieval and aia chases; simple versions -->
+Many products and implementations may automatically retrieve the intermediate certificates during a process called _certificate path building_ or _certificate path discovery_.   You may encounter varying implementations of the _certificate path discovery_ process based on differences in client operating systems, browsers, mobile devices, programming languages, and even applications directly. It can be challenging to understand all the options that impact your users and applications and we are seeking input and contributions to expand this information for you.      
 
 
 #### Revocation
@@ -75,18 +75,23 @@ Revocation is the process and technology to identify a certificate as no longer 
 
 PIV credential certificates will be _revoked_ when a user terminates employment or a contract with an agency, is issued a new credential, is issued an updated PIV credential, or has a lost, stolen or damaged PIV credential.  The revocation of PIV credential certificates occurs with the PIV credential issuer and certificate authority.
 
-There are two methods available to verify if a PIV credential certificate has been revoked:
+There are two protocols available to verify if a PIV credential certificate has been revoked:
 
 1. Online Certificate Status Protocol (OCSP)
 2. Certificate Revocation Lists (CRLs)
 
-The table below outlines general information on each method, the certificate extension which contains the reference, the protocols, and design considerations.
+Some implementations also validate whether the Intermediate Certificate Authority certificates have been _revoked_.  While a revocation of an Intermediate Certificate Authority certificate doesn't occur often, this is a safeguard in place and each Intermediate Certificate Authority and COMMON also publishes Certificate Revocation Lists for the certificates signed next in the chain.   
+
+The table below outlines general information on each protocol, the certificate extension which contains the reference, and design considerations.
 
 | Type | Certificate Extension | Protocol (Port) | Considerations|
 | ----- | -------| -------| ------|
 | OCSP | Authority Information Access | HTTP (80) | All PIV certificates have OCSP references and OCSP responder web services which are internet accessible and provided by the issuing certificate authority. Intermediate certificate authorities are **not** required to have OCSP available for the _intermediate_ certificates.|
 | CRL  | CRL Distribution Point (CDP) | HTTP (80) | All PIV certificates have CRL references and CRLs files published to internet accessible web services by the issuing certificate authority.  All intermediate certificate authority certificates also have CRL references, files and internet accessible web services.  CRL files have an expiration time which varies between 6 hours to 18 hours. CRL file sizes distributed by issuing certificate authorities as of the date of this guide range from a few kilobytes to **over 30 megabytes (MB)**.
 
+For a portion of your implementations such as network authentication, the _revocation_ checks will occur as part of the operating system or server native functionality.  Other implementations may want to consider services such as implementing Server Certificate Validation Protocol (SCVP).  These are advanced topics to consider and will be covered in other areas of guides.  
+
+We want to add more information to help you so check back often, or review the Issues posted and consider contributing!
 
 <!-- TODO: Graphical
 
