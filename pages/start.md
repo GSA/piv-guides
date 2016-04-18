@@ -49,7 +49,7 @@ For common PIV credential usage scenarios, we outline the _general smartcard mid
 | Name              | Operating System and Versions | Support | Considerations |
 | -------------             |----|----|----|
 | Windows mini-driver       | Windows 7, Windows 8, Windows 10, Windows 2008, Windows 2012  | Yes | Included in Windows operating systems and requires no installation.  Does not include the functionality to perform full lifecycle management of a PIV credential.  Does not support using your PIV credential with non-Microsoft cryptographic service providers such as those used by Mozilla Firefox browser.   |
-| OpenSC       | Mac OSX 10.5, Mac OSX 10.6, Mac OSX 10.7, Mac OSX 10.9, Mac OSX 10.10, Windows (32-bit and 64-bit)  | Open Source | Open source software.  Limited commercial support for maintenance and patching.  Supports PKCS#11 interface such as used by Mozilla Firefox browser. |
+| OpenSC       | Mac OSX 10.5, Mac OSX 10.6, Mac OSX 10.7, Mac OSX 10.9, Mac OSX 10.10, Windows (32-bit and 64-bit), Linux, *nix versions vary  | Open Source | Open source software.  Limited commercial support for maintenance and patching.  Supports PKCS#11; for example, as used by Mozilla Firefox browser. |
 | Smart Card Services   | Mac OSX 10.6, Mac OSX 10.7, Mac OSX 10.9, Mac OSX 10.10  | Open Source  | Open source software. Limited commercial support for maintenance and patching.   |
 | CoolKey   | Linux, *nix versions vary  | Open Source  |   |
 | CACKey   | Linux, *nix versions vary  | US Government Source  | Available from Forge.mil |
