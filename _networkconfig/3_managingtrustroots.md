@@ -10,39 +10,34 @@ permalink: networkconfig/trustedroots/
 </div>
 </div>
 
-The root certificate and intermediate certificates are required to be added to the _Trust Store_ on all domain controllers, workstations and servers in the domain.
+You want your network domain to trust your users and their PIV credentials.  Your workstations and server also need to be able to trust the network domain.  Trust and certificate chains are reviewed in the [Certificate Trust](../pivcertchains) overview and this page includes information on configuring your network domain.
 
-#### Addition of US Federal Certificate chains to the Trusted Root Certificate Authorities
+There are two Trust stores to consider for your network domain:
+1.  [Trusted Root Certificate Authorities](#trusted-root-certificate-authorities)
+2.  [NTAuth Enterprise Trust Store](#ntauth-enterprise-trust-store)
 
-Active Directory must be configured to trust a certification authority to authenticate users based on certificates from that CA.
+####  Trusted Root Certificate Authorities
+You need to publish the Federal Common Policy Certificate Authority (COMMON) [root certificate](../pivcertchains/#download-root-and-intermediate-certificates) to the trusted root certificate authority trust stores on all your workstations, servers and domain controllers.  
 
-Both workstations and domain controllers must be configured to trust the certificates
+For Microsoft and Apple, the COMMON certificate is included as a trusted root certificate authority by default.  However, you may have your network and devices configured to not automatically update trusted root certificates published by any commercial trust store.  
 
-This task will configure Active Directory to trust the Certification Authority chain that signed the users' authentication certificates. To configure Active Directory with the signing CA Certificate chain:
+You want to add the COMMON [root certificate](../pivcertchains/#download-root-and-intermediate-certificates) to a group policy object or automated configuration management tools to publish COMMON as a trusted root for all your devices used to access the network, servers joined to the network, and all domain controllers.
 
-1.	On your Active Directory Domain Controller server, select **Active Directory Users and Computers**
-2.	In the **Management Console**, right click the **Domain** and click **Properties**
-3.	Once you're on the **Group Policy Tab**, click **Open** to open the **Group Policy Management Console plug-in**
-4.	Right Click **Default Domain Policy** and click **Edit**
-5.	Expand the **Computer Configuration** section and open **Windows Settings > Security Settings > Public Key**
-6.	Right click **Trusted Root Certification Authorities** and select **Import**
-7.	Follow the prompts in the Wizard to import the **Root Certificate** for the CA and click OK
+#### NTAuth Enterprise Trust Store
+The _NTAuth_ enterprise trust store is used by your network domain to determine which certificate authorities to trust specifically for authenticating users to the network.  To understand the difference between the typical Trust Stores and NTAuth, you may want to think of NTAuth as an _explicit trust list_ of certificate authorities used for network authentication.
 
-From here, follow these steps to import the intermediate certificate(s):
+There are two very different options for what certificate authority certificates you need publish to the NTAuth trust store.  Each option depends on the choice you made for [linking your user accounts](../accounts/).
 
-1.	Right click **Intermediate Certification Authorities** and select **Import**
-2.	Follow the prompts in the Wizard to import the **Intermediate Certificate(s)** for the CA and click OK
+| Trust Store | Account Linking Approach | Certificates to Publish | Considerations|
+| ----- | -------| -------| ------|
+| NTAuth | Principal Name | COMMON and ALL Intermediate Certificate Authority certificates | If your agency needs the ability to accept any PIV credentials for network authentication and has users with PIV credentials issued by another agency or partner, you will need to include all possible Intermediate Certificate Authority certificates. |
+| NTAuth  | altSecurityIdentities _using_ Issuer+Subject as identifier | COMMON | _*Please note: this line is in draft and needs to be tested for bridged intermediate certificate authorities._ |
+| NTAuth  | altSecurityIdentities _not using_ Issuer+Subject as identifier | COMMON and ALL Intermediate Certificate Authority certificates | If your agency needs the ability to accept any PIV credentials for network authentication and has users with PIV credentials issued by another agency or partner, you will need to include all possible Intermediate Certificate Authority certificates. |
 
 
-#### Publish the Federal Common Policy Certificate Authority (COMMON) root certificate to the NTAuth Store
 
-By publishing the CA certificate to the enterprise NTAuth store, the system administrator indicates that the CA is trusted for authentication using certain certificates.
+To publish a certificate to NTAuth, you can use either a group policy object (recommended) or the certutil tool.  If using certutil, you will need to have Enterprise Admin permissions for the domain.
 
-This task will configure Active Directory to trust the CA chain that signed the users' authentication certificates. To configure Active Directory with the signing CA Certificate chain:
-
-1.	On the Active Directory Domain Controller, launch an **elevated command prompt** to use the **certutil** utility
-2.	To **Publish the Certificate** to the **Enterprise NTAuth store** type
-
-        certutil –dpublish –f "path_to_root_CA_cert" NTAuthCA
-
-3.	The CA is now trusted to issue certificates of this type
+``
+certutil –dpublish –f certificate_to_publish.cer NTAuthCA
+``
