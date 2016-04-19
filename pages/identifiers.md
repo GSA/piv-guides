@@ -14,8 +14,6 @@ In applications including network domains, you will associate the PIV credential
 
 _Identifiers_ are the values in credentials that are used for account linking.  We focus on the **PIV Authentication** certificate and identifiers in this section to help you understand the options, and design and implement for using PIV to authenticate to networks and applications.
 
-<!-- TODO: Insert note referencing FICAM architecture and designing to a centralized identity and access management model or federated model** -->
-
 The table below outlines identifiers available in the PIV Authentication certificate and design considerations for implementations.
 
 | Identifiers              | Considerations |
