@@ -13,12 +13,12 @@ permalink: /details/
 
 This section will help you view the data stored on the PIV credential, and information about the certificates, In this section, we focus on the simple methods for:
 
-1.  [Viewing your certificates on the PIV credential using a traditional computer](#viewing-your-piv-credential),
-<!-- TODO 1.  [Exporting PIV certificates to use in troubleshooting](#exporting-piv-certificates),    -->
-1.  [Understanding the PIV Certificates](#understanding-piv-certificates-and-examples).
+1.  [Viewing your PIV credential certificates](#viewing-your-piv-credential-certificates)
+1.  [Exporting PIV certificates](#exporting-piv-certificates)
+1.  [Understanding PIV certificates](#understanding-piv-certificates)
 
 
-#### Viewing your PIV Credential
+#### Viewing your PIV credential certificates
 Almost **all** the methods for using your PIV credential for networks, applications, digital signatures and encryption is using the certificates and key pairs stored on your PIV credential.  There are scenarios where the additional information such as biometrics are accessed and used. _We will cover how to view the information for these additional scenarios and for developers in a set of Developer Guides._
 
 To view your certificate information:
@@ -37,12 +37,13 @@ To view your certificate information:
 
 * You may see many certificates.  To open and view the certificate details, double-click on any certificate.
 
-<!-- TODO
+
 #### Exporting PIV Certificates
-We won't always be using graphical user interfaces to view the PIV credential certificates.  Throughout the guides, examples are provided of code, tools and common _command line_ options for viewing and troubleshooting configurations.  The examples may use files representing the _public_ certificate(s).
+We won't always be using graphical user interfaces to view the PIV credential certificates.  Throughout the guides, we'll be adding examples of code, tools and common _command line_ options for viewing and troubleshooting configurations.  The examples may use files representing the _public_ certificate(s).
 
-Don't worry - the public certificates are _public_.  The private keys are still stored safely on your PIV credential and can't be exported.   -->
+Don't worry - the public certificates are _public_.  The private keys are still stored safely on your PIV credential and can't be exported.  
 
+You can _export_ the public certificate using any of the options you also used to view the [certificates](#viewing-your-piv-credential).  Before opening the certificate to view the contents, look for an Export option.  You can choose this option and save the file as _DER_ or _PEM_ encoded, with a file extension of cer (.cer).
 
 #### Understanding PIV Certificates
 Viewing the certificate information on your PIV credential may be interesting if you are a general user.  **Understanding** the certificate information is a **must** if you are a program manager or engineer developing applications and designing solutions for using PIV credentials.
