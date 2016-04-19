@@ -53,9 +53,11 @@ Installation of the trusted root certificate and intermediate certificates is de
 
 Download Federal Common Policy Certificate Authority (COMMON) root certificate
 
-1. [COMMON can be downloaded here](http://http.fpki.gov/fcpca/fcpca.crt)
+1. COMMON can be downloaded from this website:
+  * http://http.fpki.gov/fcpca/fcpca.crt
   * cn=Federal Common Policy CA, ou=FPKI, o=U.S. Government, c=US
   * SHA1 Hash: 90 5f 94 2f d9 f2 8f 67 9b 37 81 80 fd 4f 84 63 47 f6 45 c1
+  * Verify the hash matches the one listed above
 
 
 Download any additional Intermediate Certificate Authority certificates
@@ -80,7 +82,7 @@ There are two protocols available to verify if a PIV credential certificate has 
 1. Online Certificate Status Protocol (OCSP)
 2. Certificate Revocation Lists (CRLs)
 
-Some implementations also validate whether the Intermediate Certificate Authority certificates have been _revoked_.  While a revocation of an Intermediate Certificate Authority certificate doesn't occur often, this is a safeguard in place and each Intermediate Certificate Authority and COMMON also publishes Certificate Revocation Lists for the certificates signed next in the chain.   
+Some implementations also validate whether the Intermediate Certificate Authority certificates have been _revoked_.  While a revocation of an Intermediate Certificate Authority certificate does not occur often, this is a safeguard in place and each Intermediate Certificate Authority and COMMON also publishes Certificate Revocation Lists for the certificates signed next in the chain.   
 
 The table below outlines general information on each protocol, the certificate extension which contains the reference, and design considerations.
 
