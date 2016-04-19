@@ -43,7 +43,7 @@ _Middleware_ as a general computer term can encompass any software that provides
 
 > _Client side software which implements common functions for an operating system and cryptographic libraries to interface with PIV credentials or other smartcards for usage.  The general smartcard middleware may implement functions to support authentication, digital signatures, encryption, and integrations with multiple operating system cryptographic libraries._
 
-For common PIV credential usage scenarios, we outline the _general smartcard middleware_ available as open source or included in operating systems for use scenarios.  Commercial options for PIV Middleware are available and the list of NIST certified PIV Middleware can be viewed [here on the NIST website](http://csrc.nist.gov/groups/SNS/piv/npivp/validation.html).
+For common PIV credential usage scenarios, we outline the _general smartcard middleware_ available as open or government source or included in operating systems for use scenarios.  Commercial options for PIV Middleware are available and the list of NIST certified PIV Middleware can be viewed [here on the NIST website](http://csrc.nist.gov/groups/SNS/piv/npivp/validation.html).
 
 
 | Name              | Operating System and Versions | Support | Considerations |
@@ -55,7 +55,8 @@ For common PIV credential usage scenarios, we outline the _general smartcard mid
 | CACKey   | Linux, *nix versions vary  | US Government Source  | Available from Forge.mil |
 | **Commercial options**   | Varies  | Yes  |  Review support for your usage needs such as email signing, encryption, network authentication, VPNs, and website authentication  |
 
-<!-- TODO: List the common usage considerations when choosing middleware including network, vpn, website authentication, email signing, document / file encryption -->
+
+You may need to consider Network authentication, Virtual Private Network (VPN), email signing, email encryption, document signing, document encryption and website authentication when choosing one or more middleware options for yourself or your users.  In most cases, you can choose a middleware option that works for the most common uses for your purposes or mix and match based on operating systems and devices. 
 
 ### Next Steps
 You have a PIV credential, you have card reader(s), and you have middleware for your computers. **Now what?**
