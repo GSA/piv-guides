@@ -13,13 +13,12 @@ permalink: networkconfig/domaincontrollers/
 
 To use smartcards and PIV credentials for network authentication, all the Domain Controllers need to have Domain Controller Authentication certificates.
 
->  When your users are using certificates to authenticate, the domain controllers are also authenticating as _devices_ using certificates.  Each works together  to create secure connections.  This is required for the protocols and if you want to learn more - search for information on _PKINIT_ protocols.
+>  When your users are using certificates to authenticate, the domain controllers are also authenticating as _devices_ using certificates.  Each works together  to create secure connections.  This is required and if you would like to learn more search other online resources for information on _PKINIT_ protocols.
 
 This section contains information on domain controller certificate profiles and issuing domain controller certificates.
 
 1. [Domain Controller Certificate Profiles](#domain-controller-certificate-profiles)
 1. [Issuing Domain Controller Certificates](#issuing-domain-controller-certificates)
-<!-- 1. [Common Commands and Examples](#common-commands-and-examples) -->
 
 #### Domain Controller Certificate Profiles
 The domain controller certificates need to be issued with a set of specific extensions and values.  The certificate for each domain controller must meet these requirements:
@@ -43,7 +42,6 @@ The domain controller certificates need to be issued with a set of specific exte
 
                 Other Name: 1.3.6.1.4.1.311.25.1 = ac 4b 29 06 bb d6 5d 4f e3 9c 4c ab c3 6a 55 d9
 
-
 1.  The domain controller certificate must be installed in the domain controller's local computer's personal certificate store.
 
 #### Issuing Domain Controller Certificates
@@ -52,13 +50,3 @@ US Federal Civilian agencies have a variety of policies on whether you should us
 It is not recommended to set up a local enterprise certificate authority just to issue domain controller certificates without ensuring the proper management and security protections are enabled, and your Chief Information Security Officer (CISO) has awareness and oversight for the certificate authority management.
 
 The best option is to collaborate with your Chief Information Security Officer (CISO) or Information Security office for a definitive answer and direction.
-
-<!-- ### Common Commands and Examples
-
-Getting the GUID commands
-
-
-
-certutil -dcinfo
-/ command to query domain controllers for certs and status
-extensions for domain controller certs -->
