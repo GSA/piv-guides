@@ -5,12 +5,15 @@ permalink: /userconfig/
 collection: userconfig
 ---
 
-PIV User Guides are designed to help end users successfully understand and leverage their PIV card to access federal systems and facilities. These guides will be created as relevant topics are identified.
+PIV User Guides are to help users successfully understand and leverage their PIV credential to access federal systems and facilities. These guides are intended to be non-technical and include instructions that an agency can leverage in customer service procedures or as online resources by linking directly.  
 
-User guides may cover the following topics:
+We are gathering user guides and invite you to contribute.
 
-* How do I enable Firefox to allow the use of PIV/CAC?
-* How do I enable Internet Explorer to allow the use of PIV/CAC?
-* How do I enable Chrome to allow the use of PIV/CAC?
+Examples of user guide topics:
 
-To help contribute to this effort, please follow 'Submit Issues Here' link at the top right to access the GitHub page for this site and provide any feedback.
+* How do I enable Firefox to allow the use of PIV?
+* How do I enable Chrome to allow the use of PIV?
+* How do I send my certificates to a user in another agency to allow encrypting documents or emails to me?
+* Common errors and easy self fix options
+
+You can [contribute]({{ site.baseurl }}/contribute/) to this effort or open an [Issue]({{site.github.repository_url}}/issues) to discuss a need you may have for a guide.
