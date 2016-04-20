@@ -39,6 +39,6 @@ There are two very different options for what certificate authority certificates
 
 To publish a certificate to NTAuth, you can use either a group policy object (recommended) or the certutil tool.  If using certutil, you will need to have Enterprise Admin permissions for the domain.
 
-``
+```
 certutil –dpublish –f certificate_to_publish.cer NTAuthCA
-``
+```

@@ -65,7 +65,8 @@ For the typical network domain, _certutil_ will be your best option to identify 
 
 Export your _public_ key and certificate for PIV Authentication to a .cer file (mypiv_auth.cer), and run the following command in a command line from workstation(s) *and* domain controller(s):
 
-```certutil -verify -urlfetch mypiv_auth.cer >>verify_piv.txt
+```
+certutil -verify -urlfetch mypiv_auth.cer >>verify_piv.txt
 ```
 
 The text file output will include a *full* check against all options for CRLs, OCSP, intermediate certificates to verify a trust chain, and the root (COMMON).  Review all items and ensure at least one successful verification message is included for _each check_.  You may see errors for the LDAP verifications and these can be ignored if a CRL or OCSP check is successful.
@@ -74,6 +75,7 @@ When reviewing the verification messages, you should pay careful attention to th
 
 There is also a graphical user interface to help perform these verification checks.
 
-```certutil -v -url mypiv_auth.cer
+```
+certutil -v -url mypiv_auth.cer
 ```
 The graphical user interface allows you to check OCSP, CRL, and AIA (intermediate certificate retrievals).
