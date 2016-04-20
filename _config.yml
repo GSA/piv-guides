@@ -72,24 +72,24 @@ navigation:
   internal: true
   coll: false
 - text: Network Authentication
-  url: networkconfig/index/
+  url: networkconfig/
   internal: true
   coll: true
   collname: networkconfig
 - text: Developer Guides
-  url: devconfig/index/
+  url: devconfig/
   internal: true
   coll: true
   collname: devconfig
 - text: User Guides
-  url: userconfig/index/
+  url: userconfig/
   internal: true
   coll: true
   collname: userconfig
-- text: Script and Code Samples
-  url: code
-  internal: true
-  coll: false
+#- text: Script and Code Samples
+#  url: code
+#  internal: true
+#  coll: false
 - text: Contribute
   url: contribute
   internal: true

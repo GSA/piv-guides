@@ -11,17 +11,17 @@ permalink: /details/
 </div>
 
 
-This section will help you learn how to view the data stored on the PIV credential and information about the certificates, In this section, we focus on the simple methods for:
+This section will help you view the data stored on the PIV credential, and information about the certificates.  We identify the simple methods for:
 
-1.  [Viewing your certificates on the PIV credential using a traditional computer](#viewing-your-piv-credential),
-<!-- TODO 1.  [Exporting PIV certificates to use in troubleshooting](#exporting-piv-certificates),    -->
-1.  [Understanding the PIV Certificates](#understanding-piv-certificates-and-examples).
+1.  [Viewing your PIV credential certificates](#viewing-your-piv-credential-certificates)
+1.  [Exporting PIV certificates](#exporting-piv-certificates)
+1.  [Understanding PIV certificates](#understanding-piv-certificates)
 
 
-#### Viewing your PIV Credential
-Almost **all** the methods for using your PIV credential for networks, applications, digital signatures and encryption is using the certificates and key pairs stored on your PIV credential. However, there are scenarios where the additional information such as biometrics are accessed and used. _We will cover how to view the information for these additional scenarios and for developers in a set of Developer Guides._
+#### Viewing your PIV credential certificates
+Almost **all** the methods for using your PIV credential for networks, applications, digital signatures and encryption is using the certificates and key pairs stored on your PIV credential.  There are scenarios where the additional information such as biometrics are accessed and used. _We will cover how to view the information for these additional scenarios and for developers in a set of Developer Guides._
 
-The easiest methods to view your certificate information is:
+To view your certificate information:
 
 * Insert your PIV credential in your card reader.
 
@@ -37,28 +37,29 @@ The easiest methods to view your certificate information is:
 
 * You may see many certificates.  To open and view the certificate details, double-click on any certificate.
 
-<!-- TODO
+
 #### Exporting PIV Certificates
-We won't always be using graphical user interfaces to view the PIV credential certificates.  Throughout the guides, examples are provided of code, tools and common _command line_ options for viewing and troubleshooting configurations.  The examples may use files representing the _public_ certificate(s).
+We won't always be using graphical user interfaces to view the PIV credential certificates.  Throughout the guides, we'll be adding examples of code, tools and common _command line_ options for viewing and troubleshooting configurations.  The examples may use files representing the _public_ certificate(s).
 
-Don't worry - the public certificates are _public_.  The private keys are still stored safely on your PIV credential and can't be exported.   -->
+Don't worry - the public certificates are _public_.  The private keys are still stored safely on your PIV credential and can't be exported.  
 
+You can _export_ the public certificate using any of the options you also used to view the [certificates](#viewing-your-piv-credential).  Before opening the certificate to view the contents, look for an Export option.  You can choose this option and save the file as _DER_ or _PEM_ encoded, with a file extension of cer (.cer).
 
 #### Understanding PIV Certificates
-Viewing the certificate information on your PIV credential may be interesting if you are a general user.  **Understanding** the certificate information is a **must** if you are a program manager, developer or engineer working on supporting, developing applications, and designing solutions for using PIV credentials.
+Viewing the certificate information on your PIV credential may be interesting if you are a general user.  **Understanding** the certificate information is a **must** if you are a program manager or engineer developing applications and designing solutions for using PIV credentials.
 
 Within the US Federal Government, the certificate information and the PIV credential information is governed by Standards, Policies, and implementation specific choices (options) across all agency credential providers.
 
 **We present the common information in this section with special emphasis on what is true for ALL PIV credentials and certificates issued within the past six years.**
 
-There are four sets of certificates and key pairs on a PIV credential.  Two sets are *ALWAYS* on every PIV credential and two sets are *SOMETIMES* on a PIV credential.  You can review [the basics of a PIV Credential](../elements/) to view the four sets and purposes.
+There are four pairs of certificates and key pairs on a PIV credential.  One pair is *ALWAYS* on every PIV credential and three pairs are *SOMETIMES* on a PIV credential.  You can review [the basics of a PIV Credential](../elements/) to view the four pairs and purposes.
 
 The table below outlines the general information for the PIV credential certificates, certificate extensions, and design considerations.  All information is presented in human-readable formats.
 
 | Certificate              | Required  | Key Usage  |  Extended Key Usage  | Subject Alternative Name | Considerations |
 | -------------            |:----:      |:----:               |:----:               |:----:|  ----|
-| PIV Authentication       |Always      | Digital Signature            | Client Authentication           | otherName = FASC-N; uniformResourceIdentifier = UUID; Principal Name = _prefix_@_suffix_  | Principal Name values are **not** required by Policy to be present in all Subject Alternative Name extensions.  The UUID value is only required to be present for certificates issued on October 15, 2015 or later.  |
-| Card Authentication      |Always      | Digital Signature            | id-PIV-cardAuth            |  otherName = FASC-N; uniformResourceIdentifier = UUID|   The UUID value is only required to be present for certificates issued on October 15, 2015 or later. |
+| PIV Authentication       |Always      | Digital Signature            | Client Authentication           | otherName = FASC-N; uniformResourceIdentifier = UUID; Principal Name = _prefix_@_suffix_  | Principal Name values are **not** required by Policy to be present in all Subject Alternative Name extensions.  The Card UUID value is only required to be present for new or replacement PIV credentials issued after August 2014.  The Card UUID may also commonly be referred to as the Global Unique Identifier (GUID). |
+| Card Authentication      |Sometimes      | Digital Signature            | id-PIV-cardAuth            |  Name = FASC-N; uniformResourceIdentifier = UUID|   Card Authentication is required to be included in new and replacement PIV credentials issued after August 2014; it is not expected that **all** PIV credentials will have Card Authentication certificates until September 2019. The Card UUID value is only required to be present for new or replacement PIV credentials issued after August 2014. The Card UUID may also commonly be referred to as the Global Unique Identifier (GUID). |
 | Digital Signature        |Sometimes      | Digital Signature, Non-Repudiation            | _none required_            |  rfc822name = email address | Email address is **not** required by Policy. Email address may be multi-valued attributes and include email aliases. |
 | Encryption               |Sometimes      | Key Encipherment            | _none required_            |  rfc822name = email address |  Email address is **not** required by Policy. Multiple encryption certificates may be available representing the historical encryption key pairs available. |
 
@@ -70,7 +71,7 @@ Additional useful information:
 *  There has been testing in some infrastructures to migrate to Elliptic Curve Cryptography (ECC), but there are no ECC certificates in production as of the date of this guide
 *  There has been testing in some infrastructures for migration to 3072 bit (RSA) certificates, but there are no 3072 bit certificates in production as of the date of this guide
 
-In-depth details on the certificate profiles are contained in the current and historical Federal Public Key Infrastructure (FPKI) Policy documents.  The table below contains links to the most recent documents:
+In-depth details on the certificate profiles are contained in the current and historical Federal Public Key Infrastructure (FPKI) Policy documents.  This table contains links to the most recent documents:
 
 | Certificates    | Policy Update Date  | Link to Profile Information|
 | -------------            |:----:               |:----:|

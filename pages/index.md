@@ -6,7 +6,7 @@ permalink: /
 
 Welcome to the **Personal Identity Verification** (PIV) Guides! On these pages you will find information on how to implement common PIV configurations at your organization.  These guides are [open source](https://github.com/gsa/piv-guides) and a _work in progress_ and we [welcome contributions]({{ site.baseurl }}/contribute/) from our colleagues.
 
-The guides focus on using PIV credentials for _logical access_ such as authenticating to networks or applications, or digitally signing and encrypting.  Using PIV for _physical access_ will be covered under another section of the playbooks.
+The guides focus on using PIV credentials for _logical access_ such as authenticating to networks or applications, or digitally signing and encrypting.  Using PIV for _physical access_ will be covered under another section of guides.
 
 The information on this page provides introductory information.
 
@@ -44,23 +44,22 @@ Any system at your organization that requires heightened security for determinin
 
 #### What is in the PIV guides?
 
-You will find different kinds of pages in this Playbook.  First, we cover the basics of PIV credentials including:
+First, we cover the basics of PIV credentials including:
 
 1. What PIV is, contains and looks like
-1. The basics of using PIV credentials
+1. The basics of getting started with PIV credentials
 1. Using PIV for network authentication (smartcard logon)
 
-We also have sections for Developer Guides and User Guides.  We want you to contribute to both of these sections and share lessons learned when configuring systems or applications, tuning considerations, **code**, common challenges, troubleshooting errors, and any information you think is helpful for your colleagues.
+We also have sections for Applications, Developer Guides and User Guides.  All these guides need your contributions.  We want you to contribute and share lessons learned when configuring systems or applications, tuning considerations, **code**, common challenges, troubleshooting errors, and any information you think is helpful for your colleagues.  
 
 #### Where can I find the Standards?
 
-If you are simply interested in PIV credentials or working on _using_ PIV credentials, you should review pages on this site and other online resources.
+If you are interested in PIV credentials or working on _using_ PIV credentials, you should review pages on this site and other online resources.
 
-If you are really interested in the bits and bytes of PIV credentials, you can review the Standards. The Standards are best to review if you develop products such as hardware or software that are _specific_ to PIV credentials for the US Federal Government.  However, for most users, engineers or developers, the Standards may seem overwhelming and will be too detailed for your needs.
+If you are really interested in the bits and bytes of PIV credentials, you can review the Standards. The Standards are best to review if you develop products such as hardware or software that are _specific_ to PIV credentials for the US Federal Government.  However, for most users and engineers, the Standards may seem overwhelming and will be too detailed for your needs.
 
-To review the Standards, below are links to some of the Standards documentation:
+To review the Standards, there is a [NIST website](http://csrc.nist.gov/groups/SNS/piv/standards.html) with all PIV related Standards.  Below are links to some of the most common Standards:
 
 - **[FIPS-201](http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.201-2.pdf)** specifies the issuance and management of PIV credentials.
-- **[NIST Special Publication 800-73, "Interfaces for Personal Identity Verification"](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-73-4.pdf)** specifies the interface and data elements of PIV cards.
-- **[NIST Special Publication 800-76, "Biometric Data Specification for Personal Identity Verification"](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-76-2.pdf)** specifies the technical acquisition and formatting requirements for biometric data of the PIV system.
-- **[NIST Special Publication 800-78, "Cryptographic Algorithms and Key Sizes for Personal Identity Verification"](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-78-4.pdf)** specifies the acceptable cryptographic algorithms and key sizes to be implemented and used for the PIV system.
+- **[NIST Special Publication 800-73, "Interfaces for Personal Identity Verification"](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-73-4.pdf)** specifies the interface and data elements of PIV credentials.
+- **[NIST Special Publication 800-76, "Biometric Data Specification for Personal Identity Verification"](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-76-2.pdf)** specifies the technical acquisition and formatting requirements for biometric data of PIV credentials.

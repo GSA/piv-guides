@@ -19,10 +19,10 @@ There are two main categories for the features of a PIV credential: [_physical_ 
 An example of a PIV credential can be seen to the right. The image shows the standard placement for components such as photograph, name, affiliation, expiration date, organization, and the **chip**. PIV credentials also contain at least one security feature that aids in reducing counterfeiting, is resistant to tampering, and provides visual evidence of tampering attempts such as optical varying structures or inks, laser etching, holographic images, and watermarks.
 
 #### Logical Elements
-So what is the chip on your PIV credential?  In the easiest terms: it is a little computer!  It holds information **very securely** and can process data.  The chip is also called a _secure element_.
+So what is the chip on your PIV credential?  In the easiest terms: it is a computer.  It holds information **very securely** and can process data.  The chip is also called a _secure element_.
 
->  _Have you noticed your debit or credit cards have similar chips? Do you have a smartphone with a SIM card?
->  These are both examples of similar technology that we use every day in our daily lives and help us secure information.  Now, you can't use your PIV credential to withdraw money, nor can you use your debit card to login to your computer or Federal applications - but you can see how similar technology is used every day._
+>  _Have you noticed your debit or credit cards have similar chips? Do you have a smartphone with a SIM card?  
+>  These are both examples of similar technology that we use every day in our daily lives and help us secure information.  You can't use your PIV credential to withdraw money, nor do you use your debit card to login to your computer or Federal applications - but you can see how similar technology is used every day._
 
 Most applications that use PIV credentials leverage information stored on the chip and we call this information the _logical elements_.  These elements are defined in the [NIST Special Publication 800-73 series document.](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-73-4.pdf)
 
