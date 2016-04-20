@@ -11,7 +11,7 @@ permalink: /details/
 </div>
 
 
-This section will help you view the data stored on the PIV credential, and information about the certificates, In this section, we focus on the simple methods for:
+This section will help you view the data stored on the PIV credential, and information about the certificates.  We identify the simple methods for:
 
 1.  [Viewing your PIV credential certificates](#viewing-your-piv-credential-certificates)
 1.  [Exporting PIV certificates](#exporting-piv-certificates)

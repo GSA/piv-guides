@@ -51,14 +51,35 @@ Installation of the trusted root certificate and intermediate certificates is de
 
 #### Download root and intermediate certificates
 
-Download Federal Common Policy Certificate Authority (COMMON) root certificate
+The Federal Common Policy Certificate Authority (COMMON) root certificate can be retrieved via two methods: online or out of band.  We recommend requesting the root certificate using the out of band (email) method for engineers working in production environments.
 
-1. COMMON can be downloaded from this website:
+1. Out-of-band email:
+  * Send an email to fpki-help at gsa dot gov
+  * Subject line: _Common root needed_
+  * Please _digitally sign_ the email if you have the capabilities available; if not, the request will still be received and processed
+  * A signed version of the certificate or email will be sent back to you
+
+
+2. Online site:
   * http://http.fpki.gov/fcpca/fcpca.crt
   * cn=Federal Common Policy CA, ou=FPKI, o=U.S. Government, c=US
   * SHA1 Hash: 90 5f 94 2f d9 f2 8f 67 9b 37 81 80 fd 4f 84 63 47 f6 45 c1
-  * Verify the hash matches the one listed above
 
+Verify the hash of the fcpca.crt file matches the one listed above before using.  If the hash does not match, do NOT use the certificate file and please use the out-of-band email method.
+
+You can verify the hash using common utilities on operating systems.  Three examples are included below:
+
+```
+certutil -hashfile fcpca.crt SHA1
+```
+
+```
+openssl dgst -sha1 fcpca.crt
+```
+
+```
+sha1sum fcpca.crt
+```
 
 Download any additional Intermediate Certificate Authority certificates
 
