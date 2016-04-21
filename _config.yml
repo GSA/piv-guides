@@ -14,7 +14,7 @@ branch: master
 logourl: /piv-guides/img/logo.png
 logoalt: Federal Identity Credential and Access Management
 
-ficam_playbooks_url: /ficam-guides/
+#ficam_playbooks_url: /ficam-guides/
 
 # Repo list
 # List repos that you would like to appear on the homepage here
