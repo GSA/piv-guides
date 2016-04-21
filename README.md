@@ -1,7 +1,11 @@
 This work is in early Alpha stage and is led by the GSA FICAM Program in coordination with the ICAM Subcommittee of the Federal CIO Council.
 
-# FICAM Playbooks
-This repository is for the collaborative development of the Federal Identity, Credential, and Access Management PIV Playbooks and Guides.  This repository is for information and step-by-step guidance on how to use and enable applications to use PIV.  We are always looking for contributions - in the form of lessons learned, code, scripts, how-to guides, and links to government or open source repositories with handy tools.  
+# FICAM Guides
+This repository is for the collaborative development of the Federal Identity, Credential, and Access Management **PIV Guides**:   
+
+*  information and step-by-step guidance on how to use and enable applications to use PIV.  
+
+Please consider contributing your lessons learned, code, scripts, how-to guides, and links to government or open source repositories with handy tools.  
 
 ## General Practices
 This content is Vendor neutral. Marketing materials for Commercial Products should not be submitted. If you would like to contribute a page or content which includes Commercial Products and a specific references for development and engineering, please review the Commercial Product trademark or copyright guides from the Product Vendor and reference those guides in your Pull Request.  
@@ -10,7 +14,7 @@ This content is Vendor neutral. Marketing materials for Commercial Products shou
 Contributors should consider the audience when submitting content. Plain language benefits a broad audience. Review your proposed content for use of acronyms and specialized jargon before submitting.
 
 ## How to Contribute
-For information on how to contribute to the site, visit the Contribute page [here]({{site.baseurl}}/contribute.md/). The source repository exists [here](https://github.com/GSA/piv-guides/). 
+For information on how to contribute to the site, review [Contributing](CONTRIBUTING.md/). The source repository exists [here](https://github.com/GSA/piv-guides/). 
 
 Direct changes and line edits to the content may be submitted through a pull request by clicking 'Edit this page'. You do not need to install any software to submit content. You can use GitHub's in-browser editor to edit files and submit a pull request for your changes to be merged.
 
@@ -23,6 +27,6 @@ This project is in the worldwide [public domain](LICENSE.md).
 > All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to comply with this waiver of copyright interest.
 
 ### Special Thanks
-This site is based on GitHub Pages and Jekyll templates. The templates are based on [DOCter](https://github.com/cfpb/docter/) from [CFPB](http://cfpb.github.io/).  
+This site is based on GitHub Pages and Jekyll templates. 
 
 Special thanks to the teams at [18F](https://18f.gsa.gov/), [18F Pages](https://pages.18f.gov/), and [US Digital Services Playbooks](https://playbook.cio.gov/) for their open and transparent model which benefits citizens, government, and technology.

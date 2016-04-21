@@ -1,12 +1,28 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta charset="utf-8"/>
+  <title>
+    {% if page.title == null %}
+      {{ site.name }}
+    {% else %}
+      {{ page.title }} - {{ site.name }}
+    {% endif %}
+  </title>
+  <meta name="viewport" content="width=device-width"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/normalize.css"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/syntax.css"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/jquery-ui.min.css"/>
+  <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico?"/>
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<script src="{{ site.baseurl }}/assets/js/jquery-1.11.2.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/accordion.js"></script>
+<script src="{{ site.baseurl }}/assets/js/jquery-ui.min.js"></script>
 
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/respond.min.js"></script>
+  <![endif]-->
+
 </head>

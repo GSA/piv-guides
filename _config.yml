@@ -6,9 +6,7 @@ author:
     name: FICAM
 description: PIV Guidance
 baseurl: '/piv-guides'
-#url: "http://yourdomain.com" # the base hostname & protocol for your site
-#twitter_username: jekyllrb
-github_username:  lachellel
+
 highlighter: rouge
 branch: master
 
@@ -23,10 +21,18 @@ ficam_playbooks_url: /ficam-guides/
 repos:
 - name: piv-guides
   description: FICAM Playbook - PIV Guidance
-  url: https://github.com/gsa/piv-guides
+  url: https://github.com/GSA/piv-guides
+
+# Sidebar uses a single github repository to link to issues.
+github:
+  repository_url: https://github.com/GSA/piv-guides
 
 # Build settings
 markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 exclude:
 - bin
@@ -42,81 +48,58 @@ exclude:
 
 navigation:
 - text: Introduction
-  url: index.html
+  url: ''
   internal: true
   coll: false
-- text: Elements of a PIV Card
+- text: Basics of a PIV Credential
   url: elements
   internal: true
   coll: false
-#- text: PIV Infrastructure
-#  url: boxes
-#  internal: true
-#  coll: false
-#- text: PIV Authentication Mechanisms
-#  url: authen
-#  internal: true
-#  coll: false
-#- text: How do I enable Microsoft AD for Admin access?
-#  url: 4_adadmin
-#  internal: true
-#  coll: false
-#- text: How do I enable a domain to assert assurance in AD?
-#  url: 5_domainassert
-#  internal: true
-#  coll: false
-#- text: How do I enable Firefox to allow the use of PIV/CAC?
-#  url: 6_firefox
-#  internal: true
-#  coll: false
-#- text: How do I enable Internet Explorer to allow the use of PIV/CAC?
-#  url: 7_ie
-#  internal: true
-#  coll: false
-#- text: How do I enable Chrome to allow the use of PIV/CAC?
-#  url: 8_chrome
-#  internal: true
-#  coll: false
-#- text: How do I validate trust stores on a Windows platform?
-#  url: 9_trustwindows
-#  internal: true
-#  coll: false
-#- text: How do I validate trust stores on a Mac platform?
-#  url: 10_trustmac
-#  internal: true
-#  coll: false
-#- text: How do I enable PIV/CAC for SSH to a Unix-like system?
-#  url: 11_ssh
-#  internal: true
-#  coll: false
-#- text: How do I enable Remote Desktop Protocol (RDP) to allow PIV/CAC?
-#  url: 12_rdp
-#  internal: true
-#  coll: false
-#- text: How do I use PIV/CAC with a mainframe?
-#  url: 13_mainframe
-#  internal: true
-#  coll: false
-#- text: How do I enable a website to use PIV/CAC?
-#  url: 14_website
-#  internal: true
-#  coll: false
+- text: Getting Started
+  url: start
+  internal: true
+  coll: false
+- text: Details of a PIV Credential
+  url: details
+  internal: true
+  coll: false
+- text: Identifiers in a PIV Credential
+  url: identifiers
+  internal: true
+  coll: false
+- text: Certificate Trust for a PIV Credential
+  url: pivcertchains
+  internal: true
+  coll: false
+- text: Network Authentication
+  url: networkconfig/
+  internal: true
+  coll: true
+  collname: networkconfig
 - text: Developer Guides
-  url: devconfig/index/
+  url: devconfig/
   internal: true
   coll: true
   collname: devconfig
 - text: User Guides
-  url: userconfig/index/
+  url: userconfig/
   internal: true
   coll: true
   collname: userconfig
+#- text: Script and Code Samples
+#  url: code
+#  internal: true
+#  coll: false
 - text: Contribute
   url: contribute
   internal: true
   coll: false
 
 collections:
+  networkconfig:
+    label: "Network Authentication"
+    permalink: /networkconfig/:path/
+    output: true
   userconfig:
     label: "User Guides"
     permalink: /userconfig/:path/
