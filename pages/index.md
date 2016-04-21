@@ -16,8 +16,6 @@ The information on this page provides introductory information.
 1. [What is in the PIV Guides?](#what-is-in-the-piv-guides)
 1. [Where can I find the Standards?](#where-can-i-find-the-standards)
 
-You can also return to the [main FICAM playbook](/ficam-guides/).
-
 #### What is PIV?
 
 A Personal Identity Verification (PIV) credential is a US Federal government-wide credential used to access Federally controlled facilities and information systems at the appropriate security level.
