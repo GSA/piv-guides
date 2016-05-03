@@ -13,6 +13,24 @@ This content is Vendor neutral. Marketing materials for Commercial Products shou
 ## Plain Language
 Contributors should consider the audience when submitting content. Plain language benefits a broad audience. Review your proposed content for use of acronyms and specialized jargon before submitting.
 
+## Roadmap 
+The expected roadmap for these guides:
+
+April 2016 - September 2016  
+1. Collection of baseline best practices, code, configurations  
+2. Network first  
+3. Applications and patterns  
+4. Developer tools and tips  
+5. User tools and tips  
+
+October 2016 - December 2016  
+1.  On-going contributions and collections  
+2.  Deploy to server with a proxy, migrate to *.idmanagement.gov domain  
+3.  Contributions and submissions continue and feed continuous deployments  
+4.  All code contributions and scripts stay in repository  
+
+
+
 ## How to Contribute
 For information on how to contribute to the site, review [Contributing](CONTRIBUTING.md/). The source repository exists [here](https://github.com/GSA/piv-guides/). 
 
