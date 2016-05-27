@@ -22,7 +22,7 @@ You need to publish the Federal Common Policy Certificate Authority (COMMON) [ro
 
 For Microsoft and Apple, the COMMON certificate is included as a trusted root certificate authority by default.  However, you may have your network and devices configured to not automatically update trusted root certificates published by any commercial trust stores.  
 
-You want to add the COMMON [root certificate](../pivcertchains/#download-root-and-intermediate-certificates) to a group policy object or automated configuration management tools to publish COMMON as a _trusted root_ for all your devices used to access the network, servers joined to the network, and all domain controllers.
+You want to add COMMON [root certificate](../pivcertchains/#download-root-and-intermediate-certificates) to a Group Policy Object to publish COMMON as a _trusted root_ for ALL the devices and user objects. 
 
 #### NTAuth Enterprise Trust Store
 The _NTAuth_ enterprise trust store is used by your network domain to determine which certificate authorities to trust specifically for authenticating users to the network.  To understand the difference between the typical Trust Stores and NTAuth, you may want to think of NTAuth as an _explicit trust list_ of certificate authorities used for network authentication.
@@ -36,9 +36,21 @@ There are two very different options for what certificate authority certificates
 | NTAuth  | altSecurityIdentities _not using_ Issuer+Subject as identifier | COMMON and ALL Intermediate Certificate Authority certificates | If your agency needs the ability to accept any PIV credentials for network authentication and has users with PIV credentials issued by another agency or partner, you will need to include all possible Intermediate Certificate Authority certificates. |
 
 
+To publish a certificate to NTAuth, you can use either a group policy object (recommended) OR the certutil tool.  
 
-To publish a certificate to NTAuth, you can use either a group policy object (recommended) or the certutil tool.  If using certutil, you will need to have Enterprise Admin permissions for the domain.
+Using **certutil**, you will need to have Enterprise Admin permissions for the domain.  
 
+To publish / add a certificate to NTAuth:
 ```
 certutil –dspublish –f certificate_to_publish.cer NTAuthCA
+```
+
+To view all certificates in NTAuth:
+```
+certutil –viewstore –enterprise NTAuth
+```
+
+To propagate from the domain controller to the enterprise, you'll want to do a _gpupdate_:
+```
+gpupdate /force
 ```
