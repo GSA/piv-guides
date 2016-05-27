@@ -40,17 +40,17 @@ To publish a certificate to NTAuth, you can use either a group policy object (re
 
 Using **certutil**, you will need to have Enterprise Admin permissions for the domain.  
 
-To publish / add a certificate to NTAuth:
+To publish / add a certificate to NTAuth:  
 ```
 certutil –dspublish –f certificate_to_publish.cer NTAuthCA
 ```
 
-To view all certificates in NTAuth:
+To view all certificates in NTAuth:  
 ```
 certutil –viewstore –enterprise NTAuth
 ```
 
-To propagate from the domain controller to the enterprise, you'll want to do a _gpupdate_:
+To propagate from the domain controller to the enterprise, you'll want to do a _gpupdate_:  
 ```
 gpupdate /force
 ```
