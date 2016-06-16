@@ -10,7 +10,7 @@ permalink: networkconfig/trustedroots/
 </div>
 </div>
 
-You want your network domain to trust your users and their PIV credentials.  Your workstations and server also need to be able to trust the network domain.  Trust and certificate chains are reviewed in the [Certificate Trust](../pivcertchains) overview and this page includes information on configuring your network domain.
+You want your network domain to trust your users and their PIV credentials.  Your workstations and server also need to be able to trust the network domain.  Trust and certificate chains are reviewed in the [Certificate Trust](../../pivcertchains) overview and this page includes information on configuring your network domain.
 
 There are two Trust stores to consider for your network domain:
 
@@ -18,11 +18,11 @@ There are two Trust stores to consider for your network domain:
 2.  [NTAuth Enterprise Trust Store](#ntauth-enterprise-trust-store)
 
 ####  Trusted Root Certificate Authorities
-You need to publish the Federal Common Policy Certificate Authority (COMMON) [root certificate](../pivcertchains/#download-root-and-intermediate-certificates) to the trusted root certificate authority trust stores on all your workstations, devices, servers and domain controllers.  
+You need to publish the Federal Common Policy Certificate Authority (COMMON) [root certificate](../../pivcertchains/#download-root-and-intermediate-certificates) to the trusted root certificate authority trust stores on all your workstations, devices, servers and domain controllers.  
 
 For Microsoft and Apple, the COMMON certificate is included as a trusted root certificate authority by default.  However, you may have your network and devices configured to not automatically update trusted root certificates published by any commercial trust stores.  
 
-You want to add COMMON [root certificate](../pivcertchains/#download-root-and-intermediate-certificates) to a Group Policy Object to publish COMMON as a _trusted root_ for ALL the devices and user objects. 
+You want to add COMMON [root certificate](../../pivcertchains/#download-root-and-intermediate-certificates) to a Group Policy Object to publish COMMON as a _trusted root_ for ALL the devices and user objects. 
 
 #### NTAuth Enterprise Trust Store
 The _NTAuth_ enterprise trust store is used by your network domain to determine which certificate authorities to trust specifically for authenticating users to the network.  To understand the difference between the typical Trust Stores and NTAuth, you may want to think of NTAuth as an _explicit trust list_ of certificate authorities used for network authentication.
