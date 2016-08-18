@@ -61,15 +61,15 @@ As administrator, run the following PowerShell commands on the domain controller
     #Create OU O365 in Active Directory Users and Computers
     New-ADOrganizationalUnit -Name O365 -Path "DC=Foobar,DC=COM"
     #Create an OU in Active Directory Users and Computers
-    New-ADOrganizationalUnit -Name ADFS -Path "DC= Foobar,DC=COM"
+    New-ADOrganizationalUnit -Name ADFS -Path "DC=Foobar,DC=COM"
     #Create KDS root key
     Add-KdsRootKey -EffectiveTime ((get-date).addhours(-10))
     #Create group managed service account
     New-ADServiceAccount gMSAcct01 -DNSHostName yourhost.Foobar.com
     #Create a group policy for ADFS OU and link to ADFS OU
-    New-gpo -name ADFS_GPO | new-gplink -target "ou=ADFS, DC= Foobar,DC=COM"  
+    New-gpo -name ADFS_GPO | new-gplink -target "ou=ADFS,DC=Foobar,DC=COM"  
 ```
-
+  
 #####Group Policy setup
 * Edit the group policy you just added, _ADFS_GPO_.
 * Disable third party roots:  
