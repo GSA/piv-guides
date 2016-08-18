@@ -110,8 +110,10 @@ Azure Active Directory PowerShell
 $credential = Get-Credential  
 Import-Module MsOnline  
 Connect-MsolService -Credential $credential  
-#This will add the domain to Office365; if domain already exists in Office 365 then use PowerShell ```cmdlet Update-MSOLFederatedDomain``` instead of ```New-MSOLFederatedDomain```)
+#This will add the domain to Office365
 New-MSOLFederatedDomain -DomainName .foobar.com  
+#If domain already exists in Office 365 then comment the previous line and uncomment the following:
+#Update-MSOLFederatedDomain
 Get-msoldomain  (should show the domain is Federated with Office 365)
 ```
 Open ADFS Management and set authentication method to only certificate authentication under Authentication Policies 
