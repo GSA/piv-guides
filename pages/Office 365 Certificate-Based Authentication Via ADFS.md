@@ -29,23 +29,23 @@ Note: This document does not cover ADFS proxy server scenario or Office 365 acco
 #####Active Directory Certificate Name Mapping Operation:
 A user presents a certificate to ADFS as part of authentication, and ADFS looks at the name mappings in AD to determine which user account should be logged on. If the certificate has a user principal name (UPN) the UPN is used to resolve the user account in AD. If there is no UPN, then the certificate's Distinguished Name is used.  
 
-Perform the following operations on the Domain Controller.  
-* Open MMC and add the _Certificates_ snap-in for the _Local User_, and select _Personal->Certificates_  
-* Find the user ID certificate, right click _All tasks->Export_. This opens the _Certificate Export_ Wizard  
-* Select _Next_ three times  
-* Browse to a folder, enter a file name, and select _Finish_  
-* Using Windows Explorer, navigate to the folder location of the saved certificate.  
-* Open the saved certificate, click on the _Certification Path_ tab, highlight the next certificate up from the user certificate, and click _View Certificate_.  
-* On that certificate select the _Details_ tab and click _Copy to File_ which opens the _Certificate Export Wizard_.  
-* Complete the wizard for that certificate and each certificate above it until all of the certificates in the path have been saved as unique file names.  
+1. Perform the following operations on the Domain Controller.  
+    * Open MMC and add the _Certificates_ snap-in for the _Local User_, and select _Personal->Certificates_  
+    * Find the user ID certificate, right click _All tasks->Export_. This opens the _Certificate Export_ Wizard  
+    * Select _Next_ three times  
+    * Browse to a folder, enter a file name, and select _Finish_  
+    * Using Windows Explorer, navigate to the folder location of the saved certificate.  
+    * Open the saved certificate, click on the _Certification Path_ tab, highlight the next certificate up from the user certificate, and click _View Certificate_.  
+    * On that certificate select the _Details_ tab and click _Copy to File_ which opens the _Certificate Export Wizard_.  
+    * Complete the wizard for that certificate and each certificate above it until all of the certificates in the path have been saved as unique file names.  
 
-| | |
-|---|---|
-|![Example of discovered trust path](../img/trustpathexample.png)|The first Sub CA above the leaf is the _leaf issuer_.|
-|![valid certificate path](../img/valideecert.png)|![Invalid certificate path](../img/invalideecert.png)|
-|Valid trust path|Invalid trust path|
-
-Note: If the user certificate does not have a valid certificate path then stop and fix the trust path before continuing. 
+    | | |
+    |---|---|
+    |![Example of discovered trust path](../img/trustpathexample.png)|The first Sub CA above the leaf is the _leaf issuer_.|
+    |![valid certificate path](../img/valideecert.png)|![Invalid certificate path](../img/invalideecert.png)|
+    |Valid trust path|Invalid trust path|
+    
+    Note: If the user certificate does not have a valid certificate path then stop and fix the trust path before continuing. 
 
 ####AD PKI Setup on the domain controller
 1. Add the user's PIV auth cert (Leaf) into name mapping for the user in O365 OU in AD
@@ -56,7 +56,8 @@ Note: If the user certificate does not have a valid certificate path then stop a
     certutil -f -dspublish certfile3.cer subca
     certutil -f -dspublish certfile4.cer NTAuthca  
 ```
-As administrator, run the following PowerShell commands on the domain controller:  
+1. As administrator, run the following PowerShell commands on the domain controller:  
+
 ```powershell
     #Create OU O365 in Active Directory Users and Computers
     New-ADOrganizationalUnit -Name O365 -Path "DC=Foobar,DC=COM"
@@ -69,7 +70,6 @@ As administrator, run the following PowerShell commands on the domain controller
     #Create a group policy for ADFS OU and link to ADFS OU
     New-gpo -name ADFS_GPO | new-gplink -target "ou=ADFS,DC=Foobar,DC=COM"  
 ```
-  
 #####Group Policy setup
 * Edit the group policy you just added, _ADFS_GPO_.
 * Disable third party roots:  
@@ -92,8 +92,8 @@ As administrator, run the following PowerShell commands on the domain controller
 #####Prerequisites:
 The system where ADFS is installed must be domain-joined.
 The internal name for the ADFS server _must not_ match the external name on the certificate as in these examples:
-* `adfs.foobar.local` and `adfs.foobar.com`
-* `fs.foobar.com` and `adfs.foobar.com`
+    `adfs.foobar.local` and `adfs.foobar.com`
+    `fs.foobar.com` and `adfs.foobar.com`
 
 Plan the number of ADFS servers according to the Microsoft Azure article, [Plan your AD FS deployment](https://msdn.microsoft.com/en-us/library/azure/dn151324.aspx).  
  
@@ -103,24 +103,24 @@ Download and install on the system running ADFS in the order below. :
 1. [Windows Azure Active Directory Module for Windows PowerShell](http://go.microsoft.com/fwlink/p/?linkid=236297) (for running a PowerShell script).
 
 #####Federation to Office365
-Run these commands on the ADFS system using _Windows Azure Active Directory Module for Windows PowerShell_.  
+1. Run these commands on the ADFS system using _Windows Azure Active Directory Module for Windows PowerShell_.  
 ```dos
-Azure Active Directory PowerShell
+    Azure Active Directory PowerShell
 ```
 ```powershell
-$credential = Get-Credential  
-Import-Module MsOnline  
-Connect-MsolService -Credential $credential  
-#This will add the domain to Office365
-New-MSOLFederatedDomain -DomainName foobar.com  
-#If domain already exists in Office 365 then comment the previous line and uncomment the following:
-#Update-MSOLFederatedDomain -DomainName foobar.com
-Get-msoldomain
-#This should show the domain is Federated with Office 365
+    $credential = Get-Credential  
+    Import-Module MsOnline  
+    Connect-MsolService -Credential $credential  
+    #This will add the domain to Office365
+    New-MSOLFederatedDomain -DomainName foobar.com  
+    #If domain already exists in Office 365 then comment the previous line and uncomment the following:
+    #Update-MSOLFederatedDomain -DomainName foobar.com
+    Get-msoldomain
+    #This should show the domain is Federated with Office 365
 ```
-* Open _ADFS Management_ and set authentication method to only certificate authentication under _Authentication Policies_  
-* For large organizations, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on a member server in the domain  on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.    
-* For small organizations or small directories, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.  
+2. Open _ADFS Management_ and set authentication method to only certificate authentication under _Authentication Policies_  
+    * For large organizations, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on a member server in the domain  on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.    
+    * For small organizations or small directories, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.  
 
 #####Firewall
 1. Configure firewall to Allow Inbound to ADFS TCP 443 & 49443  
