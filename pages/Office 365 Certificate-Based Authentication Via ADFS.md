@@ -118,7 +118,7 @@ Download and install on the system running ADFS in the order below. :
     Get-msoldomain
     #This should show the domain is Federated with Office 365
 ```
-2. Open _ADFS Management_ and set authentication method to only certificate authentication under _Authentication Policies_  
+1. Open _ADFS Management_ and set authentication method to only certificate authentication under _Authentication Policies_  
     * For large organizations, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on a member server in the domain  on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.    
     * For small organizations or small directories, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.  
 
