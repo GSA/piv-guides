@@ -35,11 +35,11 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
     * Open MMC and add the _Certificates_ snap-in for the _Local User_, and select _Personal->Certificates_  
     * Find the user ID certificate, right click _All tasks->Export_. This opens the _Certificate Export_ Wizard  
     * Select _Next_ three times  
-    * Browse to a folder, enter a file name, and select _Finish_  
+    * Browse to a folder, enter a unique file name, and select _Finish_  
     * Using Windows Explorer, navigate to the folder location of the saved certificate.  
     * Open the saved certificate, click on the _Certification Path_ tab, highlight the next certificate up from the user certificate, and click _View Certificate_.  
     * On that certificate select the _Details_ tab and click _Copy to File_ which opens the _Certificate Export Wizard_.  
-    * Complete the wizard for that certificate and each certificate above it until all of the certificates in the path have been saved as unique file names.  
+    * Complete the wizard for that certificate and each certificate above it until all of the certificates in the path have been saved as _unique file names_.  
 
     | | |
     |---|---|
