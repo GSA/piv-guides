@@ -21,16 +21,15 @@ Note: This document does not cover ADFS proxy server scenario or Office 365 acco
 * Acquire from a public Certificate Authority a certificate with a DNS name which matches the DNS name you have registered in DNS (adfs.foobar.com).  
 
 ####Install Active Directory server
+
 #####Active Directory/Domain preparations
+* If the user account has a non-routable domain suffix then add an alternate suffix if necessary in AD _Domains and Trusts_ for the alternate UPN.  
+* We recommend you have an OU filter plan before synchronizing to the cloud. In this document we have created an OU named O365 above using PowerShell for easy OU filtering and sync to the cloud. Then we move users into O365 OU for clean synchronization to the cloud.  
 
-  
-If the user account has a non-routable domain suffix then add an alternate suffix if necessary in AD _Domains and Trusts_ for the alternate UPN.  
-
-We recommend you have an OU filter plan before synchronizing to the cloud. In this document we have created an OU named O365 above using PowerShell for easy OU filtering and sync to the cloud. Then we move users into O365 OU for clean synchronization to the cloud.
-#####AD Certificate Name Mapping Operation:
+#####Active Directory Certificate Name Mapping Operation:
 A user presents a certificate to ADFS as part of authentication, and ADFS looks at the name mappings in AD to determine which user account should be logged on. If the certificate has a user principal name (UPN) the UPN is used to resolve the user account in AD. If there is no UPN, then the certificate's Distinguished Name is used.  
-Perform the following operations on the Domain Controller. <-
 
+Perform the following operations on the Domain Controller.  
 * Open MMC and add the _Certificates_ snap-in for the _Local User_, and select _Personal->Certificates_  
 * Find the user ID certificate, right click _All tasks->Export_. This opens the _Certificate Export_ Wizard  
 * Select _Next_ three times  
@@ -92,8 +91,8 @@ As administrator, run the following PowerShell commands on the domain controller
 #####Prerequisites:
 The system where ADFS is installed must be domain-joined.
 The internal name for the ADFS server _must not_ match the external name on the certificate as in these examples:
-* adfs.foobar.local and adfs.foobar.com
-* fs.foobar.com and adfs.foobar.com
+* `adfs.foobar.local` and `adfs.foobar.com`
+* `fs.foobar.com` and `adfs.foobar.com`
 
 Plan the number of ADFS servers according to the Microsoft Azure article, [Plan your AD FS deployment](https://msdn.microsoft.com/en-us/library/azure/dn151324.aspx).  
  
