@@ -119,14 +119,12 @@ Get-msoldomain
 #This should show the domain is Federated with Office 365
 ```
 * Open _ADFS Management_ and set authentication method to only certificate authentication under _Authentication Policies_  
-
-* For large organizations, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the member server in the domain:  
-
+* For large organizations, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on a member server in the domain  on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.    
 * For small organizations or small directories, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.  
 
-#####Firewall rules
-1. Allow Inbound to ADFS TCP 443 & 49443  
-1. Move all ADFS servers into ADFS OU in _Active Directory Users and Computers_  
+#####Firewall
+1. Configure firewall to Allow Inbound to ADFS TCP 443 & 49443  
 
-#####Group updates
+#####Group policy enforcement updates
+1. Move all ADFS servers into ADFS OU in _Active Directory Users and Computers_  
 1. From an Administrator command prompt, run `gpupdate /force` on the ADFS server.
