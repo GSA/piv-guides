@@ -23,13 +23,15 @@ Note: This document does not cover ADFS proxy server scenario or Office 365 acco
 ####Install Active Directory server
 
 #####Active Directory/Domain preparations
-* If the user account has a non-routable domain suffix then add an alternate suffix if necessary in AD _Domains and Trusts_ for the alternate UPN.  
-* We recommend you have an OU filter plan before synchronizing to the cloud. In this document we will be creating an OU named O365 using PowerShell for easy OU filtering and sync to the cloud. Then we move users into O365 OU for clean synchronization to the cloud.  
+1. If the user account has a non-routable domain suffix then add an alternate suffix if necessary in AD _Domains and Trusts_ for the alternate UPN.  
+1. We recommend you have an OU filter plan before synchronizing to the cloud. In this document we will be creating an OU named O365 using PowerShell for easy OU filtering and sync to the cloud. Then we move users into O365 OU for clean synchronization to the cloud.  
 
 #####Active Directory Certificate Name Mapping Operation:
 A user presents a certificate to ADFS as part of authentication, and ADFS looks at the name mappings in AD to determine which user account should be logged on. If the certificate has a user principal name (UPN) the UPN is used to resolve the user account in AD. If there is no UPN, then the certificate's Distinguished Name is used.  
 
-1. Perform the following operations on the Domain Controller.  
+1. [Map a Certificate to a User Account](https://technet.microsoft.com/en-us/library/cc754866\(v=ws.11\).aspx).  
+
+1. Perform the following operations while logged on as an Enterprise Administrator:  
     * Open MMC and add the _Certificates_ snap-in for the _Local User_, and select _Personal->Certificates_  
     * Find the user ID certificate, right click _All tasks->Export_. This opens the _Certificate Export_ Wizard  
     * Select _Next_ three times  
@@ -49,16 +51,18 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
 
 ####AD PKI Setup on the domain controller
 1. Add the user's PIV auth cert (Leaf) into name mapping for the user in O365 OU in AD
-1. As Enterprise Admin, run the following from an elevated command prompt, where `certfile0..9` is the name of one of the exported certificate files.  
-```bat
+
+1. Logged in as Enterprise Administrator, run the following from an elevated command prompt, where `certfile0..9` is the name of one of the exported certificate files.  
+    ```bat
     certutil -f -dspublish certfile1.cer rootca  
     certutil -f -dspublish certfile2.cer subca
     certutil -f -dspublish certfile3.cer subca
     certutil -f -dspublish certfile4.cer NTAuthca  
-```
-1. As administrator, run the following PowerShell commands on the domain controller:  
+    ```
 
-```powershell
+1. Run the following PowerShell commands on the domain controller: 
+
+    ```powershell
     #Create OU O365 in Active Directory Users and Computers
     New-ADOrganizationalUnit -Name O365 -Path "DC=Foobar,DC=COM"
     #Create an OU in Active Directory Users and Computers
@@ -69,24 +73,25 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
     New-ADServiceAccount gMSAcct01 -DNSHostName yourhost.Foobar.com
     #Create a group policy for ADFS OU and link to ADFS OU
     New-gpo -name ADFS_GPO | new-gplink -target "ou=ADFS,DC=Foobar,DC=COM"  
-```
+    ```  
+
 #####Group Policy setup
-* Edit the group policy you just added, _ADFS_GPO_.
-* Disable third party roots:  
-   1. Navigate to the computer configuration>policies>windows setting>security setting>public key policies.  
-   1. Open the Path Validation setting object.  
-   1. Check the _Define these settings_ checkbox.  
-   1. Select the _only Enterprise root CAs_ radio button
-* Confirm the policy is active.  
-* Set _SendTrustedIssuerList_ in registry
-   1. Navigate to the computer _Configuration->Preferences->Windows Setting->Registry_  
-   1. Right-click and select _New->Registry Item_  
-      * Action: Update  
-      * Hive:  HKLM  
-      * Path:  SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL  
-      * Value Name:  SendTrustedIssuerList  
-      * Value type:  REG_DWORD  
-      * Value Data: (0) Hex  
+1. Edit the group policy you just added, _ADFS_GPO_.
+1. Disable third party roots:  
+    * Navigate to the computer configuration>policies>windows setting>security setting>public key policies.  
+    * Open the _Path Validation_ setting object.  
+    * Check the _Define these settings_ checkbox.  
+    * Select the _only Enterprise root CAs_ radio button
+1. Confirm the policy is active.  
+1. Set _SendTrustedIssuerList_ in registry
+    * Navigate to the computer _Configuration->Preferences->Windows Setting->Registry_  
+    * Right-click and select _New->Registry Item_  
+       i. Action: Update  
+      ii. Hive:  HKLM  
+     iii. Path:  SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL  
+      iv. Value Name:  SendTrustedIssuerList  
+       v. Value type:  REG_DWORD  
+      vi. Value Data: (0) Hex  
 
 ####Install ADFS server
 #####Prerequisites:
@@ -104,10 +109,11 @@ Download and install on the system running ADFS in the order below. :
 
 #####Federation to Office365
 1. Run these commands on the ADFS system using _Windows Azure Active Directory Module for Windows PowerShell_.  
-```dos
-    Azure Active Directory PowerShell
-```
-```powershell
+    ```dos
+    Azure Active Directory PowerShell  
+    ```
+
+    ```powershell
     $credential = Get-Credential  
     Import-Module MsOnline  
     Connect-MsolService -Credential $credential  
@@ -117,7 +123,7 @@ Download and install on the system running ADFS in the order below. :
     #Update-MSOLFederatedDomain -DomainName foobar.com
     Get-msoldomain
     #This should show the domain is Federated with Office 365
-```
+    ```
 1. Open _ADFS Management_ and set authentication method to only certificate authentication under _Authentication Policies_  
     * For large organizations, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on a member server in the domain  on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.    
     * For small organizations or small directories, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.  
