@@ -3,7 +3,7 @@ layout: page
 title: Office 365 Certificate-Based Authentication Via ADFS
 permalink: /Office 365 Certificate-Based Authentication Via ADFS/
 ---
-###A Solution for Office 365 Certificate-Based Authentication Via ADFS
+##A Solution for Office 365 Certificate-Based Authentication Via ADFS
 <!--- The code below creates a difficulty identifier on the page, which can either 
 be Beginner, Moderate, or Advanced depending on the technical knowledge required to 
 complete the procedure. The example below includes text that mark the document as 
@@ -15,18 +15,18 @@ height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CC
 </div>
 </div>
 Note: This document does not cover ADFS proxy server scenario or Office 365 account setup.
-####Prerequisites
+###Prerequisites
 * Have a public-facing domain with the ability to manage entries.  
 * Create publicly available (A/AAAA) records for the ADFS server. The FQDN of the DNS A/AAAA record must match the DNS name in the certificate.
 * Acquire from a public Certificate Authority a certificate with a DNS name which matches the DNS name you have registered in DNS (adfs.foobar.com).  
 
-####Install Active Directory server
+###Install Active Directory server
 
-#####Active Directory/Domain preparations
+####Active Directory/Domain preparations
 1. If the user account has a non-routable domain suffix then add an alternate suffix if necessary in AD _Domains and Trusts_ for the alternate UPN.  
 1. We recommend you have an OU filter plan before synchronizing to the cloud. In this document we will be creating an OU named O365 using PowerShell for easy OU filtering and sync to the cloud. Then we move users into O365 OU for clean synchronization to the cloud.  
 
-#####Active Directory Certificate Name Mapping Operation:
+####Active Directory Certificate Name Mapping Operation:
 A user presents a certificate to ADFS as part of authentication, and ADFS looks at the name mappings in AD to determine which user account should be logged on. If the certificate has a user principal name (UPN) the UPN is used to resolve the user account in AD. If there is no UPN, then the certificate's Distinguished Name is used.  
 
 1. [Map a Certificate to a User Account](https://technet.microsoft.com/en-us/library/cc754866\(v=ws.11\).aspx).  
@@ -49,7 +49,7 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
     
     Note: If the user certificate does not have a valid certificate path then stop and fix the trust path before continuing. 
 
-####AD PKI Setup on the domain controller
+###AD PKI Setup on the domain controller
 1. Add the user's PIV auth cert (Leaf) into name mapping for the user in O365 OU in AD
 
 1. Logged in as Enterprise Administrator, run the following from an elevated command prompt, where `certfile0..9` is the name of one of the exported certificate files.  
@@ -76,7 +76,7 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
     New-gpo -name ADFS_GPO | new-gplink -target "ou=ADFS,DC=Foobar,DC=COM"  
     ```  
 
-#####Group Policy setup
+####Group Policy setup
 1. Edit the group policy you just added, _ADFS_GPO_.
 1. Disable third party roots:  
     * Navigate to the computer configuration>policies>windows setting>security setting>public key policies.  
@@ -94,8 +94,8 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
        v. Value type:  REG_DWORD  
       vi. Value Data: (0) Hex  
 
-####Install ADFS server
-#####Prerequisites:
+###Install ADFS server
+####Prerequisites:
 The system where ADFS is installed must be domain-joined.
 The internal name for the ADFS server _must not_ match the external name on the certificate as in these examples:
     `adfs.foobar.local` and `adfs.foobar.com`
@@ -108,7 +108,7 @@ Download and install on the system running ADFS in the order below. :
 1. [Microsoft Online Services Sign-In Assistant for IT Professionals](https://www.microsoft.com/en-us/download/details.aspx?id=41950) (restart required).  
 1. [Windows Azure Active Directory Module for Windows PowerShell](http://go.microsoft.com/fwlink/p/?linkid=236297) (for running a PowerShell script).
 
-#####Federation to Office365
+####Federation to Office365
 1. Run these commands on the ADFS system using _Windows Azure Active Directory Module for Windows PowerShell_.  
     ```dos
     Azure Active Directory PowerShell  
@@ -129,9 +129,9 @@ Download and install on the system running ADFS in the order below. :
     * For large organizations, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on a member server in the domain  on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.    
     * For small organizations or small directories, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.  
 
-#####Firewall
+####Firewall
 1. Configure firewall to Allow Inbound to ADFS TCP 443 & 49443  
 
-#####Group policy enforcement updates
+####Group policy enforcement updates
 1. Move all ADFS servers into ADFS OU in _Active Directory Users and Computers_  
 1. From an Administrator command prompt, run `gpupdate /force` on the ADFS server.
