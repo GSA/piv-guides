@@ -24,9 +24,10 @@ Note: This document does not cover ADFS proxy server scenario or Office 365 acco
 #####Active Directory/Domain preparations
 
   
-If user account has a non-routable domain suffix then add alternate suffix if necessary in AD Domains and Trusts for alternate UPN
-*Recommendation to have an OU filter plan before synchronizing to the cloud. In this document we have created an OU named O365 above using PowerShell for easy OU filtering and sync to the cloud. Then we move users into O365 OU for clean synchronization to the cloud.
-#####AD Certificate Name Mapping Description:
+If the user account has a non-routable domain suffix then add an alternate suffix if necessary in AD _Domains and Trusts_ for the alternate UPN.  
+
+We recommend you have an OU filter plan before synchronizing to the cloud. In this document we have created an OU named O365 above using PowerShell for easy OU filtering and sync to the cloud. Then we move users into O365 OU for clean synchronization to the cloud.
+#####AD Certificate Name Mapping Operation:
 A user presents a certificate to ADFS as part of authentication, and ADFS looks at the name mappings in AD to determine which user account should be logged on. If the certificate has a user principal name (UPN) the UPN is used to resolve the user account in AD. If there is no UPN, then the certificate's Distinguished Name is used.  
 Perform the following operations on the Domain Controller. <-
 
@@ -69,56 +70,59 @@ As administrator, run the following PowerShell commands on the domain controller
     New-gpo -name ADFS_GPO | new-gplink -target "ou=ADFS, DC= Foobar,DC=COM"  
 ```
 
-Group Policy setup
-Edit the group policy named ADFS_GPO 
-Disable third party roots
-•   Navigate to the computer configuration>policies>windows setting>security setting>public key policies
-•   Open the Path Validation setting object 
-•   Check the “Define these settings” box
-•   Click on the “only Enterprise root CAs” radio button
-•   Confirm the policy is active
-Set SendTrustedIssuerList in registry
-•   Navigate to the computer configuration>Preferences>Windows Setting>Registry
-•   Right click and select New>Registry Item
-•   Action Update
-•   Hive:  HKLM
-•   Path:  SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL
-•   Value Name:  SendTrustedIssuerList
-•   Value type:  REG_DWORD
-•    Value Data: (0) Hex
+#####Group Policy setup
+* Edit the group policy you just added, _ADFS_GPO_.
+* Disable third party roots:  
+   1. Navigate to the computer configuration>policies>windows setting>security setting>public key policies.  
+   1. Open the Path Validation setting object.  
+   1. Check the _Define these settings_ checkbox.  
+   1. Select the _only Enterprise root CAs_ radio button
+* Confirm the policy is active.  
+* Set _SendTrustedIssuerList_ in registry
+   1. Navigate to the computer _Configuration->Preferences->Windows Setting->Registry_  
+   1. Right-click and select _New->Registry Item_  
+      * Action: Update  
+      * Hive:  HKLM  
+      * Path:  SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL  
+      * Value Name:  SendTrustedIssuerList  
+      * Value type:  REG_DWORD  
+      * Value Data: (0) Hex  
 
-Directory preparations
+####Install ADFS server
+#####Prerequisites:
+The system where ADFS is installed must be domain-joined.
+The internal name for the ADFS server _must not_ match the external name on the certificate:
+* adfs.foobar.local and adfs.foobar.com
+* fs.foobar.com and adfs.foobar.com
 
-If user account has a non-routable domain suffix then add alternate suffix if necessary in AD Domains and Trusts for alternate UPN
-*Recommendation to have an OU filter plan before synchronizing to the cloud. In this document we have created an OU named O365 above using PowerShell for easy OU filtering and sync to the cloud. Then we move users into O365 OU for clean synchronization to the cloud.
+Plan the number of ADFS servers according to the Microsoft Azure article [Plan your AD FS deployment](https://msdn.microsoft.com/en-us/library/azure/dn151324.aspx).  
 
-Install ADFS server
-The system where ADFS is installed must be domain joined
-The internal name for the ADFS server must not match the external name on the certificate:
-•   Adfs.foobar.local and adfs.foobar.com
-•   Fs.foobar.com and adfs.foobar.com
-Plan the number of ADFS servers according to https://msdn.microsoft.com/en-us/library/azure/dn151324.aspx
-Additional downloads in order 
+Perform additional downloads in the order below.  
+ 
 Download and install on system running ADFS:
-1.  Microsoft Online Services Sign-In Assistant for IT Professionals RTW: Restart required
+1. Microsoft Online Services Sign-In Assistant for IT Professionals RTW: Restart required
 https://www.microsoft.com/en-us/download/details.aspx?id=41950
-2.  Install Windows Azure Active Directory Module for Windows PowerShell for running script
-http://go.microsoft.com/fwlink/p/?linkid=236297
-Federation to Office365: Run  bulleted commands on ADFS system in “Windows Azure Active Directory Module for Windows PowerShell” 
-Azure Active Directory PowerShell
-•   $credential = Get-Credential
-•   Import-Module MsOnline
-•   Connect-MsolService -Credential $credential
-•   New-MSOLFederatedDomain –DomainName .foobar.com  (Note**this will add the domain to Office365, if domain already exist in Office 365 then use PowerShell cmdlet Update-MSOLFederatedDomain instead of New-MSOLFederatedDomain )
-•   Get-msoldomain  (should show the domain is Federated with Office 365)
+1. Install [Windows Azure Active Directory Module for Windows PowerShell](http://go.microsoft.com/fwlink/p/?linkid=236297) for running script
 
+Federation to Office365: Run these commands on ADFS system using _Windows Azure Active Directory Module for Windows PowerShell_
+```dos
+Azure Active Directory PowerShell
+```
+```powershell
+$credential = Get-Credential  
+Import-Module MsOnline  
+Connect-MsolService -Credential $credential  
+#This will add the domain to Office365; if domain already exists in Office 365 then use PowerShell ```cmdlet Update-MSOLFederatedDomain``` instead of ```New-MSOLFederatedDomain```)
+New-MSOLFederatedDomain -DomainName .foobar.com  
+Get-msoldomain  (should show the domain is Federated with Office 365)
+```
 Open ADFS Management and set authentication method to only certificate authentication under Authentication Policies 
 
 Download and install on member server in the domain:  
 
 For small organizations or small directories run Azure AD Connect on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.
 •   Azure AD Connect for synchronization 
-http://go.microsoft.com/fwlink/?LinkId=615771
+http://go.microsoft.com/fwlink/?LinkId=615771).
 
 Firewall rules:
 Allow Inbound to ADFS TCP 443 & 49443
