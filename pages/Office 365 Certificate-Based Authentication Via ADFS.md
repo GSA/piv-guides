@@ -91,20 +91,19 @@ As administrator, run the following PowerShell commands on the domain controller
 ####Install ADFS server
 #####Prerequisites:
 The system where ADFS is installed must be domain-joined.
-The internal name for the ADFS server _must not_ match the external name on the certificate:
+The internal name for the ADFS server _must not_ match the external name on the certificate as in these examples:
 * adfs.foobar.local and adfs.foobar.com
 * fs.foobar.com and adfs.foobar.com
 
-Plan the number of ADFS servers according to the Microsoft Azure article [Plan your AD FS deployment](https://msdn.microsoft.com/en-us/library/azure/dn151324.aspx).  
-
-Perform additional downloads in the order below.  
+Plan the number of ADFS servers according to the Microsoft Azure article, [Plan your AD FS deployment](https://msdn.microsoft.com/en-us/library/azure/dn151324.aspx).  
  
-Download and install on system running ADFS:
-1. Microsoft Online Services Sign-In Assistant for IT Professionals RTW: Restart required
-https://www.microsoft.com/en-us/download/details.aspx?id=41950
-1. Install [Windows Azure Active Directory Module for Windows PowerShell](http://go.microsoft.com/fwlink/p/?linkid=236297) for running script
+Download and install on the system running ADFS in the order below. :  
 
-Federation to Office365: Run these commands on ADFS system using _Windows Azure Active Directory Module for Windows PowerShell_
+1. [Microsoft Online Services Sign-In Assistant for IT Professionals](https://www.microsoft.com/en-us/download/details.aspx?id=41950) (restart required).  
+1. [Windows Azure Active Directory Module for Windows PowerShell](http://go.microsoft.com/fwlink/p/?linkid=236297) (for running a PowerShell script).
+
+#####Federation to Office365
+Run these commands on the ADFS system using _Windows Azure Active Directory Module for Windows PowerShell_.  
 ```dos
 Azure Active Directory PowerShell
 ```
@@ -120,12 +119,11 @@ Open ADFS Management and set authentication method to only certificate authentic
 
 Download and install on member server in the domain:  
 
-For small organizations or small directories run Azure AD Connect on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.
-•   Azure AD Connect for synchronization 
-http://go.microsoft.com/fwlink/?LinkId=615771).
+For small organizations or small directories, run [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.  
 
-Firewall rules:
-Allow Inbound to ADFS TCP 443 & 49443
-Move all ADFS servers into ADFS OU in Active Directory Users and Computers
+#####Firewall rules
+1. Allow Inbound to ADFS TCP 443 & 49443  
+1. Move all ADFS servers into ADFS OU in _Active Directory Users and Computers_  
 
-Run gpupdate /force on ADFS server(s)g from elevated command prompt.
+#####Group updates
+1. From an Administrator command prompt, run `gpupdate /force` on the ADFS server.
