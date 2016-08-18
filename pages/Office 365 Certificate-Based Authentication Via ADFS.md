@@ -59,6 +59,7 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
     certutil -f -dspublish certfile3.cer subca
     certutil -f -dspublish certfile4.cer NTAuthca  
     ```
+    Note that you will need to run the `certutl ... subca` command for every certificate between the leaf's issuer and the root CA.  In our illustration above, there are 3 SubCAs, one of which represents the issuer, `NTAuthca`.
 
 1. Run the following PowerShell commands on the domain controller: 
 
