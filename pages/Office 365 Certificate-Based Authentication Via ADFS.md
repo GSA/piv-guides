@@ -118,11 +118,11 @@ New-MSOLFederatedDomain -DomainName foobar.com
 Get-msoldomain
 #This should show the domain is Federated with Office 365
 ```
-Open ADFS Management and set authentication method to only certificate authentication under Authentication Policies 
+* Open _ADFS Management_ and set authentication method to only certificate authentication under _Authentication Policies_  
 
-Download and install on member server in the domain:  
+* For large organizations, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the member server in the domain:  
 
-For small organizations or small directories, run [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.  
+* For small organizations or small directories, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.  
 
 #####Firewall rules
 1. Allow Inbound to ADFS TCP 443 & 49443  
