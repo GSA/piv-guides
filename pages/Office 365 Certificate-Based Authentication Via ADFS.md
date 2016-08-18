@@ -37,7 +37,7 @@ Perform the following operations on the Domain Controller.
 * Using Windows Explorer, navigate to the folder location of the saved certificate.  
 * Open the saved certificate, click on the _Certification Path_ tab, highlight the next certificate up from the user certificate, and click _View Certificate_.  
 * On that certificate select the _Details_ tab and click _Copy to File_ which opens the _Certificate Export Wizard_.  
-* Complete the wizard for that certificate and each certificate above it until all of the certificates in the path have been saved.  
+* Complete the wizard for that certificate and each certificate above it until all of the certificates in the path have been saved as unique file names.  
 
 | | |
 |---|---|
@@ -49,11 +49,11 @@ Note: If the user certificate does not have a valid certificate path then stop a
 
 ####AD PKI Setup on the domain controller
 1. Add the user's PIV auth cert (Leaf) into name mapping for the user in O365 OU in AD
-1. As Enterprise Admin, run the following from an elevated command prompt: (where _certfile_ is name of certificate file).  
+1. As Enterprise Admin, run the following from an elevated command prompt, where `certfile0..9` is the name of one of the exported certificate files.  
 ```bat
-    certutil -f -dspublish _certfile_.cer rootca  
-    certutil -f -dspublish _certfile_.cer subca..
-    certutil -f -dspublish _certfile_.cer NTAuthca  
+    certutil -f -dspublish certfile1.cer rootca  
+    certutil -f -dspublish certfile2.cer subca
+    certutil -f -dspublish certfile3.cer NTAuthca  
 ```
 As administrator, run the following PowerShell commands on the domain controller:  
 ```powershell
