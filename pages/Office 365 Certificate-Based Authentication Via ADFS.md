@@ -24,7 +24,7 @@ Note: This document does not cover ADFS proxy server scenario or Office 365 acco
 
 #####Active Directory/Domain preparations
 * If the user account has a non-routable domain suffix then add an alternate suffix if necessary in AD _Domains and Trusts_ for the alternate UPN.  
-* We recommend you have an OU filter plan before synchronizing to the cloud. In this document we have created an OU named O365 above using PowerShell for easy OU filtering and sync to the cloud. Then we move users into O365 OU for clean synchronization to the cloud.  
+* We recommend you have an OU filter plan before synchronizing to the cloud. In this document we will be creating an OU named O365 using PowerShell for easy OU filtering and sync to the cloud. Then we move users into O365 OU for clean synchronization to the cloud.  
 
 #####Active Directory Certificate Name Mapping Operation:
 A user presents a certificate to ADFS as part of authentication, and ADFS looks at the name mappings in AD to determine which user account should be logged on. If the certificate has a user principal name (UPN) the UPN is used to resolve the user account in AD. If there is no UPN, then the certificate's Distinguished Name is used.  
@@ -53,7 +53,8 @@ Note: If the user certificate does not have a valid certificate path then stop a
 ```bat
     certutil -f -dspublish certfile1.cer rootca  
     certutil -f -dspublish certfile2.cer subca
-    certutil -f -dspublish certfile3.cer NTAuthca  
+    certutil -f -dspublish certfile3.cer subca
+    certutil -f -dspublish certfile4.cer NTAuthca  
 ```
 As administrator, run the following PowerShell commands on the domain controller:  
 ```powershell
@@ -111,10 +112,11 @@ $credential = Get-Credential
 Import-Module MsOnline  
 Connect-MsolService -Credential $credential  
 #This will add the domain to Office365
-New-MSOLFederatedDomain -DomainName .foobar.com  
+New-MSOLFederatedDomain -DomainName foobar.com  
 #If domain already exists in Office 365 then comment the previous line and uncomment the following:
-#Update-MSOLFederatedDomain
-Get-msoldomain  (should show the domain is Federated with Office 365)
+#Update-MSOLFederatedDomain -DomainName foobar.com
+Get-msoldomain
+#This should show the domain is Federated with Office 365
 ```
 Open ADFS Management and set authentication method to only certificate authentication under Authentication Policies 
 
