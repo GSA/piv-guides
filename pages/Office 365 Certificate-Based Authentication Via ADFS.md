@@ -79,27 +79,32 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
 ####Group Policy setup
 1. Edit the group policy you just added, _ADFS_GPO_.
 1. Disable third party roots:  
-    * Navigate to the computer configuration>policies>windows setting>security setting>public key policies.  
-    * Open the _Path Validation_ setting object.  
-    * Check the _Define these settings_ checkbox.  
-    * Select the _only Enterprise root CAs_ radio button
+    * Navigate to _Computer Configuration_->_Windows Settings_->_Security Settings_->_Public key policies_.  
+    * Open the _Certiifcate Path Validation Settings_ object.  
+    * Check the _Define these policy settings_ checkbox.  
+    * Select the _only Enterprise Root CAs_ radio button
 1. Confirm the policy is active.  
-1. Set _SendTrustedIssuerList_ in registry
+![Certificate Path Validation Settings](../img/gpeditcpvsettings.png)
+
+1. Set _SendTrustedIssuerList_ in the registry  
     * Navigate to the computer _Configuration->Preferences->Windows Setting->Registry_  
     * Right-click and select _New->Registry Item_  
-       i. Action: Update  
-      ii. Hive:  HKLM  
-     iii. Path:  SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL  
-      iv. Value Name:  SendTrustedIssuerList  
-       v. Value type:  REG_DWORD  
-      vi. Value Data: (0) Hex  
+    * Create the item below:
+       i. Action:     Update  
+      ii. Hive:       HKLM  
+     iii. Path:       SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL  
+      iv. Value Name: SendTrustedIssuerList  
+       v. Value type: REG_DWORD  
+      vi. Value Data: 0x00000000 (0) Hex  
+        
+![New Registry entry disbling sending of certificate chains during SCHANNEL negotiations](../img/sendtrustedissuerlistoff.png)
 
 ###Install ADFS server
 ####Prerequisites:
 The system where ADFS is installed must be domain-joined.
-The internal name for the ADFS server _must not_ match the external name on the certificate as in these examples:
-    `adfs.foobar.local` and `adfs.foobar.com`
-    `fs.foobar.com` and `adfs.foobar.com`
+The internal name for the ADFS server _must not_ match the external name on the certificate as in these examples:  
+    `adfs.foobar.local` and `adfs.foobar.com`  
+    `fs.foobar.com` and `adfs.foobar.com`  
 
 Plan the number of ADFS servers according to the Microsoft Azure article, [Plan your AD FS deployment](https://msdn.microsoft.com/en-us/library/azure/dn151324.aspx).  
  
@@ -120,7 +125,7 @@ Download and install on the system running ADFS in the order below. :
     Connect-MsolService -Credential $credential  
     #This will add the domain to Office365
     New-MSOLFederatedDomain -DomainName foobar.com  
-    #If domain already exists in Office 365 then comment the previous line and uncomment the following:
+    #If domain already exists in Office 365, then comment (#) the previous line and uncomment the following:
     #Update-MSOLFederatedDomain -DomainName foobar.com
     Get-msoldomain
     #This should show the domain is Federated with Office 365
