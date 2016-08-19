@@ -14,7 +14,7 @@ height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CC
 <em>Difficulty: Advanced</em>
 </div>
 </div>
-Note: This document does not cover ADFS proxy server scenario, Office 365 account setup, or multiple domains in a windows forest.  This playbook assumes implied knowledge of Active Directory, Group Policy, PKI, and ADFS.
+Note: This document does not cover ADFS proxy server scenario, Office 365 account setup, or multiple domains in a Windows forest.  This playbook assumes advanceRFontana@ASOZ5L knowledge of Active Directory, Group Policy, PKI, and ADFS.
 ###Prerequisites
 * Have a public-facing domain with the ability to manage entries.  
 * Create publicly available (A/AAAA) records for the ADFS server. The FQDN of the DNS A/AAAA record must match the DNS name in the certificate.
@@ -26,7 +26,7 @@ Note: This document does not cover ADFS proxy server scenario, Office 365 accoun
 1. If the user account has a non-routable domain suffix in the UPN, then add an alternate suffix if necessary in AD _Domains and Trusts_ for the alternate UPN.  
 1. We recommend you have an OU filter plan before synchronizing to the cloud. In this document we will be creating an OU named O365 using PowerShell for easy OU filtering and sync to the cloud. Then we move users into O365 OU for clean synchronization to the cloud.  
 
-####Active Directory Certificate Name Mapping Operation:
+####Active Directory Certificate Name Mapping Operation
 A user presents a certificate to ADFS as part of authentication, and ADFS looks at the name mappings in AD to determine which user account should be logged on. If the certificate has a user principal name (UPN) the UPN is used to resolve the user account in AD. If there is no UPN, then the certificate's Distinguished Name is used.  
 
 1. [Map a Certificate to a User Account](https://technet.microsoft.com/en-us/library/cc754866\(v=ws.11\).aspx).  
@@ -63,14 +63,10 @@ prompt, where `certfile1..9` is the name of one of the exported certificate file
     ```
 ####Explanation
     
-    * Publish the _RootCA_ certificate as `rootca`.  
-    * Publish each _SubCA_ certificate below the _RootCA_ certificate as `subca`.  
-    * Publish the Leaf's issuer certificate as `NTAuthca`.  
+    * Publish the _RootCA_ certificate to `rootca`.  
+    * Publish each _SubCA_ certificate below the _RootCA_ certificate to `subca`.  
+    * Publish the Leaf's issuer certificate to both `subca` _and_ `NTAuthca`.  
 
-       **Note that if you know that you've already imported one or more of the _RootCA_ or _SubCA_
-       certificates, you can skip exporting them and publishing them.  This will be a
-       time-saver when bringing up an entire organization with certificates issued by 
-       the same PKI.**
 
 1. Run the following PowerShell commands on the domain controller: 
 
