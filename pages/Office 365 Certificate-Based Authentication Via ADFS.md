@@ -14,7 +14,7 @@ height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CC
 <em>Difficulty: Advanced</em>
 </div>
 </div>
-Note: This document does not cover ADFS proxy server scenario, Office 365 account setup, or multiple domains in a Windows forest.  This playbook assumes advanceRFontana@ASOZ5L knowledge of Active Directory, Group Policy, PKI, and ADFS.
+Note: This document does not cover ADFS proxy server scenario, Office 365 account setup, or multiple domains in a Windows forest.  This playbook assumes advanced knowledge of Active Directory, Group Policy, PKI, and ADFS.
 ###Prerequisites
 * Have a public-facing domain with the ability to manage entries.  
 * Create publicly available (A/AAAA) records for the ADFS server. The FQDN of the DNS A/AAAA record must match the DNS name in the certificate.
