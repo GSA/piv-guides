@@ -89,7 +89,7 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
 1. Set _SendTrustedIssuerList_ in the registry  
     * Navigate to the computer _Configuration->Preferences->Windows Setting->Registry_  
     * Right-click and select _New->Registry Item_  
-    * Create the item below:
+    * Create the item below:  
        i. Action:     Update  
       ii. Hive:       HKLM  
      iii. Path:       SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL  
