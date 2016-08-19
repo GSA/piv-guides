@@ -79,15 +79,13 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
 ####Group Policy setup
 1. Edit the group policy you just added, _ADFS_GPO_.
 1. Disable third party roots:  
-    * Navigate to _Computer Configuration_->_Windows Settings_->_Security Settings_->_Public key policies_.  
+    * Navigate to _Computer Configuration_->_Policies_->_Windows Settings_->_Security Settings_->_Public key policies_.  
     * Open the _Certiifcate Path Validation Settings_ object.  
     * Check the _Define these policy settings_ checkbox.  
     * Select the _only Enterprise Root CAs_ radio button
-1. Confirm the policy is active.  
-![Certificate Path Validation Settings](../img/gpeditcpvsettings.png)
-
-1. Set _SendTrustedIssuerList_ in the registry  
-    * Navigate to the computer _Configuration->Preferences->Windows Setting->Registry_  
+1. Right-click on the _ADFS_GPO_ entry, and confirm that the policy is active.  
+1. Set _SendTrustedIssuerList_  
+    * Within _Group Policy_, navigate to _Computer Configuration->Preferences->Windows Setting->Registry_  
     * Right-click and select _New->Registry Item_  
     * Create the item below:  
        i. Action:     Update  
@@ -96,9 +94,7 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
       iv. Value Name: SendTrustedIssuerList  
        v. Value type: REG_DWORD  
       vi. Value Data: 0x00000000 (0) Hex  
-        
-![New Registry entry disbling sending of certificate chains during SCHANNEL negotiations](../img/sendtrustedissuerlistoff.png)
-
+      
 ###Install ADFS server
 ####Prerequisites:
 The system where ADFS is installed must be domain-joined.
@@ -131,8 +127,9 @@ Download and install on the system running ADFS in the order below. :
     #This should show the domain is Federated with Office 365
     ```
 1. Open _ADFS Management_ and set authentication method to only certificate authentication under _Authentication Policies_  
-    * For large organizations, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on a member server in the domain  on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.    
-    * For small organizations or small directories, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the domain controller to configure and start synchronization from on premise AD to the O365 cloud.  
+1. To configure and start synchronization from the on-premise AD to the O365 cloud, you'll need to consider the size of your organization and directories.
+    * For large organization or large directories, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on a member server in the domain, on the domain controller.   
+    * For small organizations or small directories, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the domain controller.  
 
 ####Firewall
 1. Configure firewall to Allow Inbound to ADFS TCP 443 & 49443  
