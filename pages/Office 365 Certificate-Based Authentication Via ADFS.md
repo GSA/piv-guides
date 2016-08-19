@@ -80,7 +80,7 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
 1. Edit the group policy you just added, _ADFS_GPO_.
 1. Disable third party roots:  
     * Navigate to _Computer Configuration_->_Policies_->_Windows Settings_->_Security Settings_->_Public key policies_.  
-    * Open the _Certiifcate Path Validation Settings_ object.  
+    * Open the _Certifcate Path Validation Settings_ object.  
     * Check the _Define these policy settings_ checkbox.  
     * Select the _only Enterprise Root CAs_ radio button
 1. Right-click on the _ADFS_GPO_ entry, and confirm that the policy is active.  
