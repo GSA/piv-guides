@@ -61,11 +61,16 @@ prompt, where `certfile1..9` is the name of one of the exported certificate file
     certutil -f -dspublish certfile4.cer subca
     certutil -f -dspublish certfile4.cer NTAuthca  
     ```
-    Note that you will need to run the `certutil -f -dspublish `_certfile_ ` subca` command 
-    for every certificate between the leaf's issuer and the root CA, where _certfile_ is 
-    one of the certificate files you created during exporting.  In our illustration above, 
-    there are 3 SubCAs, plus an additional that represents the issuer, `NTAuthca`. That 
-    certificate needs to be added both as an `NTAuthca` _and_ a `SubCA`.
+####Explanation
+    
+    * Publish the _RootCA_ certificate as `rootca`.  
+    * Publish each _SubCA_ certificate below the _RootCA_ certificate as `subca`.  
+    * Publish the Leaf's issuer certificate as `NTAuthca`.  
+
+       **Note that if you know that you've already imported one or more of the _RootCA_ or _SubCA_
+       certificates, you can skip exporting them and publishing them.  This will be a
+       time-saver when bringing up an entire organization with certificates issued by 
+       the same PKI.**
 
 1. Run the following PowerShell commands on the domain controller: 
 
