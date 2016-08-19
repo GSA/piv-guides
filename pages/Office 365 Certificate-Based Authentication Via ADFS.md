@@ -52,7 +52,8 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
 ###AD PKI Setup on the domain controller
 1. Add the user's PIV auth cert (Leaf) into name mapping for the user in O365 OU in AD
 
-1. Logged in as Enterprise Administrator, run the following from an elevated command prompt, where `certfile1..9` is the name of one of the exported certificate files.  
+1. Logged in as Enterprise Administrator, run the following from an elevated command 
+prompt, where `certfile1..9` is the name of one of the exported certificate files.  
     ```bat
     certutil -f -dspublish certfile1.cer rootca  
     certutil -f -dspublish certfile2.cer subca
@@ -60,7 +61,11 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
     certutil -f -dspublish certfile4.cer subca
     certutil -f -dspublish certfile4.cer NTAuthca  
     ```
-    Note that you will need to run the `certutil -f -dspublish `_certfile_ ` subca` command for every certificate between the leaf's issuer and the root CA, where _certfile_ is one of the certificate files you created during exporting.  In our illustration above, there are 3 SubCAs, plus an additional that represents the issuer, `NTAuthca`. That certificate also needs to be added as a SubCA.
+    Note that you will need to run the `certutil -f -dspublish `_certfile_ ` subca` command 
+    for every certificate between the leaf's issuer and the root CA, where _certfile_ is 
+    one of the certificate files you created during exporting.  In our illustration above, 
+    there are 3 SubCAs, plus an additional that represents the issuer, `NTAuthca`. That 
+    certificate needs to be added both as an `NTAuthca` _and_ a `SubCA`.
 
 1. Run the following PowerShell commands on the domain controller: 
 
@@ -98,11 +103,13 @@ A user presents a certificate to ADFS as part of authentication, and ADFS looks 
 ###Install ADFS server
 ####Prerequisites:
 The system where ADFS is installed must be domain-joined.
-The internal name for the ADFS server _must not_ match the external name on the certificate as in these examples:  
+The internal name for the ADFS server _must not_ match the external name on the 
+certificate as in these examples:  
     `adfs.foobar.local` and `adfs.foobar.com`  
     `fs.foobar.com` and `adfs.foobar.com`  
 
-Plan the number of ADFS servers according to the Microsoft Azure article, [Plan your AD FS deployment](https://msdn.microsoft.com/en-us/library/azure/dn151324.aspx).  
+Plan the number of ADFS servers according to the Microsoft Azure article, 
+[Plan your AD FS deployment](https://msdn.microsoft.com/en-us/library/azure/dn151324.aspx).  
  
 Download and install on the system running ADFS in the order below. :  
 
@@ -110,7 +117,8 @@ Download and install on the system running ADFS in the order below. :
 1. [Windows Azure Active Directory Module for Windows PowerShell](http://go.microsoft.com/fwlink/p/?linkid=236297) (for running a PowerShell script).
 
 ####Federation to Office365
-1. Run these commands on the ADFS system using _Windows Azure Active Directory Module for Windows PowerShell_.  
+1. Run these commands on the ADFS system using _Windows Azure Active Directory 
+Module for Windows PowerShell_.  
     ```dos
     Azure Active Directory PowerShell  
     ```
@@ -126,12 +134,16 @@ Download and install on the system running ADFS in the order below. :
     Get-msoldomain
     #This should show the domain is Federated with Office 365
     ```
-1. Open _ADFS Management_ and set authentication method to only certificate authentication under _Authentication Policies_.  
+1. Open _ADFS Management_ and set authentication method to only certificate 
+authentication under _Authentication Policies_.  
 
 ####AD Synchronization to Office 365 Cloud
-1. To configure and start synchronization from the on-premise AD to the O365 cloud, you'll need to consider the size of your organization and directories.
-    * For large organization or large directories, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on a member server in the domain.   
-    * For small organizations or small directories, download and install [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the domain controller.  
+1. To configure and start synchronization from the on-premise AD to the O365 cloud, 
+you'll need to consider the size of your organization and directories.
+    * For large organization or large directories, download and install 
+    [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on a member server in the domain.   
+    * For small organizations or small directories, download and install 
+    [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on the domain controller.  
 
 ####Firewall
 1. Configure firewall to Allow Inbound to ADFS TCP 443 & 49443.  
