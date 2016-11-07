@@ -4,24 +4,24 @@ title: Locally Trusted OCSP Configuration
 permalink: /Locally Trusted OCSP Configuration/
 ---
 #Locally Trusted OCSP Configuration
-----------
-#####Table of Contents
-##[Introduction](#Introduction-1)
-##[Security Risks](#Security-Risks-1)
-##[Prerequisites](#Prerequisites-1)
-##[Locally Trusted Microsoft OCSP Responder](#Locally-Trusted-Microsoft-OCSP-Responder-1)
-###[Installation](#Installation-1)
-####[Add the ADCS role to the Server](#Add-the-ADCS-role-to-the-Server-1)
-####[Initial Configuration](#Initial-Configuration-1)
-###[Revocation Sources](#Revocation-Sources-1)
-####[Manually Adding a Revocation Source](#Manually-Adding-a-Revocation-Source-1)
-####[Using PowerShell to Add a Revocation Source](#Using-PowerShell-to-Add-a-Revocation-Source-1)
-##[Windows Client Configuration](#Windows-Client-Configuration-1)
-###[Manual Client Configuration](#Manual-Client-Configuration-1)
-###[Group Policy Configuration](#Group-Policy-Configuration-1)
-##[End-to-End Testing](#End-to-End-Testing-1)
-###[Windows certutil](#Windows-certutil-1)
-###[Common problems and solutions](#Common-problems-and-solutions-1)
+
+####Table of Contents
+###[Introduction](#Introduction-1)
+###[Security Risks](#Security-Risks-1)
+###[Prerequisites](#Prerequisites-1)
+###[Locally Trusted Microsoft OCSP Responder](#Locally-Trusted-Microsoft-OCSP-Responder-1)
+####[Installation](#Installation-1)
+#####[Add the ADCS role to the Server](#Add-the-ADCS-role-to-the-Server-1)
+#####[Initial Configuration](#Initial-Configuration-1)
+####[Revocation Sources](#Revocation-Sources-1)
+#####[Manually Adding a Revocation Source](#Manually-Adding-a-Revocation-Source-1)
+#####[Using PowerShell to Add a Revocation Source](#Using-PowerShell-to-Add-a-Revocation-Source-1)
+###[Windows Client Configuration](#Windows-Client-Configuration-1)
+####[Manual Client Configuration](#Manual-Client-Configuration-1)
+####[Group Policy Configuration](#Group-Policy-Configuration-1)
+###[End-to-End Testing](#End-to-End-Testing-1)
+####[Windows certutil](#Windows-certutil-1)
+####[Common problems and solutions](#Common-problems-and-solutions-1)
 
 ----------
 
