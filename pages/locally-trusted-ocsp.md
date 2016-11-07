@@ -4,7 +4,8 @@ title: Locally Trusted OCSP Configuration
 permalink: /Locally Trusted OCSP Configuration/
 ---
 #Locally Trusted OCSP Configuration
-
+----------
+#####Table of Contents
 ##[Introduction](#Introduction-1)
 ##[Security Risks](#Security-Risks-1)
 ##[Prerequisites](#Prerequisites-1)
@@ -21,6 +22,8 @@ permalink: /Locally Trusted OCSP Configuration/
 ##[End-to-End Testing](#End-to-End-Testing-1)
 ###[Windows certutil](#Windows-certutil-1)
 ###[Common problems and solutions](#Common-problems-and-solutions-1)
+
+----------
 
 ##Introduction
 What is OCSP
