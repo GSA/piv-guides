@@ -26,7 +26,7 @@ If you need to buy a reader for home use (or many for your agency), you will wan
 
 * **ISO 7816** support
 
-You can buy a card reader for personal use from a number of commercial online retailers.  When buying card readers for your agency, there is an [Approved Products List](https://www.idmanagement.gov/IDM/IDMFicamProductSearchPage) for _US Federal Executive Branch Civilian Agencies_.  The type of card reader you will need is labeled as "Transparent Card Readers" on the [Approved Products List](https://www.idmanagement.gov/IDM/IDMFicamProductSearchPage) and you can use [GSA Advantage](https://www.gsaadvantage.gov/) to directly purchase the card readers.
+You can buy a card reader for personal use from a number of commercial online retailers.  When buying card readers for your agency, you can use [GSA Advantage](https://www.gsaadvantage.gov/) to directly purchase the card readers.
 
 Before you buy a card reader, look around and ensure you don't already have one.  A large portion of government laptops have the card readers already, and desktops may have keyboards with readers built-in.
 
