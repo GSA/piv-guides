@@ -4,13 +4,6 @@ title: Details of a PIV Credential
 permalink: /details/
 ---
 
-<div style="float:right; padding:10px; margin-right:20px; border-radius:10px; width:180px; height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CCC; color:#666666">
-<div style="color:#000000">
-<em>Advanced</em>
-</div>
-</div>
-
-
 This section will help you view the data stored on the PIV credential, and information about the certificates.  We identify the simple methods for:
 
 1.  [Viewing your PIV credential certificates](#viewing-your-piv-credential-certificates)

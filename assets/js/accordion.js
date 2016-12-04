@@ -1,8 +1,3 @@
-/*  Originally from the Government Wide Pattern Library.
-    Modified to check for items expanded on page load and
-    to allow you to close an accordion without opening another
-*/
-
 function Accordion($el) {
   var self = this;
   this.$root = $el;
@@ -47,7 +42,7 @@ function accordion($el) {
 }
 
 $(function() {
-  $('.sidebar-nav').each(function() {
+  $('.sidenav').each(function() {
     accordion($(this));
   });
 });

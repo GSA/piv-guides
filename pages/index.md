@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Introduction to PIV Guides
+title: Introduction
 permalink: /
 ---
 

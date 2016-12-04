@@ -5,12 +5,6 @@ permalink: /networkconfig/
 collection: networkconfig
 ---
 
-<div style="float:right; padding:10px; margin-right:20px; border-radius:10px; width:180px; height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CCC; color:#666666">
-<div style="color:#000000">
-<em>Moderate</em>
-</div>
-</div>
-
 These Network Authentication guides are to help you configuring your Windows _network domain_ for smartcard logon using PIV credentials.
 
 There are many useful pages and technical articles available online which include details on configurations and using generic smartcards.  The information presented here is to address common questions and configurations **specific** to the US Federal Government, **PIV** smartcards, and US Federal civilian agency certificate authorities.

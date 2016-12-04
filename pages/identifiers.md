@@ -4,12 +4,6 @@ title: Identifiers in a PIV Credential
 permalink: /identifiers/
 ---
 
-<div style="float:right; padding:10px; margin-right:20px; border-radius:10px; width:180px; height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CCC; color:#666666">
-<div style="color:#000000">
-<em>Advanced</em>
-</div>
-</div>
-
 In applications including network domains, you will associate the PIV credential with your accounts.  This is not a unique process to PIV credentials and usage, and is a general concept that occurs in many applications including your personal email accounts, your bank accounts, or your favorite social media app.  Associating a credential with an account is called _account linking_.
 
 _Identifiers_ are the values in credentials that are used for account linking.  We focus on the **PIV Authentication** certificate and identifiers in this section to help you understand the options, and design and implement for using PIV to authenticate to networks and applications.
