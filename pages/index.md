@@ -18,13 +18,13 @@ The information on this page provides introductory information.
 1. [What systems should use PIV?](#what-systems-should-use-piv)
 1. [Where can I find the Standards?](#where-can-i-find-the-standards)
 
-#### What is PIV?
+## What is PIV?
 
 A Personal Identity Verification (PIV) credential is a US Federal government-wide credential used to access Federally controlled facilities and information systems at the appropriate security level.
 
 PIV credentials have certificates and key pairs, pin numbers, biometrics like fingerprints and pictures, and other unique identifiers.  When put together into a PIV credential, we have the capabilities to implement multi-factor authentication for networks, applications and buildings.
 
-#### What information is in these PIV guides?  
+## What information is in these PIV guides?  
 First, we cover the basics of PIV credentials including:
 
 -   What PIV is, contains and looks like
@@ -33,7 +33,7 @@ First, we cover the basics of PIV credentials including:
 
 We also have sections for Applications, Developer Guides and User Guides.  All these guides need your contributions!  
 {% include alert-success.html heading = "Share your expertise" content="We want you to contribute and share: your lessons when configuring systems or applications, tuning considerations, code, common challenges, troubleshooting errors, and any information helpful for your colleagues." %}
-#### Why is PIV usage important?
+## Why is PIV usage important?
 
 Enabling systems and facilities to use PIV credentials for authentication enhances the security of the agencies. PIV credentials allow for a high level of assurance in the individuals that access your resources, as they are only issued by trusted providers to individuals that have been verified in person.  The PIV credentials are highly resistant to identity fraud, tampering, counterfeiting, and exploitation.
 
@@ -41,7 +41,7 @@ PIV credentials are _standardized_ as well.  PIV credentials might be issued by 
 
 Your PIV credential from one agency will have the same basic required format, information and technology as a PIV credential from your partner agencies. This allows us to trust each other, share applications, and architect and implement systems using common patterns for authentication.
 
-#### What systems should use PIV?  
+## What systems should use PIV?  
 Any system at your organization that requires heightened security for determining who should gain access can and should use PIV for authentication.  While PIV credentials can be used for authentication on almost any system, they are especially useful for systems that protect sensitive information.
 
 PIV should be used for:
@@ -51,7 +51,7 @@ PIV should be used for:
 * All application authentication for _all_ users of an application that protects or contains sensitive information; and
 * Access to facilities and buildings.
 
-#### Where can I find the Standards?  
+## Where can I find the Standards?  
 If you are interested in PIV credentials or working on _using_ PIV credentials, you should review pages on this site and other online resources.
 
 If you are interested in the bits and bytes of PIV credentials, you can review the Standards. The Standards are best to review if you develop products such as hardware or software that are _specific_ to PIV credentials for the US Federal Government.  However, for most users and engineers, the Standards may seem overwhelming and will be too detailed for your needs.

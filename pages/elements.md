@@ -6,7 +6,7 @@ permalink: /elements/
 
 There are two main categories for the features of a PIV credential: [_physical_ features](#physical-features) and [_electronic_ features](#electronic-features).
 
-#### Physical Features
+## Physical Features
 
 ![Example of a PIV credential and its physical components](../img/elements.png){:style="float:left"}
 
@@ -17,7 +17,7 @@ The image shows the standard placement for information such as photograph, name,
 PIV credentials also contain at least one security feature that aids in reducing counterfeiting, is resistant to tampering, and provides visual evidence of tampering attempts such as optical varying structures or inks, laser etching, holographic images, and watermarks.  
 
 
-#### Electronic Features
+## Electronic Features
 What is the chip on your PIV credential?  In the easiest terms: it is a computer.  It holds information **very securely** and can process data.  The chip is also called a _secure element_.
 
 {% include alert-info.html heading = "Do you have a debit card with a chip or a smartphone with a SIM card?" content="These are both examples of similar technology that we use every day in our daily lives and help us secure information.  You can't use your PIV credential to withdraw money, nor do you use your debit card to login to your computer or Federal applications - but you can see how similar technology is used every day." %}

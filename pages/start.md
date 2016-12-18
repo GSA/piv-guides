@@ -9,7 +9,9 @@ You need two items to begin using your PIV credential:
 *  A [card reader](#card-readers) (hardware)
 *  [Middleware](#middleware) (software) that works with your computer
 
-#### Card Readers
+{% include alert-success.html content="With just their PIV credential, a card reader and middleware - your users can login to websites that are PIV enabled, digitally sign email and documents and files, and encrypt!" %}
+
+## Card Readers
 A card reader is exactly what the name suggests: a piece of hardware which helps read the card.
 
 > *A card reader is the hardware that supplies power to the chip, and allows the computer operating system to talk to the PIV credential chip operating system.*
@@ -24,7 +26,7 @@ Before you buy a card reader, look around and ensure you don't already have one.
 
 If you have a Mac OSX or Linux based computer, you probably don't have a card reader built in. Find a card reader option that you like and let's move on to Middleware.
 
-#### Middleware
+## Middleware
 For PIV credentials, _middleware_ refers to the computer software or drivers which allow the computer to interact with the PIV credentials to support authentication, digital signatures, encryption, and integrations with your software tools.
 
 For common PIV credential usage scenarios, the table below outlines the _general smartcard middleware_ available as open or government source or included in operating systems for use scenarios.  Commercial options for PIV Middleware are available and the list of NIST certified PIV Middleware can be viewed [here on the NIST website](http://csrc.nist.gov/groups/SNS/piv/npivp/validation.html).
@@ -43,7 +45,7 @@ For common PIV credential usage scenarios, the table below outlines the _general
 
 You may need to consider Network authentication, Virtual Private Network (VPN), email signing, email encryption, document signing, document encryption and website authentication when choosing one or more middleware options for yourself or your users.  In most cases, you can choose a middleware option that works for the most common uses for your purposes or mix and match based on operating systems and devices.
 
-#### Middleware definitions
+### Middleware definitions
 
 _Middleware_ as a general computer term can encompass any software that provides integration points for an application. In the Standards for PIV credentials, the term _PIV middleware_ is used and a common question is "What is the difference between PIV Middleware and general smartcard middleware?" To simplify, we'll define the two terms as we use them for PIV credentials in these guides:
 
@@ -58,9 +60,7 @@ _Middleware_ as a general computer term can encompass any software that provides
 For common PIV credential usage scenarios, we outline the _general smartcard middleware_ available as open or government source or included in operating systems for use scenarios.  Commercial options for PIV Middleware are available and the list of NIST certified PIV Middleware can be viewed [here on the NIST website](http://csrc.nist.gov/groups/SNS/piv/npivp/validation.html).
 
 
-### Next Steps
+## Next Steps
 You have a PIV credential, you have a card reader, and you have middleware for your computer. **Now what?**
-
-{% include alert-success.html content="With just your PIV credential, a card reader and middleware - you can authenticate to websites that are PIV enabled for authentication, digitally sign email and documents and files, and encrypt!" %}
 
 If you want to learn more about details of PIV credentials, certificates, and how to configure a network or web application, the next [section](../details) is for you.
