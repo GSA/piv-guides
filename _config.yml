@@ -21,7 +21,7 @@ navbar:
 - title: Federal ICAM Architecture
   description: Federal ICAM Architecture
   url: https://gsa.github.io/ficam-arch/
-  title: PIV Guides
+#- title: PIV Guides
 # description: PIV Guides
 # url: https://gsa.github.io/piv-guides/
 #- title: Federal PKI Guides
