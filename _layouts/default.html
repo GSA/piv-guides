@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html>
-  {% include head.html %}
-  <body>
-    <div class="container">
-      <header role="banner">
-        <div class="wrap">
-          {% if site.logourl != null %}
-            <img class="logo" src="{{ site.logourl }}" alt="{{ site.logoalt }}">
-          {% endif %}
-          <h1 class="site-title"><div>{{ site.name }}</div></h1>
-        </div>
-      </header>
+  <head>
 
-    <div class="wrap content">
+	{% include head.html %}
+	{% include scripts.html %}
 
-        {% include sidebar.html %}
+  </head>
+  <body class="{{ page.title | slugify }}">
+	{% include navbar.html %}
+	  
+    {% include sidebar.html %}
+	
+	  
+	<div class="main-content" id="main-content">
+		<div class="styleguide-content usa-content">
 
-        <section id="main" class="main-content" role="main">
-          <div style="float: right;">
-            <a href="{{site.github.repository_url}}/tree/{{ site.branch }}/{{ page.relative_path }}" style="float:right;" class="btn btn-primary">Edit this page</a>
-          </div>
-          <h2 class="page-title">{{ page.title }}</h1>
-          {{ content }}
-        </section>
+			<div class="usa-grid">
 
-      </div><!-- /.wrap content -->
+				<div class="usa-width-one-whole">
+					<div style="float: right;">
+						<a href="{{site.repo_url}}/tree/{{ site.branch }}/{{ page.path }}" style="float:right;" class="btn btn-primary">Edit this page</a>
+					</div>
+					<h1 id="{{ page.title | slugify }}">
+						{{ page.title }}
+					</h1>
+					<div class="usa-serif">
+						{{ content }}
+					</div><!--/usa-serif -->
+				</div><!--/usa-width-one-whole -->
+			</div><!--/usa-grid -->
 
-      <footer role="contentinfo">
-        <div class="wrap">
-          <p>This project is maintained by <a href="{{ site.author.url }}">{{ site.author.name }}</a>.</p>
-        </div><!--/.wrap -->
+		</div><!--/styleguide-content usa-content -->      
+	  
+	  <footer class="usa-footer-primary-section">
+        {% include footer.html %}
       </footer>
-    </div> <!-- /.container -->
-    </body>
+    </div> <!-- /main-content -->
+
+    {% include analytics.html %}
+	</body>
 </html>

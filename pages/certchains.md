@@ -1,14 +1,8 @@
 ---
 layout: default
-title: Certificate Trust Overview
+title: Certificate Trust
 permalink: /pivcertchains/
 ---
-
-<div style="float:right; padding:10px; margin-right:20px; border-radius:10px; width:180px; height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CCC; color:#666666">
-<div style="color:#000000">
-<em>Advanced</em>
-</div>
-</div>
 
 One of the most common questions is "What are all these certificates and how do I configure my applications to use them?".  Answering this question involves explaining three principles:
 
@@ -26,7 +20,7 @@ The full process of proving identity when issuing the certificates, auditing the
 
 For the US Federal Government Executive branch agencies, there is one Root Certificate Authority named _Federal Common Policy Certificate Authority (COMMON)_, and dozens of Intermediate Certificate Authorities.  The US Federal Government has also established Trust with other Certificate Authorities which serve business communities, State and Local government communities, and international government communities.
 
-*  [A graph of the federal public key infrastructure, including the business communities](http://fpki-graph.fpki-lab.gov/)
+* [A graph of the federal public key infrastructure, including the business communities](http://fpki-graph.fpki-lab.gov/)
 
 The participating Certificate Authorities and the policies, processes, and auditing is referred to as the [*Federal Public Key Infrastructure (FPKI)*](https://www.idmanagement.gov/IDM/s/article_content_old?tag=a0Gt0000000SfwP).
 
@@ -53,32 +47,30 @@ Installation of the trusted root certificate and intermediate certificates is de
 
 The Federal Common Policy Certificate Authority (COMMON) root certificate can be retrieved via two methods: online or out of band.  We recommend requesting the root certificate using the out of band (email) method for engineers working in production environments.
 
-1. Out-of-band email:
-  * Send an email to fpki-help at gsa dot gov
-  * Subject line: _Common root needed_
-  * Please _digitally sign_ the email if you have the capabilities available; if not, the request will still be received and processed
-  * A signed version of the certificate or email will be sent back to you
-
-
-2. Online site:
-  * http://http.fpki.gov/fcpca/fcpca.crt
-  * cn=Federal Common Policy CA, ou=FPKI, o=U.S. Government, c=US
-  * SHA1 Hash: 90 5f 94 2f d9 f2 8f 67 9b 37 81 80 fd 4f 84 63 47 f6 45 c1
+* Out-of-band email:
+	* Send an email to: _fpki-help at gsa dot gov_
+	* Subject line: _Common root needed_
+	* Please _digitally sign_ the email if you have the capabilities available; if not, the request will still be received and processed
+	* A signed version of the certificate or email will be sent back to you
+* Online site:
+	* http://http.fpki.gov/fcpca/fcpca.crt
+	* cn=Federal Common Policy CA, ou=FPKI, o=U.S. Government, c=US
+	* SHA1 Hash: 90 5f 94 2f d9 f2 8f 67 9b 37 81 80 fd 4f 84 63 47 f6 45 c1
 
 Verify the hash of the fcpca.crt file matches the one listed above before using.  If the hash does not match, do NOT use the certificate file and please use the out-of-band email method.
 
 You can verify the hash using common utilities on operating systems.  Three examples are included below:
 
+~~~
+	certutil -hashfile fcpca.crt SHA1
+~~~
+
 ```
-certutil -hashfile fcpca.crt SHA1
+	openssl dgst -sha1 fcpca.crt
 ```
 
 ```
-openssl dgst -sha1 fcpca.crt
-```
-
-```
-sha1sum fcpca.crt
+	sha1sum fcpca.crt
 ```
 
 Download any additional Intermediate Certificate Authority certificates

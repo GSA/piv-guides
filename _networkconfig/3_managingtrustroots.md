@@ -4,11 +4,6 @@ title: Trust Stores
 collection: networkconfig
 permalink: networkconfig/trustedroots/
 ---
-<div style="float:right; padding:10px; margin-right:20px; border-radius:10px; width:180px; height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CCC; color:#666666">
-<div style="color:#000000">
-<em>Moderate</em>
-</div>
-</div>
 
 You want your network domain to trust your users and their PIV credentials.  Your workstations and server also need to be able to trust the network domain.  Trust and certificate chains are reviewed in the [Certificate Trust](../../pivcertchains) overview and this page includes information on configuring your network domain.
 
