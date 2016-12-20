@@ -12,7 +12,7 @@ The information on this page is to answer questions and identify the most common
 * [Machine Based Enforcement versus User Based Enforcement](#machine-based-enforcement-versus-user-based-enforcement)
 * [Defining the policies for Machine Based Enforcement or User Based Enforcement](#defining-the-policies-for-machine-based-enforcement-or-user-based-enforcement)
 
-#### Machine Based Enforcement versus User Based Enforcement
+## Machine Based Enforcement versus User Based Enforcement
 
 There are two options for requiring users to use PIV credentials to authenticate to the network domain:
 
@@ -32,11 +32,11 @@ The applications which are impacted by User Based Enforcement are designed or de
 
 You want to analyze your applications and identify which are configured to use your users' network domain passwords.  There are methods to fix the applications by enabling Kerberos, SPNEGO (web applications), direct x509 authentication (client certificate authentication), or the SAML and Open ID Connect (OIDC) protocols.  These topics will be covered in the Applications section of the guides which are in-development and we invite *all* to contribute to!
 
-#### Defining the policies for Machine Based Enforcement or User Based Enforcement
+## Defining the policies for Machine Based Enforcement or User Based Enforcement
 The setting to enforce PIV logon is controlled by **scforceoption** in your network domain user and workstation policies.
 
-* Machine Based Enforcement is when you apply the **scforceoption** to a workstation or server object in your network domain.
-* User Based Enforcement is when you apply the **scforceoption** to a user in your network domain.
+- Machine Based Enforcement is when you apply the **scforceoption** to a workstation or server object in your network domain.
+- User Based Enforcement is when you apply the **scforceoption** to a user in your network domain.
 
 This is the only difference when implementing the policy: which objects in your domain you apply the policy to.
 
