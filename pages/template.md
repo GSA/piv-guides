@@ -13,13 +13,6 @@ In this template, you will see text that explains how to use this template and c
 <!--- For example, this code denotes a comment, and information written inside of it will not appear on the website but can be used as a reference for others viewing the file. -->
 
 
-<!--- The code below creates a difficulty identifier on the page, which can either be Beginner, Moderate, or Advanced depending on the technical knowledge required to complete the procedure. The example below includes text that mark the page as 'Advanced', this string can be changed as needed.-->
-<div style="float:right; padding:10px; margin-right:20px; border-radius:10px; width:180px; height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CCC; color:#666666">
-<div style="color:#000000">
-<em>Advanced</em>
-</div>
-</div>
-
 <!--- The '#' symbol is used to denote headers, with different amounts aligning with different header styles. -->
 
 #### Overview
