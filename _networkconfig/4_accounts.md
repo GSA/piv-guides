@@ -40,9 +40,12 @@ For the altSecurityIdentities approach:
 
 ## Implementing altSecurityIdentities and PIV certificate mapping
 
-If you have a large network with many domains, you will want to carefully plan for a migration from solely using Principal Name to the altSecurityIdentities approach.  You may find that you have many applications that rely upon the Principal Name values only.  You can still populate the Principal Name with the PIV Authentication certificate User Principal Name value for one of the user accounts (the non-privileged accounts) to maintain those applications but disable user principal name mapping for _network authentication_.
+If you have a large network with many domains, you will want to carefully plan for a migration from solely using Principal Name to the altSecurityIdentities approach.  
+
+You may find that you have many applications that rely upon the Principal Name values only.  You can still populate the Principal Name with the PIV Authentication certificate User Principal Name value for one of the user accounts (the non-privileged accounts) to maintain those applications but disable user principal name mapping for _network authentication_.
 
 You have three steps to implement altSecurityIdentities and PIV certificate mapping:
+
 - [Disable User Principal Name Mapping](#disable-user-principal-name-mapping)
 - [Link the PIV Authentication Certificate](#link-the-piv-authentication-certificate)
 - [Enable User Name Hints](#enable-user-name-hints)
