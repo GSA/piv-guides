@@ -21,6 +21,8 @@ There are two options for requiring users to use PIV credentials to authenticate
 
 These options are controlled by group policy applied to either Machine or User objects in your network domain. There is planning required to move to full User Based Enforcement and agencies are often using a combination of both Machine and User enforcement in their deployments.
 
+{% include alert-warning.html heading = "User Based Enforcement" content="The user's password will no longer be known by the user.  Look for agency internal applications that are still using Username and Password and performing Form Based Authentication against the network directories. Fix these using Kerberos, SAML or direct x509 authentication." %}
+
 Impacts and considerations are identified to help you plan and execute according to your agency network and user needs.
 
 | Type | Impacts | Considerations |
@@ -28,7 +30,7 @@ Impacts and considerations are identified to help you plan and execute according
 | Machine Based Enforcement | The user is required to use their PIV credential to authenticate to each device where the policy is applied. | The user password is maintained. |
 | User Based Enforcement | The password stored for the user is removed, and changed to a long hash value unknown to the user.  Your users no longer have passwords for the network. | Any applications which were implemented to prompt your users for a username and password and which are using your network domain directories will no longer be accessible. |
 
-The applications which are impacted by User Based Enforcement are designed or deployed using what is referred to as: a) Form Based or Basic Authentication, or 2) LDAP simple binds.  The user will be presented with the application form to enter a username and password and the user will no longer have the password to enter since the passwords have been removed.
+Your applications impacted by User Based Enforcement are designed or deployed using: a) Form Based or Basic Authentication, or 2) LDAP simple binds.  The user will be presented with the application form to enter a username and password and the user will no longer have the password.
 
 You want to analyze your applications and identify which are configured to use your users' network domain passwords.  There are methods to fix the applications by enabling Kerberos, SPNEGO (web applications), direct x509 authentication (client certificate authentication), or the SAML and Open ID Connect (OIDC) protocols.  These topics will be covered in the Applications section of the guides which are in-development and we invite *all* to contribute to!
 
