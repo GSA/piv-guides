@@ -7,8 +7,8 @@ collection: pkifundamentals
 
 # Authentication (AuthN) Options
 Determining which authentication application integration model to use is dependent on the application you are trying to onboard. There are various factors to consider when making that decision. For example:
-- What is the performance and level of effort (LOE) of the application (performance and LOE can vary greatly between applications)?
-- What is the user population (it is very important to understand the user population in terms of skills and knowledge for example)?
+- What is the performance and development level of effort (LOE) of the application? Performance and LOE can vary greatly between applications.
+- What is the user population? It is very important to understand the user population (e.g., their skills and knowledge.
 
 Regardless, you should use a standard format for your onboarding documents:
 - Lists of users and roles
@@ -16,7 +16,7 @@ Regardless, you should use a standard format for your onboarding documents:
 - Engagement documents
 
 ## Understand your Application!
-It helps to have a two sentence summary of your application and what it does. You should also understand various specific facets of the application.  For example:
+It helps to have a two sentence summary of your application and what it does. You should also understand the various specific facets of the application.  For example:
 
 - What is the user population?
         Badged
@@ -38,30 +38,33 @@ It helps to have a two sentence summary of your application and what it does. Yo
 - Who is the lead developer for ICAM integration?
 - When must the application be ICAM-integrated in Production?
 
-## Native SAML SSO +++++ Link to more technical info
+## Native Security Assertion Markup Language (SAML) Single Sign-on (SSO) +++++ Link to more technical info
 
-    Application must support native SAML
-    Low development LOE on both sides (ICAM and Application)
-        Certificates must be synced on both sides
-        Metadata loaded on both sides
-    Moderate coordination effort (Developers on both sides must exchange data and debug at the same time)
+With this approach, your application must support native SAML. Several other things to note:
 
-Mediated Integration
+- There is low development LOE on both sides: the ICAM side and the application side
+- Certificates must be synced on both sides
+- Metadata needs to ve loaded on both sides
+- There is moderate coordination effort (i.e., developers on both sides must exchange data and debug at the same time)
 
-    Some SSO systems provide a solution for older or legacy applications that do not directly support SAML
-    These “mediator” libraries:
-        Capture the SAML authN request
-        Translate to a call that the Application understands (JAVA, .Net, ModAuthMellon, etc.)
-    When selecting an SSO product, it is important to know what options it provides for non-SAML applications
-    Mediated Integration - static library ("Fedlet") +++++ Link to more technical info
-    Web server hands off requests to a special SSO library that manages the SAML session
-    Unlike agent, no additional process to support SSO
-    Less performance overhead
-    Leverages basic SAML support
-    Low development LOE on both sides (ICAM and APP)
-    Certificates must be synced on both sides
-    Metadata loaded on both sides
-    Moderate coordination effort (Developers on both sides must exchange data and debug at the same time)
+### Mediated Integration
+
+Some SSO systems provide a solution for older or legacy applications that do not directly support SAML. These “mediator” libraries:
+        
+- Capture the SAML authN request
+- Translate to a call that the application understands (e.g., JAVA, .Net, ModAuthMellon, etc.)
+   
+When selecting an SSO product, it is important to know what options it provides for non-SAML applications. For example:
+
+- Mediated Integration - static library ("Fedlet") +++++ Link to more technical info
+- The web server hands off requests to a special SSO library that manages the SAML session
+- Unlike agent, there is no additional process to support SSO
+- There is less performance overhead
+- Leverages basic SAML support
+- There is low development LOE on both sides (ICAM and application)
+- Certificates must be synced on both sides
+- Metadata needs to be loaded on both sides
+- There is moderate coordination effort (i.e., developers on both sides must exchange data and debug at the same time)
 
 Mediated Integration - Listening process (Agent) +++++ Link to more technical info
 
