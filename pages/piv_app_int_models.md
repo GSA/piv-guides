@@ -5,19 +5,20 @@ permalink: /pki/
 collection: pkifundamentals
 ---
 
-## Authentication (AuthN) Options
+# Authentication (AuthN) Options
 Determining which authentication application integration model to use is dependent on the application you are trying to onboard. There are various factors to consider when making that decision. For example:
-- the performance and level of effort (LOE) of teh application (performance and LOE can vary greatly between applications)
-- what is the user population (it is very important to understand the user population in terms of skills and knowledge for example)
-- The need for a standard format for your onboarding documents:
-        - Lists of users and roles
-        - Metadata
-        - Engagement documents
+- What is the performance and level of effort (LOE) of the application (performance and LOE can vary greatly between applications)?
+- What is the user population (it is very important to understand the user population in terms of skills and knowledge for example)?
 
-Understand your Application!
+Regardless, you should use a standard format for your onboarding documents:
+- Lists of users and roles
+- Metadata
+- Engagement documents
 
-    It helps to have a 2 sentence summary of the application and what it does
-    What is the user population?
+## Understand your Application!
+It helps to have a two sentence summary of your application and what it does. You should also understand various specific facets of the application.  For example:
+
+- What is the user population?
         Badged
             Federal employees/contractors
                 Internal to Agency?
@@ -27,16 +28,17 @@ Understand your Application!
             Public Partner (Counsel, Industry/University partner, etc.)
         Unbadged, Untrusted
             Member of the Public
-    What is the technology stack? (Example: Java web app running on Tomcat 7 on a Linux machine, etc.)
-    What environments do you have (Production, Staging, Pre-Prod, Test, etc.)
-    How do you currently do authentication? (Example: username+ password)
-    How do you currently do authorization? (Example: we have a mySQL database with custom role information in it)
-    Who is the application owner?
-    Who manages the development team?
-    Who is the lead developer for ICAM integration?
-    When must the application be ICAM-integrated in Production?
+    
+- What is the technology stack? (e.g., Java web app running on Tomcat 7 on a Linux machine, etc.)
+- What environments do you have? (e.g., Production, Staging, Pre-Production, Test, etc.)
+- How do you currently do authentication? (e.g., username+password)
+- How do you currently do authorization? (e.g., mySQL database with custom role information in it)
+- Who is the application owner?
+- Who manages the development team?
+- Who is the lead developer for ICAM integration?
+- When must the application be ICAM-integrated in Production?
 
-Native SAML SSO +++++ Link to more technical info
+## Native SAML SSO +++++ Link to more technical info
 
     Application must support native SAML
     Low development LOE on both sides (ICAM and Application)
