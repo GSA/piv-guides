@@ -88,7 +88,6 @@ If your application can be converted to use Kerberos (Kerberos-able), this may b
 - This approch requires coordination with developers and Active directory
 - Role assignment is done within the application
 - The userIDs in the application can be mapped directly to an attribute already in ICAM
-
         - LoginID
         - email
         
