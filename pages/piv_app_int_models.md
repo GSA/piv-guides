@@ -1,8 +1,7 @@
 ---
 layout: default
-title: Public Key Infrastructure 
-permalink: /pki/
-collection: pkifundamentals
+title: Certificate Trust
+permalink: /pivcertchains/
 ---
 
 # Authentication (AuthN) Options
