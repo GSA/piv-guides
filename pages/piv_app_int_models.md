@@ -6,10 +6,12 @@ permalink: /piv_app_int_models/
 
 # Authentication (AuthN) Options
 Determining which authentication application integration model to use is dependent on the application you are trying to onboard. There are various factors to consider when making that decision. For example:
+
 - What is the performance and development level of effort (LOE) of the application? Performance and LOE can vary greatly between applications.
 - What is the user population? It is very important to understand the user population (e.g., their skills and knowledge.
 
 Regardless, you should use a standard format for your onboarding documents:
+
 - Lists of users and roles
 - Metadata
 - Engagement documents
@@ -37,7 +39,7 @@ It helps to have a two sentence summary of your application and what it does. Yo
 - Who is the lead developer for ICAM integration?
 - When must the application be ICAM-integrated in Production?
 
-## Native Security Assertion Markup Language (SAML) Single Sign-on (SSO) +++++ Link to more technical info
+## A. Native Security Assertion Markup Language (SAML) Single Sign-on (SSO) +++++ Link to more technical info
 
 With this approach, your application must support native SAML. Several other things to note:
 
@@ -46,7 +48,7 @@ With this approach, your application must support native SAML. Several other thi
 - Metadata needs to be loaded on both sides
 - There is moderate coordination effort (i.e., developers on both sides must exchange data and debug at the same time)
 
-### Mediated Integration
+### B. Mediated Integration
 
 Some SSO systems provide a solution for older or legacy applications that do not directly support SAML. These “mediator” libraries:
         
@@ -65,7 +67,7 @@ When selecting an SSO product, it is important to know what options it provides 
 - Metadata needs to be loaded on both sides
 - There is moderate coordination effort (i.e., developers on both sides must exchange data and debug at the same time)
 
-### Mediated Integration - Listening process (Agent) +++++ Link to more technical info
+### C. Mediated Integration - Listening process (Agent) +++++ Link to more technical info
 
 The application must install a proprietary or in-house-developed agent to either the web or application tier. Other things to note:
 
@@ -75,7 +77,7 @@ The application must install a proprietary or in-house-developed agent to either
 - Metadata must be synced
 - There is moderate coordination effort (development on both sides exchanging data and debugging at the same time), once application development of agent installation is complete
 
-### Kerberos SSO to AD +++++ Link to more technical info
+### D. Kerberos SSO to AD +++++ Link to more technical info
 
 If your application can be converted to use Kerberos (Kerberos-able), this may be the path of least resistance to be PIV-enabled.  Things to note in this case:
     
@@ -89,21 +91,24 @@ If your application can be converted to use Kerberos (Kerberos-able), this may b
         email
 - No ICAM work required to support AUTHZ
 
-### Identity Proxy
+### E. Identity Proxy      FIXME - need high-level info on how to implement this
 
-FIXME - need high-level info on how to implement this
 X509 (Direct PIV) Login +++++ Link to more technical info
 
-    Application must support PIV authentication
-    Application must be connected to CA for certificates
-    Application must map users PIV credential to app accounts
-    High LOE for application, no ICAM involvement
+Several things to note about this approach:
+
+- The application must support PIV authentication
+- The application must be connected to a Certification Authority (CA) for certificates
+- The application must map users' PIV credential to application accounts
+- Thereis high development LOE for the application, and no ICAM development involvement
 
 ## Authorization (AuthZ) Options
 
-    Role Assignment within Application with identical (1-1) userID mapping
-    Role Assignment within Application – mapped to different userID
-    External Role assignment – roles are assigned by AD or some other mechanism
+Ther are three approaches to authorization worth noting:
+    
+- Role assignment within application with identical (1-1) userID mapping
+- Role assignment within the application mapped to different userID
+- External Role assignment where roles are assigned by Active Directory (AD) or some other mechanism
 
 Role mapped to identical userID
 
