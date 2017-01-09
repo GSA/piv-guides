@@ -43,7 +43,7 @@ With this approach, your application must support native SAML. Several other thi
 
 - There is low development LOE on both sides: the ICAM side and the application side
 - Certificates must be synced on both sides
-- Metadata needs to ve loaded on both sides
+- Metadata needs to be loaded on both sides
 - There is moderate coordination effort (i.e., developers on both sides must exchange data and debug at the same time)
 
 ### Mediated Integration
@@ -65,29 +65,31 @@ When selecting an SSO product, it is important to know what options it provides 
 - Metadata needs to be loaded on both sides
 - There is moderate coordination effort (i.e., developers on both sides must exchange data and debug at the same time)
 
-Mediated Integration - Listening process (Agent) +++++ Link to more technical info
+### Mediated Integration - Listening process (Agent) +++++ Link to more technical info
 
-    Application must install a proprietary or in-house-developed agent to either web or application tier
-    High development effort on application, low effort for ICAM
-        Application must install agent, which can be complex
-        Certificates must be correct
-        Metadata must be synced
-    Moderate coordination effort (Devs on both sides exchanging data and debugging at the same time), once application development of agent installation is complete
+The application must install a proprietary or in-house-developed agent to either the web or application tier. Other things to note:
 
-Kerberos SSO to AD +++++ Link to more technical info
+- There is high development effort on the application, and low develoment effort for ICAM
+- The application needs to install an agent, which can be complex
+- Certificates must be correct
+- Metadata must be synced
+- There is moderate coordination effort (development on both sides exchanging data and debugging at the same time), once application development of agent installation is complete
 
-    If your application is Kerberos-able, this may be the path of least resistance to be PIV-enabled
-    Application must support native Kerberos (sometimes called Windows Integrated Authentication)
-    Provides Authentication (AuthN) and Authorization (AuthZ)
-    Moderate LOE on application, zero ICAM LOE
-    Requires coordination with developers and Active directory
-    Role Assignment within Application
+### Kerberos SSO to AD +++++ Link to more technical info
+
+If your application can be converted to use Kerberos (Kerberos-able), this may be the path of least resistance to be PIV-enabled.  Things to note in this case:
+    
+- The application must support native Kerberos (sometimes called Windows Integrated Authentication)
+- Kerberos provides Authentication (AuthN) and Authorization (AuthZ)
+- There is moderate development LOE on application, zero ICAM development LOE
+- This approch requires coordination with developers and Active directory
+- Role Assignment is done within the application
     The userIDs in the application can be mapped directly to an attribute already in ICAM
         LoginID
         email
-    No ICAM work required to support AUTHZ
+- No ICAM work required to support AUTHZ
 
-Identity Proxy
+### Identity Proxy
 
 FIXME - need high-level info on how to implement this
 X509 (Direct PIV) Login +++++ Link to more technical info
