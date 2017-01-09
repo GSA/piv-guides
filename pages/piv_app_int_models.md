@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Certificate Trust
-permalink: /pivcertchains/
+title: PIV Application Integration Models
+permalink: /piv_app_int_models/
 ---
 
 # Authentication (AuthN) Options
