@@ -78,7 +78,7 @@ The application must install a proprietary or in-house-developed agent to either
 - Metadata must be synced
 - There is moderate coordination effort (development on both sides exchanging data and debugging at the same time), once application development of agent installation is complete
 
-### D. Kerberos SSO to AD +++++ Link to more technical info
+### D. Kerberos SSO to Active Directory (AD) +++++ Link to more technical info
 
 If your application can be converted to use Kerberos (Kerberos-able), this may be the path of least resistance to be PIV-enabled.  Things to note in this case:
     
@@ -90,7 +90,8 @@ If your application can be converted to use Kerberos (Kerberos-able), this may b
 - The userIDs in the application can be mapped directly to an attribute already in ICAM
         - LoginID
         - email
-- No ICAM work required to support AUTHZ
+        
+- No ICAM work required to support Authorization
 
 ### E. Identity Proxy      FIXME - need high-level info on how to implement this
 
