@@ -110,26 +110,28 @@ Ther are three approaches to authorization worth noting:
 - Role assignment within the application mapped to different userID
 - External Role assignment where roles are assigned by Active Directory (AD) or some other mechanism
 
-Role mapped to identical userID
+### A. Role Mapped to Identical UserID
 
-    UserIDs in application can map one-to-one with an attribute already in the ICAM Directory:
-        Network login
-        Email address
-    No ICAM work required to support AUTHZ
+UserIDs in the application can map one-to-one with an attribute already in the ICAM Directory:
+        
+- Network login
+- Email address
 
-Role mapped to different UserID
+There is No ICAM development work required to support AuthZ.
 
-• Role is mapped to a differently named userID
-• ICAM must map the application userID to the network login ID
-Role mapped externally
+### B. Role Mapped to Different UserID
 
-    Roles are assigned by AD or some other mechanism
-    ICAM must import the users and roles
-    The application must be modified to ingest the roles that ICAM passes
-    This will be a manual process at first and:
-        Users must be added to AuthN directory
-        Users must be added to the AuthZ directory
-    The application owner must provide ICAM with the following information in the agreed-upon format:
-        List of Roles
-        Members per role (accurate AD login IDs)
+In this approach, role is mapped to a differently-named userID.  Further, ICAM must map the application userID to the network login ID.
+
+### C. Role Mapped Externally
+
+In this approach, roles are assigned by Active Directory (AD) or some other mechanism.  Other things to note:
+    
+- ICAM must import the users and roles
+- The application must be modified to ingest the roles that ICAM passes.  This will be a manual process at first and:
+        - Users must be added to AuthN Directory
+        - Users must be added to the AuthZ Directory
+- The application owner must provide ICAM with the following information in the agreed-upon format:
+        - List of roles
+       -  Members per role (accurate Active Directory login IDs)
 
