@@ -20,15 +20,16 @@ Regardless, you should use a standard format for your onboarding documents:
 It helps to have a two sentence summary of your application and what it does. You should also understand the various specific facets of the application.  For example:
 
 - What is the user population?
-        Badged
-            Federal employees/contractors
-                Internal to Agency?
-                Other Federal Government Agencies (OGA)?
-        Unbadged, Trusted
-            State, Local, and Tribal (SLT) users?
-            Public Partner (Counsel, Industry/University partner, etc.)
-        Unbadged, Untrusted
-            Member of the Public
+
+        - Badged
+            - Federal employees/contractors
+                - Internal to Agency?
+                - Other Federal Government Agencies (OGA)?
+        - Unbadged, Trusted
+            - State, Local, and Tribal (SLT) users?
+            - Public Partner (Counsel, Industry/University partner, etc.)
+        - Unbadged, Untrusted
+            - Member of the Public
     
 - What is the technology stack? (e.g., Java web app running on Tomcat 7 on a Linux machine, etc.)
 - What environments do you have? (e.g., Production, Staging, Pre-Production, Test, etc.)
@@ -85,10 +86,12 @@ If your application can be converted to use Kerberos (Kerberos-able), this may b
 - Kerberos provides Authentication (AuthN) and Authorization (AuthZ)
 - There is moderate development LOE on application, zero ICAM development LOE
 - This approch requires coordination with developers and Active directory
-- Role Assignment is done within the application
-    The userIDs in the application can be mapped directly to an attribute already in ICAM
-        LoginID
-        email
+- Role assignment is done within the application
+- The userIDs in the application can be mapped directly to an attribute already in ICAM
+
+        - LoginID
+        - email
+        
 - No ICAM work required to support AUTHZ
 
 ### E. Identity Proxy      FIXME - need high-level info on how to implement this
