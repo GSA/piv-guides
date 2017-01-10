@@ -39,7 +39,15 @@ Regardless, you should use a standard format for your onboarding documents:
 - Metadata
 - Engagement documents
 
-## *A. Native Security Assertion Markup Language (SAML) Single Sign-on (SSO)* +++++ Link to more technical info
+There are five authentication integration options worth noting:
+
+1. Native Security Assertion Markup Language (SAML) Single Sign-on (SSO)
+2. Mediated Integration
+3. Kerberos SSO to Active Directory (AD)
+4. Identity Proxy
+5. X.509 (Direct PIV) Login
+
+## *1. Native Security Assertion Markup Language (SAML) Single Sign-on (SSO)* +++++ Link to more technical info
 
 With this approach, your application must support native SAML. Several other things to note:
 
@@ -48,7 +56,7 @@ With this approach, your application must support native SAML. Several other thi
 - Metadata needs to be loaded on both sides
 - There is moderate coordination effort (i.e., developers on both sides must exchange data and debug at the same time)
 
-## *B. Mediated Integration*
+## *2. Mediated Integration*
 
 Some SSO systems provide a solution for older or legacy applications that do not directly support SAML. These “mediator” libraries:
         
@@ -57,7 +65,7 @@ Some SSO systems provide a solution for older or legacy applications that do not
    
 When selecting an SSO product, it is important to know what options it provides for non-SAML applications. For example:
 
-### *B.1. Mediated Integration - static library ("Fedlet")* +++++ Link to more technical info
+### *2A. Mediated Integration - static library ("Fedlet")* +++++ Link to more technical info
 For the Fedlet mediated integration approach, you should note the following:
 
 - The web server hands off requests to a special SSO library that manages the SAML session
@@ -69,7 +77,7 @@ For the Fedlet mediated integration approach, you should note the following:
 - Metadata needs to be loaded on both sides
 - There is moderate coordination effort (i.e., developers on both sides must exchange data and debug at the same time)
 
-### *B.2. Mediated Integration - Listening process (Agent)* +++++ Link to more technical info
+### *2B. Mediated Integration - Listening process (Agent)* +++++ Link to more technical info
 For the Agency mediated integration approach, you should note the following:
 
 - The application must install a proprietary or in-house-developed agent to either the web or application tier. Other things to note:
@@ -79,7 +87,7 @@ For the Agency mediated integration approach, you should note the following:
 - Metadata must be synced
 - There is moderate coordination effort (development on both sides exchanging data and debugging at the same time), once application development of agent installation is complete
 
-## *C. Kerberos SSO to Active Directory (AD)* +++++ Link to more technical info
+## *3. Kerberos SSO to Active Directory (AD)* +++++ Link to more technical info
 
 If your application can be converted to use Kerberos (Kerberos-able), this may be the path of least resistance to be PIV-enabled.  Things to note in this case:
     
@@ -93,9 +101,9 @@ If your application can be converted to use Kerberos (Kerberos-able), this may b
     - email
 - No ICAM work required to support Authorization
 
-## *D. Identity Proxy*      FIXME - need high-level info on how to implement this
+## *4. Identity Proxy*      FIXME - need high-level info on how to implement this
 
-## *E X.509 (Direct PIV) Login* +++++ Link to more technical info
+## *5 X.509 (Direct PIV) Login* +++++ Link to more technical info
 
 Simply speaking, "PIV" = X.509 = two-way TLS = client authentication. Several things to note about the Direct PIV Login approach:
 
@@ -106,7 +114,7 @@ Simply speaking, "PIV" = X.509 = two-way TLS = client authentication. Several th
 
 # Authorization (AuthZ) Application Integration Options
 
-There are three approaches to authorization worth noting:
+There are three authorization integration options worth noting:
     
 1. Role assignment within application with identical (1-1) userID mapping
 2. Role assignment within the application mapped to different userID
