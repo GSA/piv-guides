@@ -4,7 +4,7 @@ title: PIV Application Integration Models
 permalink: /pivappintmodels/
 ---
 
-# First, Understand Your Application!
+# *First, Understand Your Application!
 Before determining which PIV application integration model is best for your circumstances, it is very important to first make sure you understand your application and application environment.  It helps to have a two sentence summary of your application and what it does. Other things you should understand are:
 
 - What is the user population?
@@ -26,7 +26,7 @@ Before determining which PIV application integration model is best for your circ
 - Who is the lead developer for ICAM integration?
 - When must the application be ICAM-integrated in Production?
 
-# Authentication (AuthN) Application Integration Options
+# *Authentication (AuthN) Application Integration Options
 Determining which authentication application integration model to use is dependent on the application you are trying to onboard. There are various factors to consider when making that decision. For example:
 
 - What is the performance and development level of effort (LOE) of the application? 
@@ -104,9 +104,9 @@ Several things to note about this approach:
 - The application must map users' PIV credential to application accounts
 - Thereis high development LOE for the application, and no ICAM development involvement
 
-# Authorization (AuthZ) Application Integration Options
+# *Authorization (AuthZ) Application Integration Options
 
-Ther are three approaches to authorization worth noting:
+There are three approaches to authorization worth noting:
     
 - Role assignment within application with identical (1-1) userID mapping
 - Role assignment within the application mapped to different userID
