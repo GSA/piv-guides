@@ -95,14 +95,14 @@ If your application can be converted to use Kerberos (Kerberos-able), this may b
 
 ## *D. Identity Proxy*      FIXME - need high-level info on how to implement this
 
-X509 (Direct PIV) Login +++++ Link to more technical info
+## *E X.509 (Direct PIV) Login* +++++ Link to more technical info
 
-Several things to note about this approach:
+Simply speaking, "PIV" = X.509 = two-way TLS = client authentication. Several things to note about the Direct PIV Login approach:
 
 - The application must support PIV authentication
 - The application must be connected to a Certification Authority (CA) for certificates
 - The application must map users' PIV credential to application accounts
-- Thereis high development LOE for the application, and no ICAM development involvement
+- There is high development LOE for the application, and no ICAM development involvement
 
 # Authorization (AuthZ) Application Integration Options
 
