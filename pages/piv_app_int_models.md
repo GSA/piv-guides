@@ -1,23 +1,11 @@
 ---
 layout: default
 title: PIV Application Integration Models
-permalink: /piv_app_int_models/
+permalink: /pivappintmodels/
 ---
 
-# Authentication (AuthN) Options
-Determining which authentication application integration model to use is dependent on the application you are trying to onboard. There are various factors to consider when making that decision. For example:
-
-- What is the performance and development level of effort (LOE) of the application? Performance and LOE can vary greatly between applications.
-- What is the user population? It is very important to understand the user population (e.g., their skills and knowledge.
-
-Regardless, you should use a standard format for your onboarding documents:
-
-- Lists of users and roles
-- Metadata
-- Engagement documents
-
-## Understand your Application!
-It helps to have a two sentence summary of your application and what it does. You should also understand the various specific facets of the application.  For example:
+## First, Understand Your Application!
+Before determining which PIV application integration model is best for your circumstances, it is very important to first make sure you understand your application and application environment.  It helps to have a two sentence summary of your application and what it does. Other things you should understand are:
 
 - What is the user population?
     - Badged
@@ -25,10 +13,10 @@ It helps to have a two sentence summary of your application and what it does. Yo
             - Internal to Agency?
             - Other Federal Government Agencies (OGA)?
     - Unbadged, Trusted
-            - State, Local, and Tribal (SLT) users?
-            - Public Partner (Counsel, Industry/University partner, etc.)
+        - State, Local, and Tribal (SLT) users?
+        - Public Partner (Counsel, Industry/University partner, etc.)
      - Unbadged, Untrusted
-           - Member of the Public
+         - Member of the Public
 - What is the technology stack? (e.g., Java web app running on Tomcat 7 on a Linux machine, etc.)
 - What environments do you have? (e.g., Production, Staging, Pre-Production, Test, etc.)
 - How do you currently do authentication? (e.g., username+password)
@@ -37,6 +25,19 @@ It helps to have a two sentence summary of your application and what it does. Yo
 - Who manages the development team?
 - Who is the lead developer for ICAM integration?
 - When must the application be ICAM-integrated in Production?
+
+# Authentication (AuthN) Options
+Determining which authentication application integration model to use is dependent on the application you are trying to onboard. There are various factors to consider when making that decision. For example:
+
+- What is the performance and development level of effort (LOE) of the application? 
+> Performance and LOE can vary greatly between applications.
+- What is the user population? It is very important to understand the user population (e.g., their skills and knowledge.
+
+Regardless, you should use a standard format for your onboarding documents:
+
+- Lists of users and roles
+- Metadata
+- Engagement documents
 
 ## A. Native Security Assertion Markup Language (SAML) Single Sign-on (SSO) +++++ Link to more technical info
 
@@ -56,7 +57,9 @@ Some SSO systems provide a solution for older or legacy applications that do not
    
 When selecting an SSO product, it is important to know what options it provides for non-SAML applications. For example:
 
-- Mediated Integration - static library ("Fedlet") +++++ Link to more technical info
+### B.1. Mediated Integration - static library ("Fedlet") +++++ Link to more technical info
+For the Fedlet mediated integration approach, you should note the following:
+
 - The web server hands off requests to a special SSO library that manages the SAML session
 - Unlike agent, there is no additional process to support SSO
 - There is less performance overhead
@@ -66,17 +69,17 @@ When selecting an SSO product, it is important to know what options it provides 
 - Metadata needs to be loaded on both sides
 - There is moderate coordination effort (i.e., developers on both sides must exchange data and debug at the same time)
 
-### C. Mediated Integration - Listening process (Agent) +++++ Link to more technical info
+### B.2. Mediated Integration - Listening process (Agent) +++++ Link to more technical info
+For the Agency mediated integration approach, you should note the following:
 
-The application must install a proprietary or in-house-developed agent to either the web or application tier. Other things to note:
-
+- The application must install a proprietary or in-house-developed agent to either the web or application tier. Other things to note:
 - There is high development effort on the application, and low develoment effort for ICAM
 - The application needs to install an agent, which can be complex
 - Certificates must be correct
 - Metadata must be synced
 - There is moderate coordination effort (development on both sides exchanging data and debugging at the same time), once application development of agent installation is complete
 
-### D. Kerberos SSO to Active Directory (AD) +++++ Link to more technical info
+### C. Kerberos SSO to Active Directory (AD) +++++ Link to more technical info
 
 If your application can be converted to use Kerberos (Kerberos-able), this may be the path of least resistance to be PIV-enabled.  Things to note in this case:
     
@@ -90,7 +93,7 @@ If your application can be converted to use Kerberos (Kerberos-able), this may b
     - email
 - No ICAM work required to support Authorization
 
-### E. Identity Proxy      FIXME - need high-level info on how to implement this
+### D. Identity Proxy      FIXME - need high-level info on how to implement this
 
 X509 (Direct PIV) Login +++++ Link to more technical info
 
