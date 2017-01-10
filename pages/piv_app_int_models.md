@@ -30,7 +30,9 @@ Before determining which PIV application integration model is best for your circ
 Determining which authentication application integration model to use is dependent on the application you are trying to onboard. There are various factors to consider when making that decision. For example:
 
 - What is the performance and development level of effort (LOE) of the application? 
+
 > Performance and LOE can vary greatly between applications.
+
 - What is the user population? It is very important to understand the user population (e.g., their skills and knowledge.
 
 Regardless, you should use a standard format for your onboarding documents:
