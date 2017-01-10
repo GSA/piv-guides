@@ -4,7 +4,7 @@ title: PIV Application Integration Models
 permalink: /pivappintmodels/
 ---
 
-# *First, Understand Your Application!
+# First, Understand Your Application!
 Before determining which PIV application integration model is best for your circumstances, it is very important to first make sure you understand your application and application environment.  It helps to have a two sentence summary of your application and what it does. Other things you should understand are:
 
 - What is the user population?
@@ -26,7 +26,7 @@ Before determining which PIV application integration model is best for your circ
 - Who is the lead developer for ICAM integration?
 - When must the application be ICAM-integrated in Production?
 
-# *Authentication (AuthN) Application Integration Options
+# Authentication (AuthN) Application Integration Options
 Determining which authentication application integration model to use is dependent on the application you are trying to onboard. There are various factors to consider when making that decision. For example:
 
 - What is the performance and development level of effort (LOE) of the application? 
@@ -39,7 +39,7 @@ Regardless, you should use a standard format for your onboarding documents:
 - Metadata
 - Engagement documents
 
-## A. Native Security Assertion Markup Language (SAML) Single Sign-on (SSO) +++++ Link to more technical info
+## *A. Native Security Assertion Markup Language (SAML) Single Sign-on (SSO)* +++++ Link to more technical info
 
 With this approach, your application must support native SAML. Several other things to note:
 
@@ -48,7 +48,7 @@ With this approach, your application must support native SAML. Several other thi
 - Metadata needs to be loaded on both sides
 - There is moderate coordination effort (i.e., developers on both sides must exchange data and debug at the same time)
 
-## B. Mediated Integration
+## *B. Mediated Integration*
 
 Some SSO systems provide a solution for older or legacy applications that do not directly support SAML. These “mediator” libraries:
         
@@ -57,7 +57,7 @@ Some SSO systems provide a solution for older or legacy applications that do not
    
 When selecting an SSO product, it is important to know what options it provides for non-SAML applications. For example:
 
-### B.1. Mediated Integration - static library ("Fedlet") +++++ Link to more technical info
+### *B.1. Mediated Integration - static library ("Fedlet")* +++++ Link to more technical info
 For the Fedlet mediated integration approach, you should note the following:
 
 - The web server hands off requests to a special SSO library that manages the SAML session
@@ -69,7 +69,7 @@ For the Fedlet mediated integration approach, you should note the following:
 - Metadata needs to be loaded on both sides
 - There is moderate coordination effort (i.e., developers on both sides must exchange data and debug at the same time)
 
-### B.2. Mediated Integration - Listening process (Agent) +++++ Link to more technical info
+### *B.2. Mediated Integration - Listening process (Agent)* +++++ Link to more technical info
 For the Agency mediated integration approach, you should note the following:
 
 - The application must install a proprietary or in-house-developed agent to either the web or application tier. Other things to note:
@@ -79,7 +79,7 @@ For the Agency mediated integration approach, you should note the following:
 - Metadata must be synced
 - There is moderate coordination effort (development on both sides exchanging data and debugging at the same time), once application development of agent installation is complete
 
-## C. Kerberos SSO to Active Directory (AD) +++++ Link to more technical info
+## *C. Kerberos SSO to Active Directory (AD)* +++++ Link to more technical info
 
 If your application can be converted to use Kerberos (Kerberos-able), this may be the path of least resistance to be PIV-enabled.  Things to note in this case:
     
@@ -93,7 +93,7 @@ If your application can be converted to use Kerberos (Kerberos-able), this may b
     - email
 - No ICAM work required to support Authorization
 
-## D. Identity Proxy      FIXME - need high-level info on how to implement this
+## *D. Identity Proxy*      FIXME - need high-level info on how to implement this
 
 X509 (Direct PIV) Login +++++ Link to more technical info
 
@@ -104,7 +104,7 @@ Several things to note about this approach:
 - The application must map users' PIV credential to application accounts
 - Thereis high development LOE for the application, and no ICAM development involvement
 
-# *Authorization (AuthZ) Application Integration Options
+# Authorization (AuthZ) Application Integration Options
 
 There are three approaches to authorization worth noting:
     
@@ -112,7 +112,7 @@ There are three approaches to authorization worth noting:
 - Role assignment within the application mapped to different userID
 - External Role assignment where roles are assigned by Active Directory (AD) or some other mechanism
 
-## A. Role Mapped to Identical UserID
+## *A. Role Mapped to Identical UserID*
 
 UserIDs in the application can map one-to-one with an attribute already in the ICAM Directory:
         
@@ -121,11 +121,11 @@ UserIDs in the application can map one-to-one with an attribute already in the I
 
 There is No ICAM development work required to support AuthZ.
 
-## B. Role Mapped to Different UserID
+## *B. Role Mapped to Different UserID*
 
 In this approach, role is mapped to a differently-named userID.  Further, ICAM must map the application userID to the network login ID.
 
-## C. Role Mapped Externally
+## *C. Role Mapped Externally*
 
 In this approach, roles are assigned by Active Directory (AD) or some other mechanism.  Other things to note:
     
