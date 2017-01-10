@@ -26,7 +26,7 @@ Before determining which PIV application integration model is best for your circ
 - Who is the lead developer for ICAM integration?
 - When must the application be ICAM-integrated in Production?
 
-# Authentication (AuthN) Options
+# Authentication (AuthN) Application Integration Options
 Determining which authentication application integration model to use is dependent on the application you are trying to onboard. There are various factors to consider when making that decision. For example:
 
 - What is the performance and development level of effort (LOE) of the application? 
@@ -104,7 +104,7 @@ Several things to note about this approach:
 - The application must map users' PIV credential to application accounts
 - Thereis high development LOE for the application, and no ICAM development involvement
 
-# Authorization (AuthZ) Options
+# Authorization (AuthZ) Application Integration Options
 
 Ther are three approaches to authorization worth noting:
     
