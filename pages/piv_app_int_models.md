@@ -128,9 +128,9 @@ In this approach, roles are assigned by Active Directory (AD) or some other mech
     
 - ICAM must import the users and roles
 - The application must be modified to ingest the roles that ICAM passes.  This will be a manual process at first and:
-        - Users must be added to AuthN Directory
-        - Users must be added to the AuthZ Directory
+    - Users must be added to AuthN Directory
+    - Users must be added to the AuthZ Directory
 - The application owner must provide ICAM with the following information in the agreed-upon format:
-       - List of roles
-       -  Members per role (accurate Active Directory login IDs)
+    - List of roles
+    - Members per role (accurate Active Directory login IDs)
 
