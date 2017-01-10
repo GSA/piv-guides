@@ -20,17 +20,15 @@ Regardless, you should use a standard format for your onboarding documents:
 It helps to have a two sentence summary of your application and what it does. You should also understand the various specific facets of the application.  For example:
 
 - What is the user population?
-
-        - Badged
-            - Federal employees/contractors
-                - Internal to Agency?
-                - Other Federal Government Agencies (OGA)?
-        - Unbadged, Trusted
+    - Badged
+        - Federal employees/contractors
+            - Internal to Agency?
+            - Other Federal Government Agencies (OGA)?
+    - Unbadged, Trusted
             - State, Local, and Tribal (SLT) users?
             - Public Partner (Counsel, Industry/University partner, etc.)
-        - Unbadged, Untrusted
-            - Member of the Public
-    
+     - Unbadged, Untrusted
+           - Member of the Public
 - What is the technology stack? (e.g., Java web app running on Tomcat 7 on a Linux machine, etc.)
 - What environments do you have? (e.g., Production, Staging, Pre-Production, Test, etc.)
 - How do you currently do authentication? (e.g., username+password)
