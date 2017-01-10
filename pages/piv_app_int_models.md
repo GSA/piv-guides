@@ -108,11 +108,11 @@ Simply speaking, "PIV" = X.509 = two-way TLS = client authentication. Several th
 
 There are three approaches to authorization worth noting:
     
-- Role assignment within application with identical (1-1) userID mapping
-- Role assignment within the application mapped to different userID
-- External Role assignment where roles are assigned by Active Directory (AD) or some other mechanism
+1. Role assignment within application with identical (1-1) userID mapping
+2. Role assignment within the application mapped to different userID
+3. External Role assignment where roles are assigned by Active Directory (AD) or some other mechanism
 
-## *A. Role Mapped to Identical UserID*
+## *1. Role Mapped to Identical UserID*
 
 UserIDs in the application can map one-to-one with an attribute already in the ICAM Directory:
         
@@ -121,11 +121,11 @@ UserIDs in the application can map one-to-one with an attribute already in the I
 
 There is No ICAM development work required to support AuthZ.
 
-## *B. Role Mapped to Different UserID*
+## *2. Role Mapped to Different UserID*
 
 In this approach, role is mapped to a differently-named userID.  Further, ICAM must map the application userID to the network login ID.
 
-## *C. Role Mapped Externally*
+## *3. Role Mapped Externally*
 
 In this approach, roles are assigned by Active Directory (AD) or some other mechanism.  Other things to note:
     
