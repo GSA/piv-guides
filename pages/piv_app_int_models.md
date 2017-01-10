@@ -48,7 +48,7 @@ With this approach, your application must support native SAML. Several other thi
 - Metadata needs to be loaded on both sides
 - There is moderate coordination effort (i.e., developers on both sides must exchange data and debug at the same time)
 
-### B. Mediated Integration
+## B. Mediated Integration
 
 Some SSO systems provide a solution for older or legacy applications that do not directly support SAML. These “mediator” libraries:
         
@@ -79,7 +79,7 @@ For the Agency mediated integration approach, you should note the following:
 - Metadata must be synced
 - There is moderate coordination effort (development on both sides exchanging data and debugging at the same time), once application development of agent installation is complete
 
-### C. Kerberos SSO to Active Directory (AD) +++++ Link to more technical info
+## C. Kerberos SSO to Active Directory (AD) +++++ Link to more technical info
 
 If your application can be converted to use Kerberos (Kerberos-able), this may be the path of least resistance to be PIV-enabled.  Things to note in this case:
     
@@ -93,7 +93,7 @@ If your application can be converted to use Kerberos (Kerberos-able), this may b
     - email
 - No ICAM work required to support Authorization
 
-### D. Identity Proxy      FIXME - need high-level info on how to implement this
+## D. Identity Proxy      FIXME - need high-level info on how to implement this
 
 X509 (Direct PIV) Login +++++ Link to more technical info
 
@@ -104,7 +104,7 @@ Several things to note about this approach:
 - The application must map users' PIV credential to application accounts
 - Thereis high development LOE for the application, and no ICAM development involvement
 
-## Authorization (AuthZ) Options
+# Authorization (AuthZ) Options
 
 Ther are three approaches to authorization worth noting:
     
@@ -112,7 +112,7 @@ Ther are three approaches to authorization worth noting:
 - Role assignment within the application mapped to different userID
 - External Role assignment where roles are assigned by Active Directory (AD) or some other mechanism
 
-### A. Role Mapped to Identical UserID
+## A. Role Mapped to Identical UserID
 
 UserIDs in the application can map one-to-one with an attribute already in the ICAM Directory:
         
@@ -121,11 +121,11 @@ UserIDs in the application can map one-to-one with an attribute already in the I
 
 There is No ICAM development work required to support AuthZ.
 
-### B. Role Mapped to Different UserID
+## B. Role Mapped to Different UserID
 
 In this approach, role is mapped to a differently-named userID.  Further, ICAM must map the application userID to the network login ID.
 
-### C. Role Mapped Externally
+## C. Role Mapped Externally
 
 In this approach, roles are assigned by Active Directory (AD) or some other mechanism.  Other things to note:
     
