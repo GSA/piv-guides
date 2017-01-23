@@ -4,28 +4,23 @@ title: Trust Stores
 collection: networkconfig
 permalink: networkconfig/trustedroots/
 ---
-<div style="float:right; padding:10px; margin-right:20px; border-radius:10px; width:180px; height:40px; box-shadow:3px 3px 5px 0px; text-align:center; background-color:#CCC; color:#666666">
-<div style="color:#000000">
-<em>Moderate</em>
-</div>
-</div>
 
 You want your network domain to trust your users and their PIV credentials.  Your workstations and server also need to be able to trust the network domain.  Trust and certificate chains are reviewed in the [Certificate Trust](../../pivcertchains) overview and this page includes information on configuring your network domain.
 
 There are two Trust stores to consider for your network domain:
 
-1.  [Trusted Root Certificate Authorities](#trusted-root-certificate-authorities)
-2.  [NTAuth Enterprise Trust Store](#ntauth-enterprise-trust-store)
+- [Trusted Root Certificate Authorities](#trusted-root-certificate-authorities)
+- [NTAuth Enterprise Trust Store](#ntauth-enterprise-trust-store)
 
-####  Trusted Root Certificate Authorities
+##  Trusted Root Certificate Authorities
 You need to publish the Federal Common Policy Certificate Authority (COMMON) [root certificate](../../pivcertchains/#download-root-and-intermediate-certificates) to the trusted root certificate authority trust stores on all your workstations, devices, servers and domain controllers.  
 
 For Microsoft and Apple, the COMMON certificate is included as a trusted root certificate authority by default.  However, you may have your network and devices configured to not automatically update trusted root certificates published by any commercial trust stores.  
 
-You want to add COMMON [root certificate](../../pivcertchains/#download-root-and-intermediate-certificates) to a Group Policy Object to publish COMMON as a _trusted root_ for ALL the devices and user objects. 
+You want to add COMMON [root certificate](../../pivcertchains/#download-root-and-intermediate-certificates) to a Group Policy Object to publish COMMON as a _trusted root_ for ALL the devices and user objects.
 
-#### NTAuth Enterprise Trust Store
-The _NTAuth_ enterprise trust store is used by your network domain to determine which certificate authorities to trust specifically for authenticating users to the network.  To understand the difference between the typical Trust Stores and NTAuth, you may want to think of NTAuth as an _explicit trust list_ of certificate authorities used for network authentication.
+## NTAuth Enterprise Trust Store
+The _NTAuth_ enterprise trust store is used by your network domain to determine which certificate authorities to trust specifically for authenticating users to the network.  To understand the difference between the typical network domain Trust Stores and NTAuth, you may want to think of NTAuth as an _explicit trust list_ of certificate authorities used for network authentication.
 
 There are two very different options for what certificate authority certificates you need publish to the NTAuth trust store.  Each option depends on the choice you make for [linking your user accounts](../accounts/).
 
@@ -40,17 +35,21 @@ To publish a certificate to NTAuth, you can use either a group policy object (re
 
 Using **certutil**, you will need to have Enterprise Admin permissions for the domain.  
 
-To publish / add a certificate to NTAuth:  
+To publish / add a certificate to NTAuth:
+
+
 ```
-certutil –dspublish –f certificate_to_publish.cer NTAuthCA
+  certutil –dspublish –f certificate_to_publish.cer NTAuthCA
 ```
 
 To view all certificates in NTAuth:  
+
 ```
-certutil –viewstore –enterprise NTAuth
+  certutil –viewstore –enterprise NTAuth
 ```
 
-To propagate from the domain controller to the enterprise, you'll want to do a _gpupdate_:  
+To propagate from the domain controller(s) to the enterprise, you'll want to do a _gpupdate_:  
+
 ```
-gpupdate /force
+  gpupdate /force
 ```
