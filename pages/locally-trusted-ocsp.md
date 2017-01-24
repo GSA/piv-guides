@@ -48,11 +48,17 @@ Before beginning the installation, ensure your server is named and joined to the
 
 ####Add the Active Directory Certificate Services role to the Server
 Use the *Add Roles and Features Wizard* to add the *Active Directory Certificate Services* (ADCS) role to Windows 2012 R2.
+
 ![Select Active Directory Certificate Services (ADCS)](../img/local-ocsp-cfg-adcs.png)
+
 The wizard will prompt you add required features, add them, and then continue through the wizard until you reach *Role Services*. At this point, ensure you remove Certification Authority, and add Online Responder.
+
 ![Select Online Responder](../img/local-ocsp-cfg-role-services2.png)
+
 The wizard will prompt you to *Add features that are required for Online Responder*, click *Add features*, then continue with the wizard and click *Install*. After the wizard finishes installing, click *Configure Active Directory Certificate Services on the destination server* inside the Results window.
+
 ![Click Configure Active Directory Certificate Services](../img/local-ocsp-cfg-configure.png)
+
 Assuming you are logged on the the server with (at least) local administrator rights, it is not be necessary to change the credentials in the *AD CS Configuration* wizard. Click through the wizard, click *Configure* then *Close* when it finishes. You can now close the *Add Roles and Features Wizard*. As a best practice, you may wish to reboot the server before continuing.
 
 ###Configure Revocation Sources
