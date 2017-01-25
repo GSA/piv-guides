@@ -46,7 +46,6 @@ Microsoft Windows Server 2012 R2 was chosen for inclusion in this document becau
 ###Installation
 Before beginning the installation, ensure your server is named and joined to the appropriate domain. Changing the server name or domain after installation can corrupt the configuration. Your server will also need outbound Internet access to download remote CRLs. In most cases, CRLs are available over HTTP/80.
 
-####Add the Active Directory Certificate Services role to the Server
 Use the *Add Roles and Features Wizard* to add the *Active Directory Certificate Services* (ADCS) role to Windows 2012 R2.
 
 ![Select Active Directory Certificate Services (ADCS)](../img/local-ocsp-cfg-adcs.png)
