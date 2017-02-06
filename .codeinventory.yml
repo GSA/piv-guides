@@ -1,0 +1,14 @@
+name: 'Federal Personal Identity Verification (PIV) Guides'
+description: 'PIV implementation guidance for networks, operating systems and applications'
+openSourceProject: 1
+governmentWideReuseProject: 1
+tags:
+    - pki
+    - fpki
+    - ficam
+    - piv
+    - federation
+    - credentials
+    - authentication
+contact:
+    email: icam@gsa.gov
