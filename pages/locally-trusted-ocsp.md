@@ -31,6 +31,7 @@ A common misunderstanding is viewing an OCSP check is the same thing as certific
 ####Required
  - A CA to issue OCSP responder certificates
  - Windows 2012 R2 server
+
 ####Recommended:
  - Hardware Security Module (HSM)
  - Certificate Policy (CP) and Certification Practices Statement (CPS):  Documented security policies and procedures for deployment and operation OCSP responder certificate issuing CA and the OCSP responder(s).
