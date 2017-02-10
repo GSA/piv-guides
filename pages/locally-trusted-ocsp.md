@@ -9,7 +9,7 @@ permalink: /Locally Trusted OCSP Configuration/
 ####[Introduction](#Introduction-1)
 ####[Security Risks](#Security-Risks-1)
 ####[Prerequisites](#Prerequisites-1)
-####[Locally Trusted Microsoft OCSP Responder](#Locally-Trusted-Microsoft-OCSP-Responder-1)
+####[Install Microsoft OCSP Responder](#Install-Microsoft-OCSP-Responder-1)
 ####[Windows Client Configuration](#Windows-Client-Configuration-1)
 ####[End-to-End Testing](#End-to-End-Testing-1)
 
@@ -29,22 +29,24 @@ A common misunderstanding is viewing an OCSP check is the same thing as certific
 
 ##Prerequisites
 ####Required
- - A CA to issue OCSP responder certificates
+ - A locally trusted CA to issue OCSP responder certificates
  - Windows 2012 R2 server
+
+Owing to its' limited, local only, scope and sepcial requirements on its' content, it is recommended that a new, dedicated Root CA be used for issuing the locally trusted responder certificates. Some additional details can be found in the procedures below and in [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1)
 
 ####Recommended:
  - Hardware Security Module (HSM)
  - Certificate Policy (CP) and Certification Practices Statement (CPS):  Documented security policies and procedures for deployment and operation OCSP responder certificate issuing CA and the OCSP responder(s).
 	 - Recommend leveraging one or more relevant CP(s) published by a CA(s) you rely on for requirements.
 
-> <i class="icon-info"></i>  CA installation, HSM configuration, and policy documents are not covered in this document.
+> <i class="icon-info"></i>  CA installation, HSM configuration, and policy documents are not covered in detail by this document.
 
 Before you begin, it is recommended that you review the [Implementing an OCSP responder](https://blogs.technet.microsoft.com/askds/2009/06/24/implementing-an-ocsp-responder-part-i-introducing-ocsp/) series on Microsoft TechNet. These documents include supporting information that has been omitted from this document.
 
-##Locally Trusted Microsoft OCSP Responder
+##Install Microsoft OCSP Responder
 Microsoft Windows Server 2012 R2 was chosen for inclusion in this document because it is generally available across Federal agencies. Please note that other products may be configured to provide locally trusted service and until such time as additional guidance is available you are encouraged to speak directly with these product vendors regarding configuration. 
 
-###Installation
+###Software Installation
 Before beginning the installation, ensure your server is named and joined to the appropriate domain. Changing the server name or domain after installation can corrupt the configuration. Your server will also need outbound Internet access to download remote CRLs. In most cases, CRLs are available over HTTP/80.
 
 Use the *Add Roles and Features Wizard* to add the *Active Directory Certificate Services* (ADCS) role to Windows 2012 R2.
@@ -60,6 +62,26 @@ The wizard will prompt you to *Add features that are required for Online Respond
 ![Click Configure Active Directory Certificate Services](../img/local-ocsp-cfg-configure.png)
 
 Assuming you are logged on the the server with (at least) local administrator rights, it is not be necessary to change the credentials in the *AD CS Configuration* wizard. Click through the wizard, click *Configure* then *Close* when it finishes. You can now close the *Add Roles and Features Wizard*. As a best practice, you may wish to reboot the server before continuing.
+
+###Obtain OCSP Responder Certificate
+
+There are primarily two different approaches for obtaining certificates for the Microsoft OCSP Responder implementation. In one approach, the Online Responder has permissions to automatically request certificates from an online Microsoft CA on the same domain. If done in a dedicated, network isolated domain with hardware security modules, this approach can be relatively secure. The other option, which is described to a an extent below, is to manually install a certificate which you obtain from an offline CA.
+
+> <i class="icon-info"></i>  Regardless of the certificate issuance approach, Windows clients require every certificate in the chain, including the self signed root, to express OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension.
+
+The first step is to generate a new signing key and certificate request file. You will need to create an INF file that specifies the details to include in the request. See [Appendix 1 - Sample OCSP INF file](#Appendix-1---Sample-OCSP-INF-file-1) for an example. Once you've created your INF file, open an administrative command window on the server and use the following command:
+
+	certreq -new <inf_filename>.inf ocsp.req
+
+This command should generate a new singing key and output a signed certificate request to *ocsp.req*.  Deliver this request file to your CA and obtain your OCSP Responder certificate. Ensure it meets the requirements of an OCSP Responder certificates before proceeding.
+
+	TODO Put requirements here
+
+After copying the new certificate to the OCSP Respodner server, use the following command to import it:
+
+	certreq -accept <certificate_filename>.cer
+
+TODO Configure permissions on keys
 
 ###Configure Revocation Sources
 Every issuer CA certificate must be individually configured 
@@ -87,3 +109,78 @@ Use certutil and CAPI 2 event logging to test and debug operation
 
 ###Common problems and solutions
 Event log entries, what they means, how to fix them
+
+
+##Appendix 1 - Sample OCSP INF file
+
+Below INF file is an example of the configuration file you can use to generate a new certificate signing request for your OCSP Responder.
+
+	[NewRequest]
+	Subject = "CN=XYZ OCSP Signing,OU=Orgnization,O=U.S. Government,C=US"
+	PrivateKeyArchive = FALSE
+	UserProtected = FALSE
+	MachineKeySet = TRUE
+	ProviderName = "Microsoft Enhanced Cryptographic Provider v1.0"
+	UseExistingKeySet = FALSE
+	KeyLength = 2048
+	RequestType = PKCS10
+	
+	[EnhancedKeyUsageExtension]
+	OID="1.3.6.1.5.5.7.3.9"
+	
+	[Extensions]
+	; ocsp-no-check
+	1.3.6.1.5.5.7.48.1.5 = "{hex}05 00"
+	; the following is only needed if submitting to a CA that has multiple keys
+	; uncomment and set the example hex string to the Subject Key ID of the CA
+	; 2.5.29.35="{hex}30 16 80 86441F15A89DA7CA3F09F643FFE31EE9C6FC0CD6"
+	
+	[ApplicationPolicyStatementExtension]
+	Policies = OCSPSigning
+	Critical = FALSE
+	
+	[OCSPSigning]
+	OID = 1.3.6.1.5.5.7.3.9
+
+
+
+##Appendix 2 - Using Microsoft CA as the self signed root
+
+When using Microsoft CA, the below CaPolicy.inf file should be placed in %SYSTEMROOT% prior to generating the Root CA key pair. Below file will create a self signing root certificate with a 2048 bit RSA key and a ten year validity period with OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension.
+
+	[Version]
+	Signature="$Windows NT$"
+
+	[AuthorityInformationAccess]
+	; This extension will be omitted
+
+	[CRLDistributionPoint]
+	; This extension will be omitted
+
+	[Extensions]
+	; Key Usage = CertSign & CrlSign
+	2.5.29.15=AwIBBg==
+	Critical=2.5.29.15 
+
+	[EnhancedKeyUsageExtension]
+	OID=1.3.6.1.5.5.7.3.9 	; ocsp signing
+	Critical=No
+
+	[certsrv_server]
+	LoadDefaultTemplates=0
+	RenewalKeyLength=2048
+	RenewalValidityPeriod=Years
+	RenewalValidityPeriodUnits=10
+
+	[BasicConstraintsExtension]
+	PathLength=0
+	Critical=True
+
+Prior to issuing OCSP Responder Certificates, you must enable the OCSP-No-Check extension using the following commands:
+
+	certutil -v -setreg policy\EnableRequestExtensionList +1.3.6.1.5.5.7.48.1.5
+	-or-
+	certutil -v -setreg policy\editflags +EDITF_ENABLEOCSPREVNOCHECK
+	
+	net stop certsvc
+	net start certsvc
