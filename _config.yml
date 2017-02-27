@@ -8,7 +8,11 @@ description: PIV Guidance
 highlighter: rouge
 repo_url: https://github.com/GSA/piv-guides
 baseurl: '/piv-guides'
-branch: staging
+branch: federalist-pages
+# Federalist overwrites the site.branch value when deploying
+# the site.branch was used in dynamic link generation for objects like Edit Page
+# we want the dynamic links to send users to the staging branch.  Adding new site variable to ensure federalist doesn't overwrite.
+editbranch: staging
 
 #ficam_playbooks_url: /ficam-guides/
 
