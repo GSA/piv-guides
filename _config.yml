@@ -24,10 +24,10 @@ navbar:
   url: https://www.idmanagement.gov
 - title: Federal ICAM Architecture
   description: Federal ICAM Architecture
-  url: https://gsa.github.io/ficam-arch/
+  url: https://arch.idmanagement.gov
 #- title: PIV Guides
 # description: PIV Guides
-# url: https://gsa.github.io/piv-guides/
+# url: https://piv.idmanagement.gov
 #- title: Federal PKI Guides
 #  description: Federal PKI Guides
 #  url: https://github.com/gsa/fpki-guides
