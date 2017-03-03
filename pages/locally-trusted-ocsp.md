@@ -23,7 +23,7 @@ Another important observation is that once configured, mobile clients such as la
 ##Security Risks
 By operating a locally trusted OCSP responder, you are assuming all risks introduced by not depending directly on the authoritative revocation status sources. Certification Authorities (CAs) follow stringent requirements involving the multi-person control, extensive physical security, and hardware cryptographic modules. These policies and procedures are detailed in each CA's Certificate Policy (CP) and Certification Practices Statement (CPS).  If you do not implement equivalent security controls, then your local OCSP responder becomes the weak link in the chain; the overall assurance level should effectively be reduced to that of your local configuration. For example, if you are validating PIV authentication certificates (hardware), but you are using software cryptographic keys on your local OCSP responder, then the assurance level of the validated certificates may be viewed as software assurance rather than hardware. This may be perfectly acceptable for some use cases while for others it is not. This is a local risk decision that should receive careful consideration and shape your deployment design.
 
-A locally trusted OCSP Responder should not be trusted by any clients that are not explicitly configured to trust it. Therefore, the CA used for issuing the OCSP Responder certificates should not be trusted outside of your intended pool of clients for any purposes. 
+A locally trusted OCSP Responder should never be trusted by any clients that are not explicitly configured to trust it. Therefore, the CA you use should by private to your organization. The CA and issued OCSP Responder certificates should not be trusted outside of your intended pool of clients for any purposes. 
 
 A common misunderstanding is viewing an OCSP check is the same thing as certificate validation - this is a dangerous and completely inaccurate assumption. The proper procedures for certificate path validation can be found in section 6 of [RFC 5280](https://www.ietf.org/rfc/rfc5280.txt).
 
@@ -32,7 +32,7 @@ A common misunderstanding is viewing an OCSP check is the same thing as certific
  - A locally trusted CA to issue OCSP responder certificates
  - Windows 2012 R2 server
 
-Owing to its' limited, local only, scope and sepcial requirements on its' content, it is recommended that a new, dedicated Root CA be used for issuing the locally trusted responder certificates. Some additional details can be found in the procedures below and in [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1)
+Owing to its' limited, local only, scope and special requirements on its' content, it is recommended that a new, dedicated Root CA be used for issuing the locally trusted responder certificates. Some additional details can be found in the procedures below and in [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1)
 
 ####Recommended:
  - Hardware Security Module (HSM)
@@ -67,17 +67,25 @@ Assuming you are logged on the the server with (at least) local administrator ri
 
 There are primarily two different approaches for obtaining certificates for the Microsoft OCSP Responder implementation. In one approach, the Online Responder has permissions to automatically request certificates from an online Microsoft CA on the same domain. If done in a dedicated, network isolated domain with hardware security modules, this approach can be relatively secure. The other option, which is described to a an extent below, is to manually install a certificate which you obtain from an offline CA.
 
-> <i class="icon-info"></i>  Regardless of the certificate issuance approach, Windows clients require every certificate in the chain, including the self signed root, to express OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension.
+> <i class="icon-info"></i>  Regardless of the certificate issuance approach, Windows clients require every certificate in the chain, *including the self signed root*, to express OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension.
 
 The first step is to generate a new signing key and certificate request file. You will need to create an INF file that specifies the details to include in the request. See [Appendix 1 - Sample OCSP INF file](#Appendix-1---Sample-OCSP-INF-file-1) for an example. Once you've created your INF file, open an administrative command window on the server and use the following command:
 
 	certreq -new <inf_filename>.inf ocsp.req
 
-This command should generate a new singing key and output a signed certificate request to *ocsp.req*.  Deliver this request file to your CA and obtain your OCSP Responder certificate. Ensure it meets the requirements of an OCSP Responder certificates before proceeding.
+This command should generate a new signing key and output a signed certificate request to *ocsp.req*.  Deliver this request file to your CA and obtain your OCSP Responder certificate. Note that this file is PEM encoded - you can open it in notepad and copy/paste the content.
 
-	TODO Put requirements here
+After obtaining your new certificate, ensure it meets the requirements of an OCSP Responder certificate before proceeding:
 
-After copying the new certificate to the OCSP Respodner server, use the following command to import it:
+- OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage
+	- This *should* be marked critical
+- The id-pkix-ocsp-nocheck (1.3.6.1.5.5.7.48.1.5) extension is present
+	- including this prevents clients from checking the OCSP Responder certificates revocation status
+- Key Usage must contain Digital Signature (80)
+	- This *should* be marked critical
+- The Subject Alternative Name *should* contain DNS Name = OCSP Server DNS name
+
+After copying the new certificate to the OCSP Responder server, use the following command to import it:
 
 	certreq -accept <certificate_filename>.cer
 
@@ -112,11 +120,17 @@ Event log entries, what they means, how to fix them
 
 
 ##Appendix 1 - Sample OCSP INF file
-
 Below INF file is an example of the configuration file you can use to generate a new certificate signing request for your OCSP Responder.
 
+ - Customize the Subject field in keeping with your Issuing CAs name
+	 - The example below could be submitted to CA "CN=OCSP Issuing CA,DC=agency,DC=local"
+ - Ensure KeyLength is set in keeping with the CA key sizes for which you intend to provide OCSP responses
+ - If you are using an HSM, the ProviderName will need to be modified appropriately per the HSM documentation
+
+Sample CaPolicy.inf :
+
 	[NewRequest]
-	Subject = "CN=XYZ OCSP Signing,OU=Orgnization,O=U.S. Government,C=US"
+	Subject = "CN=Local OCSP Server,DC=agency,DC=local"
 	PrivateKeyArchive = FALSE
 	UserProtected = FALSE
 	MachineKeySet = TRUE
@@ -129,7 +143,7 @@ Below INF file is an example of the configuration file you can use to generate a
 	OID="1.3.6.1.5.5.7.3.9"
 	
 	[Extensions]
-	; ocsp-no-check
+	; id-pkix-ocsp-nocheck
 	1.3.6.1.5.5.7.48.1.5 = "{hex}05 00"
 	; the following is only needed if submitting to a CA that has multiple keys
 	; uncomment and set the example hex string to the Subject Key ID of the CA
@@ -146,7 +160,7 @@ Below INF file is an example of the configuration file you can use to generate a
 
 ##Appendix 2 - Using Microsoft CA as the self signed root
 
-When using Microsoft CA, the below CaPolicy.inf file should be placed in %SYSTEMROOT% prior to generating the Root CA key pair. Below file will create a self signing root certificate with a 2048 bit RSA key and a ten year validity period with OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension.
+Prior to configuring Certificate Services and generating the new Root CA key pair, the below CaPolicy.inf file should be placed in %SYSTEMROOT%.  Below will create a self signing root certificate with a 2048 bit RSA key and a ten year validity period with OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension. 
 
 	[Version]
 	Signature="$Windows NT$"
@@ -176,6 +190,8 @@ When using Microsoft CA, the below CaPolicy.inf file should be placed in %SYSTEM
 	PathLength=0
 	Critical=True
 
+> <i class="icon-info"></i>  When configuring a new CA, the setup wizard may default to using 2048 bit RSA with SHA1. At a minimum, this should be changed to 2048 bit RSA with SHA256.
+
 Prior to issuing OCSP Responder Certificates, you must enable the OCSP-No-Check extension using the following commands:
 
 	certutil -v -setreg policy\EnableRequestExtensionList +1.3.6.1.5.5.7.48.1.5
@@ -184,3 +200,5 @@ Prior to issuing OCSP Responder Certificates, you must enable the OCSP-No-Check 
 	
 	net stop certsvc
 	net start certsvc
+
+If this CA is dedicated to issuing OCSP responder certificates, you may also wish to disable the CDP and AIA extensions inside the Certification Authority MMC Snap-In. Simply uncheck the "Include in the CDP/AIA extension of issued certificates" boxes for each URL in the Extensions tab. These extensions are not needed by the OCSP clients and removal improves efficiency.
