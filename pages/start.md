@@ -20,7 +20,7 @@ Card readers are available in many shapes and sizes - to fit both the PIV creden
 
 {% include alert-info.html heading="ISO 7816" content="If you need to buy a card reader for computers, you will need one that specifies support for ISO 7816." %}
 
-You can buy a card reader for personal use from a number of commercial online retailers.  When buying card readers for your agency, you can use [GSA Advantage](https://www.gsaadvantage.gov/) to directly purchase the card readers.
+You can buy a card reader for personal use from a number of commercial online retailers.  When buying card readers for your agency, you can use [GSA Advantage](https://www.gsaadvantage.gov/){:target="_blank"} to directly purchase the card readers.
 
 Before you buy a card reader, look around and ensure you don't already have one.  A large portion of government laptops have the card readers already, and desktops may have keyboards with readers built-in.
 
@@ -29,7 +29,7 @@ If you have a Mac OSX or Linux based computer, you probably don't have a card re
 ## Middleware
 For PIV credentials, _middleware_ refers to the computer software or drivers which allow the computer to interact with the PIV credentials to support authentication, digital signatures, encryption, and integrations with your software tools.
 
-For common PIV credential usage scenarios, the table below outlines the _general smartcard middleware_ available as open or government source or included in operating systems for use scenarios.  Commercial options for PIV Middleware are available and the list of NIST certified PIV Middleware can be viewed [here on the NIST website](http://csrc.nist.gov/groups/SNS/piv/npivp/validation.html).
+For common PIV credential usage scenarios, the table below outlines the _general smartcard middleware_ available as open or government source or included in operating systems for use scenarios.  Commercial options for PIV Middleware are available and the list of NIST certified PIV Middleware can be viewed [here on the NIST website](http://csrc.nist.gov/groups/SNS/piv/npivp/validation.html){:target="_blank"}.
 
 {% include alert-info.html content="Consider how to support your email client software, virtual private network software, and which browsers are used if you're choosing middleware for all your agency enterprise users." %}
 
@@ -57,7 +57,7 @@ _Middleware_ as a general computer term can encompass any software that provides
 
 > _Client side software which implements common functions for an operating system and cryptographic libraries to interface with PIV credentials or other smartcards for usage.  The general smartcard middleware may implement functions to support authentication, digital signatures, encryption, and integrations with multiple operating system cryptographic libraries._
 
-For common PIV credential usage scenarios, we outline the _general smartcard middleware_ available as open or government source or included in operating systems for use scenarios.  Commercial options for PIV Middleware are available and the list of NIST certified PIV Middleware can be viewed [here on the NIST website](http://csrc.nist.gov/groups/SNS/piv/npivp/validation.html).
+For common PIV credential usage scenarios, we outline the _general smartcard middleware_ available as open or government source or included in operating systems for use scenarios.  Commercial options for PIV Middleware are available and the list of NIST certified PIV Middleware can be viewed [here on the NIST website](http://csrc.nist.gov/groups/SNS/piv/npivp/validation.html){:target="_blank"}.
 
 
 ## Next Steps

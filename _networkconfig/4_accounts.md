@@ -5,7 +5,7 @@ collection: networkconfig
 permalink: networkconfig/accounts/
 ---
 
-For your network domains, you will need to associate the PIV credential to the user accounts.  This is the [account linking](../../identifiers) information discussed in the Identifiers section. The most common questions for US Federal Government and using PIV for network authentication are related to linking a PIV credential to network user accounts.  
+For your network domains, you will need to associate the PIV credential to the user accounts.  This is the [account linking]({{site.baseurl}}/identifiers) information discussed in the Identifiers section. The most common questions for US Federal Government and using PIV for network authentication are related to linking a PIV credential to network user accounts.  
 
 This page includes the information on the Identifiers for account linking in network authentication:
 
@@ -57,7 +57,7 @@ This is a registry setting and you must disable this setting on all domain contr
 
 - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Kdc
 - Change the value of the DWORD UseSubjectAltName to 00000000
-- External link to the description of the registry setting: https://technet.microsoft.com/en-us/library/ff520074(WS.10).aspx
+- [LINK to External MSDN Article to Disable UPN Mapping](https://technet.microsoft.com/en-us/library/ff520074(WS.10).aspx){:target="_blank"}
 
 Management of registry settings should use group policy objects or other centralized management options,
 

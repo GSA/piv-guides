@@ -5,7 +5,7 @@ collection: networkconfig
 permalink: networkconfig/grouppolicies/
 ---
 
-The US Government publishes the [United States Government Configuration Baseline (USGCB)](http://usgcb.nist.gov/usgcb_content.html) for use by Executive Branch agencies to promote uniform configurations for [commonly used operating systems](https://cio.gov/cio-council-streamlines-configuration-baseline-process/).  The USGCB configuration guidelines for specific operating systems include references to some configurations related to smartcard (PIV) logon and should be referenced first.
+The US Government publishes the [United States Government Configuration Baseline (USGCB)](http://usgcb.nist.gov/usgcb_content.html){:target="_blank"} for use by Executive Branch agencies to promote uniform configurations for [commonly used operating systems](https://cio.gov/cio-council-streamlines-configuration-baseline-process/){:target="_blank"}.  The USGCB configuration guidelines for specific operating systems include references to some configurations related to smartcard (PIV) logon and should be referenced first.
 
 The information on this page is to answer questions and identify the most commonly used configuration options.  For a full reference of options for each operating system, please refer to configurations guides published by other sources online.
 
