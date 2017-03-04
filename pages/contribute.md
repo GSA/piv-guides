@@ -12,7 +12,7 @@ To contribute to this site, you can:
 - [Edit an existing page](#edit-an-existing-page)
 
 
-Information is provided below and you can visit the GitHub repository [here]({{site.repo_url}}). 
+Information is provided below and you can visit the GitHub repository [here]({{site.repo_url}}){:target="_blank"}. 
 
 ### Open an Issue
 
@@ -23,13 +23,13 @@ Issues are the primary way of sharing information and discussing this site with 
 
 Issues may be submitted by clicking **Submit Issues Here** in the bottom of left side navigation. 
 
-For a quick guide on opening Issues, read [how to open issues here.]({{site.baseurl}}/openissue/)
+For a quick guide on opening Issues, read [how to open issues here.]({{site.baseurl}}/openissue/){:target="_blank"}
 
 ### Edit an existing page
 
 Direct changes and line edits to the content may be submitted by clicking **Edit this page** in the top right hand corner of each page. 
 
-For a quick guide on editing a page, read [how to edit a page here.]({{site.baseurl}}/editpage/)
+For a quick guide on editing a page, read [how to edit a page here.]({{site.baseurl}}/editpage/){:target="_blank"}
 
 You do not need to install any software to submit content. You can use GitHub's in-browser editor to edit files and submit the changes for discussion. 
 
@@ -46,7 +46,7 @@ There are folders containing the content and diagrams.
 * _services_: includes the pages for each of the Services Framework 
 * _img_: includes all diagrams and images and are available for download and reuse anywhere
 
-We encourage you to read our [LICENSE]({{ site.repo_url }}blob/{{ site.branch }}/LICENSE.md) and our [README]({{ site.repo_url }}blob/{{ site.branch }}/README.md), which exist within this repository.  
+We encourage you to read our [LICENSE]({{ site.repo_url }}blob/{{ site.branch }}/LICENSE.md){:target="_blank"} and our [README]({{ site.repo_url }}blob/{{ site.branch }}/README.md){:target="_blank"}, which exist within this repository.  
 
 ##  General Practices
 

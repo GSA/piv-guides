@@ -57,7 +57,7 @@ This is a registry setting and you must disable this setting on all domain contr
 
 - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Kdc
 - Change the value of the DWORD UseSubjectAltName to 00000000
-- External link to the description of the registry setting: https://technet.microsoft.com/en-us/library/ff520074(WS.10).aspx
+- [LINK to External MSDN Article to Disable UPN Mapping](https://technet.microsoft.com/en-us/library/ff520074(WS.10).aspx){:target="_blank"}
 
 Management of registry settings should use group policy objects or other centralized management options,
 
