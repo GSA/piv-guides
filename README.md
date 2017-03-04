@@ -1,4 +1,4 @@
-This work is in early Alpha stage and is led by the GSA FICAM Program in coordination with the ICAM Subcommittee of the Federal CIO Council.
+This work is in beta stage and is led by the GSA FICAM Program in coordination with the ICAM Subcommittee of the Federal CIO Council.
 
 # FICAM Guides
 This repository is for the collaborative development of the Federal Identity, Credential, and Access Management **PIV Guides**:   
@@ -16,20 +16,15 @@ Contributors should consider the audience when submitting content. Plain languag
 ## Roadmap 
 The expected roadmap for these guides:
 
-April 2016 - September 2016  
-1. Collection of baseline best practices, code, configurations  
-2. Network first  
-3. Applications and patterns  
-4. Developer tools and tips  
-5. User tools and tips  
+March 2017: 
+* Deployed to https://piv.idmanagement.gov
+  * leveraging Federalist platform as a service (federalist.18f.gov)
 
-October 2016 - December 2016  
-1.  On-going contributions and collections  
-2.  Deploy to server with a proxy, migrate to *.idmanagement.gov domain  
-3.  Contributions and submissions continue and feed continuous deployments  
-4.  All code contributions and scripts stay in repository  
-
-
+April 2017++:
+* On-going contributions and collections 
+* Applications and patterns
+* Developer tools and tips
+* User tools and tips
 
 ## How to Contribute
 For information on how to contribute to the site, review [Contributing](CONTRIBUTING.md/). The source repository exists [here](https://github.com/GSA/piv-guides/). 
