@@ -24,7 +24,7 @@ The full process of proving identity when issuing the certificates, auditing the
 
 For the US Federal Government Executive branch agencies, there is one Root Certificate Authority named _Federal Common Policy Certificate Authority (COMMON)_, and dozens of Intermediate Certificate Authorities.  The US Federal Government has also established Trust with other Certificate Authorities which serve business communities, State and Local government communities, and international government communities.
 
-* [A graph of the federal public key infrastructure, including the business communities](http://fpki-graph.fpki-lab.gov/)
+* [CLICK HERE: A graph of the federal public key infrastructure, including the business communities](https://fpki-graph.fpki-lab.gov/)
 
 The participating Certificate Authorities and the policies, processes, and auditing is referred to as the [*Federal Public Key Infrastructure (FPKI)*](https://www.idmanagement.gov/IDM/s/article_content_old?tag=a0Gt0000000SfwP).
 
@@ -33,7 +33,7 @@ To digitally trust YOU and your PIV credential certificates, the workstations, s
 
 The certificate chain includes the Intermediate Certificate Authorities certificates and the Federal Common Policy Certificate Authority (COMMON) root certificate.
 
-![Example of a PIV certificate chain to Common](../img/pivcertificatechain_small.png){:style="float:center"}
+![Example of a PIV certificate chain to Common]({{site.baseurl}}/img/pivcertificatechain_small.png){:style="float:center"}
 
 
 {% include alert-info.html heading = "Federal PKI Person Root - COMMON" content="The Federal Common Policy Certificate Authority (COMMON) root certificate is included in Microsoft, Adobe and some Apple trust stores by default.  It is not included by default in Mozilla, java, all mobile device operating systems, or Linux based operating systems." %}
@@ -106,7 +106,7 @@ You can verify the hash using common utilities on operating systems, including:
 
 You can contact your agency's information security teams for help on additional intermediate certificates, or find the intermediate certificates by using information in your PIV certificates directly.
 
-- View your PIV Authentication certificate. To review how to view your PIV Authentication certificate go to the [Details of a PIV Credential](../details)
+- View your PIV Authentication certificate. To review how to view your PIV Authentication certificate go to the [Details of a PIV Credential]({{site.baseurl}}/details)
 - In the **Authority Information Access (AIA)** extension, there is a URL (http://) which references a file with a .p7b or .p7c extension
 - Download the file, open it, and view the intermediate certificate authority certificates
 - Repeat the process using the AIA extension of the intermediate certificate authority certificates until the final reference finds an intermediate certificate authority certificate that is issued and signed by COMMON

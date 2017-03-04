@@ -5,7 +5,7 @@ collection: networkconfig
 permalink: networkconfig/accounts/
 ---
 
-For your network domains, you will need to associate the PIV credential to the user accounts.  This is the [account linking](../../identifiers) information discussed in the Identifiers section. The most common questions for US Federal Government and using PIV for network authentication are related to linking a PIV credential to network user accounts.  
+For your network domains, you will need to associate the PIV credential to the user accounts.  This is the [account linking]({{site.baseurl}}/identifiers) information discussed in the Identifiers section. The most common questions for US Federal Government and using PIV for network authentication are related to linking a PIV credential to network user accounts.  
 
 This page includes the information on the Identifiers for account linking in network authentication:
 
