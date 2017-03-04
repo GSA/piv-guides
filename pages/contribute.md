@@ -35,7 +35,7 @@ You do not need to install any software to submit content. You can use GitHub's 
 
 ## Notes on using this repository
 
-In the GitHub repository [here]({{site.repo_url}}) under the 'Code' tab:
+In the GitHub repository [here]({{site.repo_url}}){:target="_blank"} under the 'Code' tab:
 
 ![Code tabl]({{site.baseurl}}/assets/img/code_tab.png)
 
@@ -46,7 +46,7 @@ There are folders containing the content and diagrams.
 * _services_: includes the pages for each of the Services Framework 
 * _img_: includes all diagrams and images and are available for download and reuse anywhere
 
-We encourage you to read our [LICENSE]({{ site.repo_url }}blob/{{ site.branch }}/LICENSE.md){:target="_blank"} and our [README]({{ site.repo_url }}blob/{{ site.branch }}/README.md){:target="_blank"}, which exist within this repository.  
+We encourage you to read our [LICENSE]({{ site.repo_url }}/blob/{{ site.branch }}/LICENSE.md){:target="_blank"} and our [README]({{ site.repo_url }}/blob/{{ site.branch }}/README.md){:target="_blank"}, which exist within this repository.  
 
 ##  General Practices
 
@@ -58,6 +58,6 @@ Contributors should consider the audience when submitting content. Plain languag
 
 ##  Thanks
 
-The idea for providing this content as open source, the contributing framework, and the licensing framework are based on work from [18F](https://18f.gsa.gov).
+The idea for providing this content as open source, the contributing framework, and the licensing framework are based on work from [18F](https://18f.gsa.gov){:target="_blank"}
 
 
