@@ -56,8 +56,8 @@ If you are interested in PIV credentials or working on _using_ PIV credentials, 
 
 If you are interested in the bits and bytes of PIV credentials, you can review the Standards. The Standards are best to review if you develop products such as hardware or software that are _specific_ to PIV credentials for the US Federal Government.  However, for most users and engineers, the Standards may seem overwhelming and will be too detailed for your needs.
 
-To review the Standards, there is a [NIST website](http://csrc.nist.gov/groups/SNS/piv/standards.html) with all PIV related Standards.  Links to some of the most common Standards:
+To review the Standards, there is a [NIST website](http://csrc.nist.gov/groups/SNS/piv/standards.html){:target="_blank"} with all PIV related Standards.  Links to some of the most common Standards:
 
-- **[FIPS-201](http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.201-2.pdf)** specifies the issuance and management of PIV credentials.
-- **[NIST Special Publication 800-73, "Interfaces for Personal Identity Verification"](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-73-4.pdf)** specifies the interface and data elements of PIV credentials.
-- **[NIST Special Publication 800-76, "Biometric Data Specification for Personal Identity Verification"](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-76-2.pdf)** specifies the technical acquisition and formatting requirements for biometric data of PIV credentials.
+- **[FIPS-201](http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.201-2.pdf){:target="_blank"}** specifies the issuance and management of PIV credentials.
+- **[NIST Special Publication 800-73, "Interfaces for Personal Identity Verification"](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-73-4.pdf){:target="_blank"} ** specifies the interface and data elements of PIV credentials.
+- **[NIST Special Publication 800-76, "Biometric Data Specification for Personal Identity Verification"](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-76-2.pdf){:target="_blank"} ** specifies the technical acquisition and formatting requirements for biometric data of PIV credentials.
