@@ -85,18 +85,108 @@ After obtaining your new certificate, ensure it meets the requirements of an OCS
 	- This *should* be marked critical
 - The Subject Alternative Name *should* contain DNS Name = OCSP Server DNS name
 
-After copying the new certificate to the OCSP Responder server, use the following command to import it:
+### Install OCSP Responder Certificate
+Copy the new certificate as well as the issuing CA certificate (or chain) to the OCSP Responder server. If you haven't already done so, install the issuing CA root certificate in the **Computer** Trust Root Certification Authorities store. Use the following command to accept the OCSP Responder certificate:
 
-	certreq -accept <certificate_filename>.cer
+	certreq -accept <ocsp_responder_certificate_filename>.cer
 
-TODO Configure permissions on keys
+When successful, certreq will exit and provide no feedback.
+
+> <i class="icon-info"></i>  An error message stating "*Certificate Request Processor: A certificate chain could not be built to a trusted root authority. 0x800b010a (-2146762486 CERT_E_CHAINING)*" indicates the self signed root (and intermediate CA certificates, if applicable) are not available or not in the correct certificate stores on the server. Ensure the required CA certificates are imported to the correct *Computer account* stores.
+
+To confirm the certificate was properly imported, open mmc.exe, load the Certificates snap-in, and target it to the Computer Account. Expand the Personal->Certificates tree and confirm the newly accepted certificate is listed there.
+
+![Locate OCSP Responder Certificate in MMC](../img/local-ocsp-cfg-mmc.png)
+
+Double click the certificate and confirm it appears valid, lists *OCSP Signing* under purpose(s), and indicates *You have a private key that corresponds to this certificate*. Close the certificate.
+
+![Locate OCSP Responder Certificate in MMC](../img/local-ocsp-cfg-cert-key.png)
+
+Right click the certificiate in MMC and select All Tasks -> Manage Private Keys
+
+![Manage Private Keys in MMC](../img/local-ocsp-cfg-manage-private-keys.png)
+
+When the permissions dialog appears, click the Add button.
+
+![Default Private Key Permissions](../img/local-ocsp-cfg-default-permissions.png)
+
+If this server is on a domain, click Locations and select the local server. Type "NETWORK SERVICE" into the object names box. Click Check Names and OK when finished.
+
+![Add NETWORK SERVICE Permissions](../img/local-ocsp-cfg-add-network-service.png)
+
+With NETWORK SERVICE selected, clear the check mark from *Full control* then click OK.
+
+![Allow only Read for NETWORK SERVICE](../img/local-ocsp-cfg-read-only-rights.png)
+
+The certificate and private key should now be usable by the OCSP Responder service.
 
 ###Configure Revocation Sources
-Every issuer CA certificate must be individually configured 
-General guidance on CRL update frequency
+Every issuing and intermediate CA certificate to be supported by the OCSP Responder must have their own entry in "Revocation Configuration"  You can allow the OCSP Responder to automatically schedule CRL downloads (default) or specify intervals at which the CRL should be downloaded.
+
+> **tbd / need to test how the default crl validity period refresh option works and does configuring an interval always download on the interval or checks for a changed file?**
 
 ####Manually Adding a Revocation Source
-Step by step, with screen shots
+In the example images below, the Federal Bridge CA 2016 is added as a revocation source.
+
+Open the Online Responder Management console, right click Revocation Configuration, then select Add Revocation Configuration.
+
+![Add Revocation Configuration](../img/local-ocsp-cfg-add-revocation-configuration.png)
+
+Click Next to Name the Revocation Configuration. It is recommended that you always use the common name of the CA plus any other identifying information that may be necessary. Click Next.
+
+![Name the Revocation Configuration](../img/local-ocsp-cfg-add-rev-conf-1.png)
+
+> <i class="icon-info"></i>  You will need to configure separate Revocation Configurations for CAs that have more than one key pair. Name your Revocation Sources such that you can easily identify these cases.
+
+On the next step, you can choose either Local certificate store or from a File. Click Next, select the CA certificate, then click Next again.
+
+![Select Import From File](../img/local-ocsp-cfg-add-rev-conf-2.png)
+
+Select Manually select a signing certificate, then click Next.
+
+![Select Manual Signing Certificate](../img/local-ocsp-cfg-add-rev-conf-4.png)
+
+An error will appear complaining that you have not yet configured the revocation provider settings. Click OK.
+
+![Revocation Provider Error Message](../img/local-ocsp-cfg-add-rev-conf-5.png)
+
+Click the Provider button to open the Revocation Provider Properties dialog.
+
+![Click the Provider Button](../img/local-ocsp-cfg-add-rev-conf-6.png)
+
+Click Add then copy and paste the CA's CRL distribution point URL into the edit field. Click OK to return to the Revocation Provider Properties dialog.
+
+![Enter the CRL DP URL](../img/local-ocsp-cfg-add-rev-conf-7.png)
+
+If you are unsure how to configure refresh interval, leave the Refresh CRLs based on their validity periods selected. Otherwise, clear that check box and enter the desired interval. Click OK.
+
+![Configure the CRL update internal](../img/local-ocsp-cfg-add-rev-conf-8.png)
+
+After completing the above steps, you will need to assign the OCSP Responder Certificate to the configuration. Until this is done, you will "Signing Certificate: &nbsp;Not Found" listed in the Status panel for this Revocation Configuration:
+
+![OCSP Signing Certificate Not Found](../img/local-ocsp-cfg-signing-certificate-not-found.png)
+
+Right click on the Revocation Configuration Name, then select Assign Signing Certificate
+
+![Assign OCSP Signing Certificate](../img/local-ocsp-cfg-assign-signing-certificate.png)
+
+A dialog will appear allowing you to select the OCSP Responder certificate. Click the correct certificate and click OK.
+
+![Select Signing Certificate](../img/local-ocsp-select-signing-certificate.png)
+
+After selecting the certificate, you will notice that the statu panel still displays an error stating *The data necessary to complete this operation is not yet available." What this really means is it hasn't yet downloaded the CRL.
+
+![CRL not yet downloaded](../img/local-ocsp-crl-not-downloaded.png)
+
+After waiting a few minutes, simple right click Array Configuration and select Refresh.
+
+![Refresh](../img/local-ocsp-cfg-refresh.png)
+
+At this point, the CRL should have been automatically downloaded and your status panel should look like the below example.
+
+![OCSP Revocation Configuration working correctly](../img/local-ocsp-cfg-working-correctly.png)
+
+Repeat this process for every CA you want to add to the OCSP Responder.
 
 ####Using PowerShell to Add a Revocation Source
 
