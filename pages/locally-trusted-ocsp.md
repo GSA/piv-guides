@@ -195,7 +195,26 @@ Repeat this process for every CA you want to add to the OCSP Responder.
 ##Windows Client Configuration 
 
 ###Manual Client Configuration
-mmc.exe to configure local certificate store properties
+A locally trusted OCSP Responder is configured using the Certificates Snap-In in Microsoft Management Console. To begin, open MMC (mmc.exe)  and add the Certificates Snap-In for the Local Computer Account.
+
+![MMC Certificates Snap-In](../img/local-ocsp-client-1.png)
+
+Navigate to the certificate store and CA certificate for which you want to enable locally trusted OCSP, then right click the certificate and select Properties.
+
+![Select certificate properties in MMC](../img/local-ocsp-client-2.png)
+
+Click the OCSP tab, then enter the URL of your locally trusted OCSP Responder. Click the adjacent Add URL button. 
+
+![Add a custom OCSP URL](../img/local-ocsp-client-3.png)
+
+Confirm the URL appears in the list.
+
+![Custom OCSP URL added to certificate properties](../img/local-ocsp-client-4.png)
+
+> <i class="icon-info"></i>  You can configure multiple OCSP Responder URLs
+
+Click OK when satisfied with your modifications. All applications that leverage Windows certificate validation APIs will now attempt to use your configured OCSP Responder when validating certificates *issued* by this CA.
+
 
 ###Group Policy Configuration
 group policy editor
