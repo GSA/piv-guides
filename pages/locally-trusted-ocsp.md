@@ -1,8 +1,9 @@
 ---
-layout: page
+layout: default
 title: Locally Trusted OCSP Configuration
 permalink: /Locally Trusted OCSP Configuration/
 ---
+
 #Locally Trusted OCSP Configuration
 
 ####Table of Contents
@@ -28,6 +29,7 @@ A locally trusted OCSP Responder should never be trusted by any clients that are
 A common misunderstanding is viewing an OCSP check is the same thing as certificate validation - this is a dangerous and completely inaccurate assumption. The proper procedures for certificate path validation can be found in section 6 of [RFC 5280](https://www.ietf.org/rfc/rfc5280.txt).
 
 ##Prerequisites
+
 ####Required
  - A locally trusted CA to issue OCSP responder certificates
  - Windows 2012 R2 server
@@ -35,6 +37,7 @@ A common misunderstanding is viewing an OCSP check is the same thing as certific
 Owing to its' limited, local only, scope and special requirements on its' content, it is recommended that a new, dedicated Root CA be used for issuing the locally trusted responder certificates. Some additional details can be found in the procedures below and in [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1)
 
 ####Recommended:
+
  - Hardware Security Module (HSM)
  - Certificate Policy (CP) and Certification Practices Statement (CPS):  Documented security policies and procedures for deployment and operation OCSP responder certificate issuing CA and the OCSP responder(s).
 	 - Recommend leveraging one or more relevant CP(s) published by a CA(s) you rely on for requirements.
@@ -194,8 +197,11 @@ Repeat this process for every CA you want to add to the OCSP Responder.
 
 ##Windows Client Configuration 
 
+A locally trusted OCSP Responder is configured using the Certificates Snap-In in Microsoft Management Console.
+
 ###Manual Client Configuration
-A locally trusted OCSP Responder is configured using the Certificates Snap-In in Microsoft Management Console. To begin, open MMC (mmc.exe)  and add the Certificates Snap-In for the Local Computer Account.
+
+To begin, open MMC (mmc.exe)  and add the Certificates Snap-In for the Local Computer Account.
 
 ![MMC Certificates Snap-In](../img/local-ocsp-client-1.png)
 
@@ -227,8 +233,8 @@ Use certutil and CAPI 2 event logging to test and debug operation
 ###Common problems and solutions
 Event log entries, what they means, how to fix them
 
-
 ##Appendix 1 - Sample OCSP INF file
+
 Below INF file is an example of the configuration file you can use to generate a new certificate signing request for your OCSP Responder.
 
  - Customize the Subject field in keeping with your Issuing CAs name
