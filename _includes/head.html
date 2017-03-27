@@ -12,11 +12,11 @@
 <!-- Title and meta description
 ================================================== -->
 {% if page.title %}
-  <title>{{ site.title }} | {{ page.title }}</title>
-  <meta property="og:title" content="{{ site.name | xml_escape }} | {{ page.title | xml_escape }}" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta property="og:title" content="{{ page.title | xml_escape }} | {{ site.name | xml_escape }}" />
 {% else %}
   <title>{{ site.title }}</title>
-  <meta property="og:title" content="{{ site.name | xml_escape }} | {{ site.title | xml_escape }}" />
+  <meta property="og:title" content="{{ site.title | xml_escape }} | {{ site.name | xml_escape }}" />
 {% endif %}
 
 {% if page.description %}
