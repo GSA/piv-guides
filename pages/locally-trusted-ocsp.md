@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Locally Trusted OCSP Configuration
 permalink: /Locally Trusted OCSP Configuration/
 ---
@@ -194,6 +194,7 @@ Repeat this process for every CA you want to add to the OCSP Responder.
 	include code sample
 
 ## Windows Client Configuration 
+Each CA must be individually explicitly configured. In order to maximize local availability, it important to configure all CAs that are part of the certificate chain to your trusted root certificate(s). For example, this could be a subset of the CAs that can verified to Federal Common Policy CA.
 
 ### Manual Client Configuration
 A locally trusted OCSP Responder is configured using the Certificates Snap-In in Microsoft Management Console. To begin, open MMC (mmc.exe)  and add the Certificates Snap-In for the Local Computer Account.
@@ -204,7 +205,11 @@ Navigate to the certificate store and CA certificate for which you want to enabl
 
 ![Select certificate properties in MMC](../img/local-ocsp-client-2.png)
 
-Click the OCSP tab, then enter the URL of your locally trusted OCSP Responder. Click the adjacent Add URL button. 
+Click the OCSP tab, then enter the URL of your locally trusted OCSP Responder. 
+
+> <i class="icon-info"></i>  The Microsoft OCSP Responder adds "ocsp" to the URL, e.g. http://servername/ocsp
+
+Click the adjacent Add URL button. 
 
 ![Add a custom OCSP URL](../img/local-ocsp-client-3.png)
 
@@ -216,9 +221,28 @@ Confirm the URL appears in the list.
 
 Click OK when satisfied with your modifications. All applications that leverage Windows certificate validation APIs will now attempt to use your configured OCSP Responder when validating certificates *issued* by this CA.
 
-
 ### Group Policy Configuration
-group policy editor
+Configuration of Microsoft Windows domain members is possible using group policy. To get started, create or open the group policy object you want to use, then navigate to Computer Configuration -> Policies -> Security Settings -> Public Key Policies. Next, select the Certificate Store that should contain the CA certificate. This is usually the Intermediate Certification Authorities.
+
+> <i class="icon-info"></i>   A trust anchor such as the self signed Federal Common Policy CA should be configured in the Trusted Root Certification Authorities store.
+
+Right click the Certificate Store name and select Import
+
+![Custom OCSP URL added to certificate properties](../img/local-ocsp-group-policy-01.png)
+
+The Certificate Import Wizard will appear, click Next. Browse for the CA certificate you want to configure.
+
+![Custom OCSP URL added to certificate properties](../img/local-ocsp-group-policy-04.png)
+
+Click Next, then Next again, then Finish. A dialog should appear that states *The import was successful*.
+
+![Custom OCSP URL added to certificate properties](../img/local-ocsp-group-policy-07.png)
+
+Now, and at any future time, you can configure the l;ocally trusted OCSP Responder by right clicking on the imported certificate row and selecting Properties.
+
+![Custom OCSP URL added to certificate properties](../img/local-ocsp-group-policy-08.png)
+
+Add the OCSP URL(s) in the same manner described above in [Manual Client Configuration](#Manual-Client-Configuration-1)
 
 ## End-to-End Testing
 
@@ -227,7 +251,7 @@ Use certutil and CAPI 2 event logging to test and debug operation
 
 ### Common problems and solutions
 Event log entries, what they means, how to fix them
-
+Certificate already present in cert store
 
 ## Appendix 1 - Sample OCSP INF file
 Below INF file is an example of the configuration file you can use to generate a new certificate signing request for your OCSP Responder.
@@ -265,7 +289,6 @@ Sample CaPolicy.inf :
 	
 	[OCSPSigning]
 	OID = 1.3.6.1.5.5.7.3.9
-
 
 
 ## Appendix 2 - Using Microsoft CA as the self signed root
