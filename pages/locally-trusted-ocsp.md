@@ -65,7 +65,6 @@ The wizard will prompt you to *Add features that are required for Online Respond
 Assuming you are logged on the the server with (at least) local administrator rights, it is not be necessary to change the credentials in the *AD CS Configuration* wizard. Click through the wizard, click *Configure* then *Close* when it finishes. You can now close the *Add Roles and Features Wizard*. As a best practice, you may wish to reboot the server before continuing.
 
 ### Obtain OCSP Responder Certificate
-
 There are primarily two different approaches for obtaining certificates for the Microsoft OCSP Responder implementation. In one approach, the Online Responder has permissions to automatically request certificates from an online Microsoft CA on the same domain. If done in a dedicated, network isolated domain with hardware security modules, this approach can be relatively secure. The other option, which is described to a an extent below, is to manually install a certificate which you obtain from an offline CA.
 
 > <i class="icon-info"></i>  Regardless of the certificate issuance approach, Windows clients require every certificate in the chain, *including the self signed root*, to express OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension.
@@ -95,7 +94,7 @@ When successful, certreq will exit and provide no feedback.
 
 > <i class="icon-info"></i>  An error message stating "*Certificate Request Processor: A certificate chain could not be built to a trusted root authority. 0x800b010a (-2146762486 CERT_E_CHAINING)*" indicates the self signed root (and intermediate CA certificates, if applicable) are not available or not in the correct certificate stores on the server. Ensure the required CA certificates are imported to the correct *Computer account* stores.
 
-To confirm the certificate was properly imported, open mmc.exe, load the Certificates snap-in, and target it to the Computer Account. Expand the Personal->Certificates tree and confirm the newly accepted certificate is listed there.
+To confirm the certificate was properly imported, open mmc.exe, load the Certificates snap-in, and target it to the Computer Account. Expand the Personal/Certificates tree and confirm the newly accepted certificate is listed there.
 
 ![Locate OCSP Responder Certificate in MMC](../img/local-ocsp-cfg-mmc.png)
 
@@ -103,7 +102,7 @@ Double click the certificate and confirm it appears valid, lists *OCSP Signing* 
 
 ![Locate OCSP Responder Certificate in MMC](../img/local-ocsp-cfg-cert-key.png)
 
-Right click the certificiate in MMC and select All Tasks -> Manage Private Keys
+Right click the certificiate in MMC and select All Tasks / Manage Private Keys
 
 ![Manage Private Keys in MMC](../img/local-ocsp-cfg-manage-private-keys.png)
 
@@ -122,9 +121,7 @@ With NETWORK SERVICE selected, clear the check mark from *Full control* then cli
 The certificate and private key should now be usable by the OCSP Responder service.
 
 ### Configure Revocation Sources
-Every issuing and intermediate CA certificate to be supported by the OCSP Responder must have their own entry in "Revocation Configuration"  You can allow the OCSP Responder to automatically schedule CRL downloads (default) or specify intervals at which the CRL should be downloaded.
-
-> **tbd / need to test how the default crl validity period refresh option works and does configuring an interval always download on the interval or checks for a changed file?**
+Every issuing and intermediate CA certificate to be supported by the OCSP Responder must have their own entry in "Revocation Configuration"
 
 #### Manually Adding a Revocation Source
 In the example images below, the Federal Bridge CA 2016 is added as a revocation source.
@@ -159,7 +156,7 @@ Click Add then copy and paste the CA's CRL distribution point URL into the edit 
 
 ![Enter the CRL DP URL](../img/local-ocsp-cfg-add-rev-conf-7.png)
 
-If you are unsure how to configure refresh interval, leave the Refresh CRLs based on their validity periods selected. Otherwise, clear that check box and enter the desired interval. Click OK.
+Clear the check box next to **Refresh CRLs based on their validity periods**. This option has proven unreliable in testing. Enter a reasonable refresh interval and click OK.
 
 ![Configure the CRL update internal](../img/local-ocsp-cfg-add-rev-conf-8.png)
 
@@ -222,36 +219,114 @@ Confirm the URL appears in the list.
 Click OK when satisfied with your modifications. All applications that leverage Windows certificate validation APIs will now attempt to use your configured OCSP Responder when validating certificates *issued* by this CA.
 
 ### Group Policy Configuration
-Configuration of Microsoft Windows domain members is possible using group policy. To get started, create or open the group policy object you want to use, then navigate to Computer Configuration -> Policies -> Security Settings -> Public Key Policies. Next, select the Certificate Store that should contain the CA certificate. This is usually the Intermediate Certification Authorities.
+#### Root CA Certificate
+The Locally Trusted Root CA can be distributed to clients using Group Policy. To do so, create or open the group policy object you want to use, then navigate to **Computer Configuration** / **Policies** / **Security Settings** / **Public Key Policies** / **Trusted Root Certification Authorities**. If the CA certificate is not already listed here, right click Trusted Root Certification Authorities and select Import
+
+![Trusted Root Certification Authorities Group Policy Configuration](../img/local-ocsp-group-policy-11.png)
+
+The Certificate Import Wizard will appear, click Next. Browse for the Locally Trusted Root CA certificate that issues the OCSP Responder certificates. Click Next, then Next again, then Finish. A dialog should appear that states *The import was successful*.
+
+#### Locally Trusted OCSP
+Configuration of Microsoft Windows domain members is possible using group policy. To get started, create or open the group policy object you want to use, then navigate to Computer Configuration / Policies / Security Settings / Public Key Policies. Next, select the Certificate Store that should contain the CA certificate. This is usually the Intermediate Certification Authorities.
 
 > <i class="icon-info"></i>   A trust anchor such as the self signed Federal Common Policy CA should be configured in the Trusted Root Certification Authorities store.
 
 Right click the Certificate Store name and select Import
 
-![Custom OCSP URL added to certificate properties](../img/local-ocsp-group-policy-01.png)
+![Group Policy Certificate Store](../img/local-ocsp-group-policy-01.png)
 
 The Certificate Import Wizard will appear, click Next. Browse for the CA certificate you want to configure.
 
-![Custom OCSP URL added to certificate properties](../img/local-ocsp-group-policy-04.png)
+![Group Policy Certificate Import](../img/local-ocsp-group-policy-04.png)
 
 Click Next, then Next again, then Finish. A dialog should appear that states *The import was successful*.
 
-![Custom OCSP URL added to certificate properties](../img/local-ocsp-group-policy-07.png)
+![Group Policy Certificate Import](../img/local-ocsp-group-policy-07.png)
 
-Now, and at any future time, you can configure the l;ocally trusted OCSP Responder by right clicking on the imported certificate row and selecting Properties.
+Now, and at any future time, you can configure the locally trusted OCSP Responder by right clicking on the imported certificate row and selecting Properties.
 
-![Custom OCSP URL added to certificate properties](../img/local-ocsp-group-policy-08.png)
+![Locally Trusted OCSP Group Policy Configuration](../img/local-ocsp-group-policy-08.png)
 
 Add the OCSP URL(s) in the same manner described above in [Manual Client Configuration](#Manual-Client-Configuration-1)
 
 ## End-to-End Testing
 
-### Windows certutil
-Use certutil and CAPI 2 event logging to test and debug operation
+### Windows Clients
+#### Preparation
+Testing is carried out using certutil.exe from the command prompt. You will need to have a copy of certificates **issued by** the CAs you have configured in order to test your configuration. Note that the test will build a complete certificate path to a trusted root; it is not necessary to test the intermediate CA certificates independently if they are part of a path you test.
 
-### Common problems and solutions
-Event log entries, what they means, how to fix them
-Certificate already present in cert store
+> <i class="icon-info"></i>  If you are using group policy to push locally trusted OCSP settings to clients, ensure the updated policy has been applied to the client
+
+Before you test, enable CAPI2 logging on your client. Open the Event Viewer MMC Snap-in and Navigate to **Applications and Services Logs** / **Microsoft** / **Windows** / **CAPI2** / **Operational**. With "Operational" selected, click "Enable Log" in the Actions pane. You may disable this log later by clicking "Disable Log" in the Actions pane after you've completed testing.
+
+If there are intermediate CA certificates required to validate each of your test certificates that are not present in the *Intermediate Certification Authorities* store, it is recommended that you install them before testing to reduce the number of log events generated during testing. Verify each of the test certificate paths can be built by double clicking each certificate and confirming it appears valid and has a certificate path in the Certification Path tab.
+
+> <i class="icon-info"></i>  The additional events that appear when following AIA URLs to retrieve Intermediate CA certificates are not included or addressed below.
+
+Optionally, you may want to isolate the test client from the Internet. This is highly recommended if you are attempting to deploy locally trusted OCSP in a manner that allows for ongoing operation when disconnected from the Internet. In this case, the client should be able to validate configured certificates while only having access to the locally trusted OCSP Responder. There are multiple ways to achieve this effect; one approach is to remove all DNS server entries from the client and add the OCSP Responder to the host file. If using this approach ensure you clear the DNS cache before testing:
+
+	ipconfig /flushdns
+
+#### Test Execution
+
+Open the Event Viewer and navigate to **Applications and Services Logs** / **Microsoft** / **Windows** / **CAPI2** / **Operational**. Click **Clear Log** in the Actions pane.
+
+Open a command prompt and issue the following commands, replacing "certificate.cer" with the path and file name of a certificate below:
+
+    certutil -URLcache * delete
+    certutil -verify "certificate.cer"
+
+The first command will clear all cached certificates, CRLs, and OCSP responses. The second command will generate a lot of output detailing the content of each certificate in the certificate path and concluding with whether or not the certificate path was successfully validated. 
+
+If the validation fails, you will see the message **CertUtil: -verify command FAILED** along with an error code. It can be very difficult to ascertain what went wrong from the certutil output; the CAPI2 log contains much more detail. The [Common Problems and Solutions](Common-Problems-and-Solutions-1) section may help you diagnose and correct problems.
+
+> <i class="icon-info"></i>  To simplify examination of the event log entries, prepare your command line window or a batch file before clearing the log, then execute the test commands and immediately refresh (Press F5) the Event Viewer window. Doing these steps rapidly will reduce the likelihood unrelated certificate activities will be present in the log.
+
+If path validation was successful, you must examine the CAPI2 log entries to ensure that your locally trusted OCSP responder is being used successfully for each certificate in the certificate path for which you configured it. Step through the sequence of events from first to last for the entire path, examining the contents of the Details tab for each event.
+
+>  <i class="icon-info"></i>  Events are detailed below in chronological order - it may be easier to reverse the events in Event Viewer by clicking the Data and Time column at the top of the list so the events are listed in the order below.
+
+The test begins with Event ID 10 - *Build Chain* where you will see **CertGetCertificateChainStart** and [**ProcessName**]  certutil.exe in the UserData
+
+![CertGetCertificateChainStart](../img/local-ocsp-testing-1.png)
+
+Note the **CorrelationAuxInfo** - **TaskId** and **SeqNumber** fields in this event. As the validation proceeds, the TaskId will remain constant and the SeqNumber will increment in each subsequent log entry. If the TaskId changes you are looking at an unrelated event.
+
+The first event 10 should be followed by the Verify Revocation sequence that starts with 40 and ends (if successful) with event 41. The table below contains the sequence of events that should appear when using your locally trusted OCSP responder to check revocation.
+
+| **Event ID** | **Task Category** | **Details** |
+| :----------: | :---------------- | :---------- |
+| 40 | Verify Revocation |  |
+| 52 | Retrieve Object From Network |  |
+| 53 | Retrieve Object From Network | **UserData** / **CryptRetrieveObjectByUrlWire** / **URL** contains a URL for the OCSP Responder |
+| 10 | Build Chain |  |
+| 11 | Build Chain | **UserData** / **CertGetCertificateChain** / **Certificate** [**subjectName**] displays the common name of your OCSP Responder |
+| 30 | Verify Chain Policy |  |
+| 41 | Verify Revocation | **UserData** / **CertVerifyRevocation** / **OCSPResponse** [**url**] contains a URL for the OCSP Responder<br/> |
+| | |
+
+Examine each instance of event 41 in the log. If **UserData** / **CertVerifyRevocation** / **IssuerCertificate** [**subjectName**] is a CA for which you configured an OCSP URL, examine the remaining details of the event. Confirm **UserData** / **CertVerifyRevocation** / **OCSPResponse** [**url**] contains a URL for the locally trusted OCSP Responder. If you find a different URL or no OCSPResponse section, then it did not use the local OCSP Responder.
+
+> <i class="icon-info"></i>  The URL that appears in the event log contains the base 64 encoded OCSP Request.
+
+### Problems and Solutions
+
+| **Event ID** | **Task Category** | **Result Text** | **Possible Cause(s)**
+| :----: | :----------------------- | :---------------------- | :------ |
+|  |  |  |  |
+|  |  |  |  |
+
+
+Need to test:
+- no path
+- no path for responder cert
+- responder time wrong
+- old crl
+- responder offline
+- responder missing config for cert
+- need to do more certificate already in cert store testing
+
+
 
 ## Appendix 1 - Sample OCSP INF file
 Below INF file is an example of the configuration file you can use to generate a new certificate signing request for your OCSP Responder.
