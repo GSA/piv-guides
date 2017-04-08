@@ -1,4 +1,4 @@
----
+r---
 layout: default
 title: How to Contribute
 permalink: /contribute/
@@ -41,9 +41,8 @@ In the GitHub repository [here]({{site.repo_url}}){:target="_blank"} under the '
 
 There are folders containing the content and diagrams. 
 
-*  _pages_: includes the pages for Introduction, Background, Conceptual, Goals & Objectives, Applications, and Standards & Policies
-* _usecases_: includes the pages for each of the Use Cases
-* _services_: includes the pages for each of the Services Framework 
+*  _pages_: includes the pages for Introduction, Identifiers, Getting Started, and Certificate Trust
+* _networkconfig_: includes the pages for the configurations for network authentication
 * _img_: includes all diagrams and images and are available for download and reuse anywhere
 
 We encourage you to read our [LICENSE]({{ site.repo_url }}/blob/{{ site.branch }}/LICENSE.md){:target="_blank"} and our [README]({{ site.repo_url }}/blob/{{ site.branch }}/README.md){:target="_blank"}, which exist within this repository.  
