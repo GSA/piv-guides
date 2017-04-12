@@ -7,12 +7,12 @@ permalink: /Locally Trusted OCSP Configuration/
 # Locally Trusted OCSP Configuration
 
 #### Table of Contents
-#### [Introduction](#Introduction-1)
-#### [Security Risks](#Security-Risks-1)
-#### [Prerequisites](#Prerequisites-1)
-#### [Install Microsoft OCSP Responder](#Install-Microsoft-OCSP-Responder-1)
-#### [Windows Client Configuration](#Windows-Client-Configuration-1)
-#### [End-to-End Testing](#End-to-End-Testing-1)
+#### [Introduction](#introduction-1)
+#### [Security Risks](#security-risks-1)
+#### [Prerequisites](#prerequisites-1)
+#### [Install Microsoft OCSP Responder](#install-microsoft-ocsp-responder-1)
+#### [Windows Client Configuration](#windows-client-configuration-1)
+#### [End-to-End Testing](#end-to-end-testing-1)
 
 ----------
 
