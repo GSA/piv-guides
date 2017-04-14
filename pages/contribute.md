@@ -1,4 +1,4 @@
-r---
+---
 layout: default
 title: How to Contribute
 permalink: /contribute/
