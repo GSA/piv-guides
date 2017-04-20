@@ -17,12 +17,12 @@ permalink: /Locally Trusted OCSP Configuration/
 ----------
 
 ## Introduction
-In Public Key Infrastructure (PKI), Online Certificate Status Protocol (OCSP) is functionally a replacement for  Certificate Revocation Lists (CRLs). An OCSP response, like a CRL, provides the revocation status of a certificate. That is, it tells you whether a given certificate has been revoked by its issuer. If you rely on certificate status provided by external, Internet hosted sources for critical functionality within your local network, it may make sense to ensure availability by creating a locally hosted (and locally trusted) copy of critical revocation status information using a locally trusted OCSP responder. Hosting this service locally can ensure clients will operate normally in the event of Internet disruptions, outages, or problems related to the remote hosting of CRLs/OCSP.
+In Public Key Infrastructure (PKI), Online Certificate Status Protocol (OCSP) is functionally a replacement for  Certificate Revocation Lists (CRLs). An OCSP response, like a CRL, provides the revocation status of a certificate. That is, it tells you whether a given certificate has been revoked by its issuer. If you rely on certificate status provided by external, Internet hosted sources for critical functionality within your local network, it may make sense to ensure availability by creating a locally hosted (and locally trusted) copy of critical revocation status information using a locally trusted OCSP Responder. Hosting this service locally can ensure clients will operate normally in the event of Internet disruptions, outages, or problems related to the remote hosting of CRLs/OCSP.
 
-Another important observation is that once configured, mobile clients such as laptops, tablets, and phones can leverage the locally trusted service even when remote, i.e. over the Internet, if the OCSP responder is exposed to the Internet. Given that clients should be able to fail over to the next revocation status source as necessary, this additional revocation source can add additional resiliency for your users both on and off the local network. If you wish to leverage this or possibly in the future, it is recommended that you choose a server name that can be associated with an Internet address.
+Another important observation is that once configured, mobile clients such as laptops, tablets, and phones can leverage the locally trusted service even when remote, i.e. over the Internet, if the OCSP Responder is exposed to the Internet. Given that clients should be able to fail over to the next revocation status source as necessary, this additional revocation source can add additional resiliency for your users both on and off the local network. If you wish to leverage this or possibly in the future, it is recommended that you choose a server name that can be associated with an Internet address.
 
 ## Security Risks
-By operating a locally trusted OCSP responder, you are assuming all risks introduced by not depending directly on the authoritative revocation status sources. Certification Authorities (CAs) follow stringent requirements involving the multi-person control, extensive physical security, and hardware cryptographic modules. These policies and procedures are detailed in each CA's Certificate Policy (CP) and Certification Practices Statement (CPS).  If you do not implement equivalent security controls, then your local OCSP responder becomes the weak link in the chain; the overall assurance level should effectively be reduced to that of your local configuration. For example, if you are validating PIV authentication certificates (hardware), but you are using software cryptographic keys on your local OCSP responder, then the assurance level of the validated certificates may be viewed as software assurance rather than hardware. This may be perfectly acceptable for some use cases while for others it is not. This is a local risk decision that should receive careful consideration and shape your deployment design.
+By operating a locally trusted OCSP Responder, you are assuming all risks introduced by not depending directly on the authoritative revocation status sources. Certification Authorities (CAs) follow stringent requirements involving the multi-person control, extensive physical security, and hardware cryptographic modules. These policies and procedures are detailed in each CA's Certificate Policy (CP) and Certification Practices Statement (CPS).  If you do not implement equivalent security controls, then your local OCSP Responder becomes the weak link in the chain; the overall assurance level should effectively be reduced to that of your local configuration. For example, if you are validating PIV authentication certificates (hardware), but you are using software cryptographic keys on your local OCSP Responder, then the assurance level of the validated certificates may be viewed as software assurance rather than hardware. This may be perfectly acceptable for some use cases while for others it is not. This is a local risk decision that should receive careful consideration and shape your deployment design.
 
 A locally trusted OCSP Responder should never be trusted by any clients that are not explicitly configured to trust it. Therefore, the CA you use should by private to your organization. The CA and issued OCSP Responder certificates should not be trusted outside of your intended pool of clients for any purposes. 
 
@@ -30,19 +30,19 @@ A common misunderstanding is viewing an OCSP check is the same thing as certific
 
 ## Prerequisites
 #### Required
- - A locally trusted CA to issue OCSP responder certificates
+ - A locally trusted CA to issue OCSP Responder certificates
  - Windows 2012 R2 server
 
 Owing to its' limited, local only, scope and special requirements on its' content, it is recommended that a new, dedicated Root CA be used for issuing the locally trusted responder certificates. Some additional details can be found in the procedures below and in [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1)
 
 #### Recommended:
  - Hardware Security Module (HSM)
- - Certificate Policy (CP) and Certification Practices Statement (CPS):  Documented security policies and procedures for deployment and operation OCSP responder certificate issuing CA and the OCSP responder(s).
+ - Certificate Policy (CP) and Certification Practices Statement (CPS):  Documented security policies and procedures for deployment and operation OCSP Responder certificate issuing CA and the OCSP Responder(s).
 	 - Recommend leveraging one or more relevant CP(s) published by a CA(s) you rely on for requirements.
 
 > <i class="icon-info"></i>  CA installation, HSM configuration, and policy documents are not covered in detail by this document.
 
-Before you begin, it is recommended that you review the [Implementing an OCSP responder](https://blogs.technet.microsoft.com/askds/2009/06/24/implementing-an-ocsp-responder-part-i-introducing-ocsp/) series on Microsoft TechNet. These documents include supporting information that has been omitted from this document.
+Before you begin, it is recommended that you review the [Implementing an OCSP Responder](https://blogs.technet.microsoft.com/askds/2009/06/24/implementing-an-ocsp-responder-part-i-introducing-ocsp/) series on Microsoft TechNet. These documents include supporting information that has been omitted from this document.
 
 ## Install Microsoft OCSP Responder
 Microsoft Windows Server 2012 R2 was chosen for inclusion in this document because it is generally available across Federal agencies. Please note that other products may be configured to provide locally trusted service and until such time as additional guidance is available you are encouraged to speak directly with these product vendors regarding configuration. 
@@ -257,8 +257,10 @@ Testing is carried out using certutil.exe from the command prompt. You will need
 
 > <i class="icon-info"></i>  If you are using group policy to push locally trusted OCSP settings to clients, ensure the updated policy has been applied to the client
 
-Before you test, enable CAPI2 logging on your client. Open the Event Viewer MMC Snap-in and Navigate to **Applications and Services Logs** / **Microsoft** / **Windows** / **CAPI2** / **Operational**. With "Operational" selected, click "Enable Log" in the Actions pane. You may disable this log later by clicking "Disable Log" in the Actions pane after you've completed testing.
+Before you test, enable CAPI2 logging on your client. Open the Event Viewer MMC Snap-in and Navigate to **Applications and Services Logs** / **Microsoft** / **Windows** / **CAPI2** / **Operational**. With "Operational" selected, click "Enable Log" in the Actions pane. Given the small 1 MB default, you may wish to increase the size of this log by by clicking Properties and updating the maximum log size value.
 
+> <i class="icon-info"></i> Diagnostic logging has a negative performance impact. Disable this log by clicking "Disable Log" in the Actions pane after you've completed testing. 
+ 
 If there are intermediate CA certificates required to validate each of your test certificates that are not present in the *Intermediate Certification Authorities* store, it is recommended that you install them before testing to reduce the number of log events generated during testing. Verify each of the test certificate paths can be built by double clicking each certificate and confirming it appears valid and has a certificate path in the Certification Path tab.
 
 > <i class="icon-info"></i>  The additional events that appear when following AIA URLs to retrieve Intermediate CA certificates are not included or addressed below.
@@ -280,9 +282,9 @@ The first command will clear all cached certificates, CRLs, and OCSP responses. 
 
 If the validation fails, you will see the message **CertUtil: -verify command FAILED** along with an error code. It can be very difficult to ascertain what went wrong from the certutil output; the CAPI2 log contains much more detail. The [Common Problems and Solutions](Common-Problems-and-Solutions-1) section may help you diagnose and correct problems.
 
-> <i class="icon-info"></i>  To simplify examination of the event log entries, prepare your command line window or a batch file before clearing the log, then execute the test commands and immediately refresh (Press F5) the Event Viewer window. Doing these steps rapidly will reduce the likelihood unrelated certificate activities will be present in the log.
+> <i class="icon-info"></i>  To simplify examination of the event log entries, prepare your command line window or a batch file before clearing the log, then execute the test commands and immediately refresh the Event Viewer window. Doing these steps rapidly will reduce the likelihood unrelated certificate activities will be present in the log.
 
-If path validation was successful, you must examine the CAPI2 log entries to ensure that your locally trusted OCSP responder is being used successfully for each certificate in the certificate path for which you configured it. Step through the sequence of events from first to last for the entire path, examining the contents of the Details tab for each event.
+If path validation was successful, you must examine the CAPI2 log entries to ensure that your locally trusted OCSP Responder is being used successfully for each certificate in the certificate path for which you configured it. Step through the sequence of events from first to last for the entire path, examining the contents of the Details tab for each event.
 
 >  <i class="icon-info"></i>  Events are detailed below in chronological order - it may be easier to reverse the events in Event Viewer by clicking the Data and Time column at the top of the list so the events are listed in the order below.
 
@@ -292,7 +294,7 @@ The test begins with Event ID 10 - *Build Chain* where you will see **CertGetCer
 
 Note the **CorrelationAuxInfo** - **TaskId** and **SeqNumber** fields in this event. As the validation proceeds, the TaskId will remain constant and the SeqNumber will increment in each subsequent log entry. If the TaskId changes you are looking at an unrelated event.
 
-The first event 10 should be followed by the Verify Revocation sequence that starts with 40 and ends (if successful) with event 41. The table below contains the sequence of events that should appear when using your locally trusted OCSP responder to check revocation.
+The first event 10 should be followed by the Verify Revocation sequence that starts with 40 and ends (if successful) with event 41. The table below contains the sequence of events that should appear when using your locally trusted OCSP Responder to check revocation.
 
 | **Event ID** | **Task Category** | **Details** |
 | :----------: | :---------------- | :---------- |
@@ -303,7 +305,6 @@ The first event 10 should be followed by the Verify Revocation sequence that sta
 | 11 | Build Chain | **UserData** / **CertGetCertificateChain** / **Certificate** [**subjectName**] displays the common name of your OCSP Responder |
 | 30 | Verify Chain Policy |  |
 | 41 | Verify Revocation | **UserData** / **CertVerifyRevocation** / **OCSPResponse** [**url**] contains a URL for the OCSP Responder<br/> |
-| | |
 
 Examine each instance of event 41 in the log. If **UserData** / **CertVerifyRevocation** / **IssuerCertificate** [**subjectName**] is a CA for which you configured an OCSP URL, examine the remaining details of the event. Confirm **UserData** / **CertVerifyRevocation** / **OCSPResponse** [**url**] contains a URL for the locally trusted OCSP Responder. If you find a different URL or no OCSPResponse section, then it did not use the local OCSP Responder.
 
@@ -311,21 +312,23 @@ Examine each instance of event 41 in the log. If **UserData** / **CertVerifyRevo
 
 ### Problems and Solutions
 
-| **Event ID** | **Task Category** | **Result Text** | **Possible Cause(s)**
+The table below lists some event log errors you may encounter and their possible causes.
+
+| **Error Event ID** | **Task Category** | **Details Contain** | **Possible Cause(s)**
 | :----: | :----------------------- | :---------------------- | :------ |
+| 11 | Build Chain | A certificate chain could not be built to a trusted root authority | If this error is preceded by event sequence 40/52/53/10, verify installation of the locally trusted OCSP Root CA certificate.<br/>&nbsp;&nbsp;&nbsp;&nbsp;*- or -*<br/>If this error appears immediately following the first event 10, a path could not be built for the certificate you are attempting to verify. Ensure all required intermediate CA certificates are available and the necessary root is installed.|
+| 42 | Reject Revocation Information | CertRejectedRevocationInfo - OCSPResponse \[url] *\[your local OCSP Responder]* and Actions \[name] CheckTimeValidity | The OCSP Responder system clock is incorrect<br/>&nbsp;&nbsp;&nbsp;&nbsp;*- or -*<br/>An expired CRL is being used by the OCSP Responder. Confirm the "Refresh CRLs based on their validity periods" is NOT enabled in the Provider properties; configure a refresh interval instead. |
+| 42 | Reject Revocation Information | CertRejectedRevocationInfo - OCSPResponse \[url] *\[your local OCSP Responder]* and Actions [name] CheckResponseStatus | The OCSP Responder returned "Not Authorized" because it has not been configured to respond for this CA. You will see this error if you configure the Revocation Source for an issuer without adding the corresponding configuration to the OCSP Responder. |
+| 53 | Retrieve Object From Network | CryptRetrieveObjectByUrlWire - URL *\[Your OCSP Responder]* | OCSP Responder is stopped, server is offline, or server is unreachable |
+| 53 | Retrieve Object From Network | CryptRetrieveObjectByUrlWire - URL *\[CRL or OCSP other than your local OCSP Responder]* | Unless preceded by the Error Event 53 described in the previous row, you should not see this error. If this occurs, confirm the Revocation Sources are configured for the Issuing CA. |
 |  |  |  |  |
-|  |  |  |  |
 
+If the above table doesn't lead you to a solution, the Microsoft Tech Net article [Troubleshooting PKI Problems on Windows Vista](https://technet.microsoft.com/en-us/library/cc749296(v=ws.10).aspx) may be helpful. The article has proven to be very useful with everything from Windows Vista to Windows 10 and Server 2012 R2.
 
-Need to test:
-- no path
-- no path for responder cert
-- responder time wrong
-- old crl
-- responder offline
-- responder missing config for cert
-- need to do more certificate already in cert store testing
-
+> Need to test:
+> 
+> - root missing ocsp eku
+> - should do more certificate already in cert store testing
 
 
 ## Appendix 1 - Sample OCSP INF file
@@ -409,4 +412,4 @@ Prior to issuing OCSP Responder Certificates, you must enable the OCSP-No-Check 
 	net stop certsvc
 	net start certsvc
 
-If this CA is dedicated to issuing OCSP responder certificates, you may also wish to disable the CDP and AIA extensions inside the Certification Authority MMC Snap-In. Simply uncheck the "Include in the CDP/AIA extension of issued certificates" boxes for each URL in the Extensions tab. These extensions are not needed by the OCSP clients and removal improves efficiency.
+If this CA is dedicated to issuing OCSP Responder certificates, you may also wish to disable the CDP and AIA extensions inside the Certification Authority MMC Snap-In. Simply uncheck the "Include in the CDP/AIA extension of issued certificates" boxes for each URL in the Extensions tab. These extensions are not needed by the OCSP clients and removal improves efficiency.
