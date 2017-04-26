@@ -19,7 +19,9 @@ permalink: /Locally Trusted OCSP Configuration/
 ## Introduction
 In Public Key Infrastructure (PKI), Online Certificate Status Protocol (OCSP) is functionally a replacement for  Certificate Revocation Lists (CRLs). An OCSP response, like a CRL, provides the revocation status of a certificate. That is, it tells you whether a given certificate has been revoked by its issuer. If you rely on certificate status provided by external, Internet hosted sources for critical functionality within your local network, it may make sense to ensure availability by creating a locally hosted (and locally trusted) copy of critical revocation status information using a locally trusted OCSP Responder. Hosting this service locally can ensure clients will operate normally in the event of Internet disruptions, outages, or problems related to the remote hosting of CRLs/OCSP.
 
-Another important observation is that once configured, mobile clients such as laptops, tablets, and phones can leverage the locally trusted service even when remote, i.e. over the Internet, if the OCSP Responder is exposed to the Internet. Given that clients should be able to fail over to the next revocation status source as necessary, this additional revocation source can add additional resiliency for your users both on and off the local network. If you wish to leverage this or possibly in the future, it is recommended that you choose a server name that can be associated with an Internet address.
+It is worth noting that with proper configuration a transparent caching proxy can be a highly effective mechanism for providing CRLs during Internet, CRL or OCSP service interruptions. Many organizations leverage these transparent caching systems as they greatly reduce Internet connection bandwidth consumption. If used, such systems should be configured to check the end point for a modified .p7c and .crl files frequently so that the cache retains the most up to date information in order to provide the best possible tolerance for Internet service interruptions. This approach can be further enhanced by configuring a script on any host behind the transparent cache to regularly download relevant CRLs. This will keep the cache fresh even when users on the network are not currently downloading the CRLs, for example, during non-working hours. This approach may provide sufficient resiliency without implementing locally trusted OCSP.
+
+If locally trusted OCSP is deployed, mobile clients such as laptops, tablets, and phones can potentially leverage the locally trusted service when remote, i.e. over the Internet, if the OCSP Responder is exposed to the Internet. Given that clients should be able to fail over to the next revocation status source as necessary, this additional revocation source can add additional resiliency for your users both on and off the local network. If you wish to leverage this now or possibly in the future, it is recommended that you choose a server name that can be associated with an Internet address.
 
 ## Security Risks
 By operating a locally trusted OCSP Responder, you are assuming all risks introduced by not depending directly on the authoritative revocation status sources. Certification Authorities (CAs) follow stringent requirements involving the multi-person control, extensive physical security, and hardware cryptographic modules. These policies and procedures are detailed in each CA's Certificate Policy (CP) and Certification Practices Statement (CPS).  If you do not implement equivalent security controls, then your local OCSP Responder becomes the weak link in the chain; the overall assurance level should effectively be reduced to that of your local configuration. For example, if you are validating PIV authentication certificates (hardware), but you are using software cryptographic keys on your local OCSP Responder, then the assurance level of the validated certificates may be viewed as software assurance rather than hardware. This may be perfectly acceptable for some use cases while for others it is not. This is a local risk decision that should receive careful consideration and shape your deployment design.
@@ -152,11 +154,11 @@ Click the Provider button to open the Revocation Provider Properties dialog.
 
 ![Click the Provider Button](../img/local-ocsp-cfg-add-rev-conf-6.png)
 
-Click Add then copy and paste the CA's CRL distribution point URL into the edit field. Click OK to return to the Revocation Provider Properties dialog.
+Click Add then copy and paste the CA's CRL distribution point URL into the edit field. This is the CRL distribution point URL this CA puts in certificates it issues, not the URL in the CA certificate itself. Click OK to return to the Revocation Provider Properties dialog.
 
 ![Enter the CRL DP URL](../img/local-ocsp-cfg-add-rev-conf-7.png)
 
-Clear the check box next to **Refresh CRLs based on their validity periods**. This option has proven unreliable in testing. Enter a reasonable refresh interval and click OK.
+Clear the check box next to **Refresh CRLs based on their validity periods**. This option has proven unreliable in testing. Enter a reasonable refresh interval such as 60 minutes and click OK.
 
 ![Configure the CRL update internal](../img/local-ocsp-cfg-add-rev-conf-8.png)
 
@@ -172,7 +174,7 @@ A dialog will appear allowing you to select the OCSP Responder certificate. Clic
 
 ![Select Signing Certificate](../img/local-ocsp-select-signing-certificate.png)
 
-After selecting the certificate, you will notice that the statu panel still displays an error stating *The data necessary to complete this operation is not yet available." What this really means is it hasn't yet downloaded the CRL.
+After selecting the certificate, you will notice that the status panel still displays an error stating *The data necessary to complete this operation is not yet available." What this really means is it hasn't yet downloaded the CRL.
 
 ![CRL not yet downloaded](../img/local-ocsp-crl-not-downloaded.png)
 
@@ -184,11 +186,9 @@ At this point, the CRL should have been automatically downloaded and your status
 
 ![OCSP Revocation Configuration working correctly](../img/local-ocsp-cfg-working-correctly.png)
 
-Repeat this process for every CA you want to add to the OCSP Responder.
+> If the error message "The revocation provider failed with the current configuration. The object identifier does not represent a valid object. 0x800710d8 (WIN32: 4312 ERROR_OBJECT_NOT_FOUND), 0x800710d8" appears, this is likely due to entering the wrong CRL DP URL.
 
-#### Using PowerShell to Add a Revocation Source
-
-	include code sample
+Repeat this process for each CA you want to add to the OCSP Responder.
 
 ## Windows Client Configuration 
 Each CA must be individually explicitly configured. In order to maximize local availability, it important to configure all CAs that are part of the certificate chain to your trusted root certificate(s). For example, this could be a subset of the CAs that can verified to Federal Common Policy CA.
@@ -253,7 +253,11 @@ Add the OCSP URL(s) in the same manner described above in [Manual Client Configu
 
 ### Windows Clients
 #### Preparation
-Testing is carried out using certutil.exe from the command prompt. You will need to have a copy of certificates **issued by** the CAs you have configured in order to test your configuration. Note that the test will build a complete certificate path to a trusted root; it is not necessary to test the intermediate CA certificates independently if they are part of a path you test.
+Testing is carried out using certutil.exe from the command prompt on a Windows client. For complete coverage, it is recommended that you test with all Windows versions that are expected to operate in your environment.
+
+> <i class="icon-info"></i> If you are testing with Windows 10, you may receive "FAILED: 0x80092004 (-2146885628 CRYPT_E_NOT_FOUND)" in spite of of the certificate path apparently validating correctly. This appears to be a bug that affects certutil on Windows 10. If you experience this issue, it is recommended you test with an additional version of Windows. At the time this document was written, Windows 7 and 8.1 were confirmed to not have this issue.
+
+You will need to have a copy of certificates **issued by** the CAs you have configured in order to test your configuration. The test will build a complete certificate path to a trusted root; it is not necessary to test the intermediate CA certificates independently if they are part of a path you test.
 
 > <i class="icon-info"></i>  If you are using group policy to push locally trusted OCSP settings to clients, ensure the updated policy has been applied to the client
 
@@ -278,7 +282,17 @@ Open a command prompt and issue the following commands, replacing "certificate.c
     certutil -URLcache * delete
     certutil -verify "certificate.cer"
 
-The first command will clear all cached certificates, CRLs, and OCSP responses. The second command will generate a lot of output detailing the content of each certificate in the certificate path and concluding with whether or not the certificate path was successfully validated. 
+The first command will clear all cached certificates, CRLs, and OCSP responses. The second command will generate a lot of output detailing the content of each certificate in the certificate path and concluding with whether or not the certificate path was successfully validated. For example:
+
+    Verified Issuance Policies:
+	    2.16.840.1.101.3.2.1.3.6
+		2.16.840.1.101.3.2.1.3.7
+	    2.16.840.1.101.3.2.1.3.14
+		2.16.840.1.101.3.2.1.3.15
+    Verified Application Policies: All
+    Cert is a CA certificate
+    Leaf certificate revocation check passed
+    CertUtil: -verify command completed successfully.
 
 If the validation fails, you will see the message **CertUtil: -verify command FAILED** along with an error code. It can be very difficult to ascertain what went wrong from the certutil output; the CAPI2 log contains much more detail. The [Common Problems and Solutions](Common-Problems-and-Solutions-1) section may help you diagnose and correct problems.
 
@@ -317,19 +331,12 @@ The table below lists some event log errors you may encounter and their possible
 | **Error Event ID** | **Task Category** | **Details Contain** | **Possible Cause(s)**
 | :----: | :----------------------- | :---------------------- | :------ |
 | 11 | Build Chain | A certificate chain could not be built to a trusted root authority | If this error is preceded by event sequence 40/52/53/10, verify installation of the locally trusted OCSP Root CA certificate.<br/>&nbsp;&nbsp;&nbsp;&nbsp;*- or -*<br/>If this error appears immediately following the first event 10, a path could not be built for the certificate you are attempting to verify. Ensure all required intermediate CA certificates are available and the necessary root is installed.|
-| 42 | Reject Revocation Information | CertRejectedRevocationInfo - OCSPResponse \[url] *\[your local OCSP Responder]* and Actions \[name] CheckTimeValidity | The OCSP Responder system clock is incorrect<br/>&nbsp;&nbsp;&nbsp;&nbsp;*- or -*<br/>An expired CRL is being used by the OCSP Responder. Confirm the "Refresh CRLs based on their validity periods" is NOT enabled in the Provider properties; configure a refresh interval instead. |
-| 42 | Reject Revocation Information | CertRejectedRevocationInfo - OCSPResponse \[url] *\[your local OCSP Responder]* and Actions [name] CheckResponseStatus | The OCSP Responder returned "Not Authorized" because it has not been configured to respond for this CA. You will see this error if you configure the Revocation Source for an issuer without adding the corresponding configuration to the OCSP Responder. |
+| 42 | Reject Revocation Information | CertRejectedRevocationInfo - OCSPResponse \[url] *\[your local OCSP Responder]* and Actions \[name] **CheckTimeValidity** | The OCSP Responder system clock is incorrect<br/>&nbsp;&nbsp;&nbsp;&nbsp;*- or -*<br/>An expired CRL is being used by the OCSP Responder. Confirm the "Refresh CRLs based on their validity periods" is NOT enabled in the Provider properties; configure a refresh interval instead. |
+| 42 | Reject Revocation Information | CertRejectedRevocationInfo - OCSPResponse \[url] *\[your local OCSP Responder]* and Actions [name] **CheckResponseStatus** | The OCSP Responder returned "Not Authorized" because it has not been configured to respond for this CA. You will see this error if you configure the Revocation Source for an issuer without adding the corresponding configuration to the OCSP Responder. |
 | 53 | Retrieve Object From Network | CryptRetrieveObjectByUrlWire - URL *\[Your OCSP Responder]* | OCSP Responder is stopped, server is offline, or server is unreachable |
 | 53 | Retrieve Object From Network | CryptRetrieveObjectByUrlWire - URL *\[CRL or OCSP other than your local OCSP Responder]* | Unless preceded by the Error Event 53 described in the previous row, you should not see this error. If this occurs, confirm the Revocation Sources are configured for the Issuing CA. |
-|  |  |  |  |
 
 If the above table doesn't lead you to a solution, the Microsoft Tech Net article [Troubleshooting PKI Problems on Windows Vista](https://technet.microsoft.com/en-us/library/cc749296(v=ws.10).aspx) may be helpful. The article has proven to be very useful with everything from Windows Vista to Windows 10 and Server 2012 R2.
-
-> Need to test:
-> 
-> - root missing ocsp eku
-> - should do more certificate already in cert store testing
-
 
 ## Appendix 1 - Sample OCSP INF file
 Below INF file is an example of the configuration file you can use to generate a new certificate signing request for your OCSP Responder.
