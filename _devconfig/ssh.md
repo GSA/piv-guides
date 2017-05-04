@@ -32,7 +32,9 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 1. Insert your PIV card into the card reader.
 2. Open **Windows Explorer**.
 3. Open **Pageant** by clicking **C:** &gt; **Program Files** &gt; **PuTTY** &gt; **Pageant**.
-> A window will not open, but the Pageant icon will appear in the Windows taskbar at the bottom of your screen.
+
+> _A window will not open, but the Pageant icon will appear in the Windows taskbar at the bottom of your screen._
+
 4. Right-click on the Pageant icon and select **View Keys &amp; Certs.**
 
 > _The Pageant **Key/CAPI Cert List** window will open._
@@ -55,11 +57,11 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 
 1. Right-click on the **Pageant** icon again from the Windows taskbar and select **New Session**.  (This will launch **PuTTY**.)
 
-> From within PuTTY, you will need to set up a new profile.  
+> _From within PuTTY, you will need to set up a new profile._  
 
 2. Enter the **IP address** of your _Jumpbox_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
 
-> **Note:** If you want to create new profiles for multiple Jumpboxes, you'll need to repeat the following steps for each profile.
+> _**Note:** If you want to create new profiles for multiple Jumpboxes, you'll need to repeat the following steps for each profile._
 
 3. Enter a descriptive name into the **Saved Sessions** textbox.
 4. From the left **Category** : panel, select **Connection** &gt; **SSH** &gt; **CAPI**. Then, check the box beside the words **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
@@ -69,11 +71,11 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 8. Next, copy the **SSH keystring** value and paste it into **Microsoft Notepad** and save it.  (You will need the SSH key when you contact the Jumpbox support team in Step 9 or if you need to create a service ticket.)
 9. Contact the Jumpbox support group to request that they add your **PIV card&#39;s SSH key** to **your account on the Jumpbox**.
 
-> **Note** : For other Jumpboxes, submit a service ticket to that support group and include the IP address of the Jumpbox you are using, your account name, and the SSH key from your PIV card.
+> _**Note** : For other Jumpboxes, submit a service ticket to that support group and include the IP address of the Jumpbox you are using, your account name, and the SSH key from your PIV card._
 
 ### Verify PuTTY logon
 
-> **Note:** Once the support group has set up an account with your SSH key on the Jumpbox, then you can use your PIV card to login to the Jumpbox.
+> _**Note:** Once the support group has set up an account with your SSH key on the Jumpbox, then you can use your PIV card to login to the Jumpbox._
 
 1. Run **PuTTY** and select the Saved Session. Click on **Load,** and then click on **Open**.
 2. Enter your remote Unix/Linux account name.  A window will open and prompt you for your PIV PIN.
