@@ -78,7 +78,10 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 
 > _This will automatically fill in the **Cert** and **SSH keystring** textboxes._
 
-8. Next, copy the **SSH keystring** value and paste it into **Microsoft Notepad** and save it.  (You will need the SSH key when you contact the Jumpbox support team in Step 9 or if you need to create a service ticket.)
+8. Next, copy the **SSH keystring** _value_, paste it into **Microsoft Notepad**, and save it.  
+
+> _You'll need the **SSH keystring value** (i.e., _SSH Key_) when you contact with the Jumpbox support team (as in Step 9) or if you need to create a service ticket._
+
 9. Contact the Jumpbox support group to request that they add your **PIV card&#39;s SSH key** to **your account on the Jumpbox**.
 
 > _**Note** : For other Jumpboxes, submit a service ticket to that support group and include the IP address of the Jumpbox you are using, your account name, and the SSH key from your PIV card._
