@@ -12,9 +12,9 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 
 ## Hardware and software requirements
 
-- Windows-based Workstation or Computer
-- PuTTY Application
-- Pageant Application
+- Windows-based workstation or computer
+- PuTTY application
+- Pageant application
 
 > _**Note:**  You will download the required applications during the steps below._
 
