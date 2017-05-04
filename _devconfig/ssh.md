@@ -12,12 +12,11 @@ For those professionals who use Windows-based systems, **PuTTY** is one method o
 
 ## Hardware and software requirements
 
-(**Note:**  You will download the required applications during the steps below.)
-
 - Windows-based Workstation or Computer
 - PuTTY Application
 - Pageant Application
 
+> **Note:**  You will download the required applications during the steps below.
 ## Procedures
 
 ## Install PuTTY-CAC
