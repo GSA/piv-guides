@@ -34,19 +34,19 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 > A window will not open, but the Pageant icon will appear in the Windows taskbar at the bottom of your screen.
 4. Right-click on the Pageant icon and select **View Keys &amp; Certs.**
 
-> The Pageant **Key/CAPI Cert List** window will appear.
+> The Pageant **Key/CAPI Cert List** window will open.
 
-1. Click on **Add Cert**.
-2. Select your **Smart Card Logon** certificate from the **Windows Security** window.
-3. To ensure that this is the correct certificate, click on the link, **Click here to view certificate properties**, and then click on **Details**.
-4. Locate and click on **Enhanced Key Usage**.  You should see the **Smart Card Logon**.  (This indicates that the certificate is the right type.)
+5. Click on **Add Cert**.
+6. Select your **Smart Card Logon** certificate from the **Windows Security** window.
+7. To verify that this is the correct certificate, click on the link, **Click here to view certificate properties**, and then click on **Details**.
+8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This will mean that the certificate is the right type.)
 
 > **Note:** If multiple certificates exist, you may want to clear out the expired or revoked certificates.
 
-1. Click on **OK** to close the Details window.
-2. Click on the **Smart Card** certificate to highlight it, and then click on **OK**.
-3. The Pageant window will populate with the certificate information.
-4. Click on **Close**.
+9. Click on **OK** to close the Details window.
+10. Click on the **Smart Card** certificate to highlight it, and then click on **OK**.
+11. The Pageant window will populate with the certificate information.
+12. Click on **Close**.
 
 > **Note:** You will need to re-add the certificate every time that you start Pageant.
 
