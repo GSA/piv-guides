@@ -8,11 +8,11 @@ collection: devconfig
 
 These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies.  As part of their roles, these professionals will be authorized by their agencies to use secure methods to remotely access other computer hosts.
 
-For those professionals who use Windows-based systems,_ _ **PuTTY** _ _is one method of gaining remote access. PuTTY is an open-source terminal emulator, serial console, and network file transfer application. It supports network protocols such as SCP, Secure Shell (SSH), Telnet, rlogin, and &quot;raw socket&quot; connections. It can also be used to connect to a serial port._
+For those professionals who use Windows-based systems, **PuTTY** is one method of remote access. PuTTY is an open-source terminal emulator, serial console, and network file transfer application. It supports network protocols such as Secure Copy (SCP), Secure Shell (SSH), Telnet, rlogin, and &quot;raw socket&quot; connections. It can also be used to connect to a serial port.
 
 ## Hardware and software requirements
 
-( **Note:**  You will download the required applications during the steps below.)
+(**Note:**  You will download the required applications during the steps below.)
 
 - Windows-based Workstation or Computer
 - PuTTY Application
