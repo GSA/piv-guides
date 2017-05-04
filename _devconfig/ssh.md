@@ -70,7 +70,10 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 3. Enter a descriptive name into the **Saved Sessions** textbox.
 4. From the left **Category**: panel, select **Connection** &gt; **SSH** &gt; **CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
 5. From within the **PuTTY Configuration** window, select **Connection** &gt; **SSH** &gt; **Auth**. Then, click on the checkboxes for both **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
-6. Click on **Session** from the left panel; enter a name in the **Saved Session** text box; and then click on the **Save** button. ** (**This sets up a profile for PIV logon.)
+6. Click on **Session** from the left panel; enter a name in the **Saved Session** text box; and then click on the **Save** button. 
+
+> _This sets up a profile for PIV logon._
+
 7. To get your PIV card&#39;s **SSH key** , in the **PuTTY Configuration** window, go to the left panel and click on **Connection** &gt; **SSH** &gt; **CAPI**.  Then, under **Authentication Parameters** , click on  the **Browse** button.  (This will automatically fill in the **Cert** and **SSH keystring** textboxes.)
 8. Next, copy the **SSH keystring** value and paste it into **Microsoft Notepad** and save it.  (You will need the SSH key when you contact the Jumpbox support team in Step 9 or if you need to create a service ticket.)
 9. Contact the Jumpbox support group to request that they add your **PIV card&#39;s SSH key** to **your account on the Jumpbox**.
