@@ -29,10 +29,10 @@ For those professionals who use Windows-based systems, **PuTTY** is one method o
 ## Insert CAPI Key into Pageant
 
 1. Insert your PIV card into the card reader.
-2. Open **Windows**** Explorer**.
+2. Open **Windows Explorer**.
 3. Open **Pageant** by clicking **C:** &gt; **Program Files** &gt; **PuTTY** &gt; **Pageant**.
-> A window will not open but the Pageant icon will appear in the Windows taskbar.
-4. Right-click the icon and select **View Keys &amp; Certs.**
+> A window will not open, but the Pageant icon will appear in the Windows taskbar at the bottom of your screen.
+4. Right-click the Pageant icon and select **View Keys &amp; Certs.**
 
 The Pageant **Key/CAPI Cert List** window will appear.
 
