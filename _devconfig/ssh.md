@@ -19,38 +19,38 @@ For those professionals who use Windows-based systems, **PuTTY** is one method o
 > **Note:**  You will download the required applications during the steps below.
 ## Procedures
 
-## Install PuTTY-CAC
+### Install PuTTY-CAC
 
 1. To download and install **PuTTY-CAC**, go to: [https://github.com/NoMoreFood/putty-cac/releases](https://github.com/NoMoreFood/putty-cac/releases).  (PuTTY-CAC is referred to as &quot;PuTTY&quot; within the application.)
 2. Open PuTTY and click on **About** (lower left-hand corner of the **PuTTY Configuration** window) to verify that the correct version was installed.
 
 > **Note:** PuTTY will typically be installed at C:\Program Files\PuTTY.)
 
-## Insert CAPI Key into Pageant
+### Insert CAPI Key into Pageant
 
 1. Insert your PIV card into the card reader.
 2. Open **Windows Explorer**.
 3. Open **Pageant** by clicking **C:** &gt; **Program Files** &gt; **PuTTY** &gt; **Pageant**.
 > A window will not open, but the Pageant icon will appear in the Windows taskbar at the bottom of your screen.
-4. Right-click the Pageant icon and select **View Keys &amp; Certs.**
+4. Right-click on the Pageant icon and select **View Keys &amp; Certs.**
 
-The Pageant **Key/CAPI Cert List** window will appear.
+> The Pageant **Key/CAPI Cert List** window will appear.
 
-1. Click **Add Cert**.
+1. Click on **Add Cert**.
 2. Select your **Smart Card Logon** certificate from the **Windows Security** window.
-3. To ensure that this is the correct certificate, click on the link **Click here to view certificate properties** and then click on **Details**.
+3. To ensure that this is the correct certificate, click on the link, **Click here to view certificate properties**, and then click on **Details**.
 4. Locate and click on **Enhanced Key Usage**.  You should see the **Smart Card Logon**.  (This indicates that the certificate is the right type.)
 
-**Note:** If multiple certificates exist, you may want to clear out the expired or revoked certificates.
+> **Note:** If multiple certificates exist, you may want to clear out the expired or revoked certificates.
 
-1. Click **OK** to close the Details window.
-2. Click on the Smart Card certificate to highlight it and then click on **OK**.
+1. Click on **OK** to close the Details window.
+2. Click on the **Smart Card** certificate to highlight it, and then click on **OK**.
 3. The Pageant window will populate with the certificate information.
 4. Click on **Close**.
 
-**Note:** The certificate needs to be re-added every time Pageant is started.
+> **Note:** You will need to re-add the certificate every time that you start Pageant.
 
-## Configure PuTTY
+### Configure PuTTY
 
 1. Right-click on the **Pageant** icon again from the Windows taskbar and select **New Session**.  (This will launch PuTTY.)
 2. From within PuTTY, enter the IP address of your _Jumpbox_ in the **Host Name (or IP address)** textbox to set up a new profile. Follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
@@ -67,7 +67,7 @@ The Pageant **Key/CAPI Cert List** window will appear.
 
 **Note** : For other Jumpboxes, submit a service ticket to that support group and include the IP address of the Jumpbox you are using, your account name, and the SSH key from your PIV card.
 
-**Verify PuTTY logon**
+### Verify PuTTY logon
 
 Note: Once the support group has set up an account with your SSH key on the Jumpbox, then you can use your PIV card to login to the Jumpbox.
 
