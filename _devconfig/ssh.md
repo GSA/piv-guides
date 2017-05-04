@@ -47,7 +47,7 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 > _**Note:** If multiple certificates exist, you may want to clear out the expired or revoked certificates._
 
 9. Click on **OK** to close the Details window.
-10. Click on the **Smart Card** certificate to highlight it, and then click on **OK**.
+10. Click on the **Smart Card certificate** to highlight it, and then click on **OK**.
 11. The Pageant window will populate with the certificate information.
 12. Click on **Close**.
 
