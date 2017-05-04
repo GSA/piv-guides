@@ -48,8 +48,10 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 
 9. Click on **OK** to close the Details window.
 10. Click on the **Smart Card certificate** to highlight it, and then click on **OK**.
-11. The Pageant window will populate with the certificate information.
-12. Click on **Close**.
+
+> _The Pageant window will populate with the certificate information._
+
+11. Click on **Close**.
 
 > _**Note:** You will need to re-add the certificate every time that you start Pageant._
 
