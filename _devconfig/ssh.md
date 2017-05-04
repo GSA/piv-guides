@@ -74,7 +74,10 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 
 > _This sets up a profile for PIV logon._
 
-7. To get your PIV card&#39;s **SSH key** , in the **PuTTY Configuration** window, go to the left panel and click on **Connection** &gt; **SSH** &gt; **CAPI**.  Then, under **Authentication Parameters** , click on  the **Browse** button.  (This will automatically fill in the **Cert** and **SSH keystring** textboxes.)
+7. To get your PIV card&#39;s **SSH key**, in the **PuTTY Configuration** window, go to the left panel and click on **Connection** &gt; **SSH** &gt; **CAPI**.  Then, under **Authentication Parameters**, click on  the **Browse** button.  
+
+> _This will automatically fill in the **Cert** and **SSH keystring** textboxes._
+
 8. Next, copy the **SSH keystring** value and paste it into **Microsoft Notepad** and save it.  (You will need the SSH key when you contact the Jumpbox support team in Step 9 or if you need to create a service ticket.)
 9. Contact the Jumpbox support group to request that they add your **PIV card&#39;s SSH key** to **your account on the Jumpbox**.
 
