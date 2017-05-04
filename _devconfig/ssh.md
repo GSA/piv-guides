@@ -21,19 +21,18 @@ For those professionals who use Windows-based systems, **PuTTY** is one method o
 
 ## Install PuTTY-CAC
 
-1. Download and install **PuTTY-CAC** from [https://github.com/NoMoreFood/putty-cac/releases](https://github.com/NoMoreFood/putty-cac/releases).  (PuTTY-CAC is referred to as &quot;PuTTY&quot; within the application.)
+1. To download and install **PuTTY-CAC**, go to: [https://github.com/NoMoreFood/putty-cac/releases](https://github.com/NoMoreFood/putty-cac/releases).  (PuTTY-CAC is referred to as &quot;PuTTY&quot; within the application.)
 2. Open PuTTY and click on **About** (lower left-hand corner of the **PuTTY Configuration** window) to verify that the correct version was installed.
 
-**Note:** PuTTY will typically be installed at C:\Program Files\PuTTY.)
+> **Note:** PuTTY will typically be installed at C:\Program Files\PuTTY.)
 
 ## Insert CAPI Key into Pageant
 
 1. Insert your PIV card into the card reader.
 2. Open **Windows**** Explorer**.
+3. Open **Pageant** by clicking **C:** &gt; **Program Files** &gt; **PuTTY** &gt; **Pageant**.
 
-1. Open **Pageant** by clicking **C:** &gt; **Program Files** &gt; **PuTTY** &gt; **Pageant**.
-
-A window will not open but the Pageant icon will appear in the Windows taskbar.
+> A window will not open but the Pageant icon will appear in the Windows taskbar.
 
 1. Right-click the icon and select **View Keys &amp; Certs.**
 
