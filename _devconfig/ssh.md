@@ -25,7 +25,7 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 1. To download and install **PuTTY-CAC**, go to: [https://github.com/NoMoreFood/putty-cac/releases](https://github.com/NoMoreFood/putty-cac/releases).  (PuTTY-CAC is referred to as &quot;**PuTTY**&quot; within the application.)
 2. Open PuTTY and click on **About** (lower left-hand corner of the **PuTTY Configuration** window) to verify that the correct version was installed.
 
-> _**Note:** **PuTTY** will typically be installed at C:\Program Files\PuTTY.)_
+> _**Note:**  **PuTTY** will typically be installed at C:\Program Files\PuTTY.)_
 
 ### Insert CAPI Key into Pageant
 
@@ -46,7 +46,7 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 7. To verify that this is the correct certificate, click on the link, **Click here to view certificate properties**, and then click on **Details**.
 8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This will mean that the certificate is the right type.)
 
-> _**Note:** If multiple certificates exist, you may want to clear out the expired or revoked certificates._
+> _**Note:**  If multiple certificates exist, you may want to clear out the expired or revoked certificates._
 
 9. Click on **OK** to close the **Details** window.
 10. Click on the **Smart Card certificate** to highlight it, and then click on **OK**.
@@ -55,7 +55,7 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 
 11. Click on **Close**.
 
-> _**Note:** You'll need to re-add the certificate every time that you start **Pageant**._
+> _**Note:**  You'll need to re-add the certificate every time that you start **Pageant**._
 
 ### Configure PuTTY
 
@@ -65,7 +65,7 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 
 2. Enter the **IP address** of your _Jumpbox_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
 
-> _**Note:** If you want to create new profiles for multiple Jumpboxes, you'll need to repeat the following steps for each profile._
+> _**Note:**  If you want to create new profiles for multiple Jumpboxes, you'll need to repeat the following steps for each profile._
 
 3. Enter a descriptive name into the **Saved Sessions** textbox.
 4. From the left **Category**: panel, select **Connection** &gt; **SSH** &gt; **CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
@@ -84,11 +84,11 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 
 9. Contact the Jumpbox support group to request that they add your **PIV card&#39;s SSH key** to **your account on the Jumpbox**.
 
-> _**Note** : For other Jumpboxes, submit a service ticket to that support group and include the **IP address** of the Jumpbox you are using, **your account name**, and the **SSH key** from your **PIV card**._
+> _**Note**:  For other Jumpboxes, submit a service ticket to that support group and include the **IP address** of the Jumpbox you are using, **your account name**, and the **SSH key** from your **PIV card**._
 
 ### Verify your PuTTY login
 
-> _**Note:** Once the support group has set up an account with your **SSH key** on the Jumpbox, you'll then be able to use your **PIV card** to login to the Jumpbox._
+> _**Note:**  Once the support group has set up an account with your **SSH key** on the Jumpbox, you'll then be able to use your **PIV card** to log into the Jumpbox._
 
 1. Run **PuTTY** and select the **Saved Session**. Click on **Load,** and then click on **Open**.
 2. Enter your **remote Unix/Linux account name**.  
