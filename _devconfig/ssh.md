@@ -84,13 +84,18 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 
 9. Contact the Jumpbox support group to request that they add your **PIV card&#39;s SSH key** to **your account on the Jumpbox**.
 
-> _**Note** : For other Jumpboxes, submit a service ticket to that support group and include the IP address of the Jumpbox you are using, your account name, and the **SSH key** from your **PIV card**._
+> _**Note** : For other Jumpboxes, submit a service ticket to that support group and include the **IP address** of the Jumpbox you are using, **your account name**, and the **SSH key** from your **PIV card**._
 
-### Verify PuTTY logon
+### Verify your PuTTY login
 
 > _**Note:** Once the support group has set up an account with your **SSH key** on the Jumpbox, you'll then be able to use your **PIV card** to login to the Jumpbox._
 
-1. Run **PuTTY** and select the Saved Session. Click on **Load,** and then click on **Open**.
-2. Enter your remote Unix/Linux account name.  A window will open and prompt you for your PIV PIN.
-3. Enter your PIN and click on **OK** to log in.
-4. Once logged in, run the command:   **ssh-add –l** to display the key.  (After each server you &quot;jump&quot; to, the output of **ssh-add –l** should always show the key.  After you see the key, you can ssh to any other hosts in the environment.)
+1. Run **PuTTY** and select the **Saved Session**. Click on **Load,** and then click on **Open**.
+2. Enter your **remote Unix/Linux account name**.  
+
+> _A window will open and prompt you for your **PIV card PIN**._
+
+3. Enter your **PIV card PIN** and click on **OK** to log in.
+4. Once logged in, run the command: **ssh-add –l** to display the key.  
+
+> _After each server you &quot;jump&quot; to, the output of **ssh-add –l** should always show the key.  After you see the key, you may **ssh** to any other hosts in the environment._
