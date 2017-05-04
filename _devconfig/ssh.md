@@ -31,13 +31,13 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 
 > _**CAPI** is Microsoft's Crytographic Application Programming Interface._
 
-1. Insert your PIV card into the card reader.
+1. Insert your **PIV card** into the card reader.
 2. Open **Windows Explorer**.
 3. Open **Pageant** by clicking **C:** &gt; **Program Files** &gt; **PuTTY** &gt; **Pageant**.
 
-> _A window will not open, but the Pageant icon will appear in the Windows taskbar at the bottom of your screen._
+> _A window will not open, but the **Pageant** icon will appear in the Windows taskbar at the bottom of your screen._
 
-4. Right-click on the Pageant icon and select **View Keys &amp; Certs.**
+4. Right-click on the **Pageant** icon and select **View Keys &amp; Certs.**
 
 > _The Pageant **Key/CAPI Cert List** window will open._
 
@@ -48,20 +48,20 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 
 > _**Note:** If multiple certificates exist, you may want to clear out the expired or revoked certificates._
 
-9. Click on **OK** to close the Details window.
+9. Click on **OK** to close the **Details** window.
 10. Click on the **Smart Card certificate** to highlight it, and then click on **OK**.
 
-> _The Pageant window will populate with the certificate information._
+> _The **Pageant** window will populate with the certificate information._
 
 11. Click on **Close**.
 
-> _**Note:** You will need to re-add the certificate every time that you start Pageant._
+> _**Note:** You will need to re-add the certificate every time that you start **Pageant**._
 
 ### Configure PuTTY
 
 1. Right-click on the **Pageant** icon again from the Windows taskbar and select **New Session**.  (This will launch **PuTTY**.)
 
-> _From within PuTTY, you will need to set up a new profile._  
+> _From within **PuTTY**, you'll need to set up a new profile._  
 
 2. Enter the **IP address** of your _Jumpbox_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
 
