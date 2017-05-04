@@ -29,6 +29,8 @@ For those professionals who use Windows-based systems, **PuTTY** allows for remo
 
 ### Insert CAPI Key into Pageant
 
+> _**CAPI** is Microsoft's Crytographic Application Programming Interface._
+
 1. Insert your PIV card into the card reader.
 2. Open **Windows Explorer**.
 3. Open **Pageant** by clicking **C:** &gt; **Program Files** &gt; **PuTTY** &gt; **Pageant**.
