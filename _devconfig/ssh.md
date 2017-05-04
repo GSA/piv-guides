@@ -6,9 +6,9 @@ collection: devconfig
 ---
 # How do I enable PIV/CAC for Secure Shell (SSH) to a Unix-like system from Windows?
 
-_These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies.  As part of their roles, these professionals will be authorized by their agencies to use secure methods to remotely access other computer hosts._
+These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies.  As part of their roles, these professionals will be authorized by their agencies to use secure methods to remotely access other computer hosts.
 
-_For those professionals who use Windows-based systems,_ _ **PuTTY** _ _is one method of gaining remote access. PuTTY is an open-source terminal emulator, serial console, and network file transfer application. It supports network protocols such as SCP, Secure Shell (SSH), Telnet, rlogin, and &quot;raw socket&quot; connections. It can also be used to connect to a serial port._
+For those professionals who use Windows-based systems,_ _ **PuTTY** _ _is one method of gaining remote access. PuTTY is an open-source terminal emulator, serial console, and network file transfer application. It supports network protocols such as SCP, Secure Shell (SSH), Telnet, rlogin, and &quot;raw socket&quot; connections. It can also be used to connect to a serial port._
 
 ## Hardware and software requirements
 
