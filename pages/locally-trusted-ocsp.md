@@ -23,7 +23,7 @@ If a locally trusted OCSP Responder <!-- Responder?  Client and Responder? -->is
 
   >> **Transparent Caching Proxy -- an Alternative Backup (Fail-over) Method.** The **Transparent Caching Proxy** may <!-- "May" sounds uncertain. What could be the problem area? -->provide sufficient backup resiliency<!-- Does this method provide greater security? If so, we ought to say that. --> to preclude the need for a locally trusted OCSP. When configured properly<!-- Explain "proper configuration. -->, a Transparent Caching Proxy is a highly effective method of obtaining and providing CRLs during Internet, CRL, or OCSP service disruptions. This proxy also greatly reduces Internet connection-bandwidth consumption. To use this system, configure it to frequently check the end-point <!-- End-point is what? Need clarification. Also, explain file types that follow. -->for modified **.p7c** and **.crl** files so that the cache maintains the most up-to-date information. In addition, consider configuring a script on any host "behind" the transparent cache to regularly download chosen CRLs. This will keep the cache "fresh" even when users on the local network are not downloading CRLs during off-peak (i.e., non-working) hours.<!-- How does user download of CRLs during off-peak hours effect freshness of cache (unclear)? --> For additional information on configuring a Transparent Caching Proxy, see _(insert link to relevant document here)_.
 
-## Security Risks <!-- The uninitiated will most likely have trouble following the discussion in this paragraph. -->
+## Security risks <!-- The uninitiated will most likely have trouble following the discussion in this paragraph. -->
 By operating a locally trusted OCSP Responder, your organization is assuming all of the security risks introduced when you do not depend directly on the authoritative revocation status sources (i.e., CAs). <!-- LL has given guidance about doc. prep. that we are to assume the reader has no prior knowledge of the subject matter. Are the sources = the CAs & they are normally consulted for accurate CRLs (unclear)? Does the OCSP Responder extract the CRL information from the CA and so is not a "direct" (more secure) means? -->CAs follow stringent <!-- Are the policies and procedures the CP and CPS mentioned in next sentence (unclear)? Explain "multi-person control" for reader. -->requirements for multi-person control, physical security<!-- How does physical security relate to CRLs? -->, and hardware cryptographic modules <!-- Hardare mentioned here but not software (which is mentioned below). -->, which are detailed in each CA's **Certificate Policy (CP)** and **Certification Practices Statement (CPS)**.  If you do not implement equivalent security controls to those implemented by a CA (i.e., as stated in a CP and CPS), then your local OCSP Responder becomes the weak link in the chain, and your organization's overall <!-- ? -->network-security assurance level would effectively be reduced to that of your local network configuration. <!-- Local vs. ___? -->For example, if your organization validates **Personal Identity Validation (PIV)** authentication certificates (hardware)<!-- "Hardware certificates" relate to a PIV card used for computer access to a network? -->, but you are using software cryptographic keys on your local OCSP Responder, then the validated PIV certificates' <!-- For PIV? -->assurance level may be associated with software rather than hardware, both of which have different CP and CPS requirements. <!-- Is this what you meant? -->This may be acceptable for some **use cases**--while for others, it will not. 
 
 Some other security best practices to consider when implementing an OCSP Responder: 
@@ -38,33 +38,39 @@ Some other security best practices to consider when implementing an OCSP Respond
 
 These are examples of local <!-- When you say "local," are you referring to "local network configurations," as above, or do you mean "organizational"? -->risk decisions that must be carefully considered. Security best practices and sound risk decisions should always shape an OSCP Responder's deployment design.
 
-## Prerequisites
+## Before you begin **CB STOPPED HERE**
+
+Before you begin, it is recommended that you review the [Implementing an OCSP Responder](https://blogs.technet.microsoft.com/askds/2009/06/24/implementing-an-ocsp-responder-part-i-introducing-ocsp/) series on Microsoft TechNet. These documents include supporting information that has been omitted from this document.
+
+### Prerequisites
+
 #### Required:
+
   * A locally trusted Root CA to issue OCSP Responder certificates
   * Windows 2012 R2 server
 
 Because of its limited, local-only scope and special content requirements, it is recommended that a new, dedicated **Root CA** <!-- What is a Root CA vs. a CA mentioned above? -->be used to issue locally trusted OCSP Responder certificates. (Additional details for configuring the Root CA may be found in the procedures below. Supplemental information is contained in [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1).)
 
-#### Recommended:
+#### Recommended: 
+
   * Hardware Security Module (HSM)
-  * Certificate Policy (CP) and Certification Practices Statement (CPS):  Documented security policies and procedures for deployment and operation OCSP Responder certificate issuing CA and the OCSP Responder(s).
+  * CP and CPS:  Documented security policies and procedures for deploying and operating the OCSP Responder certificate-issuing Root CA and OCSP Responder(s). <!-- More than one OCSP Responder? -->
 	 - Recommend leveraging one or more relevant CP(s) published by a CA(s) you rely on for requirements.
 
 > <i class="icon-info"></i>  CA installation, HSM configuration, and policy documents are not covered in detail by this document.
 
-Before you begin, it is recommended that you review the [Implementing an OCSP Responder](https://blogs.technet.microsoft.com/askds/2009/06/24/implementing-an-ocsp-responder-part-i-introducing-ocsp/) series on Microsoft TechNet. These documents include supporting information that has been omitted from this document.
 
 ## Install Microsoft OCSP Responder
-Microsoft Windows Server 2012 R2 was chosen for inclusion in this document because it is generally available across Federal agencies. Please note that other products may be configured to provide locally trusted service and until such time as additional guidance is available you are encouraged to speak directly with these product vendors regarding configuration. 
+Microsoft Windows Server 2012 R2 was the chosen example for this document because it is generally available across Federal Government agencies. Other products may also be configured to provide a locally trusted service. <!-- If guidance documents are not yet available for these products...? -->Until such time as additional guidance is available for these products, you are encouraged to speak directly with the vendors regarding configuration. 
 
-### Software Installation
+### Software installation
 Before beginning the installation, ensure your server is named and joined to the appropriate domain. Changing the server name or domain after installation can corrupt the configuration. Your server will also need outbound Internet access to download remote CRLs. In most cases, CRLs are available over HTTP/80.
 
 Use the *Add Roles and Features Wizard* to add the *Active Directory Certificate Services* (ADCS) role to Windows 2012 R2.
 
 ![Select Active Directory Certificate Services (ADCS)](../img/local-ocsp-cfg-adcs.png)
 
-The wizard will prompt you add required features, add them, and then continue through the wizard until you reach *Role Services*. At this point, ensure you remove Certification Authority, and add Online Responder.
+The wizard will prompt you add required features, add them, and then continue through the wizard until you reach *Role Services*. At this point, ensure that you remove Certification Authority, and add Online Responder.
 
 ![Select Online Responder](../img/local-ocsp-cfg-role-services2.png)
 
@@ -108,15 +114,15 @@ To confirm the certificate was properly imported, open mmc.exe, load the Certifi
 
 ![Locate OCSP Responder Certificate in MMC](../img/local-ocsp-cfg-mmc.png)
 
-Double click the certificate and confirm it appears valid, lists *OCSP Signing* under purpose(s), and indicates *You have a private key that corresponds to this certificate*. Close the certificate.
+Double-click on the certificate and confirm that it appears valid, lists *OCSP Signing* under purpose(s), and indicates *You have a private key that corresponds to this certificate*. Close the certificate.
 
 ![Locate OCSP Responder Certificate in MMC](../img/local-ocsp-cfg-cert-key.png)
 
-Right click the certificiate in MMC and select All Tasks / Manage Private Keys
+Right-click on the certificiate in MMC, and select **All Tasks / Manage Private Keys**
 
 ![Manage Private Keys in MMC](../img/local-ocsp-cfg-manage-private-keys.png)
 
-When the permissions dialog appears, click the Add button.
+When the **Permissions** dialog appears, click on the **Add button**.
 
 ![Default Private Key Permissions](../img/local-ocsp-cfg-default-permissions.png)
 
