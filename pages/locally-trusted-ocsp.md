@@ -39,11 +39,11 @@ Some other security best practices to consider when implementing an OCSP Respond
 These are examples of local <!-- When you say "local," are you referring to "local network configurations," as above, or do you mean "organizational"? -->risk decisions that must be carefully considered. Security best practices and sound risk decisions should always shape an OSCP Responder's deployment design.
 
 ## Prerequisites
-#### Required
- - A locally trusted CA to issue OCSP Responder certificates
- - Windows 2012 R2 server
+#### Required:
+  * A locally trusted Root CA to issue OCSP Responder certificates
+  * Windows 2012 R2 server
 
-Owing to its' limited, local only, scope and special requirements on its' content, it is recommended that a new, dedicated Root CA be used for issuing the locally trusted responder certificates. Some additional details can be found in the procedures below and in [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1)
+Because of its limited, local-only scope and special content requirements, it is recommended that a new, dedicated **Root CA** <!-- What is a Root CA vs. a CA mentioned above? -->be used to issue locally trusted OCSP Responder certificates. Additional details for configuring the Root CA may be found in the procedures below and supplemental information contained in [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1).
 
 #### Recommended:
  - Hardware Security Module (HSM)
