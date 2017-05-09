@@ -43,11 +43,11 @@ These are examples of local <!-- When you say "local," are you referring to "loc
   * A locally trusted Root CA to issue OCSP Responder certificates
   * Windows 2012 R2 server
 
-Because of its limited, local-only scope and special content requirements, it is recommended that a new, dedicated **Root CA** <!-- What is a Root CA vs. a CA mentioned above? -->be used to issue locally trusted OCSP Responder certificates. (Additional details for configuring the Root CA may be found in the procedures below and supplemental information contained in [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1).)
+Because of its limited, local-only scope and special content requirements, it is recommended that a new, dedicated **Root CA** <!-- What is a Root CA vs. a CA mentioned above? -->be used to issue locally trusted OCSP Responder certificates. (Additional details for configuring the Root CA may be found in the procedures below. Supplemental information is contained in [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1).)
 
 #### Recommended:
- - Hardware Security Module (HSM)
- - Certificate Policy (CP) and Certification Practices Statement (CPS):  Documented security policies and procedures for deployment and operation OCSP Responder certificate issuing CA and the OCSP Responder(s).
+  * Hardware Security Module (HSM)
+  * Certificate Policy (CP) and Certification Practices Statement (CPS):  Documented security policies and procedures for deployment and operation OCSP Responder certificate issuing CA and the OCSP Responder(s).
 	 - Recommend leveraging one or more relevant CP(s) published by a CA(s) you rely on for requirements.
 
 > <i class="icon-info"></i>  CA installation, HSM configuration, and policy documents are not covered in detail by this document.
