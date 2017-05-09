@@ -86,15 +86,12 @@ _\* Certificate templates are only available on Enterprise CAs_
 3. Right-click the **Domain Controller Authentication** template and click **Duplicate Template**
 4. Under the **Compatibility Tab** , modify the **Compatibility Settings** for both the CA and certificate recipients to as high as possible (e.g. **Windows Server 2012 R2, Windows 7 / 2008 R2** )
 5. Under the **General tab** :
-  1. Recommend renaming template to:
-    1. _&lt;Your organization&gt; - Domain Controller Authentication_
-  2. Recommend modifying validity period to:
-    1. _3 years_
-  3. Recommend modifying Renewal period to:
-    1. _6 weeks_
+  * Recommend renaming template to: _&lt;Your organization&gt; - Domain Controller Authentication_
+  * Recommend modifying validity period to:  _3 years_
+  * Recommend modifying Renewal period to: _6 weeks_
 6. Under the **Cryptography tab** :
-  1. Set minimum key size to 2048
-  2. If possible, set Request hash to SHA256
+  * Set minimum key size to 2048
+  * If possible, set Request hash to SHA256
 7. Open the CA console (i.e. **certsrv.msc** )
 8. In the console tree, click the name of the CA
 9. In the details pane, double-click **Certificate Templates**
@@ -107,9 +104,9 @@ _\* Certificate templates are only available on Enterprise CAs_
 2. Open the GPMC (i.e. **gpmc.msc** )
 3. Within the appropriate GPO, navigate to _Computer Configuration\Policies\Windows Settings\Security Settings\Public Key Policies\_
 4. Configure **Certificate Services Client – Auto-Enrollment** with the following options:
-  1. Configuration Model: _Enabled_
-  2. Renew Expired Certificates, Update Pending Certificates, Remove Revoked Certificates: _Check_
-  3. Update Certificates That Use Certificate Templates: _Check_
+  * Configuration Model: _Enabled_
+  * Renew Expired Certificates, Update Pending Certificates, Remove Revoked Certificates: _Check_
+  * Update Certificates That Use Certificate Templates: _Check_
 5. You can now force the group policy to update via command-line: _gpupdate /force_ or wait for the group policy to update on its own
 6. If successful, you should see a new DC cert in the Certificate (Local Computer) -&gt; Personal -&gt; Certificates folder. _(_e. _open MMC.exe -&gt; File -&gt; Add/Remove Snap-in -&gt;Certificates -&gt;Computer account -&gt;Local computer)._ If you look at the furthest tab called &quot;Certificate Template&quot; you should see a cert generated with the custom template you created in step 9.
 Rendered
