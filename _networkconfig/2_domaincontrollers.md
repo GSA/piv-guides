@@ -100,12 +100,12 @@ _\* Certificate templates are only available on Enterprise CAs_
 
 **Auto-enroll Domain Controller Certificate Using Group Policy Object (GPO)**
 
-1. Log on to the Domain Controller server as a member of the **Enterprise Administrators** group
-2. Open the GPMC (i.e. **gpmc.msc** )
-3. Within the appropriate GPO, navigate to _Computer Configuration\Policies\Windows Settings\Security Settings\Public Key Policies\_
-4. Configure **Certificate Services Client – Auto-Enrollment** with the following options:
+18. Log on to the Domain Controller server as a member of the **Enterprise Administrators** group
+19. Open the GPMC (i.e. **gpmc.msc** )
+20. Within the appropriate GPO, navigate to _Computer Configuration\Policies\Windows Settings\Security Settings\Public Key Policies\_
+21. Configure **Certificate Services Client – Auto-Enrollment** with the following options:
   * Configuration Model: _Enabled_
   * Renew Expired Certificates, Update Pending Certificates, Remove Revoked Certificates: _Check_
   * Update Certificates That Use Certificate Templates: _Check_
-5. You can now force the group policy to update via command-line: _gpupdate /force_ or wait for the group policy to update on its own
-6. If successful, you should see a new DC cert in the Certificate (Local Computer) -&gt; Personal -&gt; Certificates folder. _(_e. _open MMC.exe -&gt; File -&gt; Add/Remove Snap-in -&gt;Certificates -&gt;Computer account -&gt;Local computer)._ If you look at the furthest tab called &quot;Certificate Template&quot; you should see a cert generated with the custom template you created in step 9.
+22. You can now force the group policy to update via command-line: _gpupdate /force_ or wait for the group policy to update on its own
+23. If successful, you should see a new DC cert in the Certificate (Local Computer) -&gt; Personal -&gt; Certificates folder. _(_e. _open MMC.exe -&gt; File -&gt; Add/Remove Snap-in -&gt;Certificates -&gt;Computer account -&gt;Local computer)._ If you look at the furthest tab called &quot;Certificate Template&quot; you should see a cert generated with the custom template you created in step 9.
