@@ -40,7 +40,7 @@ These are examples of local <!-- When you say "local," are you referring to "loc
 
 ## Before you begin
 
-Before you begin, it is recommended that you review the [Implementing an OCSP Responder](https://blogs.technet.microsoft.com/askds/2009/06/24/implementing-an-ocsp-responder-part-i-introducing-ocsp/) series on Microsoft TechNet. These documents include supporting information that has been omitted from this document.
+Before you begin, we recommend that you review the OCSP documents available at:  [Implementing an OCSP Responder](https://blogs.technet.microsoft.com/askds/2009/06/24/implementing-an-ocsp-responder-part-i-introducing-ocsp/) series on Microsoft TechNet. These documents include supporting information that has been omitted from this document.
 
 ### Prerequisites
 
