@@ -66,7 +66,7 @@ Because of its limited (OCSP only), local-network-only scope, and special conten
 
 Microsoft Windows Server 2012 R2 was the chosen model for an OCSP Responder, because it is generally available across Federal Government agencies. Other products may also be configured to provide a locally trusted, OCSP Responder service. <!-- Are guidance documents not yet available for these other products or do you mean until procedures are added to the OCSP playbook/guide...? -->Until such time as additional guidance is available for these products, we encourage you to speak directly with the vendors regarding configuration. 
 
-### Software installation
+### Install Microsoft Windows Server 2012 R2 software
 
 Before beginning the Windows Server 2012 R2 software installation, name your server and associate it <!-- Above we say "associate it with" -->with the chosen domain (i.e., IP address). <!-- Is IP address correct? --> Changing the server name or domain after installation can corrupt the configuration. Configure the server with outbound Internet access in order to retrieve and download remote CRLs. <!-- How do they set this up? Or refer them to a link for procedure. -->In most cases, CRLs are available over HTTP/80.
 
@@ -99,12 +99,16 @@ Before beginning the Windows Server 2012 R2 software installation, name your ser
   
   9. From inside the window that displays the installation results, under the **Active Directory Certificate Services** heading, click on **Configure Active Directory Certificate Services on the destination server**.
 
-If you are logged into the server with (at least) local administrator rights, you will not need to change the credentials in the **AD CS Configuration** wizard. <!-- Does this wizard pop up automatically? How do you find it and do you click on it? --> 
+  > If you are logged into the server with (at least) local administrator rights, you will not need to change the credentials in the **AD CS Configuration** wizard. <!-- Does this wizard pop up automatically? How do you find it and do you click on it? --> 
 
-Click through the wizard, click *Configure* then *Close* when it finishes. You can now close the *Add Roles and Features Wizard*. As a best practice, you may wish to reboot the server before continuing.
+  10. Click through the wizard prompts. Then, click on **Configure**.  When the configuration finishes, click on **Close**. 
+  11. Close the **Add Roles and Features Wizard**. 
+  
+  > As a best practice, reboot the server before continuing.
 
 ### Obtain OCSP Responder Certificate
-There are primarily two different approaches for obtaining certificates for the Microsoft OCSP Responder implementation. In one approach, the Online Responder has permissions to automatically request certificates from an online Microsoft CA on the same domain. If done in a dedicated, network isolated domain with hardware security modules, this approach can be relatively secure. The other option, which is described to a an extent below, is to manually install a certificate which you obtain from an offline CA.
+
+One of two primary approaches exist for obtaining certificates to deploy the Microsoft OCSP Responder. <!-- Correct meaning? -->For the first approach, the OCSP Responder has permissions to automatically request certificates from an online Microsoft CA that resides on the same domain. If done in a dedicated, network-isolated domain <!-- What you refer to as a local network above? Best to use same terms. -->with hardware security modules, this approach can be relatively secure. The second approach, which is described below (to limited extent), is to obtain a certificate from an offline CA <!-- Explain "offline CA" -->and manually install it.
 
 > <i class="icon-info"></i>  Regardless of the certificate issuance approach, Windows clients require every certificate in the chain, *including the self signed root*, to express OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension.
 
