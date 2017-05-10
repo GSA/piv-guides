@@ -28,7 +28,7 @@ By operating a locally trusted OCSP Responder, your organization is assuming all
 
 Some other security best practices to consider when implementing an OCSP Responder: 
 
-  * No clients (applications and devices) should ever trust a locally trusted OCSP Responder unless they have been explicitly configured to do so. <!--How would a client trust the OCSP Responder without being configured to do so? "Therefore" doesn't seem to follow from 1st sentence as it was worded. -->
+  * No clients (applications and devices) should ever trust a locally trusted OCSP Responder unless they have been explicitly configured to do so. <!--How would a client trust the OCSP Responder without being configured to do so? -->
   
   * The CA you use must be private to your organization. 
   
@@ -36,11 +36,11 @@ Some other security best practices to consider when implementing an OCSP Respond
   
   * A common misunderstanding is viewing an OCSP check is the same thing as certificate validation--this is a _dangerous and completely inaccurate assumption_. The proper procedures for certificate path validation can be found in section 6 of [RFC 5280](https://www.ietf.org/rfc/rfc5280.txt), _Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List Profile_.
 
-These are examples of local <!-- When you say "local," are you referring to "local network configurations," as above, or do you mean "organizational"? -->risk decisions that must be carefully considered. Security best practices and sound risk decisions should always shape a deployment design for an OSCP Responder.
+These are examples of an agency's or organization's local risk decisions that must be carefully considered. Security best practices and sound risk decisions should always shape a deployment design for an OSCP Responder.
 
 ## Before you begin
 
-Before you begin, we recommend that you review the OCSP document series available from Microsoft TechNet:  [Implementing an OCSP Responder](https://blogs.technet.microsoft.com/askds/2009/06/24/implementing-an-ocsp-responder-part-i-introducing-ocsp/). Microsoft's document series includes supporting information that has been omitted from this OSCP Guide.
+Before you begin, we recommend that you review the OCSP document series available from Microsoft TechNet:  [Implementing an OCSP Responder](https://blogs.technet.microsoft.com/askds/2009/06/24/implementing-an-ocsp-responder-part-i-introducing-ocsp/). Microsoft's document series includes supporting information that has been omitted from this OSCP guide.
 
 ### Prerequisites
 
@@ -108,9 +108,13 @@ Before beginning the Windows Server 2012 R2 software installation, name your ser
 
 ### Obtain OCSP Responder Certificate
 
-One of two primary approaches exist for obtaining certificates to deploy the Microsoft OCSP Responder. <!-- Correct meaning? -->For the first approach, the OCSP Responder has permissions to automatically request certificates from an online Microsoft CA that resides on the same domain. If done in a dedicated, network-isolated domain <!-- What you refer to as a local network above? Best to use same terms. -->with hardware security modules, this approach can be relatively secure. The second approach, which is described below (to limited extent), is to obtain a certificate from an offline CA <!-- Explain "offline CA" -->and manually install it.
+Two main approaches exist for the Microsoft OCSP Responder's method of obtaining certificates:
 
-> <i class="icon-info"></i>  Regardless of the certificate issuance approach, Windows clients require every certificate in the chain, *including the self signed root*, to express OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension.
+  1. <!-- Correct meaning? -->The OCSP Responder has permissions to automatically request a certificate <!-- Is this the certificate for the OCSP Responder itself?  Is the OCSP Responder the same as the MS Windows Server 2012 R2? -->from an online Microsoft CA that resides on the same domain. If done in a dedicated, network-isolated domain with HSMs, this approach can be relatively secure. 
+  
+  2. The second approach, which is described below to limited extent, is to obtain a certificate from an offline CA <!-- Is Approach 2 preferred?  Explain "offline CA" -->and manually install it. <!-- Install it on the MS Windows Server 2012 R2? -->
+
+> <i class="icon-info"></i>  Regardless of which certificate-issuance approach you use, Windows clients require every certificate in the chain, *including the self-signed Root*, to express OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension. <!-- "Extended..extension" sounds redundant. The terms and statements here are well beyond "assume no prior subject knowledge."  I can't simplify them, as I can't follow the meaning.-->
 
 The first step is to generate a new signing key and certificate request file. You will need to create an INF file that specifies the details to include in the request. See [Appendix 1 - Sample OCSP INF file](#Appendix-1---Sample-OCSP-INF-file-1) for an example. Once you've created your INF file, open an administrative command window on the server and use the following command:
 
