@@ -36,6 +36,7 @@ To be able to effectively use these OCSP Responder procedures, we recommend that
   * Experience using CPs and CPSs
 
 ## Security risks <!-- The uninitiated will most likely have trouble following the discussion in this paragraph. -->
+
 By operating a locally trusted OCSP Responder, your organization is assuming all of the security risks introduced when you do not depend directly on the authoritative revocation status sources (i.e., CAs). <!-- LL has given guidance about doc. prep. that we are to assume the reader has no prior knowledge of the subject matter. Are the sources = the CAs & they are normally consulted for accurate CRLs (unclear)? Does the OCSP Responder extract the CRL information from the CA and so is not a "direct" (more secure) means? -->CAs follow stringent <!-- Are the policies and procedures the CP and CPS mentioned in next sentence (unclear)? Explain "multi-person control" for reader. -->requirements for multi-person control, physical security<!-- How does physical security relate to CRLs? -->, and hardware cryptographic modules <!-- Hardare mentioned here but not software (which is mentioned below). -->, which are detailed in each CA's **Certificate Policy (CP)** and **Certification Practices Statement (CPS)**.  If you do not implement equivalent security controls to those implemented by a CA (i.e., as stated in a CP and CPS), then your local OCSP Responder becomes the weak link in the chain, and your organization's overall <!-- ? -->network-security assurance level would effectively be reduced to that of your local network configuration. <!-- Local vs. ___? -->For example, if your organization validates **Personal Identity Validation (PIV)** authentication certificates (hardware)<!-- "Hardware certificates" relate to a PIV card used for computer access to a network? -->, but you are using software cryptographic keys on your local OCSP Responder, then the validated PIV certificates' <!-- For PIV? -->assurance level may be associated with software rather than hardware, both of which have different CP and CPS requirements. <!-- Is this what you meant? -->This may or may not be acceptable, depending on the **use case**. 
 
 Some other security best practices to consider when implementing an OCSP Responder: 
@@ -190,20 +191,22 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
   12. If this server is on a domain, click on the **Locations** button, and select the local server's name. 
   13. Type **NETWORK SERVICE** into the **Enter the object names to select** box, and click on the **Check Names** box. Click on **OK** when finished.
   
-  > The **Permissions for [server name] private keys** window displays 
+  > The **Permissions for [server name] private keys** window displays. 
 
 ![Add NETWORK SERVICE Permissions](../img/local-ocsp-cfg-add-network-service.png)
 
-  14. With the **Permissions...** window open, select **NETWORK SERVICE**, deselect (uncheck) the *Full control* checkbox, and then click on **OK**.
+  14. From the **Permissions...** window, select **NETWORK SERVICE**, deselect (uncheck) the **Full control** checkbox, and then click on **OK**.
 
 ![Allow only Read for NETWORK SERVICE](../img/local-ocsp-cfg-read-only-rights.png)
 
-  > The certificate and private key should now be usable by the OCSP Responder service.
+  > the OCSP Responder should now be able to use the certificate and private key.
 
 ### Configure Revocation Sources
+
 Every issuing and intermediate CA certificate to be supported by the OCSP Responder must have their own entry in "Revocation Configuration"
 
 #### Manually Adding a Revocation Source
+
 In the example images below, the Federal Bridge CA 2016 is added as a revocation source.
 
 Open the Online Responder Management console, right click Revocation Configuration, then select Add Revocation Configuration.
