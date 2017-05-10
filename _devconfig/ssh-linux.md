@@ -32,11 +32,15 @@ Alternative means of access (i.e., via passwords) should be disabled as needed.
 
 1. Insert your PIV ID Badge into the Smart Card reader for your computer.
 2. On RHEL and CentOS, run the following commands:
-eval $(ssh-agent)
-ssh-add –s libcoolkeypk11.so
+```
+      eval $(ssh-agent)
+      ssh-add –s libcoolkeypk11.so
+```
 3. On other distributions, run
-eval $(ssh-agent)
-ssh-add –s opensc-pkcs11.so
+```
+     eval $(ssh-agent)
+     ssh-add –s opensc-pkcs11.so
+```
 4. Type the PIN when requested at the PIV ID Badge password prompt. 
 **Note:**  The card reader may flash. Do not remove the PIV ID Badge from the card reader until the login process is complete.
 5. Use the following command to list the user&#39;s public SSH key.
