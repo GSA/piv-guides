@@ -46,7 +46,7 @@ It is not recommended to set up a local enterprise certificate authority just to
 The best option is to collaborate with your Chief Information Security Officer (CISO) or Information Security office for a definitive answer and direction.
 
 
-# Generating and Installing Domain Controller Certificate
+## Generating and Installing Domain Controller Certificate
 
 _Accurate as of 3/17/2017 using Microsoft 2012 Server Standard Edition for Certification Authority and Domain Controller servers._
 
