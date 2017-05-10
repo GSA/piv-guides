@@ -109,9 +109,9 @@ Before beginning the Windows Server 2012 R2 software installation, name your ser
   
   > The prompt, _Configuration required. Installation suceeded on [server name]_ appears. <!--"Server name" correct for generic info.? -->
   
-  9. From inside the window that displays the installation results, under the **Active Directory Certificate Services** heading, click on **Configure Active Directory Certificate Services on the destination server**.
+  9. In the **Results** window, below the **Active Directory Certificate Services** heading, click on **Configure Active Directory Certificate Services on the destination server**.
 
-  > If you are logged into the server with (at least) local administrator rights, you will not need to change the credentials in the **AD CS Configuration** wizard. <!-- Does this wizard pop up automatically? How do you find it and do you click on it? --> 
+  > If you are logged into the server with (at least) local administrator rights, you do not need to change the credentials in the **AD CS Configuration** wizard. <!-- Does this wizard pop up automatically? How do you find it? Do you click on it? --> 
 
   10. Click through the wizard prompts. Then, click on **Configure**.  When the configuration finishes, click on **Close**. 
   11. Close the **Add Roles and Features Wizard**. 
@@ -120,19 +120,25 @@ Before beginning the Windows Server 2012 R2 software installation, name your ser
 
 ### Obtain OCSP Responder Certificate
 
-Two main approaches exist for the Microsoft OCSP Responder's method of obtaining certificates:
-
-  1. <!-- Correct meaning? -->The OCSP Responder will have permissions to automatically request a certificate <!-- Is this the certificate for the OCSP Responder itself?  Is the OCSP Responder the same as the MS Windows Server 2012 R2? -->from an online Microsoft CA that resides on the same domain. This approach, if used in a dedicated, network-isolated domain with HSMs, can be relatively secure. 
+Two main approaches exist for the Microsoft OCSP Responder's method of issuing and obtaining certificates:
   
-  2. The OCSP Responder will obtain a certificate from an offline CA and manually install it. (This approach is described below.)<!-- Is Approach 2 preferred? Is it more or less secure than 1 above? Install it where? -->
+  * **Preferred Approach**: the OCSP Responder will obtain a certificate from an offline CA and manually install it.  This approach, which is described below, will provide increased security over the second approach. <!-- If preferred, this one should come first. Is it more or less secure than other appraoch? Install it where? -->
+  
+  * **Alternative Approach**: The OCSP Responder will have permissions to automatically request a certificate <!-- Is this the certificate for the OCSP Responder itself?  Is the OCSP Responder the same as the Windows Server 2012 R2? -->from an online Microsoft CA that resides on the same domain. This approach, if used in a dedicated, network-isolated domain with HSMs, can be relatively secure.  (Information on this approach is available from ______.)  
 
-> <i class="icon-info"></i>  Regardless of which certificate-issuance approach you use, Windows clients require every certificate in the chain, *including the self-signed Root*, to express OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension. <!-- "Extended..extension" sounds redundant. The terms and statements here are well beyond "assume no prior subject knowledge."  I can't simplify them, as I can't follow the meaning.-->
+> <i class="icon-info"></i>  Regardless of which approach you use, Microsoft Windows clients require every certificate in the certificate chain, **including the self-signed Root**, to express **OCSP Signing (1.3.6.1.5.5.7.3.9)** in the **Extended Key Usage** extension. <!-- "Extended...extension": I assume both are needed here (sounds redundant). The statements here I can't simplify them, as I can't follow the meaning.-->
 
-The first step is to generate a new signing key and certificate request file. You will need to create an INF file that specifies the details to include in the request. See [Appendix 1 - Sample OCSP INF file](#Appendix-1---Sample-OCSP-INF-file-1) for an example. Once you've created your INF file, open an administrative command window on the server and use the following command:
+  For the **Preferred Approach** to issuing and obtaining certificates, perform the following steps: 
+  
+  1. Generate a new **signing key and certificate request file** by creating an INF (i.e., Information File Name Extension) file that specifies the details you wish to include in the request. For an example, see [Appendix 1 - Sample OCSP INF file](#Appendix-1---Sample-OCSP-INF-file-1). 
+  
+  2. Once you've created your INF file, open an administrative command window on the server and enter the following command:
 
 	certreq -new <inf_filename>.inf ocsp.req
 
-This command should generate a new signing key and output a signed certificate request to *ocsp.req*.  Deliver this request file to your CA and obtain your OCSP Responder certificate. Note that this file is PEM encoded - you can open it in notepad and copy/paste the content.
+  > This command should generate a new signing key and output a signed certificate request to **ocsp.req**.  
+
+  3. Deliver this request file to your CA and obtain your OCSP Responder certificate. Note that this file is PEM encoded - you can open it in notepad and copy/paste the content.
 
 After obtaining your new certificate, ensure it meets the requirements of an OCSP Responder certificate before proceeding:
 
