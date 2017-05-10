@@ -18,8 +18,9 @@ SSHD can be configured to only allow specific users access to a host only via PI
 ```      
 2. Restart sshd.
 3. Create the directory: /etc/sshd/authorized\_keys
-mkdir /etc/sshd/authorized\_keys
-
+```
+      mkdir /etc/sshd/authorized\_keys
+```   
 To allow access for a particular user:
 
 Place the user&#39;s PIV ID Badge SSH public key in that directory according to the user name:
