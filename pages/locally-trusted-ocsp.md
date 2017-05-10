@@ -275,17 +275,17 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
 Each CA must be individually and explicitly configured. In order to maximize local availability, it important to configure all of the CAs in the certificate chain to your trusted root certificate(s). For example, additional CAs that must be configured to your trusted root certificate(s) could be a subset of the CAs that can verified by the Federal Common Policy CA. <!-- Will all users know what Federal Common Policy CA is?  (Also referred to as "COMMON"?) Will users of this guide ALL need to configure CAs that can be verified by FCPCA? Explain "maximize local availability"--of what? -->
 
-### Manual Client Configuration </stopped here/>
+### Manual Client configuration
 
-A locally trusted OCSP Responder is configured using the Certificates Snap-In in Microsoft Management Console. To begin, open MMC (mmc.exe)  and add the Certificates Snap-In for the Local Computer Account.
+To configure a locally trusted, OCSP Responder, use the **Certificates snap-in** in **MMC**. To begin, open MMC (i.e., mmc.exe) and add the Certificates snap-in for the Local Computer Account. <!-- Why caps for Local Computer Account? -->
 
 ![MMC Certificates Snap-In](../img/local-ocsp-client-1.png)
 
-Navigate to the certificate store and CA certificate for which you want to enable locally trusted OCSP, then right click the certificate and select Properties.
+  1.  Navigate to the **Certificate store** and the **CA certificate** for which you want to enable the locally trusted, OCSP Responder.  Then, right-click on the certificate and select **Properties**.
 
 ![Select certificate properties in MMC](../img/local-ocsp-client-2.png)
 
-Click the OCSP tab, then enter the URL of your locally trusted OCSP Responder. 
+  2. Click on the **OCSP** tab, and then enter the **URL of your locally trusted, OCSP Responder**. </**STOPPED HERE**/>
 
 > <i class="icon-info"></i>  The Microsoft OCSP Responder adds "ocsp" to the URL, e.g. http://servername/ocsp
 
