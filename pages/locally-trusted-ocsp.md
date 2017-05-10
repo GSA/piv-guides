@@ -128,9 +128,9 @@ Two main approaches exist for the Microsoft OCSP Responder's method of issuing a
 
 > <i class="icon-info"></i>  Regardless of which approach you use, Microsoft Windows clients require every certificate in the certificate chain, **including the self-signed Root**, to express **OCSP Signing (1.3.6.1.5.5.7.3.9)** in the **Extended Key Usage** extension. <!-- "Extended...extension": I assume both are needed here (sounds redundant). The statements here I can't simplify them, as I can't follow the meaning.-->
 
-  To use the **Preferred** approach to issuing and obtaining certificates, perform the following steps: 
+To use the **Preferred** approach to issuing and obtaining certificates, perform the following steps: 
   
-  1. Generate a new **signing key and certificate request file** by creating an INF (i.e., Information File Name Extension) file that specifies the details you wish to include in the request. For an example, see [Appendix 1 - Sample OCSP INF file](#Appendix-1---Sample-OCSP-INF-file-1). 
+  1. Generate a new **signing key and certificate request file** by creating an **INF** (i.e., Information File Name Extension) file that specifies the details you wish to include in the request. For an example, see [Appendix 1 - Sample OCSP INF file](#Appendix-1---Sample-OCSP-INF-file-1). 
   
   2. Once you've created an INF file, open an administrative command window on the server and enter the following command:
 
@@ -146,47 +146,59 @@ Two main approaches exist for the Microsoft OCSP Responder's method of issuing a
 
   * OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage.
 	- This *should* be marked **critical.**
+	
   * The id-pkix-ocsp-nocheck (1.3.6.1.5.5.7.48.1.5) extension is present.
 	- Including this extension prevents clients from checking the OCSP Responder certificates' revocation status.
+	
   * Key Usage must contain Digital Signature (80).
 	- This *should* be marked **critical.**
+	
   * The Subject Alternative Name *should* contain Domain Name Server (DNS) Name = OCSP Server DNS name.
 
 ### Install OCSP Responder Certificate
 
-Copy the new certificate as well as the issuing CA certificate (or chain) to the OCSP Responder server. If you haven't already done so, install the issuing CA root certificate in the **Computer** Trust Root Certification Authorities store. Use the following command to accept the OCSP Responder certificate:
+  1. Copy the new OCSP Responder certificate, as well as the issuing CA certificate (or chain), to the OCSP Responder server. 
+  2. If you have not already done so, install the issuing **CA Root certificate** in the **Computer Trust Root Certification Authorities store**. 
+  3. Use the following command to accept the OCSP Responder certificate:
 
 	certreq -accept <ocsp_responder_certificate_filename>.cer
 
-When successful, certreq will exit and provide no feedback.
+  > When successful, _certreq_ will exit and provide no feedback.
 
-> <i class="icon-info"></i>  An error message stating "*Certificate Request Processor: A certificate chain could not be built to a trusted root authority. 0x800b010a (-2146762486 CERT_E_CHAINING)*" indicates the self signed root (and intermediate CA certificates, if applicable) are not available or not in the correct certificate stores on the server. Ensure the required CA certificates are imported to the correct *Computer account* stores.
+> <i class="icon-info"></i>  An error message stating:  *Certificate Request Processor:  A certificate chain could not be built to a trusted root authority. 0x800b010a (-2146762486 CERT_E_CHAINING)* will indicate that the self-signed root (and intermediate CA certificates, if applicable) are not available or not in the correct certificate stores on the server. Ensure that the required CA certificates are imported into the correct **Computer account** stores. <!-- In Step 2 above, only *Computer* was italicized.  Is this related? -->
 
-To confirm the certificate was properly imported, open mmc.exe, load the Certificates snap-in, and target it to the Computer Account. Expand the Personal/Certificates tree and confirm the newly accepted certificate is listed there.
+  4. To confirm that the certificate was properly imported, open the **Microsoft Management Console (MMC)** (i.e., **mmc.exe**), load the **Certificates snap-in**, and select the **Computer account** (i.e., stores). <!-- Correct?  Can't tell what the step sequence is from the screen capture. -->
+  5. From the left-hand-side panel, under the **Console Root** folder, click on **Certificates (Local Computer)** and then click on the **Personal** folder.  
+  6. Click on the **Certificates** folder. Then, expand the **Personal/Certificates** tree on the right-hand-side of the window. 
+  7. Confirm that the newly accepted certificate is listed there.
 
 ![Locate OCSP Responder Certificate in MMC](../img/local-ocsp-cfg-mmc.png)
 
-Double-click on the certificate and confirm that it appears valid, lists *OCSP Signing* under purpose(s), and indicates *You have a private key that corresponds to this certificate*. Close the certificate.
+  8. Double-click on the certificate and confirm that it appears valid, lists *OCSP Signing* under _This certificate is intended for the following purpose(s)_, and indicates below that *You have a private key that corresponds to this certificate*. 
+  9. Close the certificate. <!-- How do you close it? -->
 
 ![Locate OCSP Responder Certificate in MMC](../img/local-ocsp-cfg-cert-key.png)
 
-Right-click on the certificiate in MMC, and select **All Tasks / Manage Private Keys**
+  10. Right-click on the certificate in MMC, and select **All Tasks** and then **Manage Private Keys**.
 
 ![Manage Private Keys in MMC](../img/local-ocsp-cfg-manage-private-keys.png)
 
-When the **Permissions** dialog appears, click on the **Add button**.
+  11. When the **Permissions** dialog box appears, click on the **Add** button.
 
 ![Default Private Key Permissions](../img/local-ocsp-cfg-default-permissions.png)
 
-If this server is on a domain, click Locations and select the local server. Type "NETWORK SERVICE" into the object names box. Click Check Names and OK when finished.
+  12. If this server is on a domain, click on the **Locations** button, and select the local server's name. 
+  13. Type **NETWORK SERVICE** into the **Enter the object names to select** box, and click on the **Check Names** box. Click on **OK** when finished.
+  
+  > The **Permissions for [server name] private keys** window displays 
 
 ![Add NETWORK SERVICE Permissions](../img/local-ocsp-cfg-add-network-service.png)
 
-With NETWORK SERVICE selected, clear the check mark from *Full control* then click OK.
+  14. With the **Permissions...** window open, select **NETWORK SERVICE**, deselect (uncheck) the *Full control* checkbox, and then click on **OK**.
 
 ![Allow only Read for NETWORK SERVICE](../img/local-ocsp-cfg-read-only-rights.png)
 
-The certificate and private key should now be usable by the OCSP Responder service.
+  > The certificate and private key should now be usable by the OCSP Responder service.
 
 ### Configure Revocation Sources
 Every issuing and intermediate CA certificate to be supported by the OCSP Responder must have their own entry in "Revocation Configuration"
