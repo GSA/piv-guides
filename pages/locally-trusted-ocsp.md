@@ -51,12 +51,9 @@ Before you begin, we recommend that you review the OCSP document series availabl
 
 Because of its limited (OCSP only), local-network-only scope, and special content (only certificate-revocation statuses) requirements <!-- Is this what you meant?  Wasn't quite clear. -->, we recommend that a new, dedicated **Root CA** be used to issue locally trusted, OCSP Responder certificates. 
 
-> In a hierarchical [PKI], the [**Root CA** is the CA] whose public key serves as the most trusted datum 
-> (i.e., the beginning of trust paths) for a security domain (NIST SP 800-32, CNSSI-4009).
+> In a hierarchical [PKI], the [**Root CA** is the CA] whose public key serves as the most trusted datum (i.e., the beginning of trust paths) for a security domain (NIST SP 800-32, CNSSI-4009).
 
-(Additional details for configuring this Root CA may be found in the procedures below. Supplemental information is given below [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1).)
-
-
+(The procedures below provide additional steps for configuring this Root CA, and Appendix 2 provides supplemental information [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1).)
 
 #### Recommended: 
 
