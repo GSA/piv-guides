@@ -26,14 +26,14 @@ If a locally trusted OCSP Responder <!-- Responder?  Client and Responder? -->is
 
 ## Assumptions
 
-To be able to effectively use these OCSP Responder procedures, we recommend that you should have the following: <!-- Since this guide requires a technical user, where the "assume no prior knowledge" is not appropriate, we might add Assumptions about the user's level of expertise in relevant areas. I took a guess at these.  In LaChelle's template.md for some repos includes a section in this position called "Assumptions," recommend we use that here -->:
+To be able to effectively use these OCSP Responder procedures, we recommend that you possess the following: <!-- Since this guide requires a technical user, where the "assume no prior knowledge" is not appropriate, we might add Assumptions about the user's level of expertise in relevant areas. I took a guess at these.  In LaChelle's template.md for some repos includes a section in this position called "Assumptions," recommend we use that here -->:
 
   * System administrator (SA) or network administrator privileges/permissions 
+  * Experience with network configurations  
   * Experience with installing and configuring servers
-  * Experience with network configurations
   * Experience with certificate issuance and revocation practices
-  * Understanding of Certification Authorities (CAs)
-  * Experience using Certification Policies (CPs) and Certification Practice Statements (CPSs)
+  * Experience with CAs
+  * Experience using CPs and CPSs
 
 ## Security risks <!-- The uninitiated will most likely have trouble following the discussion in this paragraph. -->
 By operating a locally trusted OCSP Responder, your organization is assuming all of the security risks introduced when you do not depend directly on the authoritative revocation status sources (i.e., CAs). <!-- LL has given guidance about doc. prep. that we are to assume the reader has no prior knowledge of the subject matter. Are the sources = the CAs & they are normally consulted for accurate CRLs (unclear)? Does the OCSP Responder extract the CRL information from the CA and so is not a "direct" (more secure) means? -->CAs follow stringent <!-- Are the policies and procedures the CP and CPS mentioned in next sentence (unclear)? Explain "multi-person control" for reader. -->requirements for multi-person control, physical security<!-- How does physical security relate to CRLs? -->, and hardware cryptographic modules <!-- Hardare mentioned here but not software (which is mentioned below). -->, which are detailed in each CA's **Certificate Policy (CP)** and **Certification Practices Statement (CPS)**.  If you do not implement equivalent security controls to those implemented by a CA (i.e., as stated in a CP and CPS), then your local OCSP Responder becomes the weak link in the chain, and your organization's overall <!-- ? -->network-security assurance level would effectively be reduced to that of your local network configuration. <!-- Local vs. ___? -->For example, if your organization validates **Personal Identity Validation (PIV)** authentication certificates (hardware)<!-- "Hardware certificates" relate to a PIV card used for computer access to a network? -->, but you are using software cryptographic keys on your local OCSP Responder, then the validated PIV certificates' <!-- For PIV? -->assurance level may be associated with software rather than hardware, both of which have different CP and CPS requirements. <!-- Is this what you meant? -->This may or may not be acceptable, depending on the **use case**. 
@@ -122,9 +122,9 @@ Before beginning the Windows Server 2012 R2 software installation, name your ser
 
 Two main approaches exist for the Microsoft OCSP Responder's method of obtaining certificates:
 
-  1. <!-- Correct meaning? -->The OCSP Responder has permissions to automatically request a certificate <!-- Is this the certificate for the OCSP Responder itself?  Is the OCSP Responder the same as the MS Windows Server 2012 R2? -->from an online Microsoft CA that resides on the same domain. If done in a dedicated, network-isolated domain with HSMs, this approach can be relatively secure. 
+  1. <!-- Correct meaning? -->The OCSP Responder will have permissions to automatically request a certificate <!-- Is this the certificate for the OCSP Responder itself?  Is the OCSP Responder the same as the MS Windows Server 2012 R2? -->from an online Microsoft CA that resides on the same domain. This approach, if used in a dedicated, network-isolated domain with HSMs, can be relatively secure. 
   
-  2. The second approach, which is described below to limited extent, is to obtain a certificate from an offline CA <!-- Is Approach 2 preferred?  Explain "offline CA" -->and manually install it. <!-- Install it on the MS Windows Server 2012 R2? -->
+  2. The OCSP Responder will obtain a certificate from an offline CA and manually install it. (This approach is described below.)<!-- Is Approach 2 preferred? Is it more or less secure than 1 above? Install it where? -->
 
 > <i class="icon-info"></i>  Regardless of which certificate-issuance approach you use, Windows clients require every certificate in the chain, *including the self-signed Root*, to express OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension. <!-- "Extended..extension" sounds redundant. The terms and statements here are well beyond "assume no prior subject knowledge."  I can't simplify them, as I can't follow the meaning.-->
 
