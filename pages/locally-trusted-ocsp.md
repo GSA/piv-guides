@@ -203,43 +203,43 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
 
 ### Configure Revocation Sources
 
-Every issuing and intermediate CA certificate to be supported by the OCSP Responder must have their own entry in "Revocation Configuration"
+Every issuing and intermediate CA certificate to be supported by the OCSP Responder must have their own entry in **Revocation Configuration.** <!-- Where is Revocation Configuration located? -->
 
 #### Manually Adding a Revocation Source
 
-In the example images below, the Federal Bridge CA 2016 is added as a revocation source.
+In the example images below, _Federal Bridge CA 2016_, is used as an example of a revocation source.
 
-Open the Online Responder Management console, right click Revocation Configuration, then select Add Revocation Configuration.
+  1. Open the **Online Responder Management** console.  At the right-hand panel under **Online Responder**, right-click on Revocation Configuration, and then select **Add Revocation Configuration**.
 
 ![Add Revocation Configuration](../img/local-ocsp-cfg-add-revocation-configuration.png)
 
-Click Next to Name the Revocation Configuration. It is recommended that you always use the common name of the CA plus any other identifying information that may be necessary. Click Next.
+  2. At the next window, select **Name the Revocation Configuration**.  Then enter the name of your Revocation Configuration. (It is recommended that you always use the CA's common name, plus any other identifying information that may be necessary.) Click on **Next**. <!-- Is Next a button? -->
 
 ![Name the Revocation Configuration](../img/local-ocsp-cfg-add-rev-conf-1.png)
 
-> <i class="icon-info"></i>  You will need to configure separate Revocation Configurations for CAs that have more than one key pair. Name your Revocation Sources such that you can easily identify these cases.
+> <i class="icon-info"></i>  You will need to configure separate Revocation Configurations for CAs that have more than one key pair. Name your Revocation Sources so that you can easily identify these cases.
 
-On the next step, you can choose either Local certificate store or from a File. Click Next, select the CA certificate, then click Next again.
+  3. At the next window, select a **CA Certification Location**. The location can be either a Local certificate store or a File. Click on a radio button to select a location. Click on **Next**, select the CA certificate, and then click **Next** again.<!-- Is Next a button? -->
 
 ![Select Import From File](../img/local-ocsp-cfg-add-rev-conf-2.png)
 
-Select Manually select a signing certificate, then click Next.
+  4. At the next window, click on the radio button next to **Manually select a signing certificate**. Click on **Next**.
 
 ![Select Manual Signing Certificate](../img/local-ocsp-cfg-add-rev-conf-4.png)
 
-An error will appear complaining that you have not yet configured the revocation provider settings. Click OK.
+  > An error (dialog box) will appear stating that _One or more errors occurred while revocation provider settings were being configured.  Click the "provider button" to configure the revocation provider manually_... Click on **OK**.
 
 ![Revocation Provider Error Message](../img/local-ocsp-cfg-add-rev-conf-5.png)
 
-Click the Provider button to open the Revocation Provider Properties dialog.
+  5. At the next window, click on the **Provider** button to open the **Revocation Provider Properties** dialog box.
 
 ![Click the Provider Button](../img/local-ocsp-cfg-add-rev-conf-6.png)
 
-Click Add then copy and paste the CA's CRL distribution point URL into the edit field. This is the CRL distribution point URL this CA puts in certificates it issues, not the URL in the CA certificate itself. Click OK to return to the Revocation Provider Properties dialog.
+  6. Click **Add**, and then copy and paste the CA's **CRL distribution point URL** into the **Add the...CRL at this address (URL) to the list:** text field. (**Note:**  This URL is the CRL distribution point URL that this CA puts into the certificates it issues, **not** the URL in the CA certificate itself.) Click on **OK** to go to the **Revocation Provider Properties** dialog box.
 
 ![Enter the CRL DP URL](../img/local-ocsp-cfg-add-rev-conf-7.png)
 
-Clear the check box next to **Refresh CRLs based on their validity periods**. This option has proven unreliable in testing. Enter a reasonable refresh interval such as 60 minutes and click OK.
+  7. Deselect (uncheck) the checkbox next to **Refresh CRLs based on their validity periods**. (**Note:** This option has proven unreliable in testing.) At **Update CRLs at this refresh interval (min)**, enter a reasonable refresh interval, such as _60 minutes_, and click on **OK**. </1 **STOPPED HERE**/1>
 
 ![Configure the CRL update internal](../img/local-ocsp-cfg-add-rev-conf-8.png)
 
