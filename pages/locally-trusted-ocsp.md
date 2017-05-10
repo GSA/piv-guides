@@ -122,17 +122,17 @@ Before beginning the Windows Server 2012 R2 software installation, name your ser
 
 Two main approaches exist for the Microsoft OCSP Responder's method of issuing and obtaining certificates:
   
-  * **Preferred Approach**: the OCSP Responder will obtain a certificate from an offline CA and manually install it.  This approach, which is described below, will provide increased security over the second approach. <!-- If preferred, this one should come first. Is it more or less secure than other appraoch? Install it where? -->
+  * **Preferred**: the OCSP Responder will obtain a certificate from an offline CA and manually install it.  This approach, which is described below, will provide increased security over the second approach. <!-- If preferred, this one should come first. Is it more or less secure than other appraoch? Install it where? -->
   
-  * **Alternative Approach**: The OCSP Responder will have permissions to automatically request a certificate <!-- Is this the certificate for the OCSP Responder itself?  Is the OCSP Responder the same as the Windows Server 2012 R2? -->from an online Microsoft CA that resides on the same domain. This approach, if used in a dedicated, network-isolated domain with HSMs, can be relatively secure.  (Information on this approach is available from ______.)  
+  * **Alternative**: The OCSP Responder will have permissions to automatically request a certificate <!-- Is this the certificate for the OCSP Responder itself?  Is the OCSP Responder the same as the Windows Server 2012 R2? -->from an online Microsoft CA that resides on the same domain. This approach, if used in a dedicated, network-isolated domain with HSMs, can be relatively secure.  (Information on this approach is available from ______.)  
 
 > <i class="icon-info"></i>  Regardless of which approach you use, Microsoft Windows clients require every certificate in the certificate chain, **including the self-signed Root**, to express **OCSP Signing (1.3.6.1.5.5.7.3.9)** in the **Extended Key Usage** extension. <!-- "Extended...extension": I assume both are needed here (sounds redundant). The statements here I can't simplify them, as I can't follow the meaning.-->
 
-  For the **Preferred Approach** to issuing and obtaining certificates, perform the following steps: 
+  To use the **Preferred** approach to issuing and obtaining certificates, perform the following steps: 
   
   1. Generate a new **signing key and certificate request file** by creating an INF (i.e., Information File Name Extension) file that specifies the details you wish to include in the request. For an example, see [Appendix 1 - Sample OCSP INF file](#Appendix-1---Sample-OCSP-INF-file-1). 
   
-  2. Once you've created your INF file, open an administrative command window on the server and enter the following command:
+  2. Once you've created an INF file, open an administrative command window on the server and enter the following command:
 
 	certreq -new <inf_filename>.inf ocsp.req
 
