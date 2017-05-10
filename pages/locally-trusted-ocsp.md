@@ -40,7 +40,7 @@ These are examples of local <!-- When you say "local," are you referring to "loc
 
 ## Before you begin
 
-Before you begin, we recommend that you review the OCSP documents available at:  [Implementing an OCSP Responder](https://blogs.technet.microsoft.com/askds/2009/06/24/implementing-an-ocsp-responder-part-i-introducing-ocsp/) series on Microsoft TechNet. These documents include supporting information that has been omitted from this document.
+Before you begin, we recommend that you review the OCSP document series available from Microsoft TechNet:  [Implementing an OCSP Responder](https://blogs.technet.microsoft.com/askds/2009/06/24/implementing-an-ocsp-responder-part-i-introducing-ocsp/). Microsoft's document series includes supporting information that has been omitted from this OSCP Guide.
 
 ### Prerequisites
 
@@ -49,7 +49,9 @@ Before you begin, we recommend that you review the OCSP documents available at: 
   * A locally trusted Root CA to issue OCSP Responder certificates
   * Windows 2012 R2 server
 
-Because of its limited, local-only scope and special content requirements, it is recommended that a new, dedicated **Root CA** <!-- What is a Root CA vs. a CA mentioned above? -->be used to issue locally trusted OCSP Responder certificates. (Additional details for configuring the Root CA may be found in the procedures below. Supplemental information is contained in [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1).)
+Because of its limited (OCSP only), local-network-only scope, and special content (only certificate-revocation statuses) requirements <!-- Is this what you meant?  Wasn't quite clear. -->, it is recommended that a new, dedicated **Root CA** <!-- What is a Root CA vs. a CA mentioned above? -->be used to issue locally trusted OCSP Responder certificates. (Additional details for configuring the Root CA may be found in the procedures below. Supplemental information is contained in [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1).)
+
+>> In a hierarchical Public Key Infrastructure, the [Root CA is the CA] whose public key serves as the most trusted datum (i.e., the beginning of trust paths) for a security domain (NIST SP 800-32, CNSSI-4009).
 
 #### Recommended: 
 
