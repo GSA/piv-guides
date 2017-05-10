@@ -15,7 +15,6 @@ SSHD can be configured to only allow specific users access to a host only via PI
 ```
       AuthorizedKeysFile /etc/sshd/authorized\_keys/%u
       PasswordAuthentication No
-
 ```      
 2. Restart sshd.
 3. Create the directory: /etc/sshd/authorized\_keys
@@ -38,7 +37,6 @@ Alternative means of access (i.e., via passwords) should be disabled as needed.
 ```
       eval $(ssh-agent)
       ssh-add –s libcoolkeypk11.so
-
 ```
 3. On other distributions, run
 ```
@@ -51,13 +49,11 @@ Alternative means of access (i.e., via passwords) should be disabled as needed.
 5. Use the following command to list the user&#39;s public SSH key.
 ```
      ssh-add –L | egrep  | egrep &#39;ssh-rsa&#39;
-
 ```
 6. Add this public key to the appropriate authorized\_keys file on the remote machine.
 7. The user can now log into the remote machine via the following command:
 ```
      ssh &lt;remote-host&gt;
-
 ```
 **Note:**  Do not remove the PIV ID Badge from the card reader until the login process is complete.
 
