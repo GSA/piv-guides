@@ -70,15 +70,31 @@ Microsoft Windows Server 2012 R2 was the chosen model for an OCSP Responder, bec
 
 Before beginning the Windows Server 2012 R2 software installation, name your server and associate it <!-- Above we say "associate it with" -->with the chosen domain (i.e., IP address). <!-- Is IP address correct? --> Changing the server name or domain after installation can corrupt the configuration. Configure the server with outbound Internet access in order to retrieve and download remote CRLs. <!-- How do they set this up? Or refer them to a link for procedure. -->In most cases, CRLs are available over HTTP/80.
 
-Use the **Add Roles and Features Wizard**, <!-- Where on the screen is the Wizard located and how do you activate it? -->go to **Server Roles**, and click on the **Active Directory Certificate Services** (ADCS) to add this role to the Windows Server 2012 R2.
+  1. Use the **Add Roles and Features Wizard**, and <!-- Where on the screen is the Wizard located and how do you activate it? -->go to **Server Roles**. 
+  2. Click on the **Active Directory Certificate Services** (ADCS) to add this role to the Windows Server 2012 R2.
 
 ![Select Active Directory Certificate Services (ADCS)](../img/local-ocsp-cfg-adcs.png)
 
-The Add Roles and Features wizard will prompt you to **add required features**. Add desired features, and then follow the wizard's prompts until you reach **Role Services**. At this point, ensure that you **remove _Certification Authority_**, and **add _Online Responder_**.
+  > The **Add Roles and Features Wizard** will prompt you to <!-- Next prompt: capitalized or all lowercase? -->**_Add required features_**. 
+
+  3. Add the desired features, and then follow the wizard's prompts. 
+  4. Locate and select **Role Services**.<!-- What is the name of the drop-down box or list where Role Services appears? --> 
+  5. At this point, ensure that you **deselect** (uncheck) the checkbox for **Certification Authority**, and click on the checkbox to select **Online Responder**.
 
 ![Select Online Responder](../img/local-ocsp-cfg-role-services2.png)
 
-The wizard will prompt you to *Add features that are required for Online Responder*, click *Add features*, then continue with the wizard and click *Install*. After the wizard finishes installing, click *Configure Active Directory Certificate Services on the destination server* inside the Results window.
+  > The wizard will then prompt you to <!-- Capital "A"? -->**_Add features that are required for Online Responder_**. 
+
+  6. Click on <!-- Capital "A" and lowercase "f"? -->**Add features**. <!-- Is this from a drop-down box? I can't validate steps/menus/selection method, capitals vs. not, since there are no screen shots for some of these. Not a criticism--just reality. -->
+  7. Continue with the wizard's prompts, <!-- Assume wizard's prompts are easy since not stated.  --> and click on **Install**.
+  
+  > After the installion finishes, the **Feature Installation** window appears. 
+  
+  8. Select **Results** from the left-hand-side panel. 
+  
+  > The prompt, _Configuration required. Installation suceeded on [server name]_ appears. <!--"Server name" correct for generic info.? -->
+  
+  9. From inside the **Results** window, under the **Active Directory Certificate Services** heading, click on **Configure Active Directory Certificate Services on the destination server**.
 
 ![Click Configure Active Directory Certificate Services](../img/local-ocsp-cfg-configure.png)
 
