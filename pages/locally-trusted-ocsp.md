@@ -70,11 +70,11 @@ Microsoft Windows Server 2012 R2 was the chosen model for an OCSP Responder, bec
 
 Before beginning the Windows Server 2012 R2 software installation, name your server and associate it <!-- Above we say "associate it with" -->with the chosen domain (i.e., IP address). <!-- Is IP address correct? --> Changing the server name or domain after installation can corrupt the configuration. Configure the server with outbound Internet access in order to retrieve and download remote CRLs. <!-- How do they set this up? Or refer them to a link for procedure. -->In most cases, CRLs are available over HTTP/80.
 
-Use the *Add Roles and Features Wizard* to add the *Active Directory Certificate Services* (ADCS) role to Windows 2012 R2.
+Use the **Add Roles and Features Wizard** to add the **Active Directory Certificate Services** (ADCS) role to Windows 2012 R2.
 
 ![Select Active Directory Certificate Services (ADCS)](../img/local-ocsp-cfg-adcs.png)
 
-The wizard will prompt you add required features, add them, and then continue through the wizard until you reach *Role Services*. At this point, ensure that you remove Certification Authority, and add Online Responder.
+This wizard will prompt you to **add required features**. Add desired features, and then follow the wizard's prompts until you reach **Role Services**. At this point, ensure that you **remove _Certification Authority_**, and **add _Online Responder_**.
 
 ![Select Online Responder](../img/local-ocsp-cfg-role-services2.png)
 
