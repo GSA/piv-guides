@@ -37,8 +37,8 @@ ssh-add –s libcoolkeypk11.so
 3. On other distributions, run
 eval $(ssh-agent)
 ssh-add –s opensc-pkcs11.so
-4. Type the PIN when requested at the PIV ID Badge password prompt.  **Note:**  The card reader may flash.
-  - Do not remove the PIV ID Badge from the card reader until the login process is complete.
+4. Type the PIN when requested at the PIV ID Badge password prompt. 
+**Note:**  The card reader may flash. Do not remove the PIV ID Badge from the card reader until the login process is complete.
 5. Use the following command to list the user&#39;s public SSH key.
 ssh-add –L | egrep  | egrep &#39;ssh-rsa&#39;
 6. Add this public key to the appropriate authorized\_keys file on the remote machine.
