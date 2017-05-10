@@ -85,8 +85,9 @@ Before beginning the Windows Server 2012 R2 software installation, name your ser
 
   > The wizard will then prompt you to <!-- Capital "A"? -->**_Add features that are required for Online Responder_**. 
 
-  6. Click on <!-- Capital "A" and lowercase "f"? -->**Add features**. <!-- Is this from a drop-down box? I can't validate steps/menus/selection method, capitals vs. not, since there are no screen shots for some of these. Not a criticism--just reality. -->
+  6. Click on <!-- Capital "A" and lowercase "f"? -->**Add features**. 
   7. Continue with the wizard's prompts, <!-- Assume wizard's prompts are easy since not stated.  --> and click on **Install**.
+  <!-- Is this from a drop-down box? I can't validate steps/menus/selection method, capitals vs. not, since there are no screen shots for some of these. Not a criticism--just reality. -->
   
   > After the installion finishes, the **i - Feature Installation** window appears. 
   
