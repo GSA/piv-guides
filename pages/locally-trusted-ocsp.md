@@ -47,22 +47,20 @@ Before you begin, we recommend that you review the OCSP document series availabl
 #### Required:
 
   * A locally trusted Root CA to issue OCSP Responder certificates
-  * Windows 2012 R2 server
+  * Microsoft Windows 2012 R2 server
 
 Because of its limited (OCSP only), local-network-only scope, and special content (only certificate-revocation statuses) requirements <!-- Is this what you meant?  Wasn't quite clear. -->, we recommend that a new, dedicated **Root CA** be used to issue locally trusted, OCSP Responder certificates. 
 
 > In a hierarchical [PKI], the [**Root CA** is the CA] whose public key serves as the most trusted datum (i.e., the beginning of trust paths) for a security domain (NIST SP 800-32, CNSSI-4009).
 
-(The procedures below provide additional steps for configuring this Root CA, and Appendix 2 provides supplemental information [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1).)
+(The procedures below provide additional steps for installing and configuring this Root CA<!-- Which procedures specifically? -->, and Appendix 2 provides supplemental information [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1).)
 
 #### Recommended: 
 
   * Hardware Security Module (HSM)
-  * CP and CPS:  Documented security policies and procedures for deploying and operating the OCSP Responder certificate-issuing Root CA and OCSP Responder(s). <!-- More than one OCSP Responder? -->
-	 - Recommend leveraging one or more relevant CP(s) published by a CA(s) you rely on for requirements.
+  * CP and CPS:  Documented security policies and procedures for deploying and operating the certificate-issuing Root CA and OCSP Responder(s). 
 
-> <i class="icon-info"></i>  CA installation, HSM configuration, and policy documents are not covered in detail by this document.
-
+> <i class="icon-info"></i>  <!-- Do you mean for installing CAs other than the Root CA?  I thought we do include procedures about that below..? -->This guide does not provide detailed procedures for installing CAs or configuring HSMs (i.e., numerous online resources provide CA installation procedures, and HSM vendors provide configuration procedures). Additionally, this guide does not provide instructions for creating policies (i.e., for CPs and CPSs). For guidance, we recommend that you consult the requirements contained in one or more CPs and CPSs published by a CA(s) on which you rely.
 
 ## Install Microsoft OCSP Responder
 Microsoft Windows Server 2012 R2 was the chosen example for this document because it is generally available across Federal Government agencies. Other products may also be configured to provide a locally trusted service. <!-- If guidance documents are not yet available for these products...? -->Until such time as additional guidance is available for these products, you are encouraged to speak directly with the vendors regarding configuration. 
