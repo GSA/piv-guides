@@ -136,21 +136,24 @@ Two main approaches exist for the Microsoft OCSP Responder's method of issuing a
 
 	certreq -new <inf_filename>.inf ocsp.req
 
-  > This command should generate a new signing key and output a signed certificate request to **ocsp.req**.  
+  > This command should generate a new signing key and output a **signed certificate request** to **ocsp.req**.  
 
-  3. Deliver this request file to your CA and obtain your OCSP Responder certificate. Note that this file is PEM encoded - you can open it in notepad and copy/paste the content.
+  3. Deliver this request file to your CA and obtain your OCSP Responder certificate. 
+  
+  > **Note:** This file is Privacy-Enhanced Mail (PEM)-encoded. You can open it in Microsoft Notepad and copy/paste the content<!-- Copy content from the file and paste into Notepad? (unclear) -->.
 
-After obtaining your new certificate, ensure it meets the requirements of an OCSP Responder certificate before proceeding:
+  4. After obtaining your new OCSP Responder certificate, ensure that it meets the requirements of an OCSP Responder certificate before proceeding.  It should include all of these details:
 
-- OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage
-	- This *should* be marked critical
-- The id-pkix-ocsp-nocheck (1.3.6.1.5.5.7.48.1.5) extension is present
-	- including this prevents clients from checking the OCSP Responder certificates revocation status
-- Key Usage must contain Digital Signature (80)
-	- This *should* be marked critical
-- The Subject Alternative Name *should* contain DNS Name = OCSP Server DNS name
+  * OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage.
+	- This *should* be marked **critical.**
+  * The id-pkix-ocsp-nocheck (1.3.6.1.5.5.7.48.1.5) extension is present.
+	- Including this extension prevents clients from checking the OCSP Responder certificates' revocation status.
+  * Key Usage must contain Digital Signature (80).
+	- This *should* be marked **critical.**
+  * The Subject Alternative Name *should* contain Domain Name Server (DNS) Name = OCSP Server DNS name.
 
 ### Install OCSP Responder Certificate
+
 Copy the new certificate as well as the issuing CA certificate (or chain) to the OCSP Responder server. If you haven't already done so, install the issuing CA root certificate in the **Computer** Trust Root Certification Authorities store. Use the following command to accept the OCSP Responder certificate:
 
 	certreq -accept <ocsp_responder_certificate_filename>.cer
