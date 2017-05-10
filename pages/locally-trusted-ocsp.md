@@ -205,7 +205,7 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
 
 Every issuing and intermediate CA certificate to be supported by the OCSP Responder must have their own entry in **Revocation Configuration.** <!-- Where is Revocation Configuration located? -->
 
-#### Manually Adding a Revocation Source
+#### Manually add a Revocation Source
 
 In the example images below, _Federal Bridge CA 2016_, is used as an example of a revocation source.
 
@@ -235,46 +235,48 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
 ![Click the Provider Button](../img/local-ocsp-cfg-add-rev-conf-6.png)
 
-  6. Click **Add**, and then copy and paste the CA's **CRL distribution point URL** into the **Add the...CRL at this address (URL) to the list:** text field. (**Note:**  This URL is the CRL distribution point URL that this CA puts into the certificates it issues, **not** the URL in the CA certificate itself.) Click on **OK** to go to the **Revocation Provider Properties** dialog box.
+  6. Click **Add**, and then copy and paste the CA's **CRL distribution point URL** into the **Add the...CRL at this address (URL) to the list:** text field. (**Note:**  This URL is the CRL distribution point URL that this CA puts into the certificates it issues, **not** the URL in the CA certificate itself.) Click on **OK**.
 
 ![Enter the CRL DP URL](../img/local-ocsp-cfg-add-rev-conf-7.png)
 
-  7. Deselect (uncheck) the checkbox next to **Refresh CRLs based on their validity periods**. (**Note:** This option has proven unreliable in testing.) At **Update CRLs at this refresh interval (min)**, enter a reasonable refresh interval, such as _60 minutes_, and click on **OK**. </1 **STOPPED HERE**/1>
+  7. At the **Revocation Provider Properties** dialog box, deselect (uncheck) the checkbox next to **Refresh CRLs based on their validity periods**. (**Note:** This option has proven unreliable in testing.) At **Update CRLs at this refresh interval (min)**, enter a reasonable refresh interval, such as _60 minutes_, and click on **OK**.
 
 ![Configure the CRL update internal](../img/local-ocsp-cfg-add-rev-conf-8.png)
 
-After completing the above steps, you will need to assign the OCSP Responder Certificate to the configuration. Until this is done, you will "Signing Certificate: &nbsp;Not Found" listed in the Status panel for this Revocation Configuration:
+  > After completing the above steps, you will need to assign the OCSP Responder Certificate to the configuration. Until this is done, you will see the error:  _Signing Certificate: &nbsp;Not Found_ in the status panel window for this Revocation Configuration. <!--Does this status window just pop up? No window name? -->
 
 ![OCSP Signing Certificate Not Found](../img/local-ocsp-cfg-signing-certificate-not-found.png)
 
-Right click on the Revocation Configuration Name, then select Assign Signing Certificate
+  8. In the status panel window, right-click on the Revocation Configuration Name itself ("Federal Bridge CA 2016" in this example), and then select **Assign Signing Certificate**.
 
 ![Assign OCSP Signing Certificate](../img/local-ocsp-cfg-assign-signing-certificate.png)
 
-A dialog will appear allowing you to select the OCSP Responder certificate. Click the correct certificate and click OK.
+  > A **Windows Security** dialog box will appear that allows you to select a **Signing Certificate** (i.e., the OCSP Responder certificate). Click on the correct certificate, and click on **OK**.
 
 ![Select Signing Certificate](../img/local-ocsp-select-signing-certificate.png)
 
-After selecting the certificate, you will notice that the status panel still displays an error stating *The data necessary to complete this operation is not yet available." What this really means is it hasn't yet downloaded the CRL.
+  > After selecting the certificate, the status panel will still display an error stating that *The data necessary to complete this operation is not yet available.* What this really means is that it has not yet downloaded the CRL. <!-- What is "it" here? -->
 
 ![CRL not yet downloaded](../img/local-ocsp-crl-not-downloaded.png)
 
-After waiting a few minutes, simple right click Array Configuration and select Refresh.
+  > After waiting a few minutes, at the status panel window, right-click on **Array Configuration**, and select **Refresh**. <!-- What is the user waiting for? How long? --> 
 
 ![Refresh](../img/local-ocsp-cfg-refresh.png)
 
-At this point, the CRL should have been automatically downloaded and your status panel should look like the below example.
+  > At this point, the CRL should have been automatically downloaded, and your status panel window should look like the following example:
 
 ![OCSP Revocation Configuration working correctly](../img/local-ocsp-cfg-working-correctly.png)
 
-> If the error message "The revocation provider failed with the current configuration. The object identifier does not represent a valid object. 0x800710d8 (WIN32: 4312 ERROR_OBJECT_NOT_FOUND), 0x800710d8" appears, this is likely due to entering the wrong CRL DP URL.
+  > If the error message appears: _The revocation provider failed with the current configuration. The object identifier does not represent a valid object. 0x800710d8 (WIN32: 4312 ERROR_OBJECT_NOT_FOUND), 0x800710d8_, this will most likely be due to having entered the wrong CRL DP URL. <!-- What is "DP"? Don't remember that... -->
 
-Repeat this process for each CA you want to add to the OCSP Responder.
+  9. Repeat this process for each CA that you want to add to the OCSP Responder.
 
-## Windows Client Configuration 
-Each CA must be individually explicitly configured. In order to maximize local availability, it important to configure all CAs that are part of the certificate chain to your trusted root certificate(s). For example, this could be a subset of the CAs that can verified to Federal Common Policy CA.
+## Configure the Windows Client
 
-### Manual Client Configuration
+Each CA must be individually and explicitly configured. In order to maximize local availability, it important to configure all of the CAs in the certificate chain to your trusted root certificate(s). For example, additional CAs that must be configured to your trusted root certificate(s) could be a subset of the CAs that can verified by the Federal Common Policy CA. <!-- Will all users know what Federal Common Policy CA is?  (Also referred to as "COMMON"?) Will users of this guide ALL need to configure CAs that can be verified by FCPCA? Explain "maximize local availability"--of what? -->
+
+### Manual Client Configuration </stopped here/>
+
 A locally trusted OCSP Responder is configured using the Certificates Snap-In in Microsoft Management Console. To begin, open MMC (mmc.exe)  and add the Certificates Snap-In for the Local Computer Account.
 
 ![MMC Certificates Snap-In](../img/local-ocsp-client-1.png)
