@@ -70,7 +70,7 @@ Microsoft Windows Server 2012 R2 was the chosen model for an OCSP Responder, bec
 
 Before beginning the Windows Server 2012 R2 software installation, name your server and associate it <!-- Above we say "associate it with" -->with the chosen domain (i.e., IP address). <!-- Is IP address correct? --> Changing the server name or domain after installation can corrupt the configuration. Configure the server with outbound Internet access in order to retrieve and download remote CRLs. <!-- How do they set this up? Or refer them to a link for procedure. -->In most cases, CRLs are available over HTTP/80.
 
-  1. Use the **Add Roles and Features Wizard**, and <!-- Where on the screen is the Wizard located and how do you activate it? -->go to **Server Roles**. 
+  1. Use the **Add Roles and Features Wizard**, and <!-- How do they locate the Wizard? Do you click on it? -->go to **Server Roles**. 
   2. Click on the **Active Directory Certificate Services** (ADCS) to add this role to the Windows Server 2012 R2.
 
 ![Select Active Directory Certificate Services (ADCS)](../img/local-ocsp-cfg-adcs.png)
@@ -88,17 +88,19 @@ Before beginning the Windows Server 2012 R2 software installation, name your ser
   6. Click on <!-- Capital "A" and lowercase "f"? -->**Add features**. <!-- Is this from a drop-down box? I can't validate steps/menus/selection method, capitals vs. not, since there are no screen shots for some of these. Not a criticism--just reality. -->
   7. Continue with the wizard's prompts, <!-- Assume wizard's prompts are easy since not stated.  --> and click on **Install**.
   
-  > After the installion finishes, the **Feature Installation** window appears. 
+  > After the installion finishes, the **i - Feature Installation** window appears. 
+  
+  ![Click Configure Active Directory Certificate Services](../img/local-ocsp-cfg-configure.png)
   
   8. Select **Results** from the left-hand-side panel. 
   
   > The prompt, _Configuration required. Installation suceeded on [server name]_ appears. <!--"Server name" correct for generic info.? -->
   
-  9. From inside the **Results** window, under the **Active Directory Certificate Services** heading, click on **Configure Active Directory Certificate Services on the destination server**.
+  9. From inside the window that displays the installation results, under the **Active Directory Certificate Services** heading, click on **Configure Active Directory Certificate Services on the destination server**.
 
-![Click Configure Active Directory Certificate Services](../img/local-ocsp-cfg-configure.png)
+If you are logged into the server with (at least) local administrator rights, you will not need to change the credentials in the **AD CS Configuration** wizard. <!-- Does this wizard pop up automatically? How do you find it and do you click on it? --> 
 
-Assuming you are logged on the the server with (at least) local administrator rights, it is not be necessary to change the credentials in the *AD CS Configuration* wizard. Click through the wizard, click *Configure* then *Close* when it finishes. You can now close the *Add Roles and Features Wizard*. As a best practice, you may wish to reboot the server before continuing.
+Click through the wizard, click *Configure* then *Close* when it finishes. You can now close the *Add Roles and Features Wizard*. As a best practice, you may wish to reboot the server before continuing.
 
 ### Obtain OCSP Responder Certificate
 There are primarily two different approaches for obtaining certificates for the Microsoft OCSP Responder implementation. In one approach, the Online Responder has permissions to automatically request certificates from an online Microsoft CA on the same domain. If done in a dedicated, network isolated domain with hardware security modules, this approach can be relatively secure. The other option, which is described to a an extent below, is to manually install a certificate which you obtain from an offline CA.
