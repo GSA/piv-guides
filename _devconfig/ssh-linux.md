@@ -36,10 +36,10 @@ These SSH for Linux procedures are intended to be used by System Administrators 
   1. Insert your PIV ID Badge into the Smart Card reader for your computer.
   2. On RHEL and CentOS, run the following commands:
   
-```
+        ```
 		eval $(ssh-agent)
 		ssh-add –s libcoolkeypk11.so
-```
+        ```
 
 3. On other Linux distributions, run
 ```
