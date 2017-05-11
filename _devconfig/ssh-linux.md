@@ -7,13 +7,13 @@ These SSH for Linux procedures are intended to be used by System Administrators 
 
   * A Smart Card reader
   * A PIV card
-  * A UNIX/Linux computer correctly configured to use a PIV card for login access
+  * A UNIX/Linux computer correctly configured to use a PIV card for login
 
 ## SSH Daemon configuration
 
-No SSH Daemon (SSHD) configuration is required. The user&#39;s PIV ID Badge SSH public key can be placed in the appropriate authorized\_keys file (e.g., /home/cmonster/.ssh/authorized\_keys) as needed.
+No SSH Daemon (SSHD) configuration is required. Place your PIV card's SSH public key in the appropriate authorized\_keys file (e.g., /home/[login ID]/.ssh/authorized\_keys).
 
-SSHD can be configured to only allow specific users access to a host only via PIV ID Badges. To perform this action, complete the following steps.
+To (optionally) configure SSHD to allow specific users access to a host via only PIV cards, complete the following steps:
 
 1. Change the following configuration in the /etc/ssh/sshd\_config file:
 ```
