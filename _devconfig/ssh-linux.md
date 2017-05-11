@@ -63,9 +63,9 @@ These SSH for Linux procedures are intended for use by System Administrators (SA
  6. Add the user's public SSH key to the appropriate authorized_keys file on the remote machine.
  7. The user will now be able to log into the remote machine by using the following command:
  
-        ```
+        
 		ssh &lt;remote-host&gt;
-        ```
+        
 
 <br/>
   > **Note:**  Do not remove the PIV card from the card reader until the login process has been completed. The key will no longer work after removing the PIV ID Badge from the card reader. After replacing the PIV card, run a command to restart the card before the keys will once again be available to SSH. 
