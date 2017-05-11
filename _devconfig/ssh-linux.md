@@ -69,6 +69,6 @@ These SSH for Linux procedures are intended for use by System Administrators (SA
 
   > **Note:**  Do not remove the PIV card from the card reader until the login process has been completed. The key will no longer work after removing the PIV ID Badge from the card reader. After replacing the PIV card, run a command to restart the card before the keys will once again be available to SSH. 
   
-          ```
+
 		ssh-add –e opensc-pkcs11.so
-          ```
+
