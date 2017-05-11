@@ -21,7 +21,7 @@ These SSH for Linux procedures are intended to be used by System Administrators 
      
   > **Note:**  To ensure that access requirements are enforced, only a **root user** may modify this directory and its files.
   
-  4. Disable any alternative means of access (i.e., via passwords), as needed.
+    * Disable any alternative means of access (i.e., via passwords), as needed.
 <br/>
 <br/>
      
