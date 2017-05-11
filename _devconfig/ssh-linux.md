@@ -1,15 +1,16 @@
+# How do I enable PIV for Secure Shell (SSH) to a UNIX-like system from a Linux/UNIX computer?
 
-## Assumptions
+These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies. As part of their roles, these professionals will be authorized by their agencies to use secure methods to remotely access other computer hosts.
 
-These SSH for Linux procedures are intended for use by System Administrators (SAs) or other IT professionals. 
-
-## Prerequisites
+## Hardware Requirements
 
   * A Smart Card reader
   * A PIV card
   * A UNIX/Linux computer correctly configured to use a PIV card for login
 
-## configure SSH Daemon
+## Procedures
+
+### Configure SSH Daemon
 
   1. No SSH Daemon (SSHD) configuration is required. Place your **PIV card's SSH public key** in the appropriate authorized_keys file (e.g., /home/[login ID]/.ssh/authorized_keys).
 
@@ -33,7 +34,7 @@ These SSH for Linux procedures are intended for use by System Administrators (SA
      4. Disable any alternative means of access (i.e., via passwords), as needed.
 
 
-## Log in via SSH
+### Log in via SSH
 
   1. Insert your **PIV card** into your computer's card reader.
   2. On **RHEL** and **CentOS**, run the following commands:
