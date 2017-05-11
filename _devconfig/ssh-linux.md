@@ -11,25 +11,25 @@ These SSH for Linux procedures are intended to be used by System Administrators 
 
 ## SSH Daemon configuration
 
-No SSH Daemon (SSHD) configuration is required. Place your PIV card's SSH public key in the appropriate authorized_keys file (e.g., /home/[login ID]/.ssh/authorized_keys).
+  1. No SSH Daemon (SSHD) configuration is required. Place your PIV card's SSH public key in the appropriate authorized_keys file (e.g., /home/[login ID]/.ssh/authorized_keys).
 
-To (optionally) configure SSHD to allow specific users access to a host via only PIV cards, complete the following steps:
+  2. To (optionally) configure SSHD to allow specific users access to a host via only PIV cards, complete the following steps:
 
-  1. Change the configuration in the **/etc/ssh/sshd_config** file, as follows:
+   a. Change the configuration in the **/etc/ssh/sshd_config** file, as follows:
 ```
 		AuthorizedKeysFile /etc/sshd/authorized_keys/%u
 		PasswordAuthentication No
 ```      
-  2. Restart the **sshd**.
-  3. Create the directory: **/etc/sshd/authorized_keys**, as follows:
+   b. Restart the **sshd**.
+   c. Create the directory: **/etc/sshd/authorized_keys**, as follows:
 ```
 		mkdir /etc/sshd/authorized_keys
 ```   
   4. To allow access for a user, place the user&#39;s PIV card's SSH public key in the following directory, according to the user name: **/etc/sshd/authorized_keys/[login ID]**
 
-  > **Note:**  This directory and files should only be modifiable by root, thus enforcing the access requirements.
+  > **Note:**  Only a root user may modify this directory and its files (to enforce access requirements).
 
-Alternative means of access (i.e., via passwords) should be disabled as needed.
+An alternative means of access (i.e., via passwords) should be disabled as needed.
 
 **Logging In via SSH**
 
