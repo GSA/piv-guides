@@ -34,9 +34,8 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
   * To determine the Domain Controller's GUID, start **Ldp.exe** and locate the **domain-naming context**. 
   * Double-click on the **name of the Domain Controller** whose GUID you want to view.
-
-
-  > The list of attributes for that object contains **"Object GUID" followed by a long number**. The number is the domain Controller's (i.e., object) GUID for that object. For example:
+  
+    > The list of attributes for that object contains **"Object GUID" followed by a long number**. The number is the domain Controller's (i.e., object) GUID for that object. For example:
 
             Other Name: 1.3.6.1.4.1.311.25.1 = ac 4b 29 06 bb d6 5d 4f e3 9c 4c ab c3 6a 55 d9
 
