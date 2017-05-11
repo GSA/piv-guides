@@ -6,15 +6,16 @@ permalink: networkconfig/domaincontrollers/
 ---
 # How do I issue domain controller certificates to ....abc...xyz...?
 
-These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies. As part of their roles, these professionals will be authorized by their agencies to configure and maintain their networks' domain controllers, including the creation of certificate profiles and being knowledgeable about the process of how domain-controller certificates are issued and installed. For employees to use PIV card credentials for network authentication, all of an agency's/organization's domain controllers must have authentication certificates. These pages present detailed information about domain-controller certificate profiles and how domain controller certificates are issued.  
+These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies. As part of their roles, these professionals will be authorized by their agencies to configure and maintain their networks' domain controllers, including the creation of certificate profiles and being knowledgeable about the process of how domain-controller certificates are issued and installed. For employees to use PIV card credentials for network authentication, all of an agency's/organization's domain controllers must have certificates. These pages present detailed information about how domain-controller certificate profiles and certificates are issued.  
 
-{% include alert-info.html heading = "Devices authenticate too!" content="When your users are using certificates to authenticate to the network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
+{% include alert-info.html heading = "Devices authenticate too!" content="When your users are using certificates to authenticate to the network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, click on the links below or search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
 
 - [Domain Controller Certificate Profiles](#domain-controller-certificate-profiles)
 - [Issuing Domain Controller Certificates](#issuing-domain-controller-certificates)
 
-## Domain Controller Certificate Profiles
-The domain controller certificates need to be issued with a set of specific extensions and values.  The certificate for each domain controller must meet these requirements:
+## Domain controller certificate profiles
+
+Domain controller certificates must be issued with a set of specific extensions and values.  The certificate for each domain controller must meet the following requirements:
 
 - The certificate **Key Usage** extension must contain:
 
