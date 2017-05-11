@@ -41,23 +41,30 @@ These SSH for Linux procedures are intended to be used by System Administrators 
 		ssh-add –s libcoolkeypk11.so
         ```
 
-3. On other Linux distributions, run
-```
+  3. On other Linux distributions, run
+
+        ```
 		eval $(ssh-agent)
 		ssh-add –s opensc-pkcs11.so
 
-```
-4. Type the PIN when requested at the PIV ID Badge password prompt. 
-**Note:**  The card reader may flash. Do not remove the PIV ID Badge from the card reader until the login process is complete.
-5. Use the following command to list the user&#39;s public SSH key.
-```
-		ssh-add –L | egrep  | egrep &#39;ssh-rsa&#39;
-```
-6. Add this public key to the appropriate authorized_keys file on the remote machine.
-7. The user can now log into the remote machine via the following command:
-```
-		ssh &lt;remote-host&gt;
-```
-**Note:**  Do not remove the PIV ID Badge from the card reader until the login process is complete.
+        ```
+  4. Type the PIN when requested at the PIV ID Badge password prompt. 
+  
+  > **Note:**  The card reader may flash. Do not remove the PIV ID Badge from the card reader until the login process is complete.
 
-The key will no longer work after removing the PIV ID Badge from the card reader. After replacing the badge, you will have to run a command to restart the card before the keys will once again be available to SSH (ssh-add –e opensc-pkcs11.so ).
+  5. Use the following command to list the user&#39;s public SSH key.
+  
+        ```
+		ssh-add –L | egrep  | egrep &#39;ssh-rsa&#39;
+        ```
+
+ 6. Add this public key to the appropriate authorized_keys file on the remote machine.
+ 7. The user can now log into the remote machine via the following command:
+ 
+        ```
+		ssh &lt;remote-host&gt;
+        ```
+
+  > **Note:**  Do not remove the PIV ID Badge from the card reader until the login process is complete.
+
+  > The key will no longer work after removing the PIV ID Badge from the card reader. After replacing the badge, you will have to run a command to restart the card before the keys will once again be available to SSH (ssh-add –e opensc-pkcs11.so ).
