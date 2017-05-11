@@ -11,27 +11,23 @@ These SSH for Linux procedures are intended to be used by System Administrators 
 
 ## SSH Daemon configuration
 
-No SSH Daemon (SSHD) configuration is required. Place your PIV card's SSH public key in the appropriate authorized\_keys file (e.g., /home/[login ID]/.ssh/authorized\_keys).
+No SSH Daemon (SSHD) configuration is required. Place your PIV card's SSH public key in the appropriate authorized_keys file (e.g., /home/[login ID]/.ssh/authorized_keys).
 
 To (optionally) configure SSHD to allow specific users access to a host via only PIV cards, complete the following steps:
 
-1. Change the following configuration in the /etc/ssh/sshd\_config file:
+  1. Change the configuration in the **/etc/ssh/sshd_config** file, as follows:
 ```
-		AuthorizedKeysFile /etc/sshd/authorized\_keys/%u
+		AuthorizedKeysFile /etc/sshd/authorized_keys/%u
 		PasswordAuthentication No
 ```      
-2. Restart sshd.
-3. Create the directory: /etc/sshd/authorized\_keys
+  2. Restart the **sshd**.
+  3. Create the directory: **/etc/sshd/authorized_keys**, as follows:
 ```
-		mkdir /etc/sshd/authorized\_keys
+		mkdir /etc/sshd/authorized_keys
 ```   
-To allow access for a particular user:
+  4. To allow access for a user, place the user&#39;s PIV card's SSH public key in the following directory, according to the user name: **/etc/sshd/authorized_keys/[login ID]**
 
-Place the user&#39;s PIV ID Badge SSH public key in that directory according to the user name:
-
-/etc/sshd/authorized\_keys/cmonster
-
-**Note:**  This directory and files should only be modifiable by root, thus enforcing the access requirements.
+  > **Note:**  This directory and files should only be modifiable by root, thus enforcing the access requirements.
 
 Alternative means of access (i.e., via passwords) should be disabled as needed.
 
@@ -55,7 +51,7 @@ Alternative means of access (i.e., via passwords) should be disabled as needed.
 ```
 		ssh-add –L | egrep  | egrep &#39;ssh-rsa&#39;
 ```
-6. Add this public key to the appropriate authorized\_keys file on the remote machine.
+6. Add this public key to the appropriate authorized_keys file on the remote machine.
 7. The user can now log into the remote machine via the following command:
 ```
 		ssh &lt;remote-host&gt;
