@@ -4,12 +4,11 @@ title: Domain Controllers
 collection: networkconfig
 permalink: networkconfig/domaincontrollers/
 ---
+# How do I issue domain controller certificates to ....abc...xyz...?
 
-<!-- Testing out editing directly from another Repo -->To use smartcards and PIV credentials for network authentication, all the Domain Controllers need to have Domain Controller Authentication certificates.
+These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies. As part of their roles, these professionals will be authorized by their agencies to configure and maintain their networks' domain controllers, including the creation of certificate profiles and being knowledgeable about the process of how domain-controller certificates are issued and installed. For employees to use PIV card credentials for network authentication, all of an agency's/organization's domain controllers must have authentication certificates. These pages present detailed information about domain-controller certificate profiles and how domain controller certificates are issued.  
 
-{% include alert-info.html heading = "Devices authenticate too!" content="When your users are using certificates to authenticate to the network, the Domain Controllers are also authenticating as devices using certificates.  Each works together to create secure connections.  To learn more, search other online resources for information on PKINIT protocols." %}
-
-This page contains information on domain controller certificate profiles, and issuing domain controller certificates.
+{% include alert-info.html heading = "Devices authenticate too!" content="When your users are using certificates to authenticate to the network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
 
 - [Domain Controller Certificate Profiles](#domain-controller-certificate-profiles)
 - [Issuing Domain Controller Certificates](#issuing-domain-controller-certificates)
