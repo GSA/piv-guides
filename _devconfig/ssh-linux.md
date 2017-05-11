@@ -17,6 +17,7 @@ These SSH for Linux procedures are intended to be used by System Administrators 
 
      1. Change the configuration in the **/etc/ssh/sshd_config** file. (See first example.)  Then restart the **sshd**.
      2. Create the directory: **/etc/sshd/authorized_keys**. (See second example.)
+     
     ```
 		AuthorizedKeysFile /etc/sshd/authorized_keys/%u
 		PasswordAuthentication No
