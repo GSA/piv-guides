@@ -13,26 +13,29 @@ These SSH for Linux procedures are intended to be used by System Administrators 
 
   1. No SSH Daemon (SSHD) configuration is required. Place your PIV card's SSH public key in the appropriate authorized_keys file (e.g., /home/[login ID]/.ssh/authorized_keys).
 
-  2. To (optionally) configure SSHD to allow specific users access to a host via only PIV cards, complete the following steps:
+  2. To optionally configure SSHD to allow specific users to access a host via only PIV cards, complete the following steps:
 
-     1. Change the configuration in the **/etc/ssh/sshd_config** file. (See first block.)  Then restart the **sshd**.
-     2. Create the directory: **/etc/sshd/authorized_keys**. (See second block.)
-```
+     1. Change the configuration in the **/etc/ssh/sshd_config** file. (See first example.)  Then restart the **sshd**.
+     2. Create the directory: **/etc/sshd/authorized_keys**. (See second example.)
+    ```
 		AuthorizedKeysFile /etc/sshd/authorized_keys/%u
 		PasswordAuthentication No
-```
+    ```
+    
+    2. Create the directory: xxxxxxx
+    
      
-```
+    ```
 		mkdir /etc/sshd/authorized_keys
-```
+    ```
 
-  3. To allow access for a user, place the user&#39;s PIV card's SSH public key in the following directory, according to the user name: **/etc/sshd/authorized_keys/[login ID]**
+  3. To allow a specific user to access, place the user&#39;s PIV card's SSH public key in the following directory, according to the user name: **/etc/sshd/authorized_keys/[login ID]**
 
-  > **Note:**  Only a root user may modify this directory and its files (to enforce access requirements).
+  > **Note:**  To ensure that access requirements are enforced, only a **root user** may modify this directory and its files.
 
-An alternative means of access (i.e., via passwords) should be disabled as needed.
+  4. Any alternative means of access (i.e., via passwords) should be disabled, as needed.
 
-**Logging In via SSH**
+## Login via SSH
 
 1. Insert your PIV ID Badge into the Smart Card reader for your computer.
 2. On RHEL and CentOS, run the following commands:
