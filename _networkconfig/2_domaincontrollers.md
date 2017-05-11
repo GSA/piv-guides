@@ -5,7 +5,7 @@ collection: networkconfig
 permalink: networkconfig/domaincontrollers/
 ---
 
-To use smartcards and PIV credentials for network authentication, all the Domain Controllers need to have Domain Controller Authentication certificates.
+<!-- Testing out editing directly from another Repo -->To use smartcards and PIV credentials for network authentication, all the Domain Controllers need to have Domain Controller Authentication certificates.
 
 {% include alert-info.html heading = "Devices authenticate too!" content="When your users are using certificates to authenticate to the network, the Domain Controllers are also authenticating as devices using certificates.  Each works together to create secure connections.  To learn more, search other online resources for information on PKINIT protocols." %}
 
