@@ -1,4 +1,4 @@
-# How do I enable PIV for Secure Shell (SSH) to a UNIX-like system from a Linux/UNIX computer?
+# How do I enable PIV for Secure Shell (SSH) to a UNIX-like system from a UNIX/Linux computer?
 
 These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies. As part of their roles, these professionals will be authorized by their agencies to use secure methods to remotely access other computer hosts.
 
