@@ -48,7 +48,6 @@ These SSH for Linux procedures are intended to be used by System Administrators 
         ```
 		eval $(ssh-agent)
 		ssh-add –s opensc-pkcs11.so
-
         ```
 
   4. Type the PIN when requested at the PIV ID Badge password prompt. 
