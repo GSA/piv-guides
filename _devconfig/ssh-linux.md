@@ -15,14 +15,14 @@ These SSH for Linux procedures are intended to be used by System Administrators 
 
   2. To optionally configure SSHD to allow specific users to access a host via only PIV cards, complete the following steps:
 
-     1. Change the configuration in the **/etc/ssh/sshd_config** file. (See the first example below.)  Then restart the **sshd**.
+     1. Change the configuration in the **/etc/ssh/sshd_config** file. Then restart the **sshd**.
 
         ```
 		AuthorizedKeysFile /etc/sshd/authorized_keys/%u
 		PasswordAuthentication No
         ```
 
-     2. Create the directory: **/etc/sshd/authorized_keys**. (See the second example below.)
+     2. Create the directory: **/etc/sshd/authorized_keys**.
 
         ```
 		mkdir /etc/sshd/authorized_keys
