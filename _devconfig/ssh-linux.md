@@ -28,17 +28,19 @@ These SSH for Linux procedures are intended to be used by System Administrators 
 		mkdir /etc/sshd/authorized_keys
         ```
 
-     3. To allow a specific user to access, place the user&#39;s PIV card's SSH public key in the following directory, according to the user name: **/etc/sshd/authorized_keys/[login ID]**.  (**Note:** To ensure that access requirements are enforced, only a **root user** may modify this directory and its files. 
+     3. To allow a specific user access, place the user&#39;s PIV card's SSH public key in the following directory, according to the user name: **/etc/sshd/authorized_keys/[login ID]**.  (**Note:** To ensure that access requirements are enforced, only a **root user** may modify this directory and its files. 
      4. Disable any alternative means of access (i.e., via passwords, as needed.
 
 ## Login via SSH
 
-1. Insert your PIV ID Badge into the Smart Card reader for your computer.
-2. On RHEL and CentOS, run the following commands:
+  1. Insert your PIV ID Badge into the Smart Card reader for your computer.
+  2. On RHEL and CentOS, run the following commands:
+  
 ```
 		eval $(ssh-agent)
 		ssh-add –s libcoolkeypk11.so
 ```
+
 3. On other Linux distributions, run
 ```
 		eval $(ssh-agent)
