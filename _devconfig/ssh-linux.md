@@ -19,7 +19,7 @@ These SSH for Linux procedures are intended to be used by System Administrators 
      
 ```
 		AuthorizedKeysFile /etc/sshd/authorized_keys/%u
-		PasswordAuthentication No
+		PasswordAuthentication No  
 ```
 
      
