@@ -25,15 +25,15 @@ These SSH for Linux procedures are intended to be used by System Administrators 
 <br/>
 <br/>
      
-```
+    ```c
 		AuthorizedKeysFile /etc/sshd/authorized_keys/%u
 		PasswordAuthentication No
-```
+    ```
     
      
-```
+    ```c
 		mkdir /etc/sshd/authorized_keys
-```
+    ```
 
 ## Login via SSH
 
