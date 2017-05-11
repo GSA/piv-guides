@@ -6,7 +6,7 @@ permalink: networkconfig/domaincontrollers/
 ---
 # How do I issue domain controller certificates to ....abc...xyz...?
 
-These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies. As part of their roles, these professionals will be authorized by their agencies to configure and maintain their networks' domain controllers, including the creation of certificate profiles and being knowledgeable about the process of how domain-controller certificates are issued and installed. For employees to use PIV card credentials for network authentication, all of an agency's/organization's domain controllers must have certificates. These pages present detailed information about how domain-controller certificate profiles and certificates are issued.  
+These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies. As part of their roles, these professionals will be authorized by their agencies to manage various aspects of their networks' Domain Controllers, including the creation of certificate profiles and being knowledgeable about how domain-controller certificates are issued and installed. Domain Controllers must have certificates in order for employees to use PIV card credentials for network authentication. These pages present detailed information about how domain-controller certificate profiles and certificates are issued.  
 
 {% include alert-info.html heading = "Devices authenticate too!" content="When your users are using certificates to authenticate to the network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, click on the links below or search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
 
@@ -15,7 +15,7 @@ These procedures are intended for network and system administrators, or other IT
 
 ## Domain controller certificate profiles
 
-Domain controller certificates must be issued with a set of specific extensions and values.  The certificate for each domain controller must meet the following requirements:
+Domain Controller certificates must be issued with a set of specific extensions and values.  The certificate for each domain controller must meet the following requirements:
 
 - The certificate **Key Usage** extension must contain:
 
@@ -30,9 +30,11 @@ Domain controller certificates must be issued with a set of specific extensions 
 
             DNS Name=controller1.intranet.agency.gov
 
-- The certificate **Subject Alternative Name** must also contain the global unique identifier (GUID) of the domain controller object in the domain.
+- The certificate **Subject Alternative Name** must also contain the domain controller's Global Unique Identifier (GUID) (i.e., the "domain controller object"). 
 
- - To determine the Domain Controller GUID, start Ldp.exe and locate the domain-naming context. Double-click the name of the domain controller that you want to view. The list of attributes for that object contains "Object GUID" followed by a long number. The number is the GUID for that object. For example:
+  1. To determine the Domain Controller's GUID, start **Ldp.exe** and locate the **domain-naming context**. 
+  2. Double-click on the **name of the Domain Controller** whose GUID you want to view. 
+  . The list of attributes for that object contains **"Object GUID" followed by a long number**. The number is the domain Controller's (i.e., object) GUID for that object. For example:
 
             Other Name: 1.3.6.1.4.1.311.25.1 = ac 4b 29 06 bb d6 5d 4f e3 9c 4c ab c3 6a 55 d9
 
