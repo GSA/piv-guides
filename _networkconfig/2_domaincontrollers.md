@@ -30,16 +30,16 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
             DNS Name=controller1.intranet.agency.gov
 
-- The certificate **Subject Alternative Name** must also contain the Domain Controller's Global Unique Identifier (GUID) (i.e., the "domain controller object"). 
+- The certificate **Subject Alternative Name** must also contain the Domain Controller's Global Unique Identifier (GUID) (i.e., for the "Domain Controller object"). 
 
   * To determine the Domain Controller's GUID, start **Ldp.exe** and locate the **domain-naming context**. 
   * Double-click on the **name of the Domain Controller** whose GUID you want to view.
   
-    > The list of attributes for that object contains **"Object GUID" followed by a long number**. The number is the domain Controller's (i.e., object) GUID for that object. For example:
+    > The list of attributes for the Domain Controller object contains **"Object GUID" followed by a long number**. The number is the object GUID. For example:
 
             Other Name: 1.3.6.1.4.1.311.25.1 = ac 4b 29 06 bb d6 5d 4f e3 9c 4c ab c3 6a 55 d9
 
-- The Domain Controller's certificate must be installed in the domain controller's local computer's _personal certificate store_.
+    > The Domain Controller's certificate must be installed in the domain controller's local computer's _personal certificate store_, as described below.
 
 ## Issuing Domain Controller Certificates
 US Federal Civilian agencies have a variety of policies on whether you should use a Domain Controller certificate issued from your agency's local enterprise Certificate Authority, or whether the certificate must be issued from a Certificate Authority managed and certified under the Federal Public Key Infrastructure (FPKI).  Providing a common guide and recommendation is challenging as each agency's information security policy should be followed.
