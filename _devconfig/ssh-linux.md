@@ -23,8 +23,6 @@ These SSH for Linux procedures are intended to be used by System Administrators 
 		PasswordAuthentication No
     ```
     
-    2. Create the directory: xxxxxxx
-    
      
     ```
 		mkdir /etc/sshd/authorized_keys
