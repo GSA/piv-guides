@@ -28,14 +28,14 @@ These SSH for Linux procedures are intended for use by System Administrators (SA
 		mkdir /etc/sshd/authorized_keys
         ```
 
-     3. To allow only one user to have such access, place the user&#39;s PIV card's SSH public key in the following directory, according to the user name: **/etc/sshd/authorized_keys/[login ID]**. (**Note:** To ensure that access requirements are enforced, only a **root user** may modify this directory and its files.)  
+     3. To allow one user to have such access, place the user&#39;s PIV card's SSH public key in the following directory, according to the user's name: **/etc/sshd/authorized_keys/[login ID]**. (**Note:** To ensure that access requirements are enforced, only a **root user** may modify this directory and its files.)  
 
-     4. Disable any alternative means of access (i.e., via passwords, as needed.
+     4. Disable any alternative means of access (i.e., via passwords), as needed.
 
 
 ## Log in via SSH
 
-  1. Insert your PIV card into your computer's the card reader.
+  1. Insert your **PIV card** into your computer's card reader.
   2. On **RHEL** and **CentOS**, run the following commands:
   
         ```
@@ -50,7 +50,7 @@ These SSH for Linux procedures are intended for use by System Administrators (SA
 		ssh-add –s opensc-pkcs11.so
         ```
 
-  4. At the PIV card password prompt, enter your PIN. 
+  4. At the PIV card password prompt, enter your **PIN**. 
   
   > **Note:**  The card reader may flash. **Do not** remove the PIV card until the login process has been completed.
 
