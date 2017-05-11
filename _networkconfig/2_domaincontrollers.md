@@ -26,7 +26,7 @@ Domain controller certificates must be issued with a set of specific extensions 
             Client Authentication (1.3.6.1.5.5.7.3.2)
             Server Authentication (1.3.6.1.5.5.7.3.1)
 
-- The certificate **Subject Alternative Name** extension must contain the Domain Name System (DNS) qualifier and name.  This must be the fully qualified domain controller name.  For example:
+- The certificate **Subject Alternative Name** extension must contain the Domain Name System (DNS) qualifier and fully qualified domain controller name.  For example:
 
             DNS Name=controller1.intranet.agency.gov
 
