@@ -30,9 +30,10 @@ These SSH for Linux procedures are intended to be used by System Administrators 
 
      3. To allow a specific user access, place the user&#39;s PIV card's SSH public key in the following directory, according to the user name: **/etc/sshd/authorized_keys/[login ID]**. 
 
-> **Note:** To ensure that access requirements are enforced, only a **root user** may modify this directory and its files.
+**Note:** To ensure that access requirements are enforced, only a **root user** may modify this directory and its files.  
 
-    4. Disable any alternative means of access (i.e., via passwords, as needed.
+     4. Disable any alternative means of access (i.e., via passwords, as needed.
+
 
 ## Login via SSH
 
