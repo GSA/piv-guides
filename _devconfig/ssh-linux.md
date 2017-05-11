@@ -9,7 +9,7 @@ These SSH for Linux procedures are intended to be used by System Administrators 
   * A PIV card
   * A UNIX/Linux computer correctly configured to use a PIV card for login
 
-## SSH Daemon configuration
+## configure SSH Daemon
 
   1. No SSH Daemon (SSHD) configuration is required. Place your PIV card's SSH public key in the appropriate authorized_keys file (e.g., /home/[login ID]/.ssh/authorized_keys).
 
@@ -33,23 +33,24 @@ These SSH for Linux procedures are intended to be used by System Administrators 
      4. Disable any alternative means of access (i.e., via passwords, as needed.
 
 
-## Login via SSH
+## Log in via SSH
 
-  1. Insert your PIV ID Badge into the Smart Card reader for your computer.
-  2. On RHEL and CentOS, run the following commands:
+  1. Insert your PIV card into your computer's the Smart Card reader.
+  2. On **RHEL** and **CentOS**, run the following commands:
   
         ```
 		eval $(ssh-agent)
 		ssh-add –s libcoolkeypk11.so
         ```
 
-  3. On other Linux distributions, run
+  3. On other Linux distributions, run the following commands:
 
         ```
 		eval $(ssh-agent)
 		ssh-add –s opensc-pkcs11.so
 
         ```
+
   4. Type the PIN when requested at the PIV ID Badge password prompt. 
   
   > **Note:**  The card reader may flash. Do not remove the PIV ID Badge from the card reader until the login process is complete.
