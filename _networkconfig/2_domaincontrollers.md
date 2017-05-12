@@ -64,40 +64,38 @@ _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a D
      1. Server Roles: **_Active Directory Certificate Services_**
      2. AD CS Roles Services: **_Certification Authority_** 
   5. On the **Results** page, click on **Configure Active Directory Certificate Services on the destination server**.
-  6. Proceed through the **AD CS Configuration** options. Choose the following as necessary:
-     1. Role Service: _Certification Authority_ 
-     2. Setup Type: E_nterprise CA_ 
-     3. CA Type: _Root CA_
-     4. Private Key: _Create a new private key_ 
-     5. Cryptography: _RSA#Microsoft Software Key Storage Provider, 2048 bit, SHA-256_ 6e
-     6. CA Name should use Recommended naming convention:
-        dc=[_AD suffix_], dc=[_AD domain_], cn=[_certification authority name_], 
-        e.g. dc=_gov_, dc=_[AgencyName]_, cn=_[AgencyName] __NPE__ CA1_ 
-     7. Validity Period: _6 years_ 
-     8. Certificate Database: _&lt;your preference&gt;_ 
+  6. Proceed through the **AD CS Configuration** options. Choose the following, as necessary:
+     1. Role Service: **_Certification Authority_** 
+     2. Setup Type: **_Enterprise CA_** 
+     3. CA Type: **_Root CA_**
+     4. Private Key: **_Create a new private key_** 
+     5. Cryptography: **_RSA#Microsoft Software Key Storage Provider, 2048 bit, SHA-256_ 6e**
+     6. CA Name: Use the recommended naming convention:
+        **dc=[_AD suffix_], dc=[_AD domain_], cn=[_certification authority name_]** 
+        (e.g., dc=_gov_, dc=_[AgencyName]_, cn=_[AgencyName]_ _NPE_ _CA1_) 
+     7. Validity Period: **_6 years_** 
+     8. Certificate Database: **_&lt;your preference&gt;_** 
 
+## Configure CA template for Domain Controller
 
+  > **Note:** Certificate templates are available on on enterprise CAs.
 
-**Configure CA Template for Domain Controller**
-
-_\* Certificate templates are only available on Enterprise CAs_
-
-7. Log on to the CA server as a member of the **Enterprise Administrators** group
-8. Open the certificate templates MMC snap-in (i.e. **certtmpl.msc** )
-9. Right-click the **Domain Controller Authentication** template and click **Duplicate Template**
-10. Under the **Compatibility Tab** , modify the **Compatibility Settings** for both the CA and certificate recipients to as high as possible (e.g. **Windows Server 2012 R2, Windows 7 / 2008 R2** )
-11. Under the **General tab** :
-  * Recommend renaming template to: _&lt;Your organization&gt; - Domain Controller Authentication_
-  * Recommend modifying validity period to:  _3 years_
-  * Recommend modifying Renewal period to: _6 weeks_
-12. Under the **Cryptography tab** :
-  * Set minimum key size to 2048
-  * If possible, set Request hash to SHA256
-13. Open the CA console (i.e. **certsrv.msc** )
-14. In the console tree, click the name of the CA
-15. In the details pane, double-click **Certificate Templates**
-16. In the console tree, right-click **Certificate Templates** , click **New** , and then click **Certificate Template To Issue**
-17. Select and enable the certificate template that were created in step 9 above, and then click **OK**
+  1. Log on to the CA server as a member of the **Enterprise Administrators** group
+  2. Open the certificate templates MMC snap-in (i.e. **certtmpl.msc** 
+  3. Right-click the **Domain Controller Authentication** template and click **Duplicate Template**
+  4. Under the **Compatibility Tab** , modify the **Compatibility Settings** for both the CA and certificate recipients to as high as possible (e.g. **Windows Server 2012 R2, Windows 7 / 2008 R2** )
+  5. Under the **General tab** :
+     1. Recommend renaming template to: _&lt;Your organization&gt; - Domain Controller Authentication_
+     2. Recommend modifying validity period to:  _3 years_
+     3. Recommend modifying Renewal period to: _6 weeks_
+  6. Under the **Cryptography tab** :
+     1. Set minimum key size to 2048
+     2. If possible, set Request hash to SHA256
+  7. Open the CA console (i.e. **certsrv.msc** )
+  8. In the console tree, click the name of the CA
+  9. In the details pane, double-click **Certificate Templates**
+ 10.In the console tree, right-click **Certificate Templates** , click **New** , and then click **Certificate Template To Issue**
+ 11. Select and enable the certificate template that were created in step 9 above, and then click **OK**
 
 **Auto-enroll Domain Controller Certificate Using Group Policy Object (GPO)**
 
