@@ -69,7 +69,7 @@ _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a D
      2. Setup Type: **_Enterprise CA_** 
      3. CA Type: **_Root CA_**
      4. Private Key: **_Create a new private key_** 
-     5. Cryptography: **_RSA#Microsoft Software Key Storage Provider, 2048 bit, SHA-256_ 6e**
+     5. Cryptography: **_RSA#Microsoft Software Key Storage Provider, 2048 bit, SHA-256 6e_**
      6. CA Name: Use the recommended naming convention:
         **dc=[_AD suffix_], dc=[_AD domain_], cn=[_certification authority name_]** 
         (e.g., dc=_gov_, dc=_[AgencyName]_, cn=_[AgencyName]_ _NPE_ _CA1_) 
@@ -80,31 +80,33 @@ _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a D
 
   > **Note:** Certificate templates are available on on enterprise CAs.
 
-  1. Log on to the CA server as a member of the **Enterprise Administrators** group
-  2. Open the certificate templates MMC snap-in (i.e. **certtmpl.msc** 
-  3. Right-click the **Domain Controller Authentication** template and click **Duplicate Template**
-  4. Under the **Compatibility Tab** , modify the **Compatibility Settings** for both the CA and certificate recipients to as high as possible (e.g. **Windows Server 2012 R2, Windows 7 / 2008 R2** )
-  5. Under the **General tab** :
-     1. Recommend renaming template to: _&lt;Your organization&gt; - Domain Controller Authentication_
-     2. Recommend modifying validity period to:  _3 years_
-     3. Recommend modifying Renewal period to: _6 weeks_
-  6. Under the **Cryptography tab** :
-     1. Set minimum key size to 2048
-     2. If possible, set Request hash to SHA256
-  7. Open the CA console (i.e. **certsrv.msc** )
-  8. In the console tree, click the name of the CA
-  9. In the details pane, double-click **Certificate Templates**
- 10.In the console tree, right-click **Certificate Templates** , click **New** , and then click **Certificate Template To Issue**
- 11. Select and enable the certificate template that were created in step 9 above, and then click **OK**
+  1. Log into the CA server as a member of the **Enterprise Administrators** group.
+  2. Open the certificate template's **MMC snap-in** (i.e., **certtmpl.msc**). 
+  3. Right-click on the **Domain Controller Authentication** template, and then click on **Duplicate Template**.
+  4. Under the **Compatibility Tab**, modify the **Compatibility Settings** for both the CA and certificate recipients to the highest version compatibility as possible (e.g., **Windows Server 2012 R2** or **Windows 7 2008 R2**).
+  5. Under the **General tab**, we recommend the following:
+     1. Rename the **template** to: **_&lt;Your organization&gt; - Domain Controller Authentication_**.
+     2. Modify the **validity period** to:  **_3 years_**.
+     3. Modify the **Renewal period** to: **_6 weeks_**.
+  6. Under the **Cryptography tab**:
+     1. Set the **minimum key size** to **_2048_**.
+     2. If possible, set the **Request hash** to **_SHA256_**.
+  7. Open the **CA console** (i.e., **certsrv.msc**).
+  8. In the **console tree**, click on the **[CA's name]**.
+  9. In the **details** pane, double-click on **Certificate Templates**.
+ 10. In the **console tree**, right-click on **Certificate Templates** and click on **New**. Then, click on **Certificate Template To Issue**.
+ 11. Select and enable the **_certificate template_** that was created, and then click on **OK**
 
-**Auto-enroll Domain Controller Certificate Using Group Policy Object (GPO)**
+## Auto-enroll Domain Controller certificate using Group Policy Object (GPO)**
 
-18. Log on to the Domain Controller server as a member of the **Enterprise Administrators** group
-19. Open the GPMC (i.e. **gpmc.msc** )
-20. Within the appropriate GPO, navigate to _Computer Configuration\Policies\Windows Settings\Security Settings\Public Key Policies\_
-21. Configure **Certificate Services Client – Auto-Enrollment** with the following options:
-  * Configuration Model: _Enabled_
-  * Renew Expired Certificates, Update Pending Certificates, Remove Revoked Certificates: _Check_
-  * Update Certificates That Use Certificate Templates: _Check_
-22. You can now force the group policy to update via command-line: _gpupdate /force_ or wait for the group policy to update on its own
-23. If successful, you should see a new DC cert in the Certificate (Local Computer) -&gt; Personal -&gt; Certificates folder. _(_e. _open MMC.exe -&gt; File -&gt; Add/Remove Snap-in -&gt;Certificates -&gt;Computer account -&gt;Local computer)._ If you look at the furthest tab called &quot;Certificate Template&quot; you should see a cert generated with the custom template you created in step 9.
+  1. Log into the **Domain Controller server** as a member of the **Enterprise Administrators** group.
+  2. Open the **GPMC** (i.e. **gpmc.msc** ).
+  3. Within the appropriate **GPO**, navigate to **_Computer Configuration\Policies\Windows Settings\Security Settings\Public Key Policies**_\
+  4. Configure **Certificate Services Client – Auto-Enrollment** with the following options:
+     1. Configuration Model:**_Enabled_**.
+     2. For Renew Expired Certificates, Update Pending Certificates, Remove Revoked Certificates: **_Check_all checkboxes**_.
+     3. Update Certificates That Use Certificate Templates: **_Check the checkbox_**.
+  5. You can now force the group policy to update via command-line: **_gpupdate /force_** or wait for the group policy to update on its own.
+  6. If successful, you will see a new Domain Controller certificate in the **Certificate (Local Computer) -&gt; Personal -&gt; Certificates folder** (e.g., **_open MMC.exe -&gt; File -&gt; Add/Remove Snap-in -&gt;Certificates -&gt;Computer account -&gt;Local computer)_**.
+  
+  > If you look at the furthest tab called &quot;Certificate Template&quot; you should see a cert generated with the custom template.
