@@ -57,7 +57,7 @@ _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a D
 
 ### Install CA role
 
-  1. Log on to the CA server as a member of the **Enterprise Administrators** group.
+  1. Log into the **CA server** as a member of the **Enterprise Administrators** group.
   2. Open the **Server Manager**.
   3. Click on **Manage**, and then click on **Add Roles and Features**.
   4. Proceed through the **Add Roles and Features Wizard** options. Choose the following:
