@@ -10,8 +10,8 @@ These procedures are intended for network and system administrators, or other IT
 
 {% include alert-info.html heading = "Devices authenticate too!" content="When your users are using certificates to authenticate to the network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, click on the links below or search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
 
-- [Domain Controller Certificate Profiles](#domain-controller-certificate-profiles)
-- [Issuing Domain Controller Certificates](#issuing-domain-controller-certificates)
+- [Domain Controller certificate profiles](#domain-controller-certificate-profiles)
+- [Issue Domain Controller certificates](#issue-domain-controller-certificates)
 
 ## Domain controller certificate profiles
 
@@ -61,7 +61,7 @@ _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a D
   2. Open the **Server Manager**.
   3. Click on **Manage**, and then click on **Add Roles and Features**.
   4. Proceed through the **Add Roles and Features Wizard** options. Choose the following:
-     1. Server Roles: **_Active Directory Certificate Services_**
+     1. **Server Roles:** **_Active Directory Certificate Services_**
      2. AD CS Roles Services: **_Certification Authority_** 
   5. On the **Results** page, click on **Configure Active Directory Certificate Services on the destination server**.
   6. Proceed through the **AD CS Configuration** options. Choose the following, as necessary:
@@ -109,4 +109,4 @@ _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a D
   5. You can now force the group policy to update via command-line: **_gpupdate /force_** or wait for the group policy to update on its own.
   6. If successful, you will see a new Domain Controller certificate in the **Certificate (Local Computer) -&gt; Personal -&gt; Certificates folder** (e.g., **_open MMC.exe -&gt; File -&gt; Add/Remove Snap-in -&gt;Certificates -&gt;Computer account -&gt;Local computer)_**.
   
-  > If you look at the furthest tab called &quot;Certificate Template&quot; you should see a cert generated with the custom template.
+  > If you look at the furthest tab, called **&quot;Certificate Template&quot;**, you should see a certificate generated with the custom template.
