@@ -104,9 +104,9 @@ _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a D
   3. Within the appropriate **GPO**, navigate to **_Computer Configuration\Policies\Windows Settings\Security Settings\Public Key Policies\**_**
   4. Configure **Certificate Services Client – Auto-Enrollment** with the following options:
      1. Configuration Model: **_Enabled_**.
-     2. For Renew Expired Certificates, Update Pending Certificates, Remove Revoked Certificates: **_Check_all checkboxes**_.
+     2. For Renew Expired Certificates, Update Pending Certificates, Remove Revoked Certificates: **_Check_all checkboxes_**.
      3. Update Certificates That Use Certificate Templates: **_Check the checkbox_**.
   5. At the command line, you can now force the group policy to update via the command: **_gpupdate /force_** or wait for the group policy to update on its own.
-  6. If successful, you will see a new Domain Controller certificate in the **Certificate (Local Computer) -&gt; Personal -&gt; Certificates folder** (e.g., **_open MMC.exe -&gt; File -&gt; Add/Remove Snap-in -&gt;Certificates -&gt;Computer account -&gt;Local computer)_**.
+  6. If successful, you will see a new Domain Controller certificate in the **_Certificate (Local Computer) -&gt; Personal -&gt; Certificates folder_** (e.g., **_open MMC.exe -&gt; File -&gt; Add/Remove Snap-in -&gt;Certificates -&gt;Computer account -&gt;Local computer)_**.
   
   > If you look at the furthest tab, called **&quot;Certificate Template&quot;**, you should see a certificate generated with the custom certificate template.
