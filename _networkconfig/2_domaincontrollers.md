@@ -45,15 +45,17 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
 Each U.S. Federal Government's Civilian agency has information-security policies that guide its decision-making about whether its Domain Controller <!-- More than one DC? More than one certificate possible? -->certificate should be issued by the agency's **local enterprise Certificate Authority (CA)** or whether a Federal Public Key Infrastructure (FPKI)-managed and certified CA should issue it. Providing a common guide and recommendation is challenging, as each agency should follow its own policies. However, we do not recommend that agencies set up a local enterprise CA just to issue Domain Controller certificates. The best option is to collaborate with the agency Chief Information Security Officer (CISO) (or the Information Security Office), who can give definitive direction and has oversight for managing CAs and ensuring that security protections are in place.
 
-## Generating and Installing Domain Controller Certificate
+## Generate and install Domain Controller certificate
 
-_Accurate as of 3/17/2017 using Microsoft 2012 Server Standard Edition for Certification Authority and Domain Controller servers._
+_**Use Case:** We would like to use a local enterprise Microsoft CA to issue a Domain Controller certificate to the Domain Controller server. The server must have a certificate installed with the appropriate fields/values as a prerequisite to enabling PIV credential login for domain-connected devices._
 
-**Use Case:** Would like to use a local Enterprise Microsoft Certification Authority (CA) to issue a Domain Controller (DC) certificate to the DC server. The DC server must have a certificate installed with the appropriate fields/values as a pre-requisite to enabling PIV credential login for domain connected devices.
+  > **Note:** These procedures are accurate for using Microsoft 2012 Server, Standard Edition, for CA and Domain Controller servers (as of March 2017).
 
-_\*Pre-requisite: Server hosting the CA must be on the domain_
+### Prerequisite
 
-**Install CA Role**
+  * The server hosting the CA must be on the domain
+
+### Install CA role
 
 1. Log on to the CA server as a member of the **Enterprise Administrators** group.
 2. Open **Server Manager**
