@@ -65,7 +65,7 @@ These procedures are intended for network and system administrators, or other IT
  7. The user will now be able to log into the remote machine by using the following command:
  
         
-		ssh &lt;remote-host&gt;
+		ssh <remote-host>
         
 
   > **Note:**  **Do not** remove the PIV card from the card reader until the login process has been completed. The key will no longer work after removing the PIV card. After replacing the PIV card, run the following command to restart the PIV card to enable the keys to once again be available to SSH. 
