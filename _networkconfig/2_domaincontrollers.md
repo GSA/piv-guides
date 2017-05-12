@@ -103,7 +103,7 @@ _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a D
 
   1. Log into the **Domain Controller server** as a member of the **Enterprise Administrators** group.
   2. Open the **GPMC** (i.e. **gpmc.msc** ).
-  3. Within the appropriate **GPO**, navigate to **_Computer Configuration\Policies\Windows Settings\Security Settings\Public Key Policies\**_**
+  3. Within the appropriate **GPO**, navigate to **_Computer Configuration\Policies\Windows Settings\Security Settings\Public Key Policies\**_
   4. Configure **Certificate Services Client – Auto-Enrollment** with the following options:
      1. Configuration Model: **_Enabled_**.
      2. For Renew Expired Certificates, Update Pending Certificates, Remove Revoked Certificates: **_Check_all checkboxes_**.
