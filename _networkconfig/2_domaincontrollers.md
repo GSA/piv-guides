@@ -4,7 +4,7 @@ title: Domain Controllers
 collection: networkconfig
 permalink: networkconfig/domaincontrollers/
 ---
-# How do I issue domain controller certificates to ....abc...xyz...?
+# How do I issue, generate, and install a domain controller certificate?
 
 These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies. As part of their roles, these professionals will be authorized by their agencies to manage various aspects of their networks' Domain Controllers, including the creation of certificate profiles and being knowledgeable about how domain-controller certificates are issued and installed. Domain Controllers must have certificates in order for employees to use PIV card credentials for network authentication. These pages present detailed information about how domain-controller certificate profiles and certificates are issued.  
 
