@@ -109,4 +109,4 @@ _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a D
   5. At the command line, you can now force the group policy to update via the command: **_gpupdate /force_** or wait for the group policy to update on its own.
   6. If successful, you will see a new Domain Controller certificate in the **_Certificate (Local Computer) -&gt; Personal -&gt; Certificates folder_** (e.g., **_open MMC.exe -&gt; File -&gt; Add/Remove Snap-in -&gt;Certificates -&gt;Computer account -&gt;Local computer)_**.
   
-  > At the tab called, &quot;**Certificate Template**,&quot; you should see a certificate generated with the custom certificate template.
+  > At the **Certificate Template** tab, you should see a certificate generated with the custom certificate template.
