@@ -4,9 +4,9 @@ title: Domain Controllers
 collection: networkconfig
 permalink: networkconfig/domaincontrollers/
 ---
-# How do I issue, generate, and install a domain controller certificate?
+# How do I generate and install Certification Authority (CA) certificates for Domain Controllers?
 
-These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies. As part of their roles, these professionals will be authorized by their agencies to manage various aspects of their networks' Domain Controllers, including the creation of certificate profiles and being knowledgeable about how domain-controller certificates are issued and installed. Domain Controllers must have certificates in order for employees to use PIV card credentials for network authentication. These pages present detailed information about how domain-controller certificate profiles and certificates are issued.  
+These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies. As part of their roles, these professionals will be authorized by their agencies to manage various aspects of their networks, including generating and installing CA certificates for their Domain Controllers. Domain Controller certificates are required in order for the agencies' authorized users to use PIV card credentials for network authentication. 
 
 {% include alert-info.html heading = "Devices authenticate too!" content="When your users are using certificates to authenticate to the network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, click on the links below or search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
 
@@ -15,7 +15,7 @@ These procedures are intended for network and system administrators, or other IT
 
 ## Domain controller certificate profiles
 
-Domain Controller certificates must be issued with a set of specific extensions and values.  The certificate for each Domain Controller must meet the following requirements:
+Domain Controller certificates must be issued with a set of specific extensions and values.  The certificate profile for each Domain Controller must meet the following requirements:
 
 - The certificate **Key Usage** extension must contain:
 
@@ -39,15 +39,15 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
             Other Name: 1.3.6.1.4.1.311.25.1 = ac 4b 29 06 bb d6 5d 4f e3 9c 4c ab c3 6a 55 d9
 
-    > The Domain Controller's certificate must be installed in the domain controller's local computer's _personal certificate store_, as described below in the _Generate and install Domain Controller certificate_ procedures.
+    > The Domain Controller's certificate must be installed in the domain controller's local computer's **_personal certificate store_**, as described below in the _Generate and install Domain Controller certificate_ procedures.
 
 ## Issue Domain Controller certificates
 
-Each U.S. Federal Government's Civilian agency has information-security policies that guide its decision-making about whether its Domain Controller <!-- More than one DC? More than one certificate possible? -->certificate should be issued by the agency's **local enterprise Certificate Authority (CA)** or whether a Federal Public Key Infrastructure (FPKI)-managed and certified CA should issue it. Providing a common guide and recommendation is challenging, as each agency should follow its own policies. However, we do not recommend that agencies set up a local enterprise CA just to issue Domain Controller certificates. The best option is to collaborate with the agency Chief Information Security Officer (CISO) (or the Information Security Office), who can give definitive direction and has oversight for managing CAs and ensuring that security protections are in place.
+Each U.S. Federal Government's Civilian agency has information-security policies that guide its decision-making about whether its Domain Controller's <!-- More than one DC? More than one certificate possible? -->certificate should be issued by the agency's local enterprise Certificate Authority (CA) or whether a Federal Public Key Infrastructure (FPKI)-managed and certified CA should issue it. Providing a common guide and recommendation is challenging, as each agency should follow its own policies; however, we do not recommend that agencies set up a local enterprise CA just to issue Domain Controller certificates. The best option is to collaborate with your agency's Chief Information Security Officer (CISO) (or the Information Security Office), who can give you definitive direction and has oversight for managing CAs and ensuring that security protections are in place.
 
 ## Generate and install Domain Controller certificate
 
-_**Use Case:** We would like to use a local enterprise Microsoft CA to issue a Domain Controller certificate to the Domain Controller server. The server must have a certificate installed with the appropriate fields/values as a prerequisite to enabling PIV credential login for domain-connected devices._
+_**Use Case:** We would like to use a local enterprise Microsoft CA to issue a Domain Controller certificate to the Domain Controller server. The server must have a certificate installed with the appropriate fields/values as a prerequisite to enabling authorized users with PIV credentials (i.e., PIV cards) to log into domain-connected devices._
 
   > **Note:** These procedures are accurate for using Microsoft 2012 Server, Standard Edition, for CA and Domain Controller servers (as of March 2017).
 
@@ -78,14 +78,14 @@ _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a D
 
 ## Configure CA template for Domain Controller
 
-  > **Note:** Certificate templates are available on on enterprise CAs.
+  > **Note:** Certificate templates are available on enterprise CAs.
 
   1. Log into the CA server as a member of the **Enterprise Administrators** group.
   2. Open the certificate template's **MMC snap-in** (i.e., **certtmpl.msc**). 
   3. Right-click on the **Domain Controller Authentication** template, and then click on **Duplicate Template**.
   4. Under the **Compatibility** tab, modify the **Compatibility Settings** for both the _CA_ and _certificate recipients_ to the highest version compatibility as possible (e.g., **Windows Server 2012 R2** or **Windows 7 2008 R2**).
   5. Under the **General** tab, we recommend the following settings:
-     1. Template Name:  rename to: **_&lt;Your organization&gt; - Domain Controller Authentication_**.
+     1. Template Name:  rename to:  **_&lt;Your organization&gt; - Domain Controller Authentication_**.
      2. Validity Period:  **_3 years_**.
      3. Renewal Period:  **_6 weeks_**.
   6. Under the **Cryptography** tab, set the following values:
