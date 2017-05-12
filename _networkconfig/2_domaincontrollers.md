@@ -39,7 +39,7 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
             Other Name: 1.3.6.1.4.1.311.25.1 = ac 4b 29 06 bb d6 5d 4f e3 9c 4c ab c3 6a 55 d9
 
-    > The Domain Controller's certificate must be installed in the domain controller's local computer's _personal certificate store_, as described below.
+    > The Domain Controller's certificate must be installed in the domain controller's local computer's _personal certificate store_, as described below in the _Generate and install Domain Controller certificate_ procedures.
 
 ## Issue Domain Controller certificates
 
@@ -53,18 +53,18 @@ _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a D
 
 ### Prerequisite
 
-  * The server hosting the CA must be on the domain
+  * The server that hosts the CA must be on the domain
 
 ### Install CA role
 
-1. Log on to the CA server as a member of the **Enterprise Administrators** group.
-2. Open **Server Manager**
-3. Click **Manage** , and then click **Add Roles and Features**.
-4. Proceed through the Add Roles and Features Wizard, choosing the following options:
-  * Server Roles: _Active Directory Certificate Services_
-  * AD CS Roles Services: _Certification Authority_ 
-5. On the Results page, click **Configure Active Directory Certificate Services on the destination server**.
-6. Proceed through the AD CS Configuration, choosing the following options as necessary:
+  1. Log on to the CA server as a member of the **Enterprise Administrators** group.
+  2. Open **Server Manager**
+  3. Click **Manage** , and then click **Add Roles and Features**.
+  4. Proceed through the Add Roles and Features Wizard, choosing the following options:
+     1. Server Roles: _Active Directory Certificate Services_
+     2. AD CS Roles Services: _Certification Authority_ 
+  5. On the Results page, click **Configure Active Directory Certificate Services on the destination server**.
+  6. Proceed through the AD CS Configuration, choosing the following options as necessary:
   * Role Service: _Certification Authority_ 
   * Setup Type: E_nterprise CA_ 
   * CA Type: _Root CA_
