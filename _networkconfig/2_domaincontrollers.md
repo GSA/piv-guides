@@ -41,13 +41,9 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
     > The Domain Controller's certificate must be installed in the domain controller's local computer's _personal certificate store_, as described below.
 
-## Issuing Domain Controller Certificates
-US Federal Civilian agencies have a variety of policies on whether you should use a Domain Controller certificate issued from your agency's local enterprise Certificate Authority, or whether the certificate must be issued from a Certificate Authority managed and certified under the Federal Public Key Infrastructure (FPKI).  Providing a common guide and recommendation is challenging as each agency's information security policy should be followed.
+## Issue Domain Controller certificates
 
-It is not recommended to set up a local enterprise certificate authority just to issue domain controller certificates without ensuring the proper management and security protections are enabled, and your Chief Information Security Officer (CISO) has awareness and oversight for the certificate authority management.
-
-The best option is to collaborate with your Chief Information Security Officer (CISO) or Information Security office for a definitive answer and direction.
-
+Each U.S. Federal Government's Civilian agency has information-security policies that guide its decision-making about whether its Domain Controller <!-- More than one DC? More than one certificate possible? -->certificate should be issued by the agency's **local enterprise Certificate Authority (CA)** or whether a Federal Public Key Infrastructure (FPKI)-managed and certified CA should issue it. Providing a common guide and recommendation is challenging, as each agency should follow its own policies. However, we do not recommend that agencies set up a local enterprise CA just to issue Domain Controller certificates. The best option is to collaborate with the agency Chief Information Security Officer (CISO) (or the Information Security Office), who can give definitive direction and has oversight for managing CAs and ensuring that security protections are in place.
 
 ## Generating and Installing Domain Controller Certificate
 
