@@ -45,6 +45,8 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
 Each U.S. Federal Government's Civilian agency has information-security policies that guide its decision-making about whether its Domain Controller's <!-- More than one DC? More than one certificate possible? -->certificate should be issued by the agency's local enterprise Certificate Authority (CA) or whether a Federal Public Key Infrastructure (FPKI)-managed and certified CA should issue it. Providing a common guide and recommendation is challenging, as each agency should follow its own policies; however, we do not recommend that agencies set up a local enterprise CA just to issue Domain Controller certificates. The best option is to collaborate with your agency's Chief Information Security Officer (CISO) (or the Information Security Office), who can give you definitive direction and has oversight for managing CAs and ensuring that security protections are in place.
 
+<i></SPLIT INTO SECOND PAGE STARTING HERE/></I>
+
 ## Generate and install Domain Controller certificate
 
 _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a Domain Controller certificate to the Domain Controller server. The server must have a certificate installed with the appropriate fields/values as a prerequisite to enabling authorized users with PIV credentials (i.e., PIV cards) to log into domain-connected devices._
