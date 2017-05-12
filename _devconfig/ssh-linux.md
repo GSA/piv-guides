@@ -58,7 +58,7 @@ These procedures are intended for network and system administrators, or other IT
   5. Use the following command to list the **user&#39;s public SSH key**:
   
         ```
-		ssh-add –L | egrep &#39;ssh-rsa&#39;
+		ssh-add –L | egrep 'ssh-rsa'
         ```
 
  6. Add the user's public SSH key to the appropriate **authorized_keys file on the remote machine**.
