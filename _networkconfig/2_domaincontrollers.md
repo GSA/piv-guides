@@ -6,7 +6,7 @@ permalink: networkconfig/domaincontrollers/
 ---
 # How do I generate and install Certification Authority (CA) certificates for Domain Controllers?
 
-These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies. As part of their roles, these professionals will be authorized by their agencies to manage various aspects of their networks, including generating and installing CA certificates for their Domain Controllers. Domain Controller certificates are required in order for the agencies' authorized users to use PIV card credentials for network authentication. 
+To use smartcards and PIV credentials for network authentication, all of your agency's Domain Controllers need to have Domain Controller authentication certificates.
 
 {% include alert-info.html heading = "Devices authenticate too!" content="When your users are using certificates to authenticate to the network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, click on the links below or search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
 
