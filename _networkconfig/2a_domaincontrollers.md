@@ -1,17 +1,14 @@
 ---
 layout: default
-title: Domain Controllers
+title: What are Domain Controllers certificate profiles?
 collection: networkconfig
-permalink: networkconfig/domaincontrollers/
+permalink: networkconfig/2a_domaincontrollers/
 ---
-# How do I generate and install Certification Authority (CA) certificates for Domain Controllers?
+# What are Domain Controller certificate profiles?
 
 To use smartcards and PIV credentials for network authentication, all Domain Controllers need to have Domain Controller authentication certificates.
 
 {% include alert-info.html heading = "Devices authenticate too!" content="When your users are using certificates to authenticate to the network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, click on the links below or search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
-
-- [Domain Controller certificate profiles](#domain-controller-certificate-profiles)
-- [Issue Domain Controller certificates](#issue-domain-controller-certificates)
 
 ## Domain controller certificate profiles
 
