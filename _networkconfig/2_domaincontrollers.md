@@ -6,7 +6,7 @@ permalink: networkconfig/domaincontrollers/
 ---
 # How do I generate and install Certification Authority (CA) certificates for Domain Controllers?
 
-To use smartcards and PIV credentials for network authentication, all of your agency's Domain Controllers need to have Domain Controller authentication certificates.
+To use smartcards and PIV credentials for network authentication, all Domain Controllers need to have Domain Controller authentication certificates.
 
 {% include alert-info.html heading = "Devices authenticate too!" content="When your users are using certificates to authenticate to the network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, click on the links below or search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
 
