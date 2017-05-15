@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Domain Controllers
+title: How do I generate and install Domain Controller certificates?
 collection: networkconfig
-permalink: networkconfig/domaincontrollers/
+permalink: networkconfig/2b_domaincontrollers/
 ---
-# How do I generate and install Domain Controllers certificates?
+# How do I generate and install Domain Controller certificates?
 
 To use smartcards and PIV credentials for network authentication, all Domain Controllers need to have Domain Controller authentication certificates.
 
