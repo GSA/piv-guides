@@ -6,7 +6,7 @@ permalink: networkconfig/2b_domaincontrollers/
 ---
 # How do I generate and install Domain Controller certificates?
 
-To use smartcards and PIV credentials for network authentication, all Domain Controllers need to have Domain Controller authentication certificates.
+To use smartcards and PIV credentials for network authentication, all Domain Controllers must have Domain Controller authentication certificates.
 
 ## Issuing Domain Controller certificates
 
