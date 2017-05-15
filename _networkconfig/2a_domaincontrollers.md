@@ -1,6 +1,6 @@
 ---
 layout: default
-title: What are Domain Controllers certificate profiles?
+title: How do I create Domain Controller certificate profiles?
 collection: networkconfig
 permalink: networkconfig/2a_domaincontrollers/
 ---
