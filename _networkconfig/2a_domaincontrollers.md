@@ -4,7 +4,7 @@ title: What are Domain Controllers certificate profiles?
 collection: networkconfig
 permalink: networkconfig/2a_domaincontrollers/
 ---
-# What are Domain Controller certificate profiles?
+# How do I create Domain Controller certificate profiles?
 
 To use smartcards and PIV credentials for network authentication, all Domain Controllers need to have Domain Controller authentication certificates.
 
@@ -36,4 +36,4 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
             Other Name: 1.3.6.1.4.1.311.25.1 = ac 4b 29 06 bb d6 5d 4f e3 9c 4c ab c3 6a 55 d9
 
-    > The Domain Controller's certificate must be installed in the domain controller's local computer's **_personal certificate store_**, as described in the _Generate and install Domain Controller certificate_ procedures.
+    > The Domain Controller's certificate must be installed in the domain controller's local computer's **_personal certificate store_**, as described in _How do I generate and install Domain Controller certificates_?
