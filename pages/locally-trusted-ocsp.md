@@ -119,7 +119,7 @@ Before beginning the Windows Server 2012 R2 software installation, name your ser
   
   > As a best practice, reboot the server before continuing.
 
-### Obtain OCSP Responder Certificate
+### Obtain OCSP Responder CA certificate
 
 Two main approaches exist for the Microsoft OCSP Responder's method of issuing and obtaining certificates:
   
@@ -152,7 +152,7 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
       &mdash; This *should* be marked **critical.**
   > * The Subject Alternative Name *should* contain Domain Name Server (DNS) Name = OCSP Server DNS name.
 
-### Install OCSP Responder Certificate
+### Install OCSP Responder CA certificate
 
   1. Copy the new OCSP Responder certificate, as well as the issuing CA certificate (or chain), to the OCSP Responder server. 
   2. If you have not already done so, install the issuing **CA Root certificate** in the **Computer Trust Root Certification Authorities store**. 
@@ -271,7 +271,7 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
 Each CA must be individually and explicitly configured. In order to maximize local availability, it important to configure all of the CAs in the certificate chain to your trusted root certificate(s). For example, additional CAs that must be configured to your trusted root certificate(s) could be a subset of the CAs that can verified by the Federal Common Policy CA. <!-- Will all users know what Federal Common Policy CA is?  (Also referred to as "COMMON"?) Will users of this guide ALL need to configure CAs that can be verified by FCPCA? Explain "maximize local availability"--of what? -->
 
-### Manually configure the Client
+### Manually configure the Windows Client
 
 To manually configure a locally trusted, OCSP Responder, **use the ""MMC** **Certificates snap-in**.   
 
@@ -305,15 +305,17 @@ To manually configure a locally trusted, OCSP Responder, **use the ""MMC** **Cer
 
   7. Click on **OK** when satisfied with your modifications. All applications that leverage Windows certificate validation APIs will now attempt to use your configured OCSP Responder when validating certificates *issued* by this CA.
 
-### Group Policy Configuration
+### Configure the Group Policy
+
 #### Root CA Certificate
+
 The Locally Trusted Root CA can be distributed to clients using Group Policy. To do so, create or open the group policy object you want to use, then navigate to **Computer Configuration** / **Policies** / **Security Settings** / **Public Key Policies** / **Trusted Root Certification Authorities**. If the CA certificate is not already listed here, right click Trusted Root Certification Authorities and select Import
 
 ![Trusted Root Certification Authorities Group Policy Configuration](../img/local-ocsp-group-policy-11.png)
 
 The Certificate Import Wizard will appear, click Next. Browse for the Locally Trusted Root CA certificate that issues the OCSP Responder certificates. Click Next, then Next again, then Finish. A dialog should appear that states *The import was successful*.
 
-#### Locally Trusted OCSP
+#### Locally trusted OCSP
 Configuration of Microsoft Windows domain members is possible using group policy. To get started, create or open the group policy object you want to use, then navigate to Computer Configuration / Policies / Security Settings / Public Key Policies. Next, select the Certificate Store that should contain the CA certificate. This is usually the Intermediate Certification Authorities.
 
 > <i class="icon-info"></i>   A trust anchor such as the self signed Federal Common Policy CA should be configured in the Trusted Root Certification Authorities store.
@@ -336,10 +338,12 @@ Now, and at any future time, you can configure the locally trusted OCSP Responde
 
 Add the OCSP URL(s) in the same manner described above in [Manual Client Configuration](#Manual-Client-Configuration-1)
 
-## End-to-End Testing
+## End-to-end testing
 
 ### Windows Clients
-#### Preparation
+
+#### Prepare for testing
+
 Testing is carried out using certutil.exe from the command prompt on a Windows client. For complete coverage, it is recommended that you test with all Windows versions that are expected to operate in your environment.
 
 > <i class="icon-info"></i> If you are testing with Windows 10, you may receive "FAILED: 0x80092004 (-2146885628 CRYPT_E_NOT_FOUND)" in spite of of the certificate path apparently validating correctly. This appears to be a bug that affects certutil on Windows 10. If you experience this issue, it is recommended you test with an additional version of Windows. At the time this document was written, Windows 7 and 8.1 were confirmed to not have this issue.
@@ -360,7 +364,7 @@ Optionally, you may want to isolate the test client from the Internet. This is h
 
 	ipconfig /flushdns
 
-#### Test Execution
+#### Execute testing
 
 Open the Event Viewer and navigate to **Applications and Services Logs** / **Microsoft** / **Windows** / **CAPI2** / **Operational**. Click **Clear Log** in the Actions pane.
 
@@ -411,7 +415,7 @@ Examine each instance of event 41 in the log. If **UserData** / **CertVerifyRevo
 
 > <i class="icon-info"></i>  The URL that appears in the event log contains the base 64 encoded OCSP Request.
 
-### Problems and Solutions
+### Problems and solutions <!-- Troubleshoot problems? -->
 
 The table below lists some event log errors you may encounter and their possible causes.
 
@@ -426,6 +430,7 @@ The table below lists some event log errors you may encounter and their possible
 If the above table doesn't lead you to a solution, the Microsoft Tech Net article [Troubleshooting PKI Problems on Windows Vista](https://technet.microsoft.com/en-us/library/cc749296(v=ws.10).aspx) may be helpful. The article has proven to be very useful with everything from Windows Vista to Windows 10 and Server 2012 R2.
 
 ## Appendix 1 - Sample OCSP INF file
+
 Below INF file is an example of the configuration file you can use to generate a new certificate signing request for your OCSP Responder.
 
  - Customize the Subject field in keeping with your Issuing CAs name
@@ -465,7 +470,7 @@ Sample INF file for generating the OCSP responder certificate Request:
 	OID = 1.3.6.1.5.5.7.3.9
 
 
-## Appendix 2 - Using Microsoft CA as the self signed root
+## Appendix 2 - Using Microsoft CA as the self-signed root
 
 Prior to configuring Certificate Services and generating the new Root CA key pair, the below CaPolicy.inf file should be placed in %SYSTEMROOT%.  Below will create a self signing root certificate with a 2048 bit RSA key and a ten year validity period with OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension. 
 
