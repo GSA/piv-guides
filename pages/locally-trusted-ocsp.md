@@ -213,13 +213,13 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
 ![Add Revocation Configuration](../img/local-ocsp-cfg-add-revocation-configuration.png)
 
-  2. At the next window, select **Name the Revocation Configuration**.  Then enter the name of your Revocation Configuration. (It is recommended that you always use the CA's common name, plus any other identifying information that may be necessary.) Click on **Next**. <!-- Is Next a button? -->
+  2. At the next window, select **Name the Revocation Configuration**.  Then enter the name of your Revocation Configuration. (It is recommended that you always use the CA's common name, plus any other identifying information that may be necessary.) Click on **Next**.
 
 ![Name the Revocation Configuration](../img/local-ocsp-cfg-add-rev-conf-1.png)
 
 > <i class="icon-info"></i>  You will need to configure separate Revocation Configurations for CAs that have more than one key pair. Name your Revocation Sources so that you can easily identify these cases.
 
-  3. At the next window, select a **CA Certification Location**. The location can be either a Local certificate store or a File. Click on a radio button to select a location. Click on **Next**, select the CA certificate, and then click **Next** again.<!-- Is Next a button? -->
+  3. At the next window, select a **CA Certification Location**. The location can be either a Local certificate store or a File. Click on a radio button to select a location. Click on **Next**, select the CA certificate, and then click **Next** again.
 
 ![Select Import From File](../img/local-ocsp-cfg-add-rev-conf-2.png)
 
@@ -243,7 +243,7 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
 ![Configure the CRL update internal](../img/local-ocsp-cfg-add-rev-conf-8.png)
 
-  > After completing the above steps, you will need to assign the OCSP Responder Certificate to the configuration. Until this is done, you will see the error:  _Signing Certificate: &nbsp;Not Found_ in the status panel window for this Revocation Configuration. <!--Does this status window just pop up? No window name? -->
+  > After completing the above steps, you will need to assign the OCSP Responder Certificate to the configuration. Until this is done, you will see the error:  _Signing Certificate: &nbsp;Not Found_ in the status panel window for this Revocation Configuration. 
 
 ![OCSP Signing Certificate Not Found](../img/local-ocsp-cfg-signing-certificate-not-found.png)
 
@@ -259,15 +259,15 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
 ![CRL not yet downloaded](../img/local-ocsp-crl-not-downloaded.png)
 
-  > After waiting a few minutes, at the status panel window, right-click on **Array Configuration**, and select **Refresh**. <!-- What is the user waiting for? How long? --> 
+  > After waiting a few minutes, at the status panel window, right-click on **Array Configuration**, and select **Refresh**. <!-- What is the user waiting for? How long? -->This process will download the CRL.
 
 ![Refresh](../img/local-ocsp-cfg-refresh.png)
 
-  > At this point, the CRL should have been automatically downloaded, and your status panel window should look like the following example:
+  > Once the download finishes, your status panel window should look like this:
 
 ![OCSP Revocation Configuration working correctly](../img/local-ocsp-cfg-working-correctly.png)
 
-  > If the error message appears: _The revocation provider failed with the current configuration. The object identifier does not represent a valid object. 0x800710d8 (WIN32: 4312 ERROR_OBJECT_NOT_FOUND), 0x800710d8_, this will most likely be due to having entered the wrong CRL DP URL. <!-- What is "DP"? Don't remember that... -->
+  > If the error message appears: _The revocation provider failed with the current configuration. The object identifier does not represent a valid object. 0x800710d8 (WIN32: 4312 ERROR_OBJECT_NOT_FOUND), 0x800710d8_. This error usually indicates an incorrect CRL DP URL. <!-- What is "DP"? Don't remember that... -->
 
   9. Repeat this process for each CA that you want to add to the OCSP Responder.
 
@@ -275,9 +275,9 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
 Each CA must be individually and explicitly configured. In order to maximize local availability, it important to configure all of the CAs in the certificate chain to your trusted root certificate(s). For example, additional CAs that must be configured to your trusted root certificate(s) could be a subset of the CAs that can verified by the Federal Common Policy CA. <!-- Will all users know what Federal Common Policy CA is?  (Also referred to as "COMMON"?) Will users of this guide ALL need to configure CAs that can be verified by FCPCA? Explain "maximize local availability"--of what? -->
 
-### Manual Client configuration
+### Manually configure the Client
 
-To configure a locally trusted, OCSP Responder, use the **Certificates snap-in** in **MMC**. To begin, open MMC (i.e., mmc.exe) and add the Certificates snap-in for the Local Computer Account. <!-- Why caps for Local Computer Account? -->
+To manually configure a locally trusted, OCSP Responder, use the **Certificates snap-in** in **MMC**. To begin, open MMC (i.e., mmc.exe) and add the Certificates snap-in for the **Certificates (Local Computer)**. </**STOPPED HERE**/>
 
 ![MMC Certificates Snap-In](../img/local-ocsp-client-1.png)
 
@@ -285,7 +285,7 @@ To configure a locally trusted, OCSP Responder, use the **Certificates snap-in**
 
 ![Select certificate properties in MMC](../img/local-ocsp-client-2.png)
 
-  2. Click on the **OCSP** tab, and then enter the **URL of your locally trusted, OCSP Responder**. </**STOPPED HERE**/>
+  2. Click on the **OCSP** tab, and then enter the **URL of your locally trusted, OCSP Responder**. 
 
 > <i class="icon-info"></i>  The Microsoft OCSP Responder adds "ocsp" to the URL, e.g. http://servername/ocsp
 
