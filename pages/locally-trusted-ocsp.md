@@ -144,7 +144,7 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
   > **Note:** This file is Privacy-Enhanced Mail (PEM)-encoded. You can open it in Microsoft Notepad and copy/paste the content<!-- Copy content from the file and paste into Notepad? (unclear) -->.
 
   4. After obtaining your new OCSP Responder certificate, ensure that it meets the requirements of an OCSP Responder certificate before proceeding.  It should include all of these details:
-  > * OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage. <BR>
+  > * OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage. <hr style=h"height:20px: visibility:hidden;" />
       &mdash; This *should* be marked **critical.** <BR>
   > * The id-pkix-ocsp-nocheck (1.3.6.1.5.5.7.48.1.5) extension is present. <BR>
       &mdash; Including this extension prevents clients from checking the OCSP Responder certificates' revocation status.
