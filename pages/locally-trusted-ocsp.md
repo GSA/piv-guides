@@ -189,7 +189,7 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
 ![Default Private Key Permissions](../img/local-ocsp-cfg-default-permissions.png)
 
   12. If this server is on a domain, click on the **Locations** button, and select the local server's name. 
-  13. Type **NETWORK SERVICE** into the **Enter the object names to select** box, and click on the **Check Names** box. Click on **OK** when finished.
+  13. Type **NETWORK SERVICE** into the **Enter the object names to select** text box, and click on the **Check Names** box. Click on **OK** when finished.
   
   > The **Permissions for [server name] private keys** window displays. 
 
@@ -235,7 +235,7 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
 ![Click the Provider Button](../img/local-ocsp-cfg-add-rev-conf-6.png)
 
-  6. Click **Add**, and then copy and paste the CA's **CRL distribution point URL** into the **Add the...CRL at this address (URL) to the list:** text field. (**Note:**  This URL is the CRL distribution point URL that this CA puts into the certificates it issues, **not** the URL in the CA certificate itself.) Click on **OK**.
+  6. Click **Add**, and then copy and paste the CA's **CRL distribution point URL** into the **Add the...CRL at this address (URL) to the list:** text box. (**Note:**  This URL is the CRL distribution point URL that this CA puts into the certificates it issues, **not** the URL in the CA certificate itself.) Click on **OK**.
 
 ![Enter the CRL DP URL](../img/local-ocsp-cfg-add-rev-conf-7.png)
 
@@ -285,13 +285,13 @@ To manually configure a locally trusted, OCSP Responder, **use the ""MMC** **Cer
 
   2.  Under **Intermediate Certification Authorities** and then select **Certificates.** 
   
-  3. Next, at the right-hand panel, under **Issued To,** select the **CA certificate** that you want to associate with the locally trusted, OCSP Responder. <!-- Original had unclear meaning.  Grammar implied that the CA certificate is already active somehow and waiting for an operational item to be assigned to it.  Once assigned to the already active CA certificate, the OCSP Responder becomes "active." --> Then, right-click on the certificate and select **Properties** from the drop-down window.
+  3. Next, at the right-hand panel, under **Issued To,** select the **CA certificate** that you want to associate with the locally trusted, OCSP Responder. <!-- Original had unclear meaning. Grammar implied that the CA certificate is already active somehow and waiting for an item to be assigned to it.  Once the OCSP Responder is assigned to the already active CA certificate, the OCSP Responder becomes "active." Correct? --> Then, right-click on the certificate and select **Properties** from the drop-down window.
   
   > The **Properties** window appears. </stopped here/>
 
 ![Select certificate properties in MMC](../img/local-ocsp-client-2.png)
 
-  4. Click on the **OCSP** tab, and then click on the **Add URL** button. In the text field, enter the **URL of your locally trusted, OCSP Responder**. 
+  4. Click on the **OCSP** tab, and then click on the **Add URL** button. In the text box, enter the **URL of your locally trusted, OCSP Responder**. 
 
 > <i class="icon-info"></i>  The Microsoft OCSP Responder adds "ocsp" to the URL, e.g. http://servername/ocsp
 
