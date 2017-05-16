@@ -131,7 +131,7 @@ Two main approaches exist for the Microsoft OCSP Responder's method of issuing a
 
 To use the **Preferred** approach to issuing and obtaining certificates, perform the following steps: 
   
-  1. Generate a new **signing key and certificate request file** by creating an **INF** (i.e., Information File Name Extension) file that specifies the details you wish to include in the request. For an example, see [Appendix 1 - Sample OCSP INF file](#Appendix-1---Sample-OCSP-INF-file-1). 
+  1. Generate a new **signing key and certificate request file** by creating an **INF** (i.e., Information File Name [INF] extension) file that specifies the details you wish to include in the request. For an example, see [Appendix 1 - Sample OCSP INF file](#Appendix-1---Sample-OCSP-INF-file-1). 
   
   2. Once you've created an INF file, open an administrative command window on the server and enter the following command:
 
@@ -139,11 +139,11 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
 
   > This command should generate a new signing key and output a **signed certificate request** to **ocsp.req**.  
 
-  3. Deliver this request file to your CA and obtain your OCSP Responder certificate. 
+  3. Deliver this request file to your CA<!--How do they deliver it--output to an application/system/e-mail? Sounds like delivering it to a person?--> and obtain your OCSP Responder certificate<!--How, in what form (e-mail?) will they obtain this certificate?-->. 
   
-  > **Note:** This file is Privacy-Enhanced Mail (PEM)-encoded. You can open it in Microsoft Notepad and copy/paste the content<!-- Copy content from the file and paste into Notepad? (unclear) -->.
+  > **Note:** This file is Privacy-Enhanced Mail (PEM)-encoded. You can open it in Microsoft Notepad and copy/paste the content<!-- Copy content from the file and paste into Notepad? For what purpose? (unclear) -->.
 
-  4. After obtaining your new OCSP Responder certificate, ensure that it meets the requirements of an OCSP Responder certificate before proceeding.  It should include all of these details:
+  4. After obtaining your new OCSP Responder certificate<!--How do they obtain it?-->, ensure that it meets the requirements of an OCSP Responder certificate before proceeding.  It should include all of these details:
   > * OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage. <BR>
       &mdash; This *should* be marked **critical.** <BR>
   > * The id-pkix-ocsp-nocheck (1.3.6.1.5.5.7.48.1.5) extension is present. <BR>
@@ -152,7 +152,7 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
       &mdash; This *should* be marked **critical.**
   > * The Subject Alternative Name *should* contain Domain Name Server (DNS) Name = OCSP Server DNS name.
 
-### Install OCSP Responder CA certificate
+### Install OCSP Responder CA certificate  </CHECK THIS SECTION FOR EDITORIAL - DONE?/>
 
   1. Copy the new OCSP Responder certificate, as well as the issuing CA certificate (or chain), to the OCSP Responder server. 
   2. If you have not already done so, install the issuing **CA Root certificate** in the **Computer Trust Root Certification Authorities store**. 
@@ -162,7 +162,7 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
 
   > When successful, _certreq_ will exit and provide no feedback.
 
-> <i class="icon-info"></i>  An error message stating:  *Certificate Request Processor:  A certificate chain could not be built to a trusted root authority. 0x800b010a (-2146762486 CERT_E_CHAINING)* will indicate that the self-signed root (and intermediate CA certificates, if applicable) are not available or not in the correct certificate stores on the server. Ensure that the required CA certificates are imported into the correct **Computer account** stores. <!-- In Step 2 above, only *Computer* was italicized.  Is this related? -->
+> <i class="icon-info"></i>  An error message stating: *Certificate Request Processor:  A certificate chain could not be built to a trusted root authority. 0x800b010a (-2146762486 CERT_E_CHAINING)* will indicate that the self-signed root (and intermediate CA certificates, if applicable) are not available or not in the correct certificate stores on the server. Ensure that the required CA certificates are imported into the correct **Computer account** stores. <!-- In Step 2 above, only *Computer* was italicized.  Is this related? -->
 
   4. To confirm that the certificate was properly imported, open the **Microsoft Management Console (MMC)** (i.e., **mmc.exe**), load the **Certificates snap-in**, and select the **Computer account** (i.e., stores). <!-- Correct?  Can't tell what the step sequence is from the screen capture. -->
   5. From the left-hand-side panel, under the **Console Root** folder, click on **Certificates (Local Computer)** and then click on the **Personal** folder.  
