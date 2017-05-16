@@ -255,7 +255,7 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
 ![CRL not yet downloaded](../img/local-ocsp-crl-not-downloaded.png)
 
-  > After waiting a few minutes, at the status panel window, right-click on **Array Configuration**, and select **Refresh**. <!-- What is the user waiting for? How long? -->This process will download the CRL.
+  > After a few minutes, at the status panel window, right-click on **Array Configuration**, and select **Refresh**. <!-- How many minutes? How will they know when they should take these steps? -->This process will download the CRL.
 
 ![Refresh](../img/local-ocsp-cfg-refresh.png)
 
@@ -295,36 +295,57 @@ To manually configure a locally trusted, OCSP Responder, **use the ""MMC** **Cer
 
 ![Add a custom OCSP URL](../img/local-ocsp-client-3.png)
 
-  > The URL appears on the list in the text box just below the URL text box.  
+  > The URL appears in the text box list directly _below_ the **Add URL** button.  
   
   6. Confirm that the URL appears in the list.
 
 ![Custom OCSP URL added to certificate properties](../img/local-ocsp-client-4.png)
 
-  > By using this same window, you can add and configure multiple OCSP Responder URLs. <!-- Will all of the OCSP Responders be activated by the same CA certificate or does each one require its own CA certificate? -->
+  > By using the same window used in Steps 4-6, you can add and configure multiple OCSP Responder URLs. <!-- Will all of the OCSP Responders be activated by the same CA certificate or does each one require its own CA certificate? -->
 
-  7. Click on **OK** when satisfied with your modifications. All applications that leverage Windows certificate validation APIs will now attempt to use your configured OCSP Responder when validating certificates *issued* by this CA.
+  7. Click on **OK** when satisfied with all of the added OCSP Responders. 
+  
+  > All applications that use Windows certificate validation Application Programming Interfaces (APIs) will now attempt to use your configured OCSP Responder when validating certificates *issued* by this CA.
 
 ### Configure the Group Policy
 
-#### Root CA Certificate
+#### Locate and import the Locally Trusted Root CA Certificate <!-- Caps needed? -->
 
-The Locally Trusted Root CA can be distributed to clients using Group Policy. To do so, create or open the group policy object you want to use, then navigate to **Computer Configuration** / **Policies** / **Security Settings** / **Public Key Policies** / **Trusted Root Certification Authorities**. If the CA certificate is not already listed here, right click Trusted Root Certification Authorities and select Import
+You can distribute the **locally trusted root CA** to Windows Clients using **group policy** functions. 
+
+  1. To do this, create or open the **Group Policy** object you want to use, and then navigate to:
+  
+  > **Computer Configuration**/**Policies**/**Security Settings**/**Public Key Policies**/**Trusted Root Certification Authorities**. 
+  
+  2. If the **root CA certificate** is not already listed<!--Listed where? What window?-->, from the drop-down menus, right-click on **Trusted Root Certification Authorities** and select **Import**.
 
 ![Trusted Root Certification Authorities Group Policy Configuration](../img/local-ocsp-group-policy-11.png)
 
-The Certificate Import Wizard will appear, click Next. Browse for the Locally Trusted Root CA certificate that issues the OCSP Responder certificates. Click Next, then Next again, then Finish. A dialog should appear that states *The import was successful*.
+  > The **Certificate Import Wizard** will appear. 
+
+  3. Click on **Next**. Browse the certificates list <!--certificates list?-->to locate the **Locally Trusted Root CA certificate** that issues the OCSP Responder certificates.<!--What will it say specifically?--> Click on **Next** and then **Next** again. Then, click on **Finish** to import the certificate. 
+  
+  > A dialog box will appear that states *The import was successful*.
 
 #### Locally trusted OCSP
-Configuration of Microsoft Windows domain members is possible using group policy. To get started, create or open the group policy object you want to use, then navigate to Computer Configuration / Policies / Security Settings / Public Key Policies. Next, select the Certificate Store that should contain the CA certificate. This is usually the Intermediate Certification Authorities.
 
-> <i class="icon-info"></i>   A trust anchor such as the self signed Federal Common Policy CA should be configured in the Trusted Root Certification Authorities store.
+You can also configure Microsoft Windows domain members using **group policy** functions. 
 
-Right click the Certificate Store name and select Import
+  1. To do this, create or open the **group policy object** you want to use<!--From where? How do they know which one they want to use? Is any screen/menu function actually called Group Policy?-->, then navigate to:
+  
+  > **Computer Configuration**/**Policies**/**Security Settings**/**Public Key Policies** 
+  
+  2. Next, select the **certificate store** that contains the **CA certificate for the locally trusted, OCSP Responder** from the drop-down menu. The certificate store is usually called the **Intermediate Certification Authorities**.
+
+  > A trust anchor, such as the self-signed Federal Common Policy CA, should already be configured<!--Meaning: already exists in the store?--> in the certification store<!--Used this term just above. Keep terminology the same.-->.
+
+  3. Right-click on the certificate store name (i.e., usually the **Intermediate Certification Authorities**) and select **Import**.
 
 ![Group Policy Certificate Store](../img/local-ocsp-group-policy-01.png)
 
-The Certificate Import Wizard will appear, click Next. Browse for the CA certificate you want to configure.
+  > The **Certificate Import Wizard** will appear.
+  
+  4. Click on ***Next**. Browse to locate the CA certificate that you want to configure. </STOPPED HERE/>
 
 ![Group Policy Certificate Import](../img/local-ocsp-group-policy-04.png)
 
