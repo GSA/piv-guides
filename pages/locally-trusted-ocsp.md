@@ -145,9 +145,9 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
 
   4. After obtaining your new OCSP Responder certificate, ensure that it meets the requirements of an OCSP Responder certificate before proceeding.  It should include all of these details:
   > * OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage. <BR>
-      * This *should* be marked **critical.**
+      - This *should* be marked **critical.**
   > * The id-pkix-ocsp-nocheck (1.3.6.1.5.5.7.48.1.5) extension is present. <BR>
-      * Including this extension prevents clients from checking the OCSP Responder certificates' revocation status.
+      o Including this extension prevents clients from checking the OCSP Responder certificates' revocation status.
   > * Key Usage must contain Digital Signature (80). <BR>
       * This *should* be marked **critical.**
   > * The Subject Alternative Name *should* contain Domain Name Server (DNS) Name = OCSP Server DNS name.
