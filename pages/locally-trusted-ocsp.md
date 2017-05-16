@@ -287,25 +287,27 @@ To manually configure a locally trusted, OCSP Responder, **use the ""MMC** **Cer
   
   3. Next, at the right-hand panel, under **Issued To,** select the **CA certificate** that you want to associate with the locally trusted, OCSP Responder. <!-- Original had unclear meaning. Grammar implied that the CA certificate is already active somehow and waiting for an item to be assigned to it.  Once the OCSP Responder is assigned to the already active CA certificate, the OCSP Responder becomes "active." Correct? --> Then, right-click on the certificate and select **Properties** from the drop-down window.
   
-  > The **Properties** window appears. </stopped here/>
+  > The **Properties** window appears.
 
 ![Select certificate properties in MMC](../img/local-ocsp-client-2.png)
 
-  4. Click on the **OCSP** tab, and then click on the **Add URL** button. In the text box, enter the **URL of your locally trusted, OCSP Responder**. 
+  4. Click on the **OCSP** tab.  In the text box, enter the **URL of your locally trusted, OCSP Responder**.
 
-> <i class="icon-info"></i>  The Microsoft OCSP Responder adds "ocsp" to the URL, e.g. http://servername/ocsp
+  > The Microsoft <!-- The "Microsoft" OCSP Responder has not been mentioned before. Is it the same as the "OCSP Responder" or different? -->OCSP Responder adds **ocsp** to the URL, e.g., http://[servername]/ocsp.
 
-Click the adjacent Add URL button. 
+  5. Click on the adjacent **Add URL** button. 
 
 ![Add a custom OCSP URL](../img/local-ocsp-client-3.png)
 
-Confirm the URL appears in the list.
+  > The URL appears on the list in the text box just below the URL text box.  
+  
+  6. Confirm that the URL appears in the list.
 
 ![Custom OCSP URL added to certificate properties](../img/local-ocsp-client-4.png)
 
-> <i class="icon-info"></i>  You can configure multiple OCSP Responder URLs
+  > By using this same window, you can add and configure multiple OCSP Responder URLs. <!-- Will all of the OCSP Responders be activated by the same CA certificate or does each one require its own CA certificate? -->
 
-Click OK when satisfied with your modifications. All applications that leverage Windows certificate validation APIs will now attempt to use your configured OCSP Responder when validating certificates *issued* by this CA.
+  7. Click on **OK** when satisfied with your modifications. All applications that leverage Windows certificate validation APIs will now attempt to use your configured OCSP Responder when validating certificates *issued* by this CA.
 
 ### Group Policy Configuration
 #### Root CA Certificate
