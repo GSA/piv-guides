@@ -144,7 +144,6 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
   > **Note:** This file is Privacy-Enhanced Mail (PEM)-encoded. You can open it in Microsoft Notepad and copy/paste the content<!-- Copy content from the file and paste into Notepad? (unclear) -->.
 
   4. After obtaining your new OCSP Responder certificate, ensure that it meets the requirements of an OCSP Responder certificate before proceeding.  It should include all of these details:
-
     1. OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage.
 	  * This *should* be marked **critical.**
 	
