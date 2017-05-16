@@ -277,15 +277,21 @@ Each CA must be individually and explicitly configured. In order to maximize loc
 
 ### Manually configure the Client
 
-To manually configure a locally trusted, OCSP Responder, use the **Certificates snap-in** in **MMC**. To begin, open MMC (i.e., mmc.exe) and add the Certificates snap-in for the **Certificates (Local Computer)**. </**STOPPED HERE**/>
+To manually configure a locally trusted, OCSP Responder, **use the ""MMC** **Certificates snap-in**.   
+
+  1. To begin, open MMC (i.e., mmc.exe).  At the screen's left-hand panel below **Console Root**, add the Certificates snap-in for the **Certificates (Local Computer)**. <!-- Right sequence? -->
 
 ![MMC Certificates Snap-In](../img/local-ocsp-client-1.png)
 
-  1.  Navigate to the **Certificate store** and the **CA certificate** for which you want to enable the locally trusted, OCSP Responder.  Then, right-click on the certificate and select **Properties**.
+  2.  Under **Intermediate Certification Authorities** and then select **Certificates.** 
+  
+  3. Next, at the right-hand panel, under **Issued To,** select the **CA certificate** that you want to associate with the locally trusted, OCSP Responder. <!-- Original had unclear meaning.  Grammar implied that the CA certificate is already active somehow and waiting for an operational item to be assigned to it.  Once assigned to the already active CA certificate, the OCSP Responder becomes "active." --> Then, right-click on the certificate and select **Properties** from the drop-down window.
+  
+  > The **Properties** window appears. </stopped here/>
 
 ![Select certificate properties in MMC](../img/local-ocsp-client-2.png)
 
-  2. Click on the **OCSP** tab, and then enter the **URL of your locally trusted, OCSP Responder**. 
+  4. Click on the **OCSP** tab, and then click on the **Add URL** button. In the text field, enter the **URL of your locally trusted, OCSP Responder**. 
 
 > <i class="icon-info"></i>  The Microsoft OCSP Responder adds "ocsp" to the URL, e.g. http://servername/ocsp
 
