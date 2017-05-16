@@ -145,8 +145,7 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
 
   4. After obtaining your new OCSP Responder certificate, ensure that it meets the requirements of an OCSP Responder certificate before proceeding.  It should include all of these details:
     1. OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage.
-	  * This *should* be marked **critical.**
-	
+      * This *should* be marked **critical.**
     2. The id-pkix-ocsp-nocheck (1.3.6.1.5.5.7.48.1.5) extension is present.
 	  * Including this extension prevents clients from checking the OCSP Responder certificates' revocation status.
 	
