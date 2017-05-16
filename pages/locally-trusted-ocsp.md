@@ -429,17 +429,19 @@ Below INF file is an example of the configuration file you can use to generate a
  - Ensure KeyLength is set in keeping with the CA key sizes for which you intend to provide OCSP responses
  - If you are using an HSM, the ProviderName will need to be modified appropriately per the HSM documentation
 
-Sample CaPolicy.inf :
+Sample INF file for generating the OCSP responder certificate Request:
 
 	[NewRequest]
-	Subject = "CN=Local OCSP Server,DC=agency,DC=local"
+	Subject = "CN=Local OCSP Server, DC=agency, DC=local"
 	PrivateKeyArchive = FALSE
+	Exportable = FALSE
 	UserProtected = FALSE
+	ProviderName = "Microsoft Software Key Storage Provider"
+	ProviderType = 1	
 	MachineKeySet = TRUE
-	ProviderName = "Microsoft Enhanced Cryptographic Provider v1.0"
 	UseExistingKeySet = FALSE
 	KeyLength = 2048
-	RequestType = PKCS10
+	RequestType = CMC
 	
 	[EnhancedKeyUsageExtension]
 	OID="1.3.6.1.5.5.7.3.9"
@@ -462,6 +464,8 @@ Sample CaPolicy.inf :
 ## Appendix 2 - Using Microsoft CA as the self signed root
 
 Prior to configuring Certificate Services and generating the new Root CA key pair, the below CaPolicy.inf file should be placed in %SYSTEMROOT%.  Below will create a self signing root certificate with a 2048 bit RSA key and a ten year validity period with OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension. 
+
+Sample CaPolicy.inf :
 
 	[Version]
 	Signature="$Windows NT$"
