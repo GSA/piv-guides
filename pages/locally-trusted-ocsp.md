@@ -269,11 +269,11 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
   9. Repeat this process for each CA that you want to add to the OCSP Responder.
 
-## Configure the Windows Client
+## Configure the Windows Client<!--Shouldn't this title just say Manually configure the Windows Client (subtitle just below)? Looks like a repeat of basically the same title. -->
 
 Each CA must be individually and explicitly configured. In order to maximize local availability, it important to configure all of the CAs in the certificate chain to your trusted root certificate(s). For example, additional CAs that must be configured to your trusted root certificate(s) could be a subset of the CAs that can verified by the Federal Common Policy CA. <!-- Will all users know what Federal Common Policy CA is?  (Also referred to as "COMMON"?) Will users of this guide ALL need to configure CAs that can be verified by FCPCA? Explain "maximize local availability"--of what? -->
 
-### Manually configure the Windows Client
+### Manually configure the Windows Client <!--There isn't an opposing title like Automatically configure the Windows Client.  If all related steps pertain to manual configuration, then delete this title and add *Manually* to the Heading 2 just above. -->
 
 To manually configure a locally trusted, OCSP Responder, **use the ""MMC** **Certificates snap-in**.   
 
@@ -361,7 +361,7 @@ You can also configure Microsoft Windows domain members using **group policy** f
 
 ![Locally Trusted OCSP Group Policy Configuration](../img/local-ocsp-group-policy-08.png)
 
-  7. Add the OCSP URL(s) as you did above in Steps 4-7 to manually configure the Windows Client [Manually configure the Windows Client Configuration](#Manual-Client-Configuration-1)
+  7. Add the OCSP URL(s) as you did above in Steps 4-7 to manually configure the Windows Client [Manually configure the Windows Client](#Manually-configure-the-Windows-Client-1)
 
 ## End-to-end testing
 
