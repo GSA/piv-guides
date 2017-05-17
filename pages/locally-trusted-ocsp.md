@@ -143,7 +143,7 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
   
   > **Note:** The certificate you receive will be Privacy-Enhanced Mail (PEM)-encoded. 
   
-  4. Open Microsoft Notepad. Then, copy, paste, and save the file to retain the certificate.<!-- Is this what you meant? Purpose to retain the certificate? -->.
+  4. Open Microsoft Notepad. <!-- Is this what you meant? Purpose to retain the certificate? -->Then, copy, paste, and save the file to retain the certificate..
 
   5. Verify that the new certificate meets all of the OCSP Responder requirements:
   > * OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage. <BR>
@@ -257,7 +257,9 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
 ![CRL not yet downloaded](../img/local-ocsp-crl-not-downloaded.png)
 
-  > After a few minutes, at the status panel window, right-click on **Array Configuration**, and select **Refresh**. <!-- How many minutes? How will they know when they should take these steps? -->This process will download the CRL.
+  > After a few minutes, right-click on **Array Configuration** at the status panel window, and select **Refresh**. <!-- How many minutes? How will they know when they should take these steps? -->
+  
+  > The downloaded CRL will appear in the _____ window.
 
 ![Refresh](../img/local-ocsp-cfg-refresh.png)
 
@@ -271,7 +273,7 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
 ## Configure the Windows Client<!--Shouldn't this title just say Manually configure the Windows Client (subtitle just below)? Looks like a repeat of basically the same title. -->
 
-Each CA must be individually and explicitly configured. In order to maximize local availability, it important to configure all of the CAs in the certificate chain to your trusted root certificate(s). For example, additional CAs that must be configured to your trusted root certificate(s) could be a subset of the CAs that can verified by the Federal Common Policy CA. <!-- Will all users know what Federal Common Policy CA is?  (Also referred to as "COMMON"?) Will users of this guide ALL need to configure CAs that can be verified by FCPCA? Explain "maximize local availability"--of what? -->
+You will need to configure each CA that you want to add to the OCSP Responder. <!-- Correct? -->In addition, to maximize local availability<!-- Explain "maximize local availability." -->, you will need to configure each CA in the certificate chain to your trusted root certificate(s) (for example, any CAs that can verified by the Federal Common Policy CA). <!-- This paragraphic was not close to plain language. Can you simplify? Will all users know what Federal Common Policy CA is?  (Also referred to as "COMMON"?) Will users of this guide ALL need to configure CAs that can be verified by FCPCA? -->
 
 ### Manually configure the Windows Client <!--There isn't an opposing title like Automatically configure the Windows Client.  If all related steps pertain to manual configuration, then delete this title and add *Manually* to the Heading 2 just above. -->
 
@@ -357,11 +359,11 @@ You can also configure Microsoft Windows domain members using **group policy** f
 
 ![Group Policy Certificate Import](../img/local-ocsp-group-policy-07.png)
 
-  6. To configure the locally trusted, OCSP Responder, right-click on the imported certificate and select **Properties**.<!-- At any time--always? --> 
+  6. To configure the locally trusted, OCSP Responder, <!-- at any time necessary? -->right-click on the imported certificate and select **Properties**. 
 
 ![Locally Trusted OCSP Group Policy Configuration](../img/local-ocsp-group-policy-08.png)
 
-  7. Add the OCSP URL(s) as you did above in Steps 4-7 to manually configure the Windows Client [Manually configure the Windows Client](#Manually-configure-the-Windows-Client-1)
+  7. Add the OCSP URL(s) as you did above in Steps 4-7 under [Manually configure the Windows Client](#Manually-configure-the-Windows-Client-1)
 
 ## End-to-end testing
 
