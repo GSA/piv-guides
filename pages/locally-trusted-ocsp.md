@@ -152,26 +152,26 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
       &mdash; This *should* be marked **critical.**
   > * The Subject Alternative Name *should* contain Domain Name Server (DNS) Name = OCSP Server DNS name.
 
-### Install OCSP Responder CA certificate  </CHECK THIS SECTION FOR EDITORIAL - DONE?/>
+### Install OCSP Responder CA certificate
 
-  1. Copy the new OCSP Responder certificate, as well as the issuing CA certificate (or chain), to the OCSP Responder server. 
-  2. If you have not already done so, install the issuing **CA Root certificate** in the **Computer Trust Root Certification Authorities store**. 
-  3. Use the following command to accept the OCSP Responder certificate:
+  1. Copy the new OCSP Responder certificate, as well as the issuing CA certificate (or chain), to the OCSP Responder server.<!-- How? -->
+  2. If you have not yet done so, install the issuing **Root CA certificate** <!-- How? Below the term, "Root CA," is used. Keep terms the same as much as possible. -->in the **Computer Trust Root Certification Authorities store**. 
+  3. Use the following command to accept <!-- Is this a "paste" function? Step 1 says "copy." I find the 3-step sequence confusing.  Can you add more info? -->the OCSP Responder certificate: 
 
 	certreq -accept <ocsp_responder_certificate_filename>.cer
 
   > When successful, _certreq_ will exit and provide no feedback.
 
-> <i class="icon-info"></i>  An error message stating: *Certificate Request Processor:  A certificate chain could not be built to a trusted root authority. 0x800b010a (-2146762486 CERT_E_CHAINING)* will indicate that the self-signed root (and intermediate CA certificates, if applicable) are not available or not in the correct certificate stores on the server. Ensure that the required CA certificates are imported into the correct **Computer account** stores. <!-- In Step 2 above, only *Computer* was italicized.  Is this related? -->
+> <i class="icon-info"></i>  An error message stating: **_Certificate Request Processor:  A certificate chain could not be built to a trusted root authority. 0x800b010a (-2146762486 CERT_E_CHAINING)_** will indicate that the self-signed root (and intermediate CA certificates, if applicable) are not available or not in the correct certificate stores on the server. Ensure that the required CA certificates are imported into the correct **Computer account** stores (i.e., certificate stores). <!-- Do you mean "certificate stores"? (Why are terms different? Best for user to keep them the same.) In Step 2 above, only *Computer* was italicized--related? -->
 
   4. To confirm that the certificate was properly imported, open the **Microsoft Management Console (MMC)** (i.e., **mmc.exe**), load the **Certificates snap-in**, and select the **Computer account** (i.e., stores). <!-- Correct?  Can't tell what the step sequence is from the screen capture. -->
-  5. From the left-hand-side panel, under the **Console Root** folder, click on **Certificates (Local Computer)** and then click on the **Personal** folder.  
+  5. From the left-hand panel, under the **Console Root** folder, click on **Certificates (Local Computer)** and then click on the **Personal** folder.  
   6. Click on the **Certificates** folder. Then, expand the **Personal/Certificates** tree on the right-hand-side of the window. 
-  7. Confirm that the newly accepted certificate is listed there.
+  7. Confirm that the newly accepted OCSP Responder certificate is listed there.
 
 ![Locate OCSP Responder Certificate in MMC](../img/local-ocsp-cfg-mmc.png)
 
-  8. Double-click on the certificate and confirm that it appears valid, lists *OCSP Signing* under _This certificate is intended for the following purpose(s)_, and indicates below that *You have a private key that corresponds to this certificate*. 
+  8. Double-click on the certificate. Confirm that it is valid<!-- Valid requires what? -->; lists *OCSP Signing* under _This certificate is intended for the following purpose(s)_; and indicates that *You have a private key that corresponds to this certificate*. 
   9. Close the certificate. <!-- How do you close it? -->
 
 ![Locate OCSP Responder Certificate in MMC](../img/local-ocsp-cfg-cert-key.png)
@@ -255,7 +255,7 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
 ![CRL not yet downloaded](../img/local-ocsp-crl-not-downloaded.png)
 
-  > After a few minutes, right-click on **Array Configuration** at the status panel window, and select **Refresh**. <!-- How many minutes? How will they know when they should take these steps? -->
+  > After a few minutes, right-click on **Array Configuration** at the status panel window, and select **Refresh**. <!-- How many minutes before clicking on Refresh? -->
   
   > The downloaded CRL will appear in the _____ window.
 
@@ -265,7 +265,7 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
 ![OCSP Revocation Configuration working correctly](../img/local-ocsp-cfg-working-correctly.png)
 
-  > If the error message appears: _The revocation provider failed with the current configuration. The object identifier does not represent a valid object. 0x800710d8 (WIN32: 4312 ERROR_OBJECT_NOT_FOUND), 0x800710d8_. This error usually indicates an incorrect CRL DP URL. <!-- What is "DP"? Don't remember that... -->
+  > If the error message appears: **_The revocation provider failed with the current configuration. The object identifier does not represent a valid object. 0x800710d8 (WIN32: 4312 ERROR_OBJECT_NOT_FOUND), 0x800710d8_**. This error indicates an incorrect CRL DP URL. <!-- What is "DP"? -->
 
   9. Repeat this process for each CA that you want to add to the OCSP Responder.
 
