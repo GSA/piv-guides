@@ -329,7 +329,7 @@ You can distribute the **locally trusted root CA** to Windows Clients using **gr
   
   > A dialog box will appear that states *The import was successful*.
 
-#### Locally trusted OCSP
+#### Configure a locally trusted OCSP
 
 You can also configure Microsoft Windows domain members using **group policy** functions. 
 
@@ -361,7 +361,7 @@ You can also configure Microsoft Windows domain members using **group policy** f
 
 ![Locally Trusted OCSP Group Policy Configuration](../img/local-ocsp-group-policy-08.png)
 
-  7. Add the OCSP URL(s) as you did above in </STOPPED HERE/> [Manual Client Configuration](#Manual-Client-Configuration-1)
+  7. Add the OCSP URL(s) as you did above in Steps 4-7 to manually configure the Windows Client [Manually configure the Windows Client Configuration](#Manual-Client-Configuration-1)
 
 ## End-to-end testing
 
