@@ -333,33 +333,35 @@ You can distribute the **locally trusted root CA** to Windows Clients using **gr
 
 You can also configure Microsoft Windows domain members using **group policy** functions. 
 
-  1. To do this, create or open the **group policy object** you want to use<!--From where? How do they know which one they want to use? Is any screen/menu function actually called Group Policy?-->, then navigate to:
+  1. To do this, first create or open the **group policy object** you want to use<!--From where? How do they know which one they want to use? Is any screen/menu function actually called Group Policy?-->, and then go to:
   
   > **Computer Configuration**/**Policies**/**Security Settings**/**Public Key Policies** 
   
   2. Next, select the **certificate store** that contains the **CA certificate for the locally trusted, OCSP Responder** from the drop-down menu. The certificate store is usually called the **Intermediate Certification Authorities**.
 
-  > A trust anchor, such as the self-signed Federal Common Policy CA, should already be configured<!--Meaning: already exists in the store?--> in the certification store<!--Used this term just above. Keep terminology the same.-->.
+  > In the certificate store, you should already see a CA, such as the self-signed Federal Common Policy CA<!-- What is the purpose of tellin the user about this? Used the term, "certificate store," just above. Keep terminology the same.-->.
 
-  3. Right-click on the certificate store name (i.e., usually the **Intermediate Certification Authorities**) and select **Import**.
+  3. Right-click on the certificate store name (e.g., **Intermediate Certification Authorities**) and select **Import**.
 
 ![Group Policy Certificate Store](../img/local-ocsp-group-policy-01.png)
 
   > The **Certificate Import Wizard** will appear.
   
-  4. Click on ***Next**. Browse to locate the CA certificate that you want to configure. </STOPPED HERE/>
+  4. Click on ***Next**, and then click on the CA certificate that you want to configure.
 
 ![Group Policy Certificate Import](../img/local-ocsp-group-policy-04.png)
 
-Click Next, then Next again, then Finish. A dialog should appear that states *The import was successful*.
+  5. Click on **Next** and then on **Next** again. Finally, click on **Finish**. 
+  
+    > A dialog will appear that states:  *The import was successful*.
 
 ![Group Policy Certificate Import](../img/local-ocsp-group-policy-07.png)
 
-Now, and at any future time, you can configure the locally trusted OCSP Responder by right clicking on the imported certificate row and selecting Properties.
+  6. To configure the locally trusted, OCSP Responder, right-click on the imported certificate and select **Properties**.<!-- At any time--always? --> 
 
 ![Locally Trusted OCSP Group Policy Configuration](../img/local-ocsp-group-policy-08.png)
 
-Add the OCSP URL(s) in the same manner described above in [Manual Client Configuration](#Manual-Client-Configuration-1)
+  7. Add the OCSP URL(s) as you did above in </STOPPED HERE/> [Manual Client Configuration](#Manual-Client-Configuration-1)
 
 ## End-to-end testing
 
