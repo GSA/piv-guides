@@ -66,7 +66,7 @@ Because of its limited (OCSP only), local-network-only scope, and special conten
 
 > In a hierarchical [PKI], the [**Root CA** is the CA] whose public key serves as the most trusted datum (i.e., the beginning of trust paths) for a security domain (NIST SP 800-32, CNSSI-4009).
 
-(The procedures below provide additional steps for installing and configuring this Root CA<!-- Which procedures specifically? -->, and Appendix 2 provides supplemental information [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1).)
+(The procedures below provide additional steps for installing and configuring this Root CA.<!-- Which procedures specifically? --> For additional information, see [Appendix 2 - Using Microsoft CA as the self signed root](#Appendix-2---Using-Microsoft-CA-as-the-self-signed-root-1).)
 
 #### Recommended: 
 
