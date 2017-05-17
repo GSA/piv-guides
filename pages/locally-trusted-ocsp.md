@@ -139,7 +139,7 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
 
   > This command should generate a new signing key and output a **signed certificate request** to **ocsp.req**.  
 
-  3. Deliver this request file to your CA<!--How do they deliver it--output to an application/system/e-mail? Sounds like delivering it to a person?--> and obtain your OCSP Responder certificate<!--How, in what form (e-mail?) will they obtain this certificate?-->. 
+  3. Deliver this request file to your CA<!--How do they deliver it--output to an application/system/e-mail?--> and obtain your OCSP Responder certificate<!--How, in what form (e-mail?) will they obtain this certificate?-->. 
   
   > **Note:** This file is Privacy-Enhanced Mail (PEM)-encoded. You can open it in Microsoft Notepad and copy/paste the content<!-- Copy content from the file and paste into Notepad? For what purpose? (unclear) -->.
 
