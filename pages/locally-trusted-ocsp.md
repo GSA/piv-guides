@@ -141,9 +141,11 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
 
   3. Deliver this request file to your CA and obtain your OCSP Responder certificate<!--How do they deliver it and in what form (e-mail?) will they obtain this certificate?-->. 
   
-  > **Note:** This file is Privacy-Enhanced Mail (PEM)-encoded. You can open it in Microsoft Notepad and copy/paste the content<!-- Copy content from the file and paste into Notepad? For what purpose? (unclear) -->.
+  > **Note:** The certificate you receive will be Privacy-Enhanced Mail (PEM)-encoded. 
+  
+  4. Open Microsoft Notepad. Then, copy, paste, and save the file to retain the certificate.<!-- Is this what you meant? Purpose to retain the certificate? -->.
 
-  4. After obtaining your new OCSP Responder certificate<!--How do they obtain it?-->, ensure that it meets the requirements of an OCSP Responder certificate before proceeding.  It should include all of these details:
+  5. Verify that the new certificate meets all of the OCSP Responder requirements:
   > * OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage. <BR>
       &mdash; This *should* be marked **critical.** <BR>
   > * The id-pkix-ocsp-nocheck (1.3.6.1.5.5.7.48.1.5) extension is present. <BR>
