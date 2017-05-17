@@ -293,21 +293,19 @@ To manually configure a locally trusted, OCSP Responder, **use the ""MMC** **Cer
 
   > The Microsoft <!-- The "Microsoft" OCSP Responder has not been mentioned before. Is it the same as the "OCSP Responder" or different? -->OCSP Responder adds **ocsp** to the URL, e.g., http://[servername]/ocsp.
 
-  5. Click on the adjacent **Add URL** button. 
+  5. Click on the **Add URL** button. 
 
 ![Add a custom OCSP URL](../img/local-ocsp-client-3.png)
-
-  > The URL appears in the text box list directly _below_ the **Add URL** button.  
   
-  6. Confirm that the URL appears in the list.
+  6. Confirm that the URL appears in the text box list.
 
 ![Custom OCSP URL added to certificate properties](../img/local-ocsp-client-4.png)
 
-  > By using the same window used in Steps 4-6, you can add and configure multiple OCSP Responder URLs. <!-- Will all of the OCSP Responders be activated by the same CA certificate or does each one require its own CA certificate? -->
+  > By using the same window used in Steps 4-6 above, you can add and configure multiple OCSP Responder URLs.
 
-  7. Click on **OK** when satisfied with all of the added OCSP Responders. 
+  7. Click on **OK** when satisfied with the added OCSP Responders. 
   
-  > All applications that use Windows certificate validation Application Programming Interfaces (APIs) will now attempt to use your configured OCSP Responder when validating certificates *issued* by this CA.
+  > Now, all applications that use Windows certificate validation Application Programming Interfaces (APIs) will use your configured OCSP Responder when validating certificates *issued* by this CA.
 
 ### Configure the Group Policy
 
@@ -367,15 +365,17 @@ You can also configure Microsoft Windows domain members using **group policy** f
 
 ### Windows Clients
 
-#### Prepare for testing
+#### Prepare for testing <!-- What is being tested? -->
 
-Testing is carried out using certutil.exe from the command prompt on a Windows client. For complete coverage, it is recommended that you test with all Windows versions that are expected to operate in your environment.
+From the Windows Client command line, use the **certutil.exe** to test all Windows versions that will operate in your local area network. <!-- Local area network for OCSP? --> 
 
-> <i class="icon-info"></i> If you are testing with Windows 10, you may receive "FAILED: 0x80092004 (-2146885628 CRYPT_E_NOT_FOUND)" in spite of of the certificate path apparently validating correctly. This appears to be a bug that affects certutil on Windows 10. If you experience this issue, it is recommended you test with an additional version of Windows. At the time this document was written, Windows 7 and 8.1 were confirmed to not have this issue.
+  > **Notes:**  
+  
+  >> If you are testing with Windows 10, an apparent bug with **certutil** may occur. If it does, you may receive this error: **_FAILED: 0x80092004 (-2146885628 CRYPT_E_NOT_FOUND)_**, even when a certificate path seems to validate correctly. If you experience this issue, we suggest that you test an another Windows version. As of May 2017, Windows 7 and 8.1 were confirmed to not have this issue.
 
-You will need to have a copy of certificates **issued by** the CAs you have configured in order to test your configuration. The test will build a complete certificate path to a trusted root; it is not necessary to test the intermediate CA certificates independently if they are part of a path you test.
+  >> If you are using **group policy** to push locally trusted, OCSP settings to Windows Clients, ensure that the updated policy has been applied to each client.
 
-> <i class="icon-info"></i>  If you are using group policy to push locally trusted OCSP settings to clients, ensure the updated policy has been applied to the client
+Before you begin, be sure that you have a copy of all certificates **issued by** the CAs you have configured as OCSP Responders <!-- Meaning correct? -->. These tests will build a complete certificate path to a trusted root<!-- The Root CA? -->; it is not necessary to test the intermediate CA certificates independently if they are part of your tested path.
 
 Before you test, enable CAPI2 logging on your client. Open the Event Viewer MMC Snap-in and Navigate to **Applications and Services Logs** / **Microsoft** / **Windows** / **CAPI2** / **Operational**. With "Operational" selected, click "Enable Log" in the Actions pane. Given the small 1 MB default, you may wish to increase the size of this log by by clicking Properties and updating the maximum log size value.
 
