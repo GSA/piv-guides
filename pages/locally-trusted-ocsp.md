@@ -375,21 +375,21 @@ From the Windows Client command line, you will use the **certutil.exe** to test 
 
   * If you are using **group policy** to push locally trusted, OCSP settings to Windows Clients, ensure that the updated policy has been applied to each client.
 
-  * Be sure that you have copies of all certificates that were **issued by** the CAs you configured as OCSP Responders <!-- Meaning correct? -->. These tests will build a complete certificate path to a trusted root<!-- The Root CA? -->; it is not necessary to test the intermediate CA certificates independently if they are part of your tested path.
+  * Ensure that you have copies of all certificates that were **issued by** the CAs you configured as OCSP Responders <!-- Meaning correct? -->. These tests will build a complete certificate path to a trusted root<!-- The Root CA? -->; it is not necessary to test the intermediate CA certificates independently if they are part of your tested path.
 
-  1. Enable CAPI2 login <!-- Said "logging"...? --> on your client<!-- Above says "Windows Clients" -->. Open the **MMC Event Viewer snap-in**. Go to:
+  1. Enable the Microsoft CAPI2 login <!-- Said "logging"...? -->on your Client. <!-- How does the user do this? -->Open the **MMC Event Viewer snap-in**, and then go to:
   
   > **Applications and Services Logs**/**Microsoft**/**Windows**/**CAPI2**/**Operational** 
   
   2. With "Operational" selected, click on **Enable Log** in the **Actions** pane<!--Left-hand panel? No screen capture to verify. -->. 
   
-  3. To increase the log size, click on **Properties** and set the maximum log size. (The default is 1 MB.)
+  3. The default log size is 1 MB. To increase the log size, click on **Properties**, and set desired log size (maximum recommended). <!-- Moved the "Disable Log" to end of testing, since it should be done after user completes testing. -->
 
-  4. After your testing is complete, click on **Disable Log** in the **Actions** pane. (Diagnostic logging reduces performance.) 
+</ STOPPED HERE/> 
  
-  5. Before you begin, install the intermediate CA certificates (if they are not already in the **Intermediate Certification Authorities store**) required to validate the test certificates. 
+  5. Before you begin, install the required intermediate CA certificates (if they are not already in the **Intermediate Certification Authorities store**) to validate the test certificates. 
   
-  6. Double-click on each certificate to verify that each test certificate path is built. Confirming that each one is valid and has a certificate path in the **Certification Path tab**.  </STOPPED HERE/>
+  6. Double-click on each certificate to verify that each test certificate path is built. Confirming that each one is valid and has a certificate path in the **Certification Path tab**. 
 
 > <i class="icon-info"></i>  The additional events that appear when following AIA URLs to retrieve Intermediate CA certificates are not included or addressed below.
 
@@ -448,7 +448,9 @@ Examine each instance of event 41 in the log. If **UserData** / **CertVerifyRevo
 
 > <i class="icon-info"></i>  The URL that appears in the event log contains the base 64 encoded OCSP Request.
 
-### Problems and solutions <!-- Troubleshoot problems? -->
+  XXX. <!-- This action implies that user is nearly done with testing. -->After you have completed your testing, we recommend that you disable the log, because the log degrades preformance. To do this, click on **Disable Log** in the **Actions** pane. 
+
+### Problems and solutions <!-- Troubleshooting...? -->
 
 The table below lists some event log errors you may encounter and their possible causes.
 
