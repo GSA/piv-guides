@@ -1,28 +1,29 @@
 ---
 layout: default
-title: How do I generate and install Domain Controller certificates?
+title: Local Certification Authority
 collection: networkconfig
 permalink: networkconfig/2b_domaincontrollers/
 ---
-# How do I generate and install Domain Controller certificates?
+NEED INTRO
 
-To use smartcards and PIV credentials for network authentication, all Domain Controllers must have Domain Controller authentication certificates.
-
-## Issuing Domain Controller certificates
-
-Each U.S. Federal Government's Civilian agency has information-security policies that guide its decision-making about whether its Domain Controller's <!-- More than one DC? More than one certificate possible? -->certificate should be issued by the agency's local enterprise Certificate Authority (CA) or whether a Federal Public Key Infrastructure (FPKI)-managed and certified CA should issue it. Providing a common guide and recommendation is challenging, as each agency should follow its own policies; however, we do not recommend that agencies set up a local enterprise CA just to issue Domain Controller certificates. The best option is to collaborate with your agency's Chief Information Security Officer (CISO) (or the Information Security Office), who can give you definitive direction and has oversight for managing CAs and ensuring that security protections are in place.
-
-## Generate and install Domain Controller certificate
 
 _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a Domain Controller certificate to the Domain Controller server. The server must have a certificate installed with the appropriate fields/values as a prerequisite to enabling authorized users with PIV credentials (i.e., PIV cards) to log into domain-connected devices._
 
-  > **Note:** These procedures are accurate for using Microsoft 2012 Server, Standard Edition, for CA and Domain Controller servers (as of March 2017).
+{% include alert-info.html content="These procedures are accurate for using Microsoft 2012 Server, Standard Edition, for CA and Domain Controller servers (as of March 2017" %}
+
+LIST OUT all sub-sections and links here
+
 
 ### Prerequisite
 
-  * The server that hosts the CA must be on the domain
+  * The server that hosts the CA must be joined to the domain
+  * The CA should never reside on the same server(s) that are acting as Domain Controller(s)
+  * You must be an Enterprise Administrator in the domain to perform these steps
 
-### Install CA role
+## Install CA role
+
+replace the clicks etc with simple ->
+
 
   1. Log into the **CA server** as a member of the **Enterprise Administrators** group.
   2. Open the **Server Manager**.
@@ -43,14 +44,12 @@ _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a D
      7. Validity Period: **_6 years_** 
      8. Certificate Database: **_&lt;your preference&gt;_** 
 
-## Configure CA template for Domain Controller
-
-  > **Note:** Certificate templates are available on enterprise CAs.
+## Configure Certificate template for Domain Controller
 
   1. Log into the CA server as a member of the **Enterprise Administrators** group.
   2. Open the certificate template's **MMC snap-in** (i.e., **certtmpl.msc**). 
   3. Right-click on the **Domain Controller Authentication** template, and then click on **Duplicate Template**.
-  4. Under the **Compatibility** tab, modify the **Compatibility Settings** for both the _CA_ and _certificate recipients_ to the highest version compatibility as possible (e.g., **Windows Server 2012 R2** or **Windows 7 2008 R2**).
+  4. Under the **Compatibility** tab, modify the **Compatibility Settings** for both the _CA_ and _certificate recipients_ to the highest version compatibility as possible (e.g., **Windows Server 2012 R2** or **Windows 2008 R2**).
   5. Under the **General** tab, we recommend the following settings:
      1. Template Name:  rename to:  **_&lt;Your organization&gt; - Domain Controller Authentication_**.
      2. Validity Period:  **_3 years_**.
@@ -64,9 +63,9 @@ _**Use Case:** We would like to use a local enterprise Microsoft CA to issue a D
  10. In the **console tree**, right-click on **Certificate Templates** and click on **New**. Then, click on **Certificate Template To Issue**.
  11. Select and enable the **_certificate template_** that was created, and then click on **OK**
 
-## Auto-enroll Domain Controller certificate using Group Policy Object (GPO)**
+## Auto-enroll Domain Controllers using Group Policy Object (GPO)**
 
-  1. Log into the **Domain Controller server** as a member of the **Enterprise Administrators** group.
+  1. Log into a **Domain Controller server** as a member of the **Enterprise Administrators** group.
   2. Open the **GPMC** (i.e. **gpmc.msc** ).
   3. Within the appropriate **GPO**, navigate to **_Computer Configuration\Policies\Windows Settings\Security Settings\Public Key Policies\**_
   4. Configure **Certificate Services Client – Auto-Enrollment** with the following options:
