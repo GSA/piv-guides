@@ -162,7 +162,7 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
 
   > When successful, _certreq_ will exit and provide no feedback.
 
-> <i class="icon-info"></i>  An error message stating: **_Certificate Request Processor:  A certificate chain could not be built to a trusted root authority. 0x800b010a (-2146762486 CERT_E_CHAINING)_** will indicate that the self-signed root (and intermediate CA certificates, if applicable) are not available or not in the correct certificate stores on the server. Ensure that the required CA certificates are imported into the correct **Computer account** stores (i.e., certificate stores). <!-- Do you mean "certificate stores"? (Why are terms different? Best for user to keep them the same.) In Step 2 above, only *Computer* was italicized--related? -->
+> <i class="icon-info"></i>  An error message stating: **_Certificate Request Processor:  A certificate chain could not be built to a trusted root authority. 0x800b010a (-2146762486 CERT_E_CHAINING)_** will indicate that the self-signed root (and intermediate CA certificates, if applicable) are not available or not in the correct certificate stores on the server. Ensure that the required CA certificates are imported into the correct **Computer account** stores (i.e., certificate stores). 
 
   4. To confirm that the certificate was properly imported, open the **Microsoft Management Console (MMC)** (i.e., **mmc.exe**), load the **Certificates snap-in**, and select the **Computer account** (i.e., stores). <!-- Correct?  Can't tell what the step sequence is from the screen capture. -->
   5. From the left-hand panel, under the **Console Root** folder, click on **Certificates (Local Computer)** and then click on the **Personal** folder.  
