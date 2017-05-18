@@ -367,21 +367,29 @@ You can also configure Microsoft Windows domain members using **group policy** f
 
 #### Prepare for testing <!-- What is being tested? -->
 
-From the Windows Client command line, use the **certutil.exe** to test all Windows versions that will operate in your local area network. <!-- Local area network for OCSP? --> 
+From the Windows Client command line, you will use the **certutil.exe** to test all Windows versions that will operate in your local area network. <!-- Local area network for OCSP? --> 
 
-  > **Notes:**  
+##### Before you begin  
   
-  >> If you are testing with Windows 10, an apparent bug with **certutil** may occur. If it does, you may receive this error: **_FAILED: 0x80092004 (-2146885628 CRYPT_E_NOT_FOUND)_**, even when a certificate path seems to validate correctly. If you experience this issue, we suggest that you test an another Windows version. As of May 2017, Windows 7 and 8.1 were confirmed to not have this issue.
+  * If you are testing with Windows 10, an apparent bug with **certutil** may occur. If it does, you will see this error: **_FAILED: 0x80092004 (-2146885628 CRYPT_E_NOT_FOUND)_**, even when a certificate path seems to validate correctly. If you see this error, we suggest testing other Windows versions. As of May 2017, Windows 7 and 8.1 do **not** have this issue.
 
-  >> If you are using **group policy** to push locally trusted, OCSP settings to Windows Clients, ensure that the updated policy has been applied to each client.
+  * If you are using **group policy** to push locally trusted, OCSP settings to Windows Clients, ensure that the updated policy has been applied to each client.
 
-Before you begin, be sure that you have a copy of all certificates **issued by** the CAs you have configured as OCSP Responders <!-- Meaning correct? -->. These tests will build a complete certificate path to a trusted root<!-- The Root CA? -->; it is not necessary to test the intermediate CA certificates independently if they are part of your tested path.
+  * Be sure that you have copies of all certificates that were **issued by** the CAs you configured as OCSP Responders <!-- Meaning correct? -->. These tests will build a complete certificate path to a trusted root<!-- The Root CA? -->; it is not necessary to test the intermediate CA certificates independently if they are part of your tested path.
 
-Before you test, enable CAPI2 logging on your client. Open the Event Viewer MMC Snap-in and Navigate to **Applications and Services Logs** / **Microsoft** / **Windows** / **CAPI2** / **Operational**. With "Operational" selected, click "Enable Log" in the Actions pane. Given the small 1 MB default, you may wish to increase the size of this log by by clicking Properties and updating the maximum log size value.
+  1. Enable CAPI2 login <!-- Said "logging"...? --> on your client<!-- Above says "Windows Clients" -->. Open the **MMC Event Viewer snap-in**. Go to:
+  
+  > **Applications and Services Logs**/**Microsoft**/**Windows**/**CAPI2**/**Operational** 
+  
+  2. With "Operational" selected, click on **Enable Log** in the **Actions** pane<!--Left-hand panel? No screen capture to verify. -->. 
+  
+  3. To increase the log size, click on **Properties** and set the maximum log size. (The default is 1 MB.)
 
-> <i class="icon-info"></i> Diagnostic logging has a negative performance impact. Disable this log by clicking "Disable Log" in the Actions pane after you've completed testing. 
+  4. After your testing is complete, click on **Disable Log** in the **Actions** pane. (Diagnostic logging reduces performance.) 
  
-If there are intermediate CA certificates required to validate each of your test certificates that are not present in the *Intermediate Certification Authorities* store, it is recommended that you install them before testing to reduce the number of log events generated during testing. Verify each of the test certificate paths can be built by double clicking each certificate and confirming it appears valid and has a certificate path in the Certification Path tab.
+  5. Before you begin, install the intermediate CA certificates (if they are not already in the **Intermediate Certification Authorities store**) required to validate the test certificates. 
+  
+  6. Double-click on each certificate to verify that each test certificate path is built. Confirming that each one is valid and has a certificate path in the **Certification Path tab**.  </STOPPED HERE/>
 
 > <i class="icon-info"></i>  The additional events that appear when following AIA URLs to retrieve Intermediate CA certificates are not included or addressed below.
 
