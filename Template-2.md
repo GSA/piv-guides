@@ -6,7 +6,7 @@ permalink: /template/
 
 This page serves as the template for creating your own guidance document to add to one of the FICAM Guides. This template tells you: 
 
-  1. How to create a new file (also called a _page_.)
+  1. How to create a new file (also called a _page_).
   2. _how to use this template_ 
   2. A basic outline for a guide.
   3. A few tips on style and writing. 
