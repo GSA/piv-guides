@@ -441,8 +441,8 @@ Follow these steps to prepare for your tests: <!--Overall purpose of these steps
 | **Event ID** | **Task Category** | **Details** |
 | :----------: | :---------------- | :---------- |
 | 40 | Verify Revocation |  |
-| 52 | Retrieve Object From Network |  |
-| 53 | Retrieve Object From Network | **UserData** / **CryptRetrieveObjectByUrlWire** / **URL** contains a URL for the OCSP Responder |
+| 52 | Retrieve Object from Network |  |
+| 53 | Retrieve Object from Network | **UserData** / **CryptRetrieveObjectByUrlWire** / **URL** contains a URL for the OCSP Responder |
 | 10 | Build Chain |  |
 | 11 | Build Chain | **UserData** / **CertGetCertificateChain** / **Certificate** [**subjectName**] displays the common name of your OCSP Responder |
 | 30 | Verify Chain Policy |  |
