@@ -17,29 +17,27 @@ To create your own page using the GitHub website, do this:
   1. Click on the [Check this--]**_create new file_** button at the top right-hand-side of the Branch directory **Check this.  Use screen capture?**. 
   > At the top **left-hand-side** [**check this**] of the Branch directory there will be a box that says **_name your file_**.
   2. Give the new file a name and add the extension, **.md**. (This means that the file type will be "Markdown").
-  3. Copy the content from this Template.md file and paste it into your new page. 
-  4. Change **Guidance Document Template** to your new page's title and **permalink** at the top, left-hand-side of the file (between the dashed lines [**---**]).  
+  3. Copy the content from this _Template.md_ file and paste it into your new file. 
+  4. Change **Guidance Document Template** to your new file's title and **permalink** at the top, left-hand-side of the file (between the dashed lines [**---**]).  
   > The **permalink** should be a short version of the new file name (for example, **template** for **Guidance Document Template**). The **title** should be what you want to appear at the top of the website page, and the **permalink** text should be in the format: **/mypage/**, instead of mypage.md.
 
 # Basic Outline 
 
-The following is an outline you can use as a starting point. In Markdown, the **#** symbol is used to denote and format headers (for example, **#** denotes a **Heading 1**, **##** denotes a **Heading 2**, and so on).  (Please see the _Markdown Style Sheet_ given below for more details on Markdown formatting.)
-
-<!--- For example, this code denotes a comment, and information written inside of it will not appear on the website but can be used as a reference for others viewing the file. -->
+The outline gives you a starting point for creating your guide. 
 
 ## Overview
 
 This text should give a brief overview of what content is contained within the guidance document. It may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
 
-## Assumptions
+## Assumptions _/Prerequisites/Required Hardware and Software_
 
-  * This text will be a bullet explaining a precondition or assumption before the user begins to follow the steps outlined in this document
+  * This text in this section will be a bullet list explaining a precondition or assumption before the user begins to follow the steps outlined in this document
   * The asterisk symbol denotes a bulleted item, and an indented asterisk denotes a second level bullet
     * This is a second-level bullet
 
 ## Before you get started
 
-This text will provide any steps or information that a user will need to take before starting a set of procedures. For example, you can use this section to provide prerequisite information the user needs to know, such as required hardware and software versions and configuration information.
+This text in this section will provide any steps or information that a user will need to take before starting a set of procedures. For example, you can use this section to provide prerequisite information the user needs to know, such as required hardware and software versions and configuration information.
 
 reference information that may be needed to complete the steps outlined in the guide.
 
@@ -56,6 +54,9 @@ reference information that may be needed to complete the steps outlined in the g
   
 
 
+In Markdown, the **#** symbol is used to denote and format headers (for example, **#** denotes a **Heading 1**, **##** denotes a **Heading 2**, and so on).  (Please see the _Markdown Style Sheet_ given below for more details on Markdown formatting.)
+
+<!--- For example, this code denotes a comment, and information written inside of it will not appear on the website but can be used as a reference for others viewing the file. -->
 > This text will appear as a 'warning flag' on the website, which is a yellow banner. (The ">" symbol and the line directly underneath this body of text create the formatting for this flag.) Warning flags can be used for notifications such as notifying a user that they should skip a certain procedure.
 {:class="warning"}
 
