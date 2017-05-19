@@ -420,6 +420,7 @@ Follow these steps to prepare for your tests: <!--Overall purpose of these steps
     Verified Application Policies: All
     Cert is a CA certificate
     Leaf certificate revocation check passed
+
     CertUtil: -verify command completed successfully
 
   > If the validation fails, you will see the message: **CertUtil: -verify command FAILED**, along with an error code. It can sometimes be difficult to ascertain what went wrong from the **certutil** output; however, the CAPI2 log contains much more detail. The [Common Problems and Solutions](Common-Problems-and-Solutions-1)<!--What "Troubleshooting" as alternate title?--> section may help you diagnose and correct problems.
@@ -509,6 +510,7 @@ Sample INF file for generating the OCSP Responder certificate request:
 	OID = 1.3.6.1.5.5.7.3.9
 
 
+
 ## Appendix 2&mdash;Using Microsoft CA as the self-signed root
 
 Prior to configuring Certificate Services and generating a new Root CA key pair, place the **CaPolicy.inf** file (as below) in **%SYSTEMROOT%**.  This will create a self-signing, root certificate with a 2048-bit RSA key and a 10-year validity period with **OCSP Signing (1.3.6.1.5.5.7.3.9)** in the **Extended Key Usage** extension. 
@@ -543,9 +545,11 @@ Prior to configuring Certificate Services and generating a new Root CA key pair,
 	PathLength=0
 	Critical=True
 
+
 > <i class="icon-info"></i>  When configuring a new CA, the **Setup Wizard**<!--Name of Setup Wizard?--> may default to using 2048-bit RSA with SHA-1. At a minimum, change this setting to 2048-bit RSA with SHA-256.
 
   > Prior to issuing OCSP Responder certificates, you must enable the **OCSP-No-Check** extension using the following commands:
+
 
 	certutil -v -setreg policy\EnableRequestExtensionList +1.3.6.1.5.5.7.48.1.5
 	-or-
@@ -554,4 +558,6 @@ Prior to configuring Certificate Services and generating a new Root CA key pair,
 	net stop certsvc
 	net start certsvc
 
+
 If the new CA is dedicated to issuing OCSP Responder certificates, you may want to disable the **CDP** and **AIA** extensions inside the **Certification Authority MMC snap-in** to improve efficiency. <!--Efficiency related to what?-->If so, simply uncheck the checkboxes for the **"Include in the CDP/AIA extension of issued certificates"** for each URL in the **Extensions** tab. (These extensions are not needed by the OCSP Clients.)
+
