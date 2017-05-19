@@ -403,9 +403,9 @@ Optionally, you may want to isolate the test Client from the Internet. We highly
   
   2. Click on **Clear Log** in the **Actions** pane.
 
-  3. To clear all of the cached certificates, CRLs, and OCSP responses, open a command prompt and enter the following command, replacing "certificate.cer" with the path and file name of a certificate:
+  3. To clear all of the cached certificates, CRLs, and OCSP responses, open a command prompt and enter the following command, replacing "certificate.cer" with the path and file name of a certificate:<!--Sorry, I probably broke your special code for the command line entries!-->
 
-  > **certutil -URLcache * delete**
+    ```**certutil -URLcache * delete**
 
   4. To generate detailed output about the content of each certificate in the certificate path (concluding with whether or not the certificate path was successfully validated), enter the following command:     
     
