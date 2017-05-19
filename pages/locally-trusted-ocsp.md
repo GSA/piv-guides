@@ -461,24 +461,24 @@ The table below lists some event log errors you could encounter, their possible 
 
 | **Error Event ID** | **Task Category** | **Details Contain** | **Possible Cause(s)**
 | :----: | :----------------------- | :---------------------- | :------ |
-| 11 | Build Chain | A certificate chain could not be built to a trusted root authority | If this error is preceded by event sequence 40/52/53/10, verify installation of the locally trusted, OCSP Root CA certificate.<br/>&nbsp;&nbsp;&nbsp;&nbsp;*- or -*<br/>If this error appears immediately following the first event 10, a path could not be built for the certificate you are attempting to verify. Ensure that all required intermediate CA certificates are available and that the necessary root is installed.|
-| 42 | Reject Revocation Information | CertRejectedRevocationInfo - OCSPResponse \[url] *\[your local OCSP Responder]* and Actions \[name] **CheckTimeValidity** | The OCSP Responder system clock is incorrect<br/>&nbsp;&nbsp;&nbsp;&nbsp;*- or -*<br/>An expired CRL is being used by the OCSP Responder. Confirm the "Refresh CRLs based on their validity periods" is NOT enabled in the Provider properties; configure a refresh interval instead. |
+| 11 | Build Chain | A certificate chain could not be built to a trusted root authority. | If this error is preceded by event sequence 40/52/53/10, verify installation of the locally trusted, OCSP Root CA certificate.<br/>&nbsp;&nbsp;&nbsp;&nbsp;*- or -*<br/>If this error appears immediately following the first event 10, a path could not be built for the certificate you are attempting to verify. Ensure that all required intermediate CA certificates are available and that the necessary root is installed.|
+| 42 | Reject Revocation Information | CertRejectedRevocationInfo - OCSPResponse \[url] *\[your local OCSP Responder]* and Actions \[name] **CheckTimeValidity** | The OCSP Responder system clock is incorrect.<br/>&nbsp;&nbsp;&nbsp;&nbsp;*- or -*<br/>An expired CRL is being used by the OCSP Responder. Confirm that the "Refresh CRLs based on their validity periods" is NOT enabled in the Provider properties; configure a refresh interval instead. |
 | 42 | Reject Revocation Information | CertRejectedRevocationInfo - OCSPResponse \[url] *\[your local OCSP Responder]* and Actions [name] **CheckResponseStatus** | The OCSP Responder returned "Not Authorized" because it has not been configured to respond for this CA. You will see this error if you configure the Revocation Source for an issuer without adding the corresponding configuration to the OCSP Responder. |
-| 53 | Retrieve Object From Network | CryptRetrieveObjectByUrlWire - URL *\[Your OCSP Responder]* | OCSP Responder is stopped, server is offline, or server is unreachable |
-| 53 | Retrieve Object From Network | CryptRetrieveObjectByUrlWire - URL *\[CRL or OCSP other than your local OCSP Responder]* | Unless preceded by the Error Event 53 described in the previous row, you should not see this error. If this occurs, confirm the Revocation Sources are configured for the Issuing CA. |
+| 53 | Retrieve Object from Network | CryptRetrieveObjectByUrlWire - URL *\[Your OCSP Responder]* | OCSP Responder is stopped, server is offline, or server is unreachable. |
+| 53 | Retrieve Object from Network | CryptRetrieveObjectByUrlWire - URL *\[CRL or OCSP other than your local OCSP Responder]* | Unless preceded by the Error Event 53 described in the previous row, you should not see this error. If this occurs, confirm the Revocation Sources are configured for the Issuing CA. |
 
-If the above table doesn't lead you to a solution, the Microsoft Tech Net article [Troubleshooting PKI Problems on Windows Vista](https://technet.microsoft.com/en-us/library/cc749296(v=ws.10).aspx) may be helpful. The article has proven to be very useful with everything from Windows Vista to Windows 10 and Server 2012 R2.
+  > If the above table doesn't lead you to a solution, the Microsoft TechNet article: [Troubleshooting PKI Problems on Windows Vista](https://technet.microsoft.com/en-us/library/cc749296(v=ws.10).aspx) may help. (This article has proven to be useful with everything from Windows Vista to Windows 10 and Server 2012 R2.)
 
 ## Appendix 1&mdash;Sample OCSP INF file
 
-Below INF file is an example of the configuration file you can use to generate a new certificate signing request for your OCSP Responder.
+The INF file below is a configuration file example that you can use to generate a new certificate-signing request for the OCSP Responder.
 
- - Customize the Subject field in keeping with your Issuing CAs name
+ - Customize the Subject field in accordance with your Issuing CAs name
 	 - The example below could be submitted to CA "CN=OCSP Issuing CA,DC=agency,DC=local"
- - Ensure KeyLength is set in keeping with the CA key sizes for which you intend to provide OCSP responses
- - If you are using an HSM, the ProviderName will need to be modified appropriately per the HSM documentation
+ - Ensure KeyLength is set in accordance with the CA key sizes for which you intend to provide OCSP responses
+ - If you are using an HSM, you will need to modify the ProviderName, per the HSM documentation
 
-Sample INF file for generating the OCSP responder certificate Request:
+Sample INF file for generating the OCSP Responder certificate request:
 
 	[NewRequest]
 	Subject = "CN=Local OCSP Server, DC=agency, DC=local"
@@ -512,9 +512,9 @@ Sample INF file for generating the OCSP responder certificate Request:
 
 ## Appendix 2&mdash;Using Microsoft CA as the self-signed root
 
-Prior to configuring Certificate Services and generating the new Root CA key pair, the below CaPolicy.inf file should be placed in %SYSTEMROOT%.  Below will create a self signing root certificate with a 2048 bit RSA key and a ten year validity period with OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension. 
+Prior to configuring Certificate Services and generating a new Root CA key pair, place the **CaPolicy.inf** file (as below) in **%SYSTEMROOT%**.  This will create a self-signing, root certificate with a 2048-bit RSA key and a 10-year validity period with **OCSP Signing (1.3.6.1.5.5.7.3.9)** in the **Extended Key Usage** extension. 
 
-Sample CaPolicy.inf :
+  > Sample CaPolicy.inf :
 
 	[Version]
 	Signature="$Windows NT$"
@@ -544,9 +544,9 @@ Sample CaPolicy.inf :
 	PathLength=0
 	Critical=True
 
-> <i class="icon-info"></i>  When configuring a new CA, the setup wizard may default to using 2048 bit RSA with SHA1. At a minimum, this should be changed to 2048 bit RSA with SHA256.
+> <i class="icon-info"></i>  When configuring a new CA, the **Setup Wizard**<!--Name of Setup Wizard?--> may default to using 2048-bit RSA with SHA-1. At a minimum, change this setting to 2048-bit RSA with SHA-256.
 
-Prior to issuing OCSP Responder Certificates, you must enable the OCSP-No-Check extension using the following commands:
+  > Prior to issuing OCSP Responder certificates, you must enable the **OCSP-No-Check** extension using the following commands:
 
 	certutil -v -setreg policy\EnableRequestExtensionList +1.3.6.1.5.5.7.48.1.5
 	-or-
@@ -555,4 +555,4 @@ Prior to issuing OCSP Responder Certificates, you must enable the OCSP-No-Check 
 	net stop certsvc
 	net start certsvc
 
-If this CA is dedicated to issuing OCSP Responder certificates, you may also wish to disable the CDP and AIA extensions inside the Certification Authority MMC Snap-In. Simply uncheck the "Include in the CDP/AIA extension of issued certificates" boxes for each URL in the Extensions tab. These extensions are not needed by the OCSP clients and removal improves efficiency.
+If the new CA is dedicated to issuing OCSP Responder certificates, you may want to disable the **CDP** and **AIA** extensions inside the **Certification Authority MMC snap-in** to improve efficiency. <!--Efficiency related to what?-->If so, simply uncheck the checkboxes for the **"Include in the CDP/AIA extension of issued certificates"** for each URL in the **Extensions** tab. (These extensions are not needed by the OCSP Clients.)
