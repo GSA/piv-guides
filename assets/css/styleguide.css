@@ -1492,7 +1492,9 @@ h1 + ul, h1 + ol, h2 + ul, h2 + ol, h3 + ul, h3 + ol, h4 + ul, h4 + ol, h5 + ul,
 
 ul, ol {
   list-style: none;
-  padding-left: 0;
+  /* padding-left: 0; JP 2-6-2017 */
+  margin: 0;
+  margin-bottom: 1em;
   display: table; }
   ul li:after, ol li:after {
     content: "";
@@ -1590,7 +1592,9 @@ h1 {
 
 h2 {
   font-size: 3rem;
-  font-weight: 700; }
+  font-weight: 700;
+  margin: 0;
+}
 
 h3 {
   font-size: 2rem;

@@ -8,7 +8,11 @@ description: PIV Guidance
 highlighter: rouge
 repo_url: https://github.com/GSA/piv-guides
 baseurl: '/piv-guides'
-branch: staging
+branch: federalist-pages
+# Federalist overwrites the site.branch value when deploying
+# the site.branch was used in dynamic link generation for objects like Edit Page
+# we want the dynamic links to send users to the staging branch.  Adding new site variable to ensure federalist doesn't overwrite.
+editbranch: staging
 
 #ficam_playbooks_url: /ficam-guides/
 
@@ -20,10 +24,10 @@ navbar:
   url: https://www.idmanagement.gov
 - title: Federal ICAM Architecture
   description: Federal ICAM Architecture
-  url: https://gsa.github.io/ficam-arch/
+  url: https://arch.idmanagement.gov
 #- title: PIV Guides
 # description: PIV Guides
-# url: https://gsa.github.io/piv-guides/
+# url: https://piv.idmanagement.gov
 #- title: Federal PKI Guides
 #  description: Federal PKI Guides
 #  url: https://github.com/gsa/fpki-guides
@@ -53,7 +57,7 @@ navigation:
   url: ''
   internal: true
   coll: false
-- text: Basics of a PIV Credential
+- text: Basics of a PIV
   url: elements
   internal: true
   coll: false
@@ -61,11 +65,11 @@ navigation:
   url: start
   internal: true
   coll: false
-- text: Details of a PIV Credential
+- text: Details of a PIV
   url: details
   internal: true
   coll: false
-- text: Identifiers
+- text: Identifiers in a PIV
   url: identifiers
   internal: true
   coll: false
