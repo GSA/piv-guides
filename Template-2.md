@@ -8,7 +8,7 @@ This page serves as the template for creating your own guidance document to add 
 
 To create your own page using the GitHub website, copy the content from this file, and paste it into a new file. Use these steps to create the file: 
 
-  1. Click on the **create new file** button at the top of the pages folder. 
+  1. Click on the **create new file** button at the top of the Branch folder. 
   2. Give the new file a name and add the extension, **.md**. (At the top of the page there will be a box that says **name your file**.) 
   3. Change the **title** and **permalink** at the top, left-hand-side of the file where you see **---**.  
   > The **permalink** should be a short version of the new file name (for example, **template** for **Guidance Document Template**). The **title** should be what you want to appear at the top of the website page, and the **permalink** text should be in the format: **/mypage/**, instead of mypage.md.
