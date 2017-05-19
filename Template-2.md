@@ -4,7 +4,13 @@ title: Guidance Document Template
 permalink: /template/
 ---
 
-This page serves as the template for creating your own guidance document to add to one of the FICAM Guides.
+This page serves as the template for creating your own guidance document to add to one of the FICAM Guides. This template explains: 
+
+  1. How to create a new file.
+  2. _how to use this template_ 
+  2. A basic outline for a guide.
+  3. A few tips on style and writing. 
+  4. A Markdown style sheet. (All GitHub pages use the Markdown tool to create and format text.)  
 
 To create your own page using the GitHub website, copy the content from this file, and paste it into a new file. Use these steps to create the file: 
 
@@ -13,13 +19,6 @@ To create your own page using the GitHub website, copy the content from this fil
   2. Give the new file a name and add the extension, **.md**. (This means that the file type is "Markdown").  
   3. Change the **title** and **permalink** at the top, left-hand-side of the file (between the dashed lines [**---**]).  
   > The **permalink** should be a short version of the new file name (for example, **template** for **Guidance Document Template**). The **title** should be what you want to appear at the top of the website page, and the **permalink** text should be in the format: **/mypage/**, instead of mypage.md.
-
-This template explains: 
-
-  1. _how to use this template_ 
-  2. A basic outline for a guide.
-  3. A few tips on style and writing. 
-  4. A Markdown style sheet. (All GitHub pages use the Markdown tool to create and format text.)  
 
 # Basic Outline 
 
