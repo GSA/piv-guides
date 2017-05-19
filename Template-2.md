@@ -8,27 +8,28 @@ This page serves as the template for creating your own guidance document to add 
 
 To create your own page using the GitHub website, copy the content from this file, and paste it into a new file. Use these steps to create the file: 
 
-  1. Click on the **create new file** button at the top of the Branch folder. 
+  1. Click on the [Check this--]**create new file** button at the top of the Branch folder. 
   2. Give the new file a name and add the extension, **.md**. (At the top of the page there will be a box that says **name your file**.) 
   3. Change the **title** and **permalink** at the top, left-hand-side of the file where you see **---**.  
   > The **permalink** should be a short version of the new file name (for example, **template** for **Guidance Document Template**). The **title** should be what you want to appear at the top of the website page, and the **permalink** text should be in the format: **/mypage/**, instead of mypage.md.
 
-In this template, you will see text that explains how to use this template and comments explaining the formats.
+This template explains how to use this template and suggested formats.
 
 <!--- For example, this code denotes a comment, and information written inside of it will not appear on the website but can be used as a reference for others viewing the file. -->
 
 
 <!--- The '#' symbol is used to denote headers, with different amounts aligning with different header styles. -->
 
-#### Overview
+## Overview
+
 This text should be populated with a brief overview of what content is contained within the guidance document, and may include information on the intended audience, the outcome of the guide, and any other information that would help the user to understand the guide.
 
-##### Assumptions
+## Assumptions
 *  This text will be a bullet explaining a precondition or assumption before the user begins to follow the steps outlined in this document
 *  The asterisk symbol denotes a bulleted item, and an indented asterisk denotes a second level bullet
     *  This is a second level bullet
 
-#### Before you get started
+## Before you get started
 This text will provide any reference information that may be needed to complete the steps outlined in the guide.
 
 *  This text names a link to a reference document [with the hyperlink text within brackets](and the actual URL within parentheses)
