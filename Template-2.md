@@ -13,7 +13,14 @@ To create your own page using the GitHub website, copy the content from this fil
   3. Change the **title** and **permalink** at the top, left-hand-side of the file where you see **---**.  
   > The **permalink** should be a short version of the new file name (for example, **template** for **Guidance Document Template**). The **title** should be what you want to appear at the top of the website page, and the **permalink** text should be in the format: **/mypage/**, instead of mypage.md.
 
-This template explains how to use this template and suggested formats.
+This template explains: 
+
+  1. _how to use this template_ 
+  2. A basic outline for a guidance document.
+  3. A few basic tips on style and writing. 
+  4. A Markdown style sheet. (All GitHub pages use Markdown formatting to create text.)  
+
+The following is an outline you can use as a starting point.
 
 <!--- For example, this code denotes a comment, and information written inside of it will not appear on the website but can be used as a reference for others viewing the file. -->
 
@@ -22,19 +29,21 @@ This template explains how to use this template and suggested formats.
 
 ## Overview
 
-This text should be populated with a brief overview of what content is contained within the guidance document, and may include information on the intended audience, the outcome of the guide, and any other information that would help the user to understand the guide.
+This text should give a brief overview of what content is contained within the guidance document. It may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
 
 ## Assumptions
-*  This text will be a bullet explaining a precondition or assumption before the user begins to follow the steps outlined in this document
-*  The asterisk symbol denotes a bulleted item, and an indented asterisk denotes a second level bullet
-    *  This is a second level bullet
+
+  * This text will be a bullet explaining a precondition or assumption before the user begins to follow the steps outlined in this document
+  * The asterisk symbol denotes a bulleted item, and an indented asterisk denotes a second level bullet
+    * This is a second-level bullet
 
 ## Before you get started
+
 This text will provide any reference information that may be needed to complete the steps outlined in the guide.
 
-*  This text names a link to a reference document [with the hyperlink text within brackets](and the actual URL within parentheses)
+  * This text gives a link to a reference document [with the hyperlink text within brackets](and the actual URL within parentheses)
 
-<!-- If you want to insert an image onto the page use the format below. The align feature at the end can either be "left", "center", or "right". -->
+  * If you want to insert an image onto a page use the format below. The **align** instruction at the end of the link can either be **"left"**, **"center"**, or **"right"**.
 
 ![Alt text for an image goes here]({{site.baseurl}}/folder that image is in/imagename.png){:align="right"}
 
