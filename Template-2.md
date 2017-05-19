@@ -22,12 +22,9 @@ This template explains:
 
 # Basic Outline 
 
-The following is an outline you can use as a starting point.
+The following is an outline you can use as a starting point. In Markdown, the **#** symbol is used to denote and format headers (for example, **#** denotes a **Heading 1**, **##** denotes a **Heading 2**, and so on).  (Please see the _Markdown Style Sheet_ given below for more details on Markdown formatting.)
 
 <!--- For example, this code denotes a comment, and information written inside of it will not appear on the website but can be used as a reference for others viewing the file. -->
-
-
-<!--- The '#' symbol is used to denote headers, with different amounts aligning with different header styles. -->
 
 ## Overview
 
@@ -41,7 +38,9 @@ This text should give a brief overview of what content is contained within the g
 
 ## Before you get started
 
-This text will provide any reference information that may be needed to complete the steps outlined in the guide.
+This text will provide any steps or information that a user will need to take before starting a set of procedures. For example, you can use this section to provide prerequisite information the user needs to know, such as required hardware and software versions and configuration information.
+
+reference information that may be needed to complete the steps outlined in the guide.
 
   * This text gives a link to a reference document [with the hyperlink text within brackets](and the actual URL within parentheses)
 
@@ -50,6 +49,11 @@ This text will provide any reference information that may be needed to complete 
 ![Alt text for an image goes here]({{site.baseurl}}/folder that image is in/imagename.png){:align="right"}
 
 ### 1. Title of Procedure 1
+
+  1. Step 1 of the procedure.
+  2. Step 2 of the procedure.
+  
+
 
 > This text will appear as a 'warning flag' on the website, which is a yellow banner. (The ">" symbol and the line directly underneath this body of text create the formatting for this flag.) Warning flags can be used for notifications such as notifying a user that they should skip a certain procedure.
 {:class="warning"}
@@ -68,7 +72,7 @@ This is the main body text that explains the purpose of the procedure and any co
 
 ```Text within three backticks style code or command line samples```
 
-For more information on formatting in markdown, go [here.](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
+
 
 1.	Step 1 of the procedure...
 2.	Step 2 of the procedure...
@@ -77,3 +81,6 @@ For more information on formatting in markdown, go [here.](https://help.github.c
 #### References
 
 Any referential links should be added to this section. Links appear in the following format [hyperlink text]({{ site.baseurl }}{{ page.url }})
+
+For more information on formatting in markdown, go [here.](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
+
