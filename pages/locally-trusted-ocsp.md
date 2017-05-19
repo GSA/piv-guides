@@ -391,7 +391,7 @@ Follow these steps to prepare for your tests: <!--Overall purpose of these steps
 
 > <i class="icon-info"></i>  The additional events that appear when following<!--Following how?--> Authority Information Access (AIA) URLs to retrieve Intermediate CA certificates are not included or addressed below. <!--Is there a link/source the user should go to for help with these events?-->
 
-Optionally, you may want to isolate the test Client from the Internet. We highly recommend doing this if the locally trusted OCSP will be used for ongoing operations when disconnected from the Internet. If this is the case, the Client should be able to validate configured certificates through access to only the locally trusted OCSP Responder. There are also other ways to achieve this effect<!--What effect? Being disconnected from the Internet (unclear)?-->; one approach is to remove all DNS server entries from the Client and add the OCSP Responder to the host file. If you use this approach, ensure that you clear the DNS cache before testing by using:
+  > Optionally, you may want to isolate the test Client from the Internet. We highly recommend doing this if the locally trusted OCSP will be used for ongoing operations when disconnected from the Internet. If this is the case, the Client should be able to validate configured certificates through access to only the locally trusted OCSP Responder. There are also other ways to achieve this effect<!--What effect? Being disconnected from the Internet (unclear)?-->; one approach is to remove all DNS server entries from the Client and add the OCSP Responder to the host file. If you use this approach, ensure that you clear the DNS cache before testing by using:
 
 	**ipconfig /flushdns**
 
@@ -423,21 +423,21 @@ Optionally, you may want to isolate the test Client from the Internet. We highly
     Leaf certificate revocation check passed
     CertUtil: -verify command completed successfully
 
-If the validation fails, you will see the message **CertUtil: -verify command FAILED** along with an error code. It can be very difficult to ascertain what went wrong from the certutil output; the CAPI2 log contains much more detail. The [Common Problems and Solutions](Common-Problems-and-Solutions-1) section may help you diagnose and correct problems.
+  > If the validation fails, you will see the message: **CertUtil: -verify command FAILED**, along with an error code. It can sometimes be difficult to ascertain what went wrong from the **certutil** output; however, the CAPI2 log contains much more detail. The [Common Problems and Solutions](Common-Problems-and-Solutions-1)<!--What "Troubleshooting" as alternate title?--> section may help you diagnose and correct problems.
 
-> <i class="icon-info"></i>  To simplify examination of the event log entries, prepare your command line window or a batch file before clearing the log, then execute the test commands and immediately refresh the Event Viewer window. Doing these steps rapidly will reduce the likelihood unrelated certificate activities will be present in the log.
+> <i class="icon-info"></i>  To simplify examination of the event log entries, prepare your command line window or a batch file before clearing the log, then execute the test commands and immediately refresh the **Event Viewer** window. These steps will rapidly reduce the likelihood of unrelated certificate activities being present in the log.
 
-If path validation was successful, you must examine the CAPI2 log entries to ensure that your locally trusted OCSP Responder is being used successfully for each certificate in the certificate path for which you configured it. Step through the sequence of events from first to last for the entire path, examining the contents of the Details tab for each event.
+  5. If path validation was successful, you must examine the CAPI2 log entries to ensure that your locally trusted, OCSP Responder is functioning successfully for each certificate in the path for which you configured it. Step through the sequence of events from first to last for the entire path. Click on the **Details** tab to examine the contents of each event.
 
->  <i class="icon-info"></i>  Events are detailed below in chronological order - it may be easier to reverse the events in Event Viewer by clicking the Data and Time column at the top of the list so the events are listed in the order below.
+>  <i class="icon-info"></i>  The possible events are detailed below in chronological order. It may be easier to examine the events in reverse order in the **Event Viewer**. Click on the **Data and Time** column at the top of the **Event Viewer** list so that the events display in the order shown in the table below.
 
-The test begins with Event ID 10 - *Build Chain* where you will see **CertGetCertificateChainStart** and [**ProcessName**]  certutil.exe in the UserData
+  > The test begins with **Event ID 10**: **Build Chain**, where you will see **CertGetCertificateChainStart** and [**ProcessName**]  **certutil.exe** in the **UserData**:
 
 ![CertGetCertificateChainStart](../img/local-ocsp-testing-1.png)
 
-Note the **CorrelationAuxInfo** - **TaskId** and **SeqNumber** fields in this event. As the validation proceeds, the TaskId will remain constant and the SeqNumber will increment in each subsequent log entry. If the TaskId changes you are looking at an unrelated event.
+  6. Monitor the **CorrelationAuxInfo** &mdash; **TaskId** and **SeqNumber** fields in this event. As the validation proceeds, the **TaskId** remains constant and the **SeqNumber** will increment for each subsequent log entry. If the TaskId changes, then you are looking at an unrelated event.
 
-The first event 10 should be followed by the Verify Revocation sequence that starts with 40 and ends (if successful) with event 41. The table below contains the sequence of events that should appear when using your locally trusted OCSP Responder to check revocation.
+  > The first **Event ID 10** should be followed by the **Verify Revocation** sequence that starts with **event 40** and ends (if successful) with **event 41**. The table below contains the sequence of events that should appear when using your locally trusted, OCSP Responder to check certificate revocations<!--CRLs?-->.
 
 | **Event ID** | **Task Category** | **Details** |
 | :----------: | :---------------- | :---------- |
@@ -449,19 +449,19 @@ The first event 10 should be followed by the Verify Revocation sequence that sta
 | 30 | Verify Chain Policy |  |
 | 41 | Verify Revocation | **UserData** / **CertVerifyRevocation** / **OCSPResponse** [**url**] contains a URL for the OCSP Responder<br/> |
 
-Examine each instance of event 41 in the log. If **UserData** / **CertVerifyRevocation** / **IssuerCertificate** [**subjectName**] is a CA for which you configured an OCSP URL, examine the remaining details of the event. Confirm **UserData** / **CertVerifyRevocation** / **OCSPResponse** [**url**] contains a URL for the locally trusted OCSP Responder. If you find a different URL or no OCSPResponse section, then it did not use the local OCSP Responder.
+  7. Examine each instance of **event 41** in the log. If **UserData**/**CertVerifyRevocation**/**IssuerCertificate** [**subjectName**] is a CA for which you configured an OCSP URL, examine the remaining details of the event. Confirm that **UserData**/**CertVerifyRevocation** /**OCSPResponse** [**url**] contains a URL for the locally trusted, OCSP Responder. If you find a different URL or no **OCSPResponse** section, then it<!--"it" refers to what?-->did not use the OCSP Responder.
 
-> <i class="icon-info"></i>  The URL that appears in the event log contains the base 64 encoded OCSP Request.
+> <i class="icon-info"></i>  The URL that appears in the event log contains the base-64-encoded, OCSP request.
 
-  XXX. <!-- This action implies that user is nearly done with testing. -->After you have completed your testing, we recommend that you disable the log, because the log degrades preformance. To do this, click on **Disable Log** in the **Actions** pane. 
+  8. After you have completed your testing, disable the log, because the log will degrade preformance. To do this, click on **Disable Log** in the **Actions** pane. 
 
 ### Problems and solutions <!-- Troubleshooting...? -->
 
-The table below lists some event log errors you may encounter and their possible causes.
+The table below lists some event log errors you could encounter, their possible causes, and possible solutions.
 
 | **Error Event ID** | **Task Category** | **Details Contain** | **Possible Cause(s)**
 | :----: | :----------------------- | :---------------------- | :------ |
-| 11 | Build Chain | A certificate chain could not be built to a trusted root authority | If this error is preceded by event sequence 40/52/53/10, verify installation of the locally trusted OCSP Root CA certificate.<br/>&nbsp;&nbsp;&nbsp;&nbsp;*- or -*<br/>If this error appears immediately following the first event 10, a path could not be built for the certificate you are attempting to verify. Ensure all required intermediate CA certificates are available and the necessary root is installed.|
+| 11 | Build Chain | A certificate chain could not be built to a trusted root authority | If this error is preceded by event sequence 40/52/53/10, verify installation of the locally trusted, OCSP Root CA certificate.<br/>&nbsp;&nbsp;&nbsp;&nbsp;*- or -*<br/>If this error appears immediately following the first event 10, a path could not be built for the certificate you are attempting to verify. Ensure that all required intermediate CA certificates are available and that the necessary root is installed.|
 | 42 | Reject Revocation Information | CertRejectedRevocationInfo - OCSPResponse \[url] *\[your local OCSP Responder]* and Actions \[name] **CheckTimeValidity** | The OCSP Responder system clock is incorrect<br/>&nbsp;&nbsp;&nbsp;&nbsp;*- or -*<br/>An expired CRL is being used by the OCSP Responder. Confirm the "Refresh CRLs based on their validity periods" is NOT enabled in the Provider properties; configure a refresh interval instead. |
 | 42 | Reject Revocation Information | CertRejectedRevocationInfo - OCSPResponse \[url] *\[your local OCSP Responder]* and Actions [name] **CheckResponseStatus** | The OCSP Responder returned "Not Authorized" because it has not been configured to respond for this CA. You will see this error if you configure the Revocation Source for an issuer without adding the corresponding configuration to the OCSP Responder. |
 | 53 | Retrieve Object From Network | CryptRetrieveObjectByUrlWire - URL *\[Your OCSP Responder]* | OCSP Responder is stopped, server is offline, or server is unreachable |
