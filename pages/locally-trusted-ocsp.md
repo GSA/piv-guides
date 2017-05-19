@@ -18,15 +18,15 @@ permalink: /Locally Trusted OCSP Configuration/
 
 ## Overview <!-- LaChelle's template.md in various locations suggestions that "Overview" should be 1st section.  This intro. conforms well to "Overview," so recommend using that title. -->
 
-Within the **Public Key Infrastructure (PKI)**, the **Online Certificate Status Protocol (OCSP)** is used to determine the status of a public key certificate (RFC 2560, FIPS 201-2). An OCSP Responder can functionally replace **Certificate Revocation Lists (CRLs)**, which are "list[s] of revoked public key certificates created and digitally signed by a **Certification Authority**" **(CA)** (FIPS 201-2, NIST SP 800-63, CNSSI 4009) (i.e., the issuer that certified it in the first place). A response from an OCSP Responder, as with a CRL, will tell you whether a public key certificate has been revoked by its CA. If your organization relies on Internet-hosted sources <!-- Are Internet-hosted sources ever "internal"? -->for your local network's critical functionality, including the ability to verify certificate statuses, you could use an OCSP Responder, instead of CRLs. <!-- availability of what? -->In this case, your locally trusted OCSP Responder (service) would create a locally hosted, trusted copy of revoked certificate information<!-- Where does the OCSP copy the info from? -->. Hosting a local OCSP Responder can ensure that clients (applications and devices)<!-- Correct for "clients"? -->do not experience the Internet disruptions that can occur with either remotely hosted CRLs or OCSP.
+Within the **Public Key Infrastructure (PKI)**, the **Online Certificate Status Protocol (OCSP)** is used to determine the status of a public key certificate (RFC 2560, FIPS 201-2). An OCSP Responder can functionally replace **Certificate Revocation Lists (CRLs)**, which are "list[s] of revoked public key certificates created and digitally signed by a **Certification Authority**" **(CA)** (FIPS 201-2, NIST SP 800-63, CNSSI 4009) (i.e., the issuer that certified it in the first place). A response from an OCSP Responder, as with a CRL, will tell you whether a public key certificate has been revoked by its CA. If your organization relies on Internet-hosted sources for your local network's critical functionality, including the ability to verify certificate statuses, you could use an OCSP Responder, instead of CRLs. In this case, your locally trusted OCSP Responder (service) would create a locally hosted, trusted copy of revoked certificate information<!-- Where does the OCSP copy the info from? -->. Hosting a local OCSP Responder can ensure that Clients (applications and devices) do not experience the Internet disruptions that can occur with either remotely hosted CRLs or OCSP.
 
-If a locally trusted OCSP Responder <!-- Responder?  Client and Responder? -->is deployed, even mobile clients such as laptops, tablets, and phones could potentially <!-- Explain "potentially." -->use it when remote<!-- "Remote" means using wireless capability that is not part of an agency's or company's wireless? --> (i.e., if your organization configures the OCSP Responder to be exposed to the Internet). Clients (applications and devices) should always be configured to "fail-over" to a backup<!-- Backup vs. "next" is more clear. --> source for obtaining certificate-revocation statuses in the event of an Internet disruption. <!-- Are you saying that the OCSP Responder can be that backup source (unclear)? -->A locally trusted OCSP Responder could be that backup source--providing additional resiliency for users who are working on the local network or connected remotely. If considering this service, we highly recommended increasing its security by choosing a server name associated with an Internet Protocol (IP) <!-- Did you mean IP? -->address, as discussed in the **_Install Microsoft Windows Server 2012 R2 as an OCSP Responder_** below.
+If a locally trusted OCSP Responder is deployed, even mobile clients such as laptops, tablets, and phones could potentially use it  remotely<!--Could potentially?--> (i.e., if your organization configures the OCSP Responder to be exposed to the Internet). Clients should always be configured to "fail-over" to a backup<!-- Backup vs. "next" is more clear. --> source for obtaining certificate-revocation statuses in the event of an Internet disruption. A locally trusted OCSP Responder could be that backup source&mdash;providing additional resiliency for users who are working on a local network or connected remotely. <!--The next statement seems like it should be part of the technical discussion--not in the Overview.-->If considering this service, we highly recommended increasing its security by choosing a server name associated with an Internet Protocol (IP) <!-- Did you mean IP? -->address, as discussed in the **_Install Microsoft Windows Server 2012 R2 as an OCSP Responder_** section.
 
-> <i class="icon-info"></i>  <!-- This is still pretty long for an Info call-out box. -->**Transparent Caching Proxy&mdash;an Alternative Backup (Fail-over) Method.** The **Transparent Caching Proxy** is a highly effective method of obtaining and providing CRLs during Internet, CRL, or OCSP service disruptions and could preclude the need for a locally trusted OCSP. This proxy can also greatly reduce Internet connection-bandwidth consumption. To use a Transparent Caching Proxy, configure it to frequently check the end-point for modified <!--Explain file types.-->**.p7c** and **.crl** files so that the cache maintains the most up-to-date information. Additionally, you can configure a script on any host "behind" the transparent cache to regularly download chosen CRLs. This will keep the cache "fresh" even when users on the local network are not downloading CRLs during off-peak (i.e., non-working) hours.<!-- Don't understand the point about downloading CRLs during off-peak hours effect freshness of cache (unclear)? --> To learn more about how to configure a Transparent Caching Proxy, see _(insert link to relevant document here)_.<!--Really recommend putting a link to a procedure here, rather than making folks go search for a website, document, etc.-->
+> <i class="icon-info"></i>  <!-- This is pretty long for an Info call-out box. -->**Transparent Caching Proxy&mdash;an Alternative Backup (Fail-over) Method.** The **Transparent Caching Proxy** is a highly effective method of obtaining and providing CRLs during Internet, CRL, or OCSP service disruptions and could preclude the need for a locally trusted OCSP. This proxy can also greatly reduce Internet connection-bandwidth consumption. To use a Transparent Caching Proxy, configure it to frequently check the end-point for modified <!--Explain file types.-->**.p7c** and **.crl** files so that the cache maintains the most up-to-date information. Additionally, you can configure a script on any host "behind" the transparent cache to regularly download chosen CRLs. This will keep the cache "fresh" even when users on the local network are not downloading CRLs during off-peak (i.e., non-working) hours.<!-- Don't understand the point about downloading CRLs during off-peak hours effect freshness of cache (unclear)? --> To learn more about how to configure a Transparent Caching Proxy, see _(insert link to relevant document here)_.<!--Recommend putting a link to a procedure here, rather than making folks go search for a website, document, etc.-->
 
 ## Assumptions
 
-To be able to effectively use these OCSP Responder procedures, we recommend that you possess the following: <!-- Since this guide requires a technical user, where the "assume no prior knowledge" is not appropriate, we might add Assumptions about the user's level of expertise in relevant areas. I took a guess at these.  In LaChelle's template.md for some repos includes a section in this position called "Assumptions," recommend we use that here -->:
+To effectively use these OCSP Responder procedures, we recommend that you possess the following: <!-- Since this guide requires a technical user, where the "assume no prior knowledge" is not appropriate, we might add Assumptions about the user's level of expertise in relevant areas. I took a guess at these.  In LaChelle's template.md for some repos includes a section in this position called "Assumptions," recommend we use that here.  This may not be appropriate. Just a thought.-->:
 
   * System administrator (SA) or network administrator privileges/permissions 
   * Experience with network configurations  
@@ -35,9 +35,9 @@ To be able to effectively use these OCSP Responder procedures, we recommend that
   * Experience with CAs
   * Experience using CPs and CPSs
 
-## Security risks <!-- The uninitiated will most likely have trouble following the discussion in this paragraph. -->
+## Security risks
 
-By operating a locally trusted OCSP Responder, your organization is assuming all of the security risks introduced when you do not depend directly on the authoritative revocation status sources (i.e., CAs). <!-- LL has given guidance about doc. prep. that we are to assume the reader has no prior knowledge of the subject matter. Are the sources = the CAs & they are normally consulted for accurate CRLs (unclear)? Does the OCSP Responder extract the CRL information from the CA and so is not a "direct" (more secure) means? -->CAs follow stringent <!-- Are the policies and procedures the CP and CPS mentioned in next sentence (unclear)? Explain "multi-person control" for reader. -->requirements for multi-person control, physical security<!-- How does physical security relate to CRLs? -->, and hardware cryptographic modules <!-- Hardare mentioned here but not software (which is mentioned below). -->, which are detailed in each CA's **Certificate Policy (CP)** and **Certification Practices Statement (CPS)**.  If you do not implement equivalent security controls to those implemented by a CA (i.e., as stated in a CP and CPS), then your local OCSP Responder becomes the weak link in the chain, and your organization's overall <!-- ? -->network-security assurance level would effectively be reduced to that of your local network configuration. <!-- Local vs. ___? -->For example, if your organization validates **Personal Identity Validation (PIV)** authentication certificates (hardware)<!-- "Hardware certificates" relate to a PIV card used for computer access to a network? -->, but you are using software cryptographic keys on your local OCSP Responder, then the validated PIV certificates' <!-- For PIV? -->assurance level may be associated with software rather than hardware, both of which have different CP and CPS requirements. <!-- Is this what you meant? -->This may or may not be acceptable, depending on the **use case**. 
+<!--I had some trouble following this discussion.-->By operating a locally trusted OCSP Responder, your organization is assuming all of the security risks introduced when you do not depend directly on the authoritative revocation status sources (i.e., CAs). <!--Are the sources = the CAs & they are normally consulted for accurate CRLs (unclear)? Does the OCSP Responder extract the CRL information from the CA and so is not a "direct" (more secure) means? -->CAs follow stringent <!-- Are the policies and procedures the CP and CPS mentioned in next sentence (unclear)? Explain "multi-person control" for reader. -->requirements for multi-person control, physical security<!-- How does physical security relate to CRLs? -->, and hardware cryptographic modules <!-- Hardare mentioned here but not software (which is mentioned below). -->, which are detailed in each CA's **Certificate Policy (CP)** and **Certification Practices Statement (CPS)**.  If you do not implement equivalent security controls to those implemented by a CA (i.e., as stated in a CP and CPS), then your local OCSP Responder becomes the weak link in the chain, and your organization's overall <!-- ? -->network-security assurance level would effectively be reduced to that of your local network configuration. For example, if your organization validates **Personal Identity Validation (PIV)** authentication certificates (hardware)<!-- "Hardware certificates" relate to a PIV card used for computer access to a network? -->, but you are using software cryptographic keys on your local OCSP Responder, then the validated PIV certificates' assurance level may be associated with software rather than hardware, both of which have different CP and CPS requirements. <!-- Is this what you meant? -->This may or may not be acceptable, depending on the **use case**. 
 
 Some other security best practices to consider when implementing an OCSP Responder: 
 
@@ -71,34 +71,33 @@ Before you begin, we recommend that you review the OCSP document series availabl
   * Hardware Security Module (HSM)
   * CP and CPS:  Documented security policies and procedures for deploying and operating the certificate-issuing Root CA and OCSP Responder(s). 
 
-> <i class="icon-info"></i>  <!-- Is this supposed to display in an Info box?  It doesn't in my view. Question: Do you mean for installing CAs other than the Root CA?  I thought we do include procedures about that below..? -->This guide does not provide detailed procedures for installing CAs or configuring HSMs (i.e., numerous online resources provide CA installation procedures, and HSM vendors provide configuration procedures). Additionally, this guide does not provide instructions for creating policies (i.e., for CPs and CPSs). For guidance, we recommend that you consult the requirements contained in one or more CPs and CPSs published by a CA(s) on which you rely.
+> <i class="icon-info"></i>  <!-- Question: Do you mean for installing CAs other than the Root CA?  I thought we do include procedures about that below..? -->This guide does not provide detailed procedures for installing CAs or configuring HSMs (i.e., numerous online resources provide CA installation procedures, and HSM vendors provide configuration procedures). Additionally, this guide does not provide instructions for creating policies (i.e., for CPs and CPSs). For guidance, we recommend that you consult the requirements contained in one or more CPs and CPSs published by a CA(s) on which you rely.
 
 ## Install Microsoft Windows Server 2012 R2 as an OCSP Responder
 
-Microsoft Windows Server 2012 R2 was the chosen model for an OCSP Responder, because it is generally available across Federal Government agencies. Other products may also be configured to provide a locally trusted, OCSP Responder service. <!-- Are guidance documents not yet available for these other products or do you mean until procedures are added to the OCSP playbook/guide...? -->Until such time as additional guidance is available for these products, we encourage you to speak directly with the vendors regarding configuration. 
+Microsoft Windows Server 2012 R2 was the chosen model for an OCSP Responder, because it is generally available across Federal Government agencies. Other products may also be configured to provide a locally trusted, OCSP Responder service. Until such time as additional guidance is available for these products,<!--Do you mean GSA guides are not available?--> we encourage you to speak directly with the vendors regarding configuration. 
 
 ### Install Microsoft Windows Server 2012 R2 software
 
-Before beginning the Windows Server 2012 R2 software installation, name your server and associate it <!-- Above we say "associate it with" -->with the chosen domain (i.e., IP address). <!-- Is IP address correct? --> Changing the server name or domain after installation can corrupt the configuration. Configure the server with outbound Internet access in order to retrieve and download remote CRLs. <!-- How do they set this up? Or refer them to a link for procedure. -->In most cases, CRLs are available over HTTP/80.
+Before beginning the Windows Server 2012 R2 software installation, name your server and associate it <!-- Above we say "associate it with" -->with the chosen domain (i.e., IP address). Changing the server name or domain after installation can corrupt the configuration. Configure the server with outbound Internet access in order to retrieve and download remote CRLs. <!--Do they already know how to set this up? Link to a procedure? -->In most cases, CRLs are available over HTTP/80.
 
-  1. Use the **Add Roles and Features Wizard**, and <!-- How do they locate the Wizard? Do you click on it? -->go to **Server Roles**. 
+  1. Use the **Add Roles and Features Wizard**, and go to **Server Roles**. 
   2. Click on the **Active Directory Certificate Services** (ADCS) to add this role to the Windows Server 2012 R2.
 
 ![Select Active Directory Certificate Services (ADCS)](../img/local-ocsp-cfg-adcs.png)
 
-  > The **Add Roles and Features Wizard** will prompt you to <!-- Next prompt: capitalized or all lowercase? -->**_Add required features_**. 
+  > The **Add Roles and Features Wizard** will prompt you to <!--Next prompt: capitalized or all lowercase?-->**_Add required features_**. 
 
   3. Add the desired features, and then follow the wizard's prompts. 
-  4. Locate and select **Role Services**.<!-- What is the name of the drop-down box or list where Role Services appears? --> 
+  4. Locate and select **Role Services**. 
   5. At this point, ensure that you **deselect** (uncheck) the checkbox for **Certification Authority**, and click on the checkbox to select **Online Responder**.
 
 ![Select Online Responder](../img/local-ocsp-cfg-role-services2.png)
 
-  > The wizard will then prompt you to <!-- Capital "A"? -->**_Add features that are required for Online Responder_**. 
+  > The wizard will then prompt you to **_Add features that are required for Online Responder_**. 
 
-  6. Click on <!-- Capital "A" and lowercase "f"? -->**Add features**. 
+  6. Click on **Add features**. 
   7. Continue with the wizard's prompts, <!-- Assume wizard's prompts are easy since not stated.  --> and click on **Install**.
-  <!-- Is this from a drop-down box? I can't validate steps/menus/selection method, capitals vs. not, since there are no screen shots for some of these. Not a criticism--just reality. -->
   
   > After the installion finishes, the **i - Feature Installation** window appears. 
   
@@ -125,7 +124,7 @@ Two main approaches exist for the Microsoft OCSP Responder's method of issuing a
   
   * **Alternative**: The OCSP Responder will have permissions to automatically request a certificate <!-- Is this the certificate for the OCSP Responder itself?  Is the OCSP Responder the same as the Windows Server 2012 R2? -->from an online Microsoft CA that resides on the same domain. This approach, if used in a dedicated, network-isolated domain with HSMs, can be relatively secure.  (Information on this approach is available from ______.)  
 
-> <i class="icon-info"></i>  Regardless of which approach you use, Microsoft Windows clients require every certificate in the certificate chain, **including the self-signed Root**, to express **OCSP Signing (1.3.6.1.5.5.7.3.9)** in the **Extended Key Usage** extension. <!-- "Extended...extension": I assume both are needed here (sounds redundant). The statements here I can't simplify them, as I can't follow the meaning.-->
+> <i class="icon-info"></i>  Regardless of which approach you use, Microsoft Windows Clients require every certificate in the certificate chain, **including the self-signed Root**, to express **OCSP Signing (1.3.6.1.5.5.7.3.9)** in the **Extended Key Usage** extension. 
 
 To use the **Preferred** approach to issuing and obtaining certificates, perform the following steps: 
   
@@ -171,7 +170,7 @@ To use the **Preferred** approach to issuing and obtaining certificates, perform
 
 ![Locate OCSP Responder Certificate in MMC](../img/local-ocsp-cfg-mmc.png)
 
-  8. Double-click on the certificate. Confirm that it is valid<!-- Valid requires what? -->; lists *OCSP Signing* under _This certificate is intended for the following purpose(s)_; and indicates that *You have a private key that corresponds to this certificate*. 
+  8. Double-click on the certificate. Confirm that it is valid<!--What does it say to indicate validity? -->; lists *OCSP Signing* under _This certificate is intended for the following purpose(s)_; and indicates that *You have a private key that corresponds to this certificate*. 
   9. Close the certificate. <!-- How do you close it? -->
 
 ![Locate OCSP Responder Certificate in MMC](../img/local-ocsp-cfg-cert-key.png)
@@ -269,7 +268,7 @@ In the example images below, _Federal Bridge CA 2016_, is used as an example of 
 
   9. Repeat this process for each CA that you want to add to the OCSP Responder.
 
-## Configure the Windows Client<!--Shouldn't this title just say Manually configure the Windows Client (subtitle just below)? Looks like a repeat of basically the same title. -->
+## Configure the Windows Client<!--Shouldn't this title be "Manually configure the Windows Client" (subtitle just below)? Looks like a repeat of the same title idea. -->
 
 You will need to configure each CA that you want to add to the OCSP Responder. <!-- Correct? -->In addition, to maximize local availability<!-- Explain "maximize local availability." -->, you will need to configure each CA in the certificate chain to your trusted root certificate(s) (for example, any CAs that can verified by the Federal Common Policy CA). <!-- This paragraphic was not close to plain language. Can you simplify? Will all users know what Federal Common Policy CA is?  (Also referred to as "COMMON"?) Will users of this guide ALL need to configure CAs that can be verified by FCPCA? -->
 
@@ -337,7 +336,7 @@ You can also configure Microsoft Windows domain members using **group policy** f
   
   2. Next, select the **certificate store** that contains the **CA certificate for the locally trusted, OCSP Responder** from the drop-down menu. The certificate store is usually called the **Intermediate Certification Authorities**.
 
-  > In the certificate store, you should already see a CA, such as the self-signed Federal Common Policy CA<!-- What is the purpose of tellin the user about this? Used the term, "certificate store," just above. Keep terminology the same.-->.
+  > In the certificate store, you should already see a CA, such as the self-signed Federal Common Policy CA<!-- What is the purpose of telling the user about this? Used the term, "certificate store," just above. Keep terminology the same.-->.
 
   3. Right-click on the certificate store name (e.g., **Intermediate Certification Authorities**) and select **Import**.
 
@@ -365,7 +364,7 @@ You can also configure Microsoft Windows domain members using **group policy** f
 
 ### Testing with Windows Clients <!--Correct?-->
 
-#### Prepare for testing <!-- What is being tested? -->
+#### Prepare for testing 
 
 From the Windows Client command line, you will use the **certutil.exe** to test all Windows versions that will operate in your local area network.  
   
