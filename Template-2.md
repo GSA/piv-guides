@@ -10,15 +10,17 @@ To create your own page using the GitHub website, copy the content from this fil
 
   1. Click on the [Check this--]**create new file** button at the top of the Branch folder. 
   2. Give the new file a name and add the extension, **.md**. (At the top of the page there will be a box that says **name your file**.) 
-  3. Change the **title** and **permalink** at the top, left-hand-side of the file where you see **---**.  
+  3. Change the **title** and **permalink** at the top, left-hand-side of the file (between the dashed lines [**---**]).  
   > The **permalink** should be a short version of the new file name (for example, **template** for **Guidance Document Template**). The **title** should be what you want to appear at the top of the website page, and the **permalink** text should be in the format: **/mypage/**, instead of mypage.md.
 
 This template explains: 
 
   1. _how to use this template_ 
-  2. A basic outline for a guidance document.
-  3. A few basic tips on style and writing. 
-  4. A Markdown style sheet. (All GitHub pages use Markdown formatting to create text.)  
+  2. A basic outline for a guide.
+  3. A few tips on style and writing. 
+  4. A Markdown style sheet. (All GitHub pages use the Markdown tool to create and format text.)  
+
+# Basic Outline 
 
 The following is an outline you can use as a starting point.
 
