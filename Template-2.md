@@ -37,7 +37,7 @@ This text should give a brief overview of what content is contained within the g
 
 ## Before you get started
 
-This text in this section will provide any steps or information that a user will need to take before starting a set of procedures. For example, you can use this section to provide prerequisite information the user needs to know, such as required hardware and software versions and configuration information.
+This section will tell the user what he/she needs to do to prepare before starting a set of procedures. For example, the user would need to know what specific hardware and software are required for the procedures.
 
 reference information that may be needed to complete the steps outlined in the guide.
 
