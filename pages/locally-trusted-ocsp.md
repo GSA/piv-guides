@@ -22,7 +22,7 @@ Within the **Public Key Infrastructure (PKI)**, the **Online Certificate Status 
 
 If a locally trusted OCSP Responder <!-- Responder?  Client and Responder? -->is deployed, even mobile clients such as laptops, tablets, and phones could potentially <!-- Explain "potentially." -->use it when remote<!-- "Remote" means using wireless capability that is not part of an agency's or company's wireless? --> (i.e., if your organization configures the OCSP Responder to be exposed to the Internet). Clients (applications and devices) should always be configured to "fail-over" to a backup<!-- Backup vs. "next" is more clear. --> source for obtaining certificate-revocation statuses in the event of an Internet disruption. <!-- Are you saying that the OCSP Responder can be that backup source (unclear)? -->A locally trusted OCSP Responder could be that backup source--providing additional resiliency for users who are working on the local network or connected remotely. If considering this service, we highly recommended increasing its security by choosing a server name associated with an Internet Protocol (IP) <!-- Did you mean IP? -->address, as discussed in the **_Install Microsoft Windows Server 2012 R2 as an OCSP Responder_** below.
 
-> <i class="icon-info"></i>  <!-- This is still pretty long for an Info call-out box. -->**Transparent Caching Proxy--an Alternative Backup (Fail-over) Method.** The **Transparent Caching Proxy** is a highly effective method of obtaining and providing CRLs during Internet, CRL, or OCSP service disruptions and could preclude the need for a locally trusted OCSP. This proxy can also greatly reduce Internet connection-bandwidth consumption. To use a Transparent Caching Proxy, configure it to frequently check the end-point for modified <!--Explain file types.-->**.p7c** and **.crl** files so that the cache maintains the most up-to-date information. Additionally, you can configure a script on any host "behind" the transparent cache to regularly download chosen CRLs. This will keep the cache "fresh" even when users on the local network are not downloading CRLs during off-peak (i.e., non-working) hours.<!-- Don't understand the point about downloading CRLs during off-peak hours effect freshness of cache (unclear)? --> To learn more about how to configure a Transparent Caching Proxy, see _(insert link to relevant document here)_.<!--Really recommend putting a link to a procedure here, rather than making folks go search for a website, document, etc.-->
+> <i class="icon-info"></i>  <!-- This is still pretty long for an Info call-out box. -->**Transparent Caching Proxy&mdash;an Alternative Backup (Fail-over) Method.** The **Transparent Caching Proxy** is a highly effective method of obtaining and providing CRLs during Internet, CRL, or OCSP service disruptions and could preclude the need for a locally trusted OCSP. This proxy can also greatly reduce Internet connection-bandwidth consumption. To use a Transparent Caching Proxy, configure it to frequently check the end-point for modified <!--Explain file types.-->**.p7c** and **.crl** files so that the cache maintains the most up-to-date information. Additionally, you can configure a script on any host "behind" the transparent cache to regularly download chosen CRLs. This will keep the cache "fresh" even when users on the local network are not downloading CRLs during off-peak (i.e., non-working) hours.<!-- Don't understand the point about downloading CRLs during off-peak hours effect freshness of cache (unclear)? --> To learn more about how to configure a Transparent Caching Proxy, see _(insert link to relevant document here)_.<!--Really recommend putting a link to a procedure here, rather than making folks go search for a website, document, etc.-->
 
 ## Assumptions
 
@@ -303,7 +303,7 @@ To manually configure a locally trusted, OCSP Responder, **use the ""MMC** **Cer
 
   > By using the same window used in Steps 4-6 above, you can add and configure multiple OCSP Responder URLs.
 
-  7. Click on **OK** when satisfied with the added OCSP Responders. 
+  7. Click on **OK** when satisfied with all of the OCSP Responders you have added. 
   
   > Now, all applications that use Windows certificate validation Application Programming Interfaces (APIs) will use your configured OCSP Responder when validating certificates *issued* by this CA.
 
@@ -327,7 +327,7 @@ You can distribute the **locally trusted root CA** to Windows Clients using **gr
   
   > A dialog box will appear that states *The import was successful*.
 
-#### Configure a locally trusted OCSP
+#### Configure a locally trusted, OCSP Responder
 
 You can also configure Microsoft Windows domain members using **group policy** functions. 
 
@@ -355,27 +355,27 @@ You can also configure Microsoft Windows domain members using **group policy** f
 
 ![Group Policy Certificate Import](../img/local-ocsp-group-policy-07.png)
 
-  6. To configure the locally trusted, OCSP Responder, <!-- at any time necessary? -->right-click on the imported certificate and select **Properties**. 
+  6. To configure the locally trusted, OCSP Responder, right-click on the imported certificate and select **Properties**. 
 
 ![Locally Trusted OCSP Group Policy Configuration](../img/local-ocsp-group-policy-08.png)
 
   7. Add the OCSP URL(s) as you did above in Steps 4-7 under [Manually configure the Windows Client](#Manually-configure-the-Windows-Client-1)
 
-## End-to-end testing
+## End-to-end testing of locally trusted, OCSP Responder <!--Correct?-->
 
-### Windows Clients
+### Testing with Windows Clients <!--Correct?-->
 
 #### Prepare for testing <!-- What is being tested? -->
 
-From the Windows Client command line, you will use the **certutil.exe** to test all Windows versions that will operate in your local area network. <!-- Local area network for OCSP? --> 
-
-##### Before you begin  
+From the Windows Client command line, you will use the **certutil.exe** to test all Windows versions that will operate in your local area network.  
   
-  * If you are testing with Windows 10, an apparent bug with **certutil** may occur. If it does, you will see this error: **_FAILED: 0x80092004 (-2146885628 CRYPT_E_NOT_FOUND)_**, even when a certificate path seems to validate correctly. If you see this error, we suggest testing other Windows versions. As of May 2017, Windows 7 and 8.1 do **not** have this issue.
+> <i class="icon-info"></i>  <!--Probably should be an alert box?-->An apparent bug exists when you use **certutil** with Windows 10. If it does, you will see this error: **_FAILED: 0x80092004 (-2146885628 CRYPT_E_NOT_FOUND)_**, even when a certificate path seems to validate correctly. If this occurs, we suggest testing other Windows versions. As of May 2017, Windows 7 and 8.1 do **not** have this issue.
 
-  * If you are using **group policy** to push locally trusted, OCSP settings to Windows Clients, ensure that the updated policy has been applied to each client.
+  * If you are using **group policy** to push locally trusted, OCSP settings to Windows Clients, ensure that the updated policy has been applied to each Client.
 
-  * Ensure that you have copies of all certificates that were **issued by** the CAs you configured as OCSP Responders <!-- Meaning correct? -->. These tests will build a complete certificate path to a trusted root<!-- The Root CA? -->; it is not necessary to test the intermediate CA certificates independently if they are part of your tested path.
+  * Ensure that you have copies of all certificates that were **issued by** the CAs that you configured as OCSP Responders <!-- Meaning correct? -->. These tests will build a complete certificate path to a trusted root<!-- The Root CA? -->.  (**Note:**  If intermediate CA certificates are part of your tested path, it is not necessary to test them independently.)
+  
+Follow these steps to prepare for your tests: <!--Overall purpose of these steps?-->
 
   1. Enable the Microsoft CAPI2 login <!-- Said "logging"...? -->on your Client. <!-- How does the user do this? -->Open the **MMC Event Viewer snap-in**, and then go to:
   
@@ -383,30 +383,35 @@ From the Windows Client command line, you will use the **certutil.exe** to test 
   
   2. With "Operational" selected, click on **Enable Log** in the **Actions** pane<!--Left-hand panel? No screen capture to verify. -->. 
   
-  3. The default log size is 1 MB. To increase the log size, click on **Properties**, and set desired log size (maximum recommended). <!-- Moved the "Disable Log" to end of testing, since it should be done after user completes testing. -->
-
-</ STOPPED HERE/> 
+  3. The default log size is 1 MB. To increase the log size, click on **Properties**, and then your desired log size. (The maximum size is recommended.) <!-- What is the max size?  Moved the "Disable Log" step to end of testing, since it should be done after user completes testing. --> 
  
-  5. Before you begin, install the required intermediate CA certificates (if they are not already in the **Intermediate Certification Authorities store**) to validate the test certificates. 
+  5. Next, install the required intermediate CA certificates (if they are not already in the **Intermediate Certification Authorities store**) to validate the test certificates. 
   
-  6. Double-click on each certificate to verify that each test certificate path is built. Confirming that each one is valid and has a certificate path in the **Certification Path tab**. 
+  6. Double-click on each certificate to verify that each test certificate path is built. Confirm that each one is valid and has a certificate path in the **Certification Path tab**. 
 
-> <i class="icon-info"></i>  The additional events that appear when following AIA URLs to retrieve Intermediate CA certificates are not included or addressed below.
+> <i class="icon-info"></i>  The additional events that appear when following<!--Following how?--> Authority Information Access (AIA) URLs to retrieve Intermediate CA certificates are not included or addressed below. <!--Is there a link/source the user should go to for help with these events?-->
 
-Optionally, you may want to isolate the test client from the Internet. This is highly recommended if you are attempting to deploy locally trusted OCSP in a manner that allows for ongoing operation when disconnected from the Internet. In this case, the client should be able to validate configured certificates while only having access to the locally trusted OCSP Responder. There are multiple ways to achieve this effect; one approach is to remove all DNS server entries from the client and add the OCSP Responder to the host file. If using this approach ensure you clear the DNS cache before testing:
+Optionally, you may want to isolate the test Client from the Internet. We highly recommend doing this if the locally trusted OCSP will be used for ongoing operations when disconnected from the Internet. If this is the case, the Client should be able to validate configured certificates through access to only the locally trusted OCSP Responder. There are also other ways to achieve this effect<!--What effect? Being disconnected from the Internet (unclear)?-->; one approach is to remove all DNS server entries from the Client and add the OCSP Responder to the host file. If you use this approach, ensure that you clear the DNS cache before testing by using:
 
-	ipconfig /flushdns
+	**ipconfig /flushdns**
 
 #### Execute testing
 
-Open the Event Viewer and navigate to **Applications and Services Logs** / **Microsoft** / **Windows** / **CAPI2** / **Operational**. Click **Clear Log** in the Actions pane.
+  1. Open the **Event Viewer** and go to:
+  
+  > **Applications and Services Logs**/ **Microsoft**/**Windows**/**CAPI2**/**Operational**. 
+  
+  2. Click on **Clear Log** in the **Actions** pane.
 
-Open a command prompt and issue the following commands, replacing "certificate.cer" with the path and file name of a certificate below:
+  3. To clear all of the cached certificates, CRLs, and OCSP responses, open a command prompt and enter the following command, replacing "certificate.cer" with the path and file name of a certificate:
 
-    certutil -URLcache * delete
-    certutil -verify "certificate.cer"
+  > **certutil -URLcache * delete**
 
-The first command will clear all cached certificates, CRLs, and OCSP responses. The second command will generate a lot of output detailing the content of each certificate in the certificate path and concluding with whether or not the certificate path was successfully validated. For example:
+  4. To generate detailed output about the content of each certificate in the certificate path (concluding with whether or not the certificate path was successfully validated), enter the following command:     
+    
+    **certutil -verify "certificate.cer"**
+
+  > For example:
 
     Verified Issuance Policies:
 	    2.16.840.1.101.3.2.1.3.6
@@ -416,7 +421,7 @@ The first command will clear all cached certificates, CRLs, and OCSP responses. 
     Verified Application Policies: All
     Cert is a CA certificate
     Leaf certificate revocation check passed
-    CertUtil: -verify command completed successfully.
+    CertUtil: -verify command completed successfully
 
 If the validation fails, you will see the message **CertUtil: -verify command FAILED** along with an error code. It can be very difficult to ascertain what went wrong from the certutil output; the CAPI2 log contains much more detail. The [Common Problems and Solutions](Common-Problems-and-Solutions-1) section may help you diagnose and correct problems.
 
@@ -464,7 +469,7 @@ The table below lists some event log errors you may encounter and their possible
 
 If the above table doesn't lead you to a solution, the Microsoft Tech Net article [Troubleshooting PKI Problems on Windows Vista](https://technet.microsoft.com/en-us/library/cc749296(v=ws.10).aspx) may be helpful. The article has proven to be very useful with everything from Windows Vista to Windows 10 and Server 2012 R2.
 
-## Appendix 1 - Sample OCSP INF file
+## Appendix 1&mdash;Sample OCSP INF file
 
 Below INF file is an example of the configuration file you can use to generate a new certificate signing request for your OCSP Responder.
 
@@ -505,7 +510,7 @@ Sample INF file for generating the OCSP responder certificate Request:
 	OID = 1.3.6.1.5.5.7.3.9
 
 
-## Appendix 2 - Using Microsoft CA as the self-signed root
+## Appendix 2&mdash;Using Microsoft CA as the self-signed root
 
 Prior to configuring Certificate Services and generating the new Root CA key pair, the below CaPolicy.inf file should be placed in %SYSTEMROOT%.  Below will create a self signing root certificate with a 2048 bit RSA key and a ten year validity period with OCSP Signing (1.3.6.1.5.5.7.3.9) in the Extended Key Usage extension. 
 
