@@ -28,9 +28,9 @@ navbar:
 #- title: PIV Guides
 # description: PIV Guides
 # url: https://piv.idmanagement.gov
-#- title: Federal PKI Guides
-#  description: Federal PKI Guides
-#  url: https://github.com/gsa/fpki-guides
+- title: Federal PKI Guides
+  description: Federal PKI Guides
+  url: https://fpki.idmanagement.gov
 
 
 # Build settings

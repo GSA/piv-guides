@@ -65,5 +65,5 @@ In-depth details on the certificate profiles are contained in the current and hi
 
 | Certificates    | Policy Update Date  | Link to Profile Information|
 | -------------            |:----:               |:----:|
-| PIV Certificates           | May 5, 2015             | [Worksheets 5, 6, 8 and 9 in this document](https://www.idmanagement.gov/IDM/servlet/fileField?entityId=ka0t0000000TNP2AAO&field=File__Body__s){:target="_blank"}|
-| PIV _Interoperable_ Certificates           | May 5, 2015             | [Worksheets 4, 5, 6, and 7 in this document](https://www.idmanagement.gov/IDM/servlet/fileField?entityId=ka0t0000000TN9YAAW&field=File__Body__s){:target="_blank"}|
+| PIV Certificates           | May 5, 2015             | [Worksheets 5, 6, 8 and 9 in this document](https://www.idmanagement.gov/wp-content/uploads/sites/1171/uploads/fpki_certificate_May2015-v1.2.pdf){:target="_blank"}|
+| PIV _Interoperable_ Certificates           | May 5, 2015             | [Worksheets 4, 5, 6, and 7 in this document](https://www.idmanagement.gov/wp-content/uploads/sites/1171/uploads/PIV-I-Certificate-v1.1.pdf){:target="_blank"}|
