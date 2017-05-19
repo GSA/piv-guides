@@ -6,7 +6,12 @@ permalink: /template/
 
 This page serves as the template for creating your own guidance document to add to one of the FICAM Guides.
 
-To create your own page using the github website, copy the content from this file, paste it into a new file (new files can be created through the 'new file' link at the top of the pages folder), give the new file a name (at the top of the page there will be a box that says 'name your file'), and change the title and permalink at the very top section of the file (the permalink should match the new file name). The title should be what you want to appear at the top of the page on the site, and the permalink text should match the name of the file, but in the format /mypage/ instead of mypage.md.
+To create your own page using the GitHub website, copy the content from this file, and paste it into a new file. Use these steps to create the file: 
+
+  1. Click on the **create new file** button at the top of the pages folder. 
+  2. Give the new file a name and add the extension, **.md**. (At the top of the page there will be a box that says **name your file**.) 
+  3. Change the **title** and **permalink** at the top, left-hand-side of the file where you see **---**.  
+  > The **permalink** should be a short version of the new file name (for example, **template** for **Guidance Document Template**). The **title** should be what you want to appear at the top of the website page, and the **permalink** text should be in the format: **/mypage/**, instead of mypage.md.
 
 In this template, you will see text that explains how to use this template and comments explaining the formats.
 
