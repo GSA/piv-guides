@@ -4,7 +4,7 @@ title: Guidance Document Template
 permalink: /template/
 ---
 
-This page serves as a template to help you create a guide to add to the FICAM Guides. 
+This page serves as a template to help you create a new guide to add to the FICAM Guides. 
 
 This template tells you: 
 
