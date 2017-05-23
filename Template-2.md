@@ -54,7 +54,7 @@ This text should give a brief overview of what content is contained within the g
   
   This section will be a bullet list explaining assumption(s) or other needed precondition(s) before the user can begin to follow the steps outlined in the new guide.
 
-## Before you get started
+## Before You Get Started
 
 This section will tell the user what he/she needs to do to prepare before starting a set of procedures. 
 
