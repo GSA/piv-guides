@@ -16,7 +16,7 @@ This document covers following topics:
   * [SSH using Windows](#ssh-using-windows)
   * [SSH using Linux](#ssh-using-linux)
   * [SSH using Mac OS X](#ssh-using-mac-os-x)
-  * [Configure an UNIX-like server](#configure-an-unix-like-server)
+  * [Configure a UNIX-like server](#configure-a-unix-like-server)
 
 ## SSH using Windows
 ### Hardware and software requirements
@@ -176,7 +176,7 @@ This document covers following topics:
   
   > **Note:**  The card reader may flash. **Do not** remove the PIV card until the login process has been completed.
 
-## Configure an UNIX-like server
+## Configure a UNIX-like server
 
  1. Change the configuration in the **/etc/ssh/sshd_config** file. Then restart the **sshd**.
  
