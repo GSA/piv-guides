@@ -26,7 +26,7 @@ To create a new file to start your guide, do this:
   3. Click on the **_Create New File_** button at the top right of the Branch directory window. 
   > At the top **left-hand-side** of the screen, the Branch directory name appears with a **"/"** after it and a text box. (You can also select **_Cancel_**, if you want to start over.) 
   4. In the text box, enter your new file name and add the extension, **.md** for **Markdown** (for example, **Mynewfile.md**). 
-  5. Copy the content from this document, **_Template.md_**, and paste it into your new file. 
+  5. Copy the **Markdown style sheet** from this document, **_Template.md_**, and paste it into your new file. 
   6. At the top-left-hand side of the pasted text in your new file, change **Guidance Document Template** to your new file's title and **permalink** at the top, left-hand-side of the file (between the dashed lines [**---**]).
   
   > Change the **permalink** to a short version of the new file name (for example, **template** for **Guidance Document Template**). The **title** should be what you want to appear at the top of the **website page** where your guide will eventually be posted.
@@ -88,10 +88,10 @@ Include a brief description of the purpose of the page.
 
 As you add sub-sections, you can create links from the top by creating a linked list like this:
 
-- [Sub Section1](#sub-section1)
-- [Sub Section2](#sub-section2)
+- [Sub Section1](#subsection1)
+- [Sub Section2](#subsection2)
 
-## Sub Section1
+## Subsection1
 
 Italics use underscores.  This is _italics_.
 Bold uses asterisks.  This is **bold**.
@@ -112,15 +112,30 @@ Numbered lists can use numbers, and the lists will automatically increment for y
     2. Numbered sublist 2
 
 
-## Sub Section2
+## Subsection2
+
+### Images
 
 To reference an image, you will need to upload the image file to the /img/ folder on the github repository.  Here is a sample for referencing an image:
 
 ![This is what I want a screen reader to say for 508 compliance]({{site.baseurl}}/img/thisisthesampleimagefile.png)
 
+### Links
+
 To link to another page that already exists, 
 
 [This is what I want my link to say]({{site.baseurl}}/insertlink/) 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -156,6 +171,14 @@ In Markdown, the **#** symbol is used to denote and format headers (for example,
 {:class="info"}
 
 This is the main body text that explains the purpose of the procedure and any context that you might need before diving into the individual steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
+
+**What was here before ENDS**
+
+
+
+
+
+**what was here before STARTS again**
 
 **Text within double asterisks will appear as bolded.**
 
