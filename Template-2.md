@@ -24,11 +24,14 @@ To create a new file to start your guide, do this:
   > The **_Branch_** button will display the new Branch name and your new file will reside there.  **Note:** Be sure to remember the Branch name where you are working on your file.
   
   3. Click on the **_Create New File_** button at the top right of the Branch directory window. 
-  > At the top **left-hand-side** [**check this**] of the Branch directory there will be a box that says **_name your file_**.
-  4. Give the new file a name and add the extension, **.md**. (This means that the file type will be "Markdown").
-  5. Copy the content from this _Template.md_ file and paste it into your new file. 
-  6. Change **Guidance Document Template** to your new file's title and **permalink** at the top, left-hand-side of the file (between the dashed lines [**---**]).  
-  > The **permalink** should be a short version of the new file name (for example, **template** for **Guidance Document Template**). The **title** should be what you want to appear at the top of the website page, and the **permalink** text should be in the format: **/mypage/**, instead of mypage.md.
+  > At the top **left-hand-side** of the screen, the Branch directory name appears with a **/** and a box where you will enter the namne of your file.  (You can also select **_Cancel_**.) 
+  4. Enter your new file name and add the extension, **.md** for **Markdown**. 
+  5. Copy the content from this **_Template.md_** file and paste it into your new file. 
+  6. At the top-left-hand side of the pasted text in your new file, change **Guidance Document Template** to your new file's title and **permalink** at the top, left-hand-side of the file (between the dashed lines [**---**]).
+  
+  > Change the **permalink** to a short version of the new file name (for example, **template** for **Guidance Document Template**). The **title** should be what you want to appear at the top of the **website page** where your guide will eventually be posted.
+  
+  > The **permalink** text should be in the format: **/mypage/**, instead of mypage.md.
 
 # Basic Outline 
 
