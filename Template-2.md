@@ -125,7 +125,7 @@ Use two spaces and type "**_1._**," etc., to create a numbered item. You must ty
 
 ## Code Blocks
 
-For code blocks, enter four spaces and then enter three backticks (```)
+For code blocks, enter three backticks (```) before and after the code example:
 
 ```Text within three backticks style code or command line samples```
 
@@ -156,13 +156,11 @@ To insert an image (graphic) into your page, first upload the image file to the 
 
 This is the main body text that explains the purpose of the procedure and any context that you might need before diving into the individual steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
 
-
 ## Links to References or Other Information
 
 To link to useful references, information, or another page (especially that may be needed to complete the procedures), use this link format: 
 
 [This is what I want my link to say]({{site.baseurl}}/insertlink/) 
-
 
 # End Copying Markdown Template Here
 
@@ -180,48 +178,3 @@ The following references provide guidance and additional information about plain
   * The Associated Press (AP) Style Guide
   * Oxford Dictionary
   * Merriam Webster Dictionary
-  
-
-
-
-
-
-
-
-
-**WHERE WAS HERE BEFORE**
-
-
-reference information that may be needed to complete the steps outlined in the guide.
-
-  * This text gives a link to a reference document [with the hyperlink text within brackets](and the actual URL within parentheses)
-
-  * If you want to insert an image onto a page use the format below. The **align** instruction at the end of the link can either be **"left"**, **"center"**, or **"right"**.
-
-![Alt text for an image goes here]({{site.baseurl}}/folder that image is in/imagename.png){:align="right"}
-
-### 1. Title of Procedure 1
-
-  1. Step 1 of the procedure.
-  2. Step 2 of the procedure.
-  
-
-
-<!--- For example, this code denotes a comment, and information written inside of it will not appear on the website but can be used as a reference for others viewing the file. -->
-> This text will appear as a 'warning flag' on the website, which is a yellow banner. (The ">" symbol and the line directly underneath this body of text create the formatting for this flag.) Warning flags can be used for notifications such as notifying a user that they should skip a certain procedure.
-{:class="warning"}
-
-> This text will appear as a red banner, for an 'alert' message. Alert flags can be used for notifications such as common problems that may occur.
-{:class="alert"}
-
-> This text will appear as a green banner, for an 'informational' message. These flags can be used for notifications such as useful links or helpful tips.
-{:class="info"}
-
-This is the main body text that explains the purpose of the procedure and any context that you might need before diving into the individual steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
-
-
-
-
-
-
-
