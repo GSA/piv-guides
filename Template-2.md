@@ -6,14 +6,14 @@ permalink: /template/
 
 This page serves as a template to help you create a new guide to add to the FICAM Guides. 
 
-This template tells you: 
+This template provides: 
 
-  1. How to create a new file (i.e., Page).
+  1. The steps to create a new file (i.e., Page).
   2. An example outline for a guide.
   3. A Markdown template (i.e., style sheet) and how to use it. 
   4. Some resources for additional information about writing and style (plain language, etc.).  
   
-# Create a New File to Start Your Guide
+# Create a New File (Page) to Start Your Guide
 
 To create a new file to start your guide, do this:  
 
@@ -32,9 +32,11 @@ To create a new file to start your guide, do this:
   
   > The **permalink** text should be in the format: **/mypage/**, instead of mypage.md.
 
-# Basic Outline 
+# Example Outline 
 
-The outline gives you a starting point for creating your guide. 
+This example outline gives you a starting point for creating your guide. 
+
+  > When you create a new file (page), copy and paste both the Example Outline (if you choose to use it) and the Markdown Template (given below) into your new file.
 
 ## Overview
 
@@ -64,9 +66,9 @@ This paragraph should introduce the procedure and give user-friendly background 
   
   > Repeat Procedure sections, as needed.
 
-# Markdown Template
+# Markdown Template (Style Sheet)
 
-This template is for submitting NEW pages to the site. 
+Copy and paste the styles from this Markdown Template into the new file (page) you created.  Use Markdown styles to write NEW pages to be submitted to the IDManagement.gov website. 
 
 Markdown formatting is used for Pages (file) content.  You can learn more about Markdown formatting by browsing to the "Mastering Markdown" guide from Github: https://guides.github.com/features/mastering-markdown/
 
