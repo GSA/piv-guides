@@ -46,29 +46,31 @@ This example outline gives you a starting point for creating your guide.
 
 This text should give a brief overview of what content is contained within the guidance document. It may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
 
-## Assumptions (This section could also be called _Prerequisites_ or _Required Hardware and Software_)
+## Assumptions 
 
-  This text in this section will be a bullet list explaining a precondition or assumption before the user begins to follow the steps outlined in this document
+  > This section could also be called **_Preconditions_** or **_Required Hardware and Software_**.
+  
+  This section will be a bullet list explaining assumption(s) or other needed precondition(s) before the user can begin to follow the steps outlined in the new guide.
 
 ## Before you get started
 
-This section will tell the user what he/she needs to do to prepare before starting a set of procedures. For example, the user would need to know what specific hardware and software are required for the procedures.
+This section will tell the user what he/she needs to do to prepare before starting a set of procedures. 
 
 ## Title of Procedure 1
 
-This paragraph should introduce the procedure and give user-friendly background information.
+This paragraph should give user-friendly background information and introduce the procedure.
 
   1. Step 1 of procedure 1.
   2. Step 2 of procedure 1.
   
 ## Title of Procedure 2
 
-This paragraph should introduce the procedure and give user-friendly background information.
+This paragraph should give user-friendly background information and introduce the procedure.
 
   1. Step 1 of the procedure 2.
   2. Step 2 of the procedure 2.
   
-  > Repeat Procedure sections, as needed.
+  > Repeat Procedural sections, as needed.
 
 # Markdown Template (Style Sheet)
 
@@ -76,9 +78,8 @@ Copy and paste the styles from this Markdown Template into the new file (page) y
 
 Markdown formatting is used for Pages (file) content.  You can learn more about Markdown formatting by browsing to the "Mastering Markdown" guide from Github: https://guides.github.com/features/mastering-markdown/
 
-  
 
-For guidance, pages should be brief to reduce scrolling by users, be written in Plain Language, and use bullets, lists and images.  Paragraphs should be short.
+
 
 Samples are provided below for the formats used on this site.
 
@@ -141,9 +142,18 @@ To link to another page that already exists,
 # End Copying Here
 
 
+# Writing and Style Resources
 
+For the FICAM Guides, all pages should be brief, and paragraphs should be short. All text should be written in plain language. Use numbered steps, bullet lists, and graphics whenever possible. 
 
+The following references provide guidance and additional information about plain language and style:
 
+  * 18F Content Guide
+  * [Federal Plain Language Guidelines]({{site.baseurl}}/http://www.plainlanguage.gov/howto/guidelines/FederalPLGuidelines/TOC.cfm/)
+  * The GPO Style Guide (2016)
+  * The Chicago Manual of Style
+  * The Associated Press (AP) Style Guide
+  
 
 
 
