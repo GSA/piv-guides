@@ -9,9 +9,8 @@ This page serves as a template to help you create a new guide to add to the FICA
 This template tells you: 
 
   1. How to create a new file.
-  2. How to use this template. 
   3. A basic outline for a guide.
-  4. A Markdown style sheet and how to use it. 
+  4. A Markdown template and how to use it. 
   5. Some resources on writing (plain language, etc.) and style.  
   
 # Create a New File to Start Your Guide
@@ -65,20 +64,25 @@ This paragraph should introduce the procedure and give user-friendly background 
   
   > Repeat Procedure sections, as needed.
 
-# Markdown Style Sheet (Syntax)
+# Markdown Template
 
-Pages use markdown formatting for content.  You can review markdown formatting and a quick three-minute guide by browsing to the Mastering Markdown guide from Github: https://guides.github.com/features/mastering-markdown/
+This template is for submitting NEW pages to the site. 
 
-This template is for submitting NEW pages to the site.   
+Markdown formatting is used for Pages (file) content.  You can learn more about Markdown formatting by browsing to the "Mastering Markdown" guide from Github: https://guides.github.com/features/mastering-markdown/
+
+  
 
 For guidance, pages should be brief to reduce scrolling by users, be written in Plain Language, and use bullets, lists and images.  Paragraphs should be short.
 
 Samples are provided below for the formats used on this site.
 
-# This is a top level header
-## This is a second level header
-### This is a third level header
-#### This is a fourth level header
+In Markdown, the **#** symbol is used to denote and format headers.
+
+# This is a top-level header
+## This is a second-level header
+### This is a third-level header
+#### This is a fourth-level header
+##### This is a fifth-level header
 
 Start your page with a top-level header.
 
@@ -106,7 +110,7 @@ Use two spaces, an asterisk, plus one space to start a bullet list.   use the da
 
 Use two spaces and type "**_1._**," etc., to create a numbered item. You must type each number. The numbers will automatically increment for you when rendered. The first numbered list will render as "1, 2, 3," etc.  Even though you must type 1, 2, etc., for the numbered sub-item list, the sub-items will render as "i, ii, iii," etc.
 
-    > **Note:** Markdown supports only **two** indention levels for numbered lists.
+  > **Note:** Markdown supports only **two** indention levels for numbered lists.
 
   1. Numbered item 1
   2. Numbered item 2
