@@ -18,15 +18,15 @@ This template tells you:
 
 To create a new file to start your guide, do this:  
 
-  1. Look at the **_Branch_** button at the upper left-hand corner of your GitHub Repo's main page. The Branch name showing on the button is where your new file will be stored.  You can also create a new Branch name, if you prefer. 
+  1. Look at the **_Branch_** button at the top left-hand corner of your GitHub Repo's main page. The name showing on the **_Branch_** button is where your new file will be stored.  You can also create a new Branch name, if you prefer. 
   2. To create a new Branch, click on the **_Branch_** button and add a new Branch name.  
   
-  > The **_Branch_** button will display the new Branch name and your new file will reside there.  **Note:** Be sure to remember the Branch name where you are working on your file.
+  > The **_Branch_** button will display the new Branch name and your new file will reside there.  **Note:**  Be sure to remember the Branch name where you are working on your file.
   
   3. Click on the **_Create New File_** button at the top right of the Branch directory window. 
-  > At the top **left-hand-side** of the screen, the Branch directory name appears with a **/** and a box where you will enter the namne of your file.  (You can also select **_Cancel_**.) 
-  4. Enter your new file name and add the extension, **.md** for **Markdown**. 
-  5. Copy the content from this **_Template.md_** file and paste it into your new file. 
+  > At the top **left-hand-side** of the screen, the Branch directory name appears with a **"/"** after it and a text box. (You can also select **_Cancel_**, if you want to start over.) 
+  4. In the text box, enter your new file name and add the extension, **.md** for **Markdown** (for example, **Mynewfile.md**). 
+  5. Copy the content from this document, **_Template.md_**, and paste it into your new file. 
   6. At the top-left-hand side of the pasted text in your new file, change **Guidance Document Template** to your new file's title and **permalink** at the top, left-hand-side of the file (between the dashed lines [**---**]).
   
   > Change the **permalink** to a short version of the new file name (for example, **template** for **Guidance Document Template**). The **title** should be what you want to appear at the top of the **website page** where your guide will eventually be posted.
