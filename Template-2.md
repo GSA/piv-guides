@@ -123,6 +123,16 @@ Use two spaces and type "**_1._**," etc., to create a numbered item. You must ty
       1. Numbered sub-item 1
       2. Numbered sub-item 2
 
+## Code Blocks
+
+For code blocks, enter four spaces and then enter three backticks (```)
+
+```Text within three backticks style code or command line samples```
+
+## Code Comments
+
+<!--For example, this code denotes a comment, and information written inside of it will not appear on the website but can be used as a reference for others viewing the file.-->
+
 ## Images
 
 To insert an image (graphic) into your page, first upload the image file to the **/img/** folder in the appropriate GitHub repository.  Next, use this format to link to the image:
@@ -133,13 +143,25 @@ To insert an image (graphic) into your page, first upload the image file to the 
 
 ![Alt text for an image goes here]({{site.baseurl}}/folder that image is in/imagename.png){:align="right"}
 
+## Alerts, Warnings, and Information Blocks
+
+> This text will appear as a 'warning flag' on the website, which is a yellow banner. (The ">" symbol and the line directly underneath this body of text create the formatting for this flag.) Warning flags can be used for notifications such as notifying a user that they should skip a certain procedure.
+{:class="warning"}
+
+> This text will appear as a red banner, for an 'alert' message. Alert flags can be used for notifications such as common problems that may occur.
+{:class="alert"}
+
+> This text will appear as a green banner, for an 'informational' message. These flags can be used for notifications such as useful links or helpful tips.
+{:class="info"}
+
+This is the main body text that explains the purpose of the procedure and any context that you might need before diving into the individual steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
+
 
 ## Links to References or Other Information
 
 To link to useful references, information, or another page (especially that may be needed to complete the procedures), use this link format: 
 
 [This is what I want my link to say]({{site.baseurl}}/insertlink/) 
-
 
 
 # End Copying Markdown Template Here
@@ -185,8 +207,6 @@ reference information that may be needed to complete the steps outlined in the g
   
 
 
-In Markdown, the **#** symbol is used to denote and format headers (for example, **#** denotes a **Heading 1**, **##** denotes a **Heading 2**, and so on).  (Please see the _Markdown Style Sheet_ given below for more details on Markdown formatting.)
-
 <!--- For example, this code denotes a comment, and information written inside of it will not appear on the website but can be used as a reference for others viewing the file. -->
 > This text will appear as a 'warning flag' on the website, which is a yellow banner. (The ">" symbol and the line directly underneath this body of text create the formatting for this flag.) Warning flags can be used for notifications such as notifying a user that they should skip a certain procedure.
 {:class="warning"}
@@ -199,31 +219,9 @@ In Markdown, the **#** symbol is used to denote and format headers (for example,
 
 This is the main body text that explains the purpose of the procedure and any context that you might need before diving into the individual steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
 
-**What was here before ENDS**
 
 
 
 
 
-**what was here before STARTS again**
 
-**Text within double asterisks will appear as bolded.**
-
-*Text within single asterisks will appear as italicized.*
-
-```Text within three backticks style code or command line samples```
-
-
-
-1.	Step 1 of the procedure...
-2.	Step 2 of the procedure...
-
-
-#### References
-
-Any referential links should be added to this section. Links appear in the following format [hyperlink text]({{ site.baseurl }}{{ page.url }})
-
-For more information on formatting in markdown, go [here.](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
-
-
-**WHAT WAS HERE BEFORE**
