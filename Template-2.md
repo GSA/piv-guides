@@ -14,7 +14,7 @@ This template tells you:
   4. A Markdown style sheet and how to use it. 
   5. Some resources on writing (plain language, etc.) and style.  
   
-# Create a New File
+# Create a New File to Start Your Guide
 
 To create a new file to start your guide, do this:  
 
