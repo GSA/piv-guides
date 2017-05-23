@@ -5,14 +5,21 @@ permalink: /devconfig/ssh
 collection: devconfig
 ---
 
-# How do I enable PIV/CAC for Secure Shell (SSH) to a Unix-like system from Windows?
-
-These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies.  As part of their roles, these professionals will be authorized by their agencies to use secure methods to remotely access other computer hosts.
-
-For those professionals who use Windows-based systems, **PuTTY** allows for remote access. PuTTY is an open-source terminal emulator, serial console, and network file transfer application. It supports network protocols such as Secure Copy (SCP), Secure Shell (SSH), Telnet, rlogin, and &quot;raw socket&quot; connections. It can also be used to connect to a serial port.
+# Secure Shell (SSH) to a UNIX-like server
 
 The information in this record is targeted to those who are comfortable performing high-level IT tasks.
-## Hardware and software requirements
+  * Your PIV authentication key pair and public certificae is exactly like using a self-signed cert and key pair to SSH
+  * The key pair and certificate are on PIV card
+  * Ensure your workstation or jump server can recognize the credential and enabling the correct drivers on the client are included 
+
+This document covers following topics:
+  * [SSH using Windows](#SSH-using-Windows)
+  * [SSH using Linux](#SSH-using-Linux)
+  * [SSH using Mac OS X](#SSH-using-Mac-OS-X)
+  * [Configure an UNIX-like server](#Configure-an-UNIX-like-server)
+
+## SSH using Windows
+### Hardware and software requirements
 
 - Windows-based workstation or computer
 - PuTTY application
@@ -20,16 +27,16 @@ The information in this record is targeted to those who are comfortable performi
 
 > _**Note:**  You will download the required applications during the steps below._
 
-## Procedures
+### Procedures
 
-### Install PuTTY-CAC
+#### Install PuTTY-CAC
 
 1. To download and install **PuTTY-CAC**, go to: [https://github.com/NoMoreFood/putty-cac/releases](https://github.com/NoMoreFood/putty-cac/releases).  (PuTTY-CAC is referred to as &quot;**PuTTY**&quot; within the application.)
 2. Open PuTTY and click on **About** (lower left-hand corner of the **PuTTY Configuration** window) to verify that the correct version was installed.
 
 > _**Note:**  **PuTTY** will typically be installed at C:\Program Files\PuTTY.)_
 
-### Insert CAPI Key into Pageant
+#### Insert CAPI Key into Pageant
 
 > _**CAPI** is Microsoft's Crytographic Application Programming Interface._
 
@@ -59,7 +66,7 @@ The information in this record is targeted to those who are comfortable performi
 
 > _**Note:**  You'll need to re-add the certificate every time that you start **Pageant**._
 
-### Configure PuTTY
+#### Configure PuTTY
 
 1. Right-click on the **Pageant** icon again from the Windows taskbar and select **New Session**.  (This will launch **PuTTY**.)
 
@@ -88,7 +95,7 @@ The information in this record is targeted to those who are comfortable performi
 
 > _**Note**:  For other Jumpboxes, submit a service ticket to that support group and include the **IP address** of the Jumpbox you are using, **your account name**, and the **SSH key** from your **PIV card**._
 
-### Verify your PuTTY login
+#### Verify your PuTTY login
 
 > _**Note:**  Once the support group has set up an account with your **SSH key** on the Jumpbox, you'll then be able to use your **PIV card** to log into the Jumpbox._
 
@@ -102,37 +109,74 @@ The information in this record is targeted to those who are comfortable performi
 
 > _After each server you &quot;jump&quot; to, the output of **ssh-add –l** should always show the key.  After you see the key, you may **ssh** to any other hosts in the environment._
 
-# Enable PIV for Secure Shell (SSH) to a UNIX-like system from a Linux or a Mac OS X computer
+## SSH using Linux
 
-These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies. As part of their roles, these professionals will be authorized by their agencies to use secure methods to remotely access other computer hosts.
-
-  * Your PIV authentication key pair and public cert is exactly like using a self-signed cert and key pair to SSH
-  * The key pair and certificate are on hardware PIV card
-  * Ensure your workstation or jump server can recognize the credential and enabling the correct drivers on the client are included <!-- revision needed -->
-
-## Hardware Requirements
+### Hardware and software requirements
 
   * A Smart Card reader
   * A PIV card
   * A Linux or a Mac OS X computer correctly configured to use a PIV card for login, e.g. configure [**opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).
 
-## Procedures
+### Procedures
 
-### Obtain and Save Public Key from PIV card
+#### Obtain and save public key from PIV card
 
   1. Insert your **PIV card** into your computer's card reader.
   2. Use the following command to save the **user&#39;s public SSH key** to a file and submit the file to Jump server administrator.
-        Linux:		
+		
         ```
 			ssh-keygen -D /usr/lib64/opensc-pkcs11.so > mykey.pub
         ```  
+	
+#### Log in via SSH
 
-        Max OS X:
+  1. Insert your **PIV card** into your computer's card reader.
+
+  2. Use the following command to log into the remote machine.
+	
+        ```
+			ssh -I /usr/lib64/opensc-pkcs11.so <remote-host>
+        ```    
+
+  3. At the PIV card password prompt, enter your **PIN**. You should see remote-host shell prompt.
+  
+  > **Note:**  The card reader may flash. **Do not** remove the PIV card until the login process has been completed.
+
+## SSH using Max OS X
+
+### Hardware and software requirements
+
+  * A Smart Card reader
+  * A PIV card
+  * A Linux or a Mac OS X computer correctly configured to use a PIV card for login, e.g. configure [**opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).
+
+### Procedures
+
+#### Obtain and save public key from PIV card
+
+  1. Insert your **PIV card** into your computer's card reader.
+  2. Use the following command to save the **user&#39;s public SSH key** to a file and submit the file to Jump server administrator.
+
         ```
 			ssh-keygen -D /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so > mykey.pub
         ```
- 
-### Configure Linux/Unix Jump Server (SSHD)
+	
+#### Log in via SSH
+
+  1. Insert your **PIV card** into your computer's card reader.
+
+  2. Use the following command to log into the remote machine. 
+        
+        Mac OS X:
+        ```
+		 	ssh -I /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so <remote-host>
+        ```
+
+  3. At the PIV card password prompt, enter your **PIN**. You should see remote-host shell prompt.
+  
+  > **Note:**  The card reader may flash. **Do not** remove the PIV card until the login process has been completed.
+
+## Configure UNIX-like server
 
  1. Change the configuration in the **/etc/ssh/sshd_config** file. Then restart the **sshd**.
  
@@ -150,93 +194,3 @@ These procedures are intended for network and system administrators, or other IT
   3. To allow one user to have such access, place the user&#39;s PIV card's SSH public key in the following directory, according to the user's name: **/etc/sshd/authorized_keys/[login ID]**. (**Note:** To ensure that access requirements are enforced, only a **root user** may modify this directory and its files.)  
 
   4. Disable any alternative means of access (i.e., via passwords), as needed.
-
-
-### Log in via SSH
-
-  1. Insert your **PIV card** into your computer's card reader.
-
-  2. Use the following command to log into the remote machine.
-	Linux:		
-        ```
-			ssh -I /usr/lib64/opensc-pkcs11.so <remote-host>
-        ```    
-        
-        Mac OS X:
-        ```
-		 	ssh -I /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so <remote-host>
-        ```
-
-  3. At the PIV card password prompt, enter your **PIN**. You should see remote-host shell prompt.
-  
-  > **Note:**  The card reader may flash. **Do not** remove the PIV card until the login process has been completed.
-
-# Enable PIV for Secure Shell (SSH) to a UNIX-like system from a Linux or a Mac OS X computer
-
-These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies. As part of their roles, these professionals will be authorized by their agencies to use secure methods to remotely access other computer hosts.
-
-  * Your PIV authentication key pair and public cert is exactly like using a self-signed cert and key pair to SSH
-  * The key pair and certificate are on hardware PIV card
-  * Ensure your workstation or jump server can recognize the credential and enabling the correct drivers on the client are included <!-- revision needed -->
-
-## Hardware Requirements
-
-  * A Smart Card reader
-  * A PIV card
-  * A Linux or a Mac OS X computer correctly configured to use a PIV card for login, e.g. configure [**opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).
-
-## Procedures
-
-### Obtain and Save Public Key from PIV card
-
-  1. Insert your **PIV card** into your computer's card reader.
-  2. Use the following command to save the **user&#39;s public SSH key** to a file and submit the file to Jump server administrator.
-        Linux:		
-        ```
-			ssh-keygen -D /usr/lib64/opensc-pkcs11.so > mykey.pub
-        ```  
-
-        Max OS X:
-        ```
-			ssh-keygen -D /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so > mykey.pub
-        ```
- 
-### Configure Linux/Unix Jump Server (SSHD)
-
- 1. Change the configuration in the **/etc/ssh/sshd_config** file. Then restart the **sshd**.
- 
- 	```
-		AuthorizedKeysFile /etc/sshd/authorized_keys/%u
-		PasswordAuthentication No
-	```
-
-  2. Create the directory: **/etc/sshd/authorized_keys**.
-
-        ```
-			mkdir /etc/sshd/authorized_keys
-        ```
-
-  3. To allow one user to have such access, place the user&#39;s PIV card's SSH public key in the following directory, according to the user's name: **/etc/sshd/authorized_keys/[login ID]**. (**Note:** To ensure that access requirements are enforced, only a **root user** may modify this directory and its files.)  
-
-  4. Disable any alternative means of access (i.e., via passwords), as needed.
-
-
-### Log in via SSH
-
-  1. Insert your **PIV card** into your computer's card reader.
-
-  2. Use the following command to log into the remote machine.
-	Linux:		
-        ```
-			ssh -I /usr/lib64/opensc-pkcs11.so <remote-host>
-        ```    
-        
-        Mac OS X:
-        ```
-		 	ssh -I /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so <remote-host>
-        ```
-
-  3. At the PIV card password prompt, enter your **PIN**. You should see remote-host shell prompt.
-  
-  > **Note:**  The card reader may flash. **Do not** remove the PIV card until the login process has been completed.
-
