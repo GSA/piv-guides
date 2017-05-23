@@ -142,7 +142,7 @@ This document covers following topics:
   
   > **Note:**  The card reader may flash. **Do not** remove the PIV card until the login process has been completed.
 
-## SSH using Max OS X
+## SSH using Mac OS X
 
 ### Hardware and software requirements
 
