@@ -34,7 +34,7 @@ To create a new page to start your guide, do this:
   
   > The **permalink** text should be in the format: **/mypage/**, instead of mypage.md.
   
-# BEGIN COPYING EXAMPLE OUTLINE AND MARKDOWN TEMPLATE FROM HERE
+# Copy Example Outline and Markdown Template from Here
 
 # Example Outline 
 
@@ -138,7 +138,7 @@ To link to another page that already exists,
 
 [This is what I want my link to say]({{site.baseurl}}/insertlink/) 
 
-# END COPYING HERE
+# End Copying Here
 
 
 
