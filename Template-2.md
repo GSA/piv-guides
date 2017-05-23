@@ -51,6 +51,9 @@ This text should give a brief overview of what content is contained within the g
 
 This section will tell the user what he/she needs to do to prepare before starting a set of procedures. For example, the user would need to know what specific hardware and software are required for the procedures.
 
+
+# Markdown Style Sheet (Syntax)
+
 Pages use markdown formatting for content.  You can review markdown formatting and a quick three-minute guide by browsing to the Mastering Markdown guide from Github: https://guides.github.com/features/mastering-markdown/
 
 This template is for submitting NEW pages to the site.   
