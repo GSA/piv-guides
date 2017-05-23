@@ -10,7 +10,7 @@ This template provides:
 
   1. The steps to create a new file (i.e., called a GitHub **_Page_**).
   2. An example outline for a guide.
-  3. A Markdown template (i.e., style sheet) and how to use it. 
+  3. A Markdown template and how to use Markdown _styles_. 
   4. Some resources for additional information about writing and style (plain language, etc.).  
   
 # Create a New File (Page) to Start Your Guide
