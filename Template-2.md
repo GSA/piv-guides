@@ -127,7 +127,7 @@ Use two spaces and type "**_1._**," etc., to create a numbered item. You must ty
 
 For code blocks, enter four spaces and then enter three backticks (```)
 
-    ```Text within three backticks style code or command line samples```
+```Text within three backticks style code or command line samples```
 
 ## Code Comments
 
