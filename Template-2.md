@@ -51,6 +51,21 @@ This text should give a brief overview of what content is contained within the g
 
 This section will tell the user what he/she needs to do to prepare before starting a set of procedures. For example, the user would need to know what specific hardware and software are required for the procedures.
 
+## Title of Procedure 1
+
+This paragraph should introduce the procedure and give user-friendly background information.
+
+  1. Step 1 of procedure 1.
+  2. Step 2 of procedure 1.
+  
+## Title of Procedure 2
+
+This paragraph should introduce the procedure and give user-friendly background information.
+
+  1. Step 1 of the procedure 2.
+  2. Step 2 of the procedure 2.
+  
+  > Repeat Procedure sections, as needed.
 
 # Markdown Style Sheet (Syntax)
 
