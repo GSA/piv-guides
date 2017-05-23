@@ -15,6 +15,8 @@ This template provides:
   
 # Create a New Page to Start Your Guide
 
+To contribute a new guide, please see the **Contributing.md** file for more information.
+
 To create a new page to start your guide, do this:  
 
   1. Look at the **_Branch_** button at the top left-hand corner of your GitHub Repo's main page. The name showing on the **_Branch_** button is where your new page will be stored.  You can also create a new Branch name, if you prefer. 
@@ -78,34 +80,31 @@ Copy and paste the styles from this Markdown Template into the new file (page) y
 
 Markdown formatting is used for Pages (file) content.  You can learn more about Markdown formatting by browsing to the "Mastering Markdown" guide from Github: https://guides.github.com/features/mastering-markdown/
 
-
-
-
-Samples are provided below for the formats used on this site.
+## Headings
 
 In Markdown, the **#** symbol is used to denote and format headers.
 
-# This is a top-level header
-## This is a second-level header
-### This is a third-level header
-#### This is a fourth-level header
-##### This is a fifth-level header
+# This is a top-level heading
+## This is a second-level heading
+### This is a third-level heading
+#### This is a fourth-level heading
+##### This is a fifth-level heading
 
-Start your page with a top-level header.
+  > Start your page with a top-level heading.
 
-# Type your header here
+## Table of Contents (TOC)
 
-Include a brief description of the purpose of the page.
+As you add sections, you can create a Table of Contents (TOC) at the top of your page by creating a linked list like this:
 
-As you add subsections, you can create links from the top by creating a linked list like this:
+- [Subsection1](#subsection1)
+- [Subsection2](#subsection2)
 
-- [Sub Section1](#subsection1)
-- [Sub Section2](#subsection2)
+## Bold and Italics
 
-## Subsection1
+  * Use underscores to create italics:  _italics_.
+  * Use double asterisks to bold a word:  **bold**.
 
-Italics use underscores.  This is _italics_.
-Bold uses asterisks.  This is **bold**.
+## Bulleted and Numbered Lists
 
 Use two spaces, an asterisk, plus one space to start a bullet list.   use the dash, followed by two spaces.
 
@@ -124,35 +123,41 @@ Use two spaces and type "**_1._**," etc., to create a numbered item. You must ty
       1. Numbered sub-item 1
       2. Numbered sub-item 2
 
+## Images
 
-## Subsection2
-
-### Images
-
-To reference an image, you will need to upload the image file to the /img/ folder on the github repository.  Here is a sample for referencing an image:
+To insert an image (graphic) into your page, first upload the image file to the **/img/** folder in the appropriate GitHub repository.  Next, use this format to link to the image:
 
 ![This is what I want a screen reader to say for 508 compliance]({{site.baseurl}}/img/thisisthesampleimagefile.png)
 
-### Links
+  > To align an image on a page, use the **align** instruction at the end of an image link (i.e., **"left"**, **"center"**, or **"right"**) using this format:
 
-To link to another page that already exists, 
+![Alt text for an image goes here]({{site.baseurl}}/folder that image is in/imagename.png){:align="right"}
+
+
+## Links to References or Other Information
+
+To link to useful references, information, or another page (especially that may be needed to complete the procedures), use this link format: 
 
 [This is what I want my link to say]({{site.baseurl}}/insertlink/) 
 
-# End Copying Here
+
+
+# End Copying Markdown Template Here
 
 
 # Writing and Style Resources
 
 For the FICAM Guides, all pages should be brief, and paragraphs should be short. All text should be written in plain language. Use numbered steps, bullet lists, and graphics whenever possible. 
 
-The following references provide guidance and additional information about plain language and style:
+The following references provide guidance and additional information about plain language, writing, and style:
 
-  * 18F Content Guide
+  * [18F Content Guide]({{site.baseurl}}/https://content-guide.18f.gov/)
   * [Federal Plain Language Guidelines]({{site.baseurl}}/http://www.plainlanguage.gov/howto/guidelines/FederalPLGuidelines/TOC.cfm/)
-  * The GPO Style Guide (2016)
+  * [U.S. Government Printing Office (GPO) Style Manual]({{site.baseurl}}/https://www.govinfo.gov/app/details/GPO-STYLEMANUAL-2016/)
   * The Chicago Manual of Style
   * The Associated Press (AP) Style Guide
+  * Oxford Dictionary
+  * Merriam Webster Dictionary
   
 
 
