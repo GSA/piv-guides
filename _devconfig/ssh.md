@@ -31,7 +31,7 @@ This document covers following topics:
 
 #### Install PuTTY-CAC
 
-1. To download and install **PuTTY-CAC**, go to: [https://github.com/NoMoreFood/putty-cac/releases](https://github.com/NoMoreFood/putty-cac/releases).  (PuTTY-CAC is referred to as &quot;**PuTTY**&quot; within the application.)
+1. To download and install [**PuTTY-CAC**](https://github.com/NoMoreFood/putty-cac/releases).  (PuTTY-CAC is referred to as &quot;**PuTTY**&quot; within the application.)
 2. Open PuTTY and click on **About** (lower left-hand corner of the **PuTTY Configuration** window) to verify that the correct version was installed.
 
 > _**Note:**  **PuTTY** will typically be installed at C:\Program Files\PuTTY.)_
