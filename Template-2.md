@@ -106,12 +106,10 @@ Use two spaces, an asterisk, plus one space to start a bullet list.   use the da
 
 Numbered lists can use numbers, and the lists will automatically increment for you.
 
-    1. Numbered List 1
-    1. Numbered List 2
-        1. Numbered sublist 1
-        2. Numbered sublist 2
-            1. abc
-            2. abc
+  1. Numbered item 1
+  2. Numbered item 2
+      1. Numbered sub-item 1
+      2. Numbered sub-item 2
 
 
 ## Subsection2
