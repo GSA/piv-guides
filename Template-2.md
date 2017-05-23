@@ -10,9 +10,9 @@ This template tells you:
 
   1. How to create a new file.
   2. How to use this template. 
-  2. A basic outline for a guide.
-  3. A few tips on style and writing. 
-  4. A Markdown style sheet and how to use it.   
+  3. A basic outline for a guide.
+  4. A Markdown style sheet and how to use it. 
+  5. Some resources on writing (plain language, etc.) and style.  
   
 # Create a New File
 
@@ -172,3 +172,5 @@ Any referential links should be added to this section. Links appear in the follo
 
 For more information on formatting in markdown, go [here.](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
 
+
+**WHAT WAS HERE BEFORE**
