@@ -18,7 +18,12 @@ This template tells you:
 
 To create a new file to start your guide, do this:  
 
-  1. Click on the [Check this--]**_create new file_** button at the top right-hand-side of the Branch directory **Check this.  Use screen capture?**. 
+  1. Look at the **_Branch_** button at the upper left-hand corner of your GitHub Repo's main page. Take note of the Branch name.  This is where your new file will be stored.  You can also create a new Branch name, if you prefer. 
+  2. To create a new Branch, click on the **_Branch_** button and add a new Branch name.  
+  
+  > The **_Branch_** button will display the new Branch name and your new file will reside there.  **Note:** Be sure to remember the Branch name where you are working on your file.
+  
+  Click on the **_Create New File_** button at the top right-hand-side of the Branch directory **Check this.  Use screen capture?**. 
   > At the top **left-hand-side** [**check this**] of the Branch directory there will be a box that says **_name your file_**.
   2. Give the new file a name and add the extension, **.md**. (This means that the file type will be "Markdown").
   3. Copy the content from this _Template.md_ file and paste it into your new file. 
