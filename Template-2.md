@@ -4,33 +4,37 @@ title: Guidance Document Template
 permalink: /template/
 ---
 
-This page serves as a template to help you create a new guide to add to the FICAM Guides. 
+This page serves as a template to help you create a new FICAM Guide for the IDManagment.gov website. 
 
 This template provides: 
 
-  1. The **_steps to create a new file_** (i.e., called a GitHub **_Page_**).
-  2. An **_example outline_** for a guide.
+  1. The **_steps to create a new Page (file)_** for your guide. (**Note:**  **_files_** in GitHub are called **_Pages_**.)
+  2. An **_example outline_**.
   3. A **_Markdown template_** and how to use Markdown **_Styles_**. 
   4. Some **_writing and style resources_** for additional information (plain language, etc.).  
   
-# Create a New File (Page) to Start Your Guide
+# Create a New Page to Start Your Guide
 
-To create a new file to start your guide, do this:  
+To create a new page to start your guide, do this:  
 
-  1. Look at the **_Branch_** button at the top left-hand corner of your GitHub Repo's main page. The name showing on the **_Branch_** button is where your new file will be stored.  You can also create a new Branch name, if you prefer. 
+  1. Look at the **_Branch_** button at the top left-hand corner of your GitHub Repo's main page. The name showing on the **_Branch_** button is where your new page will be stored.  You can also create a new Branch name, if you prefer. 
   2. To create a new Branch, click on the **_Branch_** button and add a new Branch name.  
   
-  > The **_Branch_** button will display the new Branch name and your new file will reside there.  **Note:**  Be sure to remember the Branch name where you are working on your file.
+  > The **_Branch_** button will display the new Branch name and your new page will reside there.  
+  
+  > **Note:**  Be sure to remember the Branch name where your file resides.
   
   3. Click on the **_Create New File_** button at the top right of the Branch directory window. 
   > At the top **left-hand-side** of the screen, the Branch directory name appears with a **"/"** after it and a text box. (You can also select **_Cancel_**, if you want to start over.) 
-  4. In the text box, enter your new file name and add the extension, **.md** for **Markdown** (for example, **Mynewfile.md**). 
-  5. Copy the **Markdown style sheet** from this document, **_Template.md_**, and paste it into your new file. 
-  6. At the top-left-hand side of the pasted text in your new file, change **Guidance Document Template** to your new file's title and **permalink** at the top, left-hand-side of the file (between the dashed lines [**---**]).
+  4. In the text box, enter your new page name with the extension, **.md**, for **Markdown** (for example, **Mynewfile.md**). 
+  5. Copy the **_Example Outline_** and **_Markdown Template_** from this document, **_Template.md_**, and paste it into your new page. 
+  6. At the top-left-hand side of your new page, change **Guidance Document Template** to your new file's title and **permalink** at the top, left-hand-side of the file (between the dashed lines [**---**]).
   
   > Change the **permalink** to a short version of the new file name (for example, **template** for **Guidance Document Template**). The **title** should be what you want to appear at the top of the **website page** where your guide will eventually be posted.
   
   > The **permalink** text should be in the format: **/mypage/**, instead of mypage.md.
+  
+# BEGIN COPYING EXAMPLE OUTLINE AND MARKDOWN TEMPLATE FROM HERE
 
 # Example Outline 
 
@@ -134,7 +138,7 @@ To link to another page that already exists,
 
 [This is what I want my link to say]({{site.baseurl}}/insertlink/) 
 
-
+# END COPYING HERE
 
 
 
