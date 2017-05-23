@@ -8,10 +8,10 @@ This page serves as a template to help you create a new guide to add to the FICA
 
 This template tells you: 
 
-  1. How to create a new file.
-  3. A basic outline for a guide.
-  4. A Markdown template and how to use it. 
-  5. Some resources on writing (plain language, etc.) and style.  
+  1. How to create a new file (i.e., Page).
+  2. An example outline for a guide.
+  3. A Markdown template (i.e., style sheet) and how to use it. 
+  4. Some resources for additional information about writing and style (plain language, etc.).  
   
 # Create a New File to Start Your Guide
 
@@ -40,7 +40,7 @@ The outline gives you a starting point for creating your guide.
 
 This text should give a brief overview of what content is contained within the guidance document. It may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
 
-## Assumptions _/Prerequisites/Required Hardware and Software_
+## Assumptions (This section could also be called _Prerequisites_ or _Required Hardware and Software_)
 
   This text in this section will be a bullet list explaining a precondition or assumption before the user begins to follow the steps outlined in this document
 
