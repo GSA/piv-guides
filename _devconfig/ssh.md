@@ -13,10 +13,10 @@ The information in this record is targeted to those who are comfortable performi
   * Ensure your workstation or jump server can recognize the credential and enabling the correct drivers on the client are included 
 
 This document covers following topics:
-  * [SSH using Windows](#SSH-using-Windows)
-  * [SSH using Linux](#SSH-using-Linux)
-  * [SSH using Mac OS X](#SSH-using-Mac-OS-X)
-  * [Configure an UNIX-like server](#Configure-an-UNIX-like-server)
+  * [SSH using Windows](#ssh-using-windows)
+  * [SSH using Linux](#ssh-using-linux)
+  * [SSH using Mac OS X](#ssh-using-mac-os-x)
+  * [Configure an UNIX-like server](#configure-an-unix-like-server)
 
 ## SSH using Windows
 ### Hardware and software requirements
