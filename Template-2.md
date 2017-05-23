@@ -104,7 +104,9 @@ Use two spaces, an asterisk, plus one space to start a bullet list.   use the da
 -  Bullet 1
 -  Bullet 2
 
-Numbered lists can use numbers, and the lists will automatically increment for you.
+Use two spaces and type "**_1._**," etc., to create a numbered item. You must type each number. The numbers will automatically increment for you when rendered. The first numbered list will render as "1, 2, 3," etc.  Even though you must type 1, 2, etc., for the numbered sub-item list, the sub-items will render as "i, ii, iii," etc.
+
+  > **Note:** Markdown supports only **two** indention levels for numbered lists.
 
   1. Numbered item 1
   2. Numbered item 2
