@@ -176,7 +176,7 @@ This document covers following topics:
   
   > **Note:**  The card reader may flash. **Do not** remove the PIV card until the login process has been completed.
 
-## Configure UNIX-like server
+## Configure an UNIX-like server
 
  1. Change the configuration in the **/etc/ssh/sshd_config** file. Then restart the **sshd**.
  
