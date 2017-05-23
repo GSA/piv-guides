@@ -80,13 +80,13 @@ Samples are provided below for the formats used on this site.
 ### This is a third level header
 #### This is a fourth level header
 
-Start your page with a top level header.
+Start your page with a top-level header.
 
 # Type your header here
 
 Include a brief description of the purpose of the page.
 
-As you add sub-sections, you can create links from the top by creating a linked list like this:
+As you add subsections, you can create links from the top by creating a linked list like this:
 
 - [Sub Section1](#subsection1)
 - [Sub Section2](#subsection2)
@@ -106,7 +106,7 @@ Use two spaces, an asterisk, plus one space to start a bullet list.   use the da
 
 Use two spaces and type "**_1._**," etc., to create a numbered item. You must type each number. The numbers will automatically increment for you when rendered. The first numbered list will render as "1, 2, 3," etc.  Even though you must type 1, 2, etc., for the numbered sub-item list, the sub-items will render as "i, ii, iii," etc.
 
-  > **Note:** Markdown supports only **two** indention levels for numbered lists.
+    > **Note:** Markdown supports only **two** indention levels for numbered lists.
 
   1. Numbered item 1
   2. Numbered item 2
