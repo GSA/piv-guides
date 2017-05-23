@@ -8,10 +8,10 @@ This page serves as a template to help you create a new guide to add to the FICA
 
 This template provides: 
 
-  1. The **steps to create a new file** (i.e., called a GitHub **_Page_**).
-  2. An **example outline** for a guide.
-  3. A **Markdown template** and how to use Markdown **_Styles_**. 
-  4. Some **writing and style resources** for additional information (plain language, etc.).  
+  1. The **_steps to create a new file_** (i.e., called a GitHub **_Page_**).
+  2. An **_example outline_** for a guide.
+  3. A **_Markdown template_** and how to use Markdown **_Styles_**. 
+  4. Some **_writing and style resources_** for additional information (plain language, etc.).  
   
 # Create a New File (Page) to Start Your Guide
 
