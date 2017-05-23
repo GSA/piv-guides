@@ -152,3 +152,54 @@ Mac OS X:
 At the PIV card password prompt, enter your PIN. You should see remote-host shell prompt.
 
 Note: The card reader may flash. Do not remove the PIV card until the login process has been completed.
+
+Enable PIV for Secure Shell (SSH) to a UNIX-like system from a Linux or a Mac OS X computer
+
+These procedures are intended for network and system administrators, or other IT professionals, who are responsible for the day-to-day network operations of Federal Government agencies. As part of their roles, these professionals will be authorized by their agencies to use secure methods to remotely access other computer hosts.
+
+Your PIV authentication key pair and public cert is exactly like using a self-signed cert and key pair to SSH
+The key pair and certificate are on hardware PIV card
+Ensure your workstation or jump server can recognize the credential and enabling the correct drivers on the client are included
+Hardware Requirements
+
+A Smart Card reader
+A PIV card
+A Linux or a Mac OS X computer correctly configured to use a PIV card for login, e.g. configure opensc.
+Procedures
+
+Obtain and Save Public Key from PIV card
+
+Insert your PIV card into your computer's card reader.
+
+Use the following command to save the user's public SSH key to a file and submit the file to Jump server administrator. Linux:
+
+	ssh-keygen -D /usr/lib64/opensc-pkcs11.so > mykey.pub
+Max OS X:
+
+	ssh-keygen -D /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so > mykey.pub
+Configure Linux/Unix Jump Server (SSHD)
+
+Change the configuration in the /etc/ssh/sshd_config file. Then restart the sshd.
+
+	AuthorizedKeysFile /etc/sshd/authorized_keys/%u
+	PasswordAuthentication No
+Create the directory: /etc/sshd/authorized_keys.
+
+	mkdir /etc/sshd/authorized_keys
+To allow one user to have such access, place the user's PIV card's SSH public key in the following directory, according to the user's name: /etc/sshd/authorized_keys/[login ID]. (Note: To ensure that access requirements are enforced, only a root user may modify this directory and its files.)
+
+Disable any alternative means of access (i.e., via passwords), as needed.
+
+Log in via SSH
+
+Insert your PIV card into your computer's card reader.
+
+Use the following command to log into the remote machine. Linux:
+
+	ssh -I /usr/lib64/opensc-pkcs11.so <remote-host>
+Mac OS X:
+
+ 	ssh -I /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so <remote-host>
+At the PIV card password prompt, enter your PIN. You should see remote-host shell prompt.
+
+Note: The card reader may flash. Do not remove the PIV card until the login process has been completed.
