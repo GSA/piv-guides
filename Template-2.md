@@ -51,6 +51,14 @@ This text should give a brief overview of what content is contained within the g
 
 This section will tell the user what he/she needs to do to prepare before starting a set of procedures. For example, the user would need to know what specific hardware and software are required for the procedures.
 
+# Markdown Style Sheet
+
+
+
+
+
+
+
 reference information that may be needed to complete the steps outlined in the guide.
 
   * This text gives a link to a reference document [with the hyperlink text within brackets](and the actual URL within parentheses)
