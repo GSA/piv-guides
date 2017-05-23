@@ -43,9 +43,7 @@ This text should give a brief overview of what content is contained within the g
 
 ## Assumptions _/Prerequisites/Required Hardware and Software_
 
-  * This text in this section will be a bullet list explaining a precondition or assumption before the user begins to follow the steps outlined in this document
-  * The asterisk symbol denotes a bulleted item, and an indented asterisk denotes a second level bullet
-    * This is a second-level bullet
+  This text in this section will be a bullet list explaining a precondition or assumption before the user begins to follow the steps outlined in this document
 
 ## Before you get started
 
@@ -98,15 +96,20 @@ As you add sub-sections, you can create links from the top by creating a linked 
 Italics use underscores.  This is _italics_.
 Bold uses asterisks.  This is **bold**.
 
-Bullets use the dash, followed by two spaces. 
+Use two spaces, an asterisk, plus one space to start a bullet list.   use the dash, followed by two spaces.
+
+  * The asterisk symbol denotes a bulleted item, 
+    * This is a second-level bullet - An indented asterisk denotes a second level bullet
 
 -  Bullet 1
 -  Bullet 2
 
 Numbered lists can use numbers, and the lists will automatically increment for you.
 
-1. Numbered List 1
-1. Numbered List 2
+  1. Numbered List 1
+  1. Numbered List 2
+    1. Numbered sublist 1
+    2. Numbered sublist 2
 
 
 ## Sub Section2
