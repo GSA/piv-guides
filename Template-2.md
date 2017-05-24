@@ -17,7 +17,9 @@ This template provides:
 
 To contribute a new guide, please see the **Contributing.md** file for more information.
 
-To start your new guide, first you need to create a new Page (file).  Do this:  
+To start your new guide, first you need to create a new Page (file).  
+
+Do this:  
 
   1. Look at the **_Branch_** button at the top left-hand corner of your GitHub Repo's main page. The name shown on the **_Branch_** button is the branch where your new page will be stored. You can also create a new branch name for your guide, if you prefer. 
   2. To create a new branch, click on the **_Branch_** button and add a new name.  
