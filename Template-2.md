@@ -6,7 +6,7 @@ permalink: /template/
 
 This **_Template.md_** page serves as a template and guidance document to help you create a new FICAM Guide for the www.IDManagment.gov website. 
 
-> To create a new guide (or contribute to one), please read the **_Contributing.md_** page for more information, as well as terms and conditions. (The **_Contributing.md** file is located in the GitHub PIV-Guides, FPKI-Guides, and FICAM-Arch Repos.){:class="info"} 
+> To create a new guide (or contribute to one), please read the **_Contributing.md_** page, which is located in the GSA GitHub PIV-Guides, FPKI-Guides, and FICAM-Arch Repos.{:class="info"} 
 
 This **_Template.md_** page provides: 
 
@@ -19,10 +19,10 @@ This **_Template.md_** page provides:
 
 To create a new **_Page_** to start your guide, do this:  
 
-  1. Before you create a new **Page**, you need to select a **Branch** where your page will be stored. At the top left-hand corner of your GitHub Repo's directory window, you will see a **_Branch_** button. The branch (name) shown on this button is where your new page will be stored. 
+  1. Before you create a new **Page**, you need to select a **Branch** where your page will be stored. At the top left-hand corner of your GitHub Repo's directory window, you will see a **_Branch_** button. The branch shown on the button is where your new page will be stored. 
   2. You may also create a new branch for your guide, if you prefer. To create a new branch, click on the **_Branch_** button and add a new name.  
   
-  > The **_Branch_** button will display the new branch name. When you save your new page, it will be stored in this branch. (**Note:**  It's important to remember the **_branch name where your page is stored** for future updates to your guide.)
+  > The **_Branch_** button will display the new branch name. When you **_commit_** your new page, it will be stored in this branch. (**Note:**  It's important to remember the **_branch name where your page is stored** for future updates to your guide.)
   
   3. Click on the **_Create New File_** button located at the top right area of your Repo's directory window.  
   > At the top left-hand-side of the window, the Branch directory name appears with a **"/"** after it and a text box. (You can also select **_Cancel_**, if you want to start over.) 
