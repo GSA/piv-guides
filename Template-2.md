@@ -8,25 +8,25 @@ This page serves as a template to help you create a new FICAM Guide for the IDMa
 
 This template provides: 
 
-  1. The **_steps to create a new Page (file)_** for your guide. (**Note:**  **_files_** in GitHub are called **_Pages_**.)
-  2. An **_example outline_**.
-  3. A **_Markdown template_** and how to use Markdown **_Styles_**. 
-  4. Some **_writing and style resources_** for additional information (plain language, etc.).  
+  1. **_Steps to create a new Page (file)_** for your guide. 
+  2. An **_Example Outline_** to copy and paste into your guide (i.e., for document structure).
+  3. A **_Markdown Template_** to copy and paste into your guide (i.e., for Markdown formatting). 
+  4. Some **_writing and style resources_** (plain language, etc.).  
   
 # Create a New Page to Start Your Guide
 
 To contribute a new guide, please see the **Contributing.md** file for more information.
 
-To create a new page to start your guide, do this:  
+To start your new guide, first you need to create a new Page (file).  Do this:  
 
-  1. Look at the **_Branch_** button at the top left-hand corner of your GitHub Repo's main page. The name showing on the **_Branch_** button is where your new page will be stored.  You can also create a new Branch name, if you prefer. 
-  2. To create a new Branch, click on the **_Branch_** button and add a new Branch name.  
+  1. Look at the **_Branch_** button at the top left-hand corner of your GitHub Repo's main page. The name shown on the **_Branch_** button is the branch where your new page will be stored. You can also create a new branch name for your guide, if you prefer. 
+  2. To create a new branch, click on the **_Branch_** button and add a new name.  
   
-  > The **_Branch_** button will display the new Branch name and your new page will reside there.  
+  > The **_Branch_** button will display the new branch name, and your new page (guide) will reside there.  
   
-  > **Note:**  Be sure to remember the Branch name where your file resides.
+  > **Note:**  Take note of the branch name where your page resides.
   
-  3. Click on the **_Create New File_** button at the top right of the Branch directory window. 
+  3. At the top right of the branch directory window, click on the **_Create New File_** button.  
   > At the top **left-hand-side** of the screen, the Branch directory name appears with a **"/"** after it and a text box. (You can also select **_Cancel_**, if you want to start over.) 
   4. In the text box, enter your new page name with the extension, **.md**, for **Markdown** (for example, **Mynewfile.md**). 
   5. Copy the **_Example Outline_** and **_Markdown Template_** from this document, **_Template.md_**, and paste it into your new page. 
@@ -34,15 +34,13 @@ To create a new page to start your guide, do this:
   
   > Change the **permalink** to a short version of the new file name (for example, **template** for **Guidance Document Template**). The **title** should be what you want to appear at the top of the **website page** where your guide will eventually be posted.
   
-  > The **permalink** text should be in the format: **/mypage/**, instead of mypage.md.
-  
-# Copy Example Outline and Markdown Template from Here
+  > The **permalink** text should be in the format: **/mypage/**, instead of mypage.md
 
 # Example Outline 
 
-This example outline gives you a starting point for creating your guide. 
+Now that you have created a new page, this **Example Outline** will help you to create your guide.
 
-  > When you create a new file (page), copy and paste both the Example Outline (if you choose to use it) and the Markdown Template (given below) into your new file.
+  1. Copy and paste this **Example Outline** into your new page as a starting point for your guide's document structure.
 
 ## Overview
 
@@ -74,9 +72,9 @@ This paragraph should give user-friendly background information and introduce th
   
   > Repeat Procedural sections, as needed.
 
-# Markdown Template (Style Sheet)
+# Markdown Template
 
-Copy and paste the styles from this Markdown Template into the new file (page) you created.  Use Markdown styles to write NEW pages to be submitted to the IDManagement.gov website. 
+Copy and paste this **Markdown Template** into your new page.  Use Markdown styles to write NEW pages to be submitted to the IDManagement.gov website. 
 
 Markdown formatting is used for Pages (file) content.  You can learn more about Markdown formatting by browsing to the "Mastering Markdown" guide from Github: https://guides.github.com/features/mastering-markdown/
 
