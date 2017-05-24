@@ -8,7 +8,7 @@ This page serves as a template and guidance document to help you create a new FI
 
   > To create a new guide (or contribute to one), please read the **_Contributing.md_** page for more information, as well as terms and conditions. (The **_Contributing.md** file is located in the GitHub PIV-Guides, FPKI-Guides, and FICAM-Arch Repos.) 
 
-This **_Template.md** page provides: 
+This **_Template.md_** page provides: 
 
   1. **_Steps to create a new Page (file)_** for your guide. 
   2. An **_Example Outline_** to copy and paste into your page (i.e., to help structure your guide).
