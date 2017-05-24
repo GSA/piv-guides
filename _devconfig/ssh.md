@@ -5,7 +5,7 @@ permalink: /devconfig/ssh
 collection: devconfig
 ---
 
-# Use PIV/CAC and Secure Shell (SSH) to Remotely Access a UNIX-like Server from Windows, Linux, or Mac
+# Use PIV/CAC and Secure Shell (SSH) for Remote Access from Windows, Linux, or Mac
 
 This guide will help you to use your PIV/CAC for authentication to remotely access "UNIX-like" servers via SSH. To carry out the following procedures, you must have administrator privileges and be comfortable performing complex IT tasks. 
 
