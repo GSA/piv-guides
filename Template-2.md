@@ -17,7 +17,11 @@ This **_Template.md_** page provides:
   
 # Select or Create a Branch for Your Guide
 
-Before you create a new **_Page_** to start your new guide, you will need to select or create a branch. (A branch is where your Page will be stored.)
+Before you create a new **_Page_** for your new guide, you will need to select or create a branch. 
+
+  > A branch is where your Page will be stored. 
+
+Follow the steps below to either select or create a branch.
 
 ## Select an Existing Branch
 
@@ -29,20 +33,17 @@ To select an existing branch, do this:
   
 ## Create a New Branch
 
-Before you create a new **Page** to start your new guide, you will need to select or create a branch. (A branch is where your Page will be stored.)   
-
-To select an existing branch, do this:
+To create a new branch, do this:
   
-  2. You may also create a new branch for your guide, if you prefer. To create a new branch, click on the **_Branch_** button and add a new name.  
+  1. Click on the **_Branch_** button and add a new branch name.  
   
-  > The **_Branch_** button will display the new branch name. When you **_commit_** your new page, it will be stored in this branch. (**Note:**  It's important to remember the **_branch name where your page is stored** for future updates to your guide.)
+  > The **_Branch_** button will display the new branch name. 
   
-
 # Create a New Page To Start Your Guide
 
 To create a new **_Page_** to start your guide, do this:  
 
-
+  1. Check the **_Branch_** button to ensure that your selected or created branch name is displayed.
   3. Click on the **_Create New File_** button located at the top right area of your Repo's directory window.  
   > At the top left-hand-side of the window, the Branch directory name appears with a **"/"** after it and a text box. (You can also select **_Cancel_**, if you want to start over.) 
   4. In the text box, enter your new page's name with the extension, **.md**, for **Markdown** (for example, **Mynewfile.md**). 
