@@ -9,18 +9,24 @@ permalink: /template/
 
   > Link to Contributing.md **FIX -- ASK JASON HOW TO DO THIS LINK**
 
-# How to Create a New Guide Using this Template
+# How to Use this Template.md Page
 
 This **_Template.md_** Page will help you to create a new FICAM Guide for the www.IDManagment.gov website. It includes the following instructions and templates:
 
   > **FIX** - **Should be a TOC with Annotation...**
 
-  1. **_How To Create a New Guide_**. 
-  2. An **_Example Outline_** to copy and paste into your page (i.e., to help structure your guide).
+  1. **_How To Create a New FICAM Guide_**. 
+  2. An **_Example Outline Template_** to copy and paste into your page (i.e., to help structure your guide).
   3. A **_Markdown Template_** to copy and paste into your page (i.e., to help with Markdown formatting). 
   4. Some **_writing and Style Resources_** (i.e., to help with plain language, writing, and style).  
   
-# How To Create a New Guide
+# How To Create a New FICAM Guide
+
+These procedures will help you to walk through the basics of creating a new FICAM Guide, including: 
+
+  * Select or create a new **_Branch_** in your Repo 
+  * Create a new **_Page_** to start your guide
+  * How to use the **_Example Outline Template_** and **_Markdown Template_** to develop your guide
 
 ## Select or Create a Branch for Your Guide
 
@@ -30,7 +36,7 @@ Before you create a new **_Page_** for your new guide, you will need to select o
 
 Follow the steps below to either select or create a branch.
 
-## Select an Existing Branch
+### Select an Existing Branch
 
 To select an existing branch, do this: 
   
@@ -38,7 +44,7 @@ To select an existing branch, do this:
   
   > If this is the branch you want, go to [**Create a New Page To Start Your Guide**](#Create-a-New-Page-To-Start-Your-Guide).
   
-## Create a New Branch
+### Create a New Branch
 
 To create a new branch, do this:
   
@@ -63,7 +69,11 @@ To create a new **_Page_** to start your guide, do this:
     > The **permalink** title should be in the format: **/mypage/**, instead of mypage.md  
   8. Optionally, copy and paste only the portions of this file that you need (e.g., [**Example Outline**](#Example-Outline) and/or [**Markdown Template**](#Markdown-Template)). In this case, it is important to copy and paste the "header" information (**_layout_**, **_title_**, and **_permalink_**) from the top left corner of this **_Template.md_** file into your Page and make the changes given in Steps 6 and 7.
 
-# Example Outline 
+# How To Use the Templates
+
+**ADD TEXT HERE?**  **HEADING 1 WILL CONFLICT WITH Example Outline Template Heading 1**
+
+# Example Outline Template
 
 Now that you have created a new page, this **Example Outline** will help you to create your guide.
 
