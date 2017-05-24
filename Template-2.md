@@ -25,7 +25,7 @@ These procedures will walk you through the basics of creating a new FICAM Guide,
 
   * Select or create a new **_Branch_** in your Repo 
   * Create a new **_Page_** to start your guide
-  * How to use the **_Example Outline Template_** and **_Markdown Template_** to develop your guide
+  * Use the **_Example Outline Template_** and **_Markdown Template_** to develop your guide
 
 ## Select or Create a Branch for Your Guide
 
