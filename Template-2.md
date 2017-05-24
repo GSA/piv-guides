@@ -11,7 +11,7 @@ This page provides:
   1. **_Steps to create a new Page (file)_** for your guide. 
   2. An **_Example Outline_** to copy and paste into your page (i.e., to help structure your guide).
   3. A **_Markdown Template_** to copy and paste into your page (i.e., to help with Markdown formatting). 
-  4. Some **_writing and style resources_** (plain language, etc.).  
+  4. Some **_writing and style resources_** (to help with plain language, writing, and style).  
   
 # Create a New Page to Start Your Guide
 
