@@ -7,9 +7,17 @@ collection: devconfig
 
 # Use PIV/CAC and Secure Shell (SSH) to Remotely Access a UNIX-like Server from Windows, Linux, or Mac
 
-These steps will help you with using your PIV/CAC to remotely access "UNIX-like" servers via SSH.  To use these procedures, you will should have administrator privileges and be comfortable performing complex IT tasks. 
+This guide will help you to use your PIV/CAC for authentication to remotely access "UNIX-like" servers via SSH. To carry out the following procedures, you must have administrator privileges and be comfortable performing complex IT tasks. 
 
-These procedures will help to ensure that your workstation and jump server recognize your PIV/CAC credential so the correct drivers will be enabled on the target Client. 
+This guide covers the following topics:
+
+  * [SSH using Windows](#ssh-using-windows)
+  * [SSH using Linux](#ssh-using-linux)
+  * [SSH using Mac OS X](#ssh-using-mac-os-x)
+  * [Configure a UNIX-like server](#configure-a-unix-like-server)
+
+
+
 
 **START REWRITE**
 For administrators with a PIV/CAC who need to remotely access "UNIX-like" servers (i.e., those that operate via command-line inputs)... etc.   Add more....
@@ -17,23 +25,15 @@ For administrators with a PIV/CAC who need to remotely access "UNIX-like" server
 SSH - is xxxxx  
 UNIX-like = command-line prompt-based
 
-## Before You Begin
+## Before You Begin (Preliminary Information)
 
   * Your PIV/CAC card contains an authentication key pair and public certificate.
   * Using the PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access.
-  * A"UNIX-like server" is one that requires you to use a command line interface (vs. GUI) to carry out system operations.
-  * These procedures will help to ensure that your workstation and jump server recognize your PIV/CAC credential and so the correct drivers will be enabled on the target Client.
+  * **SSH is......xxxxxx (Glossary definition from FICAM, NIST (both), Lexicon...**
+  * A"UNIX-like server" is one that requires you to use a command line interface (vs. GUI) to carry out system operations. **Glossary term definition**?
 
-  
-**STOPPED REWRITE Here**
 
-This document covers following topics:
-  * [SSH using Windows](#ssh-using-windows)
-  * [SSH using Linux](#ssh-using-linux)
-  * [SSH using Mac OS X](#ssh-using-mac-os-x)
-  * [Configure a UNIX-like server](#configure-a-unix-like-server)
-
-## SSH using Windows
+## SSH Using Windows
 
 ### Hardware and software requirements
 
@@ -44,6 +44,8 @@ This document covers following topics:
 > _**Note:**  You will download the required applications during the steps below._
 
 ### Procedures
+
+These procedures will help to ensure that your workstation and jump server recognize your PIV/CAC credential and so the correct drivers will be enabled on the target Client.
 
 #### Install PuTTY-CAC
 
@@ -88,9 +90,9 @@ This document covers following topics:
 
 > _From within **PuTTY**, you'll need to set up a new profile._  
 
-2. Enter the **IP address** of your _Jumpbox_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
+2. Enter the **IP address** of your _Jump server_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
 
-> _**Note:**  If you want to create new profiles for multiple Jumpboxes, you'll need to repeat the following steps for each profile._
+> _**Note:**  If you want to create new profiles for multiple Jump servers, you'll need to repeat the following steps for each profile._
 
 3. Enter a descriptive name into the **Saved Sessions** textbox.
 4. From the left **Category**: panel, select **Connection** &gt; **SSH** &gt; **CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
@@ -105,11 +107,11 @@ This document covers following topics:
 
 8. Next, copy the **SSH keystring** _value_, paste it into **Microsoft Notepad**, and save it.  
 
-> _You'll need the **SSH keystring value** (i.e., _SSH key_) when you contact the Jumpbox support team (as in Step 9) or if you need to create a service ticket._
+> _You'll need the **SSH keystring value** (i.e., _SSH key_) when you contact the Jump server support team (as in Step 9) or if you need to create a service ticket._
 
-9. Contact the Jumpbox support group to request that they add your **PIV card&#39;s SSH key** to **your account on the Jumpbox**.
+9. Contact the Jump server support group to request that they add your **PIV card&#39;s SSH key** to **your account on the Jump server**.
 
-> _**Note**:  For other Jumpboxes, submit a service ticket to that support group and include the **IP address** of the Jumpbox you are using, **your account name**, and the **SSH key** from your **PIV card**._
+> _**Note**:  For other Jump servers, submit a service ticket to that support group and include the **IP address** of the Jump server you are using, **your account name**, and the **SSH key** from your **PIV card**._
 
 #### Verify your PuTTY login
 
@@ -158,7 +160,7 @@ This document covers following topics:
   
   > **Note:**  The card reader may flash. **Do not** remove the PIV card until the login process has been completed.
 
-## SSH using Mac OS X
+## SSH Using Mac OS X
 
 ### Hardware and software requirements
 
