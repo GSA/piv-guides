@@ -76,7 +76,7 @@ The **_Example Outline Template_** and the **_Markdown Template_** given below i
 
 Now that you have created a new page, this **Example Outline** will help you to create your guide.
 
-  1. Copy and paste this **Example Outline** into your new page as a starting point for your guide's document structure.
+  1. Copy and paste this **Example Outline** into your new guide as a starting point for your document structure.
 
 ## Overview
 
@@ -86,7 +86,7 @@ This text should give a brief overview of what content is contained within the g
 
   > This section could also be called **_Preconditions_** or **_Required Hardware and Software_**.
   
-  This section will be a bullet list explaining assumption(s) or other needed precondition(s) before the user can begin to follow the steps outlined in the new guide.
+  This section will be a bullet list explaining assumption(s) or other needed precondition(s), including required hardware and software, that must be met before the user can begin the procedures in the new guide.
 
 ## Before You Get Started
 
@@ -106,11 +106,11 @@ This paragraph should give user-friendly background information and introduce th
   1. Step 1 of the procedure 2.
   2. Step 2 of the procedure 2.
   
-  > Repeat Procedural sections, as needed.
+  > Repeat procedural sections, as needed.
 
 # Markdown Template
 
-Copy and paste this **Markdown Template** into your new page.  Use Markdown styles to write NEW pages to be submitted to the IDManagement.gov website. 
+Copy and paste this **Markdown Template** into your new guide.  Use Markdown styles to write NEW pages to be submitted to the IDManagement.gov website. 
 
 Markdown formatting is used for Pages (file) content.  You can learn more about Markdown formatting by browsing to the "Mastering Markdown" guide from Github: https://guides.github.com/features/mastering-markdown/
 
@@ -142,19 +142,18 @@ As you add sections, you can create a Table of Contents (TOC) at the top of your
 
 Use two spaces, an asterisk, plus one space to start a bullet list.   use the dash, followed by two spaces.
 
-  * The asterisk symbol denotes a bulleted item, 
-    * This is a second-level bullet - An indented asterisk denotes a second level bullet
-
--  Bullet 1
--  Bullet 2
+  * Bullet 1 (Indent 2 spaces, plus an asterisk and 1 space.)
+  * Bullet 2
+    * Sub-bullet 1 (Indent 4 spaces, plus an asterisk and 1 space.)
+    * Sub-bullet 2
 
 Use two spaces and type "**_1._**," etc., to create a numbered item. You must type each number. The numbers will automatically increment for you when rendered. The first numbered list will render as "1, 2, 3," etc.  Even though you must type 1, 2, etc., for the numbered sub-item list, the sub-items will render as "i, ii, iii," etc.
 
   > **Note:** Markdown supports only **two** indention levels for numbered lists.
 
-  1. Numbered item 1
+  1. Numbered item 1 (Indent 2 spaces, plus a number and 1 space. First-level numbered items will render as "1, 2, 3," etc.)
   2. Numbered item 2
-      1. Numbered sub-item 1
+      1. Numbered sub-item 1 (Second-level numbered items will render as "i, ii, iii," etc.)
       2. Numbered sub-item 2
 
 ## Code Blocks
