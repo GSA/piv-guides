@@ -7,14 +7,25 @@ collection: devconfig
 
 # Use PIV/CAC and Secure Shell (SSH) to Remotely Access a UNIX-like Server from Windows, Linux, or Mac
 
-To use these procedures, you must have administrator privileges and be comfortable performing complex IT tasks.
+These steps will help you with using your PIV/CAC to remotely access "UNIX-like" servers via SSH.  To use these procedures, you will should have administrator privileges and be comfortable performing complex IT tasks. 
+
+These procedures will help to ensure that your workstation and jump server recognize your PIV/CAC credential so the correct drivers will be enabled on the target Client. 
+
+**START REWRITE**
+For administrators with a PIV/CAC who need to remotely access "UNIX-like" servers (i.e., those that operate via command-line inputs)... etc.   Add more....
 
 SSH - is xxxxx  
 UNIX-like = command-line prompt-based
 
-  * Your PIV authentication key pair and public certificae is exactly like using a self-signed cert and key pair to SSH
-  * The key pair and certificate are on PIV card
-  * Ensure your workstation or jump server can recognize the credential and enabling the correct drivers on the client are included 
+## Before You Begin
+
+  * Your PIV/CAC card contains an authentication key pair and public certificate.
+  * Using the PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access.
+  * A"UNIX-like server" is one that requires you to use a command line interface (vs. GUI) to carry out system operations.
+  * These procedures will help to ensure that your workstation and jump server recognize your PIV/CAC credential and so the correct drivers will be enabled on the target Client.
+
+  
+**STOPPED REWRITE Here**
 
 This document covers following topics:
   * [SSH using Windows](#ssh-using-windows)
