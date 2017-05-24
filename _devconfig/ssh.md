@@ -167,7 +167,6 @@ This document covers following topics:
 
   2. Use the following command to log into the remote machine. 
         
-        Mac OS X:
         ```
 		 	ssh -I /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so <remote-host>
         ```
