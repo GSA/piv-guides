@@ -14,12 +14,12 @@ This **_Template.md_** Page will help you to create a new FICAM Guide for the ww
 
   > **FIX** - **Should be a TOC with Annotation...**
 
-  1. **_How To Create a New FICAM Guide_**. 
+  1. **_Create a New Page to Start Your Guide_**. 
   2. An **_Example Outline Template_** to copy and paste into your page (i.e., to help structure your guide).
   3. A **_Markdown Template_** to copy and paste into your page (i.e., to help with Markdown formatting). 
   4. Some **_writing and Style Resources_** (i.e., to help with plain language, writing, and style).  
   
-# How To Create a New Page To Start Your Guide
+# Create a New Page To Start Your Guide
 
 These procedures will walk you through the basics of creating a new FICAM Guide, including: 
 
