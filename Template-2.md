@@ -43,15 +43,18 @@ To create a new branch, do this:
 
 To create a new **_Page_** to start your guide, do this:  
 
-  1. Check the **_Branch_** button to ensure that your selected or created branch name is displayed.
-  3. Click on the **_Create New File_** button located at the top right area of your Repo's directory window.  
-  > At the top left-hand-side of the window, the Branch directory name appears with a **"/"** after it and a text box. (You can also select **_Cancel_**, if you want to start over.) 
-  4. In the text box, enter your new page's name with the extension, **.md**, for **Markdown** (for example, **Mynewfile.md**). 
-  5. Copy the **_Example Outline_** and **_Markdown Template_** from this document, **_Template.md_**, and paste it into your new page. 
-  6. At the top-left-hand side of your new page, change **Guidance Document Template** to your new page's title. 
+  1. Check the **_Branch_** button to ensure that your selected or created branch name is displayed. If it isn't, click on the down-arrow and select the branch name from the drop-down list.
+  2. Click on the **_Create New File_** button located at the top right area of your Repo's directory window.  
+  > At the top left area of the window, the Branch name appears with a **"/"** after it and a text box. (If you want to start over, select **_Cancel_**.) 
+  4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., **Mynewfile.md**). 
+  5. Copy and paste the contents of this **_Template.md_** file into your new Page.
+
+>  **Important:** Steps 6 and 7 add navigation information needed for hosting your guide on the website.
+
+  6. At the top left corner of your new Page, change **Guidance Document Template** to your new page's title. 
   7. Change the **permalink** title to a short version of your new page's title.
-  
-  > The **permalink** title should be in the format: **/mypage/**, instead of mypage.md
+    > The **permalink** title should be in the format: **/mypage/**, instead of mypage.md  
+  8. Optionally, copy and paste only the portions of this file that you need (e.g., [**Example Outline**](#Example-Outline) and/or [**Markdown Template**](#Markdown-Template)). In this case, it is important to copy and paste the "header" information (**_layout_**, **_title_**, and **_permalink_**) from the top left corner of this **_Template.md_** file into your Page and make the changes given in Steps 6 and 7.
 
 # Example Outline 
 
