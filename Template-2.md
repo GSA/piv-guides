@@ -5,18 +5,22 @@ permalink: /template/
 ---
 # A Word about Contributing to the GSA FICAM Guides
 
-> Before you create a new FICAM guide (or contribute to an existing FICAM guide), please read the **_Contributing.md_** Page, which is located in the **_GSA GitHub Repos for the PIV-Guides, FPKI-Guides, and FICAM-Arch_**. The **_Contributing.md_** Page provides the terms and conditions for contributing and gives other important instructions and information.{:class="info"} 
+> Before you create a new FICAM guide (or contribute to an existing FICAM guide), please read the **_Contributing.md_** Page, which is located in the **_GSA GitHub Repos for the PIV-Guides, FPKI-Guides, and FICAM-Arch_**. The **_Contributing.md_** Page provides the terms and conditions for contributing and gives other important instructions and information.{:class="info"}
 
-# Using this Template
+  > Link to Contributing.md **FIX -- ASK JASON HOW TO DO THIS LINK**
 
-This **_Template.md_** Page serves as a template and guidance document that will help you to create a new FICAM Guide for the www.IDManagment.gov website. This Page provides:
+# How to Create a New Guide Using this Template
 
-  1. **_Steps to create a new Page (file)_** for your guide. 
+This **_Template.md_** Page will help you to create a new FICAM Guide for the www.IDManagment.gov website. It includes the following instructions and templates:
+
+  > **FIX** - **Should be a TOC with Annotation...**
+
+  1. **_How To Create a New Guide_**. 
   2. An **_Example Outline_** to copy and paste into your page (i.e., to help structure your guide).
   3. A **_Markdown Template_** to copy and paste into your page (i.e., to help with Markdown formatting). 
-  4. Some **_writing and style resources_** (i.e., to help with plain language, writing, and style).  
+  4. Some **_writing and Style Resources_** (i.e., to help with plain language, writing, and style).  
   
-# Creating a New Guide
+# How To Create a New Guide
 
 ## Select or Create a Branch for Your Guide
 
