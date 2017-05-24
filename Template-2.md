@@ -136,8 +136,8 @@ As you add sections, you can create a Table of Contents (TOC) at the top of your
 
 ## Bold and Italics
 
-  * Use underscores to create italics:  _italics_.
   * Use double asterisks to bold a word:  **bold**.
+  * Use underscores to create italics:  _italics_.
 
 ## Bulleted and Numbered Lists
 
