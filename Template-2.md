@@ -6,7 +6,7 @@ permalink: /template/
 
 This **_Template.md_** page serves as a template and guidance document to help you create a new FICAM Guide for the www.IDManagment.gov website. 
 
-To create a new guide (or contribute to one), please read the **_Contributing.md_** page for more information, as well as terms and conditions. (The **_Contributing.md** file is located in the GitHub PIV-Guides, FPKI-Guides, and FICAM-Arch Repos.){:class="info"} 
+> To create a new guide (or contribute to one), please read the **_Contributing.md_** page for more information, as well as terms and conditions. (The **_Contributing.md** file is located in the GitHub PIV-Guides, FPKI-Guides, and FICAM-Arch Repos.){:class="info"} 
 
 This **_Template.md_** page provides: 
 
