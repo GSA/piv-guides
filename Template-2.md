@@ -68,7 +68,7 @@ To create a new **_Page_** to start your guide, do this:
     > The **permalink** title should be in the format: **/mypage/**, instead of mypage.md  
   8. Optionally, copy and paste only the portions of this file that you need (e.g., [**Example Outline**](#Example-Outline) and/or [**Markdown Template**](#Markdown-Template)). In this case, it is important to copy and paste the "header" information (**_layout_**, **_title_**, and **_permalink_**) from the top left corner of this **_Template.md_** file into your Page and make the changes given in Steps 6 and 7.
 
-# Templates
+# TEMPLATES
 
 The **_Example Outline Template_** and the **_Markdown Template_** given below include instructions about how to use them.
 
