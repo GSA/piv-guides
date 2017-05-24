@@ -131,7 +131,7 @@ This document covers following topics:
 
   * A Smart Card reader
   * A PIV card
-  * A Linux workstation or computer this is correctly configured to use a PIV/CAC card for login. (This process requires you to configure **opensc**. For additional information, go to [**opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
+  * A Linux workstation or computer that is correctly configured to use a PIV/CAC card for login. (For additional information, go to [**conifigure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
 
 ### Procedures
 
@@ -164,7 +164,7 @@ This document covers following topics:
 
   * A Smart Card reader
   * A PIV card
-  * A Linux or a Mac OS X computer correctly configured to use a PIV card for login, e.g. configure [**opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).
+  * A Mac OS X computer correctly configured to use a PIV card for login. For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
 
 ### Procedures
 
