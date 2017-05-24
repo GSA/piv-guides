@@ -5,9 +5,12 @@ permalink: /devconfig/ssh
 collection: devconfig
 ---
 
-# Use PIV/CAC and Secure Shell (SSH) to Remotely Access a UNIX-like Server from Windows, Linux, and Mac
+# Use PIV/CAC and Secure Shell (SSH) to Remotely Access a UNIX-like Server from Windows, Linux, or Mac
 
 To use these procedures, you must have administrator privileges and be comfortable performing complex IT tasks.
+
+SSH - is xxxxx  
+UNIX-like = command-line prompt-based
 
   * Your PIV authentication key pair and public certificae is exactly like using a self-signed cert and key pair to SSH
   * The key pair and certificate are on PIV card
