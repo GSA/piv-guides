@@ -168,13 +168,13 @@ For code blocks, enter three backticks (```) before and after the code example:
 
 ## Images
 
-To insert an image (graphic) into your page, first upload the image file to the **/img/** folder in the appropriate GitHub repository.  Next, use this format to link to the image:
+To insert an image (graphic) into your page, first upload the image file to the **/img/** folder in the appropriate GitHub **repository**.  Next, use this format to link to the image:
 
 ![This is what I want a screen reader to say for 508 compliance]({{site.baseurl}}/img/thisisthesampleimagefile.png)
 
   > To align an image on a page, use the **align** instruction at the end of an image link (i.e., **"left"**, **"center"**, or **"right"**) using this format:
 
-![Alt text for an image goes here]({{site.baseurl}}/folder that image is in/imagename.png){:align="right"}
+  > ![Alt text for an image goes here]({{site.baseurl}}/folder that image is in/imagename.png){:align="right"}
 
 ## Alerts, Warnings, and Information Blocks
 
