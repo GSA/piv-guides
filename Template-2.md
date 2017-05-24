@@ -9,7 +9,7 @@ permalink: /template/
 
   > Link to Contributing.md **FIX -- ASK JASON HOW TO DO THIS LINK**
 
-# How to Use this Template.md Page
+# Some Kind of a Title Here?
 
 This **_Template.md_** Page will help you to create a new FICAM Guide for the www.IDManagment.gov website. It includes the following instructions and templates:
 
