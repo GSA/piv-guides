@@ -3,19 +3,22 @@ layout: default
 title: Guidance Document Template
 permalink: /template/
 ---
-
-This **_Template.md_** page serves as a template and guidance document to help you create a new FICAM Guide for the www.IDManagment.gov website. 
+# Contributing a New Guide or Contributing to an Existing Guide
 
 > Before you create a new guide (or contribute to one), please read the **_Contributing.md_** page, which is located in the GSA GitHub Repos for the PIV-Guides, FPKI-Guides, and FICAM-Arch. This page provides the terms and conditions for contributing and other important instructions and information.{:class="info"} 
 
-This **_Template.md_** page provides: 
+# Using this Template
+
+This **_Template.md_** Page serves as a template and guidance document that will help you to create a new FICAM Guide for the www.IDManagment.gov website. This Page provides:
 
   1. **_Steps to create a new Page (file)_** for your guide. 
   2. An **_Example Outline_** to copy and paste into your page (i.e., to help structure your guide).
   3. A **_Markdown Template_** to copy and paste into your page (i.e., to help with Markdown formatting). 
   4. Some **_writing and style resources_** (i.e., to help with plain language, writing, and style).  
   
-# Select or Create a Branch for Your Guide
+# Creating a New Guide
+
+## Select or Create a Branch for Your Guide
 
 Before you create a new **_Page_** for your new guide, you will need to select or create a branch. 
 
@@ -39,7 +42,7 @@ To create a new branch, do this:
   
   > The **_Branch_** button will display the new branch name. 
   
-# Create a New Page To Start Your Guide
+## Create a New Page To Start Your Guide
 
 To create a new **_Page_** to start your guide, do this:  
 
