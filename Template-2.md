@@ -51,7 +51,7 @@ To create a new branch, do this:
   
   > The **_Branch_** button will display the new branch name. 
   
-## Create a New Page
+## Create a New Page for Your Guide
 
 To create a new **_Page_** to start your guide, do this:  
 
