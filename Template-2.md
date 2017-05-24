@@ -53,7 +53,7 @@ To create a new branch, do this:
   
 ## Create a New Page for Your Guide
 
-To create a new **_Page_** to start your guide, do this:  
+To create a new **_Page_** for your guide, do this:  
 
   1. Check the **_Branch_** button to ensure that your selected or created branch name is displayed. If it isn't, click on the down-arrow and select the branch name from the drop-down list.
   2. Click on the **_Create New File_** button located at the top right area of your Repo's directory window.  
