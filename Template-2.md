@@ -22,7 +22,7 @@ This **_Template.md_** Page will help you to create a new FICAM Guide for the ww
   
 # How To Create a New FICAM Guide
 
-These procedures will help you to walk through the basics of creating a new FICAM Guide, including: 
+These procedures will walk you through the basics of creating a new FICAM Guide, including: 
 
   * Select or create a new **_Branch_** in your Repo 
   * Create a new **_Page_** to start your guide
