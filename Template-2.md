@@ -17,26 +17,23 @@ This page provides:
 
 To create a new guide or contribute to one, please see the **Contributing.md** file in the GitHub Repo for more information. 
 
-To start your new guide, you will first need to create a new GitHub **Page** (i.e., file).  
+To start your new guide, you will first need to create a new GitHub **Page** (i.e., file for your guide).  
 
 Do this:  
 
-  1. Look at the **_Branch_** button at the top left-hand corner of your GitHub Repo's main page. The name shown on the **_Branch_** button is the branch where your new page will be stored. You can also create a new branch name for your guide, if you prefer. 
-  2. To create a new branch, click on the **_Branch_** button and add a new name.  
+  1. Before you create a new **Page**, you need to select a **Branch**. (This is where your page will be stored.) At the top left-hand corner of your GitHub Repo's directory window, you will see a **_Branch_** button. The branch (name) shown on this button is where your new page will be stored. 
+  2. You may also create a new branch for your guide, if you prefer. To create a new branch, click on the **_Branch_** button and add a new name.  
   
-  > The **_Branch_** button will display the new branch name, and your new page (guide) will reside there.  
+  > The **_Branch_** button will display the new branch name. When you save your new page, it will be stored in this branch. (**Note:**  It's important to remember the **_branch name where your page is stored** for future updates to your guide.)
   
-  > **Note:**  Take note of the branch name where your page resides.
-  
-  3. At the top right of the branch directory window, click on the **_Create New File_** button.  
-  > At the top **left-hand-side** of the screen, the Branch directory name appears with a **"/"** after it and a text box. (You can also select **_Cancel_**, if you want to start over.) 
-  4. In the text box, enter your new page name with the extension, **.md**, for **Markdown** (for example, **Mynewfile.md**). 
+  3. Click on the **_Create New File_** button located at the top right area of your Repo's directory window.  
+  > At the top left-hand-side of the window, the Branch directory name appears with a **"/"** after it and a text box. (You can also select **_Cancel_**, if you want to start over.) 
+  4. In the text box, enter your new page's name with the extension, **.md**, for **Markdown** (for example, **Mynewfile.md**). 
   5. Copy the **_Example Outline_** and **_Markdown Template_** from this document, **_Template.md_**, and paste it into your new page. 
-  6. At the top-left-hand side of your new page, change **Guidance Document Template** to your new file's title and **permalink** at the top, left-hand-side of the file (between the dashed lines [**---**]).
+  6. At the top-left-hand side of your new page, change **Guidance Document Template** to your new page's title. 
+  7. Change the **permalink** title to a short version of your new page's title.
   
-  > Change the **permalink** to a short version of the new file name (for example, **template** for **Guidance Document Template**). The **title** should be what you want to appear at the top of the **website page** where your guide will eventually be posted.
-  
-  > The **permalink** text should be in the format: **/mypage/**, instead of mypage.md
+  > The **permalink** title should be in the format: **/mypage/**, instead of mypage.md
 
 # Example Outline 
 
