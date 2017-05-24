@@ -34,6 +34,7 @@ This document covers following topics:
   * [Configure a UNIX-like server](#configure-a-unix-like-server)
 
 ## SSH using Windows
+
 ### Hardware and software requirements
 
 - Windows-based workstation or computer
@@ -51,7 +52,7 @@ This document covers following topics:
 
 > _**Note:**  **PuTTY** will typically be installed at C:\Program Files\PuTTY.)_
 
-#### Insert CAPI Key into Pageant
+#### Use PIV/CAC To Insert CAPI Key into Pageant
 
 > _**CAPI** is Microsoft's Crytographic Application Programming Interface._
 
@@ -124,13 +125,13 @@ This document covers following topics:
 
 > _After each server you &quot;jump&quot; to, the output of **ssh-add –l** should always show the key.  After you see the key, you may **ssh** to any other hosts in the environment._
 
-## SSH using Linux
+## SSH Using Linux
 
 ### Hardware and software requirements
 
   * A Smart Card reader
   * A PIV card
-  * A Linux or a Mac OS X computer correctly configured to use a PIV card for login, e.g. configure [**opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).
+  * A Linux workstation or computer this is correctly configured to use a PIV/CAC card for login. (This process requires you to configure **opensc**. For additional information, go to [**opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
 
 ### Procedures
 
