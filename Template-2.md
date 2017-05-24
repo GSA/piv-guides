@@ -15,15 +15,23 @@ This **_Template.md_** page provides:
   3. A **_Markdown Template_** to copy and paste into your page (i.e., to help with Markdown formatting). 
   4. Some **_writing and style resources_** (i.e., to help with plain language, writing, and style).  
   
-# Create a New Branch for Your Guide
+# Select or Create a Branch for Your Guide
 
-Before you create a new **Page** to start your new guide, you need to select or create a branch. (A branch is where your Page will be stored.)   
+Before you create a new **_Page_** to start your new guide, you will need to select or create a branch. (A branch is where your Page will be stored.)
+
+## Select an Existing Branch
 
 To select an existing branch, do this: 
   
-  1. Go to the top left-hand corner of your GitHub Repo's directory window. You will see a **_Branch_** button. The branch (name) shown on the button is where your new page will be stored if you don't create a new branch (optional). <B>STOPPED HERE</B>
+  1. At the top left area of your GitHub Repo directory window, you will see the **_Branch_** button. The branch (name) shown on the button is where your new Page will be stored.
   
-  > If this is the branch you want, go to [**Create a New Page To Start Your Guide**](#Create-a-New-Page-To-Start-Your-Guide)
+  > If this is the branch you want, go to [**Create a New Page To Start Your Guide**](#Create-a-New-Page-To-Start-Your-Guide).
+  
+## Create a New Branch
+
+Before you create a new **Page** to start your new guide, you will need to select or create a branch. (A branch is where your Page will be stored.)   
+
+To select an existing branch, do this:
   
   2. You may also create a new branch for your guide, if you prefer. To create a new branch, click on the **_Branch_** button and add a new name.  
   
