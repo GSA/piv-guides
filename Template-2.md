@@ -157,7 +157,7 @@ To link to useful references, information, or another page (especially that may 
 
 [This is what I want my link to say]({{site.baseurl}}/insertlink/) 
 
-# End of Markdown Template
+  > # End of Markdown Template
 
 
 # Writing and Style Resources
