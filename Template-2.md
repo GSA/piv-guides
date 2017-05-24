@@ -4,20 +4,20 @@ title: Guidance Document Template
 permalink: /template/
 ---
 
-This page serves as a template to help you create a new FICAM Guide for the IDManagment.gov website. 
+This page serves as a template and guidance document to help you create a new FICAM Guide for the www.IDManagment.gov website. 
 
-This template provides: 
+This page provides: 
 
   1. **_Steps to create a new Page (file)_** for your guide. 
-  2. An **_Example Outline_** to copy and paste into your guide (i.e., for document structure).
-  3. A **_Markdown Template_** to copy and paste into your guide (i.e., for Markdown formatting). 
+  2. An **_Example Outline_** to copy and paste into your page (i.e., to help structure your guide).
+  3. A **_Markdown Template_** to copy and paste into your page (i.e., to help with Markdown formatting). 
   4. Some **_writing and style resources_** (plain language, etc.).  
   
 # Create a New Page to Start Your Guide
 
-To contribute a new guide, please see the **Contributing.md** file for more information.
+To create a new guide or contribute to one, please see the **Contributing.md** file in the GitHub Repo for more information. 
 
-To start your new guide, first you need to create a new Page (file).  
+To start your new guide, you will first need to create a new GitHub **Page** (i.e., file).  
 
 Do this:  
 
