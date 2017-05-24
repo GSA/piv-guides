@@ -9,7 +9,6 @@ permalink: /template/
 
   > Link to Contributing.md **FIX -- ASK JASON HOW TO DO THIS LINK**
 
-# Some Kind of a Title Here?
 
 This **_Template.md_** Page will help you to create a new FICAM Guide for the www.IDManagment.gov website. It includes the following instructions and templates:
 
@@ -20,7 +19,7 @@ This **_Template.md_** Page will help you to create a new FICAM Guide for the ww
   3. A **_Markdown Template_** to copy and paste into your page (i.e., to help with Markdown formatting). 
   4. Some **_writing and Style Resources_** (i.e., to help with plain language, writing, and style).  
   
-# How To Create a New Page for Your FICAM Guide
+# How To Create a New Page To Start Your Guide
 
 These procedures will walk you through the basics of creating a new FICAM Guide, including: 
 
@@ -69,9 +68,9 @@ To create a new **_Page_** to start your guide, do this:
     > The **permalink** title should be in the format: **/mypage/**, instead of mypage.md  
   8. Optionally, copy and paste only the portions of this file that you need (e.g., [**Example Outline**](#Example-Outline) and/or [**Markdown Template**](#Markdown-Template)). In this case, it is important to copy and paste the "header" information (**_layout_**, **_title_**, and **_permalink_**) from the top left corner of this **_Template.md_** file into your Page and make the changes given in Steps 6 and 7.
 
-# How To Use the Templates
+# Templates
 
-**ADD TEXT HERE?**  **HEADING 1 WILL CONFLICT WITH Example Outline Template Heading 1**
+The **_Example Outline Template_** and the **_Markdown Template_** given below include instructions about how to use them.
 
 # Example Outline Template
 
