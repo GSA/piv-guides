@@ -3,7 +3,7 @@ layout: default
 title: Guidance Document Template
 permalink: /template/
 ---
-# About Contributing to the GSA FICAM Guides
+# Contributing to the GSA FICAM Guides
 
 > Before you create a new FICAM guide (or contribute to an existing FICAM guide), please read the **_Contributing.md_** Page, which is located in the **_GSA GitHub Repos for the PIV-Guides, FPKI-Guides, and FICAM-Arch_**. The **_Contributing.md_** Page provides the terms and conditions for contributing and gives other important instructions and information.{:class="info"}
 
