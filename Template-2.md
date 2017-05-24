@@ -23,14 +23,14 @@ To select an existing branch, do this:
   
   1. Go to the top left-hand corner of your GitHub Repo's directory window. You will see a **_Branch_** button. The branch (name) shown on the button is where your new page will be stored if you don't create a new branch (optional). <B>STOPPED HERE</B>
   
-  > If this is the branch you want, go to [**Create a New Page To Start Your Guide**](#Create a New Page to Start Your Guide)
+  > If this is the branch you want, go to [**Create a New Page To Start Your Guide**](#Create-a-New-Page-To-Start-Your-Guide)
   
   2. You may also create a new branch for your guide, if you prefer. To create a new branch, click on the **_Branch_** button and add a new name.  
   
   > The **_Branch_** button will display the new branch name. When you **_commit_** your new page, it will be stored in this branch. (**Note:**  It's important to remember the **_branch name where your page is stored** for future updates to your guide.)
   
 
-# Create a New Page to Start Your Guide
+# Create a New Page To Start Your Guide
 
 To create a new **_Page_** to start your guide, do this:  
 
