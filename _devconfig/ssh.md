@@ -107,9 +107,9 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
 
   2. Next, copy the **SSH keystring** _value_, paste it into **Microsoft Notepad**, and save it.  
 
-  3. Contact the Jump server support group to provide your **SSH key** and request that they add it to your Jump server account.
+  3. Contact the Jump server administrator to provide your **SSH key** and request that they add it to your Jump server account.
   
-  > _**Note:**  Once the support group has set up an account with your **SSH key** on the Jumpbox, you'll then be able to use your **PIV card** to log into the Jumpbox. For other Jump servers, submit a service ticket to the support group and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
+  > _**Note:**  Once the administrator has set up an account with your **SSH key** on the Jumpbox, you'll then be able to use your **PIV card** to log into the Jumpbox. For other Jump servers, submit a service ticket to the administrator and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
 
 #### Verify your PuTTY login
 
@@ -122,7 +122,9 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
   4. Enter your **PIV card PIN** and click on **OK** to log in.
   5. Once logged in, run the command: **ssh-add –l** to display the key.  
 
-  > _After each server you &quot;jump&quot; to, the output of **ssh-add –l** should always show the key. After you see the key, you may **ssh** to any other hosts in the environment._
+  > _After each server you &quot;jump&quot; to, the output of **ssh-add –l** should always show the key. 
+  
+  > _After you see the key, you may **ssh** to any other hosts in the environment._
 
 ## Using PIV/CAC and SSH for Remote Access from a Linux Computer
 
@@ -130,7 +132,7 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
 
   * A PIV/CAC card
   * A smartcard reader
-  * A Linux-based computer or workstation that is configured to use a PIV/CAC card for login. (For additional information, go to [**conifigure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
+  * A Linux-based computer or workstation that is configured to use a PIV/CAC card for login. (For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
 
 ### Procedures
 
@@ -148,15 +150,15 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
 
   1. Insert your **PIV/CAC** into your computer's smartcard reader.
 
-  2. Use the following command to log into the remote machine.
+  2. Use the following command to log into the remote server:
 	
         ```
 			ssh -I /usr/lib64/opensc-pkcs11.so <remote-host>
         ```    
 
   3. At the PIV card password prompt, enter your **PIN**. You should see the **_remote-host shell prompt_**.
-  
-  > **Note:**  The card reader may flash. **Do not** remove the PIV card until the login process has been completed.
+
+The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed.{:class="alert"}  
 
 ## Using PIV/CAC and SSH for Remote Access from a Mac OS X Workstation
 
@@ -179,17 +181,19 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
 	
 #### Log in via SSH
 
-  1. Insert your **PIV card** into your computer's card reader.
+  1. Insert your **PIV/CAC** into your computer's smartcard reader.
 
-  2. Use the following command to log into the remote machine. 
+  2. Use the following command to log into the remote server: 
         
         ```
 		 	ssh -I /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so <remote-host>
         ```
 
-  3. At the PIV card password prompt, enter your **PIN**. You should see remote-host shell prompt.
+  3. At the PIV card password prompt, enter your **PIN**. 
   
-  > **Note:**  The card reader may flash. **Do not** remove the PIV card until the login process has been completed.
+  > The **remote-host shell prompt** appears.
+  
+The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed.{:class="alert"}  
 
 ## How to Configure a UNIX-like Server
 
