@@ -119,7 +119,7 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
 
   > _A window will open and prompt you for your **PIV card PIN**._
 
-  4. Enter your **PIV card PIN** and click on **OK** to log in.
+  4. Enter your **PIV card PIN** and click on **OK** to log into the remote server.
   5. Once logged in, run the command: **ssh-add –l** to display the key.  
 
   > _After each server you &quot;jump&quot; to, the output of **ssh-add –l** should always show the key. 
@@ -156,17 +156,19 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
 			ssh -I /usr/lib64/opensc-pkcs11.so <remote-host>
         ```    
 
-  3. At the PIV card password prompt, enter your **PIN**. You should see the **_remote-host shell prompt_**.
+  3. At the PIV card password prompt, enter your **PIN**. 
+  
+  > The **_remote-host shell prompt_** appears.
 
 The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed.{:class="alert"}  
 
-## Using PIV/CAC and SSH for Remote Access from a Mac OS X Workstation
+## Using PIV/CAC and SSH for Remote Access from a Mac OS X Computer
 
 ### Hardware and software requirements
 
-  * A PIV card
+  * A PIV/CAC card
   * A smartcard reader
-  * A Mac OS X computer correctly configured to use a PIV card for login. For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
+  * A Mac OS X computer correctly configured to use a PIV/CAC for login. For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
 
 ### Procedures
 
@@ -189,7 +191,7 @@ The card reader may flash. **Do not** remove the PIV/CAC until the login process
 		 	ssh -I /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so <remote-host>
         ```
 
-  3. At the PIV card password prompt, enter your **PIN**. 
+  3. At the PIV/CAC password prompt, enter your **PIN**. 
   
   > The **remote-host shell prompt** appears.
   
@@ -197,14 +199,14 @@ The card reader may flash. **Do not** remove the PIV/CAC until the login process
 
 ## How to Configure a UNIX-like Server
 
- 1. Change the configuration in the **/etc/ssh/sshd_config** file. Then restart the **sshd**.
+ 1. Change the configuration in the **/etc/ssh/sshd_config** file. Then restart the **sshd**:
  
  	```
 		AuthorizedKeysFile /etc/sshd/authorized_keys/%u
 		PasswordAuthentication No
 	```
 
-  2. Create the directory: **/etc/sshd/authorized_keys**.
+  2. Create the directory: **/etc/sshd/authorized_keys**:
 
         ```
 			mkdir /etc/sshd/authorized_keys
