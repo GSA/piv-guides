@@ -17,11 +17,11 @@ This guide tells you how to:
 
 For the steps needed to authenticate your PIV/CAC and use SSH, click on the link for your OS: 
 
-  * [SSH using Windows](#ssh-using-windows)
-  * [SSH using Linux](#ssh-using-linux)
-  * [SSH using Mac OS X](#ssh-using-mac-os-x)
+  * [Using PIV/CAC and SSH from a Windows Computer](#Using-PIV/CAC-and-SSH-for-Remote-Access-from-a-Windows-Computer)
+  * [Using PIV/CAC and SSH from a Linux Computer](#Using-PIV/CAC-and-SSH-for-Remote-Access-from-a-Linux-Computer)
+  * [Using PIV/CAC and SSH from a Mac OS X Computer](#Using-PIV/CAC-and-SSH-for-Remote-Access-from-a-Mac-OS-X-Computer)
 
-For the steps needed to configure a UNIX-like server, click on this link:
+For the steps needed to configure a UNIX-like server, click on the following link:
 
   * [Configure a UNIX-like server](#configure-a-unix-like-server)
 
@@ -30,7 +30,7 @@ For the steps needed to configure a UNIX-like server, click on this link:
   * Your PIV/CAC contains an authentication key pair and public certificate.
   * Using the PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access.
 
-## Using PIV/CAC and SSH for Remote Access from a Windows Workstation
+## Using PIV/CAC and SSH for Remote Access from a Windows Computer
 
 ### Hardware and software requirements
 
@@ -40,58 +40,60 @@ For the steps needed to configure a UNIX-like server, click on this link:
 - PuTTY-CAC application
 - Pageant application
 
-> _**Note:**  You will download PuTTY-CAC and Pageant during the steps below._
+> _**Note:**  You will download **PuTTY-CAC** and **Pageant** during the steps below._
 
 ### Procedures
 
-Use these steps to ensure that your workstation and Jump server recognize your PIV/CAC credential. Your authenticated credential allows the correct drivers to be enabled on the target Client.
+These steps will ensure that your computer and Jump server recognize your PIV/CAC credential. Your authenticated credential will allow the correct drivers to be enabled on the target Client.
 
 #### Install PuTTY-CAC
 
-**_PuTTY-CAC_** is an SSH client that supports PIV/CAC authentication.
+**_PuTTY-CAC_** is an SSH client that supports PIV/CAC authentication for Windows.
 
-1. Download and install [**_PuTTY-CAC_**](https://github.com/NoMoreFood/putty-cac/releases). (PuTTY-CAC is referred to as &quot;**_PuTTY_**&quot; within the application.)
-2. Open PuTTY and click on **_About_** (lower left-hand corner of the **_PuTTY Configuration_** window) to verify that the correct version was installed.
+  1. Download and install [**_PuTTY-CAC_**](https://github.com/NoMoreFood/putty-cac/releases). (PuTTY-CAC is referred to as &quot;**_PuTTY_**&quot; within the application.)
+  2. Open PuTTY and click on **_About_** (lower left-hand corner of the **_PuTTY Configuration_** window) to verify that the correct version was installed.
 
-> _**Note:**  **PuTTY** will typically be installed at **_C:\Program Files\PuTTY_**.)_
+  > _**Note:**  PuTTY will typically be installed at **_C:\Program Files\PuTTY_**.)_
 
-#### Use PIV/CAC to insert Microsoft CAPI Key into Pageant
+#### Use PIV/CAC to insert Microsoft CAPI key into Pageant
 
-> **_CAPI_** is Microsoft's Crytographic Application Programming Interface. **_Pageant_** is an SSH authentication agent.
+  > **_CAPI_** is Microsoft's Crytographic Application Programming Interface. **_Pageant_** is an SSH authentication agent.
 
-1. Insert your **_PIV/CAC_** into the card reader.
-2. Open **_Windows Explorer_**.
-3. Open **_Pageant_** and go to **_C:_** &gt; **_Program Files_** &gt; **_PuTTY_** &gt; **_Pageant_**.
+  1. Insert your **_PIV/CAC_** into the smartcard reader.
+  2. Open **_Windows Explorer_**.
+  3. Open **_Pageant_** and go to **_C:_** &gt; **_Program Files_** &gt; **_PuTTY_** &gt; **_Pageant_**.
 
-> _A window will not open, but the **Pageant** icon will appear in the Windows taskbar at the bottom of the screen._
+  > _A window will not open, but the **Pageant** icon will appear in the Windows taskbar at the bottom of the screen._
 
-4. Right-click on the **_Pageant_** icon and select **_View Keys &amp; Certs_**.
+  4. Right-click on the **_Pageant_** icon and select **_View Keys &amp; Certs_**.
 
-> _The Pageant **Key/CAPI Cert List** window will open._
+  > _The Pageant **Key/CAPI Cert List** window will open._
 
-5. Click on **Add Cert**.
-6. Select your **Smart Card Logon** certificate from the **Windows Security** window.
-7. To verify that this is the correct certificate, click on the link, **Click here to view certificate properties**, and then click on **Details**.
-8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This will mean that the certificate is the right type.)
+  5. Click on **Add Cert**.
+  6. Select your **Smart Card Logon** certificate from the **Windows Security** window.
+  7. To verify that this is the correct certificate, click on the link, **_Click here to view certificate properties_**, and then click on **Details**.
+  8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This will mean that the certificate is the right type.)
 
-> _**Note:**  If multiple certificates exist, you may want to clear out the expired or revoked certificates._
+  > _**Note:**  If multiple certificates exist, you may want to clear the expired or revoked certificates._
 
-9. Click on **OK** to close the **Details** window.
-10. Click on the **Smart Card certificate** to highlight it, and then click on **OK**.
+  9. Click on **OK** to close the **Details** window.
+  10. Click on the **Smart Card certificate** to highlight it, and then click on **OK**.
 
-> _The Pageant window will populate with the certificate information._
+  > _The Pageant window will populate with the certificate information._
 
-11. Click on **Close**.
+  11. Click on **Close**.
 
-> _**Note:**  You'll need to re-add the certificate every time that you start **Pageant**._
+  > _**Note:**  You will need to re-add the certificate every time that you start Pageant._
 
 #### Configure PuTTY
 
-1. Right-click on the **Pageant** icon again from the Windows taskbar and select **New Session**.  (This will launch **PuTTY**.)
+1. Right-click on the **Pageant** icon from the Windows taskbar and select **New Session**.
 
-> _From within **PuTTY**, you'll need to set up a new profile._  
+> _This will launch **PuTTY**._  
 
-2. Enter the **IP address** of your _Jump server_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
+2. From within PuTTY, set up a new profile. Enter the **IP address** of your _Jump server_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
+
+<b>STOPPED HERE</b>
 
 > _**Note:**  If you want to create new profiles for multiple Jump servers, you'll need to repeat the following steps for each profile._
 
@@ -134,7 +136,7 @@ Use these steps to ensure that your workstation and Jump server recognize your P
 
   * A PIV card
   * A smartcard reader
-  * A Linux workstation or computer that is correctly configured to use a PIV/CAC card for login. (For additional information, go to [**conifigure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
+  * A Linux-based computer or workstation that is configured to use a PIV/CAC card for login. (For additional information, go to [**conifigure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
 
 ### Procedures
 
@@ -157,7 +159,7 @@ Use these steps to ensure that your workstation and Jump server recognize your P
 			ssh -I /usr/lib64/opensc-pkcs11.so <remote-host>
         ```    
 
-  3. At the PIV card password prompt, enter your **PIN**. You should see remote-host shell prompt.
+  3. At the PIV card password prompt, enter your **PIN**. You should see the **_remote-host shell prompt_**.
   
   > **Note:**  The card reader may flash. **Do not** remove the PIV card until the login process has been completed.
 
