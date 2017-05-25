@@ -103,7 +103,7 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
 
   1. To get your PIV card&#39;s **SSH key**, in the **PuTTY Configuration** window, go to the left panel and click on **Connection** &gt; **SSH** &gt; **CAPI**.  Then, under **Authentication Parameters**, click on  the **Browse** button.  
 
-  > _This will automatically fill in the **Cert** and **SSH keystring** textboxes._
+  > _This automatically fills in the **Cert** and **SSH keystring** textboxes._
 
   2. Next, copy the **SSH keystring** _value_, paste it into **Microsoft Notepad**, and save it.  
 
