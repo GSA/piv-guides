@@ -47,7 +47,7 @@ This guide covers the following topics:
 
 ### Procedures
 
-Use these steps to ensure that your workstation and Jump server recognize your PIV/CAC credential. When they recognize your credential, it allows the correct drivers to be enabled on the target Client.
+Use these steps to ensure that your workstation and Jump server recognize your PIV/CAC credential. Your authenticated credential allows the correct drivers to be enabled on the target Client.
 
 #### Install PuTTY-CAC
 
