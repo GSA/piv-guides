@@ -5,9 +5,9 @@ permalink: /devconfig/ssh
 collection: devconfig
 ---
 
-# Use PIV/CAC and Secure Shell (SSH) to Remotely Access UNIX-like Servers from a Windows, Linux, or Mac Workstation
+# Using PIV/CAC and Secure Shell (SSH) to Remotely Access UNIX-like Servers from a Windows, Linux, or Mac Computer
 
-As a system administrator (SA), you need the ability to remotely access UNIX-like servers from your Windows, Linux, or Mac workstation. By using your PIV/CAC for authentication and SSH for remote access 
+As a system administrator (SA), you need the ability to remotely access UNIX-like servers from your Windows, Linux, or Mac computer. By using your PIV/CAC for authentication and SSH for remote access 
 
 - This guide explains how to use....will walk you through using ...your PIV/CAC card for authentication and the SSH remote-access steps, according to your particular workstation's operating system (OS).   How to use....SSH for remote access from your workstation...
 
@@ -25,20 +25,20 @@ This guide covers the following topics:
 
 ## Preconditions
 
-  * A PIV/CAC card
+  * A PIV/CAC
   * SA privileges 
 
-## PIV/CAC Card Details
+## PIV/CAC Authentication Details
 
   * Your PIV/CAC contains an authentication key pair and public certificate.
   * Using the PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access.
 
-## SSH Using Windows
+## Using PIV/CAC and SSH for Remote Access from a Windows Workstation
 
 ### Hardware and software requirements
 
 - A PIV/CAC card
-- Windows-based workstation or computer
+- Windows-based computer or workstation
 - A smartcard reader
 - PuTTY-CAC application
 - Pageant application
@@ -82,7 +82,7 @@ Use these steps to ensure that your workstation and Jump server recognize your P
 9. Click on **OK** to close the **Details** window.
 10. Click on the **Smart Card certificate** to highlight it, and then click on **OK**.
 
-> _The **Pageant** window will populate with the certificate information._
+> _The Pageant window will populate with the certificate information._
 
 11. Click on **Close**.
 
@@ -131,7 +131,7 @@ Use these steps to ensure that your workstation and Jump server recognize your P
 
 > _After each server you &quot;jump&quot; to, the output of **ssh-add –l** should always show the key.  After you see the key, you may **ssh** to any other hosts in the environment._
 
-## SSH Using Linux
+## Using PIV/CAC and SSH for Remote Access from a Linux Workstation
 
 ### Hardware and Software Requirements
 
@@ -143,7 +143,7 @@ Use these steps to ensure that your workstation and Jump server recognize your P
 
 #### Obtain and Save Public Key from PIV/CAC
 
-  1. Insert your **PIV/CAC** into your computer's card reader.
+  1. Insert your **PIV/CAC** into your computer's smartcard reader.
   2. Use the following command to save the **user&#39;s public SSH key** to a file and submit the file to Jump server administrator.
 		
         ```
@@ -164,7 +164,7 @@ Use these steps to ensure that your workstation and Jump server recognize your P
   
   > **Note:**  The card reader may flash. **Do not** remove the PIV card until the login process has been completed.
 
-## SSH Using Mac OS X
+## Using PIV/CAC and SSH for Remote Access from a Mac OS X Workstation
 
 ### Hardware and Software Requirements
 
@@ -176,7 +176,7 @@ Use these steps to ensure that your workstation and Jump server recognize your P
 
 #### Obtain and save public key from PIV card
 
-  1. Insert your **PIV card** into your computer's card reader.
+  1. Insert your **PIV card** into your computer's smartcard reader.
   2. Use the following command to save the **user&#39;s public SSH key** to a file and submit the file to Jump server administrator.
 
         ```
