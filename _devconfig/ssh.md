@@ -90,12 +90,12 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
 
   2. From within PuTTY, set up a new profile: 
   
-    1. Enter the **IP address** of your _Jump server_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
+   1. Enter the **IP address** of your _Jump server_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
 
   > _**Note:**  If you want to create new profiles for multiple Jump servers, you'll need to repeat the following steps for each profile._
 
-    2. Enter a descriptive name into the **Saved Sessions** textbox.
-    3. From the left **Category**: panel, select **Connection** &gt; **SSH** &gt; **CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
+   2. Enter a descriptive name into the **Saved Sessions** textbox.
+   3. From the left **Category**: panel, select **Connection** &gt; **SSH** &gt; **CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
     4. From within the **PuTTY Configuration** window, select **Connection** &gt; **SSH** &gt; **Auth**. Then, click on the checkboxes for both **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
     5. Click on **Session** from the left panel; enter a name in the **Saved Session** text box; and then click on the **Save** button. 
 
