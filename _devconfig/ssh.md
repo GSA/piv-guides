@@ -42,7 +42,7 @@ This guide covers the following topics:
 - PuTTY-CAC application
 - Pageant application
 
-> _**Note:**  You will download the required applications during the steps below._
+> _**Note:**  You will download PuTTY-CAC and Pageant during the steps below._
 
 ### Procedures
 
@@ -52,7 +52,7 @@ Use these steps to ensure that your workstation and Jump server recognize your P
 
 PuTTY-CAC is an SSH client for Windows that supports PIV/CAC card authentication.
 
-1. Download and install [**PuTTY-CAC**](https://github.com/NoMoreFood/putty-cac/releases). (PuTTY-CAC is referred to as &quot;**_PuTTY_**&quot; within the application.)
+1. Download and install [**_PuTTY-CAC_**](https://github.com/NoMoreFood/putty-cac/releases). (PuTTY-CAC is referred to as &quot;**_PuTTY_**&quot; within the application.)
 2. Open PuTTY and click on **_About_** (lower left-hand corner of the **_PuTTY Configuration_** window) to verify that the correct version was installed.
 
 > _**Note:**  **PuTTY** will typically be installed at C:\Program Files\PuTTY.)_
@@ -63,7 +63,7 @@ PuTTY-CAC is an SSH client for Windows that supports PIV/CAC card authentication
 
 1. Insert your **_PIV/CAC_** into the card reader.
 2. Open **_Windows Explorer_**.
-3. Open **_Pageant_** and go to **_C:** &gt; **Program Files** &gt; **PuTTY** &gt; **Pageant_**.
+3. Open **_Pageant_** and go to **_C:_** &gt; **_Program Files_** &gt; **_PuTTY_** &gt; **_Pageant_**.
 
 > _A window will not open, but the **Pageant** icon will appear in the Windows taskbar at the bottom of your screen._
 
