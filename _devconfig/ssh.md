@@ -39,6 +39,7 @@ This guide covers the following topics:
 
 - A PIV/CAC card
 - Windows-based workstation or computer
+- A smartcard reader
 - PuTTY-CAC application
 - Pageant application
 
@@ -46,7 +47,7 @@ This guide covers the following topics:
 
 ### Procedures
 
-These steps ensure that your workstation and Jump server recognize your PIV/CAC credential. This allows the correct drivers to be enabled on the target Client.
+Use these steps to ensure that your workstation and Jump server recognize your PIV/CAC credential. When they recognize your credential, it allows the correct drivers to be enabled on the target Client.
 
 #### Install PuTTY-CAC
 
@@ -116,7 +117,7 @@ These steps ensure that your workstation and Jump server recognize your PIV/CAC 
 
 > _**Note**:  For other Jump servers, submit a service ticket to that support group and include the **IP address** of the Jump server you are using, **your account name**, and the **SSH key** from your **PIV card**._
 
-#### Verify your PuTTY login
+#### Verify Your PuTTY Login
 
 > _**Note:**  Once the support group has set up an account with your **SSH key** on the Jumpbox, you'll then be able to use your **PIV card** to log into the Jumpbox._
 
@@ -132,17 +133,17 @@ These steps ensure that your workstation and Jump server recognize your PIV/CAC 
 
 ## SSH Using Linux
 
-### Hardware and software requirements
+### Hardware and Software Requirements
 
-  * A Smart Card reader
   * A PIV card
+  * A smartcard reader
   * A Linux workstation or computer that is correctly configured to use a PIV/CAC card for login. (For additional information, go to [**conifigure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
 
 ### Procedures
 
-#### Obtain and save public key from PIV card
+#### Obtain and Save Public Key from PIV/CAC
 
-  1. Insert your **PIV card** into your computer's card reader.
+  1. Insert your **PIV/CAC** into your computer's card reader.
   2. Use the following command to save the **user&#39;s public SSH key** to a file and submit the file to Jump server administrator.
 		
         ```
@@ -151,7 +152,7 @@ These steps ensure that your workstation and Jump server recognize your PIV/CAC 
 	
 #### Log in via SSH
 
-  1. Insert your **PIV card** into your computer's card reader.
+  1. Insert your **PIV/CAC** into your computer's smartcard reader.
 
   2. Use the following command to log into the remote machine.
 	
@@ -165,10 +166,10 @@ These steps ensure that your workstation and Jump server recognize your PIV/CAC 
 
 ## SSH Using Mac OS X
 
-### Hardware and software requirements
+### Hardware and Software Requirements
 
-  * A Smart Card reader
   * A PIV card
+  * A smartcard reader
   * A Mac OS X computer correctly configured to use a PIV card for login. For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
 
 ### Procedures
