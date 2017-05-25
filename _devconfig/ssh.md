@@ -21,7 +21,7 @@ For the steps needed to authenticate your PIV/CAC and use SSH, click on the link
   * [Using PIV/CAC and SSH from a Linux Computer](#Using-PIV/CAC-and-SSH-for-Remote-Access-from-a-Linux-Computer)
   * [Using PIV/CAC and SSH from a Mac OS X Computer](#Using-PIV/CAC-and-SSH-for-Remote-Access-from-a-Mac-OS-X-Computer)
 
-For the steps needed to configure a UNIX-like server, click on the following link:
+For the steps needed to configure a UNIX-like server, click on the link:
 
   * [Configure a UNIX-like server](#configure-a-unix-like-server)
 
