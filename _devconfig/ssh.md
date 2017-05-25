@@ -53,7 +53,7 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
   1. Download and install [**_PuTTY-CAC_**](https://github.com/NoMoreFood/putty-cac/releases). (PuTTY-CAC is referred to as &quot;**_PuTTY_**&quot; within the application.)
   2. Open PuTTY and click on **_About_** (lower left-hand corner of the **_PuTTY Configuration_** window) to verify that the correct version was installed.
 
-  > _**Note:**  PuTTY will typically be installed at **_C:\Program Files\PuTTY_**.)_
+  > _**Note:**  PuTTY will typically be installed at **_C:\Program Files\PuTTY_**._
 
 #### Use PIV/CAC to insert Microsoft CAPI key into Pageant
 
