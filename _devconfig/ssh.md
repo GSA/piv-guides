@@ -122,7 +122,7 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
   4. Enter your **PIV card PIN** and click on **OK** to log into the remote server.
   5. Once logged in, run the command: **ssh-add –l** to display the key.  
 
-  > _After each server you &quot;jump&quot; to, the output of **ssh-add –l** should always show the key. 
+  > _After each server you &quot;jump&quot; to, the output of **ssh-add –l** should always show the key._ 
   
   > _After you see the key, you may **ssh** to any other hosts in the environment._
 
