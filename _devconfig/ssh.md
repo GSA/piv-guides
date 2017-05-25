@@ -25,7 +25,7 @@ For the steps needed to configure a UNIX-like server, click on the following lin
 
   * [Configure a UNIX-like server](#configure-a-unix-like-server)
 
-## Before You Get Started&mdash;Additional Information about PIV/CAC Authentication
+## Before You Get Started &mdash; More about PIV/CAC Authentication
 
   * Your PIV/CAC contains an authentication key pair and public certificate.
   * Using the PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access.
@@ -72,16 +72,13 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
   5. Click on **Add Cert**.
   6. Select your **Smart Card Logon** certificate from the **Windows Security** window.
   7. To verify that this is the correct certificate, click on the link, **_Click here to view certificate properties_**, and then click on **Details**.
-  8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This will mean that the certificate is the right type.)
+  8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This will mean that the certificate is the right type.) Then, click on **OK** to close the window.
 
   > _**Note:**  If multiple certificates exist, you may want to clear the expired or revoked certificates._
-
-  9. Click on **OK** to close the **Details** window.
-  10. Click on the **Smart Card certificate** to highlight it, and then click on **OK**.
+ 
+  9. Click on the **Smart Card certificate** to highlight it, and then click on **OK**.  Then, click on **Close**.
 
   > _The Pageant window will populate with the certificate information._
-
-  11. Click on **Close**.
 
   > _**Note:**  You will need to re-add the certificate every time that you start Pageant._
 
@@ -91,28 +88,28 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
 
   > _This will launch **PuTTY**._  
 
-  2. From within PuTTY, set up a new profile. Enter the **IP address** of your _Jump server_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
-
-<b>STOPPED HERE</b>
+  2. From within PuTTY, set up a new profile: 
+  
+    1. Enter the **IP address** of your _Jump server_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
 
   > _**Note:**  If you want to create new profiles for multiple Jump servers, you'll need to repeat the following steps for each profile._
 
-  3. Enter a descriptive name into the **Saved Sessions** textbox.
-  4. From the left **Category**: panel, select **Connection** &gt; **SSH** &gt; **CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
-  5. From within the **PuTTY Configuration** window, select **Connection** &gt; **SSH** &gt; **Auth**. Then, click on the checkboxes for both **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
-  6. Click on **Session** from the left panel; enter a name in the **Saved Session** text box; and then click on the **Save** button. 
+    2. Enter a descriptive name into the **Saved Sessions** textbox.
+    3. From the left **Category**: panel, select **Connection** &gt; **SSH** &gt; **CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
+    4. From within the **PuTTY Configuration** window, select **Connection** &gt; **SSH** &gt; **Auth**. Then, click on the checkboxes for both **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
+    5. Click on **Session** from the left panel; enter a name in the **Saved Session** text box; and then click on the **Save** button. 
 
   > _This sets up a profile for PIV logon._
 
-  7. To get your PIV card&#39;s **SSH key**, in the **PuTTY Configuration** window, go to the left panel and click on **Connection** &gt; **SSH** &gt; **CAPI**.  Then, under **Authentication Parameters**, click on  the **Browse** button.  
+  2. To get your PIV card&#39;s **SSH key**, in the **PuTTY Configuration** window, go to the left panel and click on **Connection** &gt; **SSH** &gt; **CAPI**.  Then, under **Authentication Parameters**, click on  the **Browse** button.  
 
   > _This will automatically fill in the **Cert** and **SSH keystring** textboxes._
 
-  8. Next, copy the **SSH keystring** _value_, paste it into **Microsoft Notepad**, and save it.  
+  3. Next, copy the **SSH keystring** _value_, paste it into **Microsoft Notepad**, and save it.  
 
   > _You'll need the **SSH keystring value** (i.e., _SSH key_) when you contact the Jump server support team (as in Step 9) or if you need to create a service ticket._
 
-  9. Contact the Jump server support group to request that they add your **PIV card&#39;s SSH key** to **your account on the Jump server**.
+  4. Contact the Jump server support group to request that they add your **PIV card&#39;s SSH key** to **your account on the Jump server**.
 
   > _**Note**:  For other Jump servers, submit a service ticket to that support group and include the **IP address** of the Jump server you are using, **your account name**, and the **SSH key** from your **PIV card**._
 
