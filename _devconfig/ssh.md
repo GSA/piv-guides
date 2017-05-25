@@ -34,11 +34,11 @@ For the steps needed to configure a UNIX-like server, click on the following lin
 
 ### Hardware and software requirements
 
-- A PIV/CAC card
-- Windows-based computer or workstation
-- A smartcard reader
-- PuTTY-CAC application
-- Pageant application
+  * A PIV/CAC card
+  * Windows-based computer or workstation
+  * A smartcard reader
+  * PuTTY-CAC application
+  * Pageant application
 
 > _**Note:**  You will download **PuTTY-CAC** and **Pageant** during the steps below._
 
@@ -87,48 +87,48 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
 
 #### Configure PuTTY
 
-1. Right-click on the **Pageant** icon from the Windows taskbar and select **New Session**.
+  1. Right-click on the **Pageant** icon from the Windows taskbar and select **New Session**.
 
-> _This will launch **PuTTY**._  
+  > _This will launch **PuTTY**._  
 
-2. From within PuTTY, set up a new profile. Enter the **IP address** of your _Jump server_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
+  2. From within PuTTY, set up a new profile. Enter the **IP address** of your _Jump server_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
 
 <b>STOPPED HERE</b>
 
-> _**Note:**  If you want to create new profiles for multiple Jump servers, you'll need to repeat the following steps for each profile._
+  > _**Note:**  If you want to create new profiles for multiple Jump servers, you'll need to repeat the following steps for each profile._
 
-3. Enter a descriptive name into the **Saved Sessions** textbox.
-4. From the left **Category**: panel, select **Connection** &gt; **SSH** &gt; **CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
-5. From within the **PuTTY Configuration** window, select **Connection** &gt; **SSH** &gt; **Auth**. Then, click on the checkboxes for both **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
-6. Click on **Session** from the left panel; enter a name in the **Saved Session** text box; and then click on the **Save** button. 
+  3. Enter a descriptive name into the **Saved Sessions** textbox.
+  4. From the left **Category**: panel, select **Connection** &gt; **SSH** &gt; **CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
+  5. From within the **PuTTY Configuration** window, select **Connection** &gt; **SSH** &gt; **Auth**. Then, click on the checkboxes for both **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
+  6. Click on **Session** from the left panel; enter a name in the **Saved Session** text box; and then click on the **Save** button. 
 
-> _This sets up a profile for PIV logon._
+  > _This sets up a profile for PIV logon._
 
-7. To get your PIV card&#39;s **SSH key**, in the **PuTTY Configuration** window, go to the left panel and click on **Connection** &gt; **SSH** &gt; **CAPI**.  Then, under **Authentication Parameters**, click on  the **Browse** button.  
+  7. To get your PIV card&#39;s **SSH key**, in the **PuTTY Configuration** window, go to the left panel and click on **Connection** &gt; **SSH** &gt; **CAPI**.  Then, under **Authentication Parameters**, click on  the **Browse** button.  
 
-> _This will automatically fill in the **Cert** and **SSH keystring** textboxes._
+  > _This will automatically fill in the **Cert** and **SSH keystring** textboxes._
 
-8. Next, copy the **SSH keystring** _value_, paste it into **Microsoft Notepad**, and save it.  
+  8. Next, copy the **SSH keystring** _value_, paste it into **Microsoft Notepad**, and save it.  
 
-> _You'll need the **SSH keystring value** (i.e., _SSH key_) when you contact the Jump server support team (as in Step 9) or if you need to create a service ticket._
+  > _You'll need the **SSH keystring value** (i.e., _SSH key_) when you contact the Jump server support team (as in Step 9) or if you need to create a service ticket._
 
-9. Contact the Jump server support group to request that they add your **PIV card&#39;s SSH key** to **your account on the Jump server**.
+  9. Contact the Jump server support group to request that they add your **PIV card&#39;s SSH key** to **your account on the Jump server**.
 
-> _**Note**:  For other Jump servers, submit a service ticket to that support group and include the **IP address** of the Jump server you are using, **your account name**, and the **SSH key** from your **PIV card**._
+  > _**Note**:  For other Jump servers, submit a service ticket to that support group and include the **IP address** of the Jump server you are using, **your account name**, and the **SSH key** from your **PIV card**._
 
 #### Verify your PuTTY login
 
-> _**Note:**  Once the support group has set up an account with your **SSH key** on the Jumpbox, you'll then be able to use your **PIV card** to log into the Jumpbox._
+ > _**Note:**  Once the support group has set up an account with your **SSH key** on the Jumpbox, you'll then be able to use your **PIV card** to log into the Jumpbox._
 
-1. Run **PuTTY** and select the **Saved Session**. Click on **Load,** and then click on **Open**.
-2. Enter your **remote Unix/Linux account name**.  
+  1. Run **PuTTY** and select the **Saved Session**. Click on **Load,** and then click on **Open**.
+  2. Enter your **remote Unix/Linux account name**.  
 
-> _A window will open and prompt you for your **PIV card PIN**._
+  > _A window will open and prompt you for your **PIV card PIN**._
 
-3. Enter your **PIV card PIN** and click on **OK** to log in.
-4. Once logged in, run the command: **ssh-add –l** to display the key.  
+  3. Enter your **PIV card PIN** and click on **OK** to log in.
+  4. Once logged in, run the command: **ssh-add –l** to display the key.  
 
-> _After each server you &quot;jump&quot; to, the output of **ssh-add –l** should always show the key.  After you see the key, you may **ssh** to any other hosts in the environment._
+  > _After each server you &quot;jump&quot; to, the output of **ssh-add –l** should always show the key.  After you see the key, you may **ssh** to any other hosts in the environment._
 
 ## Using PIV/CAC and SSH for Remote Access from a Linux Workstation
 
