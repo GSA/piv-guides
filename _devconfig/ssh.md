@@ -88,7 +88,7 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
 
   1. Right-click on the **Pageant** icon from the Windows taskbar and select **New Session**.
 
-  > _This will launch **PuTTY** so you can set up a new profile. (**Note:**  To create new profiles for multiple Jump servers, repeat Steps 2-6 for each profile._
+  > _This will launch **PuTTY** so you can set up a new profile. (**Note:**  To create new profiles for multiple Jump servers, repeat Steps 2-6 for each profile._)
   
   2. Enter the **IP address** of your _Jump server_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
 
