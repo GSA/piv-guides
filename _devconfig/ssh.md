@@ -97,7 +97,7 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
   5. From within the **PuTTY Configuration** window, select **Connection** &gt; **SSH** &gt; **Auth**. Then, click on the checkboxes for both **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
   6. Click on **Session** from the left panel; enter a name in the **Saved Session** text box; and then click on the **Save** button. 
 
-  > _This completes the profile set-up for the PIV login._
+  > _This completes the profile set-up for the PIV/CAC login._
 
 ##### Obtain PIV/CAC's SSH key
 
