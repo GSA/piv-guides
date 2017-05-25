@@ -1,7 +1,7 @@
 ---
 layout: default
 title: SSH
-permalink: /devconfig/ssh
+permalink: /devconfig/ssh-all
 collection: devconfig
 ---
 
