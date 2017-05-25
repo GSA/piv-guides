@@ -107,9 +107,9 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
 
   2. Next, copy the **SSH keystring** _value_, paste it into **Microsoft Notepad**, and save it.  
 
-  3. Contact the Jump server administrator to provide your **SSH key** and request that they add it to your Jump server account.
+  3. Contact the Jump server administrator to provide your **SSH key** and request that it be added to your Jump server account.
   
-  > _**Note:**  Once the administrator has set up an account with your **SSH key** on the Jumpbox, you'll then be able to use your **PIV card** to log into the Jumpbox. For other Jump servers, submit a service ticket to the administrator and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
+  > _**Note:**  Once the administrator has set up an account with your **SSH key** on the Jumpbox, you wukk then be able to use your PIV/CAC to log into the Jumpbox. For other Jump servers, submit a service ticket to the administrator and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
 
 #### Verify your PuTTY login
 
@@ -168,7 +168,7 @@ The card reader may flash. **Do not** remove the PIV/CAC until the login process
 
   * A PIV/CAC card
   * A smartcard reader
-  * A Mac OS X computer correctly configured to use a PIV/CAC for login. For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
+  * A Mac OS X computer correctly configured to use a PIV/CAC for login. For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).
 
 ### Procedures
 
