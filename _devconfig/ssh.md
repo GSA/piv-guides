@@ -46,16 +46,16 @@ This guide covers the following topics:
 
 ### Procedures
 
-Use these steps to ensure that your workstation and Jump server recognize your PIV/CAC credential. This allows the correct drivers to be enabled on the target Client.
+These steps ensure that your workstation and Jump server recognize your PIV/CAC credential. This allows the correct drivers to be enabled on the target Client.
 
 #### Install PuTTY-CAC
 
-PuTTY-CAC is an SSH client for Windows that supports PIV/CAC card authentication.
+**_PuTTY-CAC_** is an SSH client for Windows that supports PIV/CAC authentication.
 
 1. Download and install [**_PuTTY-CAC_**](https://github.com/NoMoreFood/putty-cac/releases). (PuTTY-CAC is referred to as &quot;**_PuTTY_**&quot; within the application.)
 2. Open PuTTY and click on **_About_** (lower left-hand corner of the **_PuTTY Configuration_** window) to verify that the correct version was installed.
 
-> _**Note:**  **PuTTY** will typically be installed at C:\Program Files\PuTTY.)_
+> _**Note:**  **PuTTY** will typically be installed at **_C:\Program Files\PuTTY_**.)_
 
 #### Use PIV/CAC To Insert Microsoft CAPI Key into Pageant
 
@@ -65,9 +65,9 @@ PuTTY-CAC is an SSH client for Windows that supports PIV/CAC card authentication
 2. Open **_Windows Explorer_**.
 3. Open **_Pageant_** and go to **_C:_** &gt; **_Program Files_** &gt; **_PuTTY_** &gt; **_Pageant_**.
 
-> _A window will not open, but the **Pageant** icon will appear in the Windows taskbar at the bottom of your screen._
+> _A window will not open, but the **Pageant** icon will appear in the Windows taskbar at the bottom of the screen._
 
-4. Right-click on the **Pageant** icon and select **View Keys &amp; Certs.**
+4. Right-click on the **_Pageant_** icon and select **_View Keys &amp; Certs_**.
 
 > _The Pageant **Key/CAPI Cert List** window will open._
 
