@@ -84,34 +84,32 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
 
 #### Configure PuTTY
 
+##### Set up a PIV login profile
+
   1. Right-click on the **Pageant** icon from the Windows taskbar and select **New Session**.
 
-  > _This will launch **PuTTY**._  
-
-  2. From within PuTTY, set up a new profile: 
+  > _This will launch **PuTTY** so you can set up a new profile. (**Note:**  To create new profiles for multiple Jump servers, repeat Steps 2-6 for each profile._
   
-   1. Enter the **IP address** of your _Jump server_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
+  2. Enter the **IP address** of your _Jump server_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
 
-  > _**Note:**  If you want to create new profiles for multiple Jump servers, you'll need to repeat the following steps for each profile._
+  3. Enter a descriptive name into the **Saved Sessions** textbox.
+  4. From the left **Category**: panel, select **Connection** &gt; **SSH** &gt; **CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
+  5. From within the **PuTTY Configuration** window, select **Connection** &gt; **SSH** &gt; **Auth**. Then, click on the checkboxes for both **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
+  6. Click on **Session** from the left panel; enter a name in the **Saved Session** text box; and then click on the **Save** button. 
 
-   2. Enter a descriptive name into the **Saved Sessions** textbox.
-   3. From the left **Category**: panel, select **Connection** &gt; **SSH** &gt; **CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
-    4. From within the **PuTTY Configuration** window, select **Connection** &gt; **SSH** &gt; **Auth**. Then, click on the checkboxes for both **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
-    5. Click on **Session** from the left panel; enter a name in the **Saved Session** text box; and then click on the **Save** button. 
+  > _This completes the profile set-up for the PIV login._
 
-  > _This sets up a profile for PIV logon._
+##### Obtain PIV/CAC card's SSH key
 
-  2. To get your PIV card&#39;s **SSH key**, in the **PuTTY Configuration** window, go to the left panel and click on **Connection** &gt; **SSH** &gt; **CAPI**.  Then, under **Authentication Parameters**, click on  the **Browse** button.  
+  1. To get your PIV card&#39;s **SSH key**, in the **PuTTY Configuration** window, go to the left panel and click on **Connection** &gt; **SSH** &gt; **CAPI**.  Then, under **Authentication Parameters**, click on  the **Browse** button.  
 
   > _This will automatically fill in the **Cert** and **SSH keystring** textboxes._
 
-  3. Next, copy the **SSH keystring** _value_, paste it into **Microsoft Notepad**, and save it.  
+  2. Next, copy the **SSH keystring** _value_, paste it into **Microsoft Notepad**, and save it.  
 
-  > _You'll need the **SSH keystring value** (i.e., _SSH key_) when you contact the Jump server support team (as in Step 9) or if you need to create a service ticket._
+  3. Contact the Jump server support group to provide your **SSH key** and request that they add it to your Jump server account.
 
-  4. Contact the Jump server support group to request that they add your **PIV card&#39;s SSH key** to **your account on the Jump server**.
-
-  > _**Note**:  For other Jump servers, submit a service ticket to that support group and include the **IP address** of the Jump server you are using, **your account name**, and the **SSH key** from your **PIV card**._
+  > _**Note**:  For other Jump servers, submit a service ticket to the support group and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
 
 #### Verify your PuTTY login
 
