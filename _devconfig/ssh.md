@@ -5,9 +5,16 @@ permalink: /devconfig/ssh
 collection: devconfig
 ---
 
-# Use PIV/CAC and Secure Shell (SSH) for Remote Access from Windows, Linux, or Mac
+# Use PIV/CAC and Secure Shell (SSH) to Remotely Access UNIX-like Servers from a Windows, Linux, or Mac Workstation
 
-This guide will help you to use your PIV/CAC for authentication to remotely access "UNIX-like" servers via SSH. To carry out the following procedures, you must have administrator privileges and be comfortable performing complex IT tasks. 
+As a system administrator (SA), you need the ability to remotely access UNIX-like servers from your Windows, Linux, or Mac workstation. By using your PIV/CAC for authentication and SSH for remote access 
+
+- This guide explains how to use....will walk you through using ...your PIV/CAC card for authentication and the SSH remote-access steps, according to your particular workstation's operating system (OS).   How to use....SSH for remote access from your workstation...
+
+- SSH for remote access, and your Windows, Linux, or Mac workstation.
+
+- [will allow you to do this, regardless of your operating system (OS)].  
+ - and SSH, you will be able to remotely access UNIX-like systems from your workstation.
 
 This guide covers the following topics:
 
@@ -16,51 +23,47 @@ This guide covers the following topics:
   * [SSH using Mac OS X](#ssh-using-mac-os-x)
   * [Configure a UNIX-like server](#configure-a-unix-like-server)
 
+## Preconditions
 
+  * A PIV/CAC card
+  * SA privileges 
 
+## PIV/CAC Card Details
 
-**START REWRITE**
-For administrators with a PIV/CAC who need to remotely access "UNIX-like" servers (i.e., those that operate via command-line inputs)... etc.   Add more....
-
-SSH - is xxxxx  
-UNIX-like = command-line prompt-based
-
-## Before You Begin (Preliminary Information)
-
-  * Your PIV/CAC card contains an authentication key pair and public certificate.
+  * Your PIV/CAC contains an authentication key pair and public certificate.
   * Using the PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access.
-  * **SSH is......xxxxxx (Glossary definition from FICAM, NIST (both), Lexicon...**
-  * A"UNIX-like server" is one that requires you to use a command line interface (vs. GUI) to carry out system operations. **Glossary term definition**?
-
 
 ## SSH Using Windows
 
 ### Hardware and software requirements
 
+- A PIV/CAC card
 - Windows-based workstation or computer
-- PuTTY application
+- PuTTY-CAC application
 - Pageant application
 
 > _**Note:**  You will download the required applications during the steps below._
 
 ### Procedures
 
-These procedures will help to ensure that your workstation and jump server recognize your PIV/CAC credential and so the correct drivers will be enabled on the target Client.
+Use these steps to ensure that your workstation and Jump server recognize your PIV/CAC credential. This allows the correct drivers to be enabled on the target Client.
 
 #### Install PuTTY-CAC
 
-1. Download and install [**PuTTY-CAC**](https://github.com/NoMoreFood/putty-cac/releases).  (PuTTY-CAC is referred to as &quot;**PuTTY**&quot; within the application.)
-2. Open PuTTY and click on **About** (lower left-hand corner of the **PuTTY Configuration** window) to verify that the correct version was installed.
+PuTTY-CAC is an SSH client for Windows that supports PIV/CAC card authentication.
+
+1. Download and install [**PuTTY-CAC**](https://github.com/NoMoreFood/putty-cac/releases). (PuTTY-CAC is referred to as &quot;**_PuTTY_**&quot; within the application.)
+2. Open PuTTY and click on **_About_** (lower left-hand corner of the **_PuTTY Configuration_** window) to verify that the correct version was installed.
 
 > _**Note:**  **PuTTY** will typically be installed at C:\Program Files\PuTTY.)_
 
-#### Use PIV/CAC To Insert CAPI Key into Pageant
+#### Use PIV/CAC To Insert Microsoft CAPI Key into Pageant
 
-> _**CAPI** is Microsoft's Crytographic Application Programming Interface._
+> **_CAPI_** is Microsoft's Crytographic Application Programming Interface. **_Pageant_** is an SSH authentication agent.
 
-1. Insert your **PIV card** into the card reader.
-2. Open **Windows Explorer**.
-3. Open **Pageant** by clicking **C:** &gt; **Program Files** &gt; **PuTTY** &gt; **Pageant**.
+1. Insert your **_PIV/CAC_** into the card reader.
+2. Open **_Windows Explorer_**.
+3. Open **_Pageant_** and go to **_C:** &gt; **Program Files** &gt; **PuTTY** &gt; **Pageant_**.
 
 > _A window will not open, but the **Pageant** icon will appear in the Windows taskbar at the bottom of your screen._
 
@@ -193,7 +196,7 @@ These procedures will help to ensure that your workstation and jump server recog
   
   > **Note:**  The card reader may flash. **Do not** remove the PIV card until the login process has been completed.
 
-## Configure a UNIX-like server
+## How to Configure a UNIX-like Server
 
  1. Change the configuration in the **/etc/ssh/sshd_config** file. Then restart the **sshd**.
  
