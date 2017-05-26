@@ -10,9 +10,9 @@ permalink: /template/
 This **_Template.md_** gives instructions and templates to help you with your new Guide for the www.IDManagment.gov website, including:
 
   1. [**Starting Your Guide**](#Starting-Your-Guide) 
-  2. An [**Example Outline Template**](#Example-Outline-Template) that will help you to structure and develop content for your guide
-  3. A [**Markdown Template**](#Markdown-Template) that will help you with Markdown formatting (syntax) 
-  4. Some [**Writing and Style Resources**](#Writing-and-Style-Resources) that will help with plain language, writing, and style  
+  2. [**Example Outline Template**](#Example-Outline-Template) 
+  3. [**Markdown Template**](#Markdown-Template)
+  4. [**Writing and Style Resources**](#Writing-and-Style-Resources)  
   
 # Starting Your Guide
 
