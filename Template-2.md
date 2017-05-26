@@ -59,9 +59,7 @@ To create a new **_Page_** to start your guide, do this:
   
   2. Select all of the content in this **_Template.md_** page. Copy and paste this content into your Page.
   
-  3. When you are ready, delete this introductory text, so that only the following information remains:
-  
-     * Top left header information, including dashed lines above and below:
+  3. When you are ready, delete the introductory text and steps for branch and Page creations, but keep the document **navigation block**, which appears at the top left of the content window (example in gray box below), as well as the **Example Outline** and the **Markdown Template**, which are provided in the following sections.
 
    ```
        ---
@@ -71,17 +69,12 @@ To create a new **_Page_** to start your guide, do this:
        ---
    ```
 <BR>
-     * Example Outline
-     * Markdown Template
-  
-  **Example Outline** and the **Markdown Template** remain.
 
->  **Important:** Steps 6 and 7 add navigation information needed for hosting your guide on the www.IDMangement.gov website.
-
-  6. At the top left corner of your new Page, change **Guidance Document Template** to the title of your new Page (i.e., guide title). 
-  7. Change the **permalink** title to a short version of your new Page's title.
+  4. Once you have deleted the introductory text and steps, go to the top left corner of your new Page.
+  change **Guidance Document Template** to the title of your new Page (i.e., guide title). 
+  5. Change the **title** to your guide's title (for example, _My Technical Guide_).
+  6. Change the **permalink** title to a short version of your guide's title (for example, _/myguide/_.
     > The **permalink** title should be in the format: **/mypage/**, instead of _mypage.md_  
-  8. Optionally, copy and paste only the portions of this file that you need (e.g., [**Example Outline**](#Example-Outline) and/or [**Markdown Template**](#Markdown-Template)). In this case, it is important to copy and paste the "header" information (**_layout_**, **_title_**, and **_permalink_**) from the top left corner of this **_Template.md_** file into your Page and make the changes given in Steps 6 and 7.
 
 # TEMPLATES
 
