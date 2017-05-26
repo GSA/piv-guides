@@ -32,7 +32,7 @@ To select an existing branch, do this:
   
   1. At the top left area of your GitHub repository directory window (for example, PIV-Guides repository), you will see the **_Branch_** button. Click on the button's down-arrow to select an existing branch. The branch (name) shown on the button is where your new Page will be stored.
   
-  > If you have selected an existing branch you want, go to [**Create a New Page for Your Guide**](#Create-a-New-Page-for-Your-Guide).
+  > Once you have selected an existing branch, go to [**Create a New Page for Your Guide**](#Create-a-New-Page-for-Your-Guide).
   
 ### Create a New Branch
 
@@ -50,14 +50,14 @@ To create a new **_Page_** to start your guide, do this:
   2. Click on the **_Create New File_** button located at the top right area of your repository's directory window.  
   > At the top left area of this window, the branch name appears with a **"/"** after it and a text box. (If you want to start over, select **_Cancel_**.) 
   4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., **Mynewfile.md**).
-  5. Scroll down to the bottom of your screen. At the left-hand-side of your screen, click on the green button that says **Commit new file**.
+  5. Scroll down to the bottom of your screen. At the left-hand-side of your screen, below the **Comment** box, click on the green button that says **Commit new file**.
   > This creates and saves your new Page in your selected or new branch.
 
 ## Copy and Paste the Content from the **_Template.md_** into your new Page.
 
   1. At the top right area of your Page's content window, click on the **pencil** symbol.
 
-  > Your Page window is now in editing view (i.e., Markdown content creation mode). You will use this view to create content for your guide.
+  > Your Page window is now in editing view (i.e., also Markdown content creation mode). You will use this view to create content for your guide.
   
   2. Select all of the content in this **_Template.md_** page. Copy and paste this content into your Page.
   
@@ -73,12 +73,11 @@ To create a new **_Page_** to start your guide, do this:
 <BR>
 
   4. Once you have deleted the introductory text and steps, go to the top left corner of your new Page.
-  5. Change **Guidance Document Template** to the title of your new Page (i.e., guide title). 
-  6. Change the **title** to your guide's title (for example, _My Technical Guide_).
-  7. Change the **permalink** title to a short version of your guide's title (for example, _/myguide/_.<BR>
-    > The **permalink** title should be in the format: **/mypage/**, instead of _mypage.md_  
-  8. Once you have made these changes, scroll down the the bottom of your screen. At the left-hand-side of the screen, click on the green button that says **Commit changes.**<BR>
-    > This action saves all changes made to your Page.
+  5. Change the **title**, "Guidance Document Template," to your guide's title (for example, _My Technical Guide_).
+  6. Change the **permalink** title to a short version of your guide's title (for example, _/myguide/_.<BR>
+  > The **permalink** title should be in the format: **/mypage/**, instead of _mypage.md_  
+  7. Once you have made these changes, scroll down the the bottom of your screen. At the left-hand-side of the screen, click on the green button that says **Commit changes.**<BR>
+  > This action saves all of your changes to your Page.
 
 # TEMPLATES
 
