@@ -77,6 +77,8 @@ To create a new **_Page_** to start your guide, do this:
   6. Change the **title** to your guide's title (for example, _My Technical Guide_).
   7. Change the **permalink** title to a short version of your guide's title (for example, _/myguide/_.
     > The **permalink** title should be in the format: **/mypage/**, instead of _mypage.md_  
+  8. Once you have made these changes, scroll down the the bottom of your screen. At the left-hand-side of the screen, click on the green button that says **Commit changes.**
+    > This action saves all changes made to your Page.
 
 # TEMPLATES
 
