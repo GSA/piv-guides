@@ -5,7 +5,7 @@ permalink: /template/
 ---
 # Contributing to the GSA FICAM Guides
 
-> Before starting a new Guide, please read the **_Contributing.md_** Page, which is located in the **_GSA GitHub Repos for the PIV-Guides, FPKI-Guides, and FICAM-Arch_**. The **_Contributing.md_** Page provides terms and conditions and other important instructions.{:class="info"}
+> Before starting a new Guide, please read the **_Contributing.md_** Page, which is located in the **_GSA GitHub repositories for the PIV-Guides, FPKI-Guides, and FICAM-Arch_**. The **_Contributing.md_** Page provides terms and conditions and other important instructions.{:class="info"}
 
 This **_Template.md_** gives instructions and templates to help you with your new Guide for the www.IDManagment.gov website, including:
 
@@ -30,7 +30,7 @@ A branch is where your new guide (called a **Page**) will be stored in your repo
 
 To select an existing branch, do this: 
   
-  1. At the top left area of your GitHub Repo directory window, you will see the **_Branch_** button. Click on the button's down-arrow to select an existing branch. The branch (name) shown on the button is where your new Page will be stored.
+  1. At the top left area of your GitHub respository directory window, you will see the **_Branch_** button. Click on the button's down-arrow to select an existing branch. The branch (name) shown on the button is where your new Page will be stored.
   
   > If you have selected an existing branch you want, go to [**Create a New Page for Your Guide**](#Create-a-New-Page-for-Your-Guide).
   
