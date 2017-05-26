@@ -30,7 +30,7 @@ A branch is where your new guide (called a **Page**) will be stored in your repo
 
 To select an existing branch, do this: 
   
-  1. At the top left area of your GitHub respository directory window, you will see the **_Branch_** button. Click on the button's down-arrow to select an existing branch. The branch (name) shown on the button is where your new Page will be stored.
+  1. At the top left area of your GitHub repository directory window (for example, PIV-Guides repository), you will see the **_Branch_** button. Click on the button's down-arrow to select an existing branch. The branch (name) shown on the button is where your new Page will be stored.
   
   > If you have selected an existing branch you want, go to [**Create a New Page for Your Guide**](#Create-a-New-Page-for-Your-Guide).
   
@@ -51,15 +51,22 @@ To create a new **_Page_** to start your guide, do this:
   > At the top left area of this window, the branch name appears with a **"/"** after it and a text box. (If you want to start over, select **_Cancel_**.) 
   4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., **Mynewfile.md**). 
 
-## Copy and Paste the Content of This **_Template.md_** into your new Page.
+## Copy and Paste the Content from the **_Template.md_** into your new Page.
 
   1. At the top right area of your content window, click on the **pencil** symbol.
 
-  > This puts your Page window into the Markdown view, which enables you to create content.
+  > Your Page window is now in editing view (i.e., Markdown content creation mode). You will use this view to create content for your guide.
   
-  2. When you are ready, delete this introductory text, so that only the following information remains:
+  2. Select all of the content in this **_Template.md_** page. Copy and paste this content into your Page.
   
-   * Top left header information:
+  3. When you are ready, delete this introductory text, so that only the following information remains:
+  
+   * Top left header information, including dashed lines above and below:
+     ---
+     layout: default 
+     title: Guidance Document Template 
+     permalink: /template/
+     ---
    * Example Outline
    * Markdown Template
   
