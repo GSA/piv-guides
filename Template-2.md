@@ -9,8 +9,9 @@ permalink: /template/
 
 This **_Template.md_** gives instructions and templates to help you with your new Guide for the www.IDManagment.gov website, including:
 
-  1. **_Starting Your Guide_**. 
-  2. An **_Example Outline Template_** that will help you to structure and develop content for your guide
+  1. [**Starting Your Guide**](#Starting-Your-Guide)
+- [Subsection2](#subsection2). 
+  2. An [**Example Outline Template**](#Example-Outline-Template) that will help you to structure and develop content for your guide
   3. A **_Markdown Template_** that will help you with Markdown formatting (syntax) 
   4. Some **_writing and Style Resources_** that will help with plain language, writing, and style  
   
@@ -91,7 +92,7 @@ To create a new **_Page_** to start your guide, do this:
 
 Now that you have created a new Page to start your guide, this **Example Outline** will help you to structure and develop content for your guide.
 
-  1. If you have not already done so, copy and paste this **Example Outline** below into your new Page.
+  1. If you have not already done so, copy and paste this **Example Outline** into your new Page.
 
 ## Overview
 
@@ -99,7 +100,7 @@ This text should give a brief overview of the subject matter covered in your gui
 
 ## Assumptions 
 
-  > This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. Alternatively, this section may include conditions that must be met before the user can begin the procedures. Alternate titles may be: **_Preconditions_** (i.e., list any conditions that must be met) or **_Hardware and Software_Requirements** (i.e, list any hardware or software that must be obtained and/or configured).
+This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. Alternatively, this section may include conditions that must be met before the user can begin the procedures. Alternate titles may be: **_Preconditions_** (i.e., list any conditions that must be met) or **_Hardware and Software_Requirements** (i.e, list any hardware or software that must be obtained and/or configured).
 
 ## Before You Get Started
 
@@ -107,16 +108,14 @@ This section will tell the user what he/she needs to do to prepare before starti
 
 ## Title of Procedure 1
 
-This paragraph should give user-friendly background information, introduce the procedure, and then give the detailed procedures in simple statements that use plain language as much as possible.
+This paragraph should give user-friendly background information, introduce the procedure, and then give the detailed procedures in simple statements.
 
   1. Step 1 of procedure 1.
   2. Step 2 of procedure 1.
-    1. Sub-step 1
-    2. Sub-step 2
   
 ## Title of Procedure 2
 
-This paragraph should give user-friendly background information, introduce the procedure, and then give the detailed procedures in simple statements that use plain language as much as possible.
+This paragraph should give user-friendly background information, introduce the procedure, and then give the detailed procedures in simple statements.
 
   1. Step 1 of the procedure 2.
   2. Step 2 of the procedure 2.
@@ -125,13 +124,13 @@ This paragraph should give user-friendly background information, introduce the p
 
 # Markdown Template
 
-Copy and paste this **Markdown Template** into your new guide.  Use Markdown styles to write NEW pages to be submitted to the IDManagement.gov website. 
+This **Markdown Template** will help you to use Markdown syntax to format the content for your guide. You can learn more about Markdown formatting by browsing to the "Mastering Markdown" guide from Github: https://guides.github.com/features/mastering-markdown/
 
-Markdown formatting is used for Pages (file) content.  You can learn more about Markdown formatting by browsing to the "Mastering Markdown" guide from Github: https://guides.github.com/features/mastering-markdown/
+  1. If you have not already done so, copy and paste this **Markdown Template** into your new Page.  
 
 ## Headings
 
-In Markdown, the **#** symbol is used to denote and format headers.
+In Markdown, the **#** symbol is used to format headers.
 
 # This is a top-level heading
 ## This is a second-level heading
