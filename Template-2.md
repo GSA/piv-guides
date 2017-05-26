@@ -49,7 +49,9 @@ To create a new **_Page_** to start your guide, do this:
   1. Check the **_Branch_** button to ensure that the branch name you selected or created is displayed. If it isn't, click on the down-arrow and select the branch name from the drop-down list.
   2. Click on the **_Create New File_** button located at the top right area of your repository's directory window.  
   > At the top left area of this window, the branch name appears with a **"/"** after it and a text box. (If you want to start over, select **_Cancel_**.) 
-  4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., **Mynewfile.md**). 
+  4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., **Mynewfile.md**).
+  5. Scroll down to the bottom of your screen. At the left-hand-side of your screen, click on the green button that says **Commit New File**.
+  > This creates and saves your new Page in your branch.
 
 ## Copy and Paste the Content from the **_Template.md_** into your new Page.
 
