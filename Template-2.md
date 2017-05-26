@@ -153,25 +153,27 @@ As you add sections, you can create a Table of Contents (TOC) at the top of your
 
 ## Bulleted and Numbered Lists
 
-Use two spaces, an asterisk, plus one space to start a bullet list.
+To create bullet lists (i.e., unordered list), use spaces and an asterisk, as follows:
 
   * Bullet 1 (Indent 2 spaces, plus an asterisk and 1 space.)
   * Bullet 2
     * Sub-bullet 1 (Indent 4 spaces, plus an asterisk and 1 space.)
     * Sub-bullet 2
 
-Use two spaces and type "**_1._**," etc., to create a numbered item. You must type each number. The numbers will automatically increment for you when rendered. The first numbered list will render as "1, 2, 3," etc.  Even though you must type 1, 2, etc., for the numbered sub-item list, the sub-items will render as "i, ii, iii," etc.
+  > **Note:** Markdown supports only **two** indention levels for bullet lists.
 
-  > **Note:** Markdown supports only **two** indention levels for numbered lists.
+To create a numbered list (i.e., ordered list), use spaces and numbers. The numbers will automatically increment for you when rendered. The first numbered list will render as "1, 2, 3," etc. Even though you need to type 1, 2, etc., for a numbered sub-item list, the sub-items will render as "i, ii, iii," etc.
 
   1. Numbered item 1 (Indent 2 spaces, plus a number and 1 space. First-level numbered items will render as "1, 2, 3," etc.)
   2. Numbered item 2
-      1. Numbered sub-item 1 (Second-level numbered items will render as "i, ii, iii," etc.)
+      1. Numbered sub-item 1 (Indent 6 spaces, plus a number and 1 space. Second-level numbered items will render as "i, ii, iii," etc.)
       2. Numbered sub-item 2
+
+  > **Note:** Markdown supports only **two** indention levels for numbered lists.
 
 ## Code Blocks
 
-For code blocks, enter three backticks (```) before and after the code example:
+For code blocks, enter a Return, three backticks (```) before and after the code block, plus another Return:
 
 ```Text within three backticks style code or command line samples```
 
