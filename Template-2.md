@@ -63,9 +63,9 @@ To create a new **_Page_** to start your guide, do this:
   
   3. When you are ready, delete the **Template.md** _introductory text and steps to select/create a branch and a Page_, but keep the the following: 
   
-  * Document **navigation block** (at the top left corner of your Page window). (See example below.) 
-  * The **Example Outline**. (See **Templates** section below.)
-  * The **Markdown Template**. (See **Templates** section below.)
+   * Document **navigation block** (at the top left corner of your Page window). (See example below.) 
+   * The **Example Outline**. (See **Templates** section below.)
+   * The **Markdown Template**. (See **Templates** section below.)
 
    ```
        ---
