@@ -10,7 +10,7 @@ permalink: /template/
 This **_Template.md_** gives instructions and templates to help you with your new Guide for the www.IDManagment.gov website, including:
 
   1. **_Starting Your Guide_**. 
-  2. An **_Example Outline Template_** that will help you to structure your guide
+  2. An **_Example Outline Template_** that will help you to structure and develop content for your guide
   3. A **_Markdown Template_** that will help you with Markdown formatting (syntax) 
   4. Some **_writing and Style Resources_** that will help with plain language, writing, and style  
   
@@ -50,8 +50,8 @@ To create a new **_Page_** to start your guide, do this:
   2. Click on the **_Create New File_** button located at the top right area of your repository's directory window.  
   > At the top left area of this window, the branch name appears with a **"/"** after it and a text box. (If you want to start over, select **_Cancel_**.) 
   4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., **Mynewfile.md**).
-  5. Scroll down to the bottom of your screen. At the left-hand-side of your screen, click on the green button that says **Commit New File**.
-  > This creates and saves your new Page in your branch.
+  5. Scroll down to the bottom of your screen. At the left-hand-side of your screen, click on the green button that says **Commit new file**.
+  > This creates and saves your new Page in your selected or new branch.
 
 ## Copy and Paste the Content from the **_Template.md_** into your new Page.
 
@@ -82,19 +82,17 @@ To create a new **_Page_** to start your guide, do this:
 
 # Example Outline Template
 
-Now that you have created a new page, this **Example Outline** will help you to create your guide.
+Now that you have created a new Page to start your guide, this **Example Outline** will help you to structure and develop content for your guide.
 
-  1. Copy and paste this **Example Outline** into your new guide as a starting point for your document structure.
+  1. If you have not already done so, copy and paste this **Example Outline** below into your new Page.
 
 ## Overview
 
-This text should give a brief overview of what content is contained within the guidance document. It may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
+This text should give a brief overview of what the subject matter covered in your guide. In addition to giving a subject-matter overview, it may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
 
 ## Assumptions 
 
-  > This section could also be called **_Preconditions_** or **_Required Hardware and Software_**.
-  
-  This section will be a bullet list explaining assumption(s) or other needed precondition(s), including required hardware and software, that must be met before the user can begin the procedures in the new guide.
+  > This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. Alternatively, this section may be called **_Preconditions_** that must be met or **_Required Hardware and Software_** that must be obtained and/or configured before the user can begin the procedures.
 
 ## Before You Get Started
 
@@ -102,14 +100,16 @@ This section will tell the user what he/she needs to do to prepare before starti
 
 ## Title of Procedure 1
 
-This paragraph should give user-friendly background information and introduce the procedure.
+This paragraph should give user-friendly background information, introduce the procedure, and then give the detailed procedures in simple statements that use plain language as much as possible.
 
   1. Step 1 of procedure 1.
   2. Step 2 of procedure 1.
+    1. Sub-step 1
+    2. Sub-step 2
   
 ## Title of Procedure 2
 
-This paragraph should give user-friendly background information and introduce the procedure.
+This paragraph should give user-friendly background information, introduce the procedure, and then give the detailed procedures in simple statements that use plain language as much as possible.
 
   1. Step 1 of the procedure 2.
   2. Step 2 of the procedure 2.
