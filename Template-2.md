@@ -26,7 +26,7 @@ This section tells you:
 
 A branch is where your new guide (called a **Page**) will be stored in your repository. Before you create a new Page to start your guide, you need to **_select an existing branch_** or **_create a new branch_**. 
 
-### Select an Existing Branch
+### Select an existing branch
 
 To select an existing branch, do this: 
   
@@ -34,7 +34,7 @@ To select an existing branch, do this:
   
   > Once you have selected an existing branch, go to [**Create a New Page for Your Guide**](#Create-a-New-Page-for-Your-Guide).
   
-### Create a New Branch
+### Create a new branch
 
 To create a new branch, do this:
   
@@ -129,10 +129,17 @@ This **Markdown Template** will help you to use Markdown syntax to format the co
 
 ## Headings
 
-In Markdown, the **#** symbol is used to format headings.
+The required Heading formats for the www.IDManagement.gov website are as follows:
 
-# This is a top-level heading
-## This is a second-level heading
+  * Top-Level Heading (_Title Case_)
+  * Second-Level Heading (_Title Case_)
+  * Third-level heading (_Sentence case_)
+  * All lower-level headings (_Sentence case_)
+
+In Markdown syntax, the **#** symbol is used to format headings.
+
+# This Is a Top-Level Heading 
+## This Is a Second-Level Heading
 ### This is a third-level heading
 #### This is a fourth-level heading
 ##### This is a fifth-level heading
@@ -237,5 +244,6 @@ The following documents provide additional information about plain language, wri
   * [18F Content Guide]({{site.baseurl}}/https://content-guide.18f.gov/)
   * [Federal Plain Language Guidelines]({{site.baseurl}}/http://www.plainlanguage.gov/howto/guidelines/FederalPLGuidelines/TOC.cfm/)
   * [U.S. Government Printing Office (GPO) Style Manual]({{site.baseurl}}/https://www.govinfo.gov/app/details/GPO-STYLEMANUAL-2016/)
-  * The Chicago Manual of Style
-  * The Associated Press (AP) Style Guide
+  * [Oxford Dictionary Online]({{site.baseurl}}/https://en.oxforddictionaries.com/)
+  * [Merriam Webster Dictionary Online]({{site.baseurl}}/https://www.merriam-webster.com/)
+
