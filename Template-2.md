@@ -239,7 +239,7 @@ For the FICAM Guides, general writing guidelines include:
   * All text should be written in plain language as much as possible. 
   * Use numbered steps, bullet lists, and graphics whenever possible. 
 
-The following documents provide additional information about plain language, writing, and style:
+The following references provide additional information about plain language, writing, and style:
 
   * [18F Content Guide]({{site.baseurl}}/https://content-guide.18f.gov/)
   * [Federal Plain Language Guidelines]({{site.baseurl}}/http://www.plainlanguage.gov/howto/guidelines/FederalPLGuidelines/TOC.cfm/)
