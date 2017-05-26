@@ -30,7 +30,7 @@ A branch is where your new guide (called a **Page**) will be stored in your repo
 
 To select an existing branch, do this: 
   
-  1. At the top left area of your GitHub repository directory window (for example, PIV-Guides repository), you will see the **_Branch_** button. Click on the button's down-arrow to select an existing branch. The branch (name) shown on the button is where your new Page will be stored.
+  1. At the top left area of your GitHub repository directory window (for example, PIV-Guides repository), you will see the **_Branch_** button. Click on the button's down-arrow to select an existing branch. The branch (name) shown on the button indicates where your new Page will be stored.
   
   > Once you have selected an existing branch, go to [**Create a New Page for Your Guide**](#Create-a-New-Page-for-Your-Guide).
   
