@@ -18,17 +18,13 @@ This **_Template.md_** gives instructions and templates to help you with your ne
 
 This section tells you: 
 
-  * How to select or create a new **_Branch_** in your GitHub repository 
-  * How to create a new **_Page_** in your respository to start your guide
+  * How to select or create a new **_Branch_** in your GitHub repository where your guide will be stored 
+  * How to create a new **_Page_** to start your guide 
   * How to use the **_Example Outline Template_** and **_Markdown Template_** to develop your guide
 
 ## Select or Create a Branch for Your Guide
 
-Before you create a new **_Page_** in your repository to start your guide, you need to select or create a branch. 
-
-  > A branch is where your Page will be stored. 
-
-Follow the steps below to either select or create a branch.
+A branch is where your new guide (called a **Page**) will be stored in your repository. Before you create a new Page to start your guide, you need to **_select an existing branch_** or **_create a new branch_**. 
 
 ### Select an Existing Branch
 
@@ -46,16 +42,22 @@ To create a new branch, do this:
   
   > The **_Branch_** button will display the new branch name. This is where your new Page will be stored.
   
-## Create a New Page for Your Guide
+## Create a New Page to Start Your Guide
 
-To create a new **_Page_** for your guide, do this:  
+To create a new **_Page_** to start your guide, do this:  
 
-  1. Check the **_Branch_** button to ensure that it is displaying your selected or created branch name. If it isn't, click on the down-arrow and select the branch name from the drop-down list.
+  1. Check the **_Branch_** button to ensure that the branch name you selected or created is displayed. If it isn't, click on the down-arrow and select the branch name from the drop-down list.
   2. Click on the **_Create New File_** button located at the top right area of your repository's directory window.  
-  > At the top left area of the window, the Branch name appears with a **"/"** after it and a text box. (If you want to start over, select **_Cancel_**.) 
+  > At the top left area of this window, the branch name appears with a **"/"** after it and a text box. (If you want to start over, select **_Cancel_**.) 
   4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., **Mynewfile.md**). 
-  5. Copy and paste the contents of this **_Template.md_** file into your new Page.
-  6. When you are ready, delete this introductory text, so that only the following information remains:
+
+## Copy and Paste the Content of This **_Template.md_** into your new Page.
+
+  1. At the top right area of your content window, click on the **pencil** symbol.
+
+  > This puts your Page window into the Markdown view, which enables you to create content.
+  
+  2. When you are ready, delete this introductory text, so that only the following information remains:
   
    * Top left header information:
    * Example Outline
