@@ -18,7 +18,7 @@ This **_Template.md_** gives instructions and templates to help you with your ne
 
 This section tells you: 
 
-  * How to select or create a new **_Branch_** in your GitHub repository where you want your guide to be stored 
+  * How to select or create a new **_Branch_** in your GitHub repository where your guide will be stored 
   * How to create a new **_Page_** to start your guide 
   * How to use the **_Example Outline Template_** and **_Markdown Template_** to develop your guide
 
@@ -99,7 +99,7 @@ This text should give a brief overview of the subject matter covered in your gui
 
 ## Assumptions 
 
-This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. Alternatively, this section may include conditions that must be met before the user can begin the procedures. Alternate titles may be: **_Preconditions_** (i.e., list any conditions that must be met) or **_Hardware and Software_Requirements** (i.e, list any hardware or software that must be obtained and/or configured).
+This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. This section may also include conditions that must be met before the user can begin the procedures. Alternate titles may be: **_Preconditions_** (i.e., list any conditions that must be met) or **_Hardware and Software_Requirements** (i.e, list any hardware or software that must be obtained and/or configured).
 
 ## Before You Get Started
 
@@ -123,13 +123,13 @@ This paragraph should give user-friendly background information, introduce the p
 
 # Markdown Template
 
-This **Markdown Template** will help you to use Markdown syntax to format the content for your guide. You can learn more about Markdown formatting by browsing to the "Mastering Markdown" guide from Github: https://guides.github.com/features/mastering-markdown/
+This **Markdown Template** will help you to use Markdown syntax to format the content for your guide. You can learn more about Markdown formatting by browsing to the "Mastering Markdown" guide from Github: https://guides.github.com/features/mastering-markdown/.
 
   1. If you have not already done so, copy and paste this **Markdown Template** into your new Page.  
 
 ## Headings
 
-In Markdown, the **#** symbol is used to format headers.
+In Markdown, the **#** symbol is used to format headings.
 
 # This is a top-level heading
 ## This is a second-level heading
@@ -141,7 +141,7 @@ In Markdown, the **#** symbol is used to format headers.
 
 ## Table of Contents (TOC)
 
-As you add sections, you can create a Table of Contents (TOC) at the top of your page by creating a linked list like this:
+As you add sections, you can create a Table of Contents (TOC) at the top of your Page by creating a linked list like this:
 
 - [Subsection1](#subsection1)
 - [Subsection2](#subsection2)
@@ -153,7 +153,7 @@ As you add sections, you can create a Table of Contents (TOC) at the top of your
 
 ## Bulleted and Numbered Lists
 
-Use two spaces, an asterisk, plus one space to start a bullet list.   use the dash, followed by two spaces.
+Use two spaces, an asterisk, plus one space to start a bullet list.
 
   * Bullet 1 (Indent 2 spaces, plus an asterisk and 1 space.)
   * Bullet 2
