@@ -59,9 +59,13 @@ To create a new **_Page_** to start your guide, do this:
 
   > Your Page window is now in editing view (i.e., also Markdown content creation mode). You will use this view to create content for your guide.
   
-  2. Select all of the content in this **_Template.md_** page. Copy and paste this content into your Page.
+  2. Select all of the content in this **_Template.md_** page. Copy and paste the content into your Page.
   
-  3. When you are ready, delete the introductory text and steps to select/create a branch and a Page, but keep the document **navigation block**, which appears at the top left of the content window (example in gray box below). Be sure to keep the **Example Outline** and the **Markdown Template**, which are given in the next two sections.
+  3. When you are ready, delete the **Template.md** _introductory text and steps to select/create a branch and a Page_, but keep the the following: 
+  
+  * Document **navigation block** (at the top left corner of your Page window). (See example below.) 
+  * The **Example Outline**. (See **Templates** section below.)
+  * The **Markdown Template**. (See **Templates** section below.)
 
    ```
        ---
