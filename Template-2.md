@@ -5,31 +5,26 @@ permalink: /template/
 ---
 # Contributing to the GSA FICAM Guides
 
-> Before you create a new FICAM guide (or contribute to an existing FICAM guide), please read the **_Contributing.md_** Page, which is located in the **_GSA GitHub Repos for the PIV-Guides, FPKI-Guides, and FICAM-Arch_**. The **_Contributing.md_** Page provides the terms and conditions for contributing and gives other important instructions and information.{:class="info"}
+> Before starting a new Guide, please read the **_Contributing.md_** Page, which is located in the **_GSA GitHub Repos for the PIV-Guides, FPKI-Guides, and FICAM-Arch_**. The **_Contributing.md_** Page provides terms and conditions and other important instructions.{:class="info"}
 
-  > Link to Contributing.md **FIX -- ASK JASON HOW TO DO THIS LINK**
-
-
-This **_Template.md_** Page will help you to create a new FICAM Guide for the www.IDManagment.gov website. It includes the following instructions and templates:
-
-  > **FIX** - **Should be a TOC with Annotation...**
+This **_Template.md_** gives instructions and templates to help you with your new Guide for the www.IDManagment.gov website, including:
 
   1. **_Starting Your Guide_**. 
-  2. An **_Example Outline Template_** to copy and paste into your page (i.e., to help structure your guide).
-  3. A **_Markdown Template_** to copy and paste into your page (i.e., to help with Markdown formatting). 
-  4. Some **_writing and Style Resources_** (i.e., to help with plain language, writing, and style).  
+  2. An **_Example Outline Template_** that will help you to structure your guide
+  3. A **_Markdown Template_** that will help you with Markdown formatting (syntax) 
+  4. Some **_writing and Style Resources_** that will help with plain language, writing, and style  
   
 # Starting Your Guide
 
-These procedures will walk you through the basics of creating a new FICAM Guide, including: 
+This section tells you: 
 
-  * Select or create a new **_Branch_** in your Repo 
-  * Create a new **_Page_** to start your guide
-  * Use the **_Example Outline Template_** and **_Markdown Template_** to develop your guide
+  * How to select or create a new **_Branch_** in your GitHub repository 
+  * How to create a new **_Page_** in your respository to start your guide
+  * How to use the **_Example Outline Template_** and **_Markdown Template_** to develop your guide
 
 ## Select or Create a Branch for Your Guide
 
-Before you create a new **_Page_** for your new guide, you will need to select or create a branch. 
+Before you create a new **_Page_** in your repository to start your guide, you need to select or create a branch. 
 
   > A branch is where your Page will be stored. 
 
@@ -39,33 +34,40 @@ Follow the steps below to either select or create a branch.
 
 To select an existing branch, do this: 
   
-  1. At the top left area of your GitHub Repo directory window, you will see the **_Branch_** button. The branch (name) shown on the button is where your new Page will be stored.
+  1. At the top left area of your GitHub Repo directory window, you will see the **_Branch_** button. Click on the button's down-arrow to select an existing branch. The branch (name) shown on the button is where your new Page will be stored.
   
-  > If this is the branch you want, go to [**Create a New Page for Your Guide**](#Create-a-New-Page-for-Your-Guide).
+  > If you have selected an existing branch you want, go to [**Create a New Page for Your Guide**](#Create-a-New-Page-for-Your-Guide).
   
 ### Create a New Branch
 
 To create a new branch, do this:
   
-  1. Click on the **_Branch_** button and add a new branch name.  
+  1. Click on the **_Branch_** button and enter a new branch name into the text field.  
   
-  > The **_Branch_** button will display the new branch name. 
+  > The **_Branch_** button will display the new branch name. This is where your new Page will be stored.
   
 ## Create a New Page for Your Guide
 
 To create a new **_Page_** for your guide, do this:  
 
-  1. Check the **_Branch_** button to ensure that your selected or created branch name is displayed. If it isn't, click on the down-arrow and select the branch name from the drop-down list.
-  2. Click on the **_Create New File_** button located at the top right area of your Repo's directory window.  
+  1. Check the **_Branch_** button to ensure that it is displaying your selected or created branch name. If it isn't, click on the down-arrow and select the branch name from the drop-down list.
+  2. Click on the **_Create New File_** button located at the top right area of your repository's directory window.  
   > At the top left area of the window, the Branch name appears with a **"/"** after it and a text box. (If you want to start over, select **_Cancel_**.) 
   4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., **Mynewfile.md**). 
   5. Copy and paste the contents of this **_Template.md_** file into your new Page.
+  6. When you are ready, delete this introductory text, so that only the following information remains:
+  
+   * Top left header information:
+   * Example Outline
+   * Markdown Template
+  
+  **Example Outline** and the **Markdown Template** remain.
 
->  **Important:** Steps 6 and 7 add navigation information needed for hosting your guide on the website.
+>  **Important:** Steps 6 and 7 add navigation information needed for hosting your guide on the www.IDMangement.gov website.
 
-  6. At the top left corner of your new Page, change **Guidance Document Template** to your new page's title. 
-  7. Change the **permalink** title to a short version of your new page's title.
-    > The **permalink** title should be in the format: **/mypage/**, instead of mypage.md  
+  6. At the top left corner of your new Page, change **Guidance Document Template** to the title of your new Page (i.e., guide title). 
+  7. Change the **permalink** title to a short version of your new Page's title.
+    > The **permalink** title should be in the format: **/mypage/**, instead of _mypage.md_  
   8. Optionally, copy and paste only the portions of this file that you need (e.g., [**Example Outline**](#Example-Outline) and/or [**Markdown Template**](#Markdown-Template)). In this case, it is important to copy and paste the "header" information (**_layout_**, **_title_**, and **_permalink_**) from the top left corner of this **_Template.md_** file into your Page and make the changes given in Steps 6 and 7.
 
 # TEMPLATES
