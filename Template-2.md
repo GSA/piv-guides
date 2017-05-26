@@ -62,11 +62,11 @@ To create a new **_Page_** to start your guide, do this:
   3. When you are ready, delete this introductory text, so that only the following information remains:
   
    * Top left header information, including dashed lines above and below:
-   ---
+
    layout: default 
    title: Guidance Document Template 
    permalink: /template/
-   ---
+
    * Example Outline
    * Markdown Template
   
