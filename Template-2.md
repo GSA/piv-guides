@@ -75,9 +75,9 @@ To create a new **_Page_** to start your guide, do this:
   4. Once you have deleted the introductory text and steps, go to the top left corner of your new Page.
   5. Change **Guidance Document Template** to the title of your new Page (i.e., guide title). 
   6. Change the **title** to your guide's title (for example, _My Technical Guide_).
-  7. Change the **permalink** title to a short version of your guide's title (for example, _/myguide/_.
+  7. Change the **permalink** title to a short version of your guide's title (for example, _/myguide/_.<BR>
     > The **permalink** title should be in the format: **/mypage/**, instead of _mypage.md_  
-  8. Once you have made these changes, scroll down the the bottom of your screen. At the left-hand-side of the screen, click on the green button that says **Commit changes.**
+  8. Once you have made these changes, scroll down the the bottom of your screen. At the left-hand-side of the screen, click on the green button that says **Commit changes.**<BR>
     > This action saves all changes made to your Page.
 
 # TEMPLATES
