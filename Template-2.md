@@ -131,10 +131,10 @@ This **Markdown Template** will help you to use Markdown syntax to format the co
 
 The required Heading formats for the www.IDManagement.gov website are as follows:
 
-  * Top-Level Heading (_Title Case_)
-  * Second-Level Heading (_Title Case_)
-  * Third-level heading (_Sentence case_)
-  * All lower-level headings (_Sentence case_)
+  * Top-Level Heading (**T**itle **C**ase)
+  * Second-Level Heading (**T**itle **C**ase)
+  * Third-level heading (**S**entence case)
+  * All lower-level headings (**S**entence case)
 
 In Markdown syntax, the **#** symbol is used to format headings.
 
