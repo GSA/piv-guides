@@ -220,19 +220,22 @@ To link to useful references, information, or another page (especially that may 
 
 [This is what I want my link to say]({{site.baseurl}}/insertlink/) 
 
-  > # End of Markdown Template
-
+  > **Note:**  This is the **end of the Markdown Template**.
 
 # Writing and Style Resources
 
-For the FICAM Guides, all pages should be brief, and paragraphs should be short. All text should be written in plain language. Use numbered steps, bullet lists, and graphics whenever possible. 
+For the FICAM Guides, general writing guidelines include:
 
-The following references provide guidance and additional information about plain language, writing, and style:
+  * All pages should be brief.
+  * Use titles to help the user identify "jumping off points" for information.
+  * Paragraphs should be short. 
+  * All text should be written in plain language as much as possible. 
+  * Use numbered steps, bullet lists, and graphics whenever possible. 
+
+The following documents provide additional information about plain language, writing, and style:
 
   * [18F Content Guide]({{site.baseurl}}/https://content-guide.18f.gov/)
   * [Federal Plain Language Guidelines]({{site.baseurl}}/http://www.plainlanguage.gov/howto/guidelines/FederalPLGuidelines/TOC.cfm/)
   * [U.S. Government Printing Office (GPO) Style Manual]({{site.baseurl}}/https://www.govinfo.gov/app/details/GPO-STYLEMANUAL-2016/)
   * The Chicago Manual of Style
   * The Associated Press (AP) Style Guide
-  * Oxford Dictionary
-  * Merriam Webster Dictionary
