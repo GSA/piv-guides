@@ -136,7 +136,7 @@ The required Heading formats for the www.IDManagement.gov website are as follows
   * Third-level heading (**S**entence case)
   * All lower-level headings (**S**entence case)
 
-In Markdown syntax, the **#** symbol is used to format headings.
+> In Markdown syntax, the **#** symbol is used to format headings.
 
 # This Is a Top-Level Heading 
 ## This Is a Second-Level Heading
