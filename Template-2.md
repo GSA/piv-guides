@@ -95,7 +95,7 @@ Now that you have created a new Page to start your guide, this **Example Outline
 
 ## Overview
 
-This text should give a brief overview of the subject matter covered in your guide. In addition to the subject-matter overview, it may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
+This introductory text should give a brief overview of the subject matter covered in your guide. In addition to the subject-matter overview, it may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
 
 ## Assumptions 
 
@@ -107,14 +107,14 @@ This section will tell the user what he/she needs to do to prepare before starti
 
 ## Title of Procedure 1
 
-This paragraph should give user-friendly background information, introduce the procedure, and then give the detailed procedures in simple statements.
+This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
 
   1. Step 1 of procedure 1.
   2. Step 2 of procedure 1.
   
 ## Title of Procedure 2
 
-This paragraph should give user-friendly background information, introduce the procedure, and then give the detailed procedures in simple statements.
+This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
 
   1. Step 1 of the procedure 2.
   2. Step 2 of the procedure 2.
@@ -146,6 +146,10 @@ As you add sections, you can create a Table of Contents (TOC) at the top of your
 - [Subsection1](#subsection1)
 - [Subsection2](#subsection2)
 
+## Main Body Paragraph
+
+This is the main body paragraph style. 
+
 ## Bold and Italics
 
   * Use double asterisks to bold a word:  **bold**.
@@ -153,20 +157,20 @@ As you add sections, you can create a Table of Contents (TOC) at the top of your
 
 ## Bulleted and Numbered Lists
 
-To create bullet lists (i.e., unordered list), use spaces and an asterisk, as follows:
+To create bullet lists (i.e., unordered list), use spaces (not tabs) and an asterisk, as follows:
 
-  * Bullet 1 (Indent 2 spaces, plus an asterisk and 1 space.)
+  * Bullet 1 (Indent 2 spaces, enter an asterisk, and add 1 space.)
   * Bullet 2
-    * Sub-bullet 1 (Indent 4 spaces, plus an asterisk and 1 space.)
+    * Sub-bullet 1 (Indent 4 spaces, enter an asterisk, and add 1 space.)
     * Sub-bullet 2
 
   > **Note:** Markdown supports only **two** indention levels for bullet lists.
 
-To create a numbered list (i.e., ordered list), use spaces and numbers. The numbers will automatically increment for you when rendered. The first numbered list will render as "1, 2, 3," etc. Even though you need to type 1, 2, etc., for a numbered sub-item list, the sub-items will render as "i, ii, iii," etc.
+To create a numbered list (i.e., ordered list), use spaces (not tabs) and numbers. The numbers will automatically increment for you when rendered. The first numbered list will render as "1, 2, 3," etc. Even though you need to type 1, 2, etc., for a numbered sub-item list, the sub-items will render as "i, ii, iii," etc.
 
-  1. Numbered item 1 (Indent 2 spaces, plus a number and 1 space. First-level numbered items will render as "1, 2, 3," etc.)
+  1. Numbered item 1 (Indent 2 spaces, enter a number, and add 1 space. First-level numbered items will render as "1, 2, 3," etc.)
   2. Numbered item 2
-     1. Numbered sub-item 1 (Indent 6 spaces, plus a number and 1 space. Second-level numbered items will render as "i, ii, iii," etc.)
+     1. Numbered sub-item 1 (Indent 5 spaces, enter a number, and add 1 space. Second-level numbered items will render as "i, ii, iii," etc.)
      2. Numbered sub-item 2
 
   > **Note:** Markdown supports only **two** indention levels for numbered lists.
@@ -183,26 +187,32 @@ For code blocks, enter a Return, three backticks (```) before and after the code
 
 ## Images
 
-To insert an image (graphic) into your page, first upload the image file to the **/img/** folder in the appropriate GitHub **repository**.  Next, use this format to link to the image:
+To insert an image (graphic) into your Page, first upload the image file to the **/img/** folder in the appropriate GitHub repository.  Next, at the image insertion point in your Page, add this format to link to the image:
 
 ![This is what I want a screen reader to say for 508 compliance]({{site.baseurl}}/img/thisisthesampleimagefile.png)
 
-  > To align an image on a page, use the **align** instruction at the end of an image link (i.e., **"left"**, **"center"**, or **"right"**) using this format:
+  > To align an image in your Page, use the **align** instruction at the end of an image link (i.e., **"left"**, **"center"**, or **"right"**) using this format:
 
-  > ![Alt text for an image goes here]({{site.baseurl}}/folder that image is in/imagename.png){:align="right"}
+![Alt text for an image goes here]({{site.baseurl}}/folder that image is in/imagename.png){:align="right"}
 
 ## Alerts, Warnings, and Information Blocks
 
-> This text will appear as a 'warning flag' on the website, which is a yellow banner. (The ">" symbol and the line directly underneath this body of text create the formatting for this flag.) Warning flags can be used for notifications such as notifying a user that they should skip a certain procedure.
+Use the Alert, Warning, or Information Block formatting to highlight specific information in your Page.
+
+### Warning blocks
+
+> This text will appear as a **warning flag**, which is a yellow banner on the website. (The ">" symbol and the coded line directly underneath the text will create the formatting for this flag.) Warning flags can be used for notifications, such as when a user should skip a certain procedure.
 {:class="warning"}
 
-> This text will appear as a red banner, for an 'alert' message. Alert flags can be used for notifications such as common problems that may occur.
+### Alert blocks
+
+> This text will appear as an **alert flag**, which is a red banner on the website. Alert flags may be used for notifications, such as common problems that may occur.
 {:class="alert"}
 
-> This text will appear as a green banner, for an 'informational' message. These flags can be used for notifications such as useful links or helpful tips.
-{:class="info"}
+### Information blocks
 
-This is the main body text that explains the purpose of the procedure and any context that you might need before diving into the individual steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
+> This text will appear as **informational flag**, which is a green banner on the website. Information flags can be used for notifications such as useful links or helpful tips.
+{:class="info"}
 
 ## Links to References or Other Information
 
