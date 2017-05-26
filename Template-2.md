@@ -166,8 +166,8 @@ To create a numbered list (i.e., ordered list), use spaces and numbers. The numb
 
   1. Numbered item 1 (Indent 2 spaces, plus a number and 1 space. First-level numbered items will render as "1, 2, 3," etc.)
   2. Numbered item 2
-      1. Numbered sub-item 1 (Indent 6 spaces, plus a number and 1 space. Second-level numbered items will render as "i, ii, iii," etc.)
-      2. Numbered sub-item 2
+     1. Numbered sub-item 1 (Indent 6 spaces, plus a number and 1 space. Second-level numbered items will render as "i, ii, iii," etc.)
+     2. Numbered sub-item 2
 
   > **Note:** Markdown supports only **two** indention levels for numbered lists.
 
