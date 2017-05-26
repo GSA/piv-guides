@@ -18,7 +18,7 @@ This **_Template.md_** gives instructions and templates to help you with your ne
 
 This section tells you: 
 
-  * How to select or create a new **_Branch_** in your GitHub repository where your guide will be stored 
+  * How to select or create a new **_Branch_** in your GitHub repository where you want your guide to be stored 
   * How to create a new **_Page_** to start your guide 
   * How to use the **_Example Outline Template_** and **_Markdown Template_** to develop your guide
 
