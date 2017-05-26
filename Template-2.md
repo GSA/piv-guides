@@ -82,7 +82,7 @@ To create a new **_Page_** to start your guide, do this:
   5. Change the **title**, "Guidance Document Template," to your guide's title (for example, _My Technical Guide_).
   6. Change the **permalink** title to a short version of your guide's title (for example, _/myguide/_.<BR>
   > The **permalink** title should be in the format: **/mypage/**, instead of _mypage.md_  
-  7. Once you have made these changes, scroll down the the bottom of your screen. At the left-hand-side of the screen, click on the green button that says **Commit changes.**<BR>
+  7. Once you have made these changes, scroll down to the bottom of your screen. At the left side of the screen, click on the green button that says **Commit changes.**<BR>
   > This action saves all of your changes to your Page.
 
 # TEMPLATES
@@ -95,11 +95,11 @@ Now that you have created a new Page to start your guide, this **Example Outline
 
 ## Overview
 
-This text should give a brief overview of what the subject matter covered in your guide. In addition to giving a subject-matter overview, it may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
+This text should give a brief overview of the subject matter covered in your guide. In addition to the subject-matter overview, it may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
 
 ## Assumptions 
 
-  > This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. Alternatively, this section may be called **_Preconditions_** that must be met or **_Required Hardware and Software_** that must be obtained and/or configured before the user can begin the procedures.
+  > This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. Alternatively, this section may include conditions that must be met before the user can begin the procedures. Alternate titles may be: **_Preconditions_** (i.e., list any conditions that must be met) or **_Hardware and Software_Requirements** (i.e, list any hardware or software that must be obtained and/or configured).
 
 ## Before You Get Started
 
