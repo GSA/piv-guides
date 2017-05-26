@@ -59,7 +59,7 @@ To create a new **_Page_** to start your guide, do this:
   
   2. Select all of the content in this **_Template.md_** page. Copy and paste this content into your Page.
   
-  3. When you are ready, delete the introductory text and steps for branch and Page creations, but keep the document **navigation block**, which appears at the top left of the content window (example in gray box below), as well as the **Example Outline** and the **Markdown Template**, which are provided in the following sections.
+  3. When you are ready, delete the introductory text and steps to select/create a branch and a Page, but keep the document **navigation block**, which appears at the top left of the content window (example in gray box below). Be sure to keep the **Example Outline** and the **Markdown Template**, which are given in the next two sections.
 
    ```
        ---
@@ -71,14 +71,12 @@ To create a new **_Page_** to start your guide, do this:
 <BR>
 
   4. Once you have deleted the introductory text and steps, go to the top left corner of your new Page.
-  change **Guidance Document Template** to the title of your new Page (i.e., guide title). 
-  5. Change the **title** to your guide's title (for example, _My Technical Guide_).
-  6. Change the **permalink** title to a short version of your guide's title (for example, _/myguide/_.
+  5. Change **Guidance Document Template** to the title of your new Page (i.e., guide title). 
+  6. Change the **title** to your guide's title (for example, _My Technical Guide_).
+  7. Change the **permalink** title to a short version of your guide's title (for example, _/myguide/_.
     > The **permalink** title should be in the format: **/mypage/**, instead of _mypage.md_  
 
 # TEMPLATES
-
-The **_Example Outline Template_** and the **_Markdown Template_** given below include instructions about how to use them.
 
 # Example Outline Template
 
