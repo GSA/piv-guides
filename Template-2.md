@@ -70,7 +70,7 @@ To create a new **_Page_** to start your guide, do this:
        permalink: /template/
        ---
    ```
-
+<BR>
      * Example Outline
      * Markdown Template
   
