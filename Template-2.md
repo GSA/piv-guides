@@ -65,9 +65,9 @@ To create a new **_Page_** to start your guide, do this:
 
    ```
        ---
-       layout: default<BR>
-       title: Guidance Document Template<BR> 
-       permalink: /template/<BR>
+       layout: default
+       title: Guidance Document Template 
+       permalink: /template/
        ---
    ```
 
