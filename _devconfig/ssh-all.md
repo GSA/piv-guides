@@ -5,22 +5,11 @@ permalink: /devconfig/ssh-all
 collection: devconfig
 ---
 
-**WORK ON INTRO SENTENCE** To remotely access UNIX-like servers from your computer, whether your operating system (OS) is Windows, Linux, or Mac, you will need to  authenticate your PIV/CAC to use SSH for remote access.
-
-This guide tells you how to:
-
-  * Authenticate your PIV/CAC 
-  * Use SSH from your Windows, Linux, or Mac computer
-  * Configure a UNIX-like server
-
-For the steps needed to authenticate your PIV/CAC and use SSH, click on the link for your OS: 
+To use SSH for remote access to a UNIX-like server, you need to authenticate your PIV/CAC. This can be done from a Windows, Linux, or Mac workstation/computer. You will also need to configure the UNIX-like server for remote access. 
 
   * [Using PIV/CAC and SSH from a Windows Computer](#using-piv/cac-and-ssh-for-remote-access-from-a-windows-computer)
   * [Using PIV/CAC and SSH from a Linux Computer](#using-piv/cac-and-ssh-for-remote-access-from-a-linux-computer)
   * [Using PIV/CAC and SSH from a Mac OS X Computer](#Using-piv/cac-and-ssh-for-remote-access-from-a-mac-os-x-computer)
-
-For the steps needed to configure a UNIX-like server, click on the link:
-
   * [Configure a UNIX-like server](#configure-a-unix-like-server)
 
 ## Before You Get Started &mdash; More about PIV/CAC Authentication
@@ -107,7 +96,7 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
 
   3. Contact the Jump server administrator to provide your **SSH key** and request that it be added to your Jump server account.
   
-  > _**Note:**  Once the administrator has set up an account with your **SSH key** on the Jumpbox, you wukk then be able to use your PIV/CAC to log into the Jumpbox. For other Jump servers, submit a service ticket to the administrator and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
+  > _**Note:**  Once the administrator has set up an account with your **SSH key** on the Jump server, you will be able to use your PIV/CAC to log into the Jump server. For other Jump servers, submit a service ticket to the administrator and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
 
 #### Verify your PuTTY login
 
