@@ -10,7 +10,7 @@ To use SSH for remote access to a UNIX-like server, you need to authenticate you
   * [Use PIV/CAC for SSH from a Windows Computer](#use-piv/cac-for-ssh-from-a-windows-computer)
   * [Using PIV/CAC and SSH from a Linux Computer](#using-piv/cac-and-ssh-for-remote-access-from-a-linux-computer)
   * [Using PIV/CAC and SSH from a Mac OS X Computer](#Using-piv/cac-and-ssh-for-remote-access-from-a-mac-os-x-computer)
-  * [Configure a UNIX-like server](#configure-a-unix-like-server)
+  * [Configure a UNIX-like Server](#configure-a-unix-like-server)
 
 ## About PIV/CAC Key Pairs and Public Certificates
 
@@ -184,7 +184,7 @@ The card reader may flash. **Do not** remove the PIV/CAC until the login process
   
 The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed.{:class="alert"}  
 
-## How to Configure a UNIX-like Server
+## Configure a UNIX-like Server
 
  1. Change the configuration in the **/etc/ssh/sshd_config** file. Then restart the **sshd**:
  
