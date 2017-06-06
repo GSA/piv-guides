@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Use PIV/CAC for Secure Shell (SSH) to Remotely Access UNIX-like Servers from Windows, Linux, or Mac
+title: Use PIV/CAC and Secure Shell (SSH) for Remote Access to a UNIX-like Server
 permalink: /devconfig/ssh-all
 collection: devconfig
 ---
 
 To use SSH for remote access to a UNIX-like server, you need to authenticate your PIV/CAC. This can be done from a Windows, Linux, or Mac workstation/computer. You also need to configure the UNIX-like server for remote access. 
 
-  * [Using PIV/CAC and SSH from a Windows Computer](#using-piv/cac-and-ssh-for-remote-access-from-a-windows-computer)
+  * [Use PIV/CAC for SSH from a Windows Computer](#use-piv/cac-for-ssh-from-a-windows-computer)
   * [Using PIV/CAC and SSH from a Linux Computer](#using-piv/cac-and-ssh-for-remote-access-from-a-linux-computer)
   * [Using PIV/CAC and SSH from a Mac OS X Computer](#Using-piv/cac-and-ssh-for-remote-access-from-a-mac-os-x-computer)
   * [Configure a UNIX-like server](#configure-a-unix-like-server)
@@ -17,7 +17,7 @@ To use SSH for remote access to a UNIX-like server, you need to authenticate you
   * Your PIV/CAC contains an authentication key pair and public certificate.
   * Using the PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access.
 
-## Using PIV/CAC and SSH for Remote Access from a Windows Computer
+## Use PIV/CAC for SSH from a Windows Computer
 
 ### Hardware and software requirements
 
