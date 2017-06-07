@@ -118,6 +118,11 @@ These steps will help you to:
 
 ### Procedures
 
+These steps will help you to:
+
+  * Authenticate your PIV/CAC
+  * Enable you to use SSH for remote access
+
 #### Obtain and save public key from PIV/CAC
 
   1. Insert your PIV/CAC into your computer's smartcard reader.
@@ -153,6 +158,11 @@ The card reader may flash. **Do not** remove the PIV/CAC until the login process
   * A Mac OS X computer correctly configured to use a PIV/CAC for login. For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).
 
 ### Procedures
+
+These steps will help you to:
+
+  * Authenticate your PIV/CAC
+  * Enable you to use SSH for remote access
 
 #### Obtain and save public key from PIV card
 
