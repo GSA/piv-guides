@@ -15,7 +15,7 @@ This **_Template_** gives instructions and templates to help you with your new F
 **This is the TOC - bring in the new titles from below**
 
   * [**Starting Your Guide**](#starting-your-guide)
-  * [**For GSA Employees or Contractors:  Create a New GitHub Account**](#for-gsa-employees-or-contractors:-create-a-new-github-account)
+  * [**For GSA Employees or Contractors:  Create a New GitHub Account**](#for-gsa-employees-or-contractors-create-a-new-github-account)
   * [**Example Outline Template**](#example-outline-template) 
   * [**Markdown Template**](#markdown-template)
   * [**Writing and Style Resources**](#writing-and-style-resources)  
