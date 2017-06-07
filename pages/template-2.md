@@ -10,7 +10,7 @@ permalink: /template/
 
 {% include alert-info.html heading = "Before starting a new Guide, please review the _Contributing.md_ page!" content="The _Contributing.md_ page provides terms and conditions and other important instructions." %}
 
-This **_Template.md_** gives instructions and templates to help you with your new Guide for the www.IDManagment.gov website, including:
+This **_Template_** gives instructions and templates to help you with your new FICAM guide, including:
 
   1. [**Starting Your Guide**](#starting-your-guide) 
   2. [**Example Outline Template**](#example-outline-template) 
