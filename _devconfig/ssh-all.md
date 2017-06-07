@@ -43,12 +43,12 @@ These steps will help you to:
 
 **_PuTTY-CAC_** is an open-source SSH client that supports PIV/CAC authentication.
 
-  1. Download and install [**_PuTTY-CAC_**](https://github.com/NoMoreFood/putty-cac/releases). (Within the application, PuTTY-CAC is referred to simply as "**_PuTTY_**.") (PuTTY will typically be installed at **_C:\Program Files\PuTTY_**.)
+  1. Download and install [**_PuTTY-CAC_**](https://github.com/NoMoreFood/putty-cac/releases). (Within the application, PuTTY-CAC is referred to simply as "**_PuTTY_**." PuTTY will usually be installed at **_C:\Program Files\PuTTY_**.)
   2. Open PuTTY and click on **_About_** (lower left-hand corner of the **_PuTTY Configuration_** window) to verify that the correct version was installed.
 
 #### Use PIV/CAC to insert Microsoft CAPI key into Pageant
 
-**_CAPI_** is Microsoft's Crytographic Application Programming Interface. **_Pageant_** is an SSH authentication agent that you use with PuTTY-CAC.
+**_CAPI_** is Microsoft's Crytographic Application Programming Interface. **_Pageant_** is an SSH authentication agent used with PuTTY-CAC.
 
   1. Insert your **_PIV/CAC_** into the smartcard reader.
   2. Open **_Windows Explorer_**.
@@ -63,7 +63,7 @@ These steps will help you to:
   5. Click on **Add Cert**.
   6. Select your **Smart Card Logon** certificate from the **Windows Security** window.
   7. To verify that this is the correct certificate, click on **_Click here to view certificate properties_ &gt; Details**.
-  8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This will mean that the certificate is the right type.) Then, click on **OK** to close the window.
+  8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This means that the certificate is the right type.) Then, click on **OK** to close the window.
 
   > _**Note:**  If multiple certificates exist, you may want to clear the expired or revoked certificates._
  
