@@ -1,11 +1,13 @@
 ---
 layout: default
-title: Use PIV/CAC and Secure Shell (SSH) for Remote Access to a UNIX-like Server
+title: Use PIV/CAC for Secure Shell (SSH) to a UNIX-like Server
 permalink: /devconfig/ssh-all
 collection: devconfig
 ---
 
-To use SSH for remote access to a UNIX-like server, you need to authenticate your PIV/CAC. This can be done from a Windows, Linux, or Mac workstation/computer. You also need to configure the UNIX-like server for remote access. 
+To use SSH for remote access to a UNIX-like server, you need to authenticate your PIV/CAC. You can authenticate your PIV/CAC and use SSH from a Windows, Linux, or Mac workstation/computer. For remote access, you also need to configure the targeted UNIX-like server. 
+
+Select the link for your operating system (OS). (Also, please review _Configure a UNIX-like Server_.)
 
   * [Use PIV/CAC for SSH from a Windows Computer](#use-piv/cac-for-ssh-from-a-windows-computer)
   * [Using PIV/CAC and SSH from a Linux Computer](#using-piv/cac-and-ssh-for-remote-access-from-a-linux-computer)
@@ -21,17 +23,21 @@ To use SSH for remote access to a UNIX-like server, you need to authenticate you
 
 ### Hardware and software requirements
 
-  * A PIV/CAC card
+  * A PIV/CAC
   * Windows-based computer or workstation
   * A smartcard reader
   * PuTTY-CAC application
   * Pageant application
 
-> _**Note:**  You will download **PuTTY-CAC** and **Pageant** during the steps below._
+> _**Note:**  You will download **PuTTY-CAC** and **Pageant** in the steps below._
 
 ### Procedures
 
-These steps will ensure that your computer and Jump server recognize your PIV/CAC credential. Your authenticated credential will allow the correct drivers to be enabled on the target Client.
+These steps will help you to:
+
+  * Authenticate your PIV/CAC
+  * Ensure that your computer and Jump server recognize your PIV/CAC 
+  * Enable the correct drivers on your computer for SSH remote access to a UNIX-like server
 
 #### Install PuTTY-CAC
 
@@ -98,7 +104,7 @@ These steps will ensure that your computer and Jump server recognize your PIV/CA
   
   > _**Note:**  Once the administrator has set up an account with your **SSH key** on the Jump server, you will be able to use your PIV/CAC to log into the Jump server. For other Jump servers, submit a service ticket to the administrator and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
 
-#### Verify your PuTTY login
+#### Verify your PuTTY login and proceed with SSH
 
   1. Run **PuTTY** and select the **Saved Session**. 
   2. Click on **Load,** and then click on **Open**.
