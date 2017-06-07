@@ -52,7 +52,7 @@ These steps will help you to:
 
   1. Insert your **_PIV/CAC_** into the smartcard reader.
   2. Open **_Windows Explorer_**.
-  3. Open **_Pageant_** and go to **_C:_** &gt; **_Program Files_** &gt; **_PuTTY_** &gt; **_Pageant_**.
+  3. Open **_Pageant_** and go to **_C:_** **&gt;** **_Program Files_** **&gt;** **_PuTTY_** **&gt;** **_Pageant_**.
 
   > _A window will not open, but the **Pageant** icon will appear at the bottom of the screen in the Windows taskbar._
 
@@ -62,7 +62,7 @@ These steps will help you to:
 
   5. Click on **Add Cert**.
   6. Select your **Smart Card Logon** certificate from the **Windows Security** window.
-  7. To verify that this is the correct certificate, click on **_Click here to view certificate properties_** &gt; &#8594; **Details**.
+  7. To verify that this is the correct certificate, click on **_Click here to view certificate properties_** &gt; **Details**.
   8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This will mean that the certificate is the right type.) Then, click on **OK** to close the window.
 
   > _**Note:**  If multiple certificates exist, you may want to clear the expired or revoked certificates._
