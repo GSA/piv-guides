@@ -19,12 +19,12 @@ Select the link for your operating system (OS). (Also, please review _Configure 
   * Your PIV/CAC contains an authentication key pair and public certificate.
   * Using the PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access.
 
-## Use PIV/CAC for SSH from a Windows Computer
+## Use PIV/CAC for SSH from a Windows-Based Computer
 
 ### Hardware and software requirements
 
   * A PIV/CAC
-  * Windows-based computer or workstation
+  * Windows-based computer
   * A smartcard reader
   * PuTTY-CAC application
   * Pageant application
@@ -36,27 +36,25 @@ Select the link for your operating system (OS). (Also, please review _Configure 
 These steps will help you to:
 
   * Authenticate your PIV/CAC
-  * Ensure that your Windows computer and Jump server recognize your PIV/CAC 
+  * Ensure that your Windows-based computer and Jump server recognize your PIV/CAC 
   * Enable the correct drivers on your computer so you can use SSH for remote access
 
 #### Install PuTTY-CAC
 
-**_PuTTY-CAC_** is an SSH client that supports PIV/CAC authentication for Windows.
+**_PuTTY-CAC_** is an open-source SSH client that supports PIV/CAC authentication.
 
-  1. Download and install [**_PuTTY-CAC_**](https://github.com/NoMoreFood/putty-cac/releases). (PuTTY-CAC is referred to as &quot;**_PuTTY_**&quot; within the application.)
+  1. Download and install [**_PuTTY-CAC_**](https://github.com/NoMoreFood/putty-cac/releases). (Within the application, PuTTY-CAC is referred to simply as "**_PuTTY_**.") (PuTTY will typically be installed at **_C:\Program Files\PuTTY_**.)
   2. Open PuTTY and click on **_About_** (lower left-hand corner of the **_PuTTY Configuration_** window) to verify that the correct version was installed.
-
-  > _**Note:**  PuTTY will typically be installed at **_C:\Program Files\PuTTY_**._
 
 #### Use PIV/CAC to insert Microsoft CAPI key into Pageant
 
-  > **_CAPI_** is Microsoft's Crytographic Application Programming Interface. **_Pageant_** is an SSH authentication agent.
+**_CAPI_** is Microsoft's Crytographic Application Programming Interface. **_Pageant_** is an SSH authentication agent that you use with PuTTY-CAC.
 
   1. Insert your **_PIV/CAC_** into the smartcard reader.
   2. Open **_Windows Explorer_**.
   3. Open **_Pageant_** and go to **_C:_** &gt; **_Program Files_** &gt; **_PuTTY_** &gt; **_Pageant_**.
 
-  > _A window will not open, but the **Pageant** icon will appear in the Windows taskbar at the bottom of the screen._
+  > _A window will not open, but the **Pageant** icon will appear at the bottom of the screen in the Windows taskbar._
 
   4. Right-click on the **_Pageant_** icon and select **_View Keys &amp; Certs_**.
 
@@ -64,7 +62,7 @@ These steps will help you to:
 
   5. Click on **Add Cert**.
   6. Select your **Smart Card Logon** certificate from the **Windows Security** window.
-  7. To verify that this is the correct certificate, click on the link, **_Click here to view certificate properties_**, and then click on **Details**.
+  7. To verify that this is the correct certificate, click on **_Click here to view certificate properties_** &gt; **Details**.
   8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This will mean that the certificate is the right type.) Then, click on **OK** to close the window.
 
   > _**Note:**  If multiple certificates exist, you may want to clear the expired or revoked certificates._
