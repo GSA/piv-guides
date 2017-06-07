@@ -52,7 +52,7 @@ These steps will help you to:
 
   1. Insert your **_PIV/CAC_** into the smartcard reader.
   2. Open **_Windows Explorer_**.
-  3. Open **_Pageant_** and go to **_C:_** **&gt;** **_Program Files_** **&gt;** **_PuTTY_** **&gt;** **_Pageant_**.
+  3. Open **_Pageant_** and go to **_C:_ &gt; _Program Files_ &gt; _PuTTY_ &gt; _Pageant_**.
 
   > _A window will not open, but the **Pageant** icon will appear at the bottom of the screen in the Windows taskbar._
 
@@ -62,12 +62,12 @@ These steps will help you to:
 
   5. Click on **Add Cert**.
   6. Select your **Smart Card Logon** certificate from the **Windows Security** window.
-  7. To verify that this is the correct certificate, click on **_Click here to view certificate properties_** &gt; **Details**.
+  7. To verify that this is the correct certificate, click on **_Click here to view certificate properties_ &gt; Details**.
   8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This will mean that the certificate is the right type.) Then, click on **OK** to close the window.
 
   > _**Note:**  If multiple certificates exist, you may want to clear the expired or revoked certificates._
  
-  9. Click on the **Smart Card certificate** to highlight it, and then click on **OK**.  Then, click on **Close**.
+  9. Click on the **Smart Card certificate** to highlight it. Then click on **OK** and **Close**.
 
   > _The Pageant window will populate with the certificate information._
 
@@ -81,41 +81,32 @@ These steps will help you to:
 
   > _This will launch **PuTTY** so you can set up a new profile. (**Note:**  To create new profiles for multiple Jump servers, repeat Steps 2-6 for each profile._)
   
-  2. Enter the **IP address** of your _Jump server_ in the **Host Name (or IP address)** textbox and follow the remaining steps below.  (If you already have a profile set up, select it, and click on the **Load** button.)
-
-  3. Enter a descriptive name into the **Saved Sessions** textbox.
-  4. From the left **Category**: panel, select **Connection** &gt; **SSH** &gt; **CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
-  5. From within the **PuTTY Configuration** window, select **Connection** &gt; **SSH** &gt; **Auth**. Then, click on the checkboxes for both **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
-  6. Click on **Session** from the left panel; enter a name in the **Saved Session** text box; and then click on the **Save** button. 
-
-  > _This completes the profile set-up for the PIV/CAC login._
+  2. Enter the **IP address** of your Jump server in the **Host Name (or IP address)** textbox. (If you already have a profile, select it, and click on the **Load** button; otherwise, follow Steps 3-6 to set up a PIV/CAC login profile.)
+  3. Enter a session name into the **Saved Sessions** textbox.
+  4. From the left **Category**: panel, select **Connection &gt; SSH &gt; CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
+  5. From within the **PuTTY Configuration** window, select **Connection &gt; SSH &gt; Auth**. Next, click on the checkboxes for both **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
+  6. Finally, click on **Session** from the left panel and enter a name in the **Saved Session** text box. Click on the **Save** button. 
 
 ##### Obtain PIV/CAC's SSH key
 
-  1. To get your PIV card&#39;s **SSH key**, in the **PuTTY Configuration** window, go to the left panel and click on **Connection** &gt; **SSH** &gt; **CAPI**.  Then, under **Authentication Parameters**, click on  the **Browse** button.  
+  1. To get your PIV card's **SSH key**, go to the **PuTTY Configuration** window. In the left panel, click on **Connection &gt; SSH &gt; CAPI**.  Then, under **Authentication Parameters**, click on  the **Browse** button.  
 
   > _This automatically fills in the **Cert** and **SSH keystring** textboxes._
 
-  2. Next, copy the **SSH keystring** _value_, paste it into **Microsoft Notepad**, and save it.  
-
-  3. Contact the Jump server administrator to provide your **SSH key** and request that it be added to your Jump server account.
+  2. Copy and paste the **SSH keystring** _value_ into **Microsoft Notepad** and save it.  
+  3. Provide your **SSH key** to the Jump server administrator and ask that it be added to your Jump server account.
   
-  > _**Note:**  Once the administrator has set up an account with your **SSH key** on the Jump server, you will be able to use your PIV/CAC to log into the Jump server. For other Jump servers, submit a service ticket to the administrator and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
+  > _**Note:**  Once the administrator has set up an account with your **SSH key** on the Jump server, you will be able to use your PIV/CAC to log in. For other Jump servers, submit a service ticket to the administrator and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
 
 #### Verify your PuTTY login and proceed with SSH
 
   1. Run **PuTTY** and select the **Saved Session**. 
   2. Click on **Load,** and then click on **Open**.
   3. Enter your **remote UNIX/Linux account name**.  
-
-  > _A window will open and prompt you for your **PIV card PIN**._
-
-  4. Enter your **PIV card PIN** and click on **OK** to log into the remote server.
+  4. At the window prompt, enter your **PIV card PIN** and click on **OK** to log into the remote server.
   5. Once logged in, run the command: **ssh-add –l** to display the key.  
 
-  > _After each server you &quot;jump&quot; to, the output of **ssh-add –l** should always show the key._ 
-  
-  > _After you see the key, you may **ssh** to any other hosts in the environment._
+  > _For each server you &quot;jump&quot; to, use **ssh-add –l** to display the key. After you see the key, you may **ssh** to any other hosts in the environment._
 
 ## Using PIV/CAC and SSH for Remote Access from a Linux Computer
 
