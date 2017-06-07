@@ -62,7 +62,7 @@ These steps will help you to:
 
   5. Click on **Add Cert**.
   6. Select your **Smart Card Logon** certificate from the **Windows Security** window.
-  7. To verify that this is the correct certificate, click on **_Click here to view certificate properties_** &gt; **Details**.
+  7. To verify that this is the correct certificate, click on **_Click here to view certificate properties_** &gt; &#8594; **Details**.
   8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This will mean that the certificate is the right type.) Then, click on **OK** to close the window.
 
   > _**Note:**  If multiple certificates exist, you may want to clear the expired or revoked certificates._
