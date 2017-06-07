@@ -12,12 +12,13 @@ permalink: /template/
 
 This **_Template_** gives instructions and templates to help you with your new FICAM guide, including:
 
-**This is the TOC**
+**This is the TOC - bring in the new titles from below**
 
-  1. [**Starting Your Guide**](#starting-your-guide) 
-  2. [**Example Outline Template**](#example-outline-template) 
-  3. [**Markdown Template**](#markdown-template)
-  4. [**Writing and Style Resources**](#writing-and-style-resources)  
+  * [**Starting Your Guide**](#starting-your-guide)
+  * [**For GSA Employees or Contractors:  Create a New GitHub Account**](#for-gsa-employees-or-contractors:-create-a-new-github-account)
+  * [**Example Outline Template**](#example-outline-template) 
+  * [**Markdown Template**](#markdown-template)
+  * [**Writing and Style Resources**](#writing-and-style-resources)  
   
 Starting Your Guide
 
@@ -55,7 +56,6 @@ If you are not a GSA employee or contractor, you'll also need to set up a reposi
 After you have created a new GitHub account and have a repository (or have an existing account and repository), you'll need to create a new Issue in GitHub to start your FICAM guide. 
 
 Your new Issue should discuss a technical problem and proposed solution (i.e., focus of your new FICAM guide). Through your Issue, other GitHub collaborators may offer useful information and suggest alternative solutions (i.e., "crowd-sourcing" help).
-
 
 ## Select or Create a Branch for Your Guide
 
