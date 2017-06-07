@@ -21,6 +21,7 @@ This **_Template.md_** gives instructions and templates to help you with your ne
 
 This section tells you how to: 
 
+  * Create a GitHub **Repository**, **Branch**, and **Page** where your guide will be stored.
   * Create a new **Issue** in GitHub to discuss your technical issue (i.e., the topic of your new FICAM guide).
   * Add more...?
   * Select or create a new **_Branch_** in your GitHub repository where your guide will be stored 
@@ -31,11 +32,15 @@ This section tells you how to:
 
 To start a new guide, you first need to create a new Issue in GitHub. Your new Issue should discuss a technical problem and proposed solution (i.e., focus of your new FICAM guide). Through your Issue, other GitHub collaborators may offer useful information and suggest alternative solutions (i.e., "crowd-sourcing" help).
 
-> If you don't have a GitHub account, you'll need to create one. For help, go to:  [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/).
+> If you don't have a GitHub account, you'll need to create one. For help, go to:  [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/). If you are not a GSA employee or contractor, you'll also need to set up a repository. For help, go to: [Create a Repo](https://help.github.com/articles/create-a-repo/).
+
+## For GSA Employees or Contractors:  Create a Repository by "Forking" PIV-Guides, FPKI-Guides, or FICAM-Arch
+
+
 
 ## Select or Create a Branch for Your Guide
 
-A branch is where your new guide (called a **Page**) will be stored in your repository. Before you create a new Page to start your guide, you need to **_select an existing branch_** or **_create a new branch_**. 
+Once you have a GitHub account and repository, you'll need to create a branch where your new guide (called a **Page**) will be stored. Before you create a new Page to start your guide, you need to **_select an existing branch_** or **_create a new branch_**. 
 
 ### Select an existing branch
 
