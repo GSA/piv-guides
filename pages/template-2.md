@@ -31,7 +31,7 @@ This section tells you how to:
 
 To start a new guide, you first need to create a new Issue in GitHub. Your new Issue should discuss a technical problem and proposed solution (i.e., focus of your new FICAM guide). Through your Issue, other GitHub collaborators may offer useful information and suggest alternative solutions (i.e., "crowd-sourcing" help).
 
-> If you don't have a GitHub account, you'll need to create one. A good introduction can be found here: **add link to GitHub instructions**.   ADD MORE INSTRUCTIONS...
+> If you don't have a GitHub account, you'll need to create one. For help, go to:  [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/).
 
 ## Select or Create a Branch for Your Guide
 
