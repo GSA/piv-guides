@@ -14,17 +14,17 @@ Select the link for your operating system (OS). (Also, please review _Configure 
   * [Using PIV/CAC and SSH from a Mac OS X Computer](#Using-piv/cac-and-ssh-for-remote-access-from-a-mac-os-x-computer)
   * [Configure a UNIX-like Server](#configure-a-unix-like-server)
 
-## About PIV/CAC Key Pairs and Public Certificates
+## A Word about PIV/CAC Key Pairs and Public Certificates
 
   * Your PIV/CAC contains an authentication key pair and public certificate.
   * Using the PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access.
 
-## Use PIV/CAC for SSH from a Windows-Based Computer
+## Use PIV/CAC for SSH from a Windows Computer
 
 ### Hardware and software requirements
 
   * A PIV/CAC
-  * Windows-based computer
+  * Windows computer
   * A smartcard reader
   * PuTTY-CAC application
   * Pageant application
@@ -36,7 +36,7 @@ Select the link for your operating system (OS). (Also, please review _Configure 
 These steps will help you to:
 
   * Authenticate your PIV/CAC
-  * Ensure that your Windows-based computer and Jump server recognize your PIV/CAC 
+  * Ensure that your Windows computer and Jump server recognize your PIV/CAC 
   * Enable the correct drivers on your computer so you can use SSH for remote access
 
 #### Install PuTTY-CAC
@@ -44,9 +44,9 @@ These steps will help you to:
 **_PuTTY-CAC_** is an open-source SSH client that supports PIV/CAC authentication.
 
   1. Download and install [**_PuTTY-CAC_**](https://github.com/NoMoreFood/putty-cac/releases). (Within the application, PuTTY-CAC is referred to simply as "**_PuTTY_**." PuTTY will usually be installed at **_C:\Program Files\PuTTY_**.)
-  2. Open PuTTY and click on **_About_** (lower left-hand corner of the **_PuTTY Configuration_** window) to verify that the correct version was installed.
+  2. Open PuTTY and click on **_About_** (lower left-hand corner of the **_PuTTY Configuration_** window) to see whether the correct version was installed.
 
-#### Use PIV/CAC to insert Microsoft CAPI key into Pageant
+#### Use PIV/CAC to insert Microsoft CAPI key ("Smart card certificate") into Pageant
 
 **_CAPI_** is Microsoft's Crytographic Application Programming Interface. **_Pageant_** is an SSH authentication agent used with PuTTY-CAC.
 
@@ -62,7 +62,7 @@ These steps will help you to:
 
   5. Click on **Add Cert**.
   6. Select your **Smart Card Logon** certificate from the **Windows Security** window.
-  7. To verify that this is the correct certificate, click on **_Click here to view certificate properties_ &gt; Details**.
+  7. To ensure that this is the correct certificate, click on **_Click here to view certificate properties_ &gt; Details**.
   8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This means that the certificate is the right type.) Then, click on **OK** to close the window.
 
   > _**Note:**  If multiple certificates exist, you may want to clear the expired or revoked certificates._
@@ -71,7 +71,7 @@ These steps will help you to:
 
   > _The Pageant window will populate with the certificate information._
 
-  > _**Note:**  You will need to re-add the certificate every time that you start Pageant._
+  > _**Note:**  Every time you start Pageant, you must re-add the certificate. 
 
 #### Configure PuTTY
 
@@ -79,10 +79,10 @@ These steps will help you to:
 
   1. Right-click on the **Pageant** icon from the Windows taskbar and select **New Session**.
 
-  > _This will launch **PuTTY** so you can set up a new profile. (**Note:**  To create new profiles for multiple Jump servers, repeat Steps 2-6 for each profile._)
+  > _This will launch **PuTTY** so you can set up a new PIV/CAC login profile for a Jump server. (**Note:**  To create new profiles for multiple Jump servers, repeat Steps 2-6 for each Jump server._)
   
-  2. Enter the **IP address** of your Jump server in the **Host Name (or IP address)** textbox. (If you already have a profile, select it, and click on the **Load** button; otherwise, follow Steps 3-6 to set up a PIV/CAC login profile.)
-  3. Enter a session name into the **Saved Sessions** textbox.
+  2. Enter the **IP address** of the Jump server in the **Host Name (or IP address)** textbox. (If you already have a profile for the Jump server, select it, and click on the **Load** button. Otherwise, follow Steps 3-6 to set up the profile.)
+  3. Enter a session name into the **Saved Sessions** textbox. <b/ stopped />
   4. From the left **Category**: panel, select **Connection &gt; SSH &gt; CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
   5. From within the **PuTTY Configuration** window, select **Connection &gt; SSH &gt; Auth**. Next, click on the checkboxes for both **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
   6. Finally, click on **Session** from the left panel and enter a name in the **Saved Session** text box. Click on the **Save** button. 
@@ -101,18 +101,18 @@ These steps will help you to:
 #### Verify your PuTTY login and proceed with SSH
 
   1. Run **PuTTY** and select the **Saved Session**. 
-  2. Click on **Load,** and then click on **Open**.
+  2. Click on **Load** and then on **Open**.
   3. Enter your **remote UNIX/Linux account name**.  
-  4. At the window prompt, enter your **PIV card PIN** and click on **OK** to log into the remote server.
+  4. At the prompt, enter your **PIV card PIN** and click on **OK** to log into the remote server.
   5. Once logged in, run the command: **ssh-add –l** to display the key.  
 
-  > _For each server you &quot;jump&quot; to, use **ssh-add –l** to display the key. After you see the key, you may **ssh** to any other hosts in the environment._
+  > _For each server you "jump" to, use **ssh-add –l** to display the key. Once you see the key, you may **ssh** to any other hosts in the environment._
 
 ## Using PIV/CAC and SSH for Remote Access from a Linux Computer
 
 ### Hardware and software requirements
 
-  * A PIV/CAC card
+  * A PIV/CAC
   * A smartcard reader
   * A Linux-based computer or workstation that is configured to use a PIV/CAC card for login. (For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
 
@@ -153,9 +153,9 @@ The card reader may flash. **Do not** remove the PIV/CAC until the login process
 
 ### Hardware and software requirements
 
-  * A PIV/CAC card
+  * A PIV/CAC
   * A smartcard reader
-  * A Mac OS X computer correctly configured to use a PIV/CAC for login. For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).
+  * A Mac OS X computer configured for PIV/CAC login. For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).
 
 ### Procedures
 
@@ -167,7 +167,7 @@ These steps will help you to:
 #### Obtain and save public key from PIV card
 
   1. Insert your **PIV card** into your computer's smartcard reader.
-  2. Use the following command to save the **user&#39;s public SSH key** to a file and submit the file to Jump server administrator.
+  2. Use the following command to save the **user's public SSH key** to a file and submit it to Jump server administrator.
 
         ```
 			ssh-keygen -D /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so > mykey.pub
