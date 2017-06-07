@@ -19,7 +19,7 @@ This **_Template.md_** gives instructions and templates to help you with your ne
   
 # Starting Your Guide
 
-This section tells you how to: 
+This section tells you what steps are needed to create your new FICAM guide: **Needs to be a linked TOC** 
 
   * Create a GitHub **Repository**, **Branch**, and **Page** where your guide will be stored.
   * Create a new **Issue** in GitHub to discuss your technical issue (i.e., the topic of your new FICAM guide).
@@ -28,14 +28,31 @@ This section tells you how to:
   * Create a new **_Page_** to start your guide 
   * Use the **_Example Outline Template_** with embedded **_Markdown syntax_** to develop your guide
 
-## Create a New Issue to Start Your Guide
+## For GSA Employees or Contractors:  Create a New GitHub Account
 
-To start a new guide, you first need to create a new Issue in GitHub. Your new Issue should discuss a technical problem and proposed solution (i.e., focus of your new FICAM guide). Through your Issue, other GitHub collaborators may offer useful information and suggest alternative solutions (i.e., "crowd-sourcing" help).
+To create your new FICAM guide, you'll need a GitHub account.  If you don't have one, you'll need to create one. 
 
-> If you don't have a GitHub account, you'll need to create one. For help, go to:  [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/). If you are not a GSA employee or contractor, you'll also need to set up a repository. For help, go to: [Create a Repo](https://help.github.com/articles/create-a-repo/).
+> For help, go to:  [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/). 
+
 
 ## For GSA Employees or Contractors:  Create a Repository by "Forking" PIV-Guides, FPKI-Guides, or FICAM-Arch
 
+If you don't have a repository that you "forked" from GSA's FICAM guide repositories (**PIV-Guides**, **FPKI-Guides**, or **FICAM-Arch**), do this:  
+
+1. Go to: [GSA Respositories at GitHub.com](https://github.com/GSA).
+2. Select the repository you want.
+3. In the upper right-hand corner of the GSA respository screen, click on the gray **Fork** button.
+> This creates an instance of that GSA repository in your GitHub profile.
+
+## For Non-GSA Contributors:  Create a New GitHub Account and Repository
+
+If you are not a GSA employee or contractor, you'll also need to set up a repository. For help, go to: [Create a Repo](https://help.github.com/articles/create-a-repo/).
+
+## Create a New Issue to Start Your FICAM Guide
+
+After you have created a new GitHub account and have a repository (or have an existing account and repository), you'll need to create a new Issue in GitHub to start your FICAM guide. 
+
+Your new Issue should discuss a technical problem and proposed solution (i.e., focus of your new FICAM guide). Through your Issue, other GitHub collaborators may offer useful information and suggest alternative solutions (i.e., "crowd-sourcing" help).
 
 
 ## Select or Create a Branch for Your Guide
