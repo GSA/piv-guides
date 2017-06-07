@@ -41,28 +41,28 @@ These steps will help you to:
 
 #### Install PuTTY-CAC
 
-**_PuTTY-CAC_** is an open-source SSH client that supports PIV/CAC authentication.
+**PuTTY-CAC** is an open-source SSH client that supports PIV/CAC authentication.
 
-  1. Download and install [**_PuTTY-CAC_**](https://github.com/NoMoreFood/putty-cac/releases). (Within the application, PuTTY-CAC is referred to simply as "**_PuTTY_**." PuTTY will usually be installed at **_C:\Program Files\PuTTY_**.)
-  2. Open PuTTY and click on **_About_** (lower left-hand corner of the **_PuTTY Configuration_** window) to see whether the correct version was installed.
+  1. Download and install [**PuTTY-CAC**](https://github.com/NoMoreFood/putty-cac/releases). (Within the application, PuTTY-CAC is referred to simply as "**PuTTY**." PuTTY will usually be installed at **C:\Program Files\PuTTY**.)
+  2. Open PuTTY and click on **About** (lower left-hand corner of the **PuTTY Configuration** window) to ensure that the correct version was installed.
 
 #### Use PIV/CAC to insert Microsoft CAPI key ("Smart card certificate") into Pageant
 
-**_CAPI_** is Microsoft's Crytographic Application Programming Interface. **_Pageant_** is an SSH authentication agent used with PuTTY-CAC.
+**CAPI** is Microsoft's Crytographic Application Programming Interface. **Pageant** is an SSH authentication agent used with PuTTY-CAC.
 
-  1. Insert your **_PIV/CAC_** into the smartcard reader.
-  2. Open **_Windows Explorer_**.
-  3. Open **_Pageant_** and go to **_C:_ &gt; _Program Files_ &gt; _PuTTY_ &gt; _Pageant_**.
+  1. Insert your **PIV/CAC** into the smartcard reader.
+  2. Open **Windows Explorer**.
+  3. Open **Pageant** and go to **C: &gt; Program Files &gt; PuTTY &gt; Pageant**.
 
   > _A window will not open, but the **Pageant** icon will appear at the bottom of the screen in the Windows taskbar._
 
-  4. Right-click on the **_Pageant_** icon and select **_View Keys &amp; Certs_**.
+  4. Right-click on the **Pageant** icon and select **View Keys &amp; Certs**.
 
   > _The Pageant **Key/CAPI Cert List** window will open._
 
   5. Click on **Add Cert**.
   6. Select your **Smart Card Logon** certificate from the **Windows Security** window.
-  7. To ensure that this is the correct certificate, click on **_Click here to view certificate properties_ &gt; Details**.
+  7. To ensure that this is the correct certificate, click on **Click here to view certificate properties &gt; Details**.
   8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This means that the certificate is the right type.) Then, click on **OK** to close the window.
 
   > _**Note:**  If multiple certificates exist, you may want to clear the expired or revoked certificates._
@@ -93,8 +93,8 @@ These steps will help you to:
 
   > _This automatically fills in the **Cert** and **SSH keystring** textboxes._
 
-  2. Copy and paste the **SSH keystring** _value_ (i.e., SSH key) into **Microsoft Notepad** and save it.  
-  3. Provide your SSH key to the Jump server administrator and ask that it be used for your Jump server account.
+  2. Copy and paste the **SSH keystring** **_value_** (i.e., SSH key) into **Microsoft Notepad** and save it.  
+  3. Provide your SSH key to the Jump server administrator and ask that it be added to your Jump server account.
   
   > _**Note:**  Once the Jump server account has been set up with your SSH key, you can use your PIV/CAC to log in. For other Jump servers, submit a service ticket to the administrator and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
 
