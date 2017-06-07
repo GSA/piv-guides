@@ -82,21 +82,21 @@ These steps will help you to:
   > _This will launch **PuTTY** so you can set up a new PIV/CAC login profile for a Jump server. (**Note:**  To create new profiles for multiple Jump servers, repeat Steps 2-6 for each Jump server._)
   
   2. Enter the **IP address** of the Jump server in the **Host Name (or IP address)** textbox. (If you already have a profile for the Jump server, select it, and click on the **Load** button. Otherwise, follow Steps 3-6 to set up the profile.)
-  3. Enter a session name into the **Saved Sessions** textbox. <b/ stopped />
-  4. From the left **Category**: panel, select **Connection &gt; SSH &gt; CAPI**. Then, click on the checkbox beside the words, **Attempt &quot;CAPI Certificate&quot; (Key-only) auth (SSH-2)**.
-  5. From within the **PuTTY Configuration** window, select **Connection &gt; SSH &gt; Auth**. Next, click on the checkboxes for both **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
-  6. Finally, click on **Session** from the left panel and enter a name in the **Saved Session** text box. Click on the **Save** button. 
+  3. Enter a session name into the **Saved Sessions** textbox.
+  4. From the left **Category**: panel, select **Connection &gt; SSH &gt; CAPI**. Then, click on the checkbox for **Attempt "CAPI Certificate" (Key-only) auth (SSH-2)**.
+  5. From within the **PuTTY Configuration** window, select **Connection &gt; SSH &gt; Auth**. Next, click on the checkboxes for **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
+  6. Finally, click on **Session** from the left panel and enter a name in the **Saved Session** textbox. Click on the **Save** button. 
 
 ##### Obtain PIV/CAC's SSH key
 
-  1. To get your PIV card's **SSH key**, go to the **PuTTY Configuration** window. In the left panel, click on **Connection &gt; SSH &gt; CAPI**.  Then, under **Authentication Parameters**, click on  the **Browse** button.  
+  1. To get your PIV/CAC's **SSH key**, go to the **PuTTY Configuration** window. In the left panel, click on **Connection &gt; SSH &gt; CAPI**.  Then, under **Authentication Parameters**, click on  the **Browse** button.  
 
   > _This automatically fills in the **Cert** and **SSH keystring** textboxes._
 
-  2. Copy and paste the **SSH keystring** _value_ into **Microsoft Notepad** and save it.  
-  3. Provide your **SSH key** to the Jump server administrator and ask that it be added to your Jump server account.
+  2. Copy and paste the **SSH keystring** _value_ (i.e., SSH key) into **Microsoft Notepad** and save it.  
+  3. Provide your SSH key to the Jump server administrator and ask that it be used for your Jump server account.
   
-  > _**Note:**  Once the administrator has set up an account with your **SSH key** on the Jump server, you will be able to use your PIV/CAC to log in. For other Jump servers, submit a service ticket to the administrator and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
+  > _**Note:**  Once the Jump server account has been set up with your SSH key, you can use your PIV/CAC to log in. For other Jump servers, submit a service ticket to the administrator and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
 
 #### Verify your PuTTY login and proceed with SSH
 
@@ -104,9 +104,9 @@ These steps will help you to:
   2. Click on **Load** and then on **Open**.
   3. Enter your **remote UNIX/Linux account name**.  
   4. At the prompt, enter your **PIV card PIN** and click on **OK** to log into the remote server.
-  5. Once logged in, run the command: **ssh-add –l** to display the key.  
+  5. Once logged in, run the command: **ssh-add –l** to display the SSH key.  
 
-  > _For each server you "jump" to, use **ssh-add –l** to display the key. Once you see the key, you may **ssh** to any other hosts in the environment._
+  > _For each server you "jump" to, use **ssh-add –l** to display the SSH key. Once you see the key, you may **ssh** to any other hosts in the environment._
 
 ## Using PIV/CAC and SSH for Remote Access from a Linux Computer
 
@@ -114,7 +114,7 @@ These steps will help you to:
 
   * A PIV/CAC
   * A smartcard reader
-  * A Linux-based computer or workstation that is configured to use a PIV/CAC card for login. (For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
+  * A Linux computer or workstation that is configured to use a PIV/CAC card for login. (For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
 
 ### Procedures
 
@@ -126,7 +126,7 @@ These steps will help you to:
 #### Obtain and save public key from PIV/CAC
 
   1. Insert your PIV/CAC into your computer's smartcard reader.
-  2. To save your **public SSH key** to a file, enter the command: 
+  2. To save your **public SSH key** to a file, enter: 
 		
         ```
 			ssh-keygen -D /usr/lib64/opensc-pkcs11.so > mykey.pub
@@ -136,8 +136,7 @@ These steps will help you to:
 #### Log in via SSH
 
   1. Insert your **PIV/CAC** into your computer's smartcard reader.
-
-  2. Use the following command to log into the remote server:
+  2. To log into the remote server, enter:
 	
         ```
 			ssh -I /usr/lib64/opensc-pkcs11.so <remote-host>
@@ -187,23 +186,27 @@ These steps will help you to:
   
   > The **remote-host shell prompt** appears.
   
-The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed.{:class="alert"}  
+{% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed." %}  
 
 ## Configure a UNIX-like Server
 
- 1. Change the configuration in the **/etc/ssh/sshd_config** file. Then restart the **sshd**:
+### Procedures
+
+These steps will help you to configure a UNIX-like server for remote access.
+
+ 1. Change the configuration in the **/etc/ssh/sshd_config** file and restart the **sshd**:
  
  	```
 		AuthorizedKeysFile /etc/sshd/authorized_keys/%u
 		PasswordAuthentication No
 	```
 
-  2. Create the directory: **/etc/sshd/authorized_keys**:
+  3. Create the directory, **/etc/sshd/authorized_keys**:
 
         ```
 			mkdir /etc/sshd/authorized_keys
         ```
 
-  3. To allow one user to have such access, place the user&#39;s PIV card's SSH public key in the following directory, according to the user's name: **/etc/sshd/authorized_keys/[login ID]**. (**Note:** To ensure that access requirements are enforced, only a **root user** may modify this directory and its files.)  
+  3. To allow one user to have access, place the user's PIV/CAC's SSH public key in this directory, according to the user's name: **/etc/sshd/authorized_keys/[login ID]**. (**Note:** To ensure that access requirements are enforced, only a **root user** may modify this directory and its files.)  
 
   4. Disable any alternative means of access (i.e., via passwords), as needed.
