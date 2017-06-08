@@ -5,19 +5,19 @@ permalink: /devconfig/ssh-all
 collection: devconfig
 ---
 
-To use SSH for remote access to a UNIX-like server, you need to authenticate your PIV/CAC. You can authenticate your PIV/CAC and use SSH from a Windows, Linux, or Mac workstation/computer. For remote access, you also need to configure the targeted UNIX-like server.
+To use SSH for remote access to a UNIX-like server, you need to authenticate your PIV/CAC. You can authenticate your PIV/CAC and use SSH from a Windows, Linux, or Mac workstation/computer. For remote access, you also need to configure the remote UNIX-like server.
 
 Select the link for your operating system (OS). (Also, please review _Configure a UNIX-like Server_.)
 
   * [Use PIV/CAC for SSH from a Windows Computer](#use-piv/cac-for-ssh-from-a-windows-computer)
-  * [Use PIV/CAC and SSH from a Linux Computer](#use-piv/cac-and-ssh-for-remote-access-from-a-linux-computer)
-  * [Use PIV/CAC and SSH from a Mac OS X Computer](#use-piv/cac-and-ssh-for-remote-access-from-a-mac-os-x-computer)
+  * [Use PIV/CAC for SSH from a Linux Computer](#use-piv/cac-for-ssh-from-a-linux-computer)
+  * [Use PIV/CAC for SSH from a Mac OS X Computer](#use-piv/cac-for-ssh-from-a-mac-os-x-computer)
   * [Configure a UNIX-like Server](#configure-a-unix-like-server)
 
 ## A Word about PIV/CAC Key Pairs and Public Certificates
 
   * Your PIV/CAC contains an authentication key pair and public certificate.
-  * Using the PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access.
+  * Using a PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access.
 
 ## Use PIV/CAC for SSH from a Windows Computer
 
@@ -108,7 +108,7 @@ These steps will help you to:
 
   > _For each server you "jump" to, use **ssh-add –l** to display the SSH key. Once you see the key, you may **ssh** to any other hosts in the environment._
 
-## Using PIV/CAC and SSH for Remote Access from a Linux Computer
+## Use PIV/CAC for SSH from a Linux Computer
 
 ### Hardware and software requirements
 
@@ -148,7 +148,7 @@ These steps will help you to:
 
 The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed.{:class="alert"}  
 
-## Using PIV/CAC and SSH for Remote Access from a Mac OS X Computer
+## Use PIV/CAC for SSH from a Mac OS X Computer
 
 ### Hardware and software requirements
 
@@ -208,6 +208,5 @@ These steps will help you to configure a UNIX-like server for remote access.
         ```
 
   3. To allow one user to have access, place the user's PIV/CAC's SSH public key in this directory, according to the user's name: **/etc/sshd/authorized_keys/[login ID]**. (**Note:** To ensure that access requirements are enforced, only a **root user** may modify this directory and its files.)  
-
   4. Disable any alternative means of access (i.e., via passwords), as needed.
 
