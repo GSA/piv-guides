@@ -69,9 +69,7 @@ These steps will help you to:
 
   9. Click on the **Smart Card certificate** to highlight it. Then click on **OK** and **Close**.
 
-     > _The Pageant window will populate with the certificate information._
-
-     > _**Note:**  Every time you start Pageant, you must re-add the certificate._
+     > _The Pageant window will populate with the certificate information. (**Note:**  Every time you start Pageant, you must re-add the certificate._)
 
 #### Configure PuTTY
 
