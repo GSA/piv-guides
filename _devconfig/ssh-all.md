@@ -197,7 +197,7 @@ These steps will help you to configure a UNIX-like server for remote access.
   1. Change the configuration in the **/etc/ssh/sshd_config** file and restart the **sshd**:
           
         ```
-		 	AuthorizedKeysFile /etc/sshd/authorized_keys/%u
+		       AuthorizedKeysFile /etc/sshd/authorized_keys/%u
 			PasswordAuthentication No
         ```
 
