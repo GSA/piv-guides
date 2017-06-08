@@ -79,7 +79,7 @@ These steps will help you to:
 
   1. Right-click on the **Pageant** icon from the Windows taskbar and select **New Session**.
 
-      > _This will launch **PuTTY** so you can set up a new PIV/CAC login profile for a Jump server. (**Note:**  To create new profiles for multiple Jump servers, repeat Steps 2-6 for each Jump server.)_
+     > _This will launch **PuTTY** so you can set up a new PIV/CAC login profile for a Jump server. (**Note:**  To create new profiles for multiple Jump servers, repeat Steps 2-6 for each Jump server.)_
 
   2. Enter the **IP address** of the Jump server in the **Host Name (or IP address)** textbox. (If you already have a profile for the Jump server, select it, and click on the **Load** button. Otherwise, follow Steps 3-6 to set up the profile.)
   3. Enter a session name into the **Saved Sessions** textbox.
@@ -96,7 +96,7 @@ These steps will help you to:
   2. Copy and paste the **SSH keystring** **_value_** (i.e., SSH key) into **Microsoft Notepad** and save it.  
   3. Provide your SSH key to the Jump server administrator and ask that it be added to your Jump server account.
 
-  > _**Note:**  Once the Jump server account has been set up with your SSH key, you can use your PIV/CAC to log in. For other Jump servers, submit a service ticket to the administrator and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
+     > _**Note:**  Once the Jump server account has been set up with your SSH key, you can use your PIV/CAC to log in. For other Jump servers, submit a service ticket to the administrator and include the IP address of the Jump server you are using, your account name, and your PIV/CAC's SSH key._
 
 #### Verify your PuTTY login and proceed with SSH
 
@@ -106,7 +106,7 @@ These steps will help you to:
   4. At the prompt, enter your **PIV card PIN** and click on **OK** to log into the remote server.
   5. Once logged in, run the command: **ssh-add –l** to display the SSH key.  
 
-  > _For each server you "jump" to, use **ssh-add –l** to display the SSH key. Once you see the key, you may **ssh** to any other hosts in the environment._
+     > _For each server you "jump" to, use **ssh-add –l** to display the SSH key. Once you see the key, you may **ssh** to any other hosts in the environment._
 
 ## Use PIV/CAC for SSH from a Linux Computer
 
@@ -144,7 +144,7 @@ These steps will help you to:
 
   3. At the PIV card password prompt, enter your **PIN**.
 
-  > The **_remote-host shell prompt_** appears.
+     > The **_remote-host shell prompt_** appears.
 
 The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed.{:class="alert"}  
 
@@ -175,7 +175,6 @@ These steps will help you to:
 #### Log in via SSH
 
   1. Insert your **PIV/CAC** into your computer's smartcard reader.
-
   2. Use the following command to log into the remote server:
 
         ```
@@ -184,7 +183,7 @@ These steps will help you to:
 
   3. At the PIV/CAC password prompt, enter your **PIN**.
 
-      > The **remote-host shell prompt** appears.
+     > The **remote-host shell prompt** appears.
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed." %}&nbsp;
 
