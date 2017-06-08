@@ -144,7 +144,7 @@ These steps will help you to:
 
   3. At the PIV card password prompt, enter your **PIN**.
 
-     > The **_remote-host shell prompt_** appears.
+     > _The **remote-host shell prompt** appears._
 
 The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed.{:class="alert"}  
 
