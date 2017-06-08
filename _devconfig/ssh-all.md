@@ -201,7 +201,7 @@ These steps will help you to configure a UNIX-like server for remote access.
 		PasswordAuthentication No
 	```
 
-  3. Create the directory, **/etc/sshd/authorized_keys**:
+  2. Create the directory, **/etc/sshd/authorized_keys**:
 
         ```
 			mkdir /etc/sshd/authorized_keys
