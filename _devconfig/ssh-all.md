@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Use PIV/CAC for Secure Shell (SSH) to a UNIX-like Server
+title: Authenticate PIV/CAC To Use Secure Shell (SSH) for Remote Access
 permalink: /devconfig/ssh-all
 collection: devconfig
 ---
@@ -65,7 +65,7 @@ These steps will help you to:
   7. To ensure that this is the correct certificate, click on **Click here to view certificate properties &gt; Details**.
   8. Locate and click on **Enhanced Key Usage**. You should see the **Smart Card Logon**. (This means that the certificate is the right type.) Then, click on **OK** to close the window.
 
-  > _**Note:**  If multiple certificates exist, you may want to clear the expired or revoked certificates._
+  > ***Note:**  If multiple certificates exist, you may want to clear the expired or revoked certificates.*
  
   9. Click on the **Smart Card certificate** to highlight it. Then click on **OK** and **Close**.
 
