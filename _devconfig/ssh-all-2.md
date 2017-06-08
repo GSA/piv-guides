@@ -146,7 +146,7 @@ These steps will help you to:
 
      > _The **remote-host shell prompt** appears._
 
-The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed.{:class="alert"}  
+{% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed." %}&nbsp; 
 
 ## Use PIV/CAC for SSH from a Mac OS X Computer
 
