@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Use PIV/CAC for Secure Shell (SSH) to a UNIX-like Server
+title: Authenticate PIV/CAC To Use Secure Shell (SSH) for Remote Access to a UNIX-like Server
 permalink: /devconfig/ssh-all
 collection: devconfig
 ---
