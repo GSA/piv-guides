@@ -10,8 +10,8 @@ To use SSH for remote access to a UNIX-like server, you need to authenticate you
 Select the link for your operating system (OS). (Also, please review _Configure a UNIX-like Server_.)
 
   * [Use PIV/CAC for SSH from a Windows Computer](#use-piv/cac-for-ssh-from-a-windows-computer)
-  * [Using PIV/CAC and SSH from a Linux Computer](#using-piv/cac-and-ssh-for-remote-access-from-a-linux-computer)
-  * [Using PIV/CAC and SSH from a Mac OS X Computer](#Using-piv/cac-and-ssh-for-remote-access-from-a-mac-os-x-computer)
+  * [Use PIV/CAC and SSH from a Linux Computer](#use-piv/cac-and-ssh-for-remote-access-from-a-linux-computer)
+  * [Use PIV/CAC and SSH from a Mac OS X Computer](#use-piv/cac-and-ssh-for-remote-access-from-a-mac-os-x-computer)
   * [Configure a UNIX-like Server](#configure-a-unix-like-server)
 
 ## A Word about PIV/CAC Key Pairs and Public Certificates
