@@ -194,20 +194,19 @@ These steps will help you to:
 
 These steps will help you to configure a UNIX-like server for remote access.
 
-  1. Change the configuration in the **/etc/ssh/sshd_config** file and restart the **sshd**:
-          
+ 1. Change the configuration in the **/etc/ssh/sshd_config** file and restart the **sshd**:
+
+ 	```
+		AuthorizedKeysFile /etc/sshd/authorized_keys/%u
+		PasswordAuthentication No
+	```
+
+  3. Create the directory, **/etc/sshd/authorized_keys**:
+
         ```
-		       AuthorizedKeysFile /etc/sshd/authorized_keys/%u
-			PasswordAuthentication No
+			mkdir /etc/sshd/authorized_keys
         ```
 
-2. Create the directory, **/etc/sshd/authorized_keys**:
+  3. To allow one user to have access, place the user's PIV/CAC's SSH public key in this directory, according to the user's name: **/etc/sshd/authorized_keys/[login ID]**. (**Note:** To ensure that access requirements are enforced, only a **root user** may modify this directory and its files.)  
 
-          
-        ```
-		        mkdir /etc/sshd/authorized_keys
-        ```
-
-
-3. To allow one user to have access, place the user's PIV/CAC's SSH public key in this directory, according to the user's name: **/etc/sshd/authorized_keys/[login ID]**. (**Note:** To ensure that access requirements are enforced, only a **root user** may modify this directory and its files.)
-4. Disable any alternative means of access (i.e., via passwords), as needed.
+  4. Disable any alternative means of access (i.e., via passwords), as needed.
