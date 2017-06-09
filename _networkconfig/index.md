@@ -9,6 +9,8 @@ These Network Authentication guides are to help you configuring your Windows _ne
 
 There are many useful pages and technical articles available online which include details on configurations and using generic smartcards.  The information presented here is to address common questions and configurations **specific** to the US Federal Government, **PIV** smartcards, and US Federal civilian agency certificate authorities.
 
+{% include alert-info.html heading = "Teamwork" content="Work with your Network Engineers, Domain Admins, Account Management, and Information Security colleagues to review the information, perform the configurations, and troubleshoot any issues together." %}
+
 ## Pre-Launch Checklist
 Check the following items **before** reviewing these network guides and lessons learned:
 
@@ -24,10 +26,10 @@ There are five configuration categories to review through with your colleagues.
 - [Network Ports and Protocols]({{site.baseurl}}/networkconfig/ports/)
 - [Domain Controllers]({{site.baseurl}}/networkconfig/domaincontrollers/)
 - [Trust Stores]({{site.baseurl}}/networkconfig/trustedroots/)
-- [Account Linking: Associating PIV credentials to User Accounts]({{site.baseurl}}/networkconfig/accounts/)
+- [Account Linking]({{site.baseurl}}/networkconfig/accounts/)
 - [Group Policies and Enforcement]({{site.baseurl}}/networkconfig/grouppolicies/)
 
-{% include alert-info.html heading = "Teamwork" content="Work with your Network Engineers, Domain Admins, Account Management, and Information Security colleagues to review the information, perform the configurations, and troubleshoot any issues together." %}
+
 
 We want to add additional information for installing online certificate status protocol (OCSP) services, tuning configurations, common errors and troubleshooting, and configuring MacOSX or other operating systems.  
 
