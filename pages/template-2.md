@@ -219,9 +219,11 @@ To create a numbered list (i.e., ordered list), use spaces (not tabs) and number
 
 ## Code Blocks
 
-For code blocks, enter a Return, three backticks (```) before and after the code block, plus another Return:
+For code blocks, enter a Return, three backticks (```) before and after the code block, plus another Return. Some instructions suggest adding 3-8 spaces before the three backticks, a Return, the code block text, another Return, and 3-8 spaces and another three backticks:
 
-```Text within three backticks style code or command line samples```
+   ```
+   Text within three backticks for code or command line samples
+   ```
 
 ## Code Comments
 
@@ -264,7 +266,11 @@ Use the Alert, Warning, or Information Block formatting to highlight specific in
 
 To link to useful references, information, or another page (especially that may be needed to complete the procedures), use this link format: 
 
-[This is what I want my link to say]({{site.baseurl}}/insertlink/) 
+[This is what I want my link to say]({{site.baseurl}}/insertlink/)
+
+Link to an outside document (opens a new window):
+
+[This is what I want my link to say](https://www.governmentagency.gov){:target="_blank"}
 
   > **Note:**  This is the **end of the Markdown Template**.
 
@@ -280,9 +286,12 @@ For the FICAM Guides, general writing guidelines include:
 
 The following references provide additional information about plain language, writing, and style:
 
-  * [18F Content Guide]({{site.baseurl}}/https://content-guide.18f.gov/){target:blank}
-  * [Federal Plain Language Guidelines]({{site.baseurl}}/http://www.plainlanguage.gov/howto/guidelines/FederalPLGuidelines/TOC.cfm/){target:blank}
-  * [U.S. Government Printing Office (GPO) Style Manual]({{site.baseurl}}/https://www.govinfo.gov/app/details/GPO-STYLEMANUAL-2016/){target:blank}
-  * [Oxford Dictionary Online]({{site.baseurl}}/https://en.oxforddictionaries.com/){target:blank}
-  * [Merriam Webster Dictionary Online]({{site.baseurl}}/https://www.merriam-webster.com/){target:blank}
+Link to an outside document (opens a new window):
+[open source](https://github.com/gsa/fpki-guides){:target="_blank"}
+
+  * [18F Content Guide](https://content-guide.18f.gov/){:target="_blank"}
+  * [Federal Plain Language Guidelines](http://www.plainlanguage.gov/howto/guidelines/FederalPLGuidelines/TOC.cfm/){:target="_blank"}
+  * [U.S. Government Printing Office (GPO) Style Manual](https://www.govinfo.gov/app/details/GPO-STYLEMANUAL-2016/){:target="_blank"}
+  * [Oxford Dictionary Online](https://en.oxforddictionaries.com/){:target="_blank"}
+  * [Merriam Webster Dictionary Online](https://www.merriam-webster.com/){:target="_blank"}
 
