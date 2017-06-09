@@ -1,15 +1,13 @@
 ---
 layout: default
-title: Installing a Local Certification Authority
+title: Local Certification Authority for Domain Controller Certificates
 collection: networkconfig
-permalink: networkconfig/2b_domaincontrollers-3/
+permalink: networkconfig/localca/
 ---
 
-This guide will help you to install a local Certification Authority (CA) so that users with PIVs/CACs will be able to log into your organization's domain-connected devices. 
+If you have decided to use a local CA for issuing network domain certificates, this page provides some tips.  This is only for local Microsoft CAs. Other platforms may be used and have different procedures.    
 
-Additional, useful information about installing a local CA is given in [_Issuing Domain Controller Certificates_]({{site.baseurl}}/creating-domain-controller-certificate-profiles). 
-
-{% include alert-info.html content="These procedures are accurate for using Microsoft 2012 Server, Standard Edition, for CA and Domain Controller servers (as of March 2017)" %}  
+{% include alert-info.html content="These procedures are accurate for using Microsoft 2012 Server, Standard Edition, for CA and Domain Controller servers as of March 2017." %}  
 
 * [Prerequisites](#prerequisites)
 * [Install CA Role](#install-ca-role)
@@ -19,12 +17,12 @@ Additional, useful information about installing a local CA is given in [_Issuing
 ## Prerequisites  
 
   * The server that hosts the CA must be joined to the domain.
-  * The CA should never reside on the same server(s) that is acting as a Domain Controller(s).
+  * The CA should **never** reside on the same server(s) that are acting as Domain Controller(s).
   * You must be an Enterprise Administrator in the domain to perform these steps.
 
+To use a local-enterprise Microsoft CA to issue a Domain Controller certificate to a Domain Controller server, the certificate must contain valid information. These steps provide recommended options and settings.
+  
 ## Install CA Role
-
-To use a local-enterprise Microsoft CA (for example) to issue a Domain Controller certificate (i.e., CA role) to a Domain Controller server, it is essential that the certificate contain valid information. These steps provide the recommended field values.
 
   1. Log into the **CA server** as a member of the **Enterprise Administrators** group.
   2. Open the **Server Manager** and click on **Manage -&gt; Add Roles and Features**.
@@ -55,7 +53,7 @@ To use a local-enterprise Microsoft CA (for example) to issue a Domain Controlle
      _Renewal Period:_  **_6 weeks_**.
   6. Under the **Cryptography** tab, set these values:
      _Minimum Key Size:_  **_2048_**.
-     _Request Hash:_  **_SHA256_** (if possible).
+     _Request Hash:_  **_SHA256_** 
   7. Open the **CA console** (i.e., certsrv.msc).
   8. In the **console tree**, click on the **_[CA's name]_**.
   9. In the **details** pane, double-click on **Certificate Templates**.
@@ -65,13 +63,13 @@ To use a local-enterprise Microsoft CA (for example) to issue a Domain Controlle
 ## Auto-Enroll Domain Controllers Using Group Policy Object (GPO)
 
   1. Log into a **Domain Controller server** as a member of the **Enterprise Administrators** group.
-  2. Open the **GPMC** (i.e. **gpmc.msc** ).
-  3. Within the appropriate **GPO**, navigate to **Computer Configuration\Policies\Windows Settings\Security Settings\Public Key Policies**\ 
+  2. Open the **GPMC**: gpmc.msc
+  3. Within the appropriate **GPO** applied to the Domain Controllers, go to **Computer Configuration\Policies\Windows Settings\Security Settings\Public Key Policies**\ 
   4. Configure **Certificate Services Client – Auto-Enrollment** with the following options:
      _Configuration Model:_ **_Enabled_**.
      _Renew Expired Certificates, Update Pending Certificates, Remove Revoked Certificates_: **_Check_all checkboxes_**.
-      _Update Certificates That Use Certificate Templates_: **_Check the checkbox_**.
-  5. At the command line, you can now force the group policy to update. Use the command: **_gpupdate /force_** or wait for the group policy to update on its own.
+     _Update Certificates That Use Certificate Templates_: **_Check the checkbox_**.
+  5. Replicate the group policy. Use the command: **_gpupdate /force_** at the command line, or wait for the group policy to replicate based on your replication time and settings.
   6. Open **MMC.exe -&gt; File -&gt; Add/Remove Snap-in -&gt; Certificates -&gt; Computer account -&gt; Local computer**. 
   
       If successful, you will see a new Domain Controller certificate in the **_Certificate (Local Computer) -&gt; Personal -&gt; Certificates folder_**. At the **Certificate Template** tab, you should also see a certificate generated with the custom certificate template.
