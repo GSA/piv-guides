@@ -280,9 +280,9 @@ For the FICAM Guides, general writing guidelines include:
 
 The following references provide additional information about plain language, writing, and style:
 
-  * [18F Content Guide]({{site.baseurl}}/https://content-guide.18f.gov/)
-  * [Federal Plain Language Guidelines]({{site.baseurl}}/http://www.plainlanguage.gov/howto/guidelines/FederalPLGuidelines/TOC.cfm/)
-  * [U.S. Government Printing Office (GPO) Style Manual]({{site.baseurl}}/https://www.govinfo.gov/app/details/GPO-STYLEMANUAL-2016/)
-  * [Oxford Dictionary Online]({{site.baseurl}}/https://en.oxforddictionaries.com/)
-  * [Merriam Webster Dictionary Online]({{site.baseurl}}/https://www.merriam-webster.com/)
+  * [18F Content Guide]({{site.baseurl}}/https://content-guide.18f.gov/){target:blank}
+  * [Federal Plain Language Guidelines]({{site.baseurl}}/http://www.plainlanguage.gov/howto/guidelines/FederalPLGuidelines/TOC.cfm/){target:blank}
+  * [U.S. Government Printing Office (GPO) Style Manual]({{site.baseurl}}/https://www.govinfo.gov/app/details/GPO-STYLEMANUAL-2016/){target:blank}
+  * [Oxford Dictionary Online]({{site.baseurl}}/https://en.oxforddictionaries.com/){target:blank}
+  * [Merriam Webster Dictionary Online]({{site.baseurl}}/https://www.merriam-webster.com/){target:blank}
 
