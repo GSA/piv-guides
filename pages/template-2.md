@@ -62,11 +62,11 @@ After you have created a new GitHub account and have a repository (or have an ex
 
 Your new Issue should discuss a technical problem and proposed solution (i.e., focus of your new FICAM guide). Through your Issue, other GitHub collaborators may offer useful information and suggest alternative solutions (i.e., "crowd-sourcing" help).
 
-## Select or Create a Branch for Your Guide
+### Select or Create a Branch for Your Guide
 
 Once you have a GitHub account and repository, you'll need to create a branch where your new guide (called a **Page**) will be stored. Before you create a new Page to start your guide, you need to **_select an existing branch_** or **_create a new branch_**. 
 
-### Select an existing branch
+#### Select an existing branch
 
 To select an existing branch, do this: 
   
@@ -74,7 +74,7 @@ To select an existing branch, do this:
   
   > Once you have selected an existing branch, go to [**Create a New Page for Your Guide**](#Create-a-New-Page-for-Your-Guide).
   
-### Create a new branch
+#### Create a new branch
 
 To create a new branch, do this:
   
@@ -82,7 +82,7 @@ To create a new branch, do this:
   
   > The **_Branch_** button will display the new branch name. This is where your new Page will be stored.
   
-## Create a New Page to Start Your Guide
+### Create a New Page to Start Your Guide
 
 To create a new **_Page_** to start your guide, do this:  
 
@@ -93,7 +93,7 @@ To create a new **_Page_** to start your guide, do this:
   5. Scroll down to the bottom of your screen. At the left side of your screen, below the **Commit new file** comment box, click on the green button that says **Commit new file**.
   > This creates and saves your new Page in your selected or new branch.
 
-## Copy and Paste the Content from the **_Template.md_** into your new Page.
+### Copy and Paste the Content from the Outline (in Markdown) **_Template.md_** into your new Page.
 
   1. At the top right area of your Page's content window, click on the **pencil** symbol.
 
@@ -128,7 +128,9 @@ To create a new **_Page_** to start your guide, do this:
 
 # TEMPLATES
 
-# Example Outline Template
+# Example Outline Template 
+
+**Combine this with Markdown Style Sheet**
 
 Now that you have created a new Page to start your guide, this **Example Outline** will help you to structure and develop content for your guide.
 
@@ -227,13 +229,11 @@ To create a numbered list (i.e., ordered list), use spaces (not tabs) and number
 
 For code blocks, enter a Return, three backticks (```) before and after the code block, plus another Return. Some instructions suggest adding in this order:
 
-  * 3-8 spaces before the three backticks to start the code block
-  * 3 backticks (```)
+  * 3-8 spaces plus 3 backticks (```) to start the code block 
   * A Return
   * The code text
   * Another Return
-  * 3-8 spaces
-  * 3 more backticks to close the code block
+  * 3-8 spaces plus 3 backtick to end the code block
 
    ```
    Text within three backticks for code or command line samples
