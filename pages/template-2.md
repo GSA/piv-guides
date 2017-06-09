@@ -97,7 +97,8 @@ To create a new **_Page_** to start your guide, do this:
   2. Select all of the content in this **_Template.md_** page. Copy and paste the content into your Page.
   
   3. When you are ready, delete the **Template.md** _introductory text and steps to select/create a branch and a Page_, but keep the the following:
-  
+
+**Delete this, per LaChelle (can't use for moving up to Federalist):**
 <UL><UL>
 <LI> Document <b>navigation block</b> (at the top left corner of your Page window). (See example below.) 
 <LI> The <b>Example Outline</b>. (See **Templates** section below.)
@@ -219,7 +220,15 @@ To create a numbered list (i.e., ordered list), use spaces (not tabs) and number
 
 ## Code Blocks
 
-For code blocks, enter a Return, three backticks (```) before and after the code block, plus another Return. Some instructions suggest adding 3-8 spaces before the three backticks, a Return, the code block text, another Return, and 3-8 spaces and another three backticks:
+For code blocks, enter a Return, three backticks (```) before and after the code block, plus another Return. Some instructions suggest adding in this order:
+
+  * 3-8 spaces before the three backticks to start the code block
+  * 3 backticks (```)
+  * A Return
+  * The code text
+  * Another Return
+  * 3-8 spaces
+  * 3 more backticks to close the code block
 
    ```
    Text within three backticks for code or command line samples
