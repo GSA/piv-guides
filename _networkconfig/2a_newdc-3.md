@@ -6,16 +6,16 @@ permalink: networkconfig/2a_newdc-3.md/
 ---
 In order for your users' PIV/CAC credentials to work for network authentication, all Domain Controllers must have Domain Controller authentication certificates. <!--This type of certificate is for a Certification Authority? Should say that here.--> 
 
-To generate and install a Domain Controller authentication certificate, you need to first create a certificate profile, as described below.
+To generate and install a Domain Controller authentication certificate, you need to first create a certificate profile.
 
 {% include alert-info.html heading = "Devices authenticate too!" content="When your users are using PIV/CAC credentials (i.e., certificates) to authenticate to a network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, click on the links below or search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
 
 * [Creating Domain Controller Certificate Profiles](#creating-domain-controller-certificate-profiles)
 * [Issuing Domain Controller Certificates](#issuing-domain-controller-certificates)
 
-## Creating Domain Controller Certificate Profiles <!--Are profiles are being created here? "Created" is never used in this section. Shouldn't the Certification Authority nature of the certificate be mentioned here?-->
+## Creating Domain Controller Certificate Profiles <!--Are profiles are being created here? "Created" is never used in this section. Should Certification Authority be mentioned here somewhere?-->
 
-Domain Controller certificates must be issued with a set of specific extensions and values. The certificate profile for each Domain Controller must meet the following requirements: <!--What actions is the system administrator taking to create a profile? This gives information, but doesn't give any instructions.-->
+Domain Controller certificates must be issued with a set of specific extensions and values. The certificate profile for each Domain Controller must meet the following requirements: <!--What actions is the system administrator taking to create the profile? This gives information but nearly no instructions.-->
 
 - The certificate **Key Usage** extension must contain:
 
@@ -32,16 +32,16 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
 - The certificate **Subject Alternative Name** must also contain the Domain Controller's Global Unique Identifier (GUID) (i.e., for the "Domain Controller object"). To determine the Domain Controller's GUID,
 
-  * Start **Ldp.exe** and locate the **domain-naming context**. 
-  * Double-click on the **name of the Domain Controller** whose GUID you want to view.
+  1. Start **Ldp.exe** and locate the **domain-naming context**. 
+  2. Double-click on the **name of the Domain Controller** whose GUID you want to view.
   
     > The list of attributes for the Domain Controller object contains the **"Object GUID" followed by a long number**. The number is the object GUID. For example:
 
             Other Name: 1.3.6.1.4.1.311.25.1 = ac 4b 29 06 bb d6 5d 4f e3 9c 4c ab c3 6a 55 d9
 
-    > For the steps needed to install the Domain Controller's certificate <!--Certification Authority certificate?-->(in the Domain Controller's local computer's **_personal certificate store_**), please go the _Auto-Enroll Domain Controllers Using Group Policy Object_ section under [_Installing a Local Certification Authority_]({{site.baseurl}}/local-certification-authority). <!--Is this the correct section to link to? Proper linking method?-->
+    > For the steps needed to install the Domain Controller's certificate (in the Domain Controller's local computer's **_personal certificate store_**), please go the _Auto-Enroll Domain Controllers Using Group Policy Object_ section under [_Installing a Local Certification Authority_]({{site.baseurl}}/local-certification-authority). <!--Is this the correct section to link to? Proper linking method?-->
 
-## Issuing Domain Controller Certificates <!--Jordan directed that this section should be added back in here.-->
+## Issuing Domain Controller Certificates <!--Jordan suggested that this section should be added back in here.-->
 
 US Federal Civilian agencies have a variety of policies concerning whether you should use a Domain Controller certificate issued from your agency's local enterprise Certificate Authority or whether the certificate must be issued from a Certificate Authority managed and certified under the Federal Public Key Infrastructure (FPKI). Providing a common guide and recommendation is challenging, as each agency's information security policy should be followed.
 
