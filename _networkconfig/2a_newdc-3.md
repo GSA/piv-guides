@@ -4,15 +4,14 @@ title: Creating Domain Controller Certificate Profiles
 collection: networkconfig
 permalink: networkconfig/2a_newdc-3.md/
 ---
+To use PIV/CAC credentials for network authentication, all Domain Controllers must have Domain Controller authentication certificates. To generate and install a Domain Controller authentication certificate, you need to create a certificate profile.
 
 * [Creating Domain Controller Certificate Profiles](#creating-domain-controller-certificate-profiles)
 * [Issuing Domain Controller Certificates](#issuing-domain-controller-certificates)
 
-To use smartcards and PIV <!--PIV/CAC?-->credentials for network authentication, all Domain Controllers must have Domain Controller authentication certificates. To generate and install a Domain Controller authentication certificate, you will need to create a certificate profile.
-
 {% include alert-info.html heading = "Devices authenticate too!" content="When your users are using certificates to authenticate to the network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, click on the links <!--Only one link below.-->below or search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
 
-## Creating Domain Controller Certificate Profiles <!--Are profiles are being created here? The word, "created" is never used.-->
+## Creating Domain Controller Certificate Profiles <!--Are profiles are being created here? "Created" is never used in this section.-->
 
 Domain Controller certificates must be issued with a set of specific extensions and values.  The certificate profile for each Domain Controller must meet the following requirements:
 
