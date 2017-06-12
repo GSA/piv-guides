@@ -32,8 +32,8 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
 - The certificate **Subject Alternative Name** must also contain the Domain Controller's Global Unique Identifier (GUID) (i.e., for the "Domain Controller object"). To determine the Domain Controller's GUID,
 
-  1. Start **Ldp.exe** and locate the **domain-naming context**. 
-  2. Double-click on the **name of the Domain Controller** whose GUID you want to view.
+  * Start **Ldp.exe** and locate the **domain-naming context**. 
+  * Double-click on the **name of the Domain Controller** whose GUID you want to view.
   
     > The list of attributes for the Domain Controller object contains the **"Object GUID" followed by a long number**. The number is the object GUID. For example:
 
