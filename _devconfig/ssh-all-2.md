@@ -14,7 +14,7 @@ Select the link for your operating system (OS). (Also, please review _Configure 
   * [Use PIV/CAC for SSH from a Mac OS X Computer](#use-piv/cac-for-ssh-from-a-mac-os-x-computer)
   * [Configure a UNIX-like Server](#configure-a-unix-like-server)
   
-{% include alert-info.html heading = "Your PIV/CAC contains an authentication key pair and public certificate. Using a PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access." %}
+{% include alert-info.html heading = "Your PIV/CAC contains an authentication key pair and public certificate. Using a PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access." %}&nbsp;
 
 ## Use PIV/CAC for SSH from a Windows Computer
 
@@ -40,7 +40,7 @@ These steps will help you to:
 
 **PuTTY-CAC** is an open-source SSH client that supports PIV/CAC authentication.
 
-  1. Download and install [**PuTTY-CAC**](https://github.com/NoMoreFood/putty-cac/releases). (Within the application, PuTTY-CAC is referred to simply as "**PuTTY**." PuTTY will usually be installed at **C:\Program Files\PuTTY**.)
+  1. Download and install [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}. (Within the application, PuTTY-CAC is referred to simply as "**PuTTY**." PuTTY will usually be installed at **C:\Program Files\PuTTY**.)
   2. Open PuTTY and click on **About** (lower left-hand corner of the **PuTTY Configuration** window) to ensure that the correct version was installed.
 
 #### Use PIV/CAC to insert Microsoft CAPI key ("Smart card certificate") into Pageant
@@ -109,7 +109,7 @@ These steps will help you to:
 
   * A PIV/CAC
   * A smartcard reader
-  * A Linux computer or workstation that is configured to use a PIV/CAC card for login. (For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).)
+  * A Linux computer or workstation that is configured to use a PIV/CAC card for login. (For additional information, go to [**configure opensc**](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}.)
 
 ### Procedures
 
@@ -149,7 +149,7 @@ These steps will help you to:
 
   * A PIV/CAC
   * A smartcard reader
-  * A Mac OS X computer configured for PIV/CAC login. For additional information, go to [**configure opensc**](https://github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release).
+  * A Mac OS X computer configured for PIV/CAC login. For additional information, go to [**configure opensc**](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}.
 
 ### Procedures
 
