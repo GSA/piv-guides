@@ -4,7 +4,7 @@ title: Creating Domain Controller Certificate Profiles
 collection: networkconfig
 permalink: networkconfig/2a_newdc-3.md/
 ---
-In order for PIV/CAC credentials to work for network authentication, all Domain Controllers must have Domain Controller authentication certificates. <!--This type of certificate is for a Certification Authority? Should say that here.--> 
+In order for your user's PIV/CAC credentials to work for network authentication, all Domain Controllers must have Domain Controller authentication certificates. <!--This type of certificate is for a Certification Authority? Should say that here.--> 
 
 To generate and install a Domain Controller authentication certificate, you need to first create a certificate profile, as described below.
 
