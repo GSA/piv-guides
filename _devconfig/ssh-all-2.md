@@ -4,7 +4,7 @@ title: Authenticate PIV/CAC To Use Secure Shell (SSH) for Remote Access to a UNI
 permalink: /devconfig/ssh-all
 collection: devconfig
 ---
-
+**CHUNDE HAS FOR ADDITIONAL CHANGES INSERTION 6-12-2017**</NOTE>
 To use SSH for remote access to a UNIX-like server, you need to first authenticate your PIV/CAC. PIV/CAC authentication and SSH can be done from a Windows, Linux, or Mac workstation/computer. For remote access, you also need to configure the UNIX-like server.
 
 Select the link for your operating system (OS). (Also, please review _Configure a UNIX-like Server_.)
