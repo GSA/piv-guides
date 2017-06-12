@@ -257,9 +257,9 @@ To insert an image (graphic) into your Page, first upload the image file to the 
 
 Use the Alert, Warning, or Information Block formatting to highlight specific information in your Page.
 
+{% include alert-info.html heading = "Before starting a new Guide, please review the _Contributing.md_ page!" content="The _Contributing.md_ page provides terms and conditions and other important instructions." %}
 
-**CHANGE FOR BELOW--NEW FORMAT FOR ALERTS:**  {% include alert-info.html heading = "Before starting a new Guide, please review the _Contributing.md_ page!" content="The _Contributing.md_ page provides terms and conditions and other important instructions." %}
-**FIND FORMAT FOR WARNING, ALERT, AND SUCCESS**
+**FIND FORMAT FOR WARNING, ALERT, AND SUCCESS - CHANGE ALL BELOW TO SAME FORMAT**
 
 ### Warning blocks
 
