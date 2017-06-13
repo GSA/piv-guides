@@ -34,7 +34,7 @@ These steps will help you to:
 
   * Authenticate your PIV/CAC
   * Ensure that your Windows computer and Jump server recognize your PIV/CAC
-  * Enable the correct drivers on your computer so you can use SSH for remote access
+  * Enable the correct drivers on your computer for SSH
 
 #### Install PuTTY-CAC
 
