@@ -70,9 +70,9 @@ These steps will help you to:
 
 ##### Set up a PIV/CAC login profile
 
-  1. Right-click on the **Pageant** icon from the Windows taskbar and select **New Session**.
+  1. Right-click on the **Pageant** icon from the Windows taskbar. Select **New Session** to launch **PuTTY**.
 
-     > _This will launch **PuTTY** so you can set up a new PIV/CAC login profile for a Jump server. (**Note:**  To create new profiles for multiple Jump servers, repeat Steps 2-6 for each Jump server.)_
+     > _Use PuTTY to set up a new PIV/CAC login profile for a Jump server. To create new profiles for multiple Jump servers, repeat Steps 2-6 for each Jump server._
 
   2. Enter the **IP address** of the Jump server in the **Host Name (or IP address)** textbox. (If you already have a profile for the Jump server, select it, and click on the **Load** button. Otherwise, follow Steps 3-6 to set up the profile.)
   3. Enter a session name into the **Saved Sessions** textbox.
