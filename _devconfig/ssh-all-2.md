@@ -11,7 +11,7 @@ Select the link for your operating system (OS). (Also, please review _Configure 
 
   * [Use PIV/CAC for SSH from a Windows Computer](#use-piv/cac-for-ssh-from-a-windows-computer)
   * [Use PIV/CAC for SSH from a Linux Computer](#use-piv/cac-for-ssh-from-a-linux-computer)
-  * [Use PIV/CAC for SSH from a Mac Computer](#use-piv/cac-for-ssh-from-a-mac-(macos-10.12-sierra)-computer)
+  * [Use PIV/CAC for SSH from a Mac Computer](#use-piv/cac-for-ssh-from-a-mac-computer)
   * [Configure a UNIX-like Server](#configure-a-unix-like-server)
   
 {% include alert-info.html heading = "Your PIV/CAC contains an authentication key pair and public certificate. Using a PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access." %}&nbsp;
@@ -23,8 +23,8 @@ Select the link for your operating system (OS). (Also, please review _Configure 
   * A PIV/CAC
   * Windows computer
   * A smartcard reader
-  * PuTTY-CAC application
-  * Pageant application
+  * PuTTY-CAC application (an open-source SSH client that supports PIV/CAC authentication)
+  * Pageant application (an SSH authentication agent used with PuTTY-CAC)
 
 > _**Note:**  You will download **PuTTY-CAC** and **Pageant** in the steps below._
 
@@ -38,14 +38,12 @@ These steps will help you to:
 
 #### Install PuTTY-CAC
 
-**PuTTY-CAC** is an open-source SSH client that supports PIV/CAC authentication.
-
   1. Download and install [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}. (Within the application, PuTTY-CAC is referred to simply as "**PuTTY**." PuTTY will usually be installed at **C:\Program Files\PuTTY**.)
   2. Open PuTTY and click on **About** (lower left-hand corner of the **PuTTY Configuration** window) to ensure that the correct version was installed.
 
-#### Use PIV/CAC to insert Microsoft CAPI key ("Smart card certificate") into Pageant
-
-**CAPI** is Microsoft's Crytographic Application Programming Interface. **Pageant** is an SSH authentication agent used with PuTTY-CAC.
+#### Use PIV/CAC to insert Microsoft CAPI key into Pageant
+ 
+  > **Note:**  The **CAPI key** is the "Smart Card certificate" discussed in Step 9. 
 
   1. Insert your **PIV/CAC** into the smartcard reader.
   2. Open **Windows Explorer**.
