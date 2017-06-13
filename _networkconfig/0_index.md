@@ -5,7 +5,7 @@ permalink: /networkconfig/
 collection: networkconfig
 ---
 
-These Network Authentication guides are to help you configure your Windows _network domain_ for smartcard logon using PIV credentials.
+These Network Authentication guides will help you configure your Windows _network domain_ for smartcard logon using PIV credentials.
 
 There are many useful pages and technical articles available online that include details on configurations and using generic smartcards.  The information presented here addresses common questions and configurations **specific** to the US Federal Government, **PIV** smartcards, and US federal civilian agency Certification Authorities.
 
