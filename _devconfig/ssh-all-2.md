@@ -11,7 +11,7 @@ Select the link for your operating system (OS). (Also, please review _Configure 
 
   * [Use PIV/CAC for SSH from a Windows Computer](#use-piv/cac-for-ssh-from-a-windows-computer)
   * [Use PIV/CAC for SSH from a Linux Computer](#use-piv/cac-for-ssh-from-a-linux-computer)
-  * [Use PIV/CAC for SSH from a Mac OS X Computer](#use-piv/cac-for-ssh-from-a-mac-os-x-computer)
+  * [Use PIV/CAC for SSH from a macOS 10.12 Sierra Computer](#use-piv/cac-for-ssh-from-a-macos-10.12-sierra-computer)
   * [Configure a UNIX-like Server](#configure-a-unix-like-server)
   
 {% include alert-info.html heading = "Your PIV/CAC contains an authentication key pair and public certificate. Using a PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access." %}&nbsp;
@@ -143,7 +143,7 @@ These steps will help you to:
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed." %}&nbsp; 
 
-## Use PIV/CAC for SSH from a Mac Computer
+## Use PIV/CAC for SSH from a macOS 10.12 Sierra Computer
 
 ### Hardware and software requirements
 
@@ -201,6 +201,6 @@ These steps will help you to configure a UNIX-like server for remote access.
 			mkdir /etc/sshd/authorized_keys
         ```
 
-  3. To allow one user to have access, place the user's PIV/CAC's SSH public key in this directory, according to the user's name: **/etc/sshd/authorized_keys/[login ID]**. (**Note:** To ensure that access requirements are enforced, only a **root user** may modify this directory and its files.)  
+  3. To allow one user to have access, place the user's PIV/CAC's SSH public key in this directory, according to the user's name: **/etc/sshd/authorized_keys/[login ID]**. (**Note:** Only a **root user** may modify this directory and its files. This ensures that access requirements are enforced.)  
   4. Disable any alternative means of access (i.e., via passwords), as needed.
 
