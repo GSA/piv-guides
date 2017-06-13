@@ -43,7 +43,7 @@ These steps will help you to:
 
 #### Use PIV/CAC to insert Microsoft CAPI key into Pageant
  
-  > **Note:**  The **CAPI key** is the "Smart Card certificate" discussed in Step 9. 
+> **Note:**  The **CAPI key** is the "Smart Card certificate" discussed in Step 9. 
 
   1. Insert your **PIV/CAC** into the smartcard reader.
   2. Open **Windows Explorer**.
@@ -82,7 +82,7 @@ These steps will help you to:
 
 ##### Obtain PIV/CAC's SSH key
 
-  1. To get your PIV/CAC's **SSH key**, go to the **PuTTY Configuration** window. In the left panel, click on **Connection &gt; SSH &gt; CAPI**.  Then, under **Authentication Parameters**, click on  the **Browse** button.  
+  1. To get your PIV/CAC's **SSH key**, go to the **PuTTY Configuration** window. In the left panel, click on **Connection &gt; SSH &gt; CAPI**.  Under **Authentication Parameters**, click on  the **Browse** button.  
 
      > _This automatically fills in the **Cert** and **SSH keystring** textboxes._
 
