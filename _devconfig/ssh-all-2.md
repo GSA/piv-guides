@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Authenticate PIV/CAC To Use Secure Shell (SSH) for Remote Access to a UNIX-like Server
-permalink: /devconfig/ssh-all
+permalink: /devconfig/ssh-all-2
 collection: devconfig
 ---
-**CHUNDE HAS FOR ADDITIONAL CHANGES INSERTION 6-12-2017**</NOTE>
-To use SSH for remote access to a UNIX-like server, you need to first authenticate your PIV/CAC. PIV/CAC authentication and SSH can be done from a Windows, Linux, or Mac workstation/computer. For remote access, you also need to configure the UNIX-like server.
+
+To use SSH for remote access to a UNIX-like server, you need to first authenticate your PIV/CAC. PIV/CAC authentication and SSH can be done from a Windows, Linux, or Mac-based workstation/computer. For remote access, you also need to configure the UNIX-like server.
 
 Select the link for your operating system (OS). (Also, please review _Configure a UNIX-like Server_.)
 
@@ -143,13 +143,13 @@ These steps will help you to:
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed." %}&nbsp; 
 
-## Use PIV/CAC for SSH from a Mac Sierra OS X Computer
+## Use PIV/CAC for SSH from a Mac Computer
 
 ### Hardware and software requirements
 
   * A PIV/CAC
   * A smartcard reader
-  * A Mac OS X computer configured for PIV/CAC login. For additional information, go to [**configure opensc**](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}.
+  * A macOS 10.12 Sierra-based computer configured for PIV/CAC login. For additional information, go to [**configure opensc**](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}.
 
 ### Procedures
 
