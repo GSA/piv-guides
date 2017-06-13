@@ -11,7 +11,7 @@ Select the link for your operating system (OS). (Also, please review _Configure 
 
   * [Use PIV/CAC for SSH from a Windows Computer](#use-piv/cac-for-ssh-from-a-windows-computer)
   * [Use PIV/CAC for SSH from a Linux Computer](#use-piv/cac-for-ssh-from-a-linux-computer)
-  * [Use PIV/CAC for SSH from a macOS 10.12 Sierra Computer](#use-piv/cac-for-ssh-from-a-macos-10.12-sierra-computer)
+  * [Use PIV/CAC for SSH from a Mac (macOS 10.12 Sierra) Computer](#use-piv/cac-for-ssh-from-a-mac-(macos-10.12-sierra)-computer)
   * [Configure a UNIX-like Server](#configure-a-unix-like-server)
   
 {% include alert-info.html heading = "Your PIV/CAC contains an authentication key pair and public certificate. Using a PIV/CAC key pair and public certificate is exactly like using a key pair and self-signed certificate for SSH remote access." %}&nbsp;
@@ -143,13 +143,13 @@ These steps will help you to:
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed." %}&nbsp; 
 
-## Use PIV/CAC for SSH from a macOS 10.12 Sierra Computer
+## Use PIV/CAC for SSH from a Mac (macOS 10.12 Sierra) Computer
 
 ### Hardware and software requirements
 
   * A PIV/CAC
   * A smartcard reader
-  * A macOS 10.12 Sierra-based computer configured for PIV/CAC login. For additional information, go to [**configure opensc**](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}.
+  * A Mac (macOS 10.12 Sierra) computer configured for PIV/CAC login. For additional information, go to [**configure opensc**](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}.
 
 ### Procedures
 
