@@ -41,7 +41,7 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
   > For the steps needed to install the Domain Controller's certificate (in the Domain Controller's local computer's **_personal certificate store_**), please go the _Auto-Enroll Domain Controllers Using Group Policy Object_ section under [_Installing a Local Certification Authority_]({{site.baseurl}}/local-certification-authority). <!--Is this the correct section to link to?-->
 
-## Issuing Domain Controller Certificates <!--Jordan added this back in. This reads like preliminary information--things to think about before proceeding. Seems like it should be the very first thing on this page, rather than the last.-->
+## Issuing Domain Controller Certificates
 
 US Federal Civilian agencies have a variety of policies concerning whether you should use a Domain Controller certificate issued from your agency's local enterprise Certification Authority or whether the certificate must be issued from a Certification Authority managed and certified under the Federal Public Key Infrastructure (FPKI). Providing a common guide and recommendation is challenging, as each agency's information security policy should be followed.
 
