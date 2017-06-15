@@ -16,16 +16,16 @@ Check the following items **before** reviewing these network guides and lessons 
 1. Users have PIV credentials and PIV card readers
 1. You are using Microsoft Active Directory to manage your Windows network
 1. Domain Controllers are Microsoft 2008 R2 or 2012 or above
-1. User workstations **are joined** to your network and are Windows 7, Windows 8 or Windows 10-based
+1. User workstations **are joined** to your network and are Windows 7, Windows 8, or Windows 10-based
 
 ## Configuration Checklist
 
-There are five configuration categories to review through with your colleagues:  
+There are five configuration categories to review with your colleagues:  
 
 - [Network Ports and Protocols]({{site.baseurl}}/networkconfig/ports/)
 - [Domain Controllers]({{site.baseurl}}/networkconfig/domaincontrollers/)
 - [Trust Stores]({{site.baseurl}}/networkconfig/trustedroots/)
-- [Account Linking: Associating PIV credentials to User Accounts]({{site.baseurl}}/networkconfig/accounts/)
+- [Account Linking: Associating PIV credentials with User Accounts]({{site.baseurl}}/networkconfig/accounts/)
 - [Group Policies and Enforcement]({{site.baseurl}}/networkconfig/grouppolicies/)
 
 {% include alert-info.html heading = "Teamwork" content="Work with your Network Engineers, Domain Admins, Account Management, and Information Security colleagues to review the information, perform the configurations, and troubleshoot any issues together." %}
