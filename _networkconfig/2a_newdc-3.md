@@ -4,18 +4,18 @@ title: Creating Domain Controller Certificate Profiles
 collection: networkconfig
 permalink: networkconfig/2a_newdc-3.md/
 ---
-In order for your users' PIV credentials to work for network authentication, all Domain Controllers must have Domain Controller authentication certificates. <!--This type of certificate is for a Certification Authority? Should say that here.--> 
+In order for your users' PIV credentials to work for network authentication, all Domain Controllers must have Domain Controller authentication certificates. 
 
-To generate and install a Domain Controller authentication certificate, you need to first create a certificate profile.
+This page contains information on Domain Controller certificate profiles and issuing Domain Controller certificates.
 
-{% include alert-info.html heading = "Devices authenticate too!" content="When your users are using PIV/CAC credentials (i.e., certificates) to authenticate to a network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, click on the links below or search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
+{% include alert-info.html heading = "Devices authenticate too!" content="When your users are using PIV credentials (i.e., certificates) to authenticate to a network, the Domain Controllers are also authenticating as devices that use certificates. This system works together to create secure connections. To learn more, click on the links below or search for online resources that discuss Public Key Cryptography for Initial Authentication (PKINIT) protocols." %}
 
-* [Creating Domain Controller Certificate Profiles](#creating-domain-controller-certificate-profiles)
+* [Domain Controller Certificate Profiles](#domain-controller-certificate-profiles)
 * [Issuing Domain Controller Certificates](#issuing-domain-controller-certificates)
 
-## Creating Domain Controller Certificate Profiles <!--Are profiles are being created here? "Created" is never used in this section. Should Certification Authority be mentioned here somewhere?-->
+## Domain Controller Certificate Profiles
 
-Domain Controller certificates must be issued with a set of specific extensions and values. The certificate profile for each Domain Controller must meet the following requirements: <!--What actions is the system administrator taking to create the profile? This gives information but nearly no instructions.-->
+Domain Controller certificates must be issued with a set of specific extensions and values. The certificate profile for each Domain Controller must meet the following requirements: 
 
 - The certificate **Key Usage** extension must contain:
 
