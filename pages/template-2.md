@@ -10,7 +10,7 @@ permalink: /template/
 
 {% include alert-info.html heading = "Before starting a new FICAM guide, please review the _Contributing.md_ page!" content="The _Contributing.md_ page provides terms and conditions and other important instructions." %}
 
-This **_Template_** gives instructions and templates to help you with your new FICAM guide, including:
+This _Template_ gives you a template and instructions to help you create a new FICAM guide, including:
 
 **This is the TOC - bring in the new titles from below**
 
@@ -54,27 +54,25 @@ If you don't have a repository that you "forked" from GSA's FICAM guide reposito
 
 If you are not a GSA employee or contractor, you'll also need to set up a repository. For help, go to: [Create a Repo](https://help.github.com/articles/create-a-repo/).
 
-## All Contributors
-
-### Create a new issue to start Your FICAM Guide
+## Create a new issue to start Your FICAM Guide
 
 After you have created a new GitHub account and have a repository (or have an existing account and repository), you'll need to create a new Issue in GitHub to start your FICAM guide. 
 
 Your new Issue should discuss a technical problem and proposed solution (i.e., focus of your new FICAM guide). Through your Issue, other GitHub collaborators may offer useful information and suggest alternative solutions (i.e., "crowd-sourcing" help).
 
-### Select or Create a Branch for Your Guide
+## Select or Create a Branch for Your Guide
 
 Once you have a GitHub account and repository, you'll need to create a branch where your new guide (called a **Page**) will be stored. Before you create a new Page to start your guide, you need to **_select an existing branch_** or **_create a new branch_**. 
 
-#### Select an existing branch
+### Select an existing branch
 
 To select an existing branch, do this: 
   
   1. At the top left area of your GitHub repository directory window (for example, PIV-Guides repository), you will see the **_Branch_** button. Click on the button's down-arrow to select an existing branch. The branch (name) shown on the button indicates where your new Page will be stored.
   
-  > Once you have selected an existing branch, go to [**Create a New Page for Your Guide**](#Create-a-New-Page-for-Your-Guide).
+  > Once you have selected an existing branch, go to [**Create a New Page for Your Guide**](#create-a-new-page-for-your-guide).
   
-#### Create a new branch
+### Create a new branch
 
 To create a new branch, do this:
   
@@ -82,9 +80,9 @@ To create a new branch, do this:
   
   > The **_Branch_** button will display the new branch name. This is where your new Page will be stored.
   
-### Create a New Page to Start Your Guide
+### Create a New Page for your guide
 
-To create a new **_Page_** to start your guide, do this:  
+To create a new **_GitHub Page_** to start your guide, do this:  
 
   1. Check the **_Branch_** button to ensure that the branch name you selected or created is displayed. If it isn't, click on the down-arrow and select the branch name from the drop-down list.
   2. Click on the **_Create New File_** button located at the top right area of your repository's directory window.  
@@ -93,7 +91,7 @@ To create a new **_Page_** to start your guide, do this:
   5. Scroll down to the bottom of your screen. At the left side of your screen, below the **Commit new file** comment box, click on the green button that says **Commit new file**.
   > This creates and saves your new Page in your selected or new branch.
 
-### Copy and Paste the Content from the Outline (in Markdown) **_Template.md_** into your new Page.
+### Copy and Paste the Content from the Template below into your new Page.
 
   1. At the top right area of your Page's content window, click on the **pencil** symbol.
 
