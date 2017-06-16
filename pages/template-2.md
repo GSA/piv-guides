@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Template for Contributors to GSA FICAM Guides
+title: Contributor's Template for Writing a FICAM Guide
 permalink: /template/
 ---
 
@@ -10,59 +10,63 @@ permalink: /template/
 
 {% include alert-info.html heading = "Before starting a new FICAM guide, please review the _Contributing.md_ page!" content="The _Contributing.md_ page provides terms and conditions and other important instructions." %}
 
-This guide will help you to create a new FICAM guide. 
+Thank you for your interest in creating a FICAM Guide to solve a PIV, FPKI, or FICAM-Arch technical issue! Whether you have a technical topic in mind or don't yet have a topic for a new Guide, we welcome your willingness to contribute! 
 
-  * [**Starting Your Guide**](#starting-your-guide)
-  * [**GSA Employees or Contractors&mdash;Using GitHub**](#gsa-employees-or-contractors-using-github)
-  * [**Non-GSA Contributors&mdash;Using GitHub**](#non-gsa-contributors-using-github)
-  * [**Template**](#template)
-  * [**Writing and Style Resources**](#writing-and-style-resources)  
+This guide gives you the steps you need to start writing your new FICAM Guide. 
+
+Click on one of these links to go to a specific section:  
+
+  * [**Select a Topic for Your New FICAM Guide**](#select-a-topic-for-your-new-ficam-guide)
+  * [**Create a GitHub Account**](#create-a-github-account)
+  * [**Create a GitHub Repository, Branch, and Page**](#create-a-github-repository,-branch-,-and-page)
+  * [**Guide Template**](#guide-template)
+  * [**More Markdown Syntax**](#More-markdown-syntax)
+  * [**Help with Writing and Style**](#help-with-writing-and-style)  
   
-## Starting Your Guide
+# Select a Topic for Your New FICAM Guide
 
-  * If you have topic in mind...**go to <<<<** 
-  * If you don't yet a topic in mind...**go to <<<**
+  * **If you already have a topic for your new FICAM Guide** &mdash; You will need to create a GitHub account, if you don't have one. Go to:  [**Create a GitHub Account**](#create-a-github-account) to start the guide process.
   
-  Once you have a topic or found a topic you want to write about from the GitHub **Issues** list and don't already have a **GitHub account**, follow the steps for **GSA Employees or Contractor Contributors** or **Non-GSA Contributors** to create an account. 
-  * If you don't already have a topic in mind, review the open Issues for a topic you would be interested in writing about in GSA's GitHub **Issues** list for the PIV-Guides, FPKI-Guides, or FICAM-Arch. 
-
-### When you have a topic
-
-When you have a topic, you'll need to:
-
+  * **If you don't yet have a topic** &mdash; We recommend that you look at the open **Issues** lists in the GSA GitHub repositories. The open Issues lists offer many technical topics in search of a solution.
+    - **PIV-Guides** URL
+    - **FPKI-Guides** URL
+    - **FICAM-Arch** URL
+  
+  please go to [GSA GitHub](https://github.com/GSA){:target="blank"} and select a repository (). Then click on the **Issues** tab at the top of the screen. The FICAM community has posted many technical **Issues** seeking contributors. If you want to contribute to one of the Issues by writing a FICAM Guide, simply post a comment to that effect. If you don't yet have a GitHub account, go to: 
   * Create a GitHub **Account**.
   * Create a **Repository** and **Branch** for storing your guide. 
   * Create a new **Page** to start your guide.
   * Create a basic outline using the **template** below. 
   > **Note:**  The template is preformatted using GitHub **Markdown** syntax. (See [**How To Use Markdown**](#how-to-use-markdown) below for additional help.) 
-  * Create a new **Issue** to discuss your topic and collaborate with others about it.
+
   * Guidelines for collaborating with colleagues and contributors. 
+  When you have a topic, you will need to create a new **Issue** in **GitHub** to discuss it.
 
-## GSA Employees or Contractor Contributors&mdash;Using GitHub
 
-### Create a new GitHub account
+### Create a GitHub account
 
-To create your new FICAM guide, you'll need a GitHub account.  If you don't have one, you'll need to create one. GitHub offers free accounts: <!--Is there a GitHub address for just GSA employees/contractors - new accounts?-->
+## GSA Employees or Contractor Contributors
 
-> For help, please see:  [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/). 
+Links?
+Create a GitHub account
+Create a Branch
+Create a Page
 
-### Create a repository by "forking" PIV-Guides, FPKI-Guides, or FICAM-Arch
+To create your new FICAM guide, you'll need a GSA GitHub account.  If you don't have one, you'll need to create one.
+
+> For help, please see:  [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/). For additional help, contact GSA GitHub Support at: gsa-github.support@gsa.gov. 
+
+## Create a repository by "forking" PIV-Guides, FPKI-Guides, or FICAM-Arch
 
 If you don't have a repository that you "forked" from GSA's FICAM guide repositories (**PIV-Guides**, **FPKI-Guides**, or **FICAM-Arch**), do this:  
 
 1. Go to: [GSA Respositories at GitHub.com](https://github.com/GSA){:target="blank"}.
-2. Select the repository you want.
+2. Select the repository you want. For help setting up a repository, go to: [Create a Repo](https://help.github.com/articles/create-a-repo/).
 3. In the upper right-hand corner of the GSA respository screen, click on the gray **Fork** button.
 
 > This automatically places a copy of the GSA repository in your GitHub profile.
 
 For the next steps, click on [**Create a Branch for Your Guide**](#create-a-branch-for-your-guide).
-
-## Non-GSA Contributors&mdash;Using GitHub
-
-### Create a new GitHub account and repository
-
-If you are not a GSA employee or contractor, you'll also need to set up a repository. For help, go to: [Create a Repo](https://help.github.com/articles/create-a-repo/).
 
 ### Create a branch for your guide
 
@@ -118,7 +122,7 @@ Now that you have created a new Page to start your guide, this **Template** will
 
   1. If you have not already done so, copy and paste the **Template** below into your new Page.
   
-# Template
+# Guide Template
 
 
 # A Word about the Navigation Block (above) and Title of Your FICAM Guide
@@ -166,7 +170,7 @@ This introductory text should give any user-friendly background information; exp
   
 # Title of Procedure 2 (Heading 1)
 
-This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
+**This is the main body paragraph style.** This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
 
 ## This Is a Second-Level Heading (Use other Headings as needed)
 ### This is a third-level heading
@@ -182,7 +186,7 @@ This introductory text should give any user-friendly background information; exp
 
 ++++++++++++++++++++
 
-## Headings
+## More Markdown Syntax
 
 > In Markdown syntax, the **#** symbol is used to format headings.
 
@@ -290,7 +294,7 @@ Link to an document outside the GSA IDManagment.gov website (opens a new window)
 
 [This is what I want my link to say](https://www.governmentagency.gov){:target="_blank"}
 
-# Writing and Style Resources
+# Help with Writing and Style
 
 For the FICAM Guides, general writing guidelines include:
 
