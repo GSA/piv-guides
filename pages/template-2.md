@@ -40,7 +40,7 @@ Once you select a topic, the first step is to [**Create a GitHub Account**](#cre
 
 > For help, please see:  [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/). For additional help, contact GSA GitHub Support at: gsa-github.support@gsa.gov. 
 
-## Create a repository by "forking" PIV-Guides, FPKI-Guides, or FICAM-Arch
+## Create a Repository
 
 If you don't have a repository that you "forked" from GSA's FICAM guide repositories (**PIV-Guides**, **FPKI-Guides**, or **FICAM-Arch**), do this:  
 
@@ -52,7 +52,7 @@ If you don't have a repository that you "forked" from GSA's FICAM guide reposito
 
 For the next steps, click on [**Create a Branch for Your Guide**](#create-a-branch-for-your-guide).
 
-## Create a branch for your guide
+## Create a Branch
 
 Now that you have a GitHub account and repository, you'll need to create a **Branch** where your new guide (called a **Page**) will be stored. 
 
@@ -68,7 +68,7 @@ To create a new branch, do this:
 
 Once you have created a new Branch, go to [**Create a New Page for Your Guide**](#create-a-new-page-for-your-guide).
     
-## Create a New Page for Your Guide
+## Create a "Page"
 
 To create a new **_GitHub Page_** to start your guide, do this:  
 
@@ -85,13 +85,13 @@ When you have a topic for your new FICAM Guide, the next step is to create a new
 
 # Use the Guide Template
 
-This **Template** will help you to structure and develop your guide. If you have not already done so, copy and paste this **Template** into your new GitHub Page, starting with [**Template Starts Here**](#template-starts-here) below.
+Starting with [**Template Starts Here**](#template-starts-here) below, copy and paste the text to **Template Ends Here**, into your new GitHub Page. THis template will help you to structure and develop your guide. Do this:
 
   1. At the top right area of your Page's content window, click on the **pencil** symbol.
 
   > You will use this mode to create and edit content for your guide.
   
-  2. **Select all of the Template content below. Copy and paste the content into your Page.**
+  2. **Select all of the Template contents below. Copy and paste the content into your Page.**
   3. Change the **title**, "Guidance Document Template," to your guide's title (for example, _My Technical Guide_).
   4. Change the **permalink** title to a short version of your guide's title (for example, _/myguide/_.
   
