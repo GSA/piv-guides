@@ -24,17 +24,19 @@ Click on one of these links to go to a specific section:
   * [**More Markdown Syntax**](#More-markdown-syntax)
   * [**Help with Writing and Style**](#help-with-writing-and-style)  
   
-# Select a Topic for Your New FICAM Guide
+# Select a Topic for Your Guide
 
-* **If you already have a topic for your new FICAM Guide** &mdash; The first step is to [**Create a GitHub Account**](#create-a-github-account) to start the guide process.
+* **If you already have a topic for your new FICAM Guide** &mdash; The first step is to starting your guide is to [**Create a GitHub Account**](#create-a-github-account).
   
-* **If you don't yet have a topic** &mdash; A good first steps is to look at the open **Issues** lists in the GSA GitHub repositories. The open **Issues** lists offer many technical topics in search of a contributor with a solution.
+* **If you don't yet have a topic** &mdash; A good first step is to review the open **Issues** lists in the GSA GitHub repositories: 
 
   - **PIV-Guides** URL
   - **FPKI-Guides** URL
   - **FICAM-Arch** URL
   
-Once you select a topic, the first step is to [**Create a GitHub Account**](#create-a-github-account) to start your guide. 
+The open **Issues** lists offer many technical issues in search of a contributor.
+
+  > Once you select a topic, the next step is to [**Create a GitHub Account**](#create-a-github-account) to start your guide. 
 
 # Create a GitHub Account
 
