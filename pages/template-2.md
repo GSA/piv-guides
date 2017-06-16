@@ -19,40 +19,24 @@ Click on one of these links to go to a specific section:
   * [**Select a Topic for Your New FICAM Guide**](#select-a-topic-for-your-new-ficam-guide)
   * [**Create a GitHub Account**](#create-a-github-account)
   * [**Create a GitHub Repository, Branch, and Page**](#create-a-github-repository,-branch-,-and-page)
+  * [**Create an Issue in GitHub**](#create-an-issue-in-github)
   * [**Guide Template**](#guide-template)
   * [**More Markdown Syntax**](#More-markdown-syntax)
   * [**Help with Writing and Style**](#help-with-writing-and-style)  
   
 # Select a Topic for Your New FICAM Guide
 
-  * **If you already have a topic for your new FICAM Guide** &mdash; You will need to create a GitHub account, if you don't have one. Go to:  [**Create a GitHub Account**](#create-a-github-account) to start the guide process.
+* **If you already have a topic for your new FICAM Guide** &mdash; The first step is to [**Create a GitHub Account**](#create-a-github-account) to start the guide process.
   
-  * **If you don't yet have a topic** &mdash; We recommend that you look at the open **Issues** lists in the GSA GitHub repositories. The open Issues lists offer many technical topics in search of a solution.
-    - **PIV-Guides** URL
-    - **FPKI-Guides** URL
-    - **FICAM-Arch** URL
+* **If you don't yet have a topic** &mdash; A good first steps is to look at the open **Issues** lists in the GSA GitHub repositories. The open **Issues** lists offer many technical topics in search of a contributor with a solution.
+
+  - **PIV-Guides** URL
+  - **FPKI-Guides** URL
+  - **FICAM-Arch** URL
   
-  please go to [GSA GitHub](https://github.com/GSA){:target="blank"} and select a repository (). Then click on the **Issues** tab at the top of the screen. The FICAM community has posted many technical **Issues** seeking contributors. If you want to contribute to one of the Issues by writing a FICAM Guide, simply post a comment to that effect. If you don't yet have a GitHub account, go to: 
-  * Create a GitHub **Account**.
-  * Create a **Repository** and **Branch** for storing your guide. 
-  * Create a new **Page** to start your guide.
-  * Create a basic outline using the **template** below. 
-  > **Note:**  The template is preformatted using GitHub **Markdown** syntax. (See [**How To Use Markdown**](#how-to-use-markdown) below for additional help.) 
+Once you select a topic, the first step is to [**Create a GitHub Account**](#create-a-github-account) to start your guide. 
 
-  * Guidelines for collaborating with colleagues and contributors. 
-  When you have a topic, you will need to create a new **Issue** in **GitHub** to discuss it.
-
-
-### Create a GitHub account
-
-## GSA Employees or Contractor Contributors
-
-Links?
-Create a GitHub account
-Create a Branch
-Create a Page
-
-To create your new FICAM guide, you'll need a GSA GitHub account.  If you don't have one, you'll need to create one.
+# Create a GitHub Account
 
 > For help, please see:  [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/). For additional help, contact GSA GitHub Support at: gsa-github.support@gsa.gov. 
 
@@ -60,7 +44,7 @@ To create your new FICAM guide, you'll need a GSA GitHub account.  If you don't 
 
 If you don't have a repository that you "forked" from GSA's FICAM guide repositories (**PIV-Guides**, **FPKI-Guides**, or **FICAM-Arch**), do this:  
 
-1. Go to: [GSA Respositories at GitHub.com](https://github.com/GSA){:target="blank"}.
+1. Go to: [GSA Respositories at GitHub.com](https://github.com/GSA){:target="blank"}.go to [GSA GitHub]
 2. Select the repository you want. For help setting up a repository, go to: [Create a Repo](https://help.github.com/articles/create-a-repo/).
 3. In the upper right-hand corner of the GSA respository screen, click on the gray **Fork** button.
 
@@ -68,7 +52,7 @@ If you don't have a repository that you "forked" from GSA's FICAM guide reposito
 
 For the next steps, click on [**Create a Branch for Your Guide**](#create-a-branch-for-your-guide).
 
-### Create a branch for your guide
+## Create a branch for your guide
 
 Now that you have a GitHub account and repository, you'll need to create a **Branch** where your new guide (called a **Page**) will be stored. 
 
@@ -84,7 +68,7 @@ To create a new branch, do this:
 
 Once you have created a new Branch, go to [**Create a New Page for Your Guide**](#create-a-new-page-for-your-guide).
     
-### Create a New Page for your guide
+## Create a New Page for Your Guide
 
 To create a new **_GitHub Page_** to start your guide, do this:  
 
@@ -94,6 +78,12 @@ To create a new **_GitHub Page_** to start your guide, do this:
   4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., **Mynewfile.md**).
   5. Scroll down to the bottom of your screen. At the left side of your screen, below the **Commit new file** comment box, click on the green button that says **Commit new file**.
   > This creates and saves your new Page in your selected or new branch.
+  
+## Create an Issue in GitHub
+
+When you have a topic for your new FICAM Guide, the next step is to create a new **Issue** in **GitHub** to discuss it.
+
+# Use the Guide Template   </stopped/>
 
 ### Copy and Paste the Template below into your new Page
 
