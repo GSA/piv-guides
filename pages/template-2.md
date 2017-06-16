@@ -26,7 +26,9 @@ This guide will help you to create a new FICAM guide.
   Once you have a topic or found a topic you want to write about from the GitHub **Issues** list and don't already have a **GitHub account**, follow the steps for **GSA Employees or Contractor Contributors** or **Non-GSA Contributors** to create an account. 
   * If you don't already have a topic in mind, review the open Issues for a topic you would be interested in writing about in GSA's GitHub **Issues** list for the PIV-Guides, FPKI-Guides, or FICAM-Arch. 
 
-When you have a topic in mind, you'll need to take these steps:
+### When you have a topic
+
+When you have a topic, you'll need to:
 
   * Create a GitHub **Account**.
   * Create a **Repository** and **Branch** for storing your guide. 
