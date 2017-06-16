@@ -4,34 +4,39 @@ title: Template for Contributors to GSA FICAM Guides
 permalink: /template/
 ---
 
-- BRING in LACHELLE'S CHANGES
+**Add LaChelle's other changes**
 
-- FIX ALERTS AND LINKS
+**FIX ALERTS AND LINKS**
 
 {% include alert-info.html heading = "Before starting a new FICAM guide, please review the _Contributing.md_ page!" content="The _Contributing.md_ page provides terms and conditions and other important instructions." %}
 
-This _Template_ gives you a template and instructions to help you create a new FICAM guide, including:
-
-**This is the TOC - bring in the new titles from below**
+This guide will help you to create a new FICAM guide. 
 
   * [**Starting Your Guide**](#starting-your-guide)
-  * [**For GSA Employees or Contractors:  Create a New GitHub Account**](#for-gsa-employees-or-contractors-create-a-new-github-account)
-  * [**Example Outline Template**](#example-outline-template) 
-  * [**Markdown Template**](#markdown-template)
+  * [**GSA Employees or Contractors&mdash;Using GitHub**](#gsa-employees-or-contractors-using-github)
+  * [**Non-GSA Contributors&mdash;Using GitHub**](#non-gsa-contributors-using-github)
+  * [**Template**](#template)
   * [**Writing and Style Resources**](#writing-and-style-resources)  
   
 ## Starting Your Guide
 
-This section tells you what steps are needed to create your new FICAM guide: **Needs to be a linked TOC** 
+  * If you have topic in mind...**go to <<<<** 
+  * If you don't yet a topic in mind...**go to <<<**
+  
+  Once you have a topic or found a topic you want to write about from the GitHub **Issues** list and don't already have a **GitHub account**, follow the steps for **GSA Employees or Contractor Contributors** or **Non-GSA Contributors** to create an account. 
+  * If you don't already have a topic in mind, review the open Issues for a topic you would be interested in writing about in GSA's GitHub **Issues** list for the PIV-Guides, FPKI-Guides, or FICAM-Arch. 
 
-  * Create a GitHub **Repository**, **Branch**, and **Page** where your guide will be stored.
-  * Create a new **Issue** in GitHub to discuss your technical issue (i.e., the topic of your new FICAM guide).
-  * Add more...?
-  * Select or create a new **_Branch_** in your GitHub repository where your guide will be stored 
-  * Create a new **_Page_** to start your guide 
-  * Use the **_Example Outline Template_** with embedded **_Markdown syntax_** to develop your guide
+When you have a topic in mind, you'll need to take these steps:
 
-## GSA Employees or Contractor Contributors
+  * Create a GitHub **Account**.
+  * Create a **Repository** and **Branch** for storing your guide. 
+  * Create a new **Page** to start your guide.
+  * Create a basic outline using the **template** below. 
+  > **Note:**  The template is preformatted using GitHub **Markdown** syntax. (See [**How To Use Markdown**](#how-to-use-markdown) below for additional help.) 
+  * Create a new **Issue** to discuss your topic and collaborate with others about it.
+  * Guidelines for collaborating with colleagues and contributors. 
+
+## GSA Employees or Contractor Contributors&mdash;Using GitHub
 
 ### Create a new GitHub account
 
@@ -43,43 +48,36 @@ To create your new FICAM guide, you'll need a GitHub account.  If you don't have
 
 If you don't have a repository that you "forked" from GSA's FICAM guide repositories (**PIV-Guides**, **FPKI-Guides**, or **FICAM-Arch**), do this:  
 
-1. Go to: [GSA Respositories at GitHub.com](https://github.com/GSA).
+1. Go to: [GSA Respositories at GitHub.com](https://github.com/GSA){:target="blank"}.
 2. Select the repository you want.
 3. In the upper right-hand corner of the GSA respository screen, click on the gray **Fork** button.
-> This creates an instance of that GSA repository in your GitHub profile.
 
-## Non-GSA Contributors
+> This automatically places a copy of the GSA repository in your GitHub profile.
+
+For the next steps, click on [**Create a Branch for Your Guide**](#create-a-branch-for-your-guide).
+
+## Non-GSA Contributors&mdash;Using GitHub
 
 ### Create a new GitHub account and repository
 
 If you are not a GSA employee or contractor, you'll also need to set up a repository. For help, go to: [Create a Repo](https://help.github.com/articles/create-a-repo/).
 
-## Create a new issue to start Your FICAM Guide
+### Create a branch for your guide
 
-After you have created a new GitHub account and have a repository (or have an existing account and repository), you'll need to create a new Issue in GitHub to start your FICAM guide. 
-
-Your new Issue should discuss a technical problem and proposed solution (i.e., focus of your new FICAM guide). Through your Issue, other GitHub collaborators may offer useful information and suggest alternative solutions (i.e., "crowd-sourcing" help).
-
-## Select or Create a Branch for Your Guide
-
-Once you have a GitHub account and repository, you'll need to create a branch where your new guide (called a **Page**) will be stored. Before you create a new Page to start your guide, you need to **_select an existing branch_** or **_create a new branch_**. 
-
-### Select an existing branch
-
-To select an existing branch, do this: 
-  
-  1. At the top left area of your GitHub repository directory window (for example, PIV-Guides repository), you will see the **_Branch_** button. Click on the button's down-arrow to select an existing branch. The branch (name) shown on the button indicates where your new Page will be stored.
-  
-  > Once you have selected an existing branch, go to [**Create a New Page for Your Guide**](#create-a-new-page-for-your-guide).
-  
-### Create a new branch
+Now that you have a GitHub account and repository, you'll need to create a **Branch** where your new guide (called a **Page**) will be stored. 
 
 To create a new branch, do this:
   
-  1. Click on the **_Branch_** button and enter a new branch name into the text field.  
+  1. Click on the **_Branch_** button and enter a new branch name into the text field. 
   
-  > The **_Branch_** button will display the new branch name. This is where your new Page will be stored.
+  > The **_Branch_** button will display the new branch name. 
+
+  2. Select the green-highlighted Branch name.  **CHECK THIS**
   
+  > This Branch is where your new Page will be stored.
+
+Once you have created a new Branch, go to [**Create a New Page for Your Guide**](#create-a-new-page-for-your-guide).
+    
 ### Create a New Page for your guide
 
 To create a new **_GitHub Page_** to start your guide, do this:  
@@ -91,91 +89,98 @@ To create a new **_GitHub Page_** to start your guide, do this:
   5. Scroll down to the bottom of your screen. At the left side of your screen, below the **Commit new file** comment box, click on the green button that says **Commit new file**.
   > This creates and saves your new Page in your selected or new branch.
 
-### Copy and Paste the Content from the Template below into your new Page.
+### Copy and Paste the Template below into your new Page
 
   1. At the top right area of your Page's content window, click on the **pencil** symbol.
 
-  > Your Page window is now in editing view (i.e., also Markdown content creation mode). You will use this view to create content for your guide.
+  > You will use this mode to create and edit content for your guide.
   
-  2. Select all of the content in this **_Template.md_** page. Copy and paste the content into your Page.
+  2. **Select all of the Template content below. Copy and paste the content into your Page.**
+  3. Change the **title**, "Guidance Document Template," to your guide's title (for example, _My Technical Guide_).
+  4. Change the **permalink** title to a short version of your guide's title (for example, _/myguide/_.
   
-  3. When you are ready, delete the **Template.md** _introductory text and steps to select/create a branch and a Page_, but keep the the following:
+  > The **permalink** title should be in the format: **/mypage/**, instead of _mypage.md_ 
+  
+  6. Once you have made these changes, scroll down to the bottom of your screen. At the left side of the screen, click on the green button that says **Commit changes.**
+  
+  > This action saves all of your changes to your Page. When you are ready, you can use the Template as the basis for writing your guide. 
 
-**Delete this, per LaChelle (can't use for moving up to Federalist):**
-<UL><UL>
-<LI> Document <b>navigation block</b> (at the top left corner of your Page window). (See example below.) 
-<LI> The <b>Example Outline</b>. (See **Templates** section below.)
-<LI> The <b>Markdown Template</b>. (See **Templates** section below.)
-</UL></UL>
+# Markdown Syntax
 
-   ```
-       ---
-       layout: default
-       title: Guidance Document Template 
-       permalink: /template/
-       ---
-   ```
-<BR>
+  * The Template below is already formatted in Markdown syntax for you to use.  
+  * Copy and paste the Template into your Page.
+  
+  > For more on Markdown, go to:  [**Mastering Markdown**](https://guides.github.com/features/mastering-markdown/){:target="blank"}.
 
-  4. Once you have deleted the introductory text and steps, go to the top left corner of your new Page.
-  5. Change the **title**, "Guidance Document Template," to your guide's title (for example, _My Technical Guide_).
-  6. Change the **permalink** title to a short version of your guide's title (for example, _/myguide/_.<BR>
-  > The **permalink** title should be in the format: **/mypage/**, instead of _mypage.md_  
-  7. Once you have made these changes, scroll down to the bottom of your screen. At the left side of the screen, click on the green button that says **Commit changes.**<BR>
-  > This action saves all of your changes to your Page.
+Now that you have created a new Page to start your guide, this **Template** will help you to structure and develop content for your guide.
 
-# TEMPLATES
+  1. If you have not already done so, copy and paste the **Template** below into your new Page.
+  
+# Template
 
-# Example Outline Template 
 
-**Combine this with Markdown Style Sheet**
+# A Word about the Navigation Block (above) and Title of Your FICAM Guide
+---
+layout: default
+title: Guidance Document Template 
+permalink: /template/
+---
 
-Now that you have created a new Page to start your guide, this **Example Outline** will help you to structure and develop content for your guide.
+  1. **layout: default**. This field always stays the same. No changes are necessary.
+  2. **title: [document title]**.  On your Page (Markdown), you _won't_ see a main title. The **Title** field automatically adds the title to your guide when it is posted on the IDManagement.gov website.
+  3. **permalink: /[name]/**. The **permalink** should be a short name for your document title. Change **/template/** to a short name for your guide.
 
-  1. If you have not already done so, copy and paste this **Example Outline** into your new Page.
+Add a **Table of Contents (TOC)** (links) after the main body's first paragraph. Create a linked list like this:
 
-## Overview
+  * [Section 1 Title](#words-in-section3-title-separated-by-dashes)
+  * [Section 2 Title](#words-in-section2-title-separated-by-dashes)
+  * [Section 3 Title](#words-in-section3-title-separated-by-dashes)
 
-This introductory text should give a brief overview of the subject matter covered in your guide. In addition to the subject-matter overview, it may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
+# Overview (Heading 1)
 
-## Assumptions 
+(Main body paragraph) This introductory text should give a brief overview of the subject matter covered in your guide. In addition to the subject-matter overview, it may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
 
-This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. This section may also include conditions that must be met before the user can begin the procedures. Alternate titles may be: **_Preconditions_** (i.e., list any conditions that must be met) or **_Hardware and Software_Requirements** (i.e, list any hardware or software that must be obtained and/or configured).
+# Assumptions (Heading 1)
 
-## Before You Get Started
+(Main body paragraph) This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. This section may also include conditions that must be met before the user can begin the procedures. Alternate titles may be: **_Preconditions_** (i.e., list any conditions that must be met) or **_Hardware and Software_Requirements** (i.e, list any hardware or software that must be obtained and/or configured).
+
+# Before You Get Started (Heading 1)
 
 This section will tell the user what he/she needs to do to prepare before starting a set of procedures. 
 
-## Title of Procedure 1
+# Title of Procedure 1 (Heading 1)
 
 This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
 
-  1. Step 1 of procedure 1.
-  2. Step 2 of procedure 1.
+## This Is a Second-Level Heading (Use other Headings as needed)
+### This is a third-level heading
+#### This is a fourth-level heading
+##### This is a fifth-level heading
+
+  1. Step 1 of procedure 1. (Numbered List item)
+  2. Step 2 of procedure 1. (Numbered List item)
+
+  > **Note:** or call-out needed. (**Citation??**)
   
-## Title of Procedure 2
+# Title of Procedure 2 (Heading 1)
 
 This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
 
-  1. Step 1 of the procedure 2.
-  2. Step 2 of the procedure 2.
+## This Is a Second-Level Heading (Use other Headings as needed)
+### This is a third-level heading
+#### This is a fourth-level heading
+##### This is a fifth-level heading
+
+  1. Step 1 of procedure 1. (Numbered List item)
+  2. Step 2 of procedure 1. (Numbered List item)
+
+  > **Note:** or call-out needed. (**Citation??**)
   
   > Repeat procedural sections, as needed.
 
-# Markdown Template
-
-This **Markdown Template** will help you to use Markdown syntax to format the content for your guide. You can learn more about Markdown formatting by browsing to the "Mastering Markdown" guide from Github: https://guides.github.com/features/mastering-markdown/.
-
-  1. If you have not already done so, copy and paste this **Markdown Template** into your new Page.  
+++++++++++++++++++++
 
 ## Headings
-
-The required Heading formats for the www.IDManagement.gov website are as follows:
-
-  * Top-Level Heading (**T**itle **C**ase)
-  * Second-Level Heading (**T**itle **C**ase)
-  * Third-level heading (**S**entence case)
-  * All lower-level headings (**S**entence case)
 
 > In Markdown syntax, the **#** symbol is used to format headings.
 
@@ -185,14 +190,6 @@ The required Heading formats for the www.IDManagement.gov website are as follows
 #### This is a fourth-level heading
 ##### This is a fifth-level heading
 
-  > Start your page with a top-level heading.
-
-## Table of Contents (TOC)
-
-As you add sections, you can create a Table of Contents (TOC) at the top of your Page by creating a linked list like this:
-
-- [Subsection1](#subsection1)
-- [Subsection2](#subsection2)
 
 ## Main Body Paragraph
 
@@ -221,17 +218,20 @@ To create a numbered list (i.e., ordered list), use spaces (not tabs) and number
      1. Numbered sub-item 1 (Indent 5 spaces, enter a number, and add 1 space. Second-level numbered items will render as "i, ii, iii," etc.)
      2. Numbered sub-item 2
 
-  > **Note:** Markdown supports only **two** indention levels for numbered lists.
+  > **Note:** Markdown for the GSA FICAM Guides supports only **one** numbered list level (no second-level items).
 
 ## Code Blocks
 
-For code blocks, enter a Return, three backticks (```) before and after the code block, plus another Return. Some instructions suggest adding in this order:
+To create a code block, use spaces, backticks (```), and Returns in this order: 
 
-  * 3-8 spaces plus 3 backticks (```) to start the code block 
+  * 4 spaces plus 3 backticks (```) to start the code block 
   * A Return
-  * The code text
+  * Type or paste in the code that the user needs to enter for a specific step
   * Another Return
-  * 3-8 spaces plus 3 backtick to end the code block
+  * 4 spaces plus 3 backticks to end the code block
+  * Another Return
+
+For example:
 
    ```
    Text within three backticks for code or command line samples
@@ -261,30 +261,32 @@ Use the Alert, Warning, or Information Block formatting to highlight specific in
 
 ### Warning blocks
 
-> This text will appear as a **warning flag**, which is a yellow banner on the website. (The ">" symbol and the coded line directly underneath the text will create the formatting for this flag.) Warning flags can be used for notifications, such as when a user should skip a certain procedure.
+This text will appear as a **warning flag**, which is a yellow banner on the website. (The ">" symbol and the coded line directly underneath the text will create the formatting for this flag.) Warning flags can be used for notifications, such as when a user should skip a certain procedure.
 {:class="warning"}
 
-### Alert blocks
+### Alerts for Notifications or Problems
 
-> This text will appear as an **alert flag**, which is a red banner on the website. Alert flags may be used for notifications, such as common problems that may occur.
+This text will appear as an **alert flag**, which is a red banner on the website. Alert flags may be used for notifications, such as common problems that may occur.
 {:class="alert"}
 
-### Information blocks
+### Information Alerts
 
-> This text will appear as **informational flag**, which is a green banner on the website. Information flags can be used for notifications such as useful links or helpful tips.
+This text will appear as **informational flag**, which is a green banner on the website. Information flags can be used for notifications such as useful links or helpful tips.
 {:class="info"}
 
-## Links to References or Other Information
+### Success Alerts **BLUE BANNER??**
 
-To link to useful references, information, or another page (especially that may be needed to complete the procedures), use this link format: 
+This text will appear as **success flag**, which is a **blue?** banner on the website. These flags are used to let the user know they succeeded when carrying out a step or action. 
 
-[This is what I want my link to say]({{site.baseurl}}/insertlink/)
+## Links to Other Documents
 
-Link to an outside document (opens a new window):
+To link to useful references, information, or another page within GSA's IDManagement.gov website, use: 
+
+[This is what I want my link to say]({{site.baseurl}}/insertlink/)<!--Is that correct for this type of link?-->
+
+Link to an document outside the GSA IDManagment.gov website (opens a new window):
 
 [This is what I want my link to say](https://www.governmentagency.gov){:target="_blank"}
-
-  > **Note:**  This is the **end of the Markdown Template**.
 
 # Writing and Style Resources
 
