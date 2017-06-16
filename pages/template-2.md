@@ -10,9 +10,9 @@ permalink: /template/
 
 {% include alert-info.html heading = "Before starting a new FICAM guide, please review the _Contributing.md_ page!" content="The _Contributing.md_ page provides terms and conditions and other important instructions." %}
 
-Thank you for your interest in creating a FICAM Guide to solve a PIV, FPKI, or FICAM-Arch technical issue! Whether you have a technical topic in mind or don't yet have a topic for a new Guide, we welcome your willingness to contribute! 
+Thank you for your interest in creating a FICAM Guide! We welcome your contribution to solving a PIV, FPKI, or FICAM-Arch technical issue! 
 
-This guide gives you the steps you need to start writing your new FICAM Guide. 
+This **Contributor's Template** will give you some steps needed to get started on your new FICAM guide.
 
 Click on one of these links to go to a specific section:  
 
@@ -20,7 +20,7 @@ Click on one of these links to go to a specific section:
   * [**Create a GitHub Account**](#create-a-github-account)
   * [**Create a GitHub Repository, Branch, and Page**](#create-a-github-repository,-branch-,-and-page)
   * [**Create an Issue in GitHub**](#create-an-issue-in-github)
-  * [**Guide Template**](#guide-template)
+  * [**Use the Guide Template**](#use-the-guide-template)
   * [**More Markdown Syntax**](#More-markdown-syntax)
   * [**Help with Writing and Style**](#help-with-writing-and-style)  
   
@@ -81,11 +81,11 @@ To create a new **_GitHub Page_** to start your guide, do this:
   
 ## Create an Issue in GitHub
 
-When you have a topic for your new FICAM Guide, the next step is to create a new **Issue** in **GitHub** to discuss it.
+When you have a topic for your new FICAM Guide, the next step is to create a new **Issue** in **GitHub** to discuss it. This will also give other contributors an opportunity to offer their insights and experience, which may help you with writing your guide.
 
-# Use the Guide Template   </stopped/>
+# Use the Guide Template
 
-### Copy and Paste the Template below into your new Page
+This **Template** will help you to structure and develop your guide. If you have not already done so, copy and paste this **Template** into your new GitHub Page, starting with [**Template Starts Here**](#template-starts-here) below.
 
   1. At the top right area of your Page's content window, click on the **pencil** symbol.
 
@@ -101,21 +101,14 @@ When you have a topic for your new FICAM Guide, the next step is to create a new
   
   > This action saves all of your changes to your Page. When you are ready, you can use the Template as the basis for writing your guide. 
 
-# Markdown Syntax
-
   * The Template below is already formatted in Markdown syntax for you to use.  
   * Copy and paste the Template into your Page.
   
   > For more on Markdown, go to:  [**Mastering Markdown**](https://guides.github.com/features/mastering-markdown/){:target="blank"}.
 
-Now that you have created a new Page to start your guide, this **Template** will help you to structure and develop content for your guide.
+# Template Starts Here
 
-  1. If you have not already done so, copy and paste the **Template** below into your new Page.
-  
-# Guide Template
-
-
-# A Word about the Navigation Block (above) and Title of Your FICAM Guide
+## A Word about the Navigation Block (above) and the Title of Your FICAM Guide
 ---
 layout: default
 title: Guidance Document Template 
@@ -148,15 +141,21 @@ This section will tell the user what he/she needs to do to prepare before starti
 
 This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
 
-## This Is a Second-Level Heading (Use other Headings as needed)
+**Use additional Headings, as needed:**
+
+## This Is a Second-Level Heading
 ### This is a third-level heading
 #### This is a fourth-level heading
 ##### This is a fifth-level heading
 
-  1. Step 1 of procedure 1. (Numbered List item)
-  2. Step 2 of procedure 1. (Numbered List item)
+**Number List Items:**
+
+1. Step 1 of procedure 1. (Numbered List item - Indent 2 spaces, enter a number, and add 1 space.) 
+2. Step 2 of procedure 1. (Numbered List item) 
 
   > **Note:** or call-out needed. (**Citation??**)
+  
+**Add one Alert with reference to others in More Markdown Syntax**
   
 # Title of Procedure 2 (Heading 1)
 
@@ -173,23 +172,12 @@ This introductory text should give any user-friendly background information; exp
   > **Note:** or call-out needed. (**Citation??**)
   
   > Repeat procedural sections, as needed.
+  
+**Add a different Alert with reference to others in More Markdown Syntax**
 
 ++++++++++++++++++++
 
 ## More Markdown Syntax
-
-> In Markdown syntax, the **#** symbol is used to format headings.
-
-# This Is a Top-Level Heading 
-## This Is a Second-Level Heading
-### This is a third-level heading
-#### This is a fourth-level heading
-##### This is a fifth-level heading
-
-
-## Main Body Paragraph
-
-This is the main body paragraph style. 
 
 ## Bold and Italics
 
@@ -206,15 +194,6 @@ To create bullet lists (i.e., unordered list), use spaces (not tabs) and an aste
     * Sub-bullet 2
 
   > **Note:** Markdown supports only **two** indention levels for bullet lists.
-
-To create a numbered list (i.e., ordered list), use spaces (not tabs) and numbers. The numbers will automatically increment for you when rendered. The first numbered list will render as "1, 2, 3," etc. Even though you need to type 1, 2, etc., for a numbered sub-item list, the sub-items will render as "i, ii, iii," etc.
-
-  1. Numbered item 1 (Indent 2 spaces, enter a number, and add 1 space. First-level numbered items will render as "1, 2, 3," etc.)
-  2. Numbered item 2
-     1. Numbered sub-item 1 (Indent 5 spaces, enter a number, and add 1 space. Second-level numbered items will render as "i, ii, iii," etc.)
-     2. Numbered sub-item 2
-
-  > **Note:** Markdown for the GSA FICAM Guides supports only **one** numbered list level (no second-level items).
 
 ## Code Blocks
 
@@ -282,7 +261,11 @@ To link to useful references, information, or another page within GSA's IDManage
 
 Link to an document outside the GSA IDManagment.gov website (opens a new window):
 
-[This is what I want my link to say](https://www.governmentagency.gov){:target="_blank"}
+[This is what I want my link to say](https://www.governmentagency.gov){:target="blank"}
+
+**Template Ends Here**
+
+ADD A LINE HERE
 
 # Help with Writing and Style
 
