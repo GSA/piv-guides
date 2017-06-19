@@ -19,9 +19,11 @@ After reading the _Contributing_ page, it is recommended that you read this enti
   * [**Selecting a Topic for Your Guide**](#selecting-a-topic-for-your-guide)
   * [**Using GitHub**](#Using-Github)
   * [**Structuring Your Guide and Using Markdown**](#structuring-your-guide-and-using-markdown)
-  * [**Help with Writing and Style**](#help-with-writing-and-style)  
+  * [**Resources for Writing and Style**](#resources-for-writing-and-style)  
   
 # Selecting a Topic for Your Guide
+
+## If You Don't Have a Topic
   
 **If you would like to write a guide but don't yet have a topic** &mdash; A good place to start is to look at the open **Issues** lists in the GSA GitHub repositories. The open **Issues** lists discuss many technical issues in search of contributors.
 
@@ -30,12 +32,22 @@ To review the open **Issues** lists, select a repository:
   * **PIV-Guides:**  [PIV-Guides](https://github.com/GSA/piv-guides){:target="blank"} 
   * **FPKI-Guides:**  [FPKI-Guides](https://github.com/GSA/fpki-guides){:target="blank"} 
   * **FICAM-Arch:**  [FICAM-Arch](https://github.com/GSA/ficam-arch){:target="blank"} 
-  
+
 **Once you select a topic** &mdash; The next step is to create a GitHub account, if you don't have one. See [**Create a GitHub Account**](#create-a-github-account). If you already have an account, see the steps below to [**Create a Repository**](#create-a-repository) to "fork" the GSA repos related to your topic.
+
+## If You Already Have a Topic
 
 **If you already have a topic for your new guide** &mdash; The first step is to create a GitHub account, if you don't have one. (See the next section, **_Create a GitHub Account_**.
 
 # Working with GitHub
+
+This sections explains how to:
+
+  * [Create a GitHub Account](#create-a-github-account) 
+  * [Create a Repository](#create-a-repository)
+  * [Create a Branch](#create-a-branch)
+  * [Create a Page](#create-a-page)
+  * [Create an Issue](#create-an-issue)
 
 ## Create a GitHub Account
 
@@ -89,7 +101,7 @@ To create a new **Page** where you can write your guide:
 
 > This creates and saves your new Page in your new branch.
   
-## Create an Issue in GitHub
+## Create an Issue
 
 Once you have a topic for your guide, a forked repository, a branch, and a page, the next step is to create an **Issue** in GitHub. A new **Issue** gives you a forum to discuss and collaborate with other community members about your topic. Collaboration with community members may help bring to light other related issues, insights, and new solutions and these may help you to write your guide.
 
@@ -243,7 +255,7 @@ Link to an document outside the GSA IDManagment.gov website (opens a new window)
 ### TEMPLATE ENDS HERE
 ___
 
-# Help with Writing and Style
+# Resources for Writing and Style
 
 For the FICAM Guides, general writing guidelines include:
 
