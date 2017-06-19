@@ -138,7 +138,7 @@ Add a **Table of Contents (TOC)** after the first main body paragraph. THe TOC s
 
 # Overview (Heading 1)
 
-(Main body paragraph) This introductory text should give a brief overview of the subject matter covered in your guide. In addition to the subject-matter overview, it may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
+(Main body paragraph) This introductory text should give a brief overview of the topic covered in your guide. In addition to the topic overview, you may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
 
 # Assumptions (Heading 1)
 
@@ -186,7 +186,7 @@ This introductory text should give any user-friendly background information; exp
   
 **Add a different Alert with reference to others in More Markdown Syntax**
 
-++++++++++++++++++++
+___
 
 ## Additional Help with Markdown Syntax
 
