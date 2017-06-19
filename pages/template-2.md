@@ -186,10 +186,9 @@ This introductory text should give any user-friendly background information; exp
   
   > Repeat procedural sections, as needed.
   
-**Add a different Alert with reference to others in More Markdown Syntax**
+*************************Add a different Alert with reference to others in More Markdown Syntax**
 
-
-**TEMPLATE ENDS HERE**
+<center> <h3>TEMPLATE ENDS HERE</h3> </center>
 ___
 
 ## Additional Help with Markdown Syntax
