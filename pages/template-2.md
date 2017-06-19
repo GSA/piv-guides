@@ -16,15 +16,13 @@ The purpose of this **Contributor's Template** is to help you get you started on
 
 After reading the _Contributing_ page, it is recommended that you read this entire _Contributor's Template_. If you want to go to a specific section, click on one of the links below:  
 
-  * [**Select a Topic for Your Guide**](#select-a-topic-for-your-guide)
-  * [**Create a GitHub Account**](#create-a-github-account)
-  * [**Create a GitHub Repository, Branch, and Page**](#create-a-github-repository,-branch-,-and-page)
-  * [**Create an Issue in GitHub**](#create-an-issue-in-github)
-  * [**Structure Your Guide &mdash; Template with Markdown Syntax**](#structure-your-guide-&mdash;-template-with-markdown-syntax)
-  * [**Additonal Help with Markdown Syntax**](#additional-help-with-markdown-syntax)
+  * [**Selecting a Topic for Your Guide**](#selecting-a-topic-for-your-guide)
+  * [**Using GitHub**](#Using-Github)
+  * [**Structuring Your Guide and Using Markdown**](#structuring-your-guide-and-using-markdown)
+  * [**Using More Markdown Syntax**](#using-more-markdown-syntax)
   * [**Help with Writing and Style**](#help-with-writing-and-style)  
   
-# Select a Topic for Your Guide
+# Selecting a Topic for Your Guide
   
 **If you would like to write a guide but don't yet have a topic** &mdash; A good place to start is to look at the open **Issues** lists in the GSA GitHub repositories. The open **Issues** lists discuss many technical issues in search of contributors.
 
@@ -38,7 +36,9 @@ To review the open **Issues** lists, select a repository:
 
 **If you already have a topic for your new guide** &mdash; The first step is to create a GitHub account, if you don't have one. (See the next section, **_Create a GitHub Account_**.
 
-# Create a GitHub Account
+# Working with GitHub
+
+## Create a GitHub Account
 
 For help with creating a GitHub account, go to: [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/). For more help, you can contact GSA GitHub Support at: gsa-github.support@gsa.gov. 
 
@@ -58,7 +58,7 @@ Now that you have a forked repo, you need to create a new branch to store your g
 
 ## Create a Branch
 
-To create a new branch to store your guide, do this:
+To create a new branch to store your guide:
 
 1. Make sure you are in your profile area. In the top right-hand corner of the respository screen, click on the down-arrow next to your profile icon/picture. Select **_Your profile_**.  
 2. Click on the personal repository where you want to store your guide.
@@ -75,7 +75,7 @@ Now that you have a new branch to store your guide, you need to create a new **"
     
 ## Create a Page
 
-To create a new **Page** where you can write your guide, do this:  
+To create a new **Page** where you can write your guide:  
 
 1. Check the **_Branch_** button to ensure that the branch name you created is displayed. If it isn't, click on the down-arrow and select the new branch name from the drop-down list.
 2. Click on the gray **_Create New File_** button located at the top right-hand area of your repository's window (above the folders and files listing).  
@@ -92,9 +92,9 @@ To create a new **Page** where you can write your guide, do this:
   
 # Create an Issue in GitHub
 
-Once you have a topic for your guide, a forked repository, a branch, and a page, the next step is to create an **Issue** in GitHub. **Issues** give you a forum to discuss your topic and enable you to collaborate with other community experts. Additional related issues, insights, and new solutions may be offered by the community that will help you to write your guide.
+Once you have a topic for your guide, a forked repository, a branch, and a page, the next step is to create an **Issue** in GitHub. A new **Issue** gives you a forum to discuss and collaborate with other community members about your topic. Collaboration with community members may help bring to light other related issues, insights, and new solutions and these may help you to write your guide.
 
-To create a new Issue in GitHub, do this:
+To create a new Issue in GitHub:
 
 1. Go to your forked repository and click on the **Issues** tab in the upper-right area of your window just below the repository's name.
 2. Click on the green **New Issue** button to create a new Issue.
@@ -102,19 +102,18 @@ To create a new Issue in GitHub, do this:
 
 For more help with **Issues**, go to:  [Mastering Issues](https://guides.github.com/features/issues/){:target="blank"}.
 
-# Structure Your Guide &mdash; Template with Markdown Syntax
+# Structuring Your Guide and Using Markdown
 
-Starting with [**Template Starts Here**](#template-starts-here) below, copy and paste the text to **Template Ends Here**, into your new GitHub Page. THis template will help you to structure and develop your guide. Do this:
+## Use the Template and Markdown Syntax
 
-  1. At the top right area of your Page's content window, click on the **pencil** symbol.
+The template below will help you to structure your guide and use Markdown syntax, which is GitHub's required text editor. 
 
-  > You will use this mode to create and edit content for your guide.
-  
-  2. **Select all of the Template contents below. Copy and paste the content into your Page.**
-  3. Change the **title**, "Guidance Document Template," to your guide's title (for example, _My Technical Guide_).
-  4. Change the **permalink** title to a short version of your guide's title (for example, _/myguide/_.
-  
-  > The **permalink** title should be in the format: **/mypage/**, instead of _mypage.md_ 
+1. See the following header, **Template Starts Below**. Copy the text up to **Template Ends Here**. 
+2. Paste the text into your new GitHub Page. 
+3. At the top right-hand area of your new **Page's** window, click on the **pencil**.
+
+> The **pencil** symbol launches the writing and editing mode for your Page.
+
   
   6. Once you have made these changes, scroll down to the bottom of your screen. At the left side of the screen, click on the green button that says **Commit changes.**
   
@@ -132,17 +131,28 @@ ___
 # Template with Markdown Syntax
 
 ## Navigation Block and Your Guide's Title
+
+Once you have copied and pasted this **Template** into your **Page**, follow the steps below to make a few changes to the navigation block, which will be used when your guide is posted on the website for navigation purposes. The navigation block looks like this:
+
+(_Navigation Block_)
 ---
 layout: default
 title: Guidance Document Template 
 permalink: /template/
 ---
 
-  1. **layout: default**. This field always stays the same. No changes are necessary.
-  2. **title: [document title]**.  On your Page (Markdown), you _won't_ see a main title. The **Title** field automatically adds the title to your guide when it is posted on the IDManagement.gov website.
-  3. **permalink: /[name]/**. The **permalink** should be a short name for your document title. Change **/template/** to a short name for your guide.
+Make these changes to the navigation block:
 
-Add a **Table of Contents (TOC)** after the first main body paragraph. THe TOC should link to each major section. For example:
+1. **layout: default**. This is the standard layout. No changes need to be made.
+2. **title: [document title]**. Change the **title**, "Guidance Document Template," to your guide's title. 
+
+> This is the title that will appear on the website, but you won't see a main title displayed in your **Page**. 
+
+3. **permalink: /[name]/**. The **permalink**. Change **/template/** to a short name for your guide using the "_/name/_" format.
+
+(_Main Body Paragraph_) Begin your guide with a brief statement about its purpose.
+
+(_Table of Contents_) After the first main body paragraph, add a TOC link to each Heading 1 section. For example:
 
   * [Section 1 Title](#words-in-section3-title-separated-by-dashes)
   * [Section 2 Title](#words-in-section2-title-separated-by-dashes)
@@ -150,19 +160,19 @@ Add a **Table of Contents (TOC)** after the first main body paragraph. THe TOC s
 
 # Overview (Heading 1)
 
-(Main body paragraph) This introductory text should give a brief overview of the topic covered in your guide. In addition to the topic overview, you may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
+(_Main body paragraph_) This introductory text should be a brief overview of your guide's topic. In addition to the overview, you may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
 
 # Assumptions (Heading 1)
 
-(Main body paragraph) This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. This section may also include conditions that must be met before the user can begin the procedures. Alternate titles may be: **_Preconditions_** (i.e., list any conditions that must be met) or **_Hardware and Software_Requirements** (i.e, list any hardware or software that must be obtained and/or configured).
+(_Main body paragraph_) This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. This section may also include conditions that must be met before the user can begin the procedures. Alternate titles may be: **Preconditions** (i.e., list any conditions that must be met) or **Hardware and Software_Requirements** (i.e, list any hardware or software that must be obtained and/or configured).
 
 # Before You Get Started (Heading 1)
 
-This section will tell the user what he/she needs to do to prepare before starting a set of procedures. 
+This section should tell the user what he/she needs to do to prepare before starting a set of procedures. 
 
-# Title of Procedure 1 (Heading 1)
+# Title of Procedure 1 (Heading 1) (_Repeat Procedural Sections as Needed_)
 
-This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
+(_Main body paragraph_) This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should directly walk the user through exactly what they need to do to complete the procedure.
 
 **Use additional Headings, as needed:**
 
@@ -171,55 +181,24 @@ This introductory text should give any user-friendly background information; exp
 #### This is a fourth-level heading
 ##### This is a fifth-level heading
 
-**Number List Items:**
-
-1. Step 1 of procedure 1. (Numbered List item - Indent 2 spaces, enter a number, and add 1 space.) 
-2. Step 2 of procedure 1. (Numbered List item) 
-
-  > **Note:** or call-out needed.
-  
-**Add one Alert with reference to others in More Markdown Syntax**
-  
-# Title of Procedure 2 (Heading 1)
-
-**This is the main body paragraph style.** This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
-
-## This Is a Second-Level Heading (Use other Headings as needed)
-### This is a third-level heading
-#### This is a fourth-level heading
-##### This is a fifth-level heading
-
-  1. Step 1 of procedure 1. (Numbered List item)
-  2. Step 2 of procedure 1. (Numbered List item)
-
-  > **Note:** or call-out needed. (**Citation??**)
-  
-  > Repeat procedural sections, as needed.
-  
-*************************Add a different Alert with reference to others in More Markdown Syntax**
-
-### TEMPLATE ENDS HERE
-___
-
-## Additional Help with Markdown Syntax
-
-## Bold and Italics
+**Bold and Italics:**
 
   * Use double asterisks to bold a word:  **bold**.
   * Use underscores to create italics:  _italics_.
 
-## Bulleted and Numbered Lists
+**Number List Items:**
 
-To create bullet lists (i.e., unordered list), use spaces (not tabs) and an asterisk, as follows:
+1. Step 1 of procedure 1. (Numbered List item - Indent 2 spaces, enter a number, and add 1 space.) 
+2. Step 2 of procedure 1. (Numbered List item)
 
-  * Bullet 1 (Indent 2 spaces, enter an asterisk, and add 1 space.)
-  * Bullet 2
-    * Sub-bullet 1 (Indent 4 spaces, enter an asterisk, and add 1 space.)
-    * Sub-bullet 2
+**Bullet List Items:**
 
-  > **Note:** Markdown supports only **two** indention levels for bullet lists.
+* Bullet 1 (Indent 2 spaces, enter an asterisk, and add 1 space.)
+* Bullet 2
 
-## Code Blocks
+> **Note:** or call-out indented block.
+
+**Code Blocks**
 
 To create a code block, use spaces, backticks (```), and Returns in this order: 
 
@@ -234,23 +213,22 @@ For example:
 
    ```
    Text within three backticks for code or command line samples
-   ```
 
-## Code Comments
+**Code Comments**
 
-<!--For example, this code denotes a comment, and information written inside of it will not appear on the website but can be used as a reference for others viewing the file.-->
+<!--For example, this code denotes a comment. The comment will not appear on the website but can be used as a reference for others viewing the file.-->
 
-## Images
+**Images**
 
 To insert an image (graphic) into your Page, first upload the image file to the **/img/** folder in the appropriate GitHub repository.  Next, at the image insertion point in your Page, add this format to link to the image:
 
 ![This is what I want a screen reader to say for 508 compliance]({{site.baseurl}}/img/thisisthesampleimagefile.png)
 
-  > To align an image in your Page, use the **align** instruction at the end of an image link (i.e., **"left"**, **"center"**, or **"right"**) using this format:
+> To align an image in your Page, use the **align** instruction at the end of an image link (i.e., **"left"**, **"center"**, or **"right"**) using this format:
 
 ![Alt text for an image goes here]({{site.baseurl}}/folder that image is in/imagename.png){:align="right"}
 
-## Alerts, Warnings, and Information Blocks
+**Alerts, Warnings, and Information Blocks**
 
 Use the Alert, Warning, or Information Block formatting to highlight specific information in your Page.
 
@@ -258,26 +236,26 @@ Use the Alert, Warning, or Information Block formatting to highlight specific in
 
 **FIND FORMAT FOR WARNING, ALERT, AND SUCCESS - CHANGE ALL BELOW TO SAME FORMAT**
 
-### Warning blocks
+* **Warning Blocks**
 
 This text will appear as a **warning flag**, which is a yellow banner on the website. (The ">" symbol and the coded line directly underneath the text will create the formatting for this flag.) Warning flags can be used for notifications, such as when a user should skip a certain procedure.
 {:class="warning"}
 
-### Alerts for Notifications or Problems
+* **Alerts for Notifications or Problems**
 
 This text will appear as an **alert flag**, which is a red banner on the website. Alert flags may be used for notifications, such as common problems that may occur.
 {:class="alert"}
 
-### Information Alerts
+* **Information Alerts**
 
 This text will appear as **informational flag**, which is a green banner on the website. Information flags can be used for notifications such as useful links or helpful tips.
 {:class="info"}
 
-### Success Alerts **BLUE BANNER??**
+* **Success Alerts** **BLUE BANNER??**
 
 This text will appear as **success flag**, which is a **blue?** banner on the website. These flags are used to let the user know they succeeded when carrying out a step or action. 
 
-## Links to Other Documents
+**Links to Other Documents**
 
 To link to useful references, information, or another page within GSA's IDManagement.gov website, use: 
 
@@ -287,9 +265,8 @@ Link to an document outside the GSA IDManagment.gov website (opens a new window)
 
 [This is what I want my link to say](https://www.governmentagency.gov){:target="blank"}
 
-**Template Ends Here**
-
-ADD A LINE HERE
+### TEMPLATE ENDS HERE
+___
 
 # Help with Writing and Style
 
