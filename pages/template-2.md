@@ -16,7 +16,7 @@ This **Contributor's Template** will give you some steps needed to get started o
 
 Click on one of these links to go to a specific section:  
 
-  * [**Select a Topic for Your New FICAM Guide**](#select-a-topic-for-your-new-ficam-guide)
+  * [**Select a Topic for Your Guide**](#select-a-topic-for-your-guide)
   * [**Create a GitHub Account**](#create-a-github-account)
   * [**Create a GitHub Repository, Branch, and Page**](#create-a-github-repository,-branch-,-and-page)
   * [**Create an Issue in GitHub**](#create-an-issue-in-github)
@@ -25,18 +25,18 @@ Click on one of these links to go to a specific section:
   * [**Help with Writing and Style**](#help-with-writing-and-style)  
   
 # Select a Topic for Your Guide
-
-* **If you already have a topic for your new FICAM Guide** &mdash; The first step is to starting your guide is to [**Create a GitHub Account**](#create-a-github-account).
   
-* **If you don't yet have a topic** &mdash; A good first step is to review the open **Issues** lists in the GSA GitHub repositories: 
+**If you would like to write a guide but don't yet have a topic** &mdash; A good place to start is to look at the open **Issues** lists in the GSA GitHub repositories. The open **Issues** lists offer many technical issues in search of a contributor.
 
-  - **PIV-Guides** URL
-  - **FPKI-Guides** URL
-  - **FICAM-Arch** URL
+Select a repository ("repo"):
+
+  * **PIV-Guides** URL
+  * **FPKI-Guides** URL
+  * **FICAM-Arch** URL
   
-The open **Issues** lists offer many technical issues in search of a contributor.
+Once you select a topic, the next step is to create a GitHub account, if you don't have one. See [**Create a GitHub Account**](#create-a-github-account).
 
-  > Once you select a topic, the next step is to [**Create a GitHub Account**](#create-a-github-account) to start your guide. 
+**If you already have a topic for your new FICAM Guide** &mdash; The first step is to create a GitHub account. See [**Create a GitHub Account**](#create-a-github-account).
 
 # Create a GitHub Account
 
