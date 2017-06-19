@@ -12,7 +12,7 @@ Thank you for your interest in creating a FICAM Guide! We welcome your contribut
 
 {% include alert-info.html heading = "Before starting a new FICAM guide, please review the _Contributing_ page!" content="The _Contributing_ page provides terms and conditions and other important instructions." %}
 
-After reading the _Contributing_ page, please read this entire _Contributor's Template_. To go to a specific major section, click on one of these links:  
+After reading the **Contributing** page, please review this entire **Contributor's Template**. To go to a specific major section, click on one of these links:  
 
   * [**Selecting a Topic for Your Guide**](#selecting-a-topic-for-your-guide)
   * [**Using GitHub**](#Using-Github)
@@ -23,13 +23,13 @@ After reading the _Contributing_ page, please read this entire _Contributor's Te
 
 ## If You Don't Have a Topic
   
-If you want to write a FICAM Guide but don't yet have a topic, a good place to start is the open **Issues** lists in the GSA GitHub repositories. The open Issues lists discuss many technical issues in search of contributors. To review the open Issues lists, select a repository:
+If you would like to write a FICAM Guide but don't yet have a topic, the open **Issues** lists in the GSA GitHub repositories is a good place to start. The open Issues lists discuss many technical issues in search of contributors. To review the open Issues, select a repository:
 
   * **PIV-Guides:**  [PIV-Guides](https://github.com/GSA/piv-guides){:target="blank"} 
   * **FPKI-Guides:**  [FPKI-Guides](https://github.com/GSA/fpki-guides){:target="blank"} 
   * **FICAM-Arch:**  [FICAM-Arch](https://github.com/GSA/ficam-arch){:target="blank"} 
 
-Once you select a topic, the next step is to create a GitHub account. See [**Create a GitHub Account**](#create-a-github-account). 
+Once you have selected a topic, the next step is to create a GitHub account. See [**Create a GitHub Account**](#create-a-github-account). 
 
 If you already have a GitHub account, the next step is to "fork" a copy of your topic's related GSA repository. See [**Create a Repository**](#create-a-repository).
 
@@ -63,7 +63,7 @@ Once you have a GitHub account, you will need to "fork" a copy of your topic's r
 
 For more help with forking a repo, see [Fork a Repo](https://help.github.com/articles/fork-a-repo/){:target="blank"}
 
-Now that you have a forked repo, the next step is to create a new branch to store your guide. See the next section, **_Create a Branch_**.
+Next, see the following steps to **_Create a Branch_**.
 
 ## Create a Branch
 
@@ -76,9 +76,9 @@ To create a new branch to store your guide:
 {% include alert-info.html heading = "The GSA repository's **_Staging_** branch is the master branch for each GSA repository. It is important that you always start with the **_Staging_** branch in your forked repository when you create a new branch. Starting at **_Staging_** helps keep your repository's files sychronized with GSA's repository (e.g., PIV-Guides)." %}
   
 2. Click on the **_Branch_** button again and enter your new **branch name** into the _text field_ (e.g., **_[Guide Name] Branch_**).
-3. Select the blue button that now displays your new branch name. (You are now in the new branch.)
+3. Select the blue button that now displays your new branch name.
 
-Now that you have a new branch to store your guide, the next step is to create a new **"Page"**, where you can write your guide. See the next section, **_Create a Page_**.
+Next, see the following steps to **_Create a Page_**.
     
 ## Create a Page
 
@@ -90,9 +90,7 @@ To create a new **Page** where you can write your guide:
 > At the top left-hand area of this window, the branch name now appears with a **"/"** after it and a text box.
 
 4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., Mynewfile.md).
-5. Go to the bottom of your Page. Below the **Commit new file** comment box, click on the green **Commit new file** button.
-
-> This saves your new Page in your new branch.
+5. Go to the bottom of your Page. Below the **Commit new file** comment box, click on the green **Commit new file** button to save your new Page.
   
 ## Create an Issue
 
@@ -109,7 +107,7 @@ To create a new Issue in GitHub:
 
 # Structuring Your Guide and Using Markdown
 
-To help structure your guide and use Markdown syntax, use the following template. To use this template: 
+To help structure your guide and use Markdown syntax, use the following template. 
 
 1. Go to the heading entitled: **Template with Markdown Syntax**. From there, copy the text up to **Template Ends Here**. 
 2. Go to your new Page's top right-hand-side and click on the **pencil** symbol (content writing and editing mode).
