@@ -20,8 +20,8 @@ Click on one of these links to go to a specific section:
   * [**Create a GitHub Account**](#create-a-github-account)
   * [**Create a GitHub Repository, Branch, and Page**](#create-a-github-repository,-branch-,-and-page)
   * [**Create an Issue in GitHub**](#create-an-issue-in-github)
-  * [**Use the Guide Template**](#use-the-guide-template)
-  * [**More Markdown Syntax**](#More-markdown-syntax)
+  * [**Structure Your Guide &mdash; Template with Markdown Syntax**](#structure-your-guide-&mdash;-template-with-markdown-syntax)
+  * [**Additonal Help with Markdown Syntax**](#additional-help-with-markdown-syntax)
   * [**Help with Writing and Style**](#help-with-writing-and-style)  
   
 # Select a Topic for Your Guide
@@ -44,31 +44,32 @@ For the steps needed to create a GitHub account, go to: [Signing up for a New Gi
 
 ## Create a Repository
 
-If you don't already have a forked GSA repo related to your topic, do this:
+If you don't have a GSA repo related to your topic (e.g., PIV-Guides), you need to fork the repo. (A fork is your personal copy of a repo. With a forked repo, you can create a new file and work on it without affecting GSA's original repo.)
 
 1. Go to: [GSA Respositories at GitHub.com](https://github.com/GSA){:target="blank"}.
-2. Select the repo you want to fork. (For more help with forking a repo, go to: [Create a Repo](https://help.github.com/articles/create-a-repo/).)
+2. Select the repo you want to fork. 
 3. In the upper right-hand corner of the GSA repo screen, click on the gray **Fork** button.
 
-> The forked GSA repo is now available in your GitHub profile.
+> The forked GSA repo will now be in your GitHub profile.
 
-See the next section below: [**Create a Branch for Your Guide**](#create-a-branch-for-your-guide) to create a new **Branch** to store your guide.
+For more help with forking a repo, see [Fork a Repo](https://help.github.com/articles/fork-a-repo/){:target="blank"}
+
+Now that you have a forked repo, you need to create a new branch to store your guide.
 
 ## Create a Branch
 
-Now that you have a GitHub account and repo, you need to create a **Branch**. 
-
 To create a new branch, do this:
-  
-  1. Click on the **_Branch_** button and enter a new branch name into the text field. 
-  
-  > The **_Branch_** button will display the new branch name. 
 
-  2. Select the green-highlighted Branch name.  **CHECK THIS**
-  
-  > This Branch is where your new guide (called a **Page**) will be stored.
+1. Go to the **_Branch_** button. At the pull-down, select the **_Staging_** branch. 
 
-See the next section below: [**Create a New Page for Your Guide**](#create-a-new-page-for-your-guide) to create a new **Page** for writing your guide.
+{% include alert-info.html heading = "The GSA repo's **_Staging_** branch is the master branch for the GSA repos. It is important that you always start with the **_Staging_** branch in your forked repo. This keeps your repo's files sychronized with GSA's repo (e.g., PIV-Guides)." %}
+  
+2. Click on the **_Branch_** button and enter your new **branch name** into the _text field_ (e.g., **_[Guide Name] Branch_**).
+3. Select the blue button below the text field with your new branch's name.
+  
+> The **_Branch_** button now displays your new branch name. 
+
+Now that you have a new branch to store your guide, you need to create a new **Page**, where you will write your guide.
     
 ## Create a "Page"
 
@@ -81,11 +82,19 @@ To create a new **Page** for writing your guide, do this:
   5. Scroll down to the bottom of your screen. At the left side of your screen, below the **Commit new file** comment box, click on the green button that says **Commit new file**.
   > This creates and saves your new Page in your selected or new branch.
   
-## Create an Issue in GitHub
+# Create an Issue in GitHub
 
-Once you have a topic for your new guide, a forked repo, branch, and page, the next step is to create a new **Issue** in GitHub to discuss your topic and ask for other community members to collaborate/contribute.  Other collaborators/contributors************STOPPED HERE***** an opportunity to offer their insights and experience, which may help you with writing your guide.
+Once you have a guide topic, a forked repo, a branch, and a page, the next step is to discuss your topic on GitHub by creating an **Issue**. By discussing your topic through GitHub, you can collaborate with other community experts. Added insights and new solutions from the community may help you to write your guide.
 
-# Use the Guide Template
+To create a new Issue in GitHub, do this:
+
+*************************stopped
+
+create a new **Issue** in GitHub to discuss your topic and ask for other community members to collaborate/contribute.  
+
+
+
+# Structure Your Guide &mdash; Template with Markdown Syntax
 
 Starting with [**Template Starts Here**](#template-starts-here) below, copy and paste the text to **Template Ends Here**, into your new GitHub Page. THis template will help you to structure and develop your guide. Do this:
 
@@ -121,7 +130,7 @@ permalink: /template/
   2. **title: [document title]**.  On your Page (Markdown), you _won't_ see a main title. The **Title** field automatically adds the title to your guide when it is posted on the IDManagement.gov website.
   3. **permalink: /[name]/**. The **permalink** should be a short name for your document title. Change **/template/** to a short name for your guide.
 
-Add a **Table of Contents (TOC)** (links) after the main body's first paragraph. Create a linked list like this:
+Add a **Table of Contents (TOC)** after the first main body paragraph. THe TOC should link to each major section. For example:
 
   * [Section 1 Title](#words-in-section3-title-separated-by-dashes)
   * [Section 2 Title](#words-in-section2-title-separated-by-dashes)
@@ -179,7 +188,7 @@ This introductory text should give any user-friendly background information; exp
 
 ++++++++++++++++++++
 
-## More Markdown Syntax
+## Additional Help with Markdown Syntax
 
 ## Bold and Italics
 
