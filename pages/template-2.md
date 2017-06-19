@@ -34,29 +34,29 @@ Select a repository ("repo"):
   * **FPKI-Guides** URL
   * **FICAM-Arch** URL
   
-Once you select a topic, the next step is to create a GitHub account, if you don't have one. See [**Create a GitHub Account**](#create-a-github-account).
+**Once you select a topic** &mdash; The next step is to create a GitHub account, if you don't have one. See [**Create a GitHub Account**](#create-a-github-account). If you already have a GitHub account, see the steps below to [**Create a Repository**](#create-a-repository) to "fork" one of the GSA repos (i.e., related to your topic).
 
 **If you already have a topic for your new FICAM Guide** &mdash; The first step is to create a GitHub account. See [**Create a GitHub Account**](#create-a-github-account).
 
 # Create a GitHub Account
 
-> For help, please see:  [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/). For additional help, contact GSA GitHub Support at: gsa-github.support@gsa.gov. 
+For the steps needed to create a GitHub account, go to: [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/). For more help, you can contact GSA GitHub Support at: gsa-github.support@gsa.gov. 
 
 ## Create a Repository
 
-If you don't have a repository that you "forked" from GSA's FICAM guide repositories (**PIV-Guides**, **FPKI-Guides**, or **FICAM-Arch**), do this:  
+If you don't already have a forked GSA repo related to your topic, do this:
 
-1. Go to: [GSA Respositories at GitHub.com](https://github.com/GSA){:target="blank"}.go to [GSA GitHub]
-2. Select the repository you want. For help setting up a repository, go to: [Create a Repo](https://help.github.com/articles/create-a-repo/).
-3. In the upper right-hand corner of the GSA respository screen, click on the gray **Fork** button.
+1. Go to: [GSA Respositories at GitHub.com](https://github.com/GSA){:target="blank"}.
+2. Select the repo you want to fork. (For more help with forking a repo, go to: [Create a Repo](https://help.github.com/articles/create-a-repo/).)
+3. In the upper right-hand corner of the GSA repo screen, click on the gray **Fork** button.
 
-> This automatically places a copy of the GSA repository in your GitHub profile.
+> The forked GSA repo is now available in your GitHub profile.
 
-For the next steps, click on [**Create a Branch for Your Guide**](#create-a-branch-for-your-guide).
+See the next section below: [**Create a Branch for Your Guide**](#create-a-branch-for-your-guide) to create a new **Branch** to store your guide.
 
 ## Create a Branch
 
-Now that you have a GitHub account and repository, you'll need to create a **Branch** where your new guide (called a **Page**) will be stored. 
+Now that you have a GitHub account and repo, you need to create a **Branch**. 
 
 To create a new branch, do this:
   
@@ -66,13 +66,13 @@ To create a new branch, do this:
 
   2. Select the green-highlighted Branch name.  **CHECK THIS**
   
-  > This Branch is where your new Page will be stored.
+  > This Branch is where your new guide (called a **Page**) will be stored.
 
-Once you have created a new Branch, go to [**Create a New Page for Your Guide**](#create-a-new-page-for-your-guide).
+See the next section below: [**Create a New Page for Your Guide**](#create-a-new-page-for-your-guide) to create a new **Page** for writing your guide.
     
 ## Create a "Page"
 
-To create a new **_GitHub Page_** to start your guide, do this:  
+To create a new **Page** for writing your guide, do this:  
 
   1. Check the **_Branch_** button to ensure that the branch name you selected or created is displayed. If it isn't, click on the down-arrow and select the branch name from the drop-down list.
   2. Click on the **_Create New File_** button located at the top right area of your repository's directory window.  
@@ -83,7 +83,7 @@ To create a new **_GitHub Page_** to start your guide, do this:
   
 ## Create an Issue in GitHub
 
-When you have a topic for your new FICAM Guide, the next step is to create a new **Issue** in **GitHub** to discuss it. This will also give other contributors an opportunity to offer their insights and experience, which may help you with writing your guide.
+Once you have a topic for your new guide, a forked repo, branch, and page, the next step is to create a new **Issue** in GitHub to discuss your topic and ask for other community members to collaborate/contribute.  Other collaborators/contributors************STOPPED HERE***** an opportunity to offer their insights and experience, which may help you with writing your guide.
 
 # Use the Guide Template
 
