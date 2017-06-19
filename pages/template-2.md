@@ -117,9 +117,11 @@ Starting with [**Template Starts Here**](#template-starts-here) below, copy and 
   
   > For more on Markdown, go to:  [**Mastering Markdown**](https://guides.github.com/features/mastering-markdown/){:target="blank"}.
 
+___
+
 # Template Starts Here
 
-## A Word about the Navigation Block (above) and the Title of Your FICAM Guide
+## About the Navigation Block and Your Guide's Title
 ---
 layout: default
 title: Guidance Document Template 
@@ -186,6 +188,8 @@ This introductory text should give any user-friendly background information; exp
   
 **Add a different Alert with reference to others in More Markdown Syntax**
 
+
+**TEMPLATE ENDS HERE**
 ___
 
 ## Additional Help with Markdown Syntax
