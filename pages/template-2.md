@@ -19,7 +19,6 @@ After reading the _Contributing_ page, it is recommended that you read this enti
   * [**Selecting a Topic for Your Guide**](#selecting-a-topic-for-your-guide)
   * [**Using GitHub**](#Using-Github)
   * [**Structuring Your Guide and Using Markdown**](#structuring-your-guide-and-using-markdown)
-  * [**Using More Markdown Syntax**](#using-more-markdown-syntax)
   * [**Help with Writing and Style**](#help-with-writing-and-style)  
   
 # Selecting a Topic for Your Guide
@@ -90,7 +89,7 @@ To create a new **Page** where you can write your guide:
 
 > This creates and saves your new Page in your new branch.
   
-# Create an Issue in GitHub
+## Create an Issue in GitHub
 
 Once you have a topic for your guide, a forked repository, a branch, and a page, the next step is to create an **Issue** in GitHub. A new **Issue** gives you a forum to discuss and collaborate with other community members about your topic. Collaboration with community members may help bring to light other related issues, insights, and new solutions and these may help you to write your guide.
 
@@ -104,51 +103,27 @@ For more help with **Issues**, go to:  [Mastering Issues](https://guides.github.
 
 # Structuring Your Guide and Using Markdown
 
-## Use the Template and Markdown Syntax
-
 The template below will help you to structure your guide and use Markdown syntax, which is GitHub's required text editor. 
 
-1. See the following header, **Template Starts Below**. Copy the text up to **Template Ends Here**. 
+1. See the following header, **Template with Markdown Syntax**. Copy the text up to **Template Ends Here**. 
 2. Paste the text into your new GitHub Page. 
-3. At the top right-hand area of your new **Page's** window, click on the **pencil**.
-
-> The **pencil** symbol launches the writing and editing mode for your Page.
-
+3. At the top right-hand area of your new **Page's** window, click on the **pencil** (content writing and editing mode).
+4. Once you have made these changes, scroll down to the bottom of your screen. At the left side of the screen, click on the green button that says **Commit changes.** (This saves all changes to your Page.)
   
-  6. Once you have made these changes, scroll down to the bottom of your screen. At the left side of the screen, click on the green button that says **Commit changes.**
-  
-  > This action saves all of your changes to your Page. When you are ready, you can use the Template as the basis for writing your guide. 
-
-  * The Template below is already formatted in Markdown syntax for you to use.  
-  * Copy and paste the Template into your Page.
-  
-  > For more on Markdown, go to:  [**Mastering Markdown**](https://guides.github.com/features/mastering-markdown/){:target="blank"}.
-
+> For more on Markdown, go to:  [**Mastering Markdown**](https://guides.github.com/features/mastering-markdown/){:target="blank"}.
 ___
-
-### Template Starts Below
 
 # Template with Markdown Syntax
 
-## Navigation Block and Your Guide's Title
+## Navigation Block and Title of Guide
 
-Once you have copied and pasted this **Template** into your **Page**, follow the steps below to make a few changes to the navigation block, which will be used when your guide is posted on the website for navigation purposes. The navigation block looks like this:
+Once you have copied and pasted this **Template** into your Page, follow the steps below to make a few changes to the navigation block, which will be used when your guide is posted on the website for navigation purposes. The **navigation block** looks like this:
 
-(_Navigation Block_)
 ---
-layout: default
-title: Guidance Document Template 
-permalink: /template/
----
-
-Make these changes to the navigation block:
-
-1. **layout: default**. This is the standard layout. No changes need to be made.
-2. **title: [document title]**. Change the **title**, "Guidance Document Template," to your guide's title. 
-
-> This is the title that will appear on the website, but you won't see a main title displayed in your **Page**. 
-
-3. **permalink: /[name]/**. The **permalink**. Change **/template/** to a short name for your guide using the "_/name/_" format.
+layout: default _("Default" is the standard layout. Do not change.)_
+title: Guidance Document Template _(Change the **title**, "Guidance Document Template," to your guide's title._) 
+permalink: /template/ _(Change **/template/** to a short name for your guide using the "/name/" format._)
+--- 
 
 (_Main Body Paragraph_) Begin your guide with a brief statement about its purpose.
 
@@ -288,4 +263,3 @@ Link to an outside document (opens a new window):
   * [U.S. Government Printing Office (GPO) Style Manual](https://www.govinfo.gov/app/details/GPO-STYLEMANUAL-2016/){:target="_blank"}
   * [Oxford Dictionary Online](https://en.oxforddictionaries.com/){:target="_blank"}
   * [Merriam Webster Dictionary Online](https://www.merriam-webster.com/){:target="_blank"}
-
