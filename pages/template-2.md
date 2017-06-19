@@ -8,13 +8,13 @@ permalink: /template/
 
 **FIX ALERTS AND LINKS**
 
-{% include alert-info.html heading = "Before starting a new FICAM guide, please review the _Contributing.md_ page!" content="The _Contributing.md_ page provides terms and conditions and other important instructions." %}
+Thank you for your interest in creating a FICAM Guide! We welcome your contribution to solving a PIV, FPKI, or FICAM-Arch technical issue. 
 
-Thank you for your interest in creating a FICAM Guide! We welcome your contribution to solving a PIV, FPKI, or FICAM-Arch technical issue! 
+{% include alert-info.html heading = "Before starting a new FICAM guide, please review the _Contributing_ page!" content="The _Contributing_ page provides terms and conditions and other important instructions." %}
 
-This **Contributor's Template** will gives some helpful steps to get you started on your new FICAM guide.
+The purpose of this **Contributor's Template** is to help you get you started on your new FICAM guide.
 
-Click on one of these links to go to a specific section:  
+After reading the _Contributing_ page, it is recommended that you read this entire _Contributor's Template_. If you want to go to a specific section, click on one of the links below:  
 
   * [**Select a Topic for Your Guide**](#select-a-topic-for-your-guide)
   * [**Create a GitHub Account**](#create-a-github-account)
@@ -26,73 +26,81 @@ Click on one of these links to go to a specific section:
   
 # Select a Topic for Your Guide
   
-**If you would like to write a guide but don't yet have a topic** &mdash; A good place to start is to look at the open **Issues** lists in the GSA GitHub repositories. The open **Issues** lists offer many technical issues in search of a contributor.
+**If you would like to write a guide but don't yet have a topic** &mdash; A good place to start is to look at the open **Issues** lists in the GSA GitHub repositories. The open **Issues** lists discuss many technical issues in search of contributors.
 
-Select a repository ("repo"):
+To review the open **Issues** lists, select a repository:
 
-  * **PIV-Guides** [PIV-Guides](https://github.com/GSA/piv-guides){:target="blank"}
-  * **FPKI-Guides** [FPKI-Guides](https://github.com/GSA/fpki-guides){:target="blank"}
-  * **FICAM-Arch** [FICAM-Arch](https://github.com/GSA/ficam-arch){:target="blank"}
+  * **PIV-Guides:**  [PIV-Guides](https://github.com/GSA/piv-guides){:target="blank"} 
+  * **FPKI-Guides:**  [FPKI-Guides](https://github.com/GSA/fpki-guides){:target="blank"} 
+  * **FICAM-Arch:**  [FICAM-Arch](https://github.com/GSA/ficam-arch){:target="blank"} 
   
-**Once you select a topic** &mdash; The next step is to create a GitHub account, if you don't have one. See [**Create a GitHub Account**](#create-a-github-account). If you already have a GitHub account, see the steps below to [**Create a Repository**](#create-a-repository) to "fork" one of the GSA repos (i.e., related to your topic).
+**Once you select a topic** &mdash; The next step is to create a GitHub account, if you don't have one. See [**Create a GitHub Account**](#create-a-github-account). If you already have an account, see the steps below to [**Create a Repository**](#create-a-repository) to "fork" the GSA repos related to your topic.
 
-**If you already have a topic for your new FICAM Guide** &mdash; The first step is to create a GitHub account. See [**Create a GitHub Account**](#create-a-github-account).
+**If you already have a topic for your new guide** &mdash; The first step is to create a GitHub account, if you don't have one. (See the next section, **_Create a GitHub Account_**.
 
 # Create a GitHub Account
 
-For the steps needed to create a GitHub account, go to: [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/). For more help, you can contact GSA GitHub Support at: gsa-github.support@gsa.gov. 
+For help with creating a GitHub account, go to: [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/). For more help, you can contact GSA GitHub Support at: gsa-github.support@gsa.gov. 
 
 ## Create a Repository
 
-If you don't have a GSA repo related to your topic (e.g., PIV-Guides), you need to fork the repo. (A fork is your personal copy of a repo. With a forked repo, you can create a new file and work on it without affecting GSA's original repo.)
+Once you have a GitHub account, you will need to create a copy of the GSA repository related to your topic. (A personal copy of a GitHub repository is called a "fork." When you have a forked repository, you can create a new file and work on it without affecting GSA's original repository.)
 
-1. Go to: [GSA Respositories at GitHub.com](https://github.com/GSA){:target="blank"}.
-2. Select the repo you want to fork. 
-3. In the upper right-hand corner of the GSA repo screen, click on the gray **Fork** button.
+1. To locate the GSA repository that you want to fork, go to: [GSA Respositories at GitHub.com](https://github.com/GSA){:target="blank"}.
+2. Select the repository. 
+3. In the upper right-hand corner of the GSA repository screen, click on the gray **Fork** button.
 
 > The forked GSA repo will now be in your GitHub profile.
 
 For more help with forking a repo, see [Fork a Repo](https://help.github.com/articles/fork-a-repo/){:target="blank"}
 
-Now that you have a forked repo, you need to create a new branch to store your guide.
+Now that you have a forked repo, you need to create a new branch to store your guide. See the next section, **_Create a Branch_**.
 
 ## Create a Branch
 
-To create a new branch, do this:
+To create a new branch to store your guide, do this:
 
-1. Go to the **_Branch_** button. At the pull-down, select the **_Staging_** branch. 
+1. Make sure you are in your profile area. In the top right-hand corner of the respository screen, click on the down-arrow next to your profile icon/picture. Select **_Your profile_**.  
+2. Click on the personal repository where you want to store your guide.
+3. Just above the listing of folders and files in the repository, go to the gray **_Branch_** button. Click on the down-arrow in the **_Branch_** button and select the **_Staging_** branch. 
 
-{% include alert-info.html heading = "The GSA repo's **_Staging_** branch is the master branch for the GSA repos. It is important that you always start with the **_Staging_** branch in your forked repo. This keeps your repo's files sychronized with GSA's repo (e.g., PIV-Guides)." %}
+{% include alert-info.html heading = "The GSA repository's **_Staging_** branch is the master branch for each GSA repository. It is important that you always start with the **_Staging_** branch in your forked repository when you create a new branch. Starting at **_Staging_** helps keep your repository's files sychronized with GSA's repository (e.g., PIV-Guides)." %}
   
 2. Click on the **_Branch_** button and enter your new **branch name** into the _text field_ (e.g., **_[Guide Name] Branch_**).
-3. Select the blue button below the text field with your new branch's name.
+3. Select the blue button that now displays your new branch name.
   
-> The **_Branch_** button now displays your new branch name. 
+> The gray **_Branch_** button now also displays your new branch name. 
 
-Now that you have a new branch to store your guide, you need to create a new **Page**, where you will write your guide.
+Now that you have a new branch to store your guide, you need to create a new **"Page"**, where you can write your guide. See the next section, **_Create a Page_**.
     
-## Create a "Page"
+## Create a Page
 
-To create a new **Page** for writing your guide, do this:  
+To create a new **Page** where you can write your guide, do this:  
 
-  1. Check the **_Branch_** button to ensure that the branch name you selected or created is displayed. If it isn't, click on the down-arrow and select the branch name from the drop-down list.
-  2. Click on the **_Create New File_** button located at the top right area of your repository's directory window.  
-  > At the top left area of this window, the branch name appears with a **"/"** after it and a text box. (If you want to start over, select **_Cancel_**.) 
-  4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., **Mynewfile.md**).
-  5. Scroll down to the bottom of your screen. At the left side of your screen, below the **Commit new file** comment box, click on the green button that says **Commit new file**.
-  > This creates and saves your new Page in your selected or new branch.
+1. Check the **_Branch_** button to ensure that the branch name you created is displayed. If it isn't, click on the down-arrow and select the new branch name from the drop-down list.
+2. Click on the gray **_Create New File_** button located at the top right-hand area of your repository's window (above the folders and files listing).  
+  
+> At the top left-hand area of this window, the branch name now appears with a **"/"** after it and a text box. (If you want to start over, select **_Cancel_**.)
+
+4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., **Mynewfile.md**).
+
+> **Note:**  In GitHub, all text files must be written using the **Markdown** text editor.
+
+5. Scroll down to the bottom of your screen. At the left side of your screen, below the **Commit new file** comment box, click on the green button that says **Commit new file**.
+
+> This creates and saves your new Page in your new branch.
   
 # Create an Issue in GitHub
 
-Once you have a guide topic, a forked repo, a branch, and a page, the next step is to discuss your topic on GitHub by creating an **Issue**. By discussing your topic through GitHub, you can collaborate with other community experts. Added insights and new solutions from the community may help you to write your guide.
+Once you have a topic for your guide, a forked repository, a branch, and a page, the next step is to create an **Issue** in GitHub. **Issues** give you a forum to discuss your topic and enable you to collaborate with other community experts. Additional related issues, insights, and new solutions may be offered by the community that will help you to write your guide.
 
 To create a new Issue in GitHub, do this:
 
-*************************stopped
+1. Go to your forked repository and click on the **Issues** tab in the upper-right area of your window just below the repository's name.
+2. Click on the green **New Issue** button to create a new Issue.
+3. A helpful template to use for writing your Issue summary can be found in the PIV-Guides, FPKI-Guides, and FICAM-Arch repositories at the main directory level in the **ISSUES_TEMPLATE.md** file. 
 
-create a new **Issue** in GitHub to discuss your topic and ask for other community members to collaborate/contribute.  
-
-
+For more help with **Issues**, go to:  [Mastering Issues](https://guides.github.com/features/issues/){:target="blank"}.
 
 # Structure Your Guide &mdash; Template with Markdown Syntax
 
