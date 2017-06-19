@@ -12,7 +12,7 @@ permalink: /template/
 
 Thank you for your interest in creating a FICAM Guide! We welcome your contribution to solving a PIV, FPKI, or FICAM-Arch technical issue! 
 
-This **Contributor's Template** will give you some steps needed to get started on your new FICAM guide.
+This **Contributor's Template** will gives some helpful steps to get you started on your new FICAM guide.
 
 Click on one of these links to go to a specific section:  
 
@@ -30,9 +30,9 @@ Click on one of these links to go to a specific section:
 
 Select a repository ("repo"):
 
-  * **PIV-Guides** URL
-  * **FPKI-Guides** URL
-  * **FICAM-Arch** URL
+  * **PIV-Guides** [PIV-Guides](https://github.com/GSA/piv-guides){:target="blank"}
+  * **FPKI-Guides** [FPKI-Guides](https://github.com/GSA/fpki-guides){:target="blank"}
+  * **FICAM-Arch** [FICAM-Arch](https://github.com/GSA/ficam-arch){:target="blank"}
   
 **Once you select a topic** &mdash; The next step is to create a GitHub account, if you don't have one. See [**Create a GitHub Account**](#create-a-github-account). If you already have a GitHub account, see the steps below to [**Create a Repository**](#create-a-repository) to "fork" one of the GSA repos (i.e., related to your topic).
 
@@ -119,9 +119,11 @@ Starting with [**Template Starts Here**](#template-starts-here) below, copy and 
 
 ___
 
-# Template Starts Here
+### Template Starts Below
 
-## About the Navigation Block and Your Guide's Title
+# Template with Markdown Syntax
+
+## Navigation Block and Your Guide's Title
 ---
 layout: default
 title: Guidance Document Template 
@@ -166,7 +168,7 @@ This introductory text should give any user-friendly background information; exp
 1. Step 1 of procedure 1. (Numbered List item - Indent 2 spaces, enter a number, and add 1 space.) 
 2. Step 2 of procedure 1. (Numbered List item) 
 
-  > **Note:** or call-out needed. (**Citation??**)
+  > **Note:** or call-out needed.
   
 **Add one Alert with reference to others in More Markdown Syntax**
   
@@ -188,7 +190,7 @@ This introductory text should give any user-friendly background information; exp
   
 *************************Add a different Alert with reference to others in More Markdown Syntax**
 
-<center> <h3>TEMPLATE ENDS HERE</h3> </center>
+### TEMPLATE ENDS HERE
 ___
 
 ## Additional Help with Markdown Syntax
