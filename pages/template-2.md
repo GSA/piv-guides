@@ -8,36 +8,34 @@ permalink: /template/
 
 **FIX ALERTS AND LINKS**
 
-Thank you for your interest in creating a FICAM Guide! We welcome your contribution to solving a PIV, FPKI, or FICAM-Arch technical issue. 
+Thank you for your interest in creating a FICAM Guide! We welcome your contributions to solving a PIV, FPKI, or FICAM-Arch technical issue. This **Contributor's Template** will help you get you started on your new FICAM guide.
 
 {% include alert-info.html heading = "Before starting a new FICAM guide, please review the _Contributing_ page!" content="The _Contributing_ page provides terms and conditions and other important instructions." %}
 
-The purpose of this **Contributor's Template** is to help you get you started on your new FICAM guide.
-
-After reading the _Contributing_ page, it is recommended that you read this entire _Contributor's Template_. If you want to go to a specific section, click on one of the links below:  
+After reading the _Contributing_ page, please read this entire _Contributor's Template_. To go to a specific major section, click on one of these links:  
 
   * [**Selecting a Topic for Your Guide**](#selecting-a-topic-for-your-guide)
   * [**Using GitHub**](#Using-Github)
   * [**Structuring Your Guide and Using Markdown**](#structuring-your-guide-and-using-markdown)
-  * [**Resources for Writing and Style**](#resources-for-writing-and-style)  
+  * [**Writing and Style**](#writing-and-style)  
   
 # Selecting a Topic for Your Guide
 
 ## If You Don't Have a Topic
   
-**If you would like to write a guide but don't yet have a topic** &mdash; A good place to start is to look at the open **Issues** lists in the GSA GitHub repositories. The open **Issues** lists discuss many technical issues in search of contributors.
-
-To review the open **Issues** lists, select a repository:
+If you want to write a FICAM Guide but don't yet have a topic, a good place to start is the open **Issues** lists in the GSA GitHub repositories. The open Issues lists discuss many technical issues in search of contributors. To review the open Issues lists, select a repository:
 
   * **PIV-Guides:**  [PIV-Guides](https://github.com/GSA/piv-guides){:target="blank"} 
   * **FPKI-Guides:**  [FPKI-Guides](https://github.com/GSA/fpki-guides){:target="blank"} 
   * **FICAM-Arch:**  [FICAM-Arch](https://github.com/GSA/ficam-arch){:target="blank"} 
 
-**Once you select a topic** &mdash; The next step is to create a GitHub account, if you don't have one. See [**Create a GitHub Account**](#create-a-github-account). If you already have an account, see the steps below to [**Create a Repository**](#create-a-repository) to "fork" the GSA repos related to your topic.
+Once you select a topic, the next step is to create a GitHub account. See [**Create a GitHub Account**](#create-a-github-account). 
+
+If you already have a GitHub account, the next step is to "fork" a copy of your topic's related GSA repository. See [**Create a Repository**](#create-a-repository).
 
 ## If You Already Have a Topic
 
-**If you already have a topic for your new guide** &mdash; The first step is to create a GitHub account, if you don't have one. (See the next section, **_Create a GitHub Account_**.
+If you already have a topic for your new FICAM Guide, the first step is to create a GitHub account. See [**Create a GitHub Account**](#create-a-github-account).
 
 # Working with GitHub
 
@@ -55,7 +53,7 @@ For help with creating a GitHub account, go to: [Signing up for a New GitHub Acc
 
 ## Create a Repository
 
-Once you have a GitHub account, you will need to create a copy of the GSA repository related to your topic. (A personal copy of a GitHub repository is called a "fork." When you have a forked repository, you can create a new file and work on it without affecting GSA's original repository.)
+Once you have a GitHub account, you will need to "fork" a copy of your topic's related GSA repository. 
 
 1. To locate the GSA repository that you want to fork, go to: [GSA Respositories at GitHub.com](https://github.com/GSA){:target="blank"}.
 2. Select the repository. 
@@ -65,83 +63,79 @@ Once you have a GitHub account, you will need to create a copy of the GSA reposi
 
 For more help with forking a repo, see [Fork a Repo](https://help.github.com/articles/fork-a-repo/){:target="blank"}
 
-Now that you have a forked repo, you need to create a new branch to store your guide. See the next section, **_Create a Branch_**.
+Now that you have a forked repo, the next step is to create a new branch to store your guide. See the next section, **_Create a Branch_**.
 
 ## Create a Branch
 
 To create a new branch to store your guide:
 
-1. Make sure you are in your profile area. In the top right-hand corner of the respository screen, click on the down-arrow next to your profile icon/picture. Select **_Your profile_**.  
-2. Click on the personal repository where you want to store your guide.
-3. Just above the listing of folders and files in the repository, go to the gray **_Branch_** button. Click on the down-arrow in the **_Branch_** button and select the **_Staging_** branch. 
+1. In the top right-hand corner of the respository window, click on the down-arrow next to your profile icon/picture. Select **_Your profile_**.  
+2. Click on the repository where you want to store your new guide.
+3. Above the listing of folders and files in the repository, look for the gray **Branch** button. Click on the down-arrow and select the **_Staging_** branch. 
 
 {% include alert-info.html heading = "The GSA repository's **_Staging_** branch is the master branch for each GSA repository. It is important that you always start with the **_Staging_** branch in your forked repository when you create a new branch. Starting at **_Staging_** helps keep your repository's files sychronized with GSA's repository (e.g., PIV-Guides)." %}
   
-2. Click on the **_Branch_** button and enter your new **branch name** into the _text field_ (e.g., **_[Guide Name] Branch_**).
-3. Select the blue button that now displays your new branch name.
-  
-> The gray **_Branch_** button now also displays your new branch name. 
+2. Click on the **_Branch_** button again and enter your new **branch name** into the _text field_ (e.g., **_[Guide Name] Branch_**).
+3. Select the blue button that now displays your new branch name. (You are now in the new branch.)
 
-Now that you have a new branch to store your guide, you need to create a new **"Page"**, where you can write your guide. See the next section, **_Create a Page_**.
+Now that you have a new branch to store your guide, the next step is to create a new **"Page"**, where you can write your guide. See the next section, **_Create a Page_**.
     
 ## Create a Page
 
 To create a new **Page** where you can write your guide:  
 
-1. Check the **_Branch_** button to ensure that the branch name you created is displayed. If it isn't, click on the down-arrow and select the new branch name from the drop-down list.
+1. Check the **_Branch_** button to ensure that the new branch name you created is displayed. If it isn't, select it from the drop-down list.
 2. Click on the gray **_Create New File_** button located at the top right-hand area of your repository's window (above the folders and files listing).  
   
-> At the top left-hand area of this window, the branch name now appears with a **"/"** after it and a text box. (If you want to start over, select **_Cancel_**.)
+> At the top left-hand area of this window, the branch name now appears with a **"/"** after it and a text box.
 
-4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., **Mynewfile.md**).
+4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., Mynewfile.md).
+5. Go to the bottom of your Page. Below the **Commit new file** comment box, click on the green **Commit new file** button.
 
-> **Note:**  In GitHub, all text files must be written using the **Markdown** text editor.
-
-5. Scroll down to the bottom of your screen. At the left side of your screen, below the **Commit new file** comment box, click on the green button that says **Commit new file**.
-
-> This creates and saves your new Page in your new branch.
+> This saves your new Page in your new branch.
   
 ## Create an Issue
 
-Once you have a topic for your guide, a forked repository, a branch, and a page, the next step is to create an **Issue** in GitHub. A new **Issue** gives you a forum to discuss and collaborate with other community members about your topic. Collaboration with community members may help bring to light other related issues, insights, and new solutions and these may help you to write your guide.
+Once you have a topic for your guide, a forked repository, a branch, and a page, the next step is to create an **Issue** in GitHub. 
+
+A new **Issue** gives you a forum to discuss your topic and collaborate with other community members about it. Community collaboration may help bring to light related issues, insights, and new solutions and these may help you to write your guide.
 
 To create a new Issue in GitHub:
 
-1. Go to your forked repository and click on the **Issues** tab in the upper-right area of your window just below the repository's name.
+1. Go to your forked repository and click on the **Issues** tab in the upper-right-hand area of your window just below the repository name.
 2. Click on the green **New Issue** button to create a new Issue.
-3. A helpful template to use for writing your Issue summary can be found in the PIV-Guides, FPKI-Guides, and FICAM-Arch repositories at the main directory level in the **ISSUES_TEMPLATE.md** file. 
 
-For more help with **Issues**, go to:  [Mastering Issues](https://guides.github.com/features/issues/){:target="blank"}.
+> An **ISSUES_TEMPLATE.md** can be found in the PIV-Guides, FPKI-Guides, and FICAM-Arch repositories to help create the Issue. For more help with **Issues**, go to: [Mastering Issues](https://guides.github.com/features/issues/){:target="blank"}.
 
 # Structuring Your Guide and Using Markdown
 
-The template below will help you to structure your guide and use Markdown syntax, which is GitHub's required text editor. 
+To help structure your guide and use Markdown syntax, use the following template. To use this template: 
 
-1. See the following header, **Template with Markdown Syntax**. Copy the text up to **Template Ends Here**. 
-2. Paste the text into your new GitHub Page. 
-3. At the top right-hand area of your new **Page's** window, click on the **pencil** (content writing and editing mode).
-4. Once you have made these changes, scroll down to the bottom of your screen. At the left side of the screen, click on the green button that says **Commit changes.** (This saves all changes to your Page.)
+1. Go to the heading entitled: **Template with Markdown Syntax**. From there, copy the text up to **Template Ends Here**. 
+2. Go to your new Page's top right-hand-side and click on the **pencil** symbol (content writing and editing mode).
+3. Click on Line 1 of your Page and paste the copied template. 
+4. Scroll down to the bottom of your screen. At the left-hand side of the screen, click on the green **Commit changes** button. (This saves the changes to your Page.)
   
-> For more on Markdown, go to:  [**Mastering Markdown**](https://guides.github.com/features/mastering-markdown/){:target="blank"}.
+> For more help with Markdown syntax, go to: [**Mastering Markdown**](https://guides.github.com/features/mastering-markdown/){:target="blank"}.
 ___
 
 # Template with Markdown Syntax
 
 ## Navigation Block and Title of Guide
 
-Once you have copied and pasted this **Template** into your Page, follow the steps below to make a few changes to the navigation block, which will be used when your guide is posted on the website for navigation purposes. The **navigation block** looks like this:
+Once you have copied and pasted this **Template** into your Page, go to the **navigation block** in the upper left-hand corner of your Page. (The navigation block will be used for website navigation when your guide is posted.) Make the following changes to the navigation block:
 
 ---
-layout: default _("Default" is the standard layout. Do not change.)_
-title: Guidance Document Template _(Change the **title**, "Guidance Document Template," to your guide's title._) 
-permalink: /template/ _(Change **/template/** to a short name for your guide using the "/name/" format._)
+**layout: default** _("Default" is the standard layout. Do not change.)_
+**title:** Guidance Document Template _(Change the **title**, "Guidance Document Template," to your guide's title._) 
+**permalink:** /template/ _(Change **/template/** to a short name for your guide using the "/name/" format._)
 --- 
 
-(_Main Body Paragraph_) Begin your guide with a brief statement about its purpose.
+(_Main Body Paragraph_) Begin your guide with a brief purpose statement.
 
-(_Table of Contents_) After the first main body paragraph, add a TOC link to each Heading 1 section. For example:
+(_Table of Contents_) After the first main body paragraph, add a TOC link for each Heading 1 section. For example:
 
-  * [Section 1 Title](#words-in-section3-title-separated-by-dashes)
+  * [Section 1 Title](#words-in-section1-title-separated-by-dashes)
   * [Section 2 Title](#words-in-section2-title-separated-by-dashes)
   * [Section 3 Title](#words-in-section3-title-separated-by-dashes)
 
@@ -152,6 +146,11 @@ permalink: /template/ _(Change **/template/** to a short name for your guide usi
 # Assumptions (Heading 1)
 
 (_Main body paragraph_) This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. This section may also include conditions that must be met before the user can begin the procedures. Alternate titles may be: **Preconditions** (i.e., list any conditions that must be met) or **Hardware and Software_Requirements** (i.e, list any hardware or software that must be obtained and/or configured).
+
+**Bullet List Items**
+
+* Bullet 1 (Indent 2 spaces, enter an asterisk, and add 1 space.)
+* Bullet 2
 
 # Before You Get Started (Heading 1)
 
@@ -177,11 +176,6 @@ This section should tell the user what he/she needs to do to prepare before star
 
 1. Step 1 of procedure 1. (Numbered List item - Indent 2 spaces, enter a number, and add 1 space.) 
 2. Step 2 of procedure 1. (Numbered List item)
-
-**Bullet List Items:**
-
-* Bullet 1 (Indent 2 spaces, enter an asterisk, and add 1 space.)
-* Bullet 2
 
 > **Note:** or call-out indented block.
 
@@ -255,14 +249,14 @@ Link to an document outside the GSA IDManagment.gov website (opens a new window)
 ### TEMPLATE ENDS HERE
 ___
 
-# Resources for Writing and Style
+# Writing and Style
 
 For the FICAM Guides, general writing guidelines include:
 
   * All pages should be brief.
   * Use titles to help the user identify "jumping off points" for information.
   * Paragraphs should be short. 
-  * All text should be written in plain language as much as possible. 
+  * All text should be written in plain language and a user-friendly tone as much as possible. 
   * Use numbered steps, bullet lists, and graphics whenever possible. 
 
 The following references provide additional information about plain language, writing, and style:
