@@ -23,7 +23,7 @@ After reading the **Contributing** page, please review this entire **Contributor
 
 ## If You Don't Have a Topic
   
-If you would like to write a FICAM Guide but don't yet have a topic, the open **Issues** lists in the GSA GitHub repositories is a good place to start. The open Issues lists discuss many technical issues in search of contributors. To review the open Issues, select a repository:
+If you would like to write a FICAM Guide but don't yet have a topic, the open **Issues** lists in the GSA repositories is a good place to start. Select a repository and then click on the **Issues** tab at the top of the repository window.
 
   * **PIV-Guides:**  [PIV-Guides](https://github.com/GSA/piv-guides){:target="blank"} 
   * **FPKI-Guides:**  [FPKI-Guides](https://github.com/GSA/fpki-guides){:target="blank"} 
@@ -209,30 +209,30 @@ To insert an image (graphic) into your Page, first upload the image file to the 
 
 **Alerts, Warnings, and Information Blocks**
 
-Use the Alert, Warning, or Information Block formatting to highlight specific information in your Page.
-
-{% include alert-info.html heading = "Before starting a new Guide, please review the _Contributing.md_ page!" content="The _Contributing.md_ page provides terms and conditions and other important instructions." %}
-
-**FIND FORMAT FOR WARNING, ALERT, AND SUCCESS - CHANGE ALL BELOW TO SAME FORMAT**
+Use the Alert, Warning, Success, or Information Block formatting to highlight specific information in your Page.
 
 * **Warning Blocks**
 
-This text will appear as a **warning flag**, which is a yellow banner on the website. (The ">" symbol and the coded line directly underneath the text will create the formatting for this flag.) Warning flags can be used for notifications, such as when a user should skip a certain procedure.
-{:class="warning"}
+{% include alert-warning.html heading = "Important Warning Title!" content="Important warning text." %}
+
+This text will appear as a **warning flag**, which is a yellow banner on the website. Warning flags can be used for notifications, such as when a user should skip a certain procedure.
 
 * **Alerts for Notifications or Problems**
 
+{% include alert-notification.html heading = "Important Alert Notification or Problem Title!" content="Important notification or problem text." %} <!--Is this correct? I couldn't find any template or page where this was used as an example to bring in here.-->
+
 This text will appear as an **alert flag**, which is a red banner on the website. Alert flags may be used for notifications, such as common problems that may occur.
-{:class="alert"}
 
 * **Information Alerts**
 
-This text will appear as **informational flag**, which is a green banner on the website. Information flags can be used for notifications such as useful links or helpful tips.
-{:class="info"}
+{% include alert-info.html heading = "Important Information Title!" content="Information information text." %}
+This text will appear as a green banner, for an "informational" message. Information flags can be used for notifications such as useful links or helpful tips.
 
-* **Success Alerts** **BLUE BANNER??**
+* **Success Alerts** 
 
-This text will appear as **success flag**, which is a **blue?** banner on the website. These flags are used to let the user know they succeeded when carrying out a step or action. 
+{% include alert-success.html heading = "Important Success Title!" content="Important success text." %}
+
+This text will appear as **success flag**, which is a blue banner on the website. These flags are used to let the user know they succeeded when carrying out a step or action. <!--Is this correct? I couldn't find any template or page where this was used as an example to bring in here.-->
 
 **Links to Other Documents**
 
@@ -240,7 +240,7 @@ To link to useful references, information, or another page within GSA's IDManage
 
 [This is what I want my link to say]({{site.baseurl}}/insertlink/)<!--Is that correct for this type of link?-->
 
-Link to an document outside the GSA IDManagment.gov website (opens a new window):
+Link to an document so that it opens a new window:
 
 [This is what I want my link to say](https://www.governmentagency.gov){:target="blank"}
 
