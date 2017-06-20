@@ -123,11 +123,10 @@ ___
 
 Once you have copied and pasted this **Template** into your Page, go to the **navigation block** in the upper left-hand corner of your Page. (The navigation block will be used for website navigation when your guide is posted.) Make the following changes to the navigation block:
 
----
-**layout: default** _("Default" is the standard layout. Do not change.)_
-**title:** Guidance Document Template _(Change the **title**, "Guidance Document Template," to your guide's title._) 
-**permalink:** /template/ _(Change **/template/** to a short name for your guide using the "/name/" format._)
---- 
+ * **layout:** default _("Default" is the standard layout. Do not change.)_
+ * **title:** Guidance Document Template _(Change the **title**, "Guidance Document Template," to your guide's title._) 
+ * **permalink:** /template/ _(Change **/template/** to a short name for your guide using the "/name/" format._)
+
 
 (_Main Body Paragraph_) Begin your guide with a brief purpose statement.
 
