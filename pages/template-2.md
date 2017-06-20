@@ -4,9 +4,6 @@ title: Contributor's Template for Writing a FICAM Guide
 permalink: /template/
 ---
 
-**Add LaChelle's other changes - Any others??**
-
-
 Thank you for your interest in creating a FICAM Guide! We welcome your contributions to solving a PIV, FPKI, or FICAM-Arch technical issue. This **Contributor's Template** will help you get you started on your new FICAM guide.
 
 {% include alert-info.html heading = "Before starting a new FICAM guide, please review the _Contributing_ page!" content="The _Contributing_ page provides terms and conditions and other important instructions." %}
@@ -17,7 +14,7 @@ After reviewing the **Contributing** page, please read through the entire **Cont
   * [**Using GitHub**](#Using-Github)
   * [**Structuring Your Guide and Using Markdown**](#structuring-your-guide-and-using-markdown)
   * [**Writing Guidelines**](#writing-guidelines)
-  * [**How To Submit Your Guide**](#how-to-submit-your-guide)
+  * [**Submitting Your Draft Guide**](#submitting-your-draft-guide)
   
 # Selecting a Topic for Your Guide
 
@@ -276,7 +273,7 @@ Link to an outside document (opens a new window):
   * [Oxford Dictionary Online](https://en.oxforddictionaries.com/){:target="_blank"}
   * [Merriam Webster Dictionary Online](https://www.merriam-webster.com/){:target="_blank"}
   
-# How to Submit Your Draft Guide
+# Submitting Your Draft Guide
 <!--This information is pertinent to this contributor's template, but I wasn't sure it was up-to-date. Alternately, I could bring the updated text into this template. What are your thoughts?-->
 Please visit the **contribute_addpage.md** in your topic's related GSA repository for the steps needed to submit your draft guide.
 
