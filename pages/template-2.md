@@ -16,25 +16,25 @@ After reading the **Contributing** page, please review this entire **Contributor
   * [**Selecting a Topic for Your Guide**](#selecting-a-topic-for-your-guide)
   * [**Using GitHub**](#Using-Github)
   * [**Structuring Your Guide and Using Markdown**](#structuring-your-guide-and-using-markdown)
-  * [**Writing and Style**](#writing-and-style)  
+  * {**Writing Guidelines**](#writing-guidelines)
+  * [**How To Submit Your Guide**](#how-to-submit-your-guide)
+  
   
 # Selecting a Topic for Your Guide
 
 ## If You Don't Have a Topic
   
-If you would like to write a FICAM Guide but don't yet have a topic, the open **Issues** lists in the GSA repositories is a good place to start. Select a repository and then click on the **Issues** tab at the top of the repository window.
+If you would like to write a FICAM Guide but don't yet have a topic, the open **Issues** lists in the GSA's GitHub repositories is a good place to start. Select a repository and then click on the **Issues** tab at the top of the repository window.
 
   * **PIV-Guides:**  [PIV-Guides](https://github.com/GSA/piv-guides){:target="blank"} 
   * **FPKI-Guides:**  [FPKI-Guides](https://github.com/GSA/fpki-guides){:target="blank"} 
   * **FICAM-Arch:**  [FICAM-Arch](https://github.com/GSA/ficam-arch){:target="blank"} 
 
-Once you have selected a topic, the next step is to create a GitHub account. See [**Create a GitHub Account**](#create-a-github-account). 
-
-If you already have a GitHub account, the next step is to "fork" a copy of your topic's related GSA repository. See [**Create a Repository**](#create-a-repository).
+If you find a topic of interest for your new guide, you will need to create a GitHub account to start the guide process. See [**Create a GitHub Account**](#create-a-github-account). If you already have a GitHub account, the next step is to "fork" a copy of the related GSA repository. See [**Create a Repository**](#create-a-repository).
 
 ## If You Already Have a Topic
 
-If you already have a topic for your new FICAM Guide, the first step is to create a GitHub account. See [**Create a GitHub Account**](#create-a-github-account).
+If you already have a topic in mind for your new guide, you will need to create a GitHub account. See [**Create a GitHub Account**](#create-a-github-account).
 
 # Working with GitHub
 
@@ -48,7 +48,10 @@ This sections explains how to:
 
 ## Create a GitHub Account
 
-For help with creating a GitHub account, go to: [Signing up for a New GitHub Account](https://help.github.com/articles/signing-up-for-a-new-github-account/). For more help, you can contact GSA GitHub Support at: gsa-github.support@gsa.gov. 
+You can create a GitHub account by browsing to: [Join GitHub](https://github.com/join). For more help, you can also contact GSA GitHub Support at: gsa-github.support@gsa.gov. 
+
+* GitHub allows you to remain pseudonymous. You can select the options that suit you on the _Profile_ and _Emails_ pages of your _Personal Settings_ in your GitHub account.  
+* We also highly encourage you to turn on **two-factor authentication** in the _Security_ page, also part of _Personal Settings_.
 
 ## Create a Repository
 
@@ -62,22 +65,22 @@ Once you have a GitHub account, you will need to "fork" a copy of your topic's r
 
 For more help with forking a repo, see [Fork a Repo](https://help.github.com/articles/fork-a-repo/){:target="blank"}
 
-Next, see the following steps to **_Create a Branch_**.
+For the next step, see the following section, **_Create a Branch_**.
 
 ## Create a Branch
 
 To create a new branch to store your guide:
 
 1. In the top right-hand corner of the respository window, click on the down-arrow next to your profile icon/picture. Select **_Your profile_**.  
-2. Click on the repository where you want to store your new guide.
+2. Click on the repository that you forked. (Your guide will be stored in this repository.)
 3. Above the listing of folders and files in the repository, look for the gray **Branch** button. Click on the down-arrow and select the **_Staging_** branch. 
 
-{% include alert-info.html heading = "The GSA repository's **_Staging_** branch is the master branch for each GSA repository. It is important that you always start with the **_Staging_** branch in your forked repository when you create a new branch. Starting at **_Staging_** helps keep your repository's files sychronized with GSA's repository (e.g., PIV-Guides)." %}
+{% include alert-warning.html heading = "The GSA repository's **_Staging_** branch is the master branch for each GSA repository. It is important that you always start with the **_Staging_** branch in your forked repository when you create a new branch. Starting at **_Staging_** helps keep your repository's files sychronized with GSA's repository (e.g., PIV-Guides)." %}
   
 2. Click on the **_Branch_** button again and enter your new **branch name** into the _text field_ (e.g., **_[Guide Name] Branch_**).
 3. Select the blue button that now displays your new branch name.
 
-Next, see the following steps to **_Create a Page_**.
+Next, see the following section, **_Create a Page_**.
     
 ## Create a Page
 
@@ -93,9 +96,9 @@ To create a new **Page** where you can write your guide:
   
 ## Create an Issue
 
-Once you have a topic for your guide, a forked repository, a branch, and a page, the next step is to create an **Issue** in GitHub. 
+If you already have a chosen topic that was **not** on the open Issues list and have forked a repository, as well as created a branch and a page, the next step is to create an **Issue** in GitHub. 
 
-A new **Issue** gives you a forum to discuss your topic and collaborate with other community members about it. Community collaboration may help bring to light related issues, insights, and new solutions and these may help you to write your guide.
+A new **Issue** gives you the opportunity to discuss your topic and collaborate with other community members about it. Community collaboration may help bring to light related issues, insights, and new solutions. These may help you to write your guide.
 
 To create a new Issue in GitHub:
 
@@ -106,19 +109,19 @@ To create a new Issue in GitHub:
 
 # Structuring Your Guide and Using Markdown
 
-To help structure your guide and use Markdown syntax, use the following template. 
+To help structure your guide and use Markdown syntax, use the template included in this section. 
 
-1. Go to the heading entitled: **Template with Markdown Syntax**. From there, copy the text up to **Template Ends Here**. 
-2. Go to your new Page's top right-hand-side and click on the **pencil** symbol (content writing and editing mode).
-3. Click on Line 1 of your Page and paste the copied template. 
+1. Go to the heading entitled: **Template with Markdown Syntax**. Copy all of the text and and other samples from that point up to **Template Ends Here**. 
+2. Go to your new Page and click on the **pencil** symbol (top right-hand side of window). The **pencil** opens up the content writing and editing mode for your Page.
+3. Click on Line 1 of your Page and paste in the copied template. 
 4. Scroll down to the bottom of your screen. At the left-hand side of the screen, click on the green **Commit changes** button. (This saves the changes to your Page.)
-  
-> For more help with Markdown syntax, go to: [**Mastering Markdown**](https://guides.github.com/features/mastering-markdown/){:target="blank"}.
 ___
 
 # Template with Markdown Syntax
 
-## Navigation Block and Title of Guide
+For more help with Markdown syntax, go to: [**Mastering Markdown**](https://guides.github.com/features/mastering-markdown/){:target="blank"}.
+
+**Navigation Block and Title of Guide**
 
 Once you have copied and pasted this **Template** into your Page, go to the **navigation block** in the upper left-hand corner of your Page. (The navigation block will be used for website navigation when your guide is posted.) Make the following changes to the navigation block:
 
@@ -127,7 +130,7 @@ Once you have copied and pasted this **Template** into your Page, go to the **na
  * **permalink:** /template/ _(Change **/template/** to a short name for your guide using the "/name/" format._)
 
 
-(_Main Body Paragraph_) Begin your guide with a brief purpose statement.
+(_Main Body Paragraph_) To begin your guide, briefly state its purpose (one to two sentences).
 
 (_Table of Contents_) After the first main body paragraph, add a TOC link for each Heading 1 section. For example:
 
@@ -177,7 +180,6 @@ This section should tell the user what he/she needs to do to prepare before star
 
 > **Note:** or call-out indented block.
 
-
 **Code Blocks**
 
 To create a code block, use spaces, backticks (```), and Returns in this order: 
@@ -203,11 +205,13 @@ For example:
 
 To insert an image (graphic) into your Page, first upload the image file to the **/img/** folder in the appropriate GitHub repository.  Next, at the image insertion point in your Page, add this format to link to the image:
 
-![This is what I want a screen reader to say for 508 compliance]({{site.baseurl}}/img/thisisthesampleimagefile.png)
+![This is what I want a screen reader to say for 508 compliance]({{site.baseurl}}/img/imagename.png)
 
-> To align an image in your Page, use the **align** instruction at the end of an image link (i.e., **"left"**, **"center"**, or **"right"**) using this format:
+Use these formats to align an image in your Page, use the **align** instruction at the end of an image link (i.e., **"left"**, **"center"**, or **"right"**) and/or to add a sizing instruction, such as **width:15%**.
 
-![Alt text for an image goes here]({{site.baseurl}}/folder that image is in/imagename.png){:align="right"}
+![Text for an image goes here]({{site.baseurl}}/img/imagename.png){:align="right"}
+
+![Text for another image goes here]({{site.baseurl}}/img/anotherimagename.png){:style="float:left;width:15%;"}
 
 **Alerts, Warnings, and Information Blocks**
 
@@ -221,26 +225,27 @@ This text will appear as a **warning flag**, which is a yellow banner on the web
 
 * **Alerts for Notifications or Problems**
 
-{% include alert-notification.html heading = "Important Alert Notification or Problem Title!" content="Important notification or problem text." %} <!--Is this correct? I couldn't find any template or page where this was used as an example to bring in here.-->
+{% include alert-notification.html heading = "Important Alert Notification or Problem Title!" content="Important notification or problem text." %} <!--Is "alert-notification.html" correct? I couldn't find any template or page with an example to bring in here.-->
 
 This text will appear as an **alert flag**, which is a red banner on the website. Alert flags may be used for notifications, such as common problems that may occur.
 
 * **Information Alerts**
 
 {% include alert-info.html heading = "Important Information Title!" content="Information information text." %}
-This text will appear as a green banner, for an "informational" message. Information flags can be used for notifications such as useful links or helpful tips.
+
+This text will appear as an **information flab**, which is a green banner, for an "informational" message. Information flags can be used for notifications such as useful links or helpful tips.
 
 * **Success Alerts** 
 
 {% include alert-success.html heading = "Important Success Title!" content="Important success text." %}
 
-This text will appear as **success flag**, which is a blue banner on the website. These flags are used to let the user know they succeeded when carrying out a step or action. <!--Is this correct? I couldn't find any template or page where this was used as an example to bring in here.-->
+This text will appear as a **success flag**, which is a blue banner on the website. These flags are used to let the user know they succeeded when carrying out a step or action. <!--Is this correct? I couldn't find any template or page where this was used as an example to bring in here.-->
 
 **Links to Other Documents**
 
 To link to useful references, information, or another page within GSA's IDManagement.gov website, use: 
 
-[This is what I want my link to say]({{site.baseurl}}/insertlink/)<!--Is that correct for this type of link?-->
+[This is what I want my link to say]({{site.baseurl}}/insertlink/)
 
 Link to an document so that it opens a new window:
 
@@ -249,7 +254,7 @@ Link to an document so that it opens a new window:
 ### TEMPLATE ENDS HERE
 ___
 
-# Writing and Style
+# Writing Guidelines
 
 When creating a FICAM Guide, the general writing guidelines are:
 
@@ -257,9 +262,11 @@ When creating a FICAM Guide, the general writing guidelines are:
   * Use titles to help the user identify "jumping off points" for information.
   * Paragraphs should be short. 
   * All text should be written in plain language and a user-friendly tone as much as possible. 
-  * Use numbered steps, bullet lists, and graphics whenever possible. 
+  * Use numbered steps, bullet lists, and graphics whenever possible.
+  
+## Writing and Style Resources
 
-The following references provide additional information about plain language, writing, and style:
+The following sources provide additional information about plain language, writing, and style:
 
 Link to an outside document (opens a new window):
 [open source](https://github.com/gsa/fpki-guides){:target="_blank"}
@@ -269,3 +276,9 @@ Link to an outside document (opens a new window):
   * [U.S. Government Printing Office (GPO) Style Manual](https://www.govinfo.gov/app/details/GPO-STYLEMANUAL-2016/){:target="_blank"}
   * [Oxford Dictionary Online](https://en.oxforddictionaries.com/){:target="_blank"}
   * [Merriam Webster Dictionary Online](https://www.merriam-webster.com/){:target="_blank"}
+  
+# How to Submit Your Draft Guide
+<!--This information is pertinent to this contributor's template, but I wasn't sure it was up-to-date. Alternately, I could bring the updated text into this template. What are your thoughts?-->
+Please visit the **contribute_addpage.md** in your topic's related GSA repository for the steps needed to submit your draft guide.
+
+If you have a question during the contribution process, do not hesitate to open an Issue requesting clarification. You can also email us at icam@gsa.gov. <!--Is this address still good?-->
