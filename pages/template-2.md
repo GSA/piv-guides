@@ -11,7 +11,7 @@ Thank you for your interest in creating a FICAM Guide! We welcome your contribut
 
 {% include alert-info.html heading = "Before starting a new FICAM guide, please review the _Contributing_ page!" content="The _Contributing_ page provides terms and conditions and other important instructions." %}
 
-After reviewing the **Contributing** page, please read through the entire **Contributor's Template** before beginning. To go to a specific major section, click on one of these links:  
+After reviewing the **Contributing** page, please read through the entire **Contributor's Template** before beginning. To go to a specific major section, click a link below:  
 
   * [**Selecting a Topic for Your Guide**](#selecting-a-topic-for-your-guide)
   * [**Using GitHub**](#Using-Github)
@@ -35,9 +35,9 @@ If you find a topic of interest for your new guide, you will need to create a Gi
 
 If you already have a topic in mind for your new guide, you will need to create a GitHub account. See [**Create a GitHub Account**](#create-a-github-account).
 
-# Working with GitHub
+# Using GitHub
 
-This sections explains how to:
+This section explains how to use GitHub for developing your new guide. To go to a specific section, click a link below:
 
   * [Create a GitHub Account](#create-a-github-account) 
   * [Create a Repository](#create-a-repository)
