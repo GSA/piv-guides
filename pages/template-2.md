@@ -11,14 +11,13 @@ Thank you for your interest in creating a FICAM Guide! We welcome your contribut
 
 {% include alert-info.html heading = "Before starting a new FICAM guide, please review the _Contributing_ page!" content="The _Contributing_ page provides terms and conditions and other important instructions." %}
 
-After reading the **Contributing** page, please review this entire **Contributor's Template**. To go to a specific major section, click on one of these links:  
+After reviewing the **Contributing** page, please read through the entire **Contributor's Template** before beginning. To go to a specific major section, click on one of these links:  
 
   * [**Selecting a Topic for Your Guide**](#selecting-a-topic-for-your-guide)
   * [**Using GitHub**](#Using-Github)
   * [**Structuring Your Guide and Using Markdown**](#structuring-your-guide-and-using-markdown)
-  * {**Writing Guidelines**](#writing-guidelines)
+  * [**Writing Guidelines**](#writing-guidelines)
   * [**How To Submit Your Guide**](#how-to-submit-your-guide)
-  
   
 # Selecting a Topic for Your Guide
 
