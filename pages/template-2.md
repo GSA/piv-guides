@@ -191,6 +191,7 @@ For example:
 
    ```
    Text within three backticks for code or command line samples
+   ```
 
 **Code Comments**
 
