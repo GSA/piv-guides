@@ -4,9 +4,8 @@ title: Contributor's Template for Writing a FICAM Guide
 permalink: /template/
 ---
 
-**Add LaChelle's other changes**
+**Add LaChelle's other changes - Any others??**
 
-**FIX ALERTS AND LINKS**
 
 Thank you for your interest in creating a FICAM Guide! We welcome your contributions to solving a PIV, FPKI, or FICAM-Arch technical issue. This **Contributor's Template** will help you get you started on your new FICAM guide.
 
@@ -153,9 +152,11 @@ Once you have copied and pasted this **Template** into your Page, go to the **na
 
 This section should tell the user what he/she needs to do to prepare before starting a set of procedures. 
 
-# Title of Procedure 1 (Heading 1) (_Repeat Procedural Sections as Needed_)
+# Title of Procedure 1 (Heading 1) 
 
 (_Main body paragraph_) This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should directly walk the user through exactly what they need to do to complete the procedure.
+
+> **Note:** Repeat Procedural sections as needed.
 
 **Use additional Headings, as needed:**
 
@@ -175,6 +176,7 @@ This section should tell the user what he/she needs to do to prepare before star
 2. Step 2 of procedure 1. (Numbered List item)
 
 > **Note:** or call-out indented block.
+
 
 **Code Blocks**
 
@@ -249,7 +251,7 @@ ___
 
 # Writing and Style
 
-For the FICAM Guides, general writing guidelines include:
+When creating a FICAM Guide, the general writing guidelines are:
 
   * All pages should be brief.
   * Use titles to help the user identify "jumping off points" for information.
