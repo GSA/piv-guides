@@ -12,13 +12,13 @@ This **Contributor's Template** will help you get started with writing your new 
 
 After reviewing the **Contributing** page, please read through this entire **Contributor's Template** before beginning. Click on a link below to go to a specific section:  
 
-* [**Selecting a Topic for Your Guide**](#selecting-a-topic-for-your-guide)
-* [**Using GitHub**](#Using-Github)
-* [**Structuring Your Guide and Using Markdown Text Editor**](#structuring-your-guide-and-using-markdown-text-editor)
-* [**Writing Guidelines**](#writing-guidelines)
-* [**Submitting Your Draft Guide**](#submitting-your-draft-guide)
+* [**Select a Topic for Your Guide**](#select-a-topic-for-your-guide)
+* [**Use GitHub**](#use-github)
+* [**Structure Your Guide and Use Markdown Text Editor**](#structure-your-guide-and-use-markdown-text-editor)
+* [**Write Your Guide**](#write-your-guide)
+* [**Submit Your Draft Guide**](#submit-your-draft-guide)
   
-# Selecting a Topic for Your Guide
+# Select a Topic for Your Guide
 
 ## If You Don't Have a Topic
   
@@ -36,7 +36,7 @@ If you already have a topic in mind for your new guide, you will need to create 
 
 If you already have a GitHub account; a forked GSA repository related to your topic; a Branch; and a Page, see the section called [Create an Issue](#create-an-issue) for the next step in the guide process.
 
-# Using GitHub
+# Use GitHub
 
 GitHub is the collaboration platform used by GSA for developing the FICAM Guides. This section explains how to use GitHub. Click on a link below to go to a specific section:
 
@@ -107,7 +107,7 @@ To create a new Issue in GitHub:
 
 > An **ISSUES_TEMPLATE.md** can be found in the PIV-Guides, FPKI-Guides, and FICAM-Arch repositories to help create the Issue. For more help with **Issues**, go to: [Mastering Issues](https://guides.github.com/features/issues/){:target="blank"}.
 
-# Structuring Your Guide and Using Markdown Text Editor
+# Structure Your Guide and Use Markdown Text Editor
 
 This section provides a Template to help you: 
 
@@ -287,14 +287,14 @@ Link to an document so that it opens a new window:
 ## TEMPLATE ENDS HERE
 ___
 
-# Writing Guidelines
+# Write Your Guide
 
-When creating a FICAM Guide, some general writing guidelines are:
+Here are some general writing and formatting tips for writing your guide:
 
   * All pages should be brief.
   * Use titles to help the user identify "jumping off points" for information.
   * Paragraphs should be short. 
-  * All text should be written in plain language and a user-friendly tone as much as possible. 
+  * All text should be written in plain language and in a user-friendly tone as much as possible. 
   * Use numbered steps, bullet lists, and graphics whenever possible.
   
 ## Writing and Style Resources
@@ -310,7 +310,7 @@ Link to an outside document (opens a new window):
   * [Oxford Dictionary Online](https://en.oxforddictionaries.com/){:target="_blank"}
   * [Merriam Webster Dictionary Online](https://www.merriam-webster.com/){:target="_blank"}
   
-# Submitting Your Draft Guide
+# Submit Your Draft Guide
 <!--This information is pertinent to this contributor's template, but I wasn't sure it was up-to-date. Alternately, I could bring the updated text into this template. What are your thoughts?-->
 Please visit the **contribute_addpage.md** in your topic's related GSA repository for the steps needed to submit your draft guide.
 
