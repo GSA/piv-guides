@@ -14,7 +14,7 @@ After reviewing the **Contributing** page, please read through the entire **Cont
 
   * [**Selecting a Topic for Your Guide**](#selecting-a-topic-for-your-guide)
   * [**Using GitHub**](#Using-Github)
-  * [**Structuring Your Guide and Using Markdown**](#structuring-your-guide-and-using-markdown)
+  * [**Structuring Your Guide and Using Markdown Text Editor**](#structuring-your-guide-and-using-markdown-text-editor)
   * [**Writing Guidelines**](#writing-guidelines)
   * [**Submitting Your Draft Guide**](#submitting-your-draft-guide)
   
@@ -107,14 +107,14 @@ To create a new Issue in GitHub:
 
 > An **ISSUES_TEMPLATE.md** can be found in the PIV-Guides, FPKI-Guides, and FICAM-Arch repositories to help create the Issue. For more help with **Issues**, go to: [Mastering Issues](https://guides.github.com/features/issues/){:target="blank"}.
 
-# Structuring Your Guide and Using Markdown
+# Structuring Your Guide and Using Markdown Text Editor
 
-This section provides a template to help you structure your guide and help with using Markdown syntax, GitHub's text editor.  
+This section provides a Template to help you structure your guide and use Markdown, GitHub's text editor.  
 
-1. First, go to the heading, **Template with Markdown Syntax**. Copy all of the text and and other samples from that point up to **Template Ends Here**. 
-2. Go to your new Page and click on the **pencil** symbol (top right-hand side of window). The **pencil** opens up the content writing and editing mode for your Page.
-3. Click on Line 1 of your Page and paste in the copied template. 
-4. Scroll down to the bottom of your screen. At the left-hand side of the screen, click on the green **Commit changes** button. (This saves the changes to your Page.)
+1. Go to the heading below entitled **Template with Markdown Syntax**. Copy the Template's text and and samples from the heading up to **Template Ends Here**. 
+2. Now, go to your new Page in GitHub and click on the **pencil** symbol (top right-hand side of window). The **pencil** opens Markdown's writing and editing mode.
+3. Next, click on Line **1** of your Page (top left-hand corner) and paste in the copied Template. 
+4. Scroll down to the bottom of your Page window. Click on the green **Commit changes** button to save these changes to your Page.
 ___
 
 # Template with Markdown Syntax
@@ -160,7 +160,19 @@ This section should tell the user what he/she needs to do to prepare before star
 
 (_Main body paragraph_) This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should directly walk the user through exactly what they need to do to complete the procedure.
 
-> **Note:** Repeat Procedural sections as needed.
+Add as many Procedure sections as needed.
+
+## Title of Sub-Procedure 1 (Heading 2)
+
+Add as many Sub-Procedure sections as needed.
+
+# Title of Procedure 2 (Heading 1)
+
+(_Main body paragraph_) Add introductory text for Procedure 2, as needed.
+
+## Title of Sub-Procedure 1 (Heading 2)
+
+Add as many Sub-Procedure sections as needed.
 
 **Use additional Headings, as needed:**
 
@@ -202,6 +214,8 @@ For example:
 
 <!--For example, this code denotes a comment. The comment will not appear on the website but can be used as a reference for others viewing the file.-->
 
+## Additional Markdown Syntax Options
+
 **Images**
 
 To insert an image (graphic) into your Page, first upload the image file to the **/img/** folder in the appropriate GitHub repository.  Next, at the image insertion point in your Page, add this format to link to the image:
@@ -214,33 +228,33 @@ Use these formats to align an image in your Page, use the **align** instruction 
 
 ![Text for another image goes here]({{site.baseurl}}/img/anotherimagename.png){:style="float:left;width:15%;"}
 
-**Alerts, Warnings, and Information Blocks**
+**Alert Blocks:  Information, Warning, Success, and Error**
 
-Use the Alert, Warning, Success, or Information Block formatting to highlight specific information in your Page.
-
-* **Warning Blocks**
-
-{% include alert-warning.html heading = "Important Warning Title!" content="Important warning text." %}
-
-This text will appear as a **warning flag**, which is a yellow banner on the website. Warning flags can be used for notifications, such as when a user should skip a certain procedure.
-
-* **Alerts for Notifications or Problems**
-
-{% include alert-notification.html heading = "Important Alert Notification or Problem Title!" content="Important notification or problem text." %} <!--Is "alert-notification.html" correct? I couldn't find any template or page with an example to bring in here.-->
-
-This text will appear as an **alert flag**, which is a red banner on the website. Alert flags may be used for notifications, such as common problems that may occur.
+Use the Alert block formatting for Information, Warning, Success, and Error Alerts to highlight specific information in your guide.
 
 * **Information Alerts**
 
 {% include alert-info.html heading = "Important Information Title!" content="Information information text." %}
 
-This text will appear as an **information flab**, which is a green banner, for an "informational" message. Information flags can be used for notifications such as useful links or helpful tips.
+This text will appear as an **information flag**, which is a blue banner on the website. These flags are used for "informational" messages or notifications, such as useful links or helpful tips.
+
+* **Warning Alerts**
+
+{% include alert-warning.html heading = "Important Warning Title!" content="Important warning text." %}
+
+This text will appear as a **warning flag**, which is a yellow banner on the website. Warning flags are used for notifications, such as when a user should skip a certain procedure.
+
+* **Error Alerts (Notifications or Problems)**
+
+{% include alert-error.html heading = "Important Alert Notification or Problem Title!" content="Important notification or problem text." %}
+
+This text will appear as an **error flag**, which is a red banner on the website. Error flags are used for notifications, such as common problems that may occur.
 
 * **Success Alerts** 
 
 {% include alert-success.html heading = "Important Success Title!" content="Important success text." %}
 
-This text will appear as a **success flag**, which is a blue banner on the website. These flags are used to let the user know they succeeded when carrying out a step or action. <!--Is this correct? I couldn't find any template or page where this was used as an example to bring in here.-->
+This text will appear as a **success flag**, which is a greeb banner on the website. Success flags are used to let the user know they succeeded when carrying out a step or action. 
 
 **Links to Other Documents**
 
@@ -252,7 +266,7 @@ Link to an document so that it opens a new window:
 
 [This is what I want my link to say](https://www.governmentagency.gov){:target="blank"}
 
-### TEMPLATE ENDS HERE
+## TEMPLATE ENDS HERE
 ___
 
 # Writing Guidelines
