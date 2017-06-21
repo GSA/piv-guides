@@ -12,11 +12,11 @@ This **Contributor's Template** will help you get started on your new FICAM guid
 
 After reviewing the **Contributing** page, please read through the entire **Contributor's Template** before beginning. Click a link below to go to a specific section:  
 
-  * [**Selecting a Topic for Your Guide**](#selecting-a-topic-for-your-guide)
-  * [**Using GitHub**](#Using-Github)
-  * [**Structuring Your Guide and Using Markdown Text Editor**](#structuring-your-guide-and-using-markdown-text-editor)
-  * [**Writing Guidelines**](#writing-guidelines)
-  * [**Submitting Your Draft Guide**](#submitting-your-draft-guide)
+* [**Selecting a Topic for Your Guide**](#selecting-a-topic-for-your-guide)
+* [**Using GitHub**](#Using-Github)
+* [**Structuring Your Guide and Using Markdown Text Editor**](#structuring-your-guide-and-using-markdown-text-editor)
+* [**Writing Guidelines**](#writing-guidelines)
+* [**Submitting Your Draft Guide**](#submitting-your-draft-guide)
   
 # Selecting a Topic for Your Guide
 
@@ -24,9 +24,9 @@ After reviewing the **Contributing** page, please read through the entire **Cont
   
 If you would like to write a FICAM Guide but don't yet have a topic, the open **Issues** lists in the GSA's GitHub repositories is a good place to start. Select a repository and then click on the **Issues** tab at the top of the repository window.
 
-  * **PIV-Guides:**  [PIV-Guides](https://github.com/GSA/piv-guides){:target="blank"} 
-  * **FPKI-Guides:**  [FPKI-Guides](https://github.com/GSA/fpki-guides){:target="blank"} 
-  * **FICAM-Arch:**  [FICAM-Arch](https://github.com/GSA/ficam-arch){:target="blank"} 
+* **PIV-Guides:**  [PIV-Guides](https://github.com/GSA/piv-guides){:target="blank"} 
+* **FPKI-Guides:**  [FPKI-Guides](https://github.com/GSA/fpki-guides){:target="blank"} 
+* **FICAM-Arch:**  [FICAM-Arch](https://github.com/GSA/ficam-arch){:target="blank"} 
 
 If you find a topic of interest for your new guide, you will need to create a GitHub account to start the guide process. See [**Create a GitHub Account**](#create-a-github-account). If you already have a GitHub account, the next step is to "_fork_" a copy of the GSA repository related to your topic. For help with forking a repository, go to [**Create a Repository**](#create-a-repository).
 
@@ -40,11 +40,11 @@ If you already have a GitHub account; a forked GSA repository related to your to
 
 GitHub is the collaboration platform used by GSA for developing the FICAM Guides. This section explains how to use GitHub. Click on a link below to go to a specific section:
 
-  * [Create a GitHub Account](#create-a-github-account) 
-  * [Create a Repository](#create-a-repository)
-  * [Create a Branch](#create-a-branch)
-  * [Create a Page](#create-a-page)
-  * [Create an Issue](#create-an-issue)
+* [Create a GitHub Account](#create-a-github-account) 
+* [Create a Repository](#create-a-repository)
+* [Create a Branch](#create-a-branch)
+* [Create a Page](#create-a-page)
+* [Create an Issue](#create-an-issue)
 
 ## Create a GitHub Account
 
@@ -77,8 +77,8 @@ To create a new branch to store your guide:
 
 {% include alert-warning.html heading = "The GSA repository's **_Staging_** branch is the master branch for each GSA repository. It is important that you always start with the **_Staging_** branch in your forked repository when you create a new branch. Starting at **_Staging_** helps keep your files sychronized with GSA's repository (e.g., PIV-Guides)." %}
   
-2. Click on the **_Branch_** button again and enter a new **branch name** into the _text field_ (e.g., **_[Guide Name] Branch_**).
-3. Click on the blue button that now displays your new branch name. (The gray Branch button now also displays your branch name.)
+4. Click on the **_Branch_** button again and enter a new **branch name** into the _text field_ (e.g., **_[Guide Name] Branch_**).
+5. Click on the blue button that now displays your new branch name. (The gray Branch button now also displays your branch name.)
 
 For the next steps, see the following section, **_Create a Page_**.
     
@@ -91,8 +91,8 @@ To create a new **Page** where you can write your guide:
   
 > At the top left-hand area of the Page window, the branch name now appears with a **"/"** after it and a text box.
 
-4. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., Mynewfile.md).
-5. Go to the bottom of your Page. Below the **Commit new file** comment box, click on the green **Commit new file** button to save your new Page.
+3. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., Mynewfile.md).
+4. Go to the bottom of your Page. Below the **Commit new file** comment box, click on the green **Commit new file** button to save your new Page.
 
 The next steps, see the following section, **Create an Issue**.
   
@@ -109,9 +109,12 @@ To create a new Issue in GitHub:
 
 # Structuring Your Guide and Using Markdown Text Editor
 
-This section provides a Template to help you structure your guide and use Markdown, GitHub's text editor.  
+This section provides: 
 
-1. Go to the heading below entitled **Template with Markdown Syntax**. Copy the Template's text and and samples from the heading up to **Template Ends Here**. 
+* A Template that will help you structure your guide by using a suggested, basic outline. 
+* Markdown Text Editor instructions (i.e., syntax) that will help you create and edit text in your GitHub Page.  
+
+1. To use the Template, go to **Template with Markdown Syntax**. Copy the Template's text and and samples from the heading up to **Template Ends Here**. 
 2. Now, go to your new Page in GitHub and click on the **pencil** symbol (top right-hand side of window). The **pencil** opens Markdown's writing and editing mode.
 3. Next, click on Line **1** of your Page (top left-hand corner) and paste in the copied Template. 
 4. Scroll down to the bottom of your Page window. Click on the green **Commit changes** button to save these changes to your Page.
@@ -125,9 +128,9 @@ Basic Markdown syntax is embedded in the template below. If you would like to se
 
 Once you have copied and pasted this **Template** into your Page, go to the **navigation block** in the upper left-hand corner of your Page. (The navigation block will be used for website navigation when your guide is posted.) Make the following changes to the navigation block:
 
- * **layout:** default _("Default" is the standard layout. Do not change.)_
- * **title:** Guidance Document Template _(Change the **title**, "Guidance Document Template," to your guide's title._) 
- * **permalink:** /template/ _(Change **/template/** to a short name for your guide using the "/name/" format._)
+* **layout:** default _("Default" is the standard layout. Do not change.)_
+* **title:** Guidance Document Template _(Change the **title**, "Guidance Document Template," to your guide's title._) 
+* **permalink:** /template/ _(Change **/template/** to a short name for your guide using the "/name/" format._)
  
 **Template Styles and Syntax**
 
@@ -135,9 +138,9 @@ Once you have copied and pasted this **Template** into your Page, go to the **na
 
 (_Table of Contents_) After the first main body paragraph, add a TOC link for each Heading 1 section. For example:
 
-  * [Section 1 Title](#words-in-section1-title-separated-by-dashes)
-  * [Section 2 Title](#words-in-section2-title-separated-by-dashes)
-  * [Section 3 Title](#words-in-section3-title-separated-by-dashes)
+* [Section 1 Title](#words-in-section1-title-separated-by-dashes)
+* [Section 2 Title](#words-in-section2-title-separated-by-dashes)
+* [Section 3 Title](#words-in-section3-title-separated-by-dashes)
 
 # Overview (Heading 1)
 
@@ -183,8 +186,8 @@ Add as many Sub-Procedure sections as needed.
 
 **Bold and Italics:**
 
-  * Use double asterisks to bold a word:  **bold**.
-  * Use underscores to create italics:  _italics_.
+* Use double asterisks to bold a word:  **bold**.
+* Use underscores to create italics:  _italics_.
 
 **Number List Items:**
 
@@ -197,12 +200,12 @@ Add as many Sub-Procedure sections as needed.
 
 To create a code block, use spaces, backticks (```), and Returns in this order: 
 
-  * 4 spaces plus 3 backticks (```) to start the code block 
-  * A Return
-  * Type or paste in the code that the user needs to enter for a specific step
-  * Another Return
-  * 4 spaces plus 3 backticks to end the code block
-  * Another Return
+* 4 spaces plus 3 backticks (```) to start the code block 
+* A Return
+* Type or paste in the code that the user needs to enter for a specific step
+* Another Return
+* 4 spaces plus 3 backticks to end the code block
+* Another Return
 
 For example:
 
@@ -226,7 +229,7 @@ Use these formats to align an image in your Page, use the **align** instruction 
 
 ![Text for an image goes here]({{site.baseurl}}/img/imagename.png){:align="right"}
 
-![Text for another image goes here]({{site.baseurl}}/img/anotherimagename.png){:style="float:left;width:15%;"}
+![Text for another image goes here]({{site.baseurl}}/img/anotherimagename.png){:style="float:left;width:15%;"}&nbsp;
 
 **Alert Blocks:  Information, Warning, Success, and Error**
 
