@@ -6,9 +6,10 @@ permalink: networkconfig/AMA/
 ---
 
 ### Authentication Mechanism Assurance
+
 Authentication mechanism assurance is an added capability in### Windows Server 2008 R2 AD DS that you can use when the domain### functional level is set to Windows Server 2008 R2. When it is enabled,### authentication mechanism assurance adds an administrator-designated### global group membership to a user’s Kerberos token when the user’s### credentials are authenticated during logon using a certificate-based### logon method
 
-### • Authentication Mechanism Assurance (AMA)  for AD DS in Windows### Server 2008 R2
+### Authentication Mechanism Assurance (AMA)  for AD DS in Windows### Server 2008 R2
 
 ## • https://technet.microsoft.com/en-us/library/dd378897(v=WS.10).aspx### • Power Shell Script for Common Federal/DoD Certificate Policies### simplifies implementation as compared to TechNet Step-by-Step Guide.
 
