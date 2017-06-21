@@ -4,13 +4,13 @@ title: Contributor's Template for Writing a FICAM Guide
 permalink: /template/
 ---
 
-Thank you for your interest in creating a FICAM Guide! We welcome your contributions to solving a PIV, FPKI, or FICAM-Arch technical issue. 
+Thank you for your interest in writing a FICAM Guide! We welcome your contributions to solving a PIV, FPKI, or FICAM-Arch technical issue. 
 
-This **Contributor's Template** will help you get started on your new FICAM guide.
+This **Contributor's Template** will help you get started with writing your new FICAM guide.
 
 {% include alert-info.html heading = "Before starting a new FICAM guide, please review the _Contributing_ page!" content="The _Contributing_ page provides terms and conditions and other important instructions." %}
 
-After reviewing the **Contributing** page, please read through the entire **Contributor's Template** before beginning. Click a link below to go to a specific section:  
+After reviewing the **Contributing** page, please read through this entire **Contributor's Template** before beginning. Click on a link below to go to a specific section:  
 
 * [**Selecting a Topic for Your Guide**](#selecting-a-topic-for-your-guide)
 * [**Using GitHub**](#Using-Github)
@@ -22,19 +22,19 @@ After reviewing the **Contributing** page, please read through the entire **Cont
 
 ## If You Don't Have a Topic
   
-If you would like to write a FICAM Guide but don't yet have a topic, the open **Issues** lists in the GSA's GitHub repositories is a good place to start. Select a repository and then click on the **Issues** tab at the top of the repository window.
+If you would like to write a FICAM Guide but don't yet have a topic, a good place to start is to review the open **Issues** lists in the GSA's GitHub repositories. To review the open Issues, select a repository and then click on the **Issues** tab at the top of the repository window. The FICAM-related repositories can be found at:
 
 * **PIV-Guides:**  [PIV-Guides](https://github.com/GSA/piv-guides){:target="blank"} 
 * **FPKI-Guides:**  [FPKI-Guides](https://github.com/GSA/fpki-guides){:target="blank"} 
 * **FICAM-Arch:**  [FICAM-Arch](https://github.com/GSA/ficam-arch){:target="blank"} 
 
-If you find a topic of interest for your new guide, you will need to create a GitHub account to start the guide process. See [**Create a GitHub Account**](#create-a-github-account). If you already have a GitHub account, the next step is to "_fork_" a copy of the GSA repository related to your topic. For help with forking a repository, go to [**Create a Repository**](#create-a-repository).
+If you find an Issue of interest and want to write a new guide to address it, you will first need to create a GitHub account. To create a GitHub account, see [**Create a GitHub Account**](#create-a-github-account). If you already have an account, the next step is to "_fork_" a copy of the GSA repository related to your topic. For help with forking a repository, see the section called [**Create a Repository**](#create-a-repository).
 
 ## If You Already Have a Topic
 
 If you already have a topic in mind for your new guide, you will need to create a GitHub account to start the guide process. For help creating an account, go to [**Create a GitHub Account**](#create-a-github-account).
 
-If you already have a GitHub account; a forked GSA repository related to your topic; a Branch; and a Page, see the section entitled [Create an Issue](#create-an-issue) for the next step in the guide process.
+If you already have a GitHub account; a forked GSA repository related to your topic; a Branch; and a Page, see the section called [Create an Issue](#create-an-issue) for the next step in the guide process.
 
 # Using GitHub
 
@@ -109,24 +109,27 @@ To create a new Issue in GitHub:
 
 # Structuring Your Guide and Using Markdown Text Editor
 
-This section provides: 
+This section provides a Template to help you: 
 
-* A Template that will help you structure your guide by using a suggested, basic outline. 
-* Markdown Text Editor instructions (i.e., syntax) that will help you create and edit text in your GitHub Page.  
+* Structure your guide by using a suggested outline as a starting point. 
+* Use the Markdown Text Editor (i.e., syntax instructions) to write your guide.  
 
-1. To use the Template, go to **Template with Markdown Syntax**. Copy the Template's text and and samples from the heading up to **Template Ends Here**. 
-2. Now, go to your new Page in GitHub and click on the **pencil** symbol (top right-hand side of window). The **pencil** opens Markdown's writing and editing mode.
+To begin your guide, copy and paste the Template below into your GitHub Page: 
+
+1. Go to the section below called **Template with Markdown Syntax**. Copy the entire Template (headings, text, and samples) up to **Template Ends Here**. 
+2. Now, go to your new GitHub Page and click on the **pencil** symbol (top right-hand side of window). The **pencil** opens Markdown's writing and editing mode.
 3. Next, click on Line **1** of your Page (top left-hand corner) and paste in the copied Template. 
-4. Scroll down to the bottom of your Page window. Click on the green **Commit changes** button to save these changes to your Page.
+4. Scroll down to the bottom of your Page window. Click on the green **Commit changes** button to save the Template to your Page.
+
+Basic Markdown syntax is embedded in the Template. If you want to learn more about syntax options, go to: [**Mastering Markdown**](https://guides.github.com/features/mastering-markdown/){:target="blank"}.
+
 ___
 
 # Template with Markdown Syntax
 
-Basic Markdown syntax is embedded in the template below. If you would like to see more syntax options, go to: [**Mastering Markdown**](https://guides.github.com/features/mastering-markdown/){:target="blank"}.
-
 **Navigation Block and Title of Guide**
 
-Once you have copied and pasted this **Template** into your Page, go to the **navigation block** in the upper left-hand corner of your Page. (The navigation block will be used for website navigation when your guide is posted.) Make the following changes to the navigation block:
+Once you have copied and pasted this **Template** into your Page, go to the **navigation block** in the upper left-hand corner of your Page (Lines 1-5). (The navigation block is used for website navigation when your guide is posted.) Make the following changes to the navigation block:
 
 * **layout:** default _("Default" is the standard layout. Do not change.)_
 * **title:** Guidance Document Template _(Change the **title**, "Guidance Document Template," to your guide's title._) 
@@ -150,32 +153,9 @@ Once you have copied and pasted this **Template** into your Page, go to the **na
 
 (_Main body paragraph_) This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. This section may also include conditions that must be met before the user can begin the procedures. Alternate titles may be: **Preconditions** (i.e., list any conditions that must be met) or **Hardware and Software_Requirements** (i.e, list any hardware or software that must be obtained and/or configured).
 
-**Bullet List Items**
-
-* Bullet 1 (Indent 2 spaces, enter an asterisk, and add 1 space.)
-* Bullet 2
-
 # Before You Get Started (Heading 1)
 
 This section should tell the user what he/she needs to do to prepare before starting a set of procedures. 
-
-# Title of Procedure 1 (Heading 1) 
-
-(_Main body paragraph_) This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should directly walk the user through exactly what they need to do to complete the procedure.
-
-Add as many Procedure sections as needed.
-
-## Title of Sub-Procedure 1 (Heading 2)
-
-Add as many Sub-Procedure sections as needed.
-
-# Title of Procedure 2 (Heading 1)
-
-(_Main body paragraph_) Add introductory text for Procedure 2, as needed.
-
-## Title of Sub-Procedure 1 (Heading 2)
-
-Add as many Sub-Procedure sections as needed.
 
 **Use additional Headings, as needed:**
 
@@ -184,15 +164,38 @@ Add as many Sub-Procedure sections as needed.
 #### This is a fourth-level heading
 ##### This is a fifth-level heading
 
-**Bold and Italics:**
+# Title of Procedure 1 (Heading 1) 
 
-* Use double asterisks to bold a word:  **bold**.
-* Use underscores to create italics:  _italics_.
+(_Main body paragraph_) This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should directly walk the user through exactly what they need to do to complete the procedure.
+
+(_Main body paragraph_) Add introductory text for Procedure 1, as needed.
+
+_Add as many Procedural sections as needed._
+
+## Title of Procedure 1, Sub-Procedure 1 (Heading 2)
+
+(_Main body paragraph_) Add introductory text for Sub-Procedure 1, as needed. 
+
+_Add as many Sub-Procedures as needed._
+
+## Title of Procedure 1, Sub-Procedure 2 (Heading 2)
+
+(_Main body paragraph_) Add introductory text for Sub-Procedure 2, as needed. 
 
 **Number List Items:**
 
 1. Step 1 of procedure 1. (Numbered List item - Indent 2 spaces, enter a number, and add 1 space.) 
 2. Step 2 of procedure 1. (Numbered List item)
+
+**Bullet List Items**
+
+* Bullet 1 (Indent 2 spaces, enter an asterisk, and add 1 space.)
+* Bullet 2
+
+**Bold and Italics:**
+
+* Use double asterisks to bold a word:  **bold**.
+* Use underscores to create italics:  _italics_.
 
 > **Note:** or call-out indented block.
 
@@ -217,7 +220,19 @@ For example:
 
 <!--For example, this code denotes a comment. The comment will not appear on the website but can be used as a reference for others viewing the file.-->
 
-## Additional Markdown Syntax Options
+# Title of Procedure 2 (Heading 1)
+
+(_Main body paragraph_) Add introductory text for Procedure 2, as needed. 
+
+## Title of Procedure 2, Sub-Procedure 1 (Heading 2)
+
+(_Main body paragraph_) Add introductory text for Sub-Procedure 1, as needed. 
+
+## Title of Procedure 2, Sub-Procedure 2 (Heading 2)
+
+(_Main body paragraph_) Add introductory text for Sub-Procedure 2, as needed. 
+
+## Additional Markdown Syntax
 
 **Images**
 
