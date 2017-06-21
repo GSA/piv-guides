@@ -241,7 +241,7 @@ Code comments will be invisible in a webpage view, but others will be able to se
 
 To insert an image (graphic) into your Page, first upload the image file to the **/img/** folder in the appropriate GitHub repository.  Next, at the image insertion point in your Page, add these formats, as desired, to link to the image.
 
-Use the above formats to align an image in your Page, use the **align** instruction at the end of an image link (i.e., **"left"**, **"center"**, or **"right"**) and/or to add a sizing instruction, such as **width:25%**.
+Additional formatting options enable you to align an image in your Page. Use the **align** instruction at the end of an image link (i.e., **"left"**, **"center"**, or **"right"**) and/or add a sizing instruction, such as **width:25%**.
 
 ![This is what I want a screen reader to say for 508 compliance]({{site.baseurl}}/img/imagename.png)
 
@@ -277,7 +277,7 @@ This text will appear as an **error flag**, which is a red banner on the website
 
 This text will appear as a **success flag**, which is a greeb banner on the website. Success flags are used to let the user know they succeeded when carrying out a step or action. 
 
-#### Links to Other Documents
+### Links to Other Documents
 
 To link to useful references, information, or another page within GSA's IDManagement.gov website, use: 
 
@@ -302,13 +302,10 @@ Here are some general writing and formatting tips for writing your guide:
   
 ## Writing and Style Resources
 
-The following sources provide additional information about plain language, writing, and style:
-
-Link to an outside document (opens a new window):
-[open source](https://github.com/gsa/fpki-guides){:target="_blank"}
+The following sources can provide additional help with plain language, writing, and style:
 
   * [18F Content Guide](https://content-guide.18f.gov/){:target="_blank"}
-  * [Federal Plain Language Guidelines](http://www.plainlanguage.gov/howto/guidelines/FederalPLGuidelines/TOC.cfm/){:target="_blank"}
+  * [Federal Plain Language Guidelines](http://www.plainlanguage.gov/){:target="_blank"}
   * [U.S. Government Printing Office (GPO) Style Manual](https://www.govinfo.gov/app/details/GPO-STYLEMANUAL-2016/){:target="_blank"}
   * [Oxford Dictionary Online](https://en.oxforddictionaries.com/){:target="_blank"}
   * [Merriam Webster Dictionary Online](https://www.merriam-webster.com/){:target="_blank"}
