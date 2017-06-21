@@ -6,11 +6,11 @@ permalink: /template/
 
 Thank you for your interest in writing a FICAM Guide! We welcome your contributions to solving a PIV, FPKI, or FICAM-Arch technical issue. 
 
-This **Contributor's Template** will help you get started with writing your new FICAM guide.
+This **Contributor's Template for Writing a FICAM Guide** gives guidance, instructions, and a Template to help you get started with your new guide.
 
 {% include alert-info.html heading = "Before starting a new FICAM guide, please review the _Contributing_ page!" content="The _Contributing_ page provides terms and conditions and other important instructions." %}
 
-After reviewing the **Contributing** page, please read through this entire **Contributor's Template** before beginning. Click on a link below to go to a specific section:  
+After reviewing the **Contributing** page, please read through this _Contributor's Template_ before beginning. To go to a specific section, click on a link below:  
 
 * [**Select a Topic for Your Guide**](#select-a-topic-for-your-guide)
 * [**Use GitHub**](#use-github)
@@ -22,13 +22,15 @@ After reviewing the **Contributing** page, please read through this entire **Con
 
 ## If You Don't Have a Topic
   
-If you would like to write a FICAM Guide but don't yet have a topic, a good place to start is to review the open **Issues** lists in the GSA's GitHub repositories. To review the open Issues, select a repository and then click on the **Issues** tab at the top of the repository window. The FICAM-related repositories can be found at:
+If you would like to write a FICAM Guide but don't yet have a topic, a good place to start is the open **Issues** lists in the GSA's FICAM repositories in GitHub. The FICAM-related repositories can be found at:
 
 * **PIV-Guides:**  [PIV-Guides](https://github.com/GSA/piv-guides){:target="blank"} 
 * **FPKI-Guides:**  [FPKI-Guides](https://github.com/GSA/fpki-guides){:target="blank"} 
 * **FICAM-Arch:**  [FICAM-Arch](https://github.com/GSA/ficam-arch){:target="blank"} 
 
-If you find an Issue of interest and want to write a new guide to address it, you will first need to create a GitHub account. To create a GitHub account, see [**Create a GitHub Account**](#create-a-github-account). If you already have an account, the next step is to "_fork_" a copy of the GSA repository related to your topic. For help with forking a repository, see the section called [**Create a Repository**](#create-a-repository).
+To review the open Issues, click on the **Issues** tab at the top of the repository window. 
+
+If you find an Issue that you would like to write about, you will need to create a GitHub account. To create a GitHub account, see [**Create a GitHub Account**](#create-a-github-account). If you already have an account, the next step is to "_fork_" a copy of the GSA repository related to your topic. For help with forking a repository, see the section called [**Create a Repository**](#create-a-repository).
 
 ## If You Already Have a Topic
 
@@ -38,7 +40,7 @@ If you already have a GitHub account; a forked GSA repository related to your to
 
 # Use GitHub
 
-GitHub is the collaboration platform used by GSA for developing the FICAM Guides. This section explains how to use GitHub. Click on a link below to go to a specific section:
+GitHub is a collaboration platform used by GSA where the FICAM Guides are developed. This section explains how to begin using GitHub. To go to a specific section, click on a link below:
 
 * [Create a GitHub Account](#create-a-github-account) 
 * [Create a Repository](#create-a-repository)
