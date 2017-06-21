@@ -79,7 +79,7 @@ To create a new branch to store your guide:
 2. Click on the repository that you forked. 
 3. Above the listing of folders and files in the repository, look for the gray **Branch** button. Click on the down-arrow and select the **_Staging_** branch. 
 
-{% include alert-warning.html heading = "The GSA repository's **_Staging_** branch is the master branch for each GSA repository. It is important that you always start with the **_Staging_** branch in your forked repository when you create a new branch. Starting at **_Staging_** helps keep your files sychronized with GSA's repository (e.g., PIV-Guides)." %}
+{% include alert-warning.html heading = "The GSA repository's **_Staging_** branch is the master branch for each GSA repository. It is important that you always start with the **_Staging_** branch in your forked repository when you create a new branch. Starting at **_Staging_** helps keep your files sychronized with GSA's repository (e.g., PIV-Guides)." %}&nbsp;
   
 4. Click on the **_Branch_** button again and enter a new **branch name** into the _text field_ (e.g., **_[Guide Name] Branch_**).
 5. Click on the blue button that now displays your new branch name. (The gray Branch button now also displays your branch name.)
@@ -118,20 +118,20 @@ This section provides a Template to help you:
 * Structure your guide by using a suggested outline as a starting point. 
 * Use the Markdown Text Editor (i.e., syntax instructions) to write your guide.  
 
-To begin your guide, copy and paste the Template below into your GitHub Page: 
+Use these steps to copy and paste the Template below into your GitHub Page to start your guide: 
 
 1. Go to the section below called **Template with Markdown Syntax**. Copy the entire Template (headings, text, and samples) up to **Template Ends Here**. 
 2. Now, go to your new GitHub Page and click on the **pencil** symbol (top right-hand side of window). The **pencil** opens Markdown's writing and editing mode.
 3. Next, click on Line **1** of your Page (top left-hand corner) and paste in the copied Template. 
 4. Scroll down to the bottom of your Page window. Click on the green **Commit changes** button to save the Template to your Page.
 
-Basic Markdown syntax is embedded in the Template. If you want to learn more about syntax options, go to: [**Mastering Markdown**](https://guides.github.com/features/mastering-markdown/){:target="blank"}.
+Basic Markdown syntax is embedded in the Template. If you want to learn more about syntax options, go to [**Mastering Markdown**](https://guides.github.com/features/mastering-markdown/){:target="blank"}.
 
 ___
 
 # Template with Markdown Syntax
 
-**Navigation Block and Title of Guide**
+## Navigation Block and Title of Guide
 
 Once you have copied and pasted this **Template** into your Page, go to the **navigation block** in the upper left-hand corner of your Page (Lines 1-5). (The navigation block is used for website navigation when your guide is posted.) Make the following changes to the navigation block:
 
@@ -139,7 +139,7 @@ Once you have copied and pasted this **Template** into your Page, go to the **na
 * **title:** Guidance Document Template _(Change the **title**, "Guidance Document Template," to your guide's title._) 
 * **permalink:** /template/ _(Change **/template/** to a short name for your guide using the "/name/" format._)
  
-**Template Styles and Syntax**
+# Introductory Section and TOC (No Heading)
 
 (_Main Body Paragraph_) To begin your guide, briefly state its purpose (one to two sentences).
 
@@ -151,59 +151,58 @@ Once you have copied and pasted this **Template** into your Page, go to the **na
 
 # Overview (Heading 1)
 
-(_Main body paragraph_) This introductory text should be a brief overview of your guide's topic. In addition to the overview, you may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
+**(_Main body paragraph_)** This introductory text should be a brief overview of your guide's topic. In addition to the overview, you may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
 
-# Assumptions (Heading 1)
+**(_Heading options to use as needed_)**
 
-(_Main body paragraph_) This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. This section may also include conditions that must be met before the user can begin the procedures. Alternate titles may be: **Preconditions** (i.e., list any conditions that must be met) or **Hardware and Software_Requirements** (i.e, list any hardware or software that must be obtained and/or configured).
-
-# Before You Get Started (Heading 1)
-
-This section should tell the user what he/she needs to do to prepare before starting a set of procedures. 
-
-**Use additional Headings, as needed:**
-
+# This Is a First-Level Heading
 ## This Is a Second-Level Heading
 ### This is a third-level heading
 #### This is a fourth-level heading
 ##### This is a fifth-level heading
 
+# Assumptions (Heading 1)
+
+**(_Main body paragraph_)** This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. This section may also include conditions that must be met before the user can begin the procedures. Alternate titles may be: **Preconditions** (i.e., list any conditions that must be met) or **Hardware and Software_Requirements** (i.e, list any hardware or software that must be obtained and/or configured).
+
+# Before You Get Started (Heading 1)
+
+**(_Main body paragraph_)** This section should tell the user what he/she needs to do to prepare before starting a set of procedures. 
+
 # Title of Procedure 1 (Heading 1) 
 
-(_Main body paragraph_) This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should directly walk the user through exactly what they need to do to complete the procedure.
-
-(_Main body paragraph_) Add introductory text for Procedure 1, as needed.
+**(_Main body paragraph_)** This introductory text should give any user-friendly background information; explain the purpose of the procedure; and give any context that the user might need before diving into the steps. The text within each step should directly walk the user through exactly what they need to do to complete the procedure.
 
 _Add as many Procedural sections as needed._
 
 ## Title of Procedure 1, Sub-Procedure 1 (Heading 2)
 
-(_Main body paragraph_) Add introductory text for Sub-Procedure 1, as needed. 
+**(_Main body paragraph_)** Add introductory text for Sub-Procedure 1, as needed. 
 
 _Add as many Sub-Procedures as needed._
 
 ## Title of Procedure 1, Sub-Procedure 2 (Heading 2)
 
-(_Main body paragraph_) Add introductory text for Sub-Procedure 2, as needed. 
+**(_Main body paragraph_)** Add introductory text for Sub-Procedure 2, as needed. 
 
-**Number List Items:**
+### Number List Items
 
-1. Step 1 of procedure 1. (Numbered List item - Indent 2 spaces, enter a number, and add 1 space.) 
-2. Step 2 of procedure 1. (Numbered List item)
+1. Step 1 of procedure. (Indent 2 spaces, enter a number, and add 1 space.) 
+2. Step 2 of procedure.
 
-**Bullet List Items**
+### Bullet List Items
 
 * Bullet 1 (Indent 2 spaces, enter an asterisk, and add 1 space.)
 * Bullet 2
 
-**Bold and Italics:**
+### Bold and Italics
 
 * Use double asterisks to bold a word:  **bold**.
 * Use underscores to create italics:  _italics_.
 
 > **Note:** or call-out indented block.
 
-**Code Blocks**
+### Code Blocks
 
 To create a code block, use spaces, backticks (```), and Returns in this order: 
 
@@ -220,65 +219,65 @@ For example:
    Text within three backticks for code or command line samples
    ```
 
-**Code Comments**
+### Code Comments
 
-<!--For example, this code denotes a comment. The comment will not appear on the website but can be used as a reference for others viewing the file.-->
+Code comments will be invisible in a webpage view, but others will be able to see the comment in GitHub Markdown. <!--For example, this code denotes a comment. It will not appear on a webpage but can be used as a reference for others viewing the file.-->
 
 # Title of Procedure 2 (Heading 1)
 
-(_Main body paragraph_) Add introductory text for Procedure 2, as needed. 
+**(_Main body paragraph_)** Add introductory text for Procedure 2, as needed. 
 
 ## Title of Procedure 2, Sub-Procedure 1 (Heading 2)
 
-(_Main body paragraph_) Add introductory text for Sub-Procedure 1, as needed. 
+**(_Main body paragraph_)** Add introductory text for Sub-Procedure 1, as needed. 
 
 ## Title of Procedure 2, Sub-Procedure 2 (Heading 2)
 
-(_Main body paragraph_) Add introductory text for Sub-Procedure 2, as needed. 
+**(_Main body paragraph_)** Add introductory text for Sub-Procedure 2, as needed. 
 
 ## Additional Markdown Syntax
 
-**Images**
+### Images
 
-To insert an image (graphic) into your Page, first upload the image file to the **/img/** folder in the appropriate GitHub repository.  Next, at the image insertion point in your Page, add this format to link to the image:
+To insert an image (graphic) into your Page, first upload the image file to the **/img/** folder in the appropriate GitHub repository.  Next, at the image insertion point in your Page, add these formats, as desired, to link to the image.
+
+Use the above formats to align an image in your Page, use the **align** instruction at the end of an image link (i.e., **"left"**, **"center"**, or **"right"**) and/or to add a sizing instruction, such as **width:25%**.
 
 ![This is what I want a screen reader to say for 508 compliance]({{site.baseurl}}/img/imagename.png)
 
-Use these formats to align an image in your Page, use the **align** instruction at the end of an image link (i.e., **"left"**, **"center"**, or **"right"**) and/or to add a sizing instruction, such as **width:15%**.
-
 ![Text for an image goes here]({{site.baseurl}}/img/imagename.png){:align="right"}
 
-![Text for another image goes here]({{site.baseurl}}/img/anotherimagename.png){:style="float:left;width:15%;"}&nbsp;
+![Text for another image goes here]({{site.baseurl}}/img/anotherimagename.png){:style="float:left;width:25%;"}
 
-**Alert Blocks:  Information, Warning, Success, and Error**
+### Alert Blocks for Information, Warning, Success, and Error
 
 Use the Alert block formatting for Information, Warning, Success, and Error Alerts to highlight specific information in your guide.
 
-* **Information Alerts**
+#### Information Alerts
 
 {% include alert-info.html heading = "Important Information Title!" content="Information information text." %}
 
 This text will appear as an **information flag**, which is a blue banner on the website. These flags are used for "informational" messages or notifications, such as useful links or helpful tips.
 
-* **Warning Alerts**
+#### Warning Alerts
 
 {% include alert-warning.html heading = "Important Warning Title!" content="Important warning text." %}
 
 This text will appear as a **warning flag**, which is a yellow banner on the website. Warning flags are used for notifications, such as when a user should skip a certain procedure.
 
-* **Error Alerts (Notifications or Problems)**
+#### Error Alerts (Notifications or Problems)
 
 {% include alert-error.html heading = "Important Alert Notification or Problem Title!" content="Important notification or problem text." %}
 
 This text will appear as an **error flag**, which is a red banner on the website. Error flags are used for notifications, such as common problems that may occur.
 
-* **Success Alerts** 
+#### Success Alerts 
 
 {% include alert-success.html heading = "Important Success Title!" content="Important success text." %}
 
 This text will appear as a **success flag**, which is a greeb banner on the website. Success flags are used to let the user know they succeeded when carrying out a step or action. 
 
-**Links to Other Documents**
+#### Links to Other Documents
 
 To link to useful references, information, or another page within GSA's IDManagement.gov website, use: 
 
