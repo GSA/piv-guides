@@ -61,7 +61,7 @@ You can create a GitHub account by browsing to: [Join GitHub](https://github.com
 
 Once you have a GitHub account, you will need to create a personal copy (called a "_fork_") of the GSA repository related to your topic: 
 
-1. To locate the GSA repository that you want to _fork_, go to [GSA Respositories at GitHub.com](https://github.com/GSA){:target="blank"}.
+1. To locate the GSA repository that you want to _fork_, go to [GSA Repositories at GitHub.com](https://github.com/GSA){:target="blank"}.
 2. Select a GSA repository. 
 3. In the upper right-hand corner of the selected GSA repository screen, click on the gray **Fork** button.
 
@@ -75,7 +75,7 @@ For the next steps, see the following section, **_Create a Branch_**.
 
 To create a new branch to store your guide:
 
-1. In the top right-hand corner of the respository window, click on the down-arrow next to your profile icon/picture. Select **_Your profile_**.  
+1. In the top right-hand corner of the repository window, click on the down-arrow next to your profile icon/picture. Select **_Your profile_**.  
 2. Click on the repository that you forked. 
 3. Above the listing of folders and files in the repository, look for the gray **Branch** button. Click on the down-arrow and select the **_Staging_** branch. 
 
@@ -163,7 +163,7 @@ Once you have copied and pasted this **Template** into your Page, go to the **na
 
 # Assumptions (Heading 1)
 
-**(_Main body paragraph_)** This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. This section may also include conditions that must be met before the user can begin the procedures. Alternate titles may be: **Preconditions** (i.e., list any conditions that must be met) or **Hardware and Software_Requirements** (i.e, list any hardware or software that must be obtained and/or configured).
+**(_Main body paragraph_)** This section should be a bullet list that explains any assumptions that must be understood before the user can begin the procedures in the guide. This section may also include conditions that must be met before the user can begin the procedures. Alternate titles may be: **Preconditions** (i.e., list any conditions that must be met) or **Hardware and Software Requirements** (i.e., list any hardware or software that must be obtained and/or configured).
 
 # Before You Get Started (Heading 1)
 
@@ -275,7 +275,7 @@ This text will appear as an **error flag**, which is a red banner on the website
 
 {% include alert-success.html heading = "Important Success Title!" content="Important success text." %}
 
-This text will appear as a **success flag**, which is a greeb banner on the website. Success flags are used to let the user know they succeeded when carrying out a step or action. 
+This text will appear as a **success flag**, which is a green banner on the website. Success flags are used to let the user know they succeeded when carrying out a step or action. 
 
 ### Links to Other Documents
 
