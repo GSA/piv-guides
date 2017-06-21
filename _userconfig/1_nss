@@ -13,7 +13,7 @@ Set a script to run on the target clients to distribute CA certificates to NSS:
 
 6. Right-click and create a new BAT file named firefox_ca_add.bat that contains the following:
 
-```
+   '''
 
 if not exist "%appdata%\mozilla\firefox\profiles" goto:eof
 set profiledir=%appdata%\mozilla\firefox\profiles
@@ -35,7 +35,7 @@ copy cert8.db cert8.db.orig /y
 goto FINALLY
 :FINALLY
 del /f /q "%temp%\temppath.txt"
-```
+   '''
 
 7. Back in the Logon Properties window, click Add, then Browse to the firefox_ca_add.bat file, double-click.
 
