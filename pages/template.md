@@ -8,7 +8,7 @@ Thank you for your interest in writing a FICAM Guide! We welcome your contributi
 
 This **Contributor's Template for Writing a FICAM Guide** gives guidance, instructions, and a Template to help you get started with your new guide.
 
-{% include alert-info.html heading = "Before starting a new FICAM guide, please review the _Contributing_ page!" content="The _Contributing_ page provides terms and conditions and other important instructions." %}
+{% include alert-info.html heading = "Before starting a new FICAM guide, please review the Contributing page!" content="The Contributing page provides terms and conditions and other important instructions." %}
 
 After reviewing the **Contributing** page, please read through this _Contributor's Template_ before beginning. To go to a specific section, click on a link below:  
 
@@ -22,21 +22,23 @@ After reviewing the **Contributing** page, please read through this _Contributor
 
 ## If You Don't Have a Topic
   
-If you would like to write a FICAM Guide but don't yet have a topic, a good place to start is the open **Issues** lists in the GSA's FICAM repositories in GitHub. The FICAM-related repositories can be found at:
+If you would like to write a FICAM Guide but don't yet have a topic, a good place to start is the open **Issues** lists in the GSA's FICAM repositories in GitHub. These repositories can be found at:
 
 * **PIV-Guides:**  [PIV-Guides](https://github.com/GSA/piv-guides){:target="blank"} 
 * **FPKI-Guides:**  [FPKI-Guides](https://github.com/GSA/fpki-guides){:target="blank"} 
 * **FICAM-Arch:**  [FICAM-Arch](https://github.com/GSA/ficam-arch){:target="blank"} 
 
-To review the open Issues, click on the **Issues** tab at the top of the repository window. 
+To review the open Issues, click on the **Issues** tab at the top of the repository window. If you find an Issue that you would like to write about, you will need a GitHub account: 
 
-If you find an Issue that you would like to write about, you will need to create a GitHub account. To create a GitHub account, see [**Create a GitHub Account**](#create-a-github-account). If you already have an account, the next step is to "_fork_" a copy of the GSA repository related to your topic. For help with forking a repository, see the section called [**Create a Repository**](#create-a-repository).
+1. _To create a GitHub account_, see [**Create a GitHub Account**](#create-a-github-account). 
+2. _If you already have a GitHub account_, see [**Create a Repository**](#create-a-repository).
 
 ## If You Already Have a Topic
 
-If you already have a topic in mind for your new guide, you will need to create a GitHub account to start the guide process. For help creating an account, go to [**Create a GitHub Account**](#create-a-github-account).
+If you already have a topic for your new guide, you will need a GitHub account: 
 
-If you already have a GitHub account; a forked GSA repository related to your topic; a Branch; and a Page, see the section called [Create an Issue](#create-an-issue) for the next step in the guide process.
+1. _To create a GitHub account_, see [**Create a GitHub Account**](#create-a-github-account). 
+2. _If you already have a GitHub account_, see [**Create a Repository**](#create-a-repository).
 
 # Use GitHub
 
