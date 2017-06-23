@@ -5,7 +5,7 @@ permalink: /devconfig/ssh
 collection: devconfig
 ---
 
-To use Secure Shell (SSH) for remote access to a UNIX-like server, you need to first authenticate your PIV. PIV authentication and SSH can be done from a Windows, Linux, or Mac-based computer. For remote access, you also need to configure the UNIX-like server.
+To use Secure Shell (SSH) for remote access to a UNIX-like server, you need to first authenticate your PIV. PIV authentication and SSH can be done from a Windows, Linux, or Mac-based computer. You also need to configure the UNIX-like server that you want to remotely access.
 
 Select the link for your operating system (OS). Please also review _Configure a UNIX-like Server_.
 
