@@ -23,9 +23,9 @@ Turn on Smart Card Services
 >>`sudo security authorizationdb smartcard enable`
 
 >Smart Card services should now be enabled for the system. To check use the following command:
->>>`sudo security authorizationdb smartcard status`
+>>`sudo security authorizationdb smartcard status`
 
-3. Now you are ready to pair the user’s smart card with the account.
+3. Now you can pair the user’s smart card with the account.
 
 
 Pair the User’s Smart Card to their Account
@@ -34,8 +34,7 @@ Pair the User’s Smart Card to their Account
 2. A dialog box should pop up when you insert the user’s smart card.
 3. Select the certificate for PIV Authentication in the drop-down menu.
 4. The system will prompt for an elevated user to authorize the pairing of the PIV Certificate to the user’s account.
-5. The process should be complete as soon as you click "Pair". The next time they login, the user will be prompted for their PIN on next login, and they system will replace the current keychain password.
-
+5. The process should be complete as soon as you click "Pair". The next time the user logs in, they will be prompted for their PIN, and they system will replace the current keychain password.
 
 
 Resources
