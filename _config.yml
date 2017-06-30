@@ -92,6 +92,11 @@ navigation:
   internal: true
   coll: true
   collname: userconfig
+- text: Apple Mac
+  url: apple/
+  internal: true
+  coll: true
+  collname: apple
 #- text: Script and Code Samples
 #  url: code
 #  internal: true
@@ -113,6 +118,10 @@ collections:
   devconfig:
     label: "Developer Guides"
     permalink: /devconfig/:path/
+    output: true
+  apple:
+    label: "Apple Mac"
+    permalink: /apple/:path/
     output: true
 
 
