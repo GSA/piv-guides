@@ -22,7 +22,9 @@ Turn on Smart Card Services
 2. Open a Terminal window, and enter the following command with elevated privileges:
 	sudo security authorizationdb smartcard enable
 Smart Card services should now be enabled for the system. To check use the following command:
+
     sudo security authorizationdb smartcard status
+    
 3. Now you are ready to pair the user’s smart card with the account.
 
 
