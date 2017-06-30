@@ -53,16 +53,16 @@ The built-in mechanisms that are in place for smart card enforcement for Yosemit
 
 ## Known Risks / Issues
 
-### Risk 1
+### Risk 1: Issues Temporarily Un-enforcing and Re-enforcing a PIV-enabled User
 
 Methods to temporarily un-enforce and re-enforce a PIV enabled user will not be addressed in this version of the playbook.
 When you implement Smart Card enforcement for a user, the system changes the way passwords are handled in the Sierra OS keychain.
 Sierra changes the storage location of keychain passwords in the Secure Integrity Protection (SIP) area of the operating system, which makes it impossible to assign a user a randomized temporary password that can be replaced by a user’s PIV card pin when you re-enable enforcement. Therefore, you must either allow a known password to be used during an un-enforced period, or you must find a way to conceal the user password during the period of temporary un-enforcement, such that the user is the sole person in possession of the credentials. JSS version 9.98 may resolve this, but this is not confirmed.
 
-### Risk 2
+### Risk 2: Digital Signing and Encryption using Outlook 365
 
 The Enterprise Connect PKI tool is still in its final beta stages, and is subject to change. 
-Sierra currently cannot read digital signing and encryption certificates from the PIV card, and pass them to Outlook 365 to sign emails. Agencies are working with the Apple Development team to address this. If your Agency uses Outlook 365, we recommend that you descope mail signing from your initial Sierra PIV requirements.
+Sierra currently cannot read digital signing and encryption certificates from the PIV card, and pass them to Outlook 365 to sign emails. This issue exists across all client Operating Systems (Windows, Mac, Linux), and Agencies are working with the Apple Development team to address this. If your Agency uses Outlook 365, we recommend that you descope mail signing from your initial PIV requirements.
 
 
 ## Enterprise Connect PKI
