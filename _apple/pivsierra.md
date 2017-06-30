@@ -11,7 +11,7 @@ System Requirements
 * Mac iMac or MacBook that is from 2010 or newer
 * 4 GB Ram, 8 GB Ram recommended
 * Core 2 Quad processor minimum, i5/i7 processor recommended
-* Smart Card Reader SCR3310 (Puck style) or SCR 3310A (Foldable)
+* [Smart Card Reader](/start/)
 
 
 ENABLING THE SMART CARD
