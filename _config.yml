@@ -93,7 +93,7 @@ navigation:
   coll: true
   collname: userconfig
 - text: Apple Mac
-  url: apple/
+  url: apple/pivsierra
   internal: true
   coll: true
   collname: apple
