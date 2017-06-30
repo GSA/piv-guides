@@ -22,7 +22,7 @@ Turn on Smart Card Services
 2. Open a Terminal window, and enter the following command with elevated privileges:
 	sudo security authorizationdb smartcard enable
 Smart Card services should now be enabled for the system. To check use the following command:
-	sudo security authorizationdb smartcard status
+    sudo security authorizationdb smartcard status
 3. Now you are ready to pair the user’s smart card with the account.
 
 
@@ -39,7 +39,7 @@ Pair the User’s Smart Card to their Account
 Resources
 
 Listed below is the working manual for the Security Authorizationdb terminal command function:
-A full manual for the Security command is at:https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/security.1.html
+A full manual for the Security command is at: [https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/security.1.html](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/security.1.html)
 
 Implementation Plan for User Migration
 
