@@ -39,23 +39,6 @@ _This document applies to Sierra OS only. It is not meant for Mac OS versions ea
 5. The process should be complete as soon as you click "Pair". The next time the user logs in, they will be prompted for their PIN, and they system will replace the current keychain password.
 
 
-## Resources
-
-Here is the command syntax for the `security authorizationdb` terminal command function:
-
-`authorizationdb read <right-name>`<br>
-`authorizationdb remove <right-name>`<br>
-`authorizationdb write <right-name> [allow|deny|<rulename>]`<br>
-> Read/Modify authorization policy database. Without a rulename write will read a dictionary as a plist from stdin.<br>
-
-`authorizationdb merge source <destination>`<br>
-> If no destination path is specified, merge will merge to /etc/authorization.<br>
-
-`authorizationdb smartcard <right-name> <enable|disable|status>`<br>
-> Enables/disables smartcard login support or report current status.<br>
-
-
-
 ## Implementation Plan for User Migration
 
 You should perform smart Card pairing on a user's first login - we recommend pairing the account immediately after imaging, during the initial system setup session with the user.
@@ -75,9 +58,24 @@ Therefore, you must either allow a known password to be used during an un-enforc
 
 ### Risk 2: Digital Signing and Encryption using Outlook 365
 
-
 Sierra currently cannot read digital signing and encryption certificates from the PIV card, and pass them to Outlook 365 to sign emails. This issue exists across all client Operating Systems (Windows, Mac, Linux), and Agencies are working with the Apple Development team to address this. If your Agency uses Outlook 365, we recommend that you descope mail signing from your initial PIV requirements.
 
+## Resources
+
+### Using the "security authorizationdb" command
+
+You can view and modify certificate policies using the `security authorizationdb` terminal command function:
+
+`authorizationdb read <right-name>`<br>
+`authorizationdb remove <right-name>`<br>
+`authorizationdb write <right-name> [allow|deny|<rulename>]`<br>
+> Read/Modify authorization policy database. Without a rulename write will read a dictionary as a plist from stdin.<br>
+
+`authorizationdb merge source <destination>`<br>
+> If no destination path is specified, merge will merge to /etc/authorization.<br>
+
+`authorizationdb smartcard <right-name> <enable|disable|status>`<br>
+> Enables/disables smartcard login support or report current status.<br>
 
 ## Enterprise Connect PKI
 The Enterprise Connect PKI tool is still in its final beta stages, and is subject to change. 
