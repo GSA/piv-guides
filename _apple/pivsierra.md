@@ -49,11 +49,9 @@ Here is the command syntax for the `security authorizationdb` terminal command f
 > Read/Modify authorization policy database. Without a rulename write will read a dictionary as a plist from stdin.<br>
 
 `authorizationdb merge source <destination>`<br>
-
 > If no destination path is specified, merge will merge to /etc/authorization.<br>
 
 `authorizationdb smartcard <right-name> <enable|disable|status>`<br>
-
 > Enables/disables smartcard login support or report current status.<br>
 
 
