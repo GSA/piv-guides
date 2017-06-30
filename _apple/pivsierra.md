@@ -77,7 +77,7 @@ You can view and modify certificate policies using the `security authorizationdb
 `authorizationdb smartcard <right-name> <enable|disable|status>`<br>
 > Enables/disables smartcard login support or report current status.<br>
 
-## Enterprise Connect PKI
+### Enterprise Connect PKI
 The Enterprise Connect PKI tool is still in its final beta stages, and is subject to change. 
 Enterprise Connect enables Mac users to use Kerberos authentication and access mapped network drives. More information is available at [https://www.jamf.com/jamf-nation/discussions/17757/about-enterprise-connect](https://www.jamf.com/jamf-nation/discussions/17757/about-enterprise-connect). To use it, you can install the Beta 3 package located in the Sierra/Beta Software folder on the Apple$ Share.
 Once it is installed, it will ask you for your smart card pin for sign in:
