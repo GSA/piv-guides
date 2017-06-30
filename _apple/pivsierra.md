@@ -31,11 +31,14 @@ _This document applies to Sierra OS only. It is not meant for Mac OS versions ea
 
 1. Make sure the smart card reader is plugged into a USB port.
 2. A dialog box should pop up when you insert the user’s smart card.
-![Sierra Dialog Box Screenshot}(../img/sierra-dialog.png)
+
+![Sierra Dialog Box Screenshot](../img/sierra-dialog.png)
 3. Select the certificate for PIV Authentication in the drop-down menu.
-![Certificate Selection Screenshot}(../img/sierra-pairing-1.png)
+
+![Certificate Selection Screenshot](../img/sierra-pairing-1.png)
 4. The system will prompt for an elevated user to authorize the pairing of the PIV Certificate to the user’s account.
-![Privileged User Authentication Screenshot}(../img/sierra-pairing-2.png)
+
+![Privileged User Authentication Screenshot](../img/sierra-pairing-2.png)
 5. The process should be complete as soon as you click "Pair". The next time the user logs in, they will be prompted for their PIN, and they system will replace the current keychain password.
 
 
