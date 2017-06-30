@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Enabling Smart Card for Mac OS (Sierra)
-permalink: /apple/piv-sierra
+permalink: /apple/pivsierra
 collection: apple
 ---
 
