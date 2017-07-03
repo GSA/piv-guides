@@ -31,10 +31,9 @@ There are five configuration categories to review with your colleagues:
 - [Group Policies and Enforcement]({{site.baseurl}}/networkconfig/grouppolicies/)
 
 
-
-We want to add additional information for installing online certificate status protocol (OCSP) services, tuning configurations, common errors and troubleshooting, and configuring Mac OS X and other operating systems.  
+We want to add additional information for installing online certificate status protocol (OCSP) services, tuning configurations, common errors and troubleshooting, and configuring MacOSX and other operating systems.  
 
 Submit an [Issue]({{site.repo_url}}/issues) to identify information that would be helpful to you, or consider contributing a page to these guides with your lessons learned.   
 
-There are options for workstations and devices that are Mac OS-based and joined to a Windows network; these will be covered in additions to these guides.
+There are options for workstations and devices that are MacOS based and joined to a Windows network. These will be covered in additions to these guides.
 
