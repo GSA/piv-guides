@@ -1,11 +1,10 @@
 ---
 layout: default
-title: Local Certification Authority for Domain Controller Certificates
-collection: networkconfig
+title: Local Certification Authority
 permalink: networkconfig/localca/
 ---
 
-If you have decided to use a local CA for issuing network domain certificates, this page provides some tips.  This is only for local Microsoft CAs. Other platforms may be used and have different procedures.    
+This page provides some tips for using a local certification authority to issue a domain controller certificate.  This is for local Microsoft CAs. Other platforms may be used and have different procedures.    
 
 {% include alert-info.html content="These procedures are accurate for using Microsoft 2012 Server, Standard Edition, for CA and Domain Controller servers as of March 2017." %}  
 
@@ -20,7 +19,6 @@ If you have decided to use a local CA for issuing network domain certificates, t
   * The CA should **never** reside on the same server(s) that are acting as Domain Controller(s).
   * You must be an Enterprise Administrator in the domain to perform these steps.
 
-To use a local-enterprise Microsoft CA to issue a Domain Controller certificate to a Domain Controller server, the certificate must contain valid information. These steps provide recommended options and settings.
   
 ## Install CA Role
 
@@ -42,6 +40,7 @@ To use a local-enterprise Microsoft CA to issue a Domain Controller certificate 
      _Certificate Database:_ **_&lt;your preference&gt;_** 
 
 ## Configure Certificate Template for Domain Controller  
+The domain controller(s) certificate must contain valid information. These steps provide recommended options and settings.
 
   1. Log into the CA server as a member of the **Enterprise Administrators** group.
   2. Open the certificate template's **MMC snap-in** (i.e., **certtmpl.msc**). 
@@ -72,4 +71,4 @@ To use a local-enterprise Microsoft CA to issue a Domain Controller certificate 
   5. Replicate the group policy. Use the command: **_gpupdate /force_** at the command line, or wait for the group policy to replicate based on your replication time and settings.
   6. Open **MMC.exe -&gt; File -&gt; Add/Remove Snap-in -&gt; Certificates -&gt; Computer account -&gt; Local computer**. 
   
-      If successful, you will see a new Domain Controller certificate in the **_Certificate (Local Computer) -&gt; Personal -&gt; Certificates folder_**. At the **Certificate Template** tab, you should also see a certificate generated with the custom certificate template.
+  If successful, you will see a new Domain Controller certificate in the **_Certificate (Local Computer) -&gt; Personal -&gt; Certificates folder_**. At the **Certificate Template** tab, you will also see a certificate generated with the custom certificate template.
