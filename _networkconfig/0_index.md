@@ -9,6 +9,8 @@ These Network Authentication guides will help you configure your Windows _networ
 
 There are many useful pages and technical articles available online that include details on configurations and using generic smartcards.  The information presented here addresses common questions and configurations **specific** to the US Federal Government, **PIV** smartcards, and US federal civilian agency Certification Authorities.
 
+{% include alert-info.html heading = "Teamwork" content="Work with your Network Engineers, Domain Admins, Account Management, and Information Security colleagues to review the information, perform the configurations, and troubleshoot any issues together." %}
+
 ## Pre-Launch Checklist
 
 Check the following items **before** reviewing these network guides and lessons learned:
@@ -28,11 +30,10 @@ There are five configuration categories to review with your colleagues:
 - [Account Linking: Associating PIV credentials with User Accounts]({{site.baseurl}}/networkconfig/accounts/)
 - [Group Policies and Enforcement]({{site.baseurl}}/networkconfig/grouppolicies/)
 
-{% include alert-info.html heading = "Teamwork" content="Work with your Network Engineers, Domain Admins, Account Management, and Information Security colleagues to review the information, perform the configurations, and troubleshoot any issues together." %}
 
-We want to add additional information for installing online certificate status protocol (OCSP) services, tuning configurations, common errors and troubleshooting, and configuring Mac OS X and other operating systems.  
+We want to add additional information for installing online certificate status protocol (OCSP) services, tuning configurations, common errors and troubleshooting, and configuring MacOSX and other operating systems.  
 
 Submit an [Issue]({{site.repo_url}}/issues) to identify information that would be helpful to you, or consider contributing a page to these guides with your lessons learned.   
 
-There are options for workstations and devices that are Mac OS-based and joined to a Windows network; these will be covered in additions to these guides.
+There are options for workstations and devices that are MacOS based and joined to a Windows network. These will be covered in additions to these guides.
 
