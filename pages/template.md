@@ -1,62 +1,204 @@
 ---
 layout: default
-title: Guidance Document Template
+title: Contributor's Template for Writing a FICAM Guide
 permalink: /template/
 ---
 
-This page serves as the template for creating your own guidance document to add to one of the FICAM Guides.
+Thank you for your interest in writing a FICAM Guide! We welcome your contributions. 
 
-To create your own page using the github website, copy the content from this file, paste it into a new file (new files can be created through the 'new file' link at the top of the pages folder), give the new file a name (at the top of the page there will be a box that says 'name your file'), and change the title and permalink at the very top section of the file (the permalink should match the new file name). The title should be what you want to appear at the top of the page on the site, and the permalink text should match the name of the file, but in the format /mypage/ instead of mypage.md.
+This **Contributor's Template for Writing a FICAM Guide** gives guidance and a template to help you get started with your new guide.
 
-In this template, you will see text that explains how to use this template and comments explaining the formats.
-
-<!--- For example, this code denotes a comment, and information written inside of it will not appear on the website but can be used as a reference for others viewing the file. -->
+{% include alert-info.html heading = "Before starting a new FICAM guide, please review the Contributing page!" content="The Contributing page provides terms and conditions and other instructions." %}
 
 
-<!--- The '#' symbol is used to denote headers, with different amounts aligning with different header styles. -->
+* [Select a Topic for Your Guide](#select-a-topic-for-your-guide)
+* [Use GitHub](#use-github)
+* [Template and Markdown Text Editor](#template-and-markdown-text-editor)
 
-#### Overview
-This text should be populated with a brief overview of what content is contained within the guidance document, and may include information on the intended audience, the outcome of the guide, and any other information that would help the user to understand the guide.
+  
+## Select a Topic for Your Guide
+Propose a topic by [opening an Issue]({{site.baseurl}}/contribute/#open-an-issue){:target="blank"} 
 
-##### Assumptions
-*  This text will be a bullet explaining a precondition or assumption before the user begins to follow the steps outlined in this document
-*  The asterisk symbol denotes a bulleted item, and an indented asterisk denotes a second level bullet
-    *  This is a second level bullet
+If you don't have a topic, a good place to start is the open **Issues** lists. 
 
-#### Before you get started
-This text will provide any reference information that may be needed to complete the steps outlined in the guide.
+* [PIV Guides Issues](https://github.com/GSA/piv-guides/issues){:target="blank"} 
+* [Federal PKI Guides Issues](https://github.com/GSA/fpki-guides/issues){:target="blank"} 
+* [FICAM Architecture Issues](https://github.com/GSA/ficam-arch/issues){:target="blank"} 
 
-*  This text names a link to a reference document [with the hyperlink text within brackets](and the actual URL within parentheses)
+## Use GitHub
 
-<!-- If you want to insert an image onto the page use the format below. The align feature at the end can either be "left", "center", or "right". -->
+Using GitHub as a first time user can be overwhelming.  An introduction video is available from DigitalGov on YouTube: [Introduction to GitHub](https://www.youtube.com/watch?v=uNa9GOtM6NE&t=1737s){:target="blank"}.  
 
-![Alt text for an image goes here]({{site.baseurl}}/folder that image is in/imagename.png){:align="right"}
+* [Create a GitHub Account](#create-a-github-account) 
+* [Fork the Repository](#fork-the-repository)
+* [Create a Branch](#create-a-branch)
+* [Create a Page](#create-a-page)
 
-### 1. Title of Procedure 1
+### Create a GitHub Account
 
-> This text will appear as a 'warning flag' on the website, which is a yellow banner. (The ">" symbol and the line directly underneath this body of text create the formatting for this flag.) Warning flags can be used for notifications such as notifying a user that they should skip a certain procedure.
-{:class="warning"}
+You can create a GitHub account by browsing to: [Join GitHub](https://github.com/join). For more help, contact GSA GitHub Support at: gsa-github.support@gsa.gov. 
 
-> This text will appear as a red banner, for an 'alert' message. Alert flags can be used for notifications such as common problems that may occur.
-{:class="alert"}
+* GitHub allows you to remain pseudonymous. You can select the options that suit you on the _Profile_ and _Emails_ pages of your _Personal Settings_ in your GitHub account.  
+* We also highly encourage you to turn on **two-factor authentication** in the _Security_ page (also part of _Personal Settings_).
 
-> This text will appear as a green banner, for an 'informational' message. These flags can be used for notifications such as useful links or helpful tips.
-{:class="info"}
+### Fork the Repository
 
-This is the main body text that explains the purpose of the procedure and any context that you might need before diving into the individual steps. The text within each step should walk the user directly through exactly what they need to do to complete the procedure.
+Once you have a GitHub account, you can create a personal copy (called a "_fork_") to work on in your GitHub profile.  It's simple: 
 
-**Text within double asterisks will appear as bolded.**
+*  In the upper right-hand corner, click on the **Fork** button.
 
-*Text within single asterisks will appear as italicized.*
+A version controlled _copy_ will now be in your GitHub profile.
 
-```Text within three backticks style code or command line samples```
+For more help with forking a repo, go to [Fork a Repo](https://help.github.com/articles/fork-a-repo/){:target="blank"}
 
-For more information on formatting in markdown, go [here.](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
+### Create a Branch
 
-1.	Step 1 of the procedure...
-2.	Step 2 of the procedure...
+To create a new branch to store your guide:
+
+1. In the top right-hand corner of the repository window, click on the down-arrow next to your profile icon/picture. Select **_Your profile_**.  
+2. Click on the repository that you forked. 
+3. Above the listing of folders and files in the repository, look for the **Branch** button. Click on the down-arrow and select the **_Staging_** branch. 
+4. Click on the **_Branch_** button again and enter a new **branch name** into the _text field_ (e.g., **_[Guide Name] Branch_**).
+5. Click on the blue button that now displays your new branch name. (The gray Branch button now also displays your branch name.)
+
+{% include alert-warning.html heading = "The **_Staging_** branch is the master for each FICAM guides repository. It is important that you always start with the **_Staging_** branch in your forked repository when you create a new branch. Starting at **_Staging_** helps keep your files sychronized with GSA's repository." %}  
+
+### Create a Page
+
+To create a new **Page** where you can write your guide:  
+
+1. Check the gray **_Branch_** button to ensure that the new branch name is displayed. If it isn't, select it from the Branch drop-down list.
+2. Click on the **_Create New File_** button located above the top right-hand area of your repository's window (above the folders and files listing).  
+  
+> At the top left-hand area of the Page window, the branch name now appears with a **"/"** after it and a text box.
+
+3. In the text box, enter your new Page's name with the extension, **.md**, for **Markdown** (e.g., Mynewfile.md).
+4. Go to the bottom of your Page. Below the **Commit new file** comment box, click on the green **Commit new file** button to save your new Page.
+
+## Template and Markdown Text Editor
+Markdown is a simple way of writing and formatting.  The formats can be used across many different platforms including for websites and documents.  We created a sample template to help you with your page.  The basic markdown syntax is embedded in the template. 
+
+If you want to learn more about markdown formatting: [**Mastering Markdown**](https://guides.github.com/features/mastering-markdown/){:target="blank"}.
+
+Use these steps to copy and paste the Template below into your GitHub markdown file to start your guide: 
+
+1. Go to the section below called **Template with Markdown Syntax**. Copy the entire Template (headings, text, and samples) up to **Template Ends Here**. 
+2. Now, go to your new GitHub Page and click on the **pencil** symbol (top right-hand side of window). The **pencil** opens Markdown's writing and editing mode.
+3. Next, click on Line **1** of your Page (top left-hand corner) and paste in the copied Template. 
+4. Scroll down to the bottom of your Page window. Click on the green **Commit changes** button to save the Template to your Page.
 
 
-#### References
+## Writing and Style Resources
 
-Any referential links should be added to this section. Links appear in the following format [hyperlink text]({{ site.baseurl }}{{ page.url }})
+Here are some general writing and formatting tips for writing your guide:
+
+  * All pages should be brief.
+  * Use titles to help the user identify jumping off points for information.
+  * Paragraphs should be short. 
+  * All text should be written in plain language and in a user-friendly active voice as much as possible. 
+  * Use numbered steps, bullet lists, and graphics.
+  
+The following sources can provide additional help with plain language, writing, and style:
+
+  * [18F Content Guide](https://content-guide.18f.gov/){:target="_blank"}
+  * [Federal Plain Language Guidelines](http://www.plainlanguage.gov/){:target="_blank"}
+
+
+# Template with Markdown Syntax
+---
+layout: default 
+title: Title of the Page
+permalink: /template/
+---
+The navigation block is used for website navigation when your guide is posted.  Update the _Title of the Page_ and the _/template/_ 
+
+To begin your guide, briefly state its purpose in one to two sentences.  You may include information on the intended audience, the intended outcome of the guide, and any other information that would help the user to understand the guide.
+
+Add a table of contents link for each section. For example:
+
+* [Section 1 Title](#words-in-section1-title-separated-by-dashes)
+* [Section 2 Title](#words-in-section2-title-separated-by-dashes)
+* [Section 3 Title](#words-in-section3-title-separated-by-dashes)
+
+We propose these sections for most guides:
+
+### Before You get Started
+This section should tell the user what to prepare before starting a set of procedures. Explain any assumptions as bulleted lists. Clearly state the hardware and software requirements. 
+
+### Procedure 1
+This section should tell the user how to achieve the goal. Explain all steps simply and don't try to recreate other resources that are easily found.  Focus on the government and what can be unique when implementing or executing.
+
+### Procedure 2
+This section should tell the user how to achieve the goal. Explain all steps simply and don't try to recreate other resources that are easily found.  Focus on the government and what can be unique when implementing or executing. 
+
+
+## Overview (Heading 2)
+
+# This Is a First-Level Heading
+## This Is a Second-Level Heading
+### This is a third-level heading
+#### This is a fourth-level heading
+##### This is a fifth-level heading
+
+### Number List Items
+
+1. Step 1 of procedure. (Indent 2 spaces, enter a number, and add 1 space.) 
+2. Step 2 of procedure.
+
+### Bullet List Items
+
+* Bullet 1 (Indent 2 spaces, enter an asterisk, and add 1 space.)
+* Bullet 2
+
+### Bold and Italics
+
+* Use double asterisks to bold a word:  **bold**.
+* Use underscores to create italics:  _italics_.
+
+### Code Blocks
+
+To create a code block, use spaces, backticks (```), and Returns in this order: 
+
+* 4 spaces plus 3 backticks (```) to start the code block 
+* A Return
+* Type or paste in the code that the user needs to enter for a specific step
+* Another Return
+* 4 spaces plus 3 backticks to end the code block
+* Another Return
+
+For example:
+
+   ```
+   Text within three backticks for code or command line samples
+   ```
+
+### Code Comments
+
+Code comments will be invisible in a webpage view, but others will be able to see the comment in GitHub Markdown. <!--For example, this code denotes a comment. It will not appear on a webpage but can be used as a reference for others viewing the file.-->
+
+### Images
+
+To insert an image into your Page, upload the image file to the **/img/** folder in the GitHub repository.  Then at the image insertion point in your page, add these formats to link to the image.
+
+![This is what I want a screen reader to say for 508 compliance]({{site.baseurl}}/img/imagename.png)
+
+![Text for an image aligned right goes here]({{site.baseurl}}/img/imagename.png){:align="right"}
+
+![Text for another image aligned left goes here]({{site.baseurl}}/img/anotherimagename.png){:style="float:left;width:25%;"}
+
+
+### Links to Other Documents
+
+To link to useful references, information, or another page within GSA's IDManagement.gov website, use: 
+
+[This is what I want my link to say]({{site.baseurl}}/insertlink/)
+
+Link to an document so that it opens a new window:
+
+[This is what I want my link to say](https://www.governmentagency.gov){:target="blank"}
+
+## TEMPLATE ENDS HERE
+___
+
+
+
