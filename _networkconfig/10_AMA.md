@@ -34,8 +34,8 @@ the smartcard certificate is now available via the following link.
 with the following 
 
       ```
-   
-• Windows Registry Editor Version 5.00 
-• [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]
-• "ChainWithIssuancePolicyOIDs"=dword:00000001
+      
+1.  Windows Registry Editor Version 5.00 
+2.  [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]
+3.  "ChainWithIssuancePolicyOIDs"=dword:00000001
       ```
