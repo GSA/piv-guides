@@ -1,7 +1,7 @@
 ---
 layout: default
 title: PuTTY-CAC Installation - Windows
-permalink: /windows/puttycac-install.md
+permalink: /windows/puttycac-install
 collection: windows
 ---
 
