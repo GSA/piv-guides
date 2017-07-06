@@ -1,16 +1,13 @@
 ---
 layout: default
-title: Setup User Firefox Login with PIV
+title: Set a script to run on the target clients to distribute CA certificates to NSS
 collection: userconfig
 permalink: userconfig/nss/
 ---
 
 
-To setup user firefox login with PIV ensure user has following pre-requisits:
-1. install OpenSC: https://github.com/OpenSC/OpenSC/releases
-2. configure Firefox for PIV: https://github.com/OpenSC/OpenSC/wiki/Installing-OpenSC-PKCS%2311-Module-in-Firefox,-Step-by-Step
+*** Set a script to run on the target clients to distribute CA certificates to NSS
 
-Set a script to run on the target clients to distribute CA certificates to NSS:
 1. In domain controller, Copy the CA certificate you wish to distribute in to the directory so that it is accessible via \\fileserver\scripts$\comp_resources\nss\publicca.cer
 2. Open gpmc.msc and create and edit a GPO on the test OU you are targetting.
 3. Navigate to User Configuration\Policies\Windows Settings\Scripts\
