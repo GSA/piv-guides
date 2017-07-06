@@ -97,7 +97,7 @@ navigation:
   internal: true
   coll: true
   collname: apple
-- text: Apple Mac
+- text: Windows
   url: windows/puttycac-install
   internal: true
   coll: true
@@ -128,7 +128,7 @@ collections:
     label: "Apple Mac"
     permalink: /apple/:path/
     output: true
-  apple:
+  windows:
     label: "Windows"
     permalink: /windows/:path/
     output: true
