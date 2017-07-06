@@ -20,10 +20,8 @@ during logon using a certificate-based logon method
 
 * Authentication Mechanism Assurance (AMA)  for AD DS in Windows Server 2008 R2 
 
-    ```
+    https://technet.microsoft.com/en-us/library/dd378897(v=WS.10).aspx
 
- https://technet.microsoft.com/en-us/library/dd378897(v=WS.10).aspx
-    ```
 
 * Power Shell Script for Common Federal/DoD Certificate Policies simplifies implementation as compared to TechNet Step-by-Step Guide.
 
