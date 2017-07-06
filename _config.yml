@@ -92,6 +92,16 @@ navigation:
   internal: true
   coll: true
   collname: userconfig
+- text: Apple Mac
+  url: apple/pivsierra
+  internal: true
+  coll: true
+  collname: apple
+- text: Windows
+  url: windows/puttycac-install
+  internal: true
+  coll: true
+  collname: windows
 #- text: Script and Code Samples
 #  url: code
 #  internal: true
@@ -114,7 +124,14 @@ collections:
     label: "Developer Guides"
     permalink: /devconfig/:path/
     output: true
-
+  apple:
+    label: "Apple Mac"
+    permalink: /apple/:path/
+    output: true
+  windows:
+    label: "Windows"
+    permalink: /windows/:path/
+    output: true
 
 include:
 - _stylesheets
