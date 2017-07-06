@@ -21,26 +21,26 @@ Set a script to run on the target clients to distribute CA certificates to NSS:
 
 6. Right-click and create a new BAT file named firefox_ca_add.bat that contains the following:
 
-if not exist "%appdata%\mozilla\firefox\profiles" goto:eof
-set profiledir=%appdata%\mozilla\firefox\profiles
-dir "%profiledir%" /a:d /b > "%temp%\temppath.txt"
-if not exist "c:\windows\syswow64\nss" goto WIN32
-for /f "tokens=*" %%i in (%temp%\temppath.txt) do (
-cd /d "%profiledir%\%%i"
-copy cert8.db cert8.db.orig /y
-"c:\windows\syswow64\nss\certutil.exe" -A -n "Our Organization's Root CA" -i "c:\windows\system32\nss\publicca.cer" -t "TCu,TCu,TCu" -d .
-)
-goto FINALLY
-:WIN32
-if not exist "c:\windows\system32\nss" goto FINALLY
-for /f "tokens=*" %%i in (%temp%\temppath.txt) do (
-cd /d "%profiledir%\%%i"
-copy cert8.db cert8.db.orig /y
-"c:\windows\system32\nss\certutil.exe" -A -n "Our Organization's Root CA" -i "c:\windows\system32\nss\publicca.cer" -t "TCu,TCu,TCu" -d .
-)
-goto FINALLY
-:FINALLY
-del /f /q "%temp%\temppath.txt"
+            if not exist "%appdata%\mozilla\firefox\profiles" goto:eof
+            set profiledir=%appdata%\mozilla\firefox\profiles
+            dir "%profiledir%" /a:d /b > "%temp%\temppath.txt"
+            if not exist "c:\windows\syswow64\nss" goto WIN32
+            for /f "tokens=*" %%i in (%temp%\temppath.txt) do (
+            cd /d "%profiledir%\%%i"
+            copy cert8.db cert8.db.orig /y
+            "c:\windows\syswow64\nss\certutil.exe" -A -n "Our Organization's Root CA" -i "c:\windows\system32\nss\publicca.cer" -t "TCu,TCu,TCu" -d .
+            )
+            goto FINALLY
+            :WIN32
+            if not exist "c:\windows\system32\nss" goto FINALLY
+            for /f "tokens=*" %%i in (%temp%\temppath.txt) do (
+            cd /d "%profiledir%\%%i"
+            copy cert8.db cert8.db.orig /y
+            "c:\windows\system32\nss\certutil.exe" -A -n "Our Organization's Root CA" -i "c:\windows\system32\nss\publicca.cer" -t "TCu,TCu,TCu" -d .
+            )
+            goto FINALLY
+            :FINALLY
+            del /f /q "%temp%\temppath.txt"
 
 7. Back in the Logon Properties window, click Add, then Browse to the firefox_ca_add.bat file, double-click.
 
