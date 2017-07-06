@@ -35,9 +35,9 @@ the smartcard certificate is now available via the following link.
 * Windows Server® 2012 and after -- no patch required • Enable AMA Priority above  Most Recently Issued Superior Certificate Heuristic
 with the following 
 
-   ```
+      ```
    
 • Windows Registry Editor Version 5.00 
 • [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]
- • "ChainWithIssuancePolicyOIDs"=dword:00000001
-    ```
+• "ChainWithIssuancePolicyOIDs"=dword:00000001
+      ```
