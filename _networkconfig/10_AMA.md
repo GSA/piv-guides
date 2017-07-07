@@ -19,6 +19,10 @@ with the following using Windows Registry Editor.
             [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]
             "ChainWithIssuancePolicyOIDs"=dword:00000001
 
+* Power Shell Script for Common Federal/DoD Certificate Policies simplifies implementation as compared to TechNet Step-by-Step Guide.
+    
+    https://github.com/GSA/piv-guides/files/621976/CertificateIssuanceOIDs.ps1.txt
+    
 * Authentication mechanism assurance is an added capability in Windows Server 2008 R2 AD DS that you can use 
 when the domain functional level is set to Windows Server 2008 R2. When it is enabled, authentication mechanism assurance adds 
 an administrator-designated global group membership to a user’s Kerberos token when the user’s credentials are authenticated 
@@ -28,11 +32,6 @@ during logon using a certificate-based logon method
 
     https://technet.microsoft.com/en-us/library/dd378897(v=WS.10).aspx
 
-
-* Power Shell Script for Common Federal/DoD Certificate Policies simplifies implementation as compared to TechNet Step-by-Step Guide.
-    
-    https://github.com/GSA/piv-guides/files/621976/CertificateIssuanceOIDs.ps1.txt
-    
 * The Windows Server® 2008 R2 patch to correct the KDC not setting the certificate issuance policy when the KDC validates 
 the smartcard certificate is now available via the following link. 
 
