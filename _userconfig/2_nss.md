@@ -6,7 +6,7 @@ permalink: userconfig/nss/
 ---
 
 
-### Set a script to run on the target clients to distribute CA certificates to NSS
+### Set a Script to Run on the Target clients to Distribute CA Certificates to NSS
 
 1. In domain controller, Copy the CA certificate you wish to distribute in to the directory so that it is accessible via \\fileserver\scripts$\comp_resources\nss\publicca.cer
 2. Open gpmc.msc and create and edit a GPO on the test OU you are targetting.
