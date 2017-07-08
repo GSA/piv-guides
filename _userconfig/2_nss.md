@@ -5,6 +5,10 @@ collection: userconfig
 permalink: userconfig/nss/
 ---
 
+### Pre-requisits
+
+1. Install NSS certutil on client machines: https://github.com/christian-korneck/firefox_add-certs/releases
+2. Client machines are configured for PIV login.
 
 ### Set a Script to Run on the Target clients to Distribute CA Certificates to NSS
 
