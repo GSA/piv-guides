@@ -13,8 +13,9 @@ Most Unix-like systems are configured to use the SSH protocol for remote access,
 ### Installing PuTTY-CAC
 1. If you have a forge.mil account, download the latest Putty-CAC package from forge.mil. If you do not have access to forge.mil, you can also download it at [https://risacher.org/putty-cac](https://risacher.org/putty-cac). Source code is available at [https://github.com/risacher/putty-cac](https://github.com/risacher/putty-cac)
 2. There is no installer available for the binaries, so you must either:
-> ● Place the executable files in a directory that you have execute rights over.<br>
-> ● Build an installation package to install the executables in the location you choose.  This will enable the Putty-CAC applications to be available from the Start Menu.<br>
+● Place the executable files in a directory that you have execute rights over.<br>
+● Build an installation package to install the executables in the location you choose.  This will enable the Putty-CAC applications to be available from the Start Menu.<br>
+<br>
 > *At a minimum, you must install the following packages:*<br>
 >> ● putty.exe<br>
 >> ● pageant.exe<br>
