@@ -12,13 +12,12 @@ Most Unix-like systems are configured to use the SSH protocol for remote access,
 
 ### Installing PuTTY-CAC
 1. If you have a forge.mil account, download the latest Putty-CAC package from forge.mil. If you do not have access to forge.mil, you can also download it at [https://risacher.org/putty-cac](https://risacher.org/putty-cac). Source code is available at [https://github.com/risacher/putty-cac](https://github.com/risacher/putty-cac)
-2. There is no installer available for the binaries, so you must either:
+2. There is no installer available for the binaries, so you must either:<br>
 ● Place the executable files in a directory that you have execute rights over.<br>
 ● Build an installation package to install the executables in the location you choose.  This will enable the Putty-CAC applications to be available from the Start Menu.<br>
-<br>
 > *At a minimum, you must install the following packages:*<br>
->> ● putty.exe<br>
->> ● pageant.exe<br>
+> ● putty.exe<br>
+> ● pageant.exe<br>
 3. Verify the version of PuTTY that was installed by opening the application and clicking About in the lower left corner.
 4. Launch pageant from the PuTTY install directory, (eg, C:\Program Files\Putty-CAC). Pageant will appear in the taskbar on the bottom right of your desktop;it will not open a window. 
 5. You must now insert the CAPI Key and configure PuTTY-CAC. Follow the steps below.
@@ -30,8 +29,9 @@ Most Unix-like systems are configured to use the SSH protocol for remote access,
 3. A window will not open, but  the Pageant icon will appear on the menu bar. Right-click the icon and select View Keys.
 4. The Pageant Key List window will appear. Click Add CAPI Cert.
 5. Select your Smart Card Logon certificate from the Windows Security window.
-> Make sure you choose the correct certificate! Select“Click here to view certificate properties,” click “Details,” scroll half-way, and locate Enhanced Key Usage. It should begin with “Smart Card Logon;” this indicates it is the correct certificate. If you do not see this field, select a different certificate.<br>
-> Note: If multiple certificates exist, you may want to clear out the expired or revoked certificates by following How To – PIV Card – Clear certificate store. Click OK to close the details window.
+> Make sure you choose the correct certificate! Select “Click here to view certificate properties,” click “Details,” scroll half-way, and locate Enhanced Key Usage. It should begin with “Smart Card Logon;” this indicates it is the correct certificate. If you do not see this field, select a different certificate.<br>
+> *Note: If multiple certificates exist, you may want to clear out the expired or revoked certificates by following How To – **FIXME: PIV Card – Clear certificate store***. <br>
+Click OK to close the details window.
 6. Highlight the correct Smart Card certificate and click OK.
 7. The Pageant Window will now display the certificate information.
 8. Click Close. 
