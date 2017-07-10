@@ -29,9 +29,9 @@ Most Unix-like systems are configured to use the SSH protocol for remote access,
 3. A window will not open, but  the Pageant icon will appear on the menu bar. Right-click the icon and select View Keys.
 4. The Pageant Key List window will appear. Click Add CAPI Cert.
 5. Select your Smart Card Logon certificate from the Windows Security window.
-> Make sure you choose the correct certificate! Select “Click here to view certificate properties,” click “Details,” scroll half-way, and locate Enhanced Key Usage. It should begin with “Smart Card Logon;” this indicates it is the correct certificate. If you do not see this field, select a different certificate.<br>
+> ● Make sure you choose the correct certificate! Select “Click here to view certificate properties,” click “Details,” scroll half-way, and locate Enhanced Key Usage. It should begin with “Smart Card Logon;” this indicates it is the correct certificate. If you do not see this field, select a different certificate.<br>
 > *Note: If multiple certificates exist, you may want to clear out the expired or revoked certificates by following How To – **FIXME: PIV Card – Clear certificate store***. <br>
-Click OK to close the details window.
+ ● Click OK to close the details window.
 6. Highlight the correct Smart Card certificate and click OK.
 7. The Pageant Window will now display the certificate information.
 8. Click Close. 
