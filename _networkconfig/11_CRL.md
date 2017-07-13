@@ -16,6 +16,6 @@ CRL checking is a backup for OCSP checking, which timeout at default of 50. to r
 
 	https://technet.microsoft.com/en-us/library/ee619783(v=ws.10).aspx#Defining Default Behavior
 	
-On Windows Server 2008 R2 or Windows 7, CRL processing may cause high CPU and network traffic usage. To alleviate the issue, apply following pathch:
+Additionally on Windows Server 2008 R2 or Windows 7, CRL processing may cause high CPU and network traffic usage. To alleviate the Win 2008 R2 issue, apply following patch:
 
     https://support.microsoft.com/en-us/help/2831238/crl-processing-causes-high-cpu-usage,-heavy-network-traffic,-and-servi
