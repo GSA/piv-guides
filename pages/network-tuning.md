@@ -1,22 +1,52 @@
+## Network Tuning / Issue 50
+
+
+
+### Cached logon credential limit
+
+Description goes here. Idefeulo foc omoemowa wahteze liv juvde puguprof. Epehuji upuga zige odfe igo sit pilamhul oto ukurecef.
+
+ 1. Open XYZ
+ 2. Click this
+ 3. Close that
+ 4. All done
+
+### Increase the network retrieval timeout setting on your domain
+https://technet.microsoft.com/en-us/library/cc771429(v=ws.11).aspx
+
+### Increase the OCSP setting from the default of “50” to a higher number referenced here under Defining Default Behavior
+https://technet.microsoft.com/en-us/library/ee619783(v=ws.10).aspx
+
+### patch link again….common question still
+https://support.microsoft.com/en-us/kb/2831238
+
+### may be worth including the link to the United States Government Configuration Baseline (USGCB)
+https://usgcb.nist.gov/usgcb_content.html
+
+
+
+## Troubleshooting - Put in separate document
+
 ---
-layout: default
-title: Network Tuning
-collection: networkconfig
-permalink: /network-tuning/
+https://github.com/GSA/piv-guides/issues/49
+
+Error Message:
+The system could not log you on. The requested key container does not exist on the smart card.
+
+Operating System:
+
+Windows 10
+Windows 2008R2, Windows 2012R2
+Remote Desktop
+Only native drivers (Microsoft drivers)
+Repeatable (absolutely happens every time)
+
+Cause :
+There is a problem with the smart card driver. The problem can be seen when trying to connect with terminal server.
+Solution:
+Check using certutil -scinfo that the driver is installed on the server and on the client computer
+
 ---
 
-### Network Tuning
-
-Certificate Revocation Lists (CRLs) in Federal government environment could reach 20 MB. The default network time out setting for CRL retrieval is too low to fully download the CRL and needs to increase higher.
-This link has steps to reset CRL timeout.
-
-	https://technet.microsoft.com/en-us/library/cc771429(v=ws.11).aspx
-
-CRL checking is a backup for OCSP checking, which timeout at default of 50. to resetting this number use following link:
-
-	https://technet.microsoft.com/en-us/library/ee619783(v=ws.10).aspx#Defining Default Behavior
-	
-Additionally on Windows Server 2008 R2 or Windows 7, CRL processing may cause high CPU and network traffic usage. To alleviate the Win 2008 R2 issue, apply following patch:
-
-    https://support.microsoft.com/en-us/help/2831238/crl-processing-causes-high-cpu-usage,-heavy-network-traffic,-and-servi
+https://github.com/GSA/piv-guides/issues/21
 
