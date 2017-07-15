@@ -80,7 +80,8 @@ user account in AD. If there is no UPN, then the certificate's Distinguished Nam
 1. Logged in as Enterprise Administrator, run the following from an elevated command 
 prompt, where `certfile1..9` is the name of one of the exported certificate files.  
 
-```bat
+    ```
+    bat
     certutil -f -dspublish certfile1.cer rootca  
     certutil -f -dspublish certfile2.cer subca
     certutil -f -dspublish certfile3.cer subca
