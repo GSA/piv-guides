@@ -98,7 +98,6 @@ prompt, where `certfile1..9` is the name of one of the exported certificate file
 
 Run the following PowerShell commands on the domain controller: 
 
-       ```
     powershell
     #Create OU O365 in Active Directory Users and Computers
     New-ADOrganizationalUnit -Name O365 -Path "O=Agency,C=US"
@@ -109,8 +108,7 @@ Run the following PowerShell commands on the domain controller:
     #Create group managed service account
     New-ADServiceAccount gMSAcct01 -DNSHostName yourhost.agency.gov
     #Create a group policy for ADFS OU and link to ADFS OU
-    New-gpo -name ADFS_GPO | new-gplink -target "ou=ADFS,O=Agency,C=US"  
-       ```  
+    New-gpo -name ADFS_GPO | new-gplink -target "ou=ADFS,O=Agency,C=US"    
 
 #### Group Policy setup
 
