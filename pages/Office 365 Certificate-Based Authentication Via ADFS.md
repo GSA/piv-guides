@@ -96,9 +96,10 @@ prompt, where `certfile1..9` is the name of one of the exported certificate file
     * Publish the Leaf's issuer certificate to both `subca` _and_ `NTAuthca`.  
 
 
-1. Run the following PowerShell commands on the domain controller: 
+Run the following PowerShell commands on the domain controller: 
 
-    ```powershell
+    ```
+    powershell
     #Create OU O365 in Active Directory Users and Computers
     New-ADOrganizationalUnit -Name O365 -Path "O=Agency,C=US"
     #Create an OU in Active Directory Users and Computers
@@ -114,12 +115,14 @@ prompt, where `certfile1..9` is the name of one of the exported certificate file
 #### Group Policy setup
 
 1. Edit the group policy you just added, _ADFS_GPO_.
+
 1. Disable third party roots:  
     * Navigate to _Computer Configuration_->_Policies_->_Windows Settings_->
     _Security Settings_->_Public key policies_.  
     * Open the _Certifcate Path Validation Settings_ object.  
     * Check the _Define these policy settings_ checkbox.  
     * Select the _only Enterprise Root CAs_ radio button
+
 1. Set _SendTrustedIssuerList_  
     * Within _Group Policy_, navigate to _Computer Configuration_->_Preferences_->_Windows Setting_->_Registry_  
     * Right-click and select _New->Registry Item_  
@@ -175,7 +178,7 @@ authentication under _Authentication Policies_.
 
 #### AD Synchronization to Office 365 Cloud
 
-1. To configure and start synchronization from the on-premise AD to the O365 cloud, 
+To configure and start synchronization from the on-premise AD to the O365 cloud, 
 you'll need to consider the size of your organization and directories.
     * For large organization or large directories, download and install 
     [Azure AD Connect for Synchronization](http://go.microsoft.com/fwlink/?LinkId=615771) on a member server in the domain.   
@@ -184,7 +187,7 @@ you'll need to consider the size of your organization and directories.
 
 #### Firewall
 
-1. Configure firewall to Allow Inbound to ADFS TCP 443 & 49443.  
+Configure firewall to Allow Inbound to ADFS TCP 443 & 49443.  
 
 #### Group policy enforcement updates
 
