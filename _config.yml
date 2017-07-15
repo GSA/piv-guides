@@ -1,31 +1,37 @@
 # Site settings
-title: PIV Enablement Guides
-name: PIV Enablement Guides
+title: PIV Usage Guides
+name: PIV Usage Guides
 email: icam@gsa.gov
 author:
     name: FICAM
 description: PIV Guidance
-baseurl: '/piv-guides'
-
 highlighter: rouge
-branch: staging
-
-# Point the logo URL at a file in your repo or hosted elsewhere by your organization
-logourl: /piv-guides/img/logo.png
-logoalt: Federal Identity Credential and Access Management
+repo_url: https://github.com/GSA/piv-guides
+baseurl: '/piv-guides'
+branch: federalist-pages
+# Federalist overwrites the site.branch value when deploying
+# the site.branch was used in dynamic link generation for objects like Edit Page
+# we want the dynamic links to send users to the staging branch.  Adding new site variable to ensure federalist doesn't overwrite.
+editbranch: staging
 
 #ficam_playbooks_url: /ficam-guides/
 
-# Repo list
-# List repos that you would like to appear on the homepage here
-repos:
-- name: piv-guides
-  description: FICAM Playbook - PIV Guidance
-  url: https://github.com/GSA/piv-guides
+# Links
+# List links that you would like to appear on the top navigation bar here
+navbar:
+- title: IDmanagement.gov
+  description: Idmanagement.gov
+  url: https://www.idmanagement.gov
+- title: Federal ICAM Architecture
+  description: Federal ICAM Architecture
+  url: https://arch.idmanagement.gov
+#- title: PIV Guides
+# description: PIV Guides
+# url: https://piv.idmanagement.gov
+#- title: Federal PKI Guides
+#  description: Federal PKI Guides
+#  url: https://github.com/gsa/fpki-guides
 
-# Sidebar uses a single github repository to link to issues.
-github:
-  repository_url: https://github.com/GSA/piv-guides
 
 # Build settings
 markdown: kramdown
@@ -51,7 +57,7 @@ navigation:
   url: ''
   internal: true
   coll: false
-- text: Basics of a PIV Credential
+- text: Basics of a PIV
   url: elements
   internal: true
   coll: false
@@ -59,15 +65,15 @@ navigation:
   url: start
   internal: true
   coll: false
-- text: Details of a PIV Credential
+- text: Details of a PIV
   url: details
   internal: true
   coll: false
-- text: Identifiers in a PIV Credential
+- text: Identifiers in a PIV
   url: identifiers
   internal: true
   coll: false
-- text: Certificate Trust for a PIV Credential
+- text: Certificate Trust
   url: pivcertchains
   internal: true
   coll: false

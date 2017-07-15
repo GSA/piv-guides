@@ -19,4 +19,4 @@ Examples of developer guide topics:
 * Code samples for accessing information on a PIV credential
 * Common scripts or tools that are government developed and open source for the public domain
 
-You can [contribute]({{ site.baseurl }}/contribute/) to this effort or open an [Issue]({{site.github.repository_url}}/issues) to discuss a need you may have for a guide.
+You can [contribute]({{ site.baseurl }}/contribute/) to this effort or open an [Issue]({{site.repo_url}}/issues) to discuss a need you may have for a guide.
