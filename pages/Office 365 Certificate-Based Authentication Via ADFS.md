@@ -19,6 +19,7 @@ color:#666666">
 Note: This document does not cover ADFS proxy server scenario, Office 365 account 
 setup, or multiple domains in a Windows forest.  This playbook assumes advanced 
 knowledge of Active Directory, Group Policy, PKI, and ADFS.
+
 ### Prerequisites
 
 * Have a public-facing domain with the ability to manage entries.  
@@ -30,6 +31,7 @@ matches the DNS name you have registered in DNS (adfs.foobar.com).
 ### Install Active Directory server
 
 #### Active Directory/Domain preparations
+
 1. If the user account has a non-routable domain suffix in the UPN, then add an 
 alternate suffix if necessary in AD _Domains and Trusts_ for the alternate UPN.  
 1. We recommend you have an OU filter plan before synchronizing to the cloud. In 
@@ -77,13 +79,15 @@ user account in AD. If there is no UPN, then the certificate's Distinguished Nam
 
 1. Logged in as Enterprise Administrator, run the following from an elevated command 
 prompt, where `certfile1..9` is the name of one of the exported certificate files.  
-    ```bat
+
+```bat
     certutil -f -dspublish certfile1.cer rootca  
     certutil -f -dspublish certfile2.cer subca
     certutil -f -dspublish certfile3.cer subca
     certutil -f -dspublish certfile4.cer subca
     certutil -f -dspublish certfile4.cer NTAuthca  
     ```
+
 #### Explanation
     
     * Publish the _RootCA_ certificate to `rootca`.  
@@ -127,7 +131,9 @@ prompt, where `certfile1..9` is the name of one of the exported certificate file
       vi. Value Data: 0x00000000 (0) Hex  
       
 ### Install ADFS server
+
 #### Prerequisites:
+
 The system where ADFS is installed must be domain-joined.
 The internal name for the ADFS server _must not_ match the external name on the 
 certificate as in these examples:  
