@@ -16,11 +16,6 @@ Contributors should consider the audience when submitting content. Plain languag
 ## Roadmap 
 The expected roadmap for these guides:
 
-March 2017: 
-* Deployed to https://piv.idmanagement.gov
-  * leveraging Federalist platform as a service (federalist.18f.gov)
-
-April 2017++:
 * On-going contributions and collections 
 * Applications and patterns
 * Developer tools and tips
