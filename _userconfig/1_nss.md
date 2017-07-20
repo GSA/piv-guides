@@ -2,7 +2,7 @@
 layout: default
 title: Set a script to run on the target clients to distribute CA certificates to NSS
 collection: userconfig
-permalink: userconfig/nss/
+permalink: userconfig/1_nss/
 ---
 
 ### Pre-requisits
