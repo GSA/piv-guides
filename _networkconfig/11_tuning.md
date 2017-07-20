@@ -2,7 +2,7 @@
 layout: default
 title: Network Tuning
 collection: networkconfig
-permalink: networkconfig/tuning/
+permalink: networkconfig/11_tuning/
 ---
 
 ### Network Tuning
