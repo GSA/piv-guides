@@ -16,13 +16,13 @@ The ***Number of previous logons to cache*** can be modified in local or group p
 More information is available on [Microsoft TechNet](https://technet.microsoft.com/en-us/library/jj852209%28v=ws.11%29.aspx)
 
 ### CRL Retrieval Timeout Settings
-By default, Windows will timeout downloading CRLs after 15 seconds. Some CRLs in the government environment are very large which may lead to timeouts. The default timeout value can be modified using local or group policy by modifying the ***Default URL retrieval timeout*** value found in the ***Certificate Path Validation Settings***, ***Network Retrieval**  tab, located in ***Computer Configuration\Windows Settings\Security Settings\Public Key Policies***
+By default, Windows will timeout downloading CRLs after 15 seconds. Some CRLs in the government environment are very large which may lead to timeouts. The default timeout value can be modified using local or group policy by modifying the ***Default URL retrieval timeout*** value found in the ***Certificate Path Validation Settings***, ***Network Retrieval***  tab, located in ***Computer Configuration\Windows Settings\Security Settings\Public Key Policies***
 
 Source and step-by-step instructions:&nbsp; [Manage Network Retrieval and Path Validation](https://technet.microsoft.com/en-us/library/cc771429%28v=ws.11%29.aspx)
 
 ### OCSP Response Caching Behavior
-By default, Microsoft Windows will retrieve and cache 50 OCSP Responses for any one issuing CA before switching to CRL mode. Depending on the size of the CRL, this may be a poor performance decision. For environments where workstations routinely interact with large CRLs, a large value may signficantly reduce network bandwidth consumption.  This value can be increased by setting the *CryptnetCachedOcspSwitchToCrlCount* DWORD value in the following registry key:
-HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\SystemCertificates\ChainEngine\Config
+By default, Microsoft Windows will retrieve and cache 50 OCSP Responses for any one issuing CA before switching to CRL mode. Depending on the size of the CRL, this may be a poor performance decision. For environments where workstations routinely interact with large CRLs, a large value may signficantly reduce network bandwidth consumption.  This value can be increased by setting the ***CryptnetCachedOcspSwitchToCrlCount*** DWORD value in the following registry key:
+***HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\SystemCertificates\ChainEngine\Config***
 
 Source:&nbsp; [Optimizing the Revocation Experience](https://technet.microsoft.com/en-us/library/ee619783%28v=ws.10%29.aspx)
 
@@ -40,3 +40,4 @@ From the [hotfix](https://support.microsoft.com/en-us/help/2831238/crl-processin
 > 
 >  - Optimizes memory usage for CRL decoding logic.
 >  - Optimizes memory allocation for on-wire fetching.
+
