@@ -22,7 +22,7 @@ Check the following items **before** reviewing these network guides and lessons 
 
 ## Configuration Checklist
 
-There are five configuration categories to review with your colleagues:  
+There are five configuration categories to review with your colleagues.  All five includes steps that need to be completed and it's best to review and complete in this order:    
 
 - [Network Ports and Protocols]({{site.baseurl}}/networkconfig/ports/)
 - [Domain Controllers]({{site.baseurl}}/networkconfig/domaincontrollers/)
@@ -31,9 +31,13 @@ There are five configuration categories to review with your colleagues:
 - [Group Policies and Enforcement]({{site.baseurl}}/networkconfig/grouppolicies/)
 
 
-We want to add additional information for installing online certificate status protocol (OCSP) services, tuning configurations, common errors and troubleshooting, and configuring MacOSX and other operating systems.  
+There are two additional guides with pointers for tuning and using a local certification authority for domain controller certificates:
+
+- [Network Tuning]({{site.baseurl}}/networkconfig/tuning/)
+- [Local Certification Authority]({{site.baseurl}}/networkconfig/localca/)
+
+We want to add additional information for installing online certificate status protocol (OCSP) services, common errors and troubleshooting, and configuring MacOSX and other operating systems.  
 
 Submit an [Issue]({{site.repo_url}}/issues) to identify information that would be helpful to you, or consider contributing a page to these guides with your lessons learned.   
 
-There are options for workstations and devices that are MacOS based and joined to a Windows network. These will be covered in additions to these guides.
 
