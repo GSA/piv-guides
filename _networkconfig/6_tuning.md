@@ -52,7 +52,8 @@ Source:&nbsp; [Optimizing the Revocation Experience](https://technet.microsoft.c
 ### Windows 2008 R2 Server and Large CRLs
 The CRL processing logic on Windows Server 2008 R2 does not handle large CRLs very efficiently. This can lead to timeouts during Smart Card Logon or Client Authenticated TLS. A [hotfix](https://support.microsoft.com/en-us/help/2831238/crl-processing-causes-high-cpu-usage--heavy-network-traffic--and-servi){:target="_blank"} is available that can nearly double CRL processing speed. The hotfix is not needed on Windows 2012 R2 as these improvements are already built in.
 
-From the [hotfix](https://support.microsoft.com/en-us/help/2831238/crl-processing-causes-high-cpu-usage--heavy-network-traffic--and-servi){:target="_blank"} page: 
+From the [hotfix](https://support.microsoft.com/en-us/help/2831238/crl-processing-causes-high-cpu-usage--heavy-network-traffic--and-servi){:target="_blank"} page:
+
 > The hotfix packages provide the following improvements to the Windows
 > Server 2008 R2-based domain controller:  Improves performance by
 > eliminating concurrent multiple threads fetching against the same the
