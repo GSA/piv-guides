@@ -46,7 +46,7 @@ Choose one of the Issues and start a conversation on the Issue.  You help clarif
 
 For a quick guide on adding a page, read [how to add a page.]({{site.baseurl}}/addpage/){:target="_blank"}
 
-We have a [sample template with markdown samples]({{site.repo_url}}/pages/template.md){:target="blank"}.
+We have a [sample template with markdown samples]({{ site.repo_url }}/blob/{{ site.branch }}/pages/template.md){:target="blank"}.
 
 ## Notes on using this repository
 
