@@ -13,9 +13,9 @@ You can copy and paste this template into a new page, and use the sample markdow
 
 You probably noticed this block at the top of the page.  
 
-layout: default 
-title: Title of the Page
-permalink: /template/
+layout: default  
+title: Title of the Page  
+permalink: /template/  
 
 This block at the top of the page is used for website navigation when your guide is posted.  Update the _Title of the Page_ and the _/template/_ 
 
