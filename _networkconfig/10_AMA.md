@@ -7,7 +7,7 @@ permalink: networkconfig/AMA/
 
 ### Authentication Mechanism Assurance
 
-There are variant security risks in logging in to federal information systems. e.g. login from system within government premise lan has lower risk than login from home or other public location through Internet. there is a need to have different authentication mechanism with differnt levels of seucrity assurence, depending on seucrity risks. Lower risk login use less strigent authentication methods than the high risk ones.
+There are variant security risks in login to federal information systems. e.g. login from system within government premise lan has lower risk than login from home or other public location through Internet. there is a need to have different authentication mechanism with differnt levels of seucrity assurence, depending on seucrity risks. Lower risk login use less strigent authentication methods than the high risk ones.
 
 For the purpose of protecting resources based on login method, authentication mechanism assurance from Active Directory (AD) 
 domain service adds an additional group membership to the user's security identifiers attribute (SIDs) 
