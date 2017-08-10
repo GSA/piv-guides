@@ -5,7 +5,7 @@ permalink: /userconfig/ssh
 collection: userconfig
 ---
 
-User often needs to access remote UNIX-like server through network. The risk is weak login method could be impersonated and traffic could be sniffed. PIV can provide strong authentication and hard to inpersonante; ssl can prevent network data sniffing. PIV with SSH can provide both of abov strong security measures.
+User often needs to access remote UNIX-like server through network. The risk is weak login method could be impersonated and traffic could be sniffed. PIV can provide strong authentication and hard to inpersonante; ssl can prevent network data sniffing. PIV with SSH can provide both of abov strong security measures. Public key provided in PIV is authorized in form  of certificate signed by authroized CA certificate.
 To use Secure Shell (SSH) for remote access to a UNIX-like server, you need to first authenticate your PIV. PIV authentication and SSH can be done from a Windows, Linux, or Mac-based computer. You also need to configure the UNIX-like server that you want to remotely access.
 
 Select the link for your operating system (OS). Please also review _Configure a UNIX-like Server_.
@@ -34,7 +34,7 @@ Select the link for your operating system (OS). Please also review _Configure a 
 These steps will help you to:
 
   * Authenticate your PIV.
-  * Ensure that your Windows computer and Jump server recognize your PIV.
+  * Ensure that your Windows computer and SSH server recognize your PIV.
   * Enable the correct drivers on your computer for SSH.
 
 #### Install PuTTY-CAC
@@ -78,10 +78,10 @@ The **CAPI key** is the "Smart Card certificate" discussed in Step 9.
 
   1. Right-click on the **Pageant** icon from the Windows taskbar. Select **New Session** to launch **PuTTY**.
 
-     > _Use PuTTY to set up a new PIV login profile for a Jump server. 
-     > To create new profiles for multiple Jump servers, repeat Steps 2-6 for each Jump server._
+     > _Use PuTTY to set up a new PIV login profile for a SSH server. 
+     > To create new profiles for multiple SSH servers, repeat Steps 2-6 for each SSH server._
 
-  2. Enter the **IP address** of the Jump server in the **Host Name (or IP address)** textbox. (If you already have a profile for the Jump server, select it, and click on the **Load** button. Otherwise, follow Steps 3-6 to set up the profile.)
+  2. Enter the **IP address** of the SSH server in the **Host Name (or IP address)** textbox. (If you already have a profile for the SSH server, select it, and click on the **Load** button. Otherwise, follow Steps 3-6 to set up the profile.)
   3. Enter a session name into the **Saved Sessions** textbox.
   4. From the left **Category**: panel, select **Connection &gt; SSH &gt; CAPI**. Then, click on the checkbox for **Attempt "CAPI Certificate" (Key-only) auth (SSH-2)**.
   5. From within the **PuTTY Configuration** window, select **Connection &gt; SSH &gt; Auth**. Next, click on the checkboxes for **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
@@ -94,10 +94,10 @@ The **CAPI key** is the "Smart Card certificate" discussed in Step 9.
      > _This automatically fills in the **Cert** and **SSH keystring** textboxes._
 
   2. Copy and paste the **SSH keystring**&nbsp;**_value_** (i.e., SSH key) into **Microsoft Notepad** and save it.  
-  3. Provide your SSH key to the Jump server administrator and ask that it be added to your Jump server account.
+  3. Provide your SSH key to the SSH server administrator and ask that it be added to your SSH server account.
 
-     > _Once the Jump server account has been set up with your SSH key, you can use your PIV to log in. 
-     > For other Jump servers, submit a service ticket to the administrator and include the IP address of the Jump server you are using, your account name, and your PIV's SSH key._
+     > _Once the SSH server account has been set up with your SSH key, you can use your PIV to log in. 
+     > For other SSH servers, submit a service ticket to the administrator and include the IP address of the SSH server you are using, your account name, and your PIV's SSH key._
 
 #### Verify your PuTTY login and proceed with SSH
 
@@ -132,7 +132,7 @@ These steps will help you to:
         ```
 			ssh-keygen -D /usr/lib64/opensc-pkcs11.so > mykey.pub
         ```  
-  3. Submit the file with your public SSH key to the Jump server administrator.
+  3. Submit the file with your public SSH key to the SSH server administrator.
 
 #### Log in via SSH
 
@@ -167,7 +167,7 @@ These steps will help you to:
 #### Obtain and save public key from PIV card
 
   1. Insert your **PIV** into your computer's smartcard reader.
-  2. Use the following command to save the **user's public SSH key** to a file and submit it to Jump server administrator.
+  2. Use the following command to save the **user's public SSH key** to a file and submit it to SSH server administrator.
 
         ```
 			ssh-keygen -D /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so > mykey.pub
