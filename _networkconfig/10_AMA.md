@@ -5,36 +5,33 @@ collection: networkconfig
 permalink: networkconfig/AMA/
 ---
 
-### Authentication Mechanism Assurance
+# Authentication Mechanism Assurance (AMA)
 
-There are variant security risks in login to federal information systems. e.g. login from system within government premise lan has lower risk than login from home or other public location through Internet. there is a need to have different authentication mechanism with differnt levels of seucrity assurence, depending on seucrity risks. Lower risk login use less strigent authentication methods than the high risk ones.
+A high-level login risk, like logging into a government system from your favorite coffee shop, home, or the internet, means your system needs more stringent authentication mechanisms than for a low-risk logins (e.g., logging in at the office).
 
-For the purpose of protecting resources based on login method, authentication mechanism assurance from Active Directory (AD) 
-domain service adds an additional group membership to the user's security identifiers attribute (SIDs) 
-when a user logs on using a certificate-based login method, such as a smart-card login. For example, you can restrict access 
-to sensitive resources to users whom log on by using their smart cards, which requires a physical reader that you place 
-in a physically secured location.
+You can increase the protections for high-risk logins to sensitive federal resources by using Microsoft’s Windows Active Directory (AD) Domain Service’s (DS) _Authentication Mechanism Assurance (AMA)_. AMA adds a group membership to a user’s security identifier attributes (SIDs). 
 
-* Windows Server® 2012 and after -- no patch required. Enable AMA Priority above  Most Recently Issued Superior Certificate Heuristic
-with the following using Windows Registry Editor.
+Microsoft offers AMA with several Windows Server versions. Use these guidelines to configure your Windows Server. 
+
+## Specific Implementations
+
+### Windows Server 2012® AD DS and Later
+* No patch is required.  Enable _AMA Priority_ above _Most Recently Issued Superior Certificate Heuristic_ by using the Windows Registry Editor:
 
             [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]
             "ChainWithIssuancePolicyOIDs"=dword:00000001
 
-* Power Shell Script for Common Federal/DoD Certificate Policies simplifies implementation as compared to TechNet Step-by-Step Guide.
-    
-    https://github.com/GSA/piv-guides/files/621976/CertificateIssuanceOIDs.ps1.txt
-    
-* Authentication mechanism assurance is an added capability in Windows Server 2008 R2 AD DS that you can use 
-when the domain functional level is set to Windows Server 2008 R2. When it is enabled, authentication mechanism assurance adds 
-an administrator-designated global group membership to a user’s Kerberos token when the user’s credentials are authenticated 
-during logon using a certificate-based logon method
+* The Power Shell Script below for the Federal Common and DoD Certificate Policies simplifies the Microsoft TechNet steps for the Windows Server 2012: 
 
-* Authentication Mechanism Assurance (AMA)  for AD DS in Windows Server 2008 R2 
+    https://github.com/GSA/piv-guides/files/621976/CertificateIssuanceOIDs.ps1.txt
+
+### Windows Server® 2008 R2 AD DS
+* Set the _Domain Functional Level_ to _Windows Server 2008 R2_:
 
     https://technet.microsoft.com/en-us/library/dd378897(v=WS.10).aspx
 
-* The Windows Server® 2008 R2 patch to correct the KDC not setting the certificate issuance policy when the KDC validates 
-the smartcard certificate is now available via the following link. 
+* AMA gives you the option to add a global group membership to a user’s Kerberos token. The user’s authenticated PIV login activates the group membership.
+
+* The Windows Server® 2008 R2 Patch corrects the Key Distribution Center (KDC) error: 
 
     http://support.microsoft.com/kb/2771254 
