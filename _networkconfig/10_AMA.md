@@ -4,7 +4,6 @@ title: Authentication Mechanism Assurance
 collection: networkconfig
 permalink: networkconfig/AMA/
 ---
-# Authentication Mechanism Assurance (AMA)
 
 A high-risk login to a government system, like from a favorite coffee shop or home, requires stringent authentication mechanisms.
 
