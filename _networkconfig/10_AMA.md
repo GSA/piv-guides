@@ -13,7 +13,7 @@ These guidelines are to help you configure AMA on your Windows Server.
 
 ## Windows Server 2012® AD DS and Later
 
-* No patch is required. Enable _AMA Priority_ above _Most Recently Issued Superior Certificate Heuristic_ by using the Windows Registry Editor:
+* No patch is required. Enable **AMA Priority** above **_Most Recently Issued Superior Certificate Heuristic_** by using the Windows Registry Editor:
 
             [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]
             "ChainWithIssuancePolicyOIDs"=dword:00000001
@@ -24,7 +24,7 @@ These guidelines are to help you configure AMA on your Windows Server.
 
 ## Windows Server® 2008 R2 AD DS
 
-* Set the _Domain Functional Level_ to _Windows Server 2008 R2_:
+* Set the **Domain Functional Level** to **_Windows Server 2008 R2_**:
 
     https://technet.microsoft.com/en-us/library/dd378897(v=WS.10).aspx
 
