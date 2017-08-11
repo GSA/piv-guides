@@ -29,7 +29,7 @@ These guidelines are to help you configure AMA on your Windows Server.
 
     https://technet.microsoft.com/en-us/library/dd378897(v=WS.10).aspx
 
-* AMA gives you the option to add a global group membership to the user’s Kerberos token. The user’s authenticated PIV login activates the group membership. <!--Is there a difference between a group membership and a global group membership?-->
+* AMA gives you the option to add a group membership to the user’s Kerberos token. The user’s authenticated PIV login activates the group membership. 
 
 * The Windows Server® 2008 R2 Patch corrects the known Key Distribution Center (KDC) error: 
 
