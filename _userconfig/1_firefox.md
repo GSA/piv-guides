@@ -11,11 +11,7 @@ The Firefox browser does not provide an out of the box functionality to validate
 
 There are numerous options to enable CAC readers for Firefox. For example, the Department of Defense (DoD) recommends the ActivClient software. This software is not free at this moment. However, the software may be available to active DoD personnel. You can visit this link for more information https://militarycac.com/activclientalternate.htm.
 
-Among the various options available to enable PIV login in Firefox, we will discuss the following methods.
-
-1.	Installing OpenSC Software
-2.	Enabling Kerberos for Firefox for GFE
-
+Among the various options available to enable PIV login in Firefox, we will discuss the option of installing an open source software OpenSC. The OpenSC software installation and setup is simpler than the other solutions.
 
 ### Installing OpenSC Software
 
@@ -38,13 +34,3 @@ The OpenSC Software provides the code libraries to implement the PIV card reader
 * Click ‘Open’.
 * Verify that the module is loaded and click ‘OK’.
 * Restart the Firefox browser and access a PIV card required website. The Firefox browser will prompt for selecting the smart card certificate. Select the certificate and proceed with the authentication.
-
-### Enabling Kerberos for Firefox
-
-When a government furnished equipment (GFE) is used, the GFE may be configured to validate the PIV card during login to the GFE. This PIV authentication will be available to the application to use via a Kerberos token. In many cases the Firefox browser is unable to send the Kerberos data to the application. To enable Kerberos authentication for an application,  follow the steps mentioned below.
-
-* In Firefox, type ‘about:config’ in the url window.
-* Confirm any warning that Firefox presents related to voiding the warranty.
-* In the search box, enter ‘negotiate’ to view the property name to set.
-* Double click the property ‘network.negotiate-auth.trusted-uris’ and enter the value as http://,https://.
-* Restart the Firefox browser.
