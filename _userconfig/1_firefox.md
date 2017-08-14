@@ -4,33 +4,35 @@ title: Configure Firefox for PIV Login
 collection: userconfig
 permalink: userconfig/firefox/
 ---
-8/10/2017 NEW VERSION (UNEDITED)
+
 ## Configure Firefox for PIV Login
 
-The Firefox browser does not provide an out of the box functionality to validate a Personal Identity Verification (PIV) card using a Common Access Card (CAC) reader. Many web applications used in various U.S. Agencies require support for Firefox as either a default browser or as a supported browser.
+Many agencies use Firefox to access web applications, but Firefox doesn't allow for PIV logins. This guide is to help you configure Firefox, so employees can log into web applications with a PIV card. <!--Add the Firefox version number in case Firefox adds an option later on?-->
 
-There are numerous options to enable CAC readers for Firefox. For example, the Department of Defense (DoD) recommends the ActivClient software. This software is not free at this moment. However, the software may be available to active DoD personnel. You can visit this link for more information https://militarycac.com/activclientalternate.htm.
+{% include alert-info.html heading="Option for DoD Personnel" content=" The Department of Defense (DoD) recommends the ActivClient software for Firefox CAC logins. ActivClient isn't free but may be available to DoD personnel: <!--May be available is uncertain. Does this mean free?--> https://militarycac.com/activclientalternate.htm." %} <!--According to the contributing.md (terms and conditions, as LaChelle calls it), Playbooks are supposed to be "vendor-neutal," so this info. may not be acceptable. To say "DoD recommends" is kind of broad; who at DoD? This formatting is for an info-alert box (a blue banner, Info box on website) because this info digresses by referring to specific commercial software, that isn't described herein, and a specific audience [DoD] vs. GSA's broader audience (Federal Government).-->
 
-Among the various options available to enable PIV login in Firefox, we will discuss the option of installing an open source software OpenSC. The OpenSC software installation and setup is simpler than the other solutions.
+### Install OpenSC
 
-### Installing OpenSC Software
+An easy way to configure Firefox for a PIV card reader interface is to use OpenSC: 
 
-The OpenSC Software provides the code libraries to implement the PIV card reader interface for Firefox. The steps for setting up the software is provided below.
+* Download the latest version of OpenSC: [OpenSC wiki](https://github.com/OpenSC/OpenSC/wiki) (e.g., OpenSC-0.17.0-win32_vs12-Light-Release.msi).
 
-* Download the latest version of the OpenSC software (e.g. OpenSC-0.17.0-win32_vs12-Light-Release.msi) from https://github.com/OpenSC/OpenSC/wiki.
-* If you want to install on a 64 bit operating system, you will have to download both the 64 and 32 bit versions of the software.
-* Install the software on the workstation.
-* Open Firefox browser and click on Tools > Options.
-* Navigate to ‘Advanced’ tab.
-* Under ‘Certificates’ > ‘Security Devices’, click on ‘Load’ button to load a new security device.
-* Enter the name as ‘OpenSC PKCS#11 Module’.
-* For the file location, select:
+> **Note:**  To install OpenSC on a 64-bit OS, you'll need to download both the 64- and 32-bit versions.
+
+* Install OpenSC.
+* Open Firefox and click on _Tools **>** Options_.
+* Go **?Click on?** to the _Advanced_ tab and then _Certificates **>** Security Devices_ <!--Are the last 2 from a drop-down?-->
+* To load the certificate, click the _Load_ and enter the name, _OpenSC PKCS#11 Module_.
+* Select a certificate <!--certificate??-->file location for your OS:
 
   * _Windows: C:\Windows\System32_
   * _MacOS: /Library/OpenSC/lib/_
   * _Linux: /usr/lib/_
   
-* Select the file opensc pkcs11.dll (Windows) or opensc pkcs11.so (Linux, macOS). 
-* Click ‘Open’.
-* Verify that the module is loaded and click ‘OK’.
-* Restart the Firefox browser and access a PIV card required website. The Firefox browser will prompt for selecting the smart card certificate. Select the certificate and proceed with the authentication.
+* Select a file:  (for Windows) _opensc pkcs11.dll_ or (for Linux or macOS) _opensc pkcs11.so_. Click _Open_.
+* Verify that the module has been loaded and click _OK_.
+* Restart Firefox and browse to a PIV-card-required website.
+
+> Firefox will prompt you to select the PIV card certificate. 
+
+* Select the certificate and proceed with authentication.
