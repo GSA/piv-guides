@@ -7,17 +7,17 @@ permalink: userconfig/firefox/
 
 ## Configure Firefox for PIV Login
 
-Many agencies use Firefox to access web applications, but Firefox doesn't allow for PIV logins. This guide is to help you configure Firefox, so employees can log into web applications with a PIV card. <!--Add the Firefox version number in case Firefox adds an option later on?-->
+Firefox doesn't natively allow for PIV logins, which the agencies need to access web applications. This guide is to help you configure Firefox for PIV logins. <!--I'm not sure whether LaChelle will like this intro, but she likes concise, simple statements ("plain language"). Maybe we should add the Firefox version number--in case Firefox adds a PIV login option later on?-->
 
-{% include alert-info.html heading="Option for DoD Personnel" content=" The Department of Defense (DoD) recommends the ActivClient software for Firefox CAC logins. ActivClient isn't free but may be available to DoD personnel: <!--May be available is uncertain. Does this mean free?--> https://militarycac.com/activclientalternate.htm." %} <!--According to the contributing.md (terms and conditions, as LaChelle calls it), Playbooks are supposed to be "vendor-neutal," so this info. may not be acceptable. To say "DoD recommends" is kind of broad; who at DoD? This formatting is for an info-alert box (a blue banner, Info box on website) because this info digresses by referring to specific commercial software, that isn't described herein, and a specific audience [DoD] vs. GSA's broader audience (Federal Government).-->
+{% include alert-info.html heading="DoD CAC Logins with Firefox" content=" The DoD recommends ActivClient. ActivClient isn't free to agencies but may be to DoD personnel: <!--Can we find out whether it is free to them or not? If free to them, they would need permission to load it on their government computers, correct? --> https://militarycac.com/activclientalternate.htm." %} <!--According to the contributing.md (terms and conditions), Playbooks should be "vendor-neutal," so this info may not be acceptable. Who at DoD recommends ActivClient to its personnel? NOTE: This "alert-info" formatting produces a blue bannered, Info box on website. Suggest "info-alert" because this text digresses from procedures and speaks to a DoD audience vs. GSA's broader audience (Federal Government).-->
 
 ### Install OpenSC
 
-An easy way to configure Firefox for a PIV card reader interface is to use OpenSC: 
+OpenSC is a simple way to configure Firefox for PIV logins: 
 
 * Download the latest version of OpenSC: [OpenSC wiki](https://github.com/OpenSC/OpenSC/wiki) (e.g., OpenSC-0.17.0-win32_vs12-Light-Release.msi).
 
-> **Note:**  To install OpenSC on a 64-bit OS, you'll need to download both the 64- and 32-bit versions.
+> **Note:**  For a 64-bit OS, you'll need to download both the 64- and 32-bit versions. <!--Why is that?-->
 
 * Install OpenSC.
 * Open Firefox and click on _Tools **>** Options_.
