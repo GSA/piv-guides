@@ -18,13 +18,13 @@ A simple way to configure Firefox for PIV login is to use **OpenSC**. <!--Should
 
 Before configuring Firefox, you will first need to download and install OpenSC: 
 
-* Go to [OpenSC wiki](https://github.com/OpenSC/OpenSC/wiki) and follow the steps in the wiki. (The latest version is OpenSC-0.17.0-win32_vs12-Light-Release.msi.) 
+* Go to [OpenSC](https://github.com/OpenSC/OpenSC/wiki) and follow the steps in the wiki. (The latest version is OpenSC-0.17.0-win32_vs12-Light-Release.msi.) 
 
 > **Note:** Even if you are using a 64-bit OS, you will need to download _both the 64- and 32-bit versions_ of OpenSC.
 
 ### Configure Firefox for PIV Login
 
-Once you have installed OpenSC, launch **Firefox** and load its certificate:
+Once you have installed OpenSC, launch **_Firefox_** and load its certificate:
 
 * Click _Options_ ("wheel" icon) on the _Firefox_ taskbar. <!--This is the way it looks for Firefox 55.0.1.-->
 * Click the _Advanced_ tab **>** _Certificates **>** Security Devices_.
@@ -36,11 +36,11 @@ Once you have installed OpenSC, launch **Firefox** and load its certificate:
   * **_MacOS: /Library/OpenSC/lib/_**
   * **_Linux: /usr/lib/_**
   
-* Next, for a **Windows** OS, select the _opensc pkcs11.dll_ file.
+* Next, for a **_Windows OS_**, select the _opensc pkcs11.dll_ file.
 
 **_OR_**
 
-* For a **Linux** OS or **macOS**, select the _opensc pkcs11.so_ file. 
+* For a **_Linux OS_** or **_macOS_**, select the _opensc pkcs11.so_ file. 
 * Click _Open_ and verify that the module has been loaded. 
 * Click _OK_ and restart _Firefox_. 
 * Next, browse to one of your web applications that requires a PIV login.
