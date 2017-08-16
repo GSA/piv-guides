@@ -13,8 +13,8 @@ This guide is to help you configure Firefox for PIV login. <!--LaChelle prefers 
 {% include alert-info.html heading="DoD CAC Logins with Firefox" content=" The DoD recommends ActivClient. ActivClient isn't free but may be to DoD personnel: <!--Can we find out whether it is free to them or not? If free to them, they would need permission to load it on their government computers, correct? --> https://militarycac.com/activclientalternate.htm." %} <!--According to the contributing.md (terms and conditions), Playbooks should be "vendor-neutral," so this info may not be acceptable. Who at DoD recommends ActivClient to its personnel? NOTE: This "alert-info" formatting produces a blue bannered, Info box on website. Suggest "info-alert" because this text digresses from procedures and speaks to a DoD audience vs. GSA's broader audience (Federal Government).-->
 
 ### Install OpenSC
-
-A simple way to configure Firefox for PIV login is to use **OpenSC**. <!--Should we add the Firefox version number--in case Firefox adds a PIV login option later on-->
+<!--Should we add the Firefox version number?--in case Firefox adds a PIV login option later on-->
+A simple way to configure Firefox for PIV login is to use **OpenSC**. 
 
 Before configuring Firefox, you will first need to download and install OpenSC: 
 
