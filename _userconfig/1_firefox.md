@@ -14,7 +14,7 @@ This guide is to help you configure Firefox for PIV login. <!--LaChelle prefers 
 
 ### Install OpenSC
 
-A simple way to configure Firefox for PIV login is to use **OpenSC**. <!--Should we add the Firefox version number--in case Firefox adds a PIV login option later on?-->
+A simple way to configure Firefox for PIV login is to use **OpenSC**. <!--Should we add the Firefox version number--in case Firefox adds a PIV login option later on-->
 
 Before configuring Firefox, you will first need to download and install OpenSC: 
 
