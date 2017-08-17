@@ -8,29 +8,30 @@ permalink: userconfig/firefox/
 <!--Even though this Playbook is under Userconfig, it looks like these procedures are intended for an Admin who is setting up a user's computer? Is this correct? Clarify who the audience is?-->
 Firefox doesn't allow for PIV login, which government employees and contractors need to access their important web applications. 
 
-This guide is to help you configure Firefox for PIV login. <!--LaChelle prefers short, simple statements (plain language) for Playbooks, so I've shortened the intro, done some word reduction throughout, and tried to add a friendly tone.-->
+This guide will help you configure Firefox for PIV login. <!--LaChelle prefers short, simple statements (plain language) for Playbooks, so I've shortened the intro, done some word reduction throughout, and tried to add a friendly tone.-->
 
 {% include alert-info.html heading="DoD CAC Logins with Firefox" content=" The DoD recommends ActivClient. ActivClient isn't free but may be to DoD personnel: <!--Can we find out whether it is free to them or not? If free to them, they would need permission to load it on their government computers, correct? --> https://militarycac.com/activclientalternate.htm." %} <!--According to the contributing.md (terms and conditions), Playbooks should be "vendor-neutral," so this info may not be acceptable. Who at DoD recommends ActivClient to its personnel? NOTE: This "alert-info" formatting produces a blue bannered, Info box on website. Suggest "info-alert" because this text digresses from procedures and speaks to a DoD audience vs. GSA's broader audience (Federal Government).-->
 
 ### Install OpenSC
-<!--Should we add the Firefox version number?--in case Firefox adds a PIV login option later on-->
-A simple way to configure Firefox for PIV login is to use **OpenSC**. 
 
-Before configuring Firefox, you will first need to download and install OpenSC: 
+You can use **OpenSC** to configure Firefox for PIV login. 
 
-* Go to [OpenSC](https://github.com/OpenSC/OpenSC/wiki) and follow the steps in the wiki. (The latest version is OpenSC-0.17.0-win32_vs12-Light-Release.msi.) 
+To download and install OpenSC for your OS (Windows, macOS, or Linux), go to:  [OpenSC](https://github.com/OpenSC/OpenSC/wiki) and follow the steps in the wiki. 
 
-> **Note:** Even if you are using a 64-bit OS, you will need to download _both the 64- and 32-bit versions_ of OpenSC.
+> **Notes:** 
+  * The latest version is OpenSC-0.17.0-win32_vs12-Light-Release.msi.
+  * Even if you are using a 64-bit OS, you will need to download _both the 64- and 32-bit versions_ of OpenSC.
+  * To test the install, you will need to use the command line prompt. If you haven't used this language before, ask your system administrator or support help desk for help. 
 
 ### Configure Firefox for PIV Login
 
-Once you have installed OpenSC, launch **_Firefox_** and load its certificate:
+Once you have installed and tested OpenSC, launch **_Firefox_** (the latest version is 55.0.1, as of August 2017) and load its certificate:
 
-* Click _Options_ ("wheel" icon) on the _Firefox_ taskbar. <!--This is the way it looks for Firefox 55.0.1.-->
+* From the _Firefox_ taskbar, click the _Options_ icon ("wheel" shape) . 
 * Click the _Advanced_ tab **>** _Certificates **>** Security Devices_.
 
 * At the _Device Manager_ window, click the _Load_ button and enter the certificate name: _OpenSC PKCS#11 Module_.
-* Depending on your OS, select one of these certificate file locations:
+* For your OS, select a certificate file location:
 
   * **_Windows: C:\Windows\System32_**
   * **_MacOS: /Library/OpenSC/lib/_**
