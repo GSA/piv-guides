@@ -12,16 +12,16 @@ This guide will help you configure Firefox for PIV login.
 
 {% include alert-info.html heading="DoD CAC Logins with Firefox" content=" The DoD recommends ActivClient. ActivClient isn't free but may be to DoD personnel: <!--Can we find out whether it is free to them or not? If free to them, they would need permission to load it on their government computers, correct? --> https://militarycac.com/activclientalternate.htm." %} <!--According to the contributing.md (terms and conditions), Playbooks should be "vendor-neutral," so this info may not be acceptable. Who at DoD recommends ActivClient to its personnel? NOTE: This "alert-info" formatting produces a blue bannered, Info box on website. Suggest "info-alert" because this text digresses from procedures and speaks to a DoD audience vs. GSA's broader audience (Federal Government).-->
 
-### Install OpenSC
+### Install and Test OpenSC
 
-Before you configure Firefox, you will need to install and test OpenSC. OpenSC will enable your PIV card to work with security applications. 
+Before you configure Firefox, you will need to install and test OpenSC. OpenSC will enable your PIV card to work with security applications (cryptographic, authentication, etc.).  
 
 Go to:  [OpenSC](https://github.com/OpenSC/OpenSC/wiki) and follow the steps in the wiki for your OS (Windows, macOS, or Linux).
 
 > **Notes:** 
   * The latest version is OpenSC-0.17.0-win32_vs12-Light-Release.msi.
   * Even if you are using a 64-bit OS, you will need to download _both the 64- and 32-bit versions_ of OpenSC.
-  * To test the install, you will need to use the command line prompt. If you haven't used this language before, ask your system administrator or support help desk for help. 
+  * To test the install, you will need to use the OS command prompt. If you haven't done this before, check with your system administrator or support help desk for help. 
 
 ### Configure Firefox for PIV Login
 
