@@ -8,15 +8,15 @@ permalink: userconfig/firefox/
 <!--Even though this Playbook is under Userconfig, it looks like these procedures are intended for an Admin who is setting up a user's computer? Is this correct? Clarify who the audience is?-->
 Firefox doesn't allow for PIV login, which government employees and contractors need to access their important web applications. 
 
-This guide will help you configure Firefox for PIV login. <!--LaChelle prefers short, simple statements (plain language) for Playbooks, so I've shortened the intro, done some word reduction throughout, and tried to add a friendly tone.-->
+This guide will help you configure Firefox for PIV login. 
 
 {% include alert-info.html heading="DoD CAC Logins with Firefox" content=" The DoD recommends ActivClient. ActivClient isn't free but may be to DoD personnel: <!--Can we find out whether it is free to them or not? If free to them, they would need permission to load it on their government computers, correct? --> https://militarycac.com/activclientalternate.htm." %} <!--According to the contributing.md (terms and conditions), Playbooks should be "vendor-neutral," so this info may not be acceptable. Who at DoD recommends ActivClient to its personnel? NOTE: This "alert-info" formatting produces a blue bannered, Info box on website. Suggest "info-alert" because this text digresses from procedures and speaks to a DoD audience vs. GSA's broader audience (Federal Government).-->
 
 ### Install OpenSC
 
-You can use **OpenSC** to configure Firefox for PIV login. 
+Before you configure Firefox, you will need to install and test OpenSC. OpenSC will enable your PIV card to work with security applications. 
 
-To download and install OpenSC for your OS (Windows, macOS, or Linux), go to:  [OpenSC](https://github.com/OpenSC/OpenSC/wiki) and follow the steps in the wiki. 
+Go to:  [OpenSC](https://github.com/OpenSC/OpenSC/wiki) and follow the steps in the wiki for your OS (Windows, macOS, or Linux).
 
 > **Notes:** 
   * The latest version is OpenSC-0.17.0-win32_vs12-Light-Release.msi.
