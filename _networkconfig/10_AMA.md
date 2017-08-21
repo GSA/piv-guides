@@ -20,7 +20,7 @@ These guidelines are to help you configure AMA on your Windows Server.
 
 * This Power Shell Script for the Federal Common and DoD Certificate Policies simplifies the Microsoft TechNet steps for Windows Server 2012: 
 
-    https://github.com/GSA/piv-guides/files/621976/CertificateIssuanceOIDs.ps1.txt
+    https://github.com/GSA/ficam-scripts/blob/auth-mech-assurance/_AMA/CertificateIssuanceOIDs.ps1.txt
 
 ## Windows Server® 2008 R2 AD DS
 
