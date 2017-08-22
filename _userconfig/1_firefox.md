@@ -10,7 +10,7 @@ Firefox doesn't allow for PIV login, which government employees and contractors 
 
 This guide will help you configure Firefox for PIV login. 
 
-{% include alert-info.html heading="DoD CAC Logins with Firefox" content=" The DoD recommends ActivClient. ActivClient isn't free but may be to DoD personnel: <!--Can we find out whether it is free to them or not? If free to them, they would need permission to load it on their government computers, correct? --> https://militarycac.com/activclientalternate.htm." %} <!--According to the contributing.md (terms and conditions), Playbooks should be "vendor-neutral," so this info may not be acceptable. Who at DoD recommends ActivClient to its personnel? NOTE: This "alert-info" formatting produces a blue bannered, Info box on website. Suggest "info-alert" because this text digresses from procedures and speaks to a DoD audience vs. GSA's broader audience (Federal Government).-->
+{% include alert-info.html heading="DoD CAC Logins with Firefox" content=" Commercial software packages can also be used, in addition to open-source solutions, like OpenSC. With these solutions, the procedures for configuring Firefox will be similar those for the OpenSC software. One commercial package that can be used for a DoD Firefox-CAC configuration is ActivClient. ActivClient isn't free but may be to DoD personnel:  https://militarycac.com/activclientalternate.htm." %} 
 
 ### Install and Test OpenSC
 
