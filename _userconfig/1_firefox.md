@@ -5,12 +5,11 @@ collection: userconfig
 permalink: userconfig/firefox/
 ---
 
-<!--Even though this Playbook is under Userconfig, it looks like these procedures are intended for an Admin who is setting up a user's computer? Is this correct? Clarify who the audience is?-->
 Firefox doesn't allow for PIV login, which government employees and contractors need to access their important web applications. 
 
 This guide will help you configure Firefox for PIV login. 
 
-{% include alert-info.html heading="DoD CAC Logins with Firefox" content=" Commercial software packages can also be used, in addition to open-source solutions, like OpenSC. With these solutions, the procedures for configuring Firefox will be similar those for the OpenSC software. One commercial package that can be used for a DoD Firefox-CAC configuration is ActivClient. ActivClient isn't free but may be to DoD personnel:  https://militarycac.com/activclientalternate.htm." %} 
+{% include alert-info.html heading="DoD CAC Logins with Firefox" content=" Commercial software packages can also be used, in addition to open-source solutions, like OpenSC. With these solutions, the procedures for configuring Firefox will be similar to those for the OpenSC software." %} 
 
 ### Install and Test OpenSC
 
