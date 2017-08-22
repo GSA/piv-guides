@@ -5,11 +5,11 @@ collection: userconfig
 permalink: userconfig/firefox/
 ---
 
-Firefox doesn't allow for PIV login, which government employees and contractors need to access their important web applications. 
+Government employees and contractors need to use their PIV cards with Firefox to access their important web applications. Firefox doesn't currently allow for PIV login without added middleware.  
 
 This guide will help you configure Firefox for PIV login. 
 
-{% include alert-info.html heading="DoD CAC Logins with Firefox" content=" Commercial software packages can also be used, in addition to open-source solutions, like OpenSC. With these solutions, the procedures for configuring Firefox will be similar to those for the OpenSC software." %} 
+{% include alert-info.html heading="Commercial software packages can be used." content=" Commercial software is available, in addition to open-source solutions, like OpenSC. With these solutions, the procedures for configuring Firefox will be similar to those for the OpenSC software." %} 
 
 ### Install and Test OpenSC
 
@@ -47,4 +47,4 @@ Once you have installed and tested OpenSC, launch **_Firefox_** (the latest vers
 
 > Firefox will prompt you to select the PIV card's certificate. <!--Is this being done by an Admin or user?-->
 
-* Select the certificate and use your PIV card to log into your web application. <!--Is loading the certificate is a one-time step for a user's computer or does it need to be reloaded each time the user needs to login with PIV? Suggest we clarify this for users or Admin, depending on what audience the procedures are for.-->
+* Select the certificate and use your PIV card to log into your web application. <!--Is loading the certificate is a one-time step for a user's computer or does it need to be reloaded each time the user needs to login with PIV?-->
