@@ -15,7 +15,7 @@ This guide will help you configure Firefox for PIV login.
 
 Before you configure Firefox, you will need to install and test OpenSC. OpenSC will enable a PIV card to work with security applications (cryptographic, authentication, etc.).  
 
-Go to:  [OpenSC](https://github.com/OpenSC/OpenSC/wiki){:target="blank"} and follow the wiki steps for the OS (Windows, macOS, or Linux).
+Go to:  [OpenSC](https://github.com/OpenSC/OpenSC/wiki){:target="_blank"} _and follow the wiki steps for the OS (Windows, macOS, or Linux).
 
 ### Notes: 
 * The latest version is OpenSC-0.17.0-win32_vs12-Light-Release.msi.
