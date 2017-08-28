@@ -1,3 +1,10 @@
+---
+layout: default
+title: Network Autentication
+collection: networkconfig
+permalink: networkconfig/network-authen/
+---
+
 Active Directory and domain controller configuration
 
 Required: Active Directory must have the third-party issuing CA in the NTAuth store to authenticate users to active directory.
