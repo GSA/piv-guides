@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Enable PIV/CAC for SSH
-permalink: /userconfig/ssh
+permalink: userconfig/ssh/
 collection: userconfig
 ---
 
