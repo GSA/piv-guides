@@ -36,23 +36,17 @@ This guide will help you to enable your PIV for SSH to UNIX-like servers from a 
 
 ### Install PuTTY-CAC
 
-1. Download and install [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_. (_PuTTY-CAC will normally be installed at **C:\Program Files\PuTTY**._)
+1. Download and install [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}. (PuTTY-CAC will normally be installed at **C:\Program Files\PuTTY**.)_
 
 ### Use PIV to insert Microsoft CAPI key into Pageant 
 
 1. Insert your **PIV** into your card reader and go to:  **C: &gt; Program Files &gt; PuTTY &gt; Pageant**.
 2. Click the **Pageant** icon from the Windows taskbar, and select **View Keys &amp; Certs**.
-
-> _The Pageant **Key/CAPI Cert List** window opens._
-
-3. Click **Add Cert**.
+3. At the Pageant **Key/CAPI Cert List** window, click **Add Cert**.
 4. At the **Windows Security** window, select your **Smart Card Logon** certificate.
 5. To ensure that the certificate is the right one, click **Click here to view certificate properties &gt; Details**.
 6. Click **Enhanced Key Usage**.
-
-> You should now see the **Smart Card Logon** window. (This means the certificate is of the right type.)
-
-7. Click on the **Smart Card certificate** (i.e., **CAPI key**). Then click **OK** and **Close**. 
+7. At the **Smart Card Logon** window, click the **Smart Card certificate** (i.e., **CAPI key**). Then click **OK** and **Close**. 
 
 > _This fills in the certificate information. (Clear any expired or revoked certificates.) Whenever you start Pageant, you will need to re-add the certificate._
 
@@ -61,7 +55,7 @@ This guide will help you to enable your PIV for SSH to UNIX-like servers from a 
 #### Set up a PIV login profile
 
 1. At the Windows taskbar, click the **Pageant** icon; then select **New Session** to launch **PuTTY**.
-2. Enter the Jump server's IP address and a session name. Click **Load**.
+2. Enter the SSH server's IP address and a session name. Click **Load**.
 3. From **Category**, select **Connection &gt; SSH &gt; CAPI**. 
 4. Click the checkbox for **Attempt "CAPI Certificate" (Key-only) auth (SSH-2)**.
 5. At the **PuTTY Configuration** window, select **Connection &gt; SSH &gt; Auth**. 
@@ -70,10 +64,7 @@ This guide will help you to enable your PIV for SSH to UNIX-like servers from a 
 #### Obtain PIV SSH key
 
 1. At the **PuTTY Configuration** window, select **Connection &gt; SSH&nbsp;&gt; CAPI**. 
-2. Under **Authentication Parameters**, click the **Browse** button.  
-
-> _This fills in the **Cert** and **SSH keystring**._
-
+2. Under **Authentication Parameters**, click the **Browse** button to fill in the **Cert** and **SSH keystring**.  
 3. Save your **SSH keystring**&nbsp;**_value_** (i.e., "SSH key") in a **Notepad** file. Send it to the SSH server administrator to be added to your SSH server account. 
 
 #### SSH to a UNIX-like server
@@ -108,9 +99,9 @@ For an open-source method, go to: [**OpenSC**](https://www.github.com/OpenSC/Ope
 1. Insert your **PIV** into your card reader.
 2. To save your **public SSH key** to a file, enter:
 
-        ```
+    ```
 			ssh-keygen -D /usr/lib64/opensc-pkcs11.so > mykey.pub
-        ```  
+    ```  
 
 3. Send the file to the SSH server administrator.
 
@@ -119,13 +110,11 @@ For an open-source method, go to: [**OpenSC**](https://www.github.com/OpenSC/Ope
 1. Insert your **PIV** into your card reader.
 2. To log into the remote server, enter:
 
-        ```
+    ```
 			ssh -I /usr/lib64/opensc-pkcs11.so <remote-host>
-        ```    
+    ```    
 
-3. At the PIV card password prompt, enter your **PIN**.
-
-> _The **remote-host shell prompt** appears._
+3. At the PIV card password prompt, enter your **PIN** to open the **remote-host shell prompt**.
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %} 
 
@@ -151,9 +140,9 @@ For an open-source method, go to: [**OpenSC**](https://www.github.com/OpenSC/Ope
 1. Insert your **PIV** into your card reader.
 2. To save your **public SSH key** to a file, enter:
 
-        ```
+    ```
 			ssh-keygen -D /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so > mykey.pub
-        ```
+    ```
 
 3. Send the file to the SSH server administrator.
 
@@ -162,13 +151,11 @@ For an open-source method, go to: [**OpenSC**](https://www.github.com/OpenSC/Ope
 1. Insert your **PIV** into your card reader.
 2. To log into the remote server, enter:
 
-        ```
+    ```
 		 	ssh -I /Library/OpenSC/lib/pkcs11/opensc-pkcs11.so <remote-host>
-        ```
+    ```
 
-3. At the PIV password prompt, enter your **PIN**.
-
-> _The **remote-host shell prompt** appears._
+3. At the PIV password prompt, enter your **PIN** to open the **remote-host shell prompt**.
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %}
 
@@ -187,8 +174,6 @@ For an open-source method, go to: [**OpenSC**](https://www.github.com/OpenSC/Ope
 			mkdir /etc/sshd/authorized_keys
         ```
 
-3. To allow one person to have access, place his/her PIV's SSH public key in this directory, according to username: **/etc/sshd/authorized_keys/[login ID]**. 
+3. To allow one person to have access, place his/her PIV's SSH public key in this directory, according to username: **/etc/sshd/authorized_keys/[login ID]**. Disable any alternative means of access (i.e., passwords), as needed.
   
->_Only a **root user** may modify this directory and its files to ensure that access requirements are enforced._  
-  
-4. Disable any alternative means of access (i.e., passwords), as needed.
+>_Only a **root user** may modify this directory and its files to ensure that access requirements are enforced._   
