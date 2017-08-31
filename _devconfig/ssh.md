@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Use PIV for SSH
-permalink: /devconfig/ssh
+permalink: devconfig/ssh/
 collection: devconfig
 ---
 
