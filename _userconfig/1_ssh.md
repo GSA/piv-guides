@@ -92,7 +92,7 @@ This guide will help you to enable your PIV for SSH to UNIX-like servers from a 
   
 ### Configure for PIV login
 
-For an open-source method, go to: [**OpenSC**](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}_.)
+For an open-source method, go to: [**OpenSC**](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}_.
 
 ### Obtain and save public key from PIV
 
@@ -133,7 +133,7 @@ For an open-source method, go to: [**OpenSC**](https://www.github.com/OpenSC/Ope
   
 ### Configure for PIV login
 
-For an open-source method, go to: [**OpenSC**](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}_.)
+For an open-source method, go to: [**OpenSC**](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}_.
 
 ### Obtain and save public key from PIV
 
@@ -163,16 +163,16 @@ For an open-source method, go to: [**OpenSC**](https://www.github.com/OpenSC/Ope
 
 1. Change the configuration in the **/etc/ssh/sshd_config** file and restart the **sshd**:
 
-      ```
-		AuthorizedKeysFile /etc/sshd/authorized_keys/%u
-		PasswordAuthentication No
-      ```
+    ```
+			AuthorizedKeysFile /etc/sshd/authorized_keys/%u
+			PasswordAuthentication No
+    ```
 
 2. Create the **/etc/sshd/authorized_keys** directory:
 
-        ```
+    ```
 			mkdir /etc/sshd/authorized_keys
-        ```
+    ```
 
 3. To allow one person to have access, place his/her PIV's SSH public key in this directory, according to username: **/etc/sshd/authorized_keys/[login ID]**. Disable any alternative means of access (i.e., passwords), as needed.
   
