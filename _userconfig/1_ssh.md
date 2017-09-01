@@ -165,7 +165,7 @@ For an open-source method, go to: [**OpenSC**](https://www.github.com/OpenSC/Ope
 
     ```
 			AuthorizedKeysFile /etc/sshd/authorized_keys/%u<BR>
-			PasswordAuthentication No
+			PasswordAuthentication No</BR>
     ```
 
 2. Create the **/etc/sshd/authorized_keys** directory:
