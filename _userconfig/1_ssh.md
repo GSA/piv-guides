@@ -164,8 +164,8 @@ For an open-source method, go to: [**OpenSC**](https://www.github.com/OpenSC/Ope
 1. Change the configuration in the **/etc/ssh/sshd_config** file and restart the **sshd**:
 
     ```
-			AuthorizedKeysFile /etc/sshd/authorized_keys/%u<BR>
-			PasswordAuthentication No</BR>
+			AuthorizedKeysFile /etc/sshd/authorized_keys/%u  
+			PasswordAuthentication No
     ```
 
 2. Create the **/etc/sshd/authorized_keys** directory:
