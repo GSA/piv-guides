@@ -1,22 +1,20 @@
 ---
 layout: default
-title: Introduction to PIV Developer Guides
+title: Introduction to PIV engineering guides
 permalink: /devconfig/
 collection: devconfig
 ---
 
-The PIV Developer Guides are provided to help engineers configure agency applications to require PIV authentication. These guides are intended to be technical and include step-by-step procedures to develop or configure a system. They should be specific to US Federal Government and PIV credentials.
+PIV engineering guides are for engineers configuring agency infrastructure, servers and enterprise applications for authentication. The guides are focused on US Federal Government implementations. 
 
-We are gathering developer guides and invite you to contribute.
+{% include alert-info.html heading="Are you trying to solve a problem?" content="The same problem has likley been encountered or solved by your colleagues.  Engineering guides exist across government.  The purpose for this site is to organize tips from agency engineers, help link to .gov or .mil information available, and provide a common site for collaboration." %}
 
-Examples of developer guide topics:
+We are just starting to add more to this site.  You can find additional guides across agency websites by using a few simple methods: 
 
-* How do I use PIV for Secure Shell (SSH)?
-* Lessons learned for enabling Remote Desktop Protocol (RDP) to allow PIV.
-* How do I use PIV with a mainframe?
-* How do I enable a website to use PIV?
-* How do I enable a domain to assert assurance in the Kerberos tickets?
-* Code samples for accessing information on a PIV credential.
-* Common scripts or tools that are government-developed and open source for the public domain.
+1. Search on the Internet: include the _server_ or _application_ or _topic_ and add "+PIV +CAC"
+1. Search on the Internet: include the _server_ or _application_ or _topic_ and add "+x509"
+1. Search on Max.gov:  [Max.gov](https://max.gov){:target="_blank"} requires you to login.  Try searching for the topic or guide.   
 
-You can [contribute]({{ site.baseurl }}/contribute/) to this effort or open an [Issue]({{site.repo_url}}/issues) to discuss a need you may have for a developer guide.
+If you don't find what you're looking for, open an [Issue]({{site.repo_url}}/issues){:target="_blank"}.  We can help look through the archives of guides that haven't been posted yet or help you send a request to the government listserves.  
+
+ Your contributions are encouraged and welcome! You can [contribute]({{ site.baseurl }}/contribute/) to this effort or open an [Issue]({{site.repo_url}}/issues) to discuss a need you may have for a guide.
