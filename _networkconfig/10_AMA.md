@@ -5,11 +5,9 @@ collection: networkconfig
 permalink: networkconfig/AMA/
 ---
 
-A high-risk login to a government system, like from a favorite coffee shop or home, requires stringent authentication mechanisms.
+Logging in remotely&mdash;whether from home, on travel, or at the local bookstore&mdash;increases the risk that attackers might be able to hack into government systems and access sensitive information. 
 
-You can increase the security of high-risk logins by using Microsoft Windows' Active Directory (AD) Domain Service's (DS) _Authentication Mechanism Assurance (AMA)_, which adds a group membership to the user’s security identifier attributes (SIDs). 
-
-These guidelines are to help you configure AMA on your Windows Server. 
+This guide can help you to can increase the security of high-risk logins by configuring Microsoft Windows' Active Directory (AD) Domain Service's (DS) _Authentication Mechanism Assurance (AMA)_ on your Windows server.
 
 ## Windows Server 2012® AD DS and Later
 
