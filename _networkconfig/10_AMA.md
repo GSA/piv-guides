@@ -16,7 +16,7 @@ This guide can help you to enhance the security of high-risk logins by configuri
             [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]
             "ChainWithIssuancePolicyOIDs"=dword:00000001
 
-* This Power Shell Script for the Federal Common and DoD Certificate Policies simplifies the Microsoft TechNet steps for Windows Server 2012. Go to:&nbsp;&nbsp;[AMA Certificate Issuance OIDs](https://github.com/GSA/ficam-scripts/blob/auth-mech-assurance/_AMA/CertificateIssuanceOIDs.ps1.txt){:target="_blank"}. <!--This link is broken--404 Error!-->
+* This Power Shell Script for the Federal Common and DoD Certificate Policies simplifies the Microsoft TechNet steps for Windows Server 2012. Go to:&nbsp;&nbsp;[AMA Certificate Issuance OIDs](https://github.com/GSA/ficam-scripts/blob/auth-mech-assurance/_AMA/CertificateIssuanceOIDs.ps1.txt){:target="_blank"}.
 
 ## Windows Server® 2008 R2 AD DS
 
