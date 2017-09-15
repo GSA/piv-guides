@@ -7,7 +7,7 @@ permalink: networkconfig/AMA/
 
 Logging in remotely&mdash;whether from home, on travel, or at the local bookstore&mdash;increases the risk that attackers might be able to hack into government systems and access sensitive information. 
 
-This guide can help you to can increase the security of high-risk logins by configuring Microsoft Windows' Active Directory (AD) Domain Service's (DS) _Authentication Mechanism Assurance (AMA)_ on your Windows Server® 2012 or 2008 R2.
+This guide can help you to enhance the security of high-risk logins by configuring Microsoft Windows' Active Directory (AD) Domain Service's (DS) _Authentication Mechanism Assurance (AMA)_ on your Windows Server® 2012 or 2008 R2.
 
 ## Windows Server® 2012 AD DS and Later (No Patch Required)
 
