@@ -23,7 +23,7 @@ This guide will help you to enhance the security of these high-risk logins and p
 ## Windows Server® 2008 R2 AD DS
 
 * Go to:&nbsp;&nbsp;[Windows Server 2008 R2 AD DS Step-by-Step Guide](https://technet.microsoft.com/en-us/library/dd378897(v=WS.10).aspx)[:target=_"blank"}.
-* _Set the _Domain Functional Level_ to _Windows Server 2008 R2_.
+* Set the _Domain Functional Level_ to _Windows Server 2008 R2_.
 * Add a group membership to the user’s Kerberos token. When a user's PIV login is authenticated, it will activate the group membership.
 
 ### Hotfix for Windows® 2008 R2 Key Distribution Center (KDC) Error
