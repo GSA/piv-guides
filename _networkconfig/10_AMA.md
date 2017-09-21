@@ -5,9 +5,8 @@ collection: networkconfig
 permalink: networkconfig/AMA/
 ---
 
-Logging in remotely&mdash;whether from home, a favorite bookstore, while on travel, or from another out-of-office location&mdash;increases the risk that attackers could capture and use login or other information to access government networks and sensitive information. 
+As a system administrator of an agency, you may want to provide higher privileges to users when they use their PIV/CAC card for login. In such a scenatio, you can utilize the Authentication Mechanism Assurance (AMA) feature of Windows Active Directory (AD). When the AMA is enabled, it will allow you to insert a group policy from the certificate into the authentication token.
 
-This guide will help you to enhance the security of these high-risk logins and protect network resources by configuring Microsoft Windows' Active Directory (AD) Domain Service's (DS) _Authentication Mechanism Assurance (AMA)_ on your Windows Server® 2012 or 2008 R2.<!--How does AMA protects users and government systems from attackers?-->
 
 {% include info-alert.html content=" AMA does not offer an option to require a specific login method (e.g., PIV login)." %}
 
