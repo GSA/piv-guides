@@ -30,4 +30,4 @@ As an example, you want to allow Joe read access to sharepoint documents if Joe 
 
 ### Hotfix for Windows® 2008 R2 Key Distribution Center (KDC) Error
 
-* A Windows Server® 2008 R2-based Domain Hotfix corrects the known KDC error, "Access tokens are not updated correctly when you enable authentication mechanism assurance in a Windows Server 2008 R2-based domain." Go to:&nbsp;&nbsp; [Microsoft Hotfix](http://support.microsoft.com/kb/2771254){:target="_blank"}. 
+* A Windows Server® 2008 R2-based Domain Hotfix corrects the known KDC error, "Access tokens are not updated correctly when you enable authentication mechanism assurance in a Windows Server 2008 R2-based domain." [Microsoft Hotfix](http://support.microsoft.com/kb/2771254){:target="_blank"}. 
