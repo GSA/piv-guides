@@ -7,8 +7,11 @@ permalink: networkconfig/AMA/
 
 As a system administrator of an agency, you may want to provide higher privileges to users when they use their PIV/CAC card for login. In such a scenatio, you can utilize the Authentication Mechanism Assurance (AMA) feature of Windows Active Directory (AD). When the AMA is enabled, it will allow you to insert a group policy from the certificate into the authentication token.
 
-
 {% include info-alert.html content=" AMA does not offer an option to require a specific login method (e.g., PIV login)." %}
+
+As an example, you want to allow Joe read access to sharepoint documents if Joe has a certificate with a policy OID 2.16.840.1.101.3.2.1.12.6 and policy name 'id-eca-medium-hardware-pivi'. You also want Julie to have write privileges since she has a certificate with a policy OID 2.16.840.1.101.3.2.1.3.16 and name id-fpki-common-high. You will setup these 2 policies in AD using any of the available methods listed below and then assign group memberships based on these policy OIDs to read and write access to sharepoint.
+
+{% include info-alert.html content=" Do not use AMA to provide privileged access to servers." %}
 
 ## Windows Server® 2012 AD DS and Later
 
@@ -17,7 +20,7 @@ As a system administrator of an agency, you may want to provide higher privilege
             [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]
             "ChainWithIssuancePolicyOIDs"=dword:00000001
 
-* This PowerShell script for the Federal Common and DoD Certificate Policies simplifies Microsoft TechNet's steps for Windows Server 2012:&nbsp;&nbsp;[AMA Certificate Issuance OIDs](https://github.com/GSA/ficam-scripts/blob/auth-mech-assurance/_AMA/CertificateIssuanceOIDs.ps1.txt){:target="_blank"}.
+* This PowerShell script for the Federal Common and DoD Certificate Policies simplifies Microsoft TechNet's steps for Windows Server 2012:&nbsp;&nbsp;[AMA Certificate Issuance OIDs](https://github.com/GSA/ficam-scripts/tree/auth-mech-assurance/_AMA){:target="_blank"}. <--This link will change after the pull request is merged with staging -->
 
 ## Windows Server® 2008 R2 AD DS
 
