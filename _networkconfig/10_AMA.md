@@ -5,7 +5,7 @@ collection: networkconfig
 permalink: networkconfig/AMA/
 ---
 
-As a system administrator of an agency, you may want to provide higher privileges to users when they use their PIV/CAC card for login. In such a scenatio, you can utilize the Authentication Mechanism Assurance (AMA) feature of Windows Active Directory (AD). When the AMA is enabled, it will allow you to insert a group policy based on the certificate policy of the PIV/CAC card into the authentication Kerberos token.
+As a system administrator of an agency, you may want to provide higher privileges to users when they use their PIV/CAC card for login. In such a scenatio, you can utilize the Authentication Mechanism Assurance (AMA) feature of Windows Active Directory (AD). When the AMA is enabled, it will allow you to insert an administrator designated global group membership based on the certificate policy of the PIV/CAC card into the authentication Kerberos token.
 
 {% include info-alert.html content=" AMA does not offer an option to require a specific login method (e.g., PIV login)." %}
 
