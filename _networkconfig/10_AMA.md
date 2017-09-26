@@ -9,9 +9,9 @@ As a system administrator of an agency, you may want to provide higher privilege
 
 {% include info-alert.html content=" AMA does not offer an option to require a specific login method (e.g., PIV login)." %}
 
-As an example, you want to allow Joe read access to sharepoint documents if Joe has a certificate with a policy OID 2.16.840.1.101.3.2.1.12.6 and policy name 'id-eca-medium-hardware-pivi'. You also want Julie to have write privileges since she has a certificate with a policy OID 2.16.840.1.101.3.2.1.3.16 and name id-fpki-common-high. You will setup these 2 policies in AD using any of the available methods listed below and then assign group memberships based on these policy OIDs to read and write access to sharepoint.
+As an example, you want to allow Joe read access to sharepoint documents if Joe has a certificate with a policy OID 2.16.840.1.101.3.2.1.3.13 and policy name "id-fpki-common-authentication." You also want Julie to have write privileges since she has a certificate with a policy OID 2.16.840.1.101.3.2.1.3.16 and name "id-fpki-common-high." You will setup these 2 policies in AD using any of the available methods listed below and then assign group memberships based on these policy OIDs to read and write access to sharepoint.
 
-{% include info-alert.html content=" Do not use AMA to provide privileged access to servers." %}
+{% include info-warning.html content=" Do not use AMA to provide privileged access to servers." %}
 
 ## Windows Server® 2012 AD DS and Later
 
@@ -30,4 +30,8 @@ As an example, you want to allow Joe read access to sharepoint documents if Joe 
 
 ### Hotfix for Windows® 2008 R2 Key Distribution Center (KDC) Error
 
-* A Windows Server® 2008 R2-based Domain Hotfix corrects the known KDC error, "Access tokens are not updated correctly when you enable authentication mechanism assurance in a Windows Server 2008 R2-based domain." [Microsoft Hotfix](http://support.microsoft.com/kb/2771254){:target="_blank"}. 
+* A Windows Server® 2008 R2-based Domain Hotfix corrects the known KDC error, "Access tokens are not updated correctly when you enable authentication mechanism assurance in a Windows Server 2008 R2-based domain." [Microsoft Hotfix](http://support.microsoft.com/kb/2771254){:target="_blank"}.
+
+## Windows Server® 2016
+
+* For Windows Server® 2016, Microsoft doesn't support AMA:&nbsp;&nbsp;[Windows Server 2016&mdash;What's New in Kerberos Authentication](https://docs.microsoft.com/en-us/windows-server/security/kerberos/whats-new-in-kerberos-authentication){:target="_blank"}. 
