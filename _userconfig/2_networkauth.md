@@ -14,9 +14,15 @@ The agency specific PIV Issuer certificates can be found on the [FPKI Crawler](h
 
 Import the certificates in the Windows [NTAuth Trust Store](https://piv.idmanagement.gov/networkconfig/trustedroots/){target="_blank"}_.
 
-## Add Agency Domain Suffix
+## Add Agency UPN Suffix
 
-In order to trust the certificates from another agency, you have to setup the domain suffix of that agency in your agencies Active Directory.
+In order to trust the PIV/CAC cards from another agency, you have to [add the UPN suffix](https://technet.microsoft.com/en-us/library/cc772007(v=ws.11).aspx){target="_blank"}_ of that agency in your agencies Active Directory Domains and Trusts.
+
+To add UPN suffixes
+
+1. Open Active Directory Domains and Trusts. To open Active Directory Domains and Trusts, click Start , click Administrative Tools, and then click Active Directory Domains and Trusts .
+2. In the console tree, right-click Active Directory Domains and Trusts, and then click Properties.
+3. On the UPN Suffixes tab, type an alternative UPN suffix for the forest, and then click Add.
 
 
 ## Account Linking of Other Agency Users
