@@ -82,16 +82,16 @@ navigation:
   internal: true
   coll: true
   collname: networkconfig
-- text: Developer Guides
-  url: devconfig/
+- text: Engineering Guides
+  url: engineering/
   internal: true
   coll: true
-  collname: devconfig
-- text: User Guides
-  url: userconfig/
-  internal: true
-  coll: true
-  collname: userconfig
+  collname: engineering
+##- text: Administrator Guides
+##  url: userconfig/
+##  internal: true
+##  coll: true
+##  collname: userconfig
 #- text: Script and Code Samples
 #  url: code
 #  internal: true
@@ -106,13 +106,13 @@ collections:
     label: "Network Authentication"
     permalink: /networkconfig/:path/
     output: true
-  userconfig:
-    label: "User Guides"
-    permalink: /userconfig/:path/
-    output: true
-  devconfig:
-    label: "Developer Guides"
-    permalink: /devconfig/:path/
+##  userconfig:
+##    label: "Administrator Guides"
+##    permalink: /userconfig/:path/
+##    output: true
+  engineering:
+    label: "Engineering Guides"
+    permalink: /engineering/:path/
     output: true
 
 
