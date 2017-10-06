@@ -37,7 +37,7 @@ When a user authenticates with another agency PIV/CAC card, the credential of th
 | Name | PIV Issuer  | Links |
 |------|-------------|-------|
 |Department of Defense|||
-|Department of Homeland Security|OU = DHS CA4<br>OU = Certification Authorities<br>OU = Department of Homeland Security<br>O = U.S. Government<br>C = US||
+|Department of Homeland Security|OU = DHS CA4<br>OU = Certification Authorities<br>OU = Department of Homeland Security<br>O = U.S. Government<br>C = US|AIA: http://pki.dimc.dhs.gov/dhsca_ee_aia.p7c<br/><br/>OCSP: http://ocsp.dimc.dhs.gov<br/><br/>CRL: http://pki.dimc.dhs.gov/DHS_CA1.crl |
 |Department of State|||
 |Entrust Federal SSP|Entrust Federal SSP||
 |FAA Custom|||
