@@ -23,7 +23,7 @@ To add UPN suffixes
 
 ## Trust Store - Import Agency Specific PIV Issuer Certificates
 
-Your agency will have to trust the issuer certificates for the other agencies. The agency specific PIV issuer certificates can be found in the Access Information Authority (AIA) link.
+Your agency will have to trust the issuer certificates for the other agencies. The agency specific PIV issuer certificates can be found in the Authority Information Access (AIA) link.
 
 The agency specific PIV Issuer certificates can be found on the [FPKI Crawler](https://fpki-graph.fpki-lab.gov/crawler/){target="_blank"}_ website. You will find the certificate listed by agencies in the table 'Certificate Files Grouped by Type'. Once you locate the agency, you can download the certificates and the path to COMMON in p7b format.
 {target="_blank"}_.
