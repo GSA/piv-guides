@@ -38,6 +38,27 @@ Import the certificates in the Windows [NTAuth Trust Store](https://piv.idmanage
 When a user authenticates with another agency PIV/CAC card, the credential of that user may not match the account created in the Active Directory user setup in your agency. There are multiple ways to [link that PIV/CAC card](https://piv.idmanagement.gov/networkconfig/accounts/){target="_blank"} owner to the Active Directory account.
 
 ## List of PIV Issuers
+This table contains the information for US Executive Branch Agencies and the Certification Authorities that are used for **PIV** credentials.
+OCSP and CRL endpoints are used to define configurations for the firewalls. You must allow access to these endpoints through the firewalls if you want this to work.
+You can also use the CRL endpoints to poll the CRL data into your local internal agency OCSP responders (for those that have them installed!) and route your internal agency intranet traffic to your internal agency ocsp responders. 
+How would I do this?  We will tell you - this can be configured in your microsoft domain as a setting.  
+You will need to install ALL the Intermediate and Issuing CA certificates into your NT Auth store for your agency networks.  
+This table contains the links for downloading all the XXX number of certificates.  How many certificates are there?  
+This table exists as a machine readable file that can be downloaded here (from this repo) and will be a CSV? or YAML? or JSON?
+
+TWO TABLES
+
+TABLE ONE
+This is for the END ENTITY Certificates first....
+
+| Issuing Certification Authorities | OCSP  | CRL | AIA URIs |
+|------|-------|-------|------
+
+TABLE TWO
+
+| Agency | Issuing Certification Authorities |
+|------|-------------|
+
 
 | Name | PIV Issuer  | Links |
 |------|-------------|-------|
