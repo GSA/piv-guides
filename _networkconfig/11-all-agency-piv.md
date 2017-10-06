@@ -38,8 +38,9 @@ When a user authenticates with another agency PIV/CAC card, the credential of th
 |------|-------------|-------|
 |Department of Defense|||
 |Department of Homeland Security|OU = DHS CA4<br>OU = Certification Authorities<br>OU = Department of Homeland Security<br>O = U.S. Government<br>C = US|AIA: http://pki.dimc.dhs.gov/dhsca_ee_aia.p7c<br/><br/>OCSP: http://ocsp.dimc.dhs.gov<br/><br/>CRL: http://pki.dimc.dhs.gov/DHS_CA1.crl |
-|Department of State|||
+|Department of State|CN = U.S. Department of State PIV CA<br/>CN = AIA<br/>CN = Public Key Services<br/>CN = Services<br/>CN = Configuration<br/>DC = state<br/>DC = sbu<br/>|AIA: http://crls.pki.state.gov/AIA/CertsIssuedToDoSPIVCA.p7c<br/><br/>OCSP: http://ocsp.pki.state.gov/OCSP/DoSOCSPResponder<br/><br/>CRL: http://crls.pki.state.gov/crls/DoSADPKIPIVCA.crl|
 |Entrust Federal SSP|Entrust Federal SSP||
-|FAA Custom|||
+|Executive Office of the President|CN = Executive Office of the President CA-B8<br/>OU = PKI<br/>OU = Services<br/>DC = ssp<br/>DC = eop<br/>DC = gov<br/>|AIA: http://aia1.ssp-strong-id.net/CA/EOP-SSP-CA-B8.p7c<br/>http://keys.eop.gov/ca/eopcaB8.p7c<br/>http://strong-auth.eop.gov/ca/EOP-SSP-CA-B8.p7c<br/><br/>OCSP:http://ocsp1.ssp-strong-id.net/EOP-SSP-CA-B8/<br/><br/>http://strong-auth.eop.gov/OCSP/<br/><br/>CRL: URL=http://cdp1.ssp-strong-id.net/CDP/EOP-SSP-CA-B8.crl<br/>URL=http://keys.eop.gov/eopcab8.crl<br/>URL=http://strong-auth.eop.gov/CRL/EOP-SSP-CA-B8.crl<br/>|
+|FAA||AIA:  http://ssp-aia.symauth.com/SSP/DoT_Agency_G4.p7c<br/>OCSP:  http://ssp-ocsp.symauth.com<br/><br/>CRL:  http://onsitecrl.verisign.com/USDepartmentofTransportationFAAPIVG4/LatestCRL.crl|
 |NASA|||
 |USAccess|OU = Entrust Managed Services SSP CA <br>OU = Certification Authorities<br> O = Entrust<br> C = US | AIA: http://sspweb.managed.entrust.com/AIA/CertsIssuedToEMSSSPCA.p7c<br> OCSP:<br>  CRL: http://sspweb.managed.entrust.com/CRLs/EMSSSPCA2.crl |
