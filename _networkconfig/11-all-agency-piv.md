@@ -32,7 +32,7 @@ Import the certificates in the Windows [NTAuth Trust Store](https://piv.idmanage
 
 ## Account Linking - Other Agency Users
 
-When a user authenticates with another agency PIV/CAC card, the credential of that user may not match the account created in the Active Directory user setup in your agency. There are multiple ways to match that PIV/CAC card owner to the Active Directory account.
+When a user authenticates with another agency PIV/CAC card, the credential of that user may not match the account created in the Active Directory user setup in your agency. There are multiple ways to [link that PIV/CAC card](https://piv.idmanagement.gov/networkconfig/accounts/){target="_blank"} owner to the Active Directory account.
 
 ## List of PIV Issuers
 
