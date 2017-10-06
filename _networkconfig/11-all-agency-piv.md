@@ -5,6 +5,9 @@ collection: networkconfig
 permalink: networkconfig/11_accept-all-agency-piv.md/
 ---
 
+Published On: October 6th, 2017<br/>
+Last Updated On: October 6th, 2017
+
 If you want to allow other agency users to authenticate to your agency network, this article will help you configure your agency's Active Directory to support other agency issued PIV/CAC card authentication.
 
 ## Network Ports and Protocols - Open Access to OCSP and CRL
