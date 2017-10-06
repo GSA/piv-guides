@@ -34,12 +34,12 @@ When a user authenticates with another agency PIV/CAC card, the credential of th
 
 ## List of PIV Issuers
 
-| Name | PIV Issuer  | Key Usage | Links |
-|------|-------------|-----------|-------|
-|USAccess|OU = Entrust Managed Services SSP CA <br>OU = Certification Authorities<br> O = Entrust<br> C = US | Client Authentication (1.3.6.1.5.5.7.3.2)<br> Smart Card Logon (1.3.6.1.4.1.311.20.2.2)<br> Any Purpose (2.5.29.37.0) | AIA: http://sspweb.managed.entrust.com/AIA/CertsIssuedToEMSSSPCA.p7c<br> OCSP:<br>  CRL: http://sspweb.managed.entrust.com/CRLs/EMSSSPCA2.crl |
-|Entrust Federal SSP|Entrust Federal SSP|||
-|Department of Defense||||
-|Department of Homeland Security||||
-|Department of State||||
-|FAA Custom||||
-|NASA||||
+| Name | PIV Issuer  | Links |
+|------|-------------|-------|
+|USAccess|OU = Entrust Managed Services SSP CA <br>OU = Certification Authorities<br> O = Entrust<br> C = US | AIA: http://sspweb.managed.entrust.com/AIA/CertsIssuedToEMSSSPCA.p7c<br> OCSP:<br>  CRL: http://sspweb.managed.entrust.com/CRLs/EMSSSPCA2.crl |
+|Entrust Federal SSP|Entrust Federal SSP||
+|Department of Defense|||
+|Department of Homeland Security|||
+|Department of State|||
+|FAA Custom|||
+|NASA|||
