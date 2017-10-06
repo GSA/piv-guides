@@ -9,7 +9,7 @@ If you want to allow other agency users to authenticate to your agency network, 
 
 ## Network Ports and Protocols - Open Access to OCSP and CRL
 
-The first step in setting up the support for other agency PIV/CAC is to validate that your agencies network is open to the Certificate Issuer website to validate the certificate. Your agency's domain controllers, servers and workstations should be able to access the OCSP and CRL links for validation in real time.
+The first step in setting up the support for other agency PIV/CAC is to validate that your agency's network is open to the Certificate Issuer website to validate the certificate. Your agency's domain controllers, servers and workstations should be able to access the On-line Certificate Status Protocol (OCSP) and Certificate Revocation List (CRL) links for validation in real time. You can find the OCSP and CRL links in the List of Issuers table below.
 
 ## Domain Controllers - Add Agency UPN Suffix
 
@@ -22,6 +22,8 @@ To add UPN suffixes
 3. On the UPN Suffixes tab, type an alternative UPN suffix for the forest, and then click Add.
 
 ## Trust Store - Import Agency Specific PIV Issuer Certificates
+
+Your agency will have to trust the issuer certificates for the other agencies. The agency specific PIV issuer certificates can be found in the Access Information Authority (AIA) link.
 
 The agency specific PIV Issuer certificates can be found on the [FPKI Crawler](https://fpki-graph.fpki-lab.gov/crawler/){target="_blank"}_ website. You will find the certificate listed by agencies in the table 'Certificate Files Grouped by Type'. Once you locate the agency, you can download the certificates and the path to COMMON in p7b format.
 {target="_blank"}_.
