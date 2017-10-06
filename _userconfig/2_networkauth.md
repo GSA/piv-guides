@@ -31,3 +31,17 @@ Import the certificates in the Windows [NTAuth Trust Store](https://piv.idmanage
 ## Account Linking - Other Agency Users
 
 When a user authenticates with another agency PIV/CAC card, the credential of that user may not match the account created in the Active Directory user setup in your agency. There are multiple ways to match that PIV/CAC card owner to the Active Directory account.
+
+## List of PIV Issuers
+
+| Name | PIV Issuer  | Key Usage | Links |
+|------|-------------|-----------|-------|
+|USAccess|OU = Entrust Managed Services SSP CA <br>OU = Certification Authorities<br> O = Entrust<br> C = US | Client Authentication (1.3.6.1.5.5.7.3.2)<br> Smart Card Logon (1.3.6.1.4.1.311.20.2.2)<br> Any Purpose (2.5.29.37.0) | AIA: http://sspweb.managed.entrust.com/AIA/CertsIssuedToEMSSSPCA.p7c<br> OCSP:<br>  CRL: http://sspweb.managed.entrust.com/CRLs/EMSSSPCA2.crl |
+|Entrust Federal SSP|Entrust Federal SSP|||
+|Department of Defense||||
+|Department of Homeland Security||||
+|Department of State||||
+|FAA Custom||||
+|NASA||||
+
+
