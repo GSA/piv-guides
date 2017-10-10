@@ -9,19 +9,18 @@ You can use your PIV credential for Secure Shell (SSH) to remotely access *nix s
 
 {% include alert-info.html content = "Your PIV contains an authentication key pair and public certificate. Using a PIV key pair and public certificate is very similar to using a self-signed key pair for SSH." %}
 
-This guide will help you to enable your environment to use your PIV for SSH to *nix servers from a _Windows_, _Linux_, or _macOS_ computer. These procedures use PuTTY-CAC or OpenSC. Other commercial options are available.    
+This guide will help you enable your environment to use a PIV for SSH to *nix servers from a _Windows_, _Linux_, or _macOS_ computer. These procedures use PuTTY-CAC or OpenSC. Other commercial options are available.    
 
-- [SSH from Windows](#ssh-from-windows) 
-- [SSH from Linux](#ssh-from-linux)
-- [SSH from macOS](#ssh-from-macOS)
-- [Configure the *nix Server](#configure-a-unix-like-server)
+- [Windows](#ssh-from-windows) 
+- [Linux and macOS X Sierra](#ssh-from-linux-and-macos-x-sierra)
+- [Configure a *nix Server](#configure-a-unix-like-server)
 
 ## SSH from Windows
 
 These procedures are based on PuTTY-CAC v0.70-2. 
 
 1. Download and install [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_. You need to install both the PuTTY client (putty.exe) and pageant (pageant.exe) at **C:\Program Files\PuTTY**.
-1. DO WE ACTUALLY NEED to use pageant for 0.70-2? 
+1. **DO WE ACTUALLY NEED to use pageant for 0.70-2?** 
 1. Run both PuTTY and Pageant, and insert your PIV into the card reader.
 1. Click the Pageant icon from the Windows taskbar, and select **Add CAPI Cert**.
 1. You will be prompted in a Windows security window to choose which certificate to use. Select your PIV _authentication_ certificate.  If you are not sure which certificate that is, view the certificate Properties and Enhanced Key Usage value.  Choose the one that says _Client Authentication_. 
@@ -38,7 +37,7 @@ Insert screenshot
 
 3. Save your **SSH keystring**&nbsp;**_value_** (i.e., "SSH key") in a **Notepad** file. Send it to the SSH server administrator to be added to your SSH server account. 
 
-## SSH from Linux
+## SSH from Linux and macOS X Sierra **Use one procedure for both Linux and macOS X Sierra, unless we don't need OpenSC for macOS**
 
 1. Install [OpenSC](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}_.
 1. Insert your **PIV** into your card reader.
@@ -61,7 +60,7 @@ Insert screenshot
 
 
 
-## SSH from macOS
+## SSH from macOS X Sierra **Delete this section unless OpenSC isn't needed for macOS X Sierra. Then we'll have to give specific details for what open-source or mac solution will be used to set up macOS X for SSH (similar to OpenSC).**
 TODO = check sierra and see if we need opensc?
 
 macOS 10.12 Sierra 
@@ -85,7 +84,7 @@ macOS 10.12 Sierra
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %}
 
-## Configure a UNIX-like Server
+## Configure a *nix Server
 
 {% include alert-info.html content = "Other configuration options are available including using Pluggable Authentication Modules (PAM) to look up your user accounts and authorization using directories." %}
 
