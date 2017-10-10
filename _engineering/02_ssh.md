@@ -12,15 +12,15 @@ You can use your PIV credential for Secure Shell (SSH) to remotely access *nix s
 This guide will help you enable your environment to use a PIV for SSH to *nix servers from a _Windows_, _Linux_, or _macOS_ computer. These procedures use PuTTY-CAC or OpenSC. Other commercial options are available.    
 
 - [Windows](#ssh-from-windows) 
-- [Linux and macOS X Sierra](#ssh-from-linux-and-macos-x-sierra)
+- [Linux and macOS 10.12 Sierra](#ssh-from-linux-and-macos-10.12-sierra)<!--Changed heading if Linux and macOS X Sierra both use the same set of instructions. We can delete one set of duplicated procedures and combine the headings, if so...-->
 - [Configure a *nix Server](#configure-a-unix-like-server)
 
 ## SSH from Windows
 
-These procedures are based on PuTTY-CAC v0.70-2. 
+These procedures are based on PuTTY-CAC v0.70u2.<!--These steps need to be validated/updated since this is a newer version of PuTTY-CAC than the version that Chunde tested.-->
 
 1. Download and install [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_. You need to install both the PuTTY client (putty.exe) and pageant (pageant.exe) at **C:\Program Files\PuTTY**.
-1. **DO WE ACTUALLY NEED to use pageant for 0.70-2?** 
+1. **DO WE ACTUALLY NEED to use pageant for 0.70u2?** 
 1. Run both PuTTY and Pageant, and insert your PIV into the card reader.
 1. Click the Pageant icon from the Windows taskbar, and select **Add CAPI Cert**.
 1. You will be prompted in a Windows security window to choose which certificate to use. Select your PIV _authentication_ certificate.  If you are not sure which certificate that is, view the certificate Properties and Enhanced Key Usage value.  Choose the one that says _Client Authentication_. 
@@ -32,8 +32,8 @@ These procedures are based on PuTTY-CAC v0.70-2.
 5. At the **PuTTY Configuration** window, select **Connection &gt; SSH &gt; Auth**. 
 6. WHY?? Click the checkboxes for **Allow agent forwarding** and **Allow attempted changes of username in SSH-2**.
 
-For this next step - just use the copy to clipboard under Connection -> SSH -> Certificate
-Insert screenshot
+**For this next step - just use the copy to clipboard under Connection -> SSH -> Certificate
+Insert screenshot**
 
 3. Save your **SSH keystring**&nbsp;**_value_** (i.e., "SSH key") in a **Notepad** file. Send it to the SSH server administrator to be added to your SSH server account. 
 
@@ -60,7 +60,7 @@ Insert screenshot
 
 
 
-## SSH from macOS X Sierra **Delete this section unless OpenSC isn't needed for macOS X Sierra. Then we'll have to give specific details for what open-source or mac solution will be used to set up macOS X for SSH (similar to OpenSC).**
+## SSH from macOS 10.12 Sierra **Delete this section unless OpenSC isn't needed for macOS X Sierra. Then we'll have to give specific details for what open-source or mac solution will be used to set up macOS X for SSH (similar to OpenSC).**
 TODO = check sierra and see if we need opensc?
 
 macOS 10.12 Sierra 
