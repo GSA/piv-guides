@@ -1,14 +1,16 @@
 ---
 layout: default
-title: Configure Network Authentication to Accept Other Agency PIV/CAC cards
+title: Configure Network Authentication To Accept Other Agency PIV/CAC Cards
 collection: networkconfig
 permalink: networkconfig/11_accept-all-agency-piv.md/
 ---
 
 Published On: October 6th, 2017<br/>
-Last Updated On: October 6th, 2017
+Last Updated On: October 10th, 2017
 
-If you want to allow other agency users to authenticate to your agency network, this article will help you configure your agency's Active Directory to support other agency issued PIV/CAC card authentication.
+<!--Based on LaChelle's Use Case. More complete description. May edit further.-->You have other government users on detail or working collaboratively on special programs. Your agency provides these users with a network account (not for internet-facing web applications),so you need to configure your network domain(s) to authenticate these users with their PIV/CAC credential without issuing a new credential from your agency. 
+
+This guide will help you configure Active Directory (AD) to allow these users to authenticate with their PIV/CAC cards.
 
 ## Network Ports and Protocols - Open Access to OCSP and CRL
 
