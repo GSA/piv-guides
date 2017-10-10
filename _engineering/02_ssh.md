@@ -9,7 +9,7 @@ You can use your PIV credential for Secure Shell (SSH) to remotely access *nix s
 
 {% include alert-info.html content = "Your PIV contains an authentication key pair and public certificate. Using a PIV key pair and public certificate is very similar to using a self-signed key pair for SSH." %}
 
-This guide will help you to enable your environment to use your PIV for SSH to *nix servers from a _Windows_, _Linux_, or _macOS_ computer.  These procedures use PuTTY-CAC or OpenSC.  Other commercial options are available.    
+This guide will help you to enable your environment to use your PIV for SSH to *nix servers from a _Windows_, _Linux_, or _macOS_ computer. These procedures use PuTTY-CAC or OpenSC. Other commercial options are available.    
 
 - [SSH from Windows](#ssh-from-windows) 
 - [SSH from Linux](#ssh-from-linux)
@@ -18,15 +18,15 @@ This guide will help you to enable your environment to use your PIV for SSH to *
 
 ## SSH from Windows
 
-These procedures are based on v 0.70-2. 
+These procedures are based on PuTTY-CAC v0.70-2. 
 
-1. Download and install [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}. You need to install both the putty client (putty.exe) and pageant (pageant.exe).  PuTTY-CAC will normally be installed at **C:\Program Files\PuTTY**.
+1. Download and install [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_. You need to install both the PuTTY client (putty.exe) and pageant (pageant.exe) at **C:\Program Files\PuTTY**.
 1. DO WE ACTUALLY NEED to use pageant for 0.70-2? 
-1. Run both putty and pageant, and insert your PIV into your card reader.
+1. Run both PuTTY and Pageant, and insert your PIV into the card reader.
 1. Click the Pageant icon from the Windows taskbar, and select **Add CAPI Cert**.
-1. You will be prompted in a Windows security window to choose which certificate to use.  Select your PIV _authentication_ certificate.  If you are not sure which certificate is your authentication certificate, view the certificate properties and Enhanced Key Usage value.  Choose the one with _Client Authentication_ as a value. 
-1. The public key will be stored and you can close the pageant window.  
-1. In putty, you can create a new session profile for the target server.  
+1. You will be prompted in a Windows security window to choose which certificate to use. Select your PIV _authentication_ certificate.  If you are not sure which certificate that is, view the certificate Properties and Enhanced Key Usage value.  Choose the one that says _Client Authentication_. 
+1. The public key will be stored. Close the Pageant window.  
+1. In PuTTY, you can create a new session profile for the target server.  
 3. The settings for using your PIV authentication certificate are under Connection -> SSH -> Certificate
 ??? Set the CAPI CERT directly from Connection -> SSH -> Certificate
 4. Click the checkbox for **Attempt certificate authentication**.
