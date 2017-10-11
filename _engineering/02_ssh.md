@@ -5,11 +5,11 @@ collection: engineering
 permalink: engineering/ssh/
 ---
 
-You can use your PIV credential for Secure Shell (SSH) to remotely access *nix servers.  
+You can use your PIV credential for Secure Shell (SSH) to remotely access *nix servers by following these steps. This guide will help you do this from a _Windows_, _Linux_, or _macOS_ computer.   
 
 {% include alert-info.html content = "Your PIV contains an authentication key pair and public certificate. Using a PIV key pair and public certificate is very similar to using a self-signed key pair for SSH." %}
 
-This guide will help you enable your environment to use a PIV for SSH to *nix servers from a _Windows_, _Linux_, or _macOS_ computer. These procedures use PuTTY-CAC or OpenSC. Other commercial options are available.    
+These procedures use PuTTY-CAC, OpenSC, and native smart card features. Other commercial options are available.    
 
 - [Windows](#ssh-from-windows) 
 - [Linux and macOS 10.12 Sierra](#ssh-from-linux-and-macos-10.12-sierra)<!--Changed heading if Linux and macOS X Sierra both use the same set of instructions. Why don't we just say here and in section below: "Linux-Based Systems"? We can add statement below that this includes macOS and that we tested macOS 10.12 Sierra and _____ (what Linux did we test?) Linux system.)...-->
@@ -93,6 +93,8 @@ macOS 10.12 Sierra
 
 ## Configure a *nix Server
 
+<!--Read procedures for accessing remote server and they say you need to have an SSH daemon installed on the remote server. Not in our procedures. Is this needed?-->
+
 {% include alert-info.html content = "Other configuration options are available, including Pluggable Authentication Modules (PAM) that look up your user accounts and authorization by using directories." %}
 
 <!--Since these procedures are for network engineers, we don't need to say this?-->These steps are performed by network engineers with root privileges. They can be automated for your servers through centralized configuration management tools. You can push or remove authorized_keys from the servers. 
@@ -110,5 +112,5 @@ macOS 10.12 Sierra
 			mkdir /etc/sshd/authorized_keys
     ```
 
-1. To allow one person to have access, place his/her PIV's SSH public key in this directory, according to username: **/etc/sshd/authorized_keys/[login ID]**. Disable any alternative means of access (i.e., passwords), as needed.
+1. Place your PIV SSH public key in this directory, according to your username: **/~/sshd/authorized_keys/[login ID]**. Disable any alternative means of access (i.e., passwords), as needed.
    
