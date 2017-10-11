@@ -7,24 +7,23 @@ permalink: engineering/ssh/
 
 You can use your PIV credential for Secure Shell (SSH) to remotely access *nix servers by following these steps. This guide will help you SSH from a _Windows_, _Linux_, or _macOS_ computer.   
 
-{% include alert-info.html content = "Your PIV contains an authentication key pair and public certificate. Using a PIV key pair and public certificate is very similar to using a self-signed key pair for SSH." %}
+{% include alert-info.html content = "Your PIV/CAC contains an authentication certificate key pair (public and private) for smart card logon. Using a PIV/CAC key pair is very similar to using a self-signed key pair for SSH. The setup below is meant for PIV/CAC based authentication." %}
 
 These procedures use PuTTY-CAC, OpenSC, and native smart card features. Other commercial options are available.    
 
 - [Windows](#ssh-from-windows) 
-- [Linux and macOS 10.12 Sierra](#ssh-from-linux-and-macos-10.12-sierra)<!--Changed heading if Linux and macOS X Sierra both use the same set of instructions. Why don't we just say here and in section below: "Linux-Based Systems"? We can add statement below that this includes macOS and that we tested macOS 10.12 Sierra and _____ (what Linux did we test?) Linux system.)...-->
+- [Linux and macOS 10.12 Sierra](#ssh-from-linux-and-macos-10.12-sierra)
 - [Configure a *nix Server](#configure-a-*nix-server)
 
 ## SSH from Windows
 
-These procedures are based on PuTTY-CAC v0.70u2.<!--These steps need to be validated since this is a newer version of PuTTY-CAC than the version that Chunde tested some months ago.-->
+These procedures are based on PuTTY-CAC v0.70u2.
 
-1. Download and install [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_. You need to install both the PuTTY client (putty.exe) and pageant (pageant.exe) at **C:\Program Files\PuTTY**.
-1. **DO WE ACTUALLY NEED to use pageant for 0.70u2?** 
-1. Run both PuTTY and Pageant, and insert your PIV into the card reader.
-1. Click the Pageant icon from the Windows taskbar, and select **Add CAPI Cert**.
+1. You need to download the [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_ (putty.exe) to a folder such as **C:\ssh\putty.exe** on your windows computer. You should choose either the 32 bit or 64 bit executable based on your Windows OS. You do not need to install the complete putty MSI Installer for this setup.
+1. Run PuTTY by double clicking the putty.exe. It will open up the Putty window once you accept to run the application.
+1. You should have a PIV card reader attached to your computer. Insert your PIV into the card reader.
+1. and select **Add CAPI Cert**.
 1. You will be prompted in a Windows security window to choose which certificate to use. Select your PIV _authentication_ certificate.  If you are not sure which certificate that is, view the certificate Properties and Enhanced Key Usage value.  Choose the one that says _Client Authentication_. 
-1. The public key will be stored. Close the Pageant window.  
 1. In PuTTY, you can create a new session profile for the target server.  
 1. The settings for using your PIV authentication certificate are under Connection -> SSH -> Certificate
 ??? Set the CAPI CERT directly from Connection -> SSH -> Certificate
