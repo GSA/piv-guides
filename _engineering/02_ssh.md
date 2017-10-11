@@ -5,7 +5,7 @@ collection: engineering
 permalink: engineering/ssh/
 ---
 
-You can use your PIV credential for Secure Shell (SSH) to remotely access *nix servers by following these steps. This guide will help you do this from a _Windows_, _Linux_, or _macOS_ computer.   
+You can use your PIV credential for Secure Shell (SSH) to remotely access *nix servers by following these steps. This guide will help you SSH from a _Windows_, _Linux_, or _macOS_ computer.   
 
 {% include alert-info.html content = "Your PIV contains an authentication key pair and public certificate. Using a PIV key pair and public certificate is very similar to using a self-signed key pair for SSH." %}
 
