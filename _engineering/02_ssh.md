@@ -74,7 +74,7 @@ These steps are performed by a server administrator with root privileges to setu
 			PasswordAuthentication No
     ```
 
-1. Create the **/home/<user>/.ssh** directory where <user> is the user login. Change the ownership to the user for .ssh directory. You should also create a file **authorized_keys** in the .ssh directory and copy the user's PIV/CAC public key in this **/home/<user>/.ssh/authorized_keys** file starting with ssh-rsa <public key> <key_name>.
+1. Create the **/home/&lt;user&gt;/.ssh** directory where <user> is the user login. Change the ownership to the user for .ssh directory. You should also create a file **authorized_keys** in the .ssh directory and copy the user's PIV/CAC public key in this **/home/&lt;user&gt;/.ssh/authorized_keys** file starting with ssh-rsa &lt;public key&gt; &lt;key_name&gt;.
 
     ```
 			mkdir /home/<user>/.ssh
