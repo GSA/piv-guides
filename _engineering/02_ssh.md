@@ -67,18 +67,31 @@ These procedures are based on PuTTY-CAC v0.70u2. This version of PuTTY-CAC provi
 
 These steps are performed by a server administrator with root privileges to setup the user's account on the *nix server. They can be automated for your servers through centralized configuration management tools. You can push or remove authorized_keys from the servers. 
 
-1. Change the configuration in the **/etc/ssh/sshd_config** file and restart the **sshd**:
+1. Change the configuration in the **/etc/ssh/sshd_config** file and restart the **sshd**. This step is only needed if the setting is not set by default.
 
     ```
 			AuthorizedKeysFile /etc/sshd/authorized_keys/%u  
 			PasswordAuthentication No
     ```
 
-1. Create the **/etc/sshd/authorized_keys** directory:
+1. Create the **/home/<user>/.ssh** directory where <user> is the user login. Change the ownership to the user for .ssh directory. You should also create a file **authorized_keys** in the .ssh directory and copy the user's PIV/CAC public key in this **/home/<user>/.ssh/authorized_keys** file starting with ssh-rsa <public key> <key_name>.
 
     ```
-			mkdir /etc/sshd/authorized_keys
+			mkdir /home/<user>/.ssh
+			chown <user> .ssh
+			chgrp <user> .ssh
+			cat authorized_keys 
+			ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU1hSDi9rqcA1ACmU8nvg/mgPW1lIsj0zELzn8CiioQ+Mx7LGM2yCIK+fpVPYJnFKj5jTxe5Gzz7q5u946w/8Ge+J8hghzxooB5WsUF2vF92iyvy16XmNVYFSEKTOrkIM4PAvhIKcNUcogBB+M+W1rFpsGXZYGrA1xAU3kbw0mbVSdAYq4cZlX0JobQpxypELH5WojKTJaK7EyAY2hOHCAMuJIlvhIXtAY1eG/NabyPiAcv+yxsBWq2xwA96a1iivsBxO8VWEb8YBzwt6NIDALyCF+Fg546BzOLnDgPW7jHEdOttUfEjLwa17nAteQk9t CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4
+			
     ```
 
-1. Place your PIV SSH public key in this directory, according to your username: **/~/sshd/authorized_keys/[login ID]**. Disable any alternative means of access (i.e., passwords), as needed.
+1. You should set the permissions on authorized_keys to 600 and change the ownership of authorized_keys to the user.
+
+    ```
+			chmod 600 authorized_keys
+			chown <user> authorized_keys
+			chgrp <user> authorized_keys
+    ```
+
+1. Disable any alternative means of access (i.e., passwords), as needed.
    
