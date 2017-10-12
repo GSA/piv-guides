@@ -65,7 +65,7 @@ Mac OS Sierra (10.12.x) and High Sierra (10.13) provides built in support for PI
 
 ## Configure a *nix Server
 
-{% include alert-info.html content = "Other configuration options are available, including Pluggable Authentication Modules (PAM) that look up your user accounts and authorization by using directories." %}
+{% include alert-info.html content = "The following SSH configurations are for illustration purposes only. You should verify the options available for your server *nix version. Other configuration options are available, including Pluggable Authentication Modules (PAM) that look up your user accounts and authorization by using directories." %}
 
 These steps are performed by a server administrator with root privileges to setup the user's account on the *nix server. They can be automated for your servers through centralized configuration management tools. You can push or remove authorized_keys from the servers. 
 
@@ -88,7 +88,7 @@ These steps are performed by a server administrator with root privileges to setu
 	     chgrp <user> authorized_keys
     ```
    
-1. This step is only needed if you want to change the default SSH setting. You can change the configuration for the key file in the **/etc/ssh/sshd_config** file and restart the **sshd**. You can also disable any alternative means of access (i.e., passwords), as needed. The following settings in sshd_config are for illustration purposes only. You should verify the options available for your server *nix version.
+1. This step is only needed if you want to change the default SSH setting. You can change the configuration for the key file in the **/etc/ssh/sshd_config** file and restart the **sshd**. You can also disable any alternative means of access (i.e., passwords), as needed.
 
     ```
 	   AuthorizedKeysFile /etc/sshd/authorized_keys/%u  
