@@ -92,5 +92,5 @@ These steps are performed by a server administrator with root privileges to setu
 
     ```
 	   AuthorizedKeysFile /etc/sshd/authorized_keys/%u  
-	   PasswordAuthentication No
+	   PasswordAuthentication no
     ```
