@@ -35,8 +35,8 @@ These procedures are based on PuTTY-CAC v0.70u2. This version of PuTTY-CAC provi
 1. You will find that the checkbox for '**Attempt Certificate Authentication**' is now checked.
 1. In PuTTY, you can create a new session profile for the target server. You can click on '**Session**' and enter the server hostname or IP address, and select SSH (port 22) for connection type. You can now name this configuration in the 'Saved Sessions' and click '**Save**' to save this profile for use next time.
 1. Once the server administrator has setup your account with the public key that you provided, you can try the login by clicking '**Open** on the Sessions window in PuTTY.
-1. You will be presented with the dialog window displaying the server's certificate. Accept the certificate and enter your login username that has been setup by the server administrator.
-1. The server will detect the certificate authentication and you will be prompted to enter the PIV/CAC card PIN. Once the PIN is validated, you will be logged into the server via SSH.
+1. You will be presented with the dialog window displaying the server's hash key. Accept the key and enter your login username that has been setup by the server administrator.
+1. The server will detect the smart card authentication and you will be prompted to enter the PIV/CAC card PIN. Once the PIN is validated, you will be logged into the server via SSH.
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %}
 
