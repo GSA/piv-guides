@@ -69,7 +69,7 @@ Mac OS Sierra (10.12.x) and High Sierra (10.13) provides built in support for PI
 
 These steps are performed by a server administrator with root privileges to setup the user's account on the *nix server. They can be automated for your servers through centralized configuration management tools. You can push or remove authorized_keys from the servers. 
 
-1. By dafault, the SSH keys are set to be read from the .ssh/authorized_keys file in the user's home directory. You have to create the **/home/&lt;user&gt;/.ssh** directory where &lt;user&gt; is the user login. You should change the ownership to the user for .ssh directory. You should also create a file **authorized_keys** in the .ssh directory and copy the user's PIV/CAC public key in this **/home/&lt;user&gt;/.ssh/authorized_keys** file starting with ssh-rsa &lt;public key&gt; &lt;key_name&gt;.
+1. By default, the SSH keys are set to be read from the .ssh/authorized_keys file in the user's home directory. You have to create the **/home/&lt;user&gt;/.ssh** directory where &lt;user&gt; is the user login. You should change the ownership to the user for .ssh directory. You should also create a file **authorized_keys** in the .ssh directory and copy the user's PIV/CAC public key in this **/home/&lt;user&gt;/.ssh/authorized_keys** file starting with ssh-rsa &lt;public key&gt; &lt;key_name&gt;.
 
     ```
 	    mkdir /home/<user>/.ssh
