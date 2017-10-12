@@ -94,3 +94,4 @@ These steps are performed by a server administrator with root privileges to setu
 	   AuthorizedKeysFile /etc/sshd/authorized_keys/%u  
 	   PasswordAuthentication no
     ```
+If you change the default settings, you have to create the corresponding directory for authorized_keys under /etc and setup the authorized keys in this folder instead of user's home folder.
