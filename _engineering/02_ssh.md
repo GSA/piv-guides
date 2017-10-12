@@ -69,14 +69,7 @@ Mac OS Sierra (10.12.x) and High Sierra (10.13) provides built in support for PI
 
 These steps are performed by a server administrator with root privileges to setup the user's account on the *nix server. They can be automated for your servers through centralized configuration management tools. You can push or remove authorized_keys from the servers. 
 
-1. Change the configuration in the **/etc/ssh/sshd_config** file and restart the **sshd**. This step is only needed if the setting is not set by default.
-
-    ```
-	   AuthorizedKeysFile /etc/sshd/authorized_keys/%u  
-	   PasswordAuthentication No
-    ```
-
-1. Create the **/home/&lt;user&gt;/.ssh** directory where <user> is the user login. Change the ownership to the user for .ssh directory. You should also create a file **authorized_keys** in the .ssh directory and copy the user's PIV/CAC public key in this **/home/&lt;user&gt;/.ssh/authorized_keys** file starting with ssh-rsa &lt;public key&gt; &lt;key_name&gt;.
+1. By dafault, the SSH keys are set to be read for .ssh/authorized_keys file in the user's home directory. You have to create the **/home/&lt;user&gt;/.ssh** directory where <user> is the user login. You should change the ownership to the user for .ssh directory. You should also create a file **authorized_keys** in the .ssh directory and copy the user's PIV/CAC public key in this **/home/&lt;user&gt;/.ssh/authorized_keys** file starting with ssh-rsa &lt;public key&gt; &lt;key_name&gt;.
 
     ```
 	    mkdir /home/<user>/.ssh
@@ -94,6 +87,10 @@ These steps are performed by a server administrator with root privileges to setu
 	     chown <user> authorized_keys
 	     chgrp <user> authorized_keys
     ```
-
-1. Disable any alternative means of access (i.e., passwords), as needed.
    
+1. This step is only needed if you want to change the default SSH setting. You can change the configuration for the key file in the **/etc/ssh/sshd_config** file and restart the **sshd**. You can also disable any alternative means of access (i.e., passwords), as needed. The following settings in sshd_config are for illustration purposes only. You should verify the options available for your server *nix version.
+
+    ```
+	   AuthorizedKeysFile /etc/sshd/authorized_keys/%u  
+	   PasswordAuthentication No
+    ```
