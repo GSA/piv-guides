@@ -5,44 +5,49 @@ collection: engineering
 permalink: engineering/ssh/
 ---
 
-You can use your PIV credential for Secure Shell (SSH) to remotely access *nix servers by following these steps.    You should also review your agency's policies and use your physical or virtual jump servers to restrict users from using SSH directly from workstations. This guide will help you configure SSH from a _Windows_ or _macOS_ in scenarios where the Chief Information Security Officer has determined the controls are in place and this particular use is acceptable. 
+**CB edit is in process.**
+
+You can use your PIV/CAC credential for Secure Shell (SSH) to remotely access *nix servers. <!--Apple uses "macOS" pretty consistently.  We need to use what Apple uses.-->This guide gives you the steps... to enable your PIV/CAC for remote access from a Windows or macOS computer.<!--Still working on this. Need to condense intro-->
+
+<!--Should this also be an info-alert box?-->Your Chief Information Security Officer must determine that security controls are in place and approve SSH scenarios. You should also review your agency's policies and use your physical or virtual jump servers to restrict users from using SSH directly from workstations. 
 
 {% include alert-info.html content = "Your PIV/CAC contains an authentication certificate key pair (public and private) for smart card logon. Using a PIV/CAC key pair is very similar to using a self-signed key pair for SSH. The setup below is meant for PIV/CAC based authentication." %}
 
 These procedures use PuTTY-CAC, OpenSC, and native smart card features. Other commercial options are available.    
 
 - [Windows](#ssh-from-windows) 
-- [Apple Mac OS](#ssh-from-macos)
+- [MacOS](#ssh-from-macos)
 - [Configure a *nix Server](#configure-a-*nix-server)
 
 ## SSH from Windows
 
-These procedures are based on PuTTY-CAC v0.70u2. This version of PuTTY-CAC provides support for Crypto API (CAPI) integration without requiring pageant.exe.
+These steps use PuTTY-CAC v0.70u2, which supports Crypto API (CAPI) integration. Pageant software is not required.
 
-1. You need to download the [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_ (putty.exe) to a folder such as **C:\ssh\putty.exe** on your windows computer. You should choose either the 32 bit or 64 bit executable based on your Windows OS. You do not need to install the complete putty MSI Installer for this setup.
-1. Run PuTTY by double clicking the putty.exe. It will open up the Putty window once you accept to run the application.
-1. You should have a PIV card reader attached to your computer. Insert your PIV into the card reader.
-1. In Putty, navigate to Connection > SSH > Certificate. Click on **Set CAPI Cert...**. 
-![PuTTY-CAC CAPI Screenshot]({{site.baseurl}}/img/ssh-putty-cac-1.png){:style="float:left"}
-1. You will be prompted in a Windows security window to choose which certificate to use. Select your PIV _authentication_ certificate.  If you are not sure which certificate that is, view the certificate details and look for the 'Enhanced Key Usage' value. Choose the one that says _Client Authentication_ or _Smart Card Logon_. 
-![PuTTY-CAC Certificate]({{site.baseurl}}/img/ssh-putty-cac-2.png){:style="float:left"} 
-1. Once you select the certificate, you will see the certificate thumbprint displayed in PuTTY window. Click on '**Copy To Clipboard**' button to copy your PIV/CAC certificate's public key for server setup. You should paste this public key data into a text file and provide this public key to the administrators for setting up your account. The data will look similar to this.
+1. You need to download [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_ to **C:\ssh\putty.exe**, or similar. Download the 32-bit or 64-bit installer, based on your OS. You don't need the complete PuTTY MSI Installer.<!--It would be more clear to say which files they DO need; otherwise, they may have to guess at what we mean.-->
+1. Launch PuTTY and insert your PIV/CAC into your smart card reader.
+1. At the **PuTTY Configuration** window side bar, select **Connection &gt; SSH &gt; Certificate**, and click **Set CAPI Cert...** and **Open.**<!--Do you click on the Open button at the bottom of the screen?-->
+![PuTTY Configuration Window]({{site.baseurl}}/img/ssh-putty-cac-1.png){:style="float:left"}
+1. At the **Windows Security &gt; PuTTY: Select Certificate for CAPI Auth**, select your certificate. If you don't know which one is yours, view the certificate's properties. At the **PuTTY Certificate Display** window, click **Enhanced Key Usage**. If the _value_ says _Client Authentication_ or _Smart Card Logon_, then it's yours. Click _OK_. (**Note:**&nbsp;&nbsp&Your certificate's policy Object Identifiers (OIDs) also show up at the bottom of the window.)  
+![PuTTY Certificate Display Details]({{site.baseurl}}/img/ssh-putty-cac-2.png){:style="float:left"} 
+1. Back at the **PuTTY Configuration** window, click the _Copy to Clipboard_ button and paste your public key into a text file. Provide the file to the server administrator to set up your account. 
+
+The public key will look like this:
 
     ```
         ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU1hSDi9rqcA1ACmU8nvg/mgPW1lIsj0zELzn8CiioQ+Mx7LGM2yCIK+fpVPYJnFKj5jTxe5Gzz7q5u946w/8Ge+J8hghzxooB5WsUF2vF92iyvy16XmNVYFSEKTOrkIM4PAvhIKcNUcogBB+M+W1rFpsGXZYGrA1xAU3kbw0mbVSdAYq4cZlX0JobQpxypELH5WojKTJaK7EyAY2hOHCAMuJIlvhIXtAY1eG/NabyPiAcv+yxsBWq2xwA96a1iivsBxO8VWEb8YBzwt6NIDALyCF+Fg546BzOLnDgPW7jHEdOttUfEjLwa17nAteQk9t CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4
     ```    
 
-1. You will find that the checkbox for '**Attempt Certificate Authentication**' is now checked.
-1. In PuTTY, you can create a new session profile for the target server. You can click on '**Session**' and enter the server hostname or IP address, and select SSH (port 22) for connection type. You can now name this configuration in the 'Saved Sessions' and click '**Save**' to save this profile for use next time.
-1. Once the administrator has setup your account with the public key that you provided, you can try the login by clicking '**Open** on the Sessions window in PuTTY.
+1. You can now see that the **Attempt Certificate Authentication** box is checked. **How do you know that the authentication has been attempted and accepted?**
+1. **Add explanation upfront -- purpose is to save this profile for use next time.** **Celeste stopped here** In PuTTY, you can create a new session profile for each target server. Click on **Session**, enter the server hostname or IP address, and select SSH (port 22) for connection type. You can now name this configuration in the _Saved Sessions_ and click '**Save**' to save this profile for use next time.
+1. Once the administrator has set up your account with the public key that you provided, you can try the login by clicking '**Open** on the Sessions window in PuTTY.
 1. You will be presented with the dialog displaying the server's key fingerprint as a hash value. Verify and accept the key and enter your username that has been setup by the server administrator.
 1. The server will detect the smart card authentication and you will be prompted to enter the PIV/CAC card PIN. Once the PIN is validated, you will be logged into the server via SSH.
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %}
 
-## SSH from Mac OS
+## SSH from MacOS <!--Apples uses "macOS" pretty consistently.  We should use what they use.-->
 
-Mac OS Sierra (10.12.x) and High Sierra (10.13) provides built in support for PIV/CAC readers. If you have any of the previous versions of Mac OS, you will need to install a third party smart card utility software such as OpenSC. 
+MacOS X Sierra (10.12.x) and High Sierra (10.13) provides native support for smart card readers. If you have an earlier macOS version, you'll need to install third-party software, such as OpenSC. 
 
 1. Install [OpenSC](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}_.
 1. Insert your **PIV** into your card reader.
