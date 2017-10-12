@@ -12,7 +12,7 @@ You can use your PIV credential for Secure Shell (SSH) to remotely access *nix s
 These procedures use PuTTY-CAC, OpenSC, and native smart card features. Other commercial options are available.    
 
 - [Windows](#ssh-from-windows) 
-- [macOS 10.12 Sierra](#ssh-from-macos-10.12-sierra)
+- [Apple Mac OS](#ssh-from-macos)
 - [Configure a *nix Server](#configure-a-*nix-server)
 
 ## SSH from Windows
@@ -29,7 +29,7 @@ These procedures are based on PuTTY-CAC v0.70u2. This version of PuTTY-CAC provi
 1. Once you select the certificate, you will see the certificate thumbprint displayed in PuTTY window. Click on '**Copy To Clipboard**' button to copy your PIV/CAC certificate's public key for server setup. You should paste this public key data into a text file and provide this public key to the server administrator for setting up your account on the server. The data will look similar to this.
 
     ```
-    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU1hSDi9rqcA1ACmU8nvg/mgPW1lIsj0zELzn8CiioQ+Mx7LGM2yCIK+fpVPYJnFKj5jTxe5Gzz7q5u946w/8Ge+J8hghzxooB5WsUF2vF92iyvy16XmNVYFSEKTOrkIM4PAvhIKcNUcogBB+M+W1rFpsGXZYGrA1xAU3kbw0mbVSdAYq4cZlX0JobQpxypELH5WojKTJaK7EyAY2hOHCAMuJIlvhIXtAY1eG/NabyPiAcv+yxsBWq2xwA96a1iivsBxO8VWEb8YBzwt6NIDALyCF+Fg546BzOLnDgPW7jHEdOttUfEjLwa17nAteQk9t CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4
+        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU1hSDi9rqcA1ACmU8nvg/mgPW1lIsj0zELzn8CiioQ+Mx7LGM2yCIK+fpVPYJnFKj5jTxe5Gzz7q5u946w/8Ge+J8hghzxooB5WsUF2vF92iyvy16XmNVYFSEKTOrkIM4PAvhIKcNUcogBB+M+W1rFpsGXZYGrA1xAU3kbw0mbVSdAYq4cZlX0JobQpxypELH5WojKTJaK7EyAY2hOHCAMuJIlvhIXtAY1eG/NabyPiAcv+yxsBWq2xwA96a1iivsBxO8VWEb8YBzwt6NIDALyCF+Fg546BzOLnDgPW7jHEdOttUfEjLwa17nAteQk9t CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4
     ```    
 
 1. You will find that the checkbox for '**Attempt Certificate Authentication**' is now checked.
@@ -40,24 +40,26 @@ These procedures are based on PuTTY-CAC v0.70u2. This version of PuTTY-CAC provi
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %}
 
-## SSH from MacOS 10.12 Sierra 
+## SSH from Mac OS
+
+Mac OS Sierra (10.12.x) and High Sierra (10.13) provides built in support for PIV/CAC readers. If you have any of the previous versions of Mac OS, you will need to install a third party smart card utility software such as OpenSC. 
 
 1. Install [OpenSC](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}_.
 1. Insert your **PIV** into your card reader.
 1. To save your **public SSH key** to a file, enter:
 
     ```
-			ssh-keygen -D /usr/lib64/opensc-pkcs11.so > mykey.pub
+	    ssh-keygen -D /usr/lib64/opensc-pkcs11.so > mykey.pub
     ```  
 
 1. Send the file to the SSH server administrator.
 1. To log into the remote server, enter:
 
     ```
-			ssh -I /usr/lib64/opensc-pkcs11.so <remote-host>
+	    ssh -I /usr/lib64/opensc-pkcs11.so <remote-host>
     ```    
 
-3. At the PIV card password prompt, enter your **PIN** to open the **remote-host shell prompt**.
+1. At the PIV card password prompt, enter your **PIN** to open the **remote-host shell prompt**.
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %} 
 
@@ -70,27 +72,27 @@ These steps are performed by a server administrator with root privileges to setu
 1. Change the configuration in the **/etc/ssh/sshd_config** file and restart the **sshd**. This step is only needed if the setting is not set by default.
 
     ```
-			AuthorizedKeysFile /etc/sshd/authorized_keys/%u  
-			PasswordAuthentication No
+	   AuthorizedKeysFile /etc/sshd/authorized_keys/%u  
+	   PasswordAuthentication No
     ```
 
 1. Create the **/home/&lt;user&gt;/.ssh** directory where <user> is the user login. Change the ownership to the user for .ssh directory. You should also create a file **authorized_keys** in the .ssh directory and copy the user's PIV/CAC public key in this **/home/&lt;user&gt;/.ssh/authorized_keys** file starting with ssh-rsa &lt;public key&gt; &lt;key_name&gt;.
 
     ```
-			mkdir /home/<user>/.ssh
-			chown <user> .ssh
-			chgrp <user> .ssh
-			cat authorized_keys 
-			ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU1hSDi9rqcA1ACmU8nvg/mgPW1lIsj0zELzn8CiioQ+Mx7LGM2yCIK+fpVPYJnFKj5jTxe5Gzz7q5u946w/8Ge+J8hghzxooB5WsUF2vF92iyvy16XmNVYFSEKTOrkIM4PAvhIKcNUcogBB+M+W1rFpsGXZYGrA1xAU3kbw0mbVSdAYq4cZlX0JobQpxypELH5WojKTJaK7EyAY2hOHCAMuJIlvhIXtAY1eG/NabyPiAcv+yxsBWq2xwA96a1iivsBxO8VWEb8YBzwt6NIDALyCF+Fg546BzOLnDgPW7jHEdOttUfEjLwa17nAteQk9t CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4
+	    mkdir /home/<user>/.ssh
+	    chown <user> .ssh
+	    chgrp <user> .ssh
+	    cat authorized_keys 
+	    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU1hSDi9rqcA1ACmU8nvg/mgPW1lIsj0zELzn8CiioQ+Mx7LGM2yCIK+fpVPYJnFKj5jTxe5Gzz7q5u946w/8Ge+J8hghzxooB5WsUF2vF92iyvy16XmNVYFSEKTOrkIM4PAvhIKcNUcogBB+M+W1rFpsGXZYGrA1xAU3kbw0mbVSdAYq4cZlX0JobQpxypELH5WojKTJaK7EyAY2hOHCAMuJIlvhIXtAY1eG/NabyPiAcv+yxsBWq2xwA96a1iivsBxO8VWEb8YBzwt6NIDALyCF+Fg546BzOLnDgPW7jHEdOttUfEjLwa17nAteQk9t CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4
 			
     ```
 
 1. You should set the permissions on authorized_keys to 600 and change the ownership of authorized_keys to the user.
 
     ```
-			chmod 600 authorized_keys
-			chown <user> authorized_keys
-			chgrp <user> authorized_keys
+	     chmod 600 authorized_keys
+	     chown <user> authorized_keys
+	     chgrp <user> authorized_keys
     ```
 
 1. Disable any alternative means of access (i.e., passwords), as needed.
