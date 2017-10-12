@@ -12,7 +12,7 @@ You can use your PIV credential for Secure Shell (SSH) to remotely access *nix s
 These procedures use PuTTY-CAC, OpenSC, and native smart card features. Other commercial options are available.    
 
 - [Windows](#ssh-from-windows) 
-- [Linux and macOS 10.12 Sierra](#ssh-from-linux-and-macos-10.12-sierra)
+- [macOS 10.12 Sierra](#ssh-from-macos-10.12-sierra)
 - [Configure a *nix Server](#configure-a-*nix-server)
 
 ## SSH from Windows
@@ -22,10 +22,10 @@ These procedures are based on PuTTY-CAC v0.70u2. This version of PuTTY-CAC provi
 1. You need to download the [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_ (putty.exe) to a folder such as **C:\ssh\putty.exe** on your windows computer. You should choose either the 32 bit or 64 bit executable based on your Windows OS. You do not need to install the complete putty MSI Installer for this setup.
 1. Run PuTTY by double clicking the putty.exe. It will open up the Putty window once you accept to run the application.
 1. You should have a PIV card reader attached to your computer. Insert your PIV into the card reader.
-1. In the Putty, you will navigate to Connection > SSH > Certificate. Click on **Set CAPI Cert...**.
+1. In the Putty, you will navigate to Connection > SSH > Certificate. Click on **Set CAPI Cert...**. 
 ![PuTTY-CAC CAPI Screenshot]({{site.baseurl}}/img/ssh-putty-cac-1.png){:style="float:left"}
-1. You will be prompted in a Windows security window to choose which certificate to use. Select your PIV _authentication_ certificate.  If you are not sure which certificate that is, view the certificate details and look for the 'Enhanced Key Usage' value. Choose the one that says _Client Authentication_ or _Smart Card Logon_.
-![PuTTY-CAC Certificate]({{site.baseurl}}/img/ssh-putty-cac-2.png){:style="float:left"}
+1. You will be prompted in a Windows security window to choose which certificate to use. Select your PIV _authentication_ certificate.  If you are not sure which certificate that is, view the certificate details and look for the 'Enhanced Key Usage' value. Choose the one that says _Client Authentication_ or _Smart Card Logon_. 
+![PuTTY-CAC Certificate]({{site.baseurl}}/img/ssh-putty-cac-2.png){:style="float:left"} 
 1. Once you select the certificate, you will see the certificate thumbprint displayed in PuTTY window. Click on '**Copy To Clipboard**' button to copy your PIV/CAC certificate's public key for server setup. You should paste this public key data into a text file and provide this public key to the server administrator for setting up your account on the server. The data will look similar to this.
 
     ```
@@ -61,23 +61,11 @@ These procedures are based on PuTTY-CAC v0.70u2. This version of PuTTY-CAC provi
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %} 
 
-
-
-## SSH from macOS 10.12 Sierra 
-
-**Delete this section unless OpenSC isn't needed for macOS X Sierra. Then we'll have to give specific details for what open-source or mac solution will be used to set up macOS X for SSH (similar to OpenSC).**
-
-**TODO = check sierra and see if we need opensc? 10/11/2017: Information on Apple website and one open-source method for enabling smart card use without OpenSC for macOS Sierra. Sent to Indrajit for review. --CB**
-
-
-
 ## Configure a *nix Server
-
-<!--Read procedures for accessing remote server and they say you need to have an SSH daemon installed on the remote server. Not in our procedures. Is this needed?-->
 
 {% include alert-info.html content = "Other configuration options are available, including Pluggable Authentication Modules (PAM) that look up your user accounts and authorization by using directories." %}
 
-<!--Since these procedures are for network engineers, we don't need to say this?-->These steps are performed by network engineers with root privileges. They can be automated for your servers through centralized configuration management tools. You can push or remove authorized_keys from the servers. 
+These steps are performed by a server administrator with root privileges to setup the user's account on the *nix server. They can be automated for your servers through centralized configuration management tools. You can push or remove authorized_keys from the servers. 
 
 1. Change the configuration in the **/etc/ssh/sshd_config** file and restart the **sshd**:
 
