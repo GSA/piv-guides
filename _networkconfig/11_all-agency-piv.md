@@ -6,11 +6,12 @@ permalink: networkconfig/11_accept-all-agency-piv.md/
 ---
 
 Published On: October 6th, 2017<br/>
-Last Updated On: October 10th, 2017
+Last Updated On: October 13th, 2017
 
-<!--Based on LaChelle's Use Case. More complete description. May edit further.-->Your agency has government users on detail and others who collaborate on special programs. Your agency gives these authorized users accounts on your network(s). You need to configure your domain(s) so they can authenticate with their home-agency PIV/CAC credentials, rather than issuing them new credentials. 
+<!--Based on LaChelle's Use Case. More complete description. May edit further.-->Your agency has government users on detail and others who collaborate on special programs. Your agency gives these authorized users accounts on your network(s). You need to configure your domain(s) so they can authenticate with their home-agency PIV/CAC credentials, rather than issuing them new credentials.
 
 This guide will help you configure Active Directory (AD) so these users can access your network(s) and resources.
+<!--I'm thinking that the following headings should be numbered to show that these are ordered steps--a bit of a roadmap-->
 
 ## Network Ports and Protocols:&nbsp;&nbsp;Open Access to OCSP and CRL
 
@@ -18,11 +19,11 @@ To set up network support for other agencies' PIV/CAC credentials, you need to v
 
 ## Domain Controllers:&nbsp;&nbsp;Add Agency UPN Suffix
 
-In order to trust PIV/CAC cards from another agency, you have to [add the UPN suffix](https://technet.microsoft.com/en-us/library/cc772007(v=ws.11).aspx){target="_blank"}_ of that agency to your agency's AD Domains and Trusts.
+In order to trust PIV/CAC credentials from another agency, you'll have to add that agency's [UPN suffix](https://technet.microsoft.com/en-us/library/cc772007(v=ws.11).aspx){target="_blank"}_ to your agency's AD Domains and Trusts.
 
-1. Open Active Directory Domains and Trusts. To open Active Directory Domains and Trusts, click Start, click Administrative Tools, and then click Active Directory Domains and Trusts.
-2. In the console tree, right-click AD Domains and Trusts and then click Properties.
-3. On the UPN Suffixes tab, type an alternative UPN suffix for the forest, and then click Add.
+1. Click through _Start_ &gt; _Administrative Tools_ &gt; _Active Directory Domains and Trusts_.
+2. In the console tree, right-click _AD Domains and Trusts_ and then click _Properties_.
+3. On the _UPN Suffixes_ tab, type an alternative UPN suffix for the forest, and then click _Add_.
 
 ## Trust Store:&nbsp;&nbsp;Import Agency-Specific PIV Issuer Certificates
 
