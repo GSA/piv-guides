@@ -6,16 +6,24 @@ permalink: networkconfig/11_accept-all-agency-piv.md/
 ---
 
 Published On: October 6th, 2017<br/>
-Last Updated On: October 13th, 2017
+Last Updated On: October 14th, 2017
 
-<!--Based on LaChelle's Use Case. More complete description. May edit further.-->Your agency has government users on detail and others who collaborate on special programs. Your agency gives these authorized users accounts on your network(s). You need to configure your domain(s) so they can authenticate with their home-agency PIV/CAC credentials, rather than issuing them new credentials.
+<!--Based on LaChelle's Use Case. More complete description. May edit further. LaChelle's notes say "any government user," not just those on detail or who collaborate on programs.-->Your agency provides network accounts to government users on detail, as well as those who cross-collaborate on special programs. They need to authenticate to your network with their home-agency PIV/CAC credentials, rather than issuing them new credentials. 
 
-This guide will help you configure Active Directory (AD) so these users can access your network(s) and resources.
+This guide will help you configure Active Directory (AD) on your domains to allow government users with a PIV/CAC credential to authenticate. 
+
+* [Network Ports and Protocols &mdash; Open Access to OCSP and CRL](#nework-ports-and-protocols-open-access-to-ocsp-and-crl)
+* [Domain Controllers &mdash; Add Agency UPN Suffix](#domain-controllers-add-agency-upn-suffix)
+* [Trust Store &mdash; Import Agency-Specific PIV Issuer Certificates](#trust-store-import-agency-specific-piv-certificates)
+* [Account Linking &mdash; Other Agency Users](#account-linking-other-agency-users)
+* [List of PIV/CAC Issuers](#list-of-piv/cac-issuers)
+
+
 <!--I'm thinking that the following headings should be numbered to show that these are ordered steps--a bit of a roadmap-->
 
-## Network Ports and Protocols:&nbsp;&nbsp;Open Access to OCSP and CRL
+## Network Ports and Protocols &mdash; Open Access to OCSP and CRL
 
-To set up network support for other agencies' PIV/CAC credentials, you need to validate that your network <!--Explain "is open to...authorized?"-->is open to their home agency's Certificate Issuer website to validate the certificate. Your agency's domain controllers, servers and workstations need to be able to access the On-line Certificate Status Protocol (OCSP) and Certificate Revocation List (CRL) links for validation in real time. You can find the OCSP and CRL links in the List of Issuers table below.
+To configure your network to authenticate users via their home-agency PIV/CAC credentials, you need to verify that your network <!--Explain "is open to...Is this what you mean?" Some agency networks don't allow access to other agencies' Certificate Issuer websites?-->allows access to their home agency's Certificate Issuer website to validate the certificate. Your agency's domain controllers, servers and workstations need to access the On-line Certificate Status Protocol (OCSP) and Certificate Revocation List (CRL) links for validation in real-time<!--Immediate/instantaneous?-->. You can find the OCSP and CRL links in the List of Issuers table below.
 
 ## Domain Controllers:&nbsp;&nbsp;Add Agency UPN Suffix
 
@@ -25,22 +33,22 @@ In order to trust PIV/CAC credentials from another agency, you'll have to add th
 2. In the console tree, right-click _AD Domains and Trusts_ and then click _Properties_.
 3. On the _UPN Suffixes_ tab, type an alternative UPN suffix for the forest, and then click _Add_.
 
-## Trust Store:&nbsp;&nbsp;Import Agency-Specific PIV Issuer Certificates
+## Trust Store &mdash; Import Agency-Specific PIV Issuer Certificates
 
-Your agency will have to trust the issuer certificates for the other agencies. The agency specific PIV issuer certificates can be found in the Authority Information Access (AIA) link. You will find the link in the PIV Issuers table below. Once you download the .p7c file, you will find the issuer's public certificate. You will also be able to retrieve the other certificates in the chain to COMMON using the AIA specified in those certificates.
+Your agency will have to trust the Issuer's certificates for the other agencies. The agency specific PIV issuer certificates can be found in the Authority Information Access (AIA) link given in the PIV Issuers table below. Once you download the .p7c file, you will find the Issuer's public certificate. You will also be able to retrieve the other certificates in the chain to COMMON using the AIA specified in those certificates.
 
 The agency specific PIV Issuer certificates can also be found in the [FPKI Crawler](https://fpki-graph.fpki-lab.gov/crawler/){target="_blank"}_ website. You will find the certificate listed by agencies in the table 'Certificate Files Grouped by Type'. Once you locate the agency, you can download the certificates and the path to COMMON in p7b format.
 {target="_blank"}_.
 
 Import the certificates in the Windows [NTAuth Trust Store](https://piv.idmanagement.gov/networkconfig/trustedroots/){target="_blank"}_.
 
-## Account Linking:&nbsp;&nbsp;Other Agency Users
+## Account Linking &mdash; Other Agency Users
 
 When a user authenticates with another agency PIV/CAC card, the credential of that user may not match the account created in the Active Directory user setup in your agency. There are multiple ways to [link that PIV/CAC card](https://piv.idmanagement.gov/networkconfig/accounts/){target="_blank"} owner to the Active Directory account.
 
 ## List of PIV Issuers
 
-This table contains the information for U.S. Executive Branch Agencies and the Certification Authorities that are used for **PIV** credentials.
+This table contains the information for U.S. Executive Branch Agencies and the Certification Authorities that are used for _PIV/CAC_ credentials.
 
 OCSP and CRL endpoints are used to define configurations for the firewalls. You must allow access to these endpoints through the firewalls so this will work.
 
@@ -64,7 +72,7 @@ TABLE TWO
 |------|-------------|
 
 
-| Name | PIV Issuer  | Links |
+| Name | PIV/CAC Issuer  | Links |
 |------|-------------|-------|
 |Department of Defense|||
 |Department of Homeland Security|OU = DHS CA4<br>OU = Certification Authorities<br>OU = Department of Homeland Security<br>O = U.S. Government<br>C = US|AIA: http://pki.dimc.dhs.gov/dhsca_ee_aia.p7c<br/><br/>OCSP: http://ocsp.dimc.dhs.gov<br/><br/>CRL: http://pki.dimc.dhs.gov/DHS_CA1.crl |
