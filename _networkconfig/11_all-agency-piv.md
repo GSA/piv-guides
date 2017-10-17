@@ -64,8 +64,8 @@ TABLE ONE
 
 | Issuing Certification Authorities | AIA URIs | OCSP  | CRL |
 |------|-------|-------|------
-{% for member in site.data.pivissuers %}
-|{{ pivissuers.Issuer }}|[{{ pivissuers.AIA }}]({{ pivissuers.AIA }}){target="_blank"}|{{ pivissuers.OCSP }}|{{ pivissuers.CRL }}|
+{% for issuer in site.data.pivissuers %}
+|{{ issuer.Issuer }}|[{{ issuer.AIA }}]({{ issuer.AIA }}){target="_blank"}|{{ issuer.OCSP }}|{{ issuer.CRL }}|
 {% endfor %}
 
 TABLE TWO
