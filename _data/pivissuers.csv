@@ -1,0 +1,26 @@
+Issuer,AIA,OCSP,CRL
+Entrust Managed Services SSP CA,http://sspweb.managed.entrust.com/AIA/CertsIssuedToEMSSSPCA.p7c,http://ocsp.managed.entrust.com/OCSP/EMSSSPCAResponder,http://sspweb.managed.entrust.com/CRLs/EMSSSPCA1.crl
+Entrust Managed Services SSP CA,http://sspweb.managed.entrust.com/AIA/CertsIssuedToEMSSSPCA.p7c,http://ocsp.xpki.com,http://crl01.xpki.com/CRLs/EMSSSPCA2.crl
+U.S. Department of State PIV CA2,http://crls.pki.state.gov/AIA/CertsIssuedToDoSPIVCA2.p7c,http://ocsp.pki.state.gov/OCSP/DoSOCSPResponder,http://crls.pki.state.gov/crls/DoSADPKIPIVCA2.crl
+DigiCert Accredited Direct Med CA,http://cacerts.digicert.com/DigiCertAccreditedDirectMedCA.crt,http://ocsp.digicert.com,http://crl3.digicert.com/DigiCertAccreditedDirectMedCA.crl
+DigiCert Direct Med CA,http://cacerts.digicert.com/aiaDigiCertDirectMedCA.p7c,http://ocsp.digicert.com,http://crl3.digicert.com/direct-med-g1.crl
+Entrust NFI Medium Assurance SSP CA,http://nfimediumsspweb.managed.entrust.com/AIA/CertsIssuedToNFIMediumSSPCA.p7c,http://nfiocsp.managed.entrust.com,http://nfimediumsspweb.managed.entrust.com/CRLs/NFIMEDIUMSSPCA.crl
+Entrust Managed Services SSP CA,http://sspweb.managed.entrust.com/SIA/CertsIssuedToEMSSSPCA.p7c,http://ocsp.managed.entrust.com/OCSP/EMSSSPCAResponder,http://sspweb.managed.entrust.com/CRLs/EMSSSPCA.crl
+HHS-FPKI-Intermediate-CA-E1,http://hhspkicrl.managed.entrust.com/AIA/CertsIssuedToHHSEntrustCA.p7c,http://ocsp.dhhs.gov,http://hhspkicrl.managed.entrust.com/CRLs/HHSEntrustCA.crl
+GPO SCA,http://gpo-crl.ois.gpo.gov/GPO-SCA-CACertificates.p7c,http://www.ocsp.gpo.gov,http://gpo-crl.ois.gpo.gov/GPO-SCA-CRLc8.crl
+IGC CA 1,http://validation.identrust.com/certs/igcca1.cer,http://igc.ocsp.identrust.com,http://validation.identrust.com/crl/igcca1.crl
+Booz Allen Hamilton PIVi CA 01,http://validation.identrust.com/roots/bahpivica01.p7c,http://igc.ocsp.identrust.com,http://validation.identrust.com/crl/bahpivica01.crl
+FTI Certification Authority,http://pki.fti.org/fti_ca/certificates/FTICA.p7c,http://certstatus.fti.org,http://pki.fti.org/fti_ca/crl/FTICA.crl
+U.S. Department of Transportation Agency CA G4,http://ssp-aia.symauth.com/SSP/DoT_Agency_G4.p7c,http://ssp-ocsp.symauth.com,http://onsitecrl.verisign.com/USDepartmentofTransportationFAAPIVG4/LatestCRL.crl
+Bureau of the Census Agency CA,http://ssp-aia.symauth.com/SSP/BotC_Agency.p7c,http://ssp-ocsp.symauth.com,http://onsitecrl.verisign.com/BureauoftheCensusPIV/LatestCRL.crl
+CSRA FBCA C3 CA,http://ssp-aia.symauth.com/VTNSSP/CSC-MedHW-3.p7c,http://ssp-ocsp.symauth.com,http://onsitecrl.verisign.com/CSCGovernmentSolutionsLLCCSRAFBCAMedHW/LatestCRL.crl
+Eid PIV-I Test Device CA,http://ssp-aia.symauth.com/VTNSSP/Eid_PIV-I_Test_Device_CA.p7c,http://ssp-ocsp.symauth.com,http://onsitecrl.verisign.com/EidPassportIncEidPIVITestContentSigner/LatestCRL.crl
+Eid Passport LRA CA 3,http://ssp-aia.symauth.com/VTNSSP/EID-LRA-CA3.p7c,http://ssp-ocsp.symauth.com,http://onsitecrl.verisign.com/EiDPassportIncRAPIDGatePIVInteroperableLRA3/LatestCRL.crl
+FDIC Agency CA,http://ssp-aia.verisign.com/SSPG3/FDIC-Agency-CA.p7c,http://ssp-ocsp.verisign.com,http://onsitecrl.verisign.com/FederalDepositInsuranceCorporationFDICSSPPIV/LatestCRL.crl
+U.S. Department of Education Agency CA - G3,http://ssp-aia.verisign.com/SSPG3/DoEd_Agency_G3.p7c,http://ssp-ocsp.verisign.com,http://onsitecrl.verisign.com/USDepartmentofEducationDoEDPIV256/LatestCRL.crl
+U.S. Department of Transportation Agency CA G4,http://ssp-aia.symauth.com/SSP/DoT_Agency_G4.p7c,http://ssp-ocsp.symauth.com,http://onsitecrl.verisign.com/USDepartmentofTransportationFAAPIVG4/LatestCRL.crl
+DHS CA4,http://pki.dimc.dhs.gov/dhsca_ee_aia.p7c,http://ocsp.dimc.dhs.gov,http://pki.dimc.dhs.gov/DHS_CA1.crl
+NASA Operational CA,http://pki.treas.gov/noca_ee_aia.p7c,http://ocsp.treas.gov,http://hc.nasa.gov/combinedCRL3.crl
+Department of Veterans Affairs CA,http://pki.treas.gov/vaca_ee_aia.p7c,http://ocsp.pki.va.gov,http://crl.pki.va.gov/PKI/CRL/VA_CA.crl
+Carillon Federal Services PIV-I CA2,http://pub.carillonfedserv.com/CAcerts/CFSCA2.p7c,http://pub.carillonfedserv.com/ocsp,http://pub.carillonfedserv.com/CRL/CFSCA2.crl
+USPTO_INTR_CA1,http://ipki.uspto.gov/IPKI/Certs/CAcertsIssuedToUSPTO.p7c,http://ocsp.uspto.gov,http://ipki.uspto.gov/IPKI/CRLs/CombinedCRL2.crl
