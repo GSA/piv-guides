@@ -5,18 +5,18 @@ collection: engineering
 permalink: engineering/ssh/
 ---
 
-To use Secure Shell (SSH) for remote access, you should authenticate with your PIV/CAC credential. This guide will help you to do this from your Windows, Linux or macOs computer. </BR>
+For network engineers, this guide will help you to authenticate with your PIV/CAC and SSH to a *nix server from your Windows, Linux Desktop, or macOS computer. For server administrators, this guide will help you to configure a *nix server for remote access.</BR><**LaChelle changed UNIX to *nix.**>
 
-{% include alert-info.html content = "Your Chief Information Security Officer must determine that security controls are in place and approve SSH scenarios. You should also review your agency's policies and use your physical or virtual jump servers to restrict users from using SSH directly from workstations." %} </BR> 
+This guide uses open-source, smart-card software for Windows (PuTTY-CAC) and Linux Desktop (OpenSC). MacOS X 10.12.x Sierra has native smart card features, but earlier versions require third-party software. Commercial solutions are available.
 
 {% include alert-info.html content = "Your PIV/CAC contains an authentication certificate key pair (public and private) for smart card logon. Using a PIV/CAC key pair is very similar to using a self-signed key pair for SSH. The setup below is meant for PIV/CAC based authentication." %}
 
-The setup instructions required for your computer is shown in the sections for Windows, MacOS and Linux desktops. The last section provides instructions for the linux server administrator to setup your account for PIV/CAC access. To enable PIV/CAC authentication for Windows, this guide uses PuTTY-CAC. For macOS 10.12.x (Sierra) and newer versions, this guide uses native smart-card features. Opensource software OpenSC is used for the linux desktops. Other commercial options are also available but not covered in this guide.
+{% include alert-info.html content = "Your Chief Information Security Officer must determine that security controls are in place and approve SSH scenarios. You should also review your agency's policies and use your physical or virtual jump servers to restrict users from using SSH directly from workstations." %} <!--The 1st caveat is for the network engineer. The 2nd caveat is for server admnistrators only?--></BR> 
 
 - [Windows](#ssh-from-windows) 
 - [MacOS](#ssh-from-macos)
 - [Linux Desktop](#ssh-from-linux_desktop)
-- [Configure a linux Server](#configure-a-linux-server)
+- [Configure a *nix Server](#configure-a-*nix-server)
 
 ## SSH from Windows
 
@@ -45,11 +45,11 @@ These steps use PuTTY-CAC v0.70u2, which supports Crypto API (CAPI) integration.
 
 ## SSH from macOS
 
-MacOS X Sierra (10.12.x) and High Sierra (10.13) provide native support for smart card readers. If you have an earlier macOS version, you'll need to install third-party software, such as OpenSC. You will find the instructions for OpenSC in the linux desktop section below.
+MacOS X Sierra (10.12.x) and High Sierra (10.13) provide native support for smart card readers. If you have an earlier macOS version, you'll need to install third-party software, such as OpenSC. See the next section (_SSH from Linux Desktop_) for OpenSC steps.
 
-## SSH from linux desktop
+## SSH from Linux Desktop<!--In previous SSH versions, we called this SSH from Linux OS-Based Computer.-->
 
-MacOS X Sierra (10.12.x) and High Sierra (10.13) provide native support for smart card readers. If you have an earlier macOS version, you'll need to install third-party software, such as OpenSC. <!--Since Yosemite 10.10 also includes native smart card features, we should list that also, to give the reader full information. -->
+To enable PIV/CAC authentication for your Linux Desktop, you'll need to install third-party software, such as OpenSC:  
 
 1. Install [OpenSC](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}_. 
 1. Insert your **PIV** into your card reader.
@@ -75,7 +75,7 @@ If you do not want to specify the opensc-pkcs11.so using the -I for ssh command,
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %}
 
-## Configure a linux Server
+## Configure a *nix Server
 
 Server administrators need to have root privileges for these steps. 
 
