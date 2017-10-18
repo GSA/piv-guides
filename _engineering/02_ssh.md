@@ -5,13 +5,13 @@ collection: engineering
 permalink: engineering/ssh/
 ---
 
-To use Secure Shell (SSH) for remote access, you should authenticate with your PIV/CAC credential. This guide will help you to do this from your Windows, Linux or macOs computer. The setup instructions required for your computer is shown in the </BR>
+To use Secure Shell (SSH) for remote access, you should authenticate with your PIV/CAC credential. This guide will help you to do this from your Windows, Linux or macOs computer. </BR>
 
 {% include alert-info.html content = "Your Chief Information Security Officer must determine that security controls are in place and approve SSH scenarios. You should also review your agency's policies and use your physical or virtual jump servers to restrict users from using SSH directly from workstations." %} </BR> 
 
 {% include alert-info.html content = "Your PIV/CAC contains an authentication certificate key pair (public and private) for smart card logon. Using a PIV/CAC key pair is very similar to using a self-signed key pair for SSH. The setup below is meant for PIV/CAC based authentication." %}
 
-To enable PIV/CAC authentication for Windows, this guide uses PuTTY-CAC. For macOS 10.12.x (Sierra), this guide uses native smart-card features. Opensource software OpenSC is used for the linux desktops. Other commercial options are also available but not covered in this guide.
+The setup instructions required for your computer is shown in the sections for Windows, MacOS and Linux desktops. The last section provides instructions for the linux server administrator to setup your account for PIV/CAC access. To enable PIV/CAC authentication for Windows, this guide uses PuTTY-CAC. For macOS 10.12.x (Sierra), this guide uses native smart-card features. Opensource software OpenSC is used for the linux desktops. Other commercial options are also available but not covered in this guide.
 
 - [Windows](#ssh-from-windows) 
 - [MacOS](#ssh-from-macos)
@@ -45,13 +45,13 @@ These steps use PuTTY-CAC v0.70u2, which supports Crypto API (CAPI) integration.
 
 ## SSH from macOS
 
-MacOS X Sierra (10.12.x) and High Sierra (10.13) provide native support for smart card readers. If you have an earlier macOS version, you'll need to install third-party software, such as OpenSC. 
+MacOS X Sierra (10.12.x) and High Sierra (10.13) provide native support for smart card readers. If you have an earlier macOS version, you'll need to install third-party software, such as OpenSC. You will find the instructions for OpenSC in the linux desktop section below.
 
 ## SSH from linux desktop
 
 MacOS X Sierra (10.12.x) and High Sierra (10.13) provide native support for smart card readers. If you have an earlier macOS version, you'll need to install third-party software, such as OpenSC. <!--Since Yosemite 10.10 also includes native smart card features, we should list that also, to give the reader full information. -->
 
-1. Install [OpenSC](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}_. **Replace with macOs native smart card feature steps.**
+1. Install [OpenSC](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}_. 
 1. Insert your **PIV** into your card reader.
 1. To save your **public SSH key** to a file, enter:
 
@@ -59,7 +59,7 @@ MacOS X Sierra (10.12.x) and High Sierra (10.13) provide native support for smar
 	    ssh-keygen -D /usr/lib64/opensc-pkcs11.so > mykey.pub
     ```  
 
-1. Send the file to the SSH server administrator.
+1. Send the file to the server administrator for setup of your access to the linux server.
 1. To log into the remote server, enter:
 
     ```
