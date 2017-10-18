@@ -11,7 +11,7 @@ To use Secure Shell (SSH) for remote access, you should authenticate with your P
 
 {% include alert-info.html content = "Your PIV/CAC contains an authentication certificate key pair (public and private) for smart card logon. Using a PIV/CAC key pair is very similar to using a self-signed key pair for SSH. The setup below is meant for PIV/CAC based authentication." %}
 
-The setup instructions required for your computer is shown in the sections for Windows, MacOS and Linux desktops. The last section provides instructions for the linux server administrator to setup your account for PIV/CAC access. To enable PIV/CAC authentication for Windows, this guide uses PuTTY-CAC. For macOS 10.12.x (Sierra), this guide uses native smart-card features. Opensource software OpenSC is used for the linux desktops. Other commercial options are also available but not covered in this guide.
+The setup instructions required for your computer is shown in the sections for Windows, MacOS and Linux desktops. The last section provides instructions for the linux server administrator to setup your account for PIV/CAC access. To enable PIV/CAC authentication for Windows, this guide uses PuTTY-CAC. For macOS 10.12.x (Sierra) and newer versions, this guide uses native smart-card features. Opensource software OpenSC is used for the linux desktops. Other commercial options are also available but not covered in this guide.
 
 - [Windows](#ssh-from-windows) 
 - [MacOS](#ssh-from-macos)
@@ -63,12 +63,17 @@ MacOS X Sierra (10.12.x) and High Sierra (10.13) provide native support for smar
 1. To log into the remote server, enter:
 
     ```
-	    ssh -I /usr/lib64/opensc-pkcs11.so <remote-host>
+	    ssh -I /usr/lib64/opensc-pkcs11.so <username>@<remote-host>
     ```    
+If you do not want to specify the opensc-pkcs11.so using the -I for ssh command, you can update the /etc/ssh_config file.
+
+    ```
+	    PKCS11Provider /usr/lib64/opensc-pkcs11.so
+    ```  
 
 1. At the PIV card password prompt, enter your **PIN** to open the **remote-host shell prompt**.
 
-{% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %} 
+{% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %}
 
 ## Configure a linux Server
 
@@ -98,7 +103,7 @@ Server administrators need to have root privileges for these steps.
 3. This step is only needed if you want to change the default SSH setting. You can change the configuration for the key file in the **/etc/ssh/sshd_config** file and restart the **sshd**. You can also disable any alternative means of access (i.e., passwords), as needed.
 
     ```
-	   AuthorizedKeysFile /etc/sshd/authorized_keys/%u  
+	   AuthorizedKeysFile /etc/ssh/authorized_keys/%u  
 	   PasswordAuthentication no
     ```
-If you change the default settings, you have to create the corresponding directory for authorized_keys under /etc and setup the authorized keys in this folder instead of user's home folder.
+If you change the default settings, you have to create the corresponding directory for authorized_keys under /etc/ssh and setup the authorized keys in this folder instead of user's home folder.
