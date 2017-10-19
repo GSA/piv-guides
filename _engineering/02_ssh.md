@@ -15,7 +15,7 @@ This guide uses open-source, smart-card software for Windows (PuTTY-CAC) and Ope
 
 - [Windows](#ssh-from-windows) 
 - [MacOS](#ssh-from-macos)
-- [Configure a linux Server](#configure-a-linux-server)
+- [Configure a Linux Server](#configure-a-linux-server)
 
 ## SSH from Windows
 
