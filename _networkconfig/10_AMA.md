@@ -9,8 +9,7 @@ Your agency has users who need elevated privileges when they log into agency sys
 
 {% include info-alert.html content=" AMA does not offer an option to require a specific login method (e.g., PIV/CAC login)." %}
 
-<**IG: The next paragraph has run-on issues; it needs word-reduction and shorter sentences.**)
-For example, one  user (Joe) needs read access to SharePoint documents. Joe's certificate has a policy Object Identifier (OID) of _2.16.840.1.101.3.2.1.3.13_; its policy name is _id-fpki-common-authentication_. Another user (Julie) needs write access to SharePoint documents. Julie has a certificate with a policy OID of _2.16.840.1.101.3.2.1.3.16_; its policy name is _id-fpki-common-high_. To grant Joe and Julie the needed privileges, you will need to set up their 2 policies in AD. Then, you'll need to assign their global group memberships, based on their policy OIDs. 
+For example, one  user (Joe) needs read access to SharePoint documents. His certificate's policy Object Identifier (OID) is _2.16.840.1.101.3.2.1.3.13_ and its name is _id-fpki-common-authentication_. Another user (Julie) needs write access to SharePoint documents. Her certificate's policy OID is _2.16.840.1.101.3.2.1.3.16_ and its name is _id-fpki-common-high_. To grant Joe and Julie the needed privileges, you will need to set up their 2 policies in AD DS. Then, you'll need to assign their global group memberships, based on their policy OIDs. 
 
 Select the method below based on your Windows Server version (2012, 2008 R2).
 
@@ -23,7 +22,7 @@ Select the method below based on your Windows Server version (2012, 2008 R2).
             [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]
             "ChainWithIssuancePolicyOIDs"=dword:00000001
 
-* This PowerShell script for the Federal Common and DoD Certificate Policies simplifies Microsoft TechNet's steps for Windows Server 2012:&nbsp;&nbsp;[AMA Certificate Issuance OIDs](https://github.com/GSA/ficam-scripts/tree/auth-mech-assurance/_AMA){:target="_blank"}. <--This link will change after the pull request is merged with staging -->
+* This PowerShell script for the Federal Common and DoD Certificate Policies simplifies Microsoft TechNet's steps for Windows Server 2012:&nbsp;&nbsp;[AMA Certificate Issuance OIDs](https://github.com/GSA/ficam-scripts/tree/auth-mech-assurance/_AMA){:target="_blank"}. <**This link will change after the pull request is merged with staging**>
 
 ## Windows Server® 2008 R2 AD DS
 
