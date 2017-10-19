@@ -31,7 +31,7 @@ These steps use PuTTY-CAC v0.70u2, which supports Crypto API (CAPI) integration.
 6. Back at the **PuTTY Configuration** window, click the _Copy to Clipboard_ button and paste your certificate's public key into a text file. The public key will look like this:
 
     ```
-        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU1hSDi9rqcA1ACmU8nvg/mgPW1lIsj0zELzn8CiioQ+Mx7LGM2yCIK+fpVPYJnFKj5jTxe5Gzz7q5u946w/8Ge+J8hghzxooB5WsUF2vF92iyvy16XmNVYFSEKTOrkIM4PAvhIKcNUcogBB+M+W1rFpsGXZYGrA1xAU3kbw0mbVSdAYq4cZlX0JobQpxypELH5WojKTJaK7EyAY2hOHCAMuJIlvhIXtAY1eG/NabyPiAcv+yxsBWq2xwA96a1iivsBxO8VWEb8YBzwt6NIDALyCF+Fg546BzOLnDgPW7jHEdOttUfEjLwa17nAteQk9t CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4
+        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOF... CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4
     ```    
 7. Provide the text file to the administrator to set up your account. Once your account has been set up with your public key on the linux server by the administrator (see the instructions for setting up the linux server below), you can proceed with the settings for SSH login below.
 8. At the **PuTTY Configuration** window, you can now see that the **Attempt Certificate Authentication** box is _checked_.
@@ -47,8 +47,8 @@ These steps use PuTTY-CAC v0.70u2, which supports Crypto API (CAPI) integration.
 To enable PIV/CAC authentication for your MacOS Desktop, you'll need to install third-party software, such as OpenSC:  
 
 1. Install [OpenSC](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}_. 
-1. Insert your **PIV/CAC** card into your card reader.
-2. You can view the certificates from the smart card using the command below.
+2. Insert your **PIV/CAC** card into your card reader.
+3. You can view the certificates from the smart card using the command below.
 
     ```
 	    pkcs15-tool --list-public-keys
@@ -79,30 +79,30 @@ This command will list all the certificates. You should note the ID for the **PI
 		DirectValue    : <absent>
 	```  
 
-3. To view your **public SSH key**, use the command below. The <ID> value is the number from the ID of the certificate. Once prompted, you have to enter the PIV/CAC card PIN.
+4. To view your **public SSH key**, use the command below. The <ID> value is the number from the ID of the certificate. Once prompted, you have to enter the PIV/CAC card PIN.
 
     ```
-	    pkcs15-tool --read-ssh-key <ID>
+	pkcs15-tool --read-ssh-key <ID>
     ```  
 The public key will look like this:
 
     ```
-        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU1hSDi9rqcA1ACmU8nvg/mgPW1lIsj0zELzn8CiioQ+Mx7LGM2yCIK+fpVPYJnFKj5jTxe5Gzz7q5u946w/8Ge+J8hghzxooB5WsUF2vF92iyvy16XmNVYFSEKTOrkIM4PAvhIKcNUcogBB+M+W1rFpsGXZYGrA1xAU3kbw0mbVSdAYq4cZlX0JobQpxypELH5WojKTJaK7EyAY2hOHCAMuJIlvhIXtAY1eG/NabyPiAcv+yxsBWq2xwA96a1iivsBxO8VWEb8YBzwt6NIDALyCF+Fg546BzOLnDgPW7jHEdOttUfEjLwa17nAteQk9t CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4
+        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU .... PIV AUTH pubkey
     ```    
     
-4. Send the SSH key to the server administrator for setup of your access to the linux server.
-5. To log into the remote server, enter:
+5. Send the SSH key to the server administrator for setup of your access to the linux server.
+6. To log into the remote server, enter:
 
     ```
-	    ssh -I /usr/lib64/opensc-pkcs11.so <username>@<remote-host>
+	ssh -I /usr/lib64/opensc-pkcs11.so <username>@<remote-host>
     ```    
 If you do not want to specify the opensc-pkcs11.so using the -I for ssh command, you can update the /etc/ssh_config file.
 
     ```
-	    PKCS11Provider /usr/lib64/opensc-pkcs11.so
+	PKCS11Provider /usr/lib64/opensc-pkcs11.so
     ```  
 
-6. At the PIV card password prompt, enter your **PIN**. You will now be logged into the Linux server via SSH.
+7. At the PIV card password prompt, enter your **PIN**. You will now be logged into the Linux server via SSH.
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %}
 
