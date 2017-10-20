@@ -5,13 +5,13 @@ collection: engineering
 permalink: engineering/ssh/
 ---
 
-For network engineers, this guide will help you to authenticate with your PIV/CAC and SSH to a linux server from your Windows or macOS computer. For server administrators, this guide will help you to configure a linux server for remote access.
+For network engineers, this guide will help you to authenticate with your PIV/CAC and SSH to a Linux server from your Windows or macOS computer. For server administrators, this guide will help you to configure a Linux server for remote access.
 
-This guide uses open-source, smart-card software for Windows (PuTTY-CAC) and OpenSC for MacOS. Commercial solutions are also available.
+This guide uses open-source, smart-card software for Windows (PuTTY-CAC) and macOS (OpenSC). Commercial solutions are also available.
 
 {% include alert-info.html content = "Your PIV/CAC contains an authentication certificate key pair (public and private) for smart card logon. Using a PIV/CAC key pair is very similar to using a self-signed key pair for SSH. The setup below is meant for PIV/CAC based authentication." %}
 
-{% include alert-info.html content = "Your Chief Information Security Officer must determine that security controls are in place and approve SSH scenarios. You should also review your agency's policies and use your physical or virtual jump servers to restrict users from using SSH directly from workstations." %} <!-- The 1st caveat is for the network engineer. The 2nd caveat is for server admnistrators only? --></BR> 
+{% include alert-info.html content = "Your Chief Information Security Officer must determine that security controls are in place and approve SSH scenarios. You should also review your agency's policies and use your physical or virtual jump servers to restrict users from using SSH directly from workstations." %} </BR> 
 
 - [Windows](#ssh-from-windows) 
 - [MacOS](#ssh-from-macos)
@@ -22,11 +22,11 @@ This guide uses open-source, smart-card software for Windows (PuTTY-CAC) and Ope
 These steps use PuTTY-CAC v0.70u2, which supports Crypto API (CAPI) integration. Pageant software is not required.
 
 1. You'll need to download [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_ to **C:\ssh\putty.exe**, or a similar folder. Select the 32-bit or 64-bit executable, based on your Windows OS. You don't need the MSI Installers. 
-2. Double-click on **putty.exe** to launch **PuTTY-CAC** and insert your PIV/CAC card into your smart card reader.
+2. Double-click on **putty.exe** to launch **PuTTY-CAC** and insert your **PIV/CAC** into your smart card reader.
 3. At the **PuTTY Configuration** window side-bar, go to **Connection &gt; SSH &gt; Certificate**. Click **Set CAPI Cert...**.
 ![PuTTY Configuration Window]({{site.baseurl}}/img/ssh-putty-cac-1.png){:style="float:left"}
 4. At the **Windows Security** window, select your certificate. 
-5. If you don't know which certificate to choose, view its properties. At the certificate details tab, click **Enhanced Key Usage**. Select the one whose _value_ is _Client Authentication_ or _Smart Card Logon_. Click **OK** to select the certificate.
+5. If you don't know which certificate to choose, view its properties. At the **Certificate Details** tab, click **Enhanced Key Usage**. Select the one whose _value_ is _Client Authentication_ or _Smart Card Logon_ and click **OK**.
 ![PuTTY Certificate Display Details]({{site.baseurl}}/img/ssh-putty-cac-2.png){:style="float:left"} 
 6. Back at the **PuTTY Configuration** window, you'll see the certificate thumbprint. Click the _Copy to Clipboard_ button and paste your certificate's SSH key into a text file. The key will look like this:
 
@@ -34,10 +34,10 @@ These steps use PuTTY-CAC v0.70u2, which supports Crypto API (CAPI) integration.
         ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOF... CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4
     ```    
 7. Provide the text file to the administrator to set up your account. 
-8. At the **PuTTY Configuration** window, you can now see that the **Attempt Certificate Authentication** box is _checked_.
+8. At the **PuTTY Configuration** window, you'll now see that the **Attempt Certificate Authentication** box is _checked_.
 9. You can create and save session profiles for each target server. Click **Session** and enter a remote server's **hostname** or **IP address**. For **Connection type**, click **SSH** and **22** will appear under **Port**. Enter a session name in **Saved Sessions** and click **Save**. 
-10. Once you have your account, select a **Saved Session**, click **Load** to load the server configuration, and click **Open** to connect to the Linux server. A dialog box opens and displays the server's key fingerprint as a _hash value_. Verify and accept the server key and enter your username.
-12. When the server detects the smart card authentication, it will prompt for your PIV/CAC PIN. Enter your PIN. Once the PIN is validated, you will be logged into the server via SSH.
+10. Once you have an account, select a **Saved Session**, click **Load** to load the server configuration. Click **Open** to connect to the Linux server. A dialog box will open and display the server's key fingerprint as a _hash value_. Verify and accept the server key and enter your username.
+12. When the server detects your smart card authentication, it will prompt for your PIV/CAC PIN. Enter your PIN. Once it's validated, you'll be logged into the server via SSH.
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed." %}
 
@@ -46,14 +46,14 @@ These steps use PuTTY-CAC v0.70u2, which supports Crypto API (CAPI) integration.
 To enable PIV/CAC authentication for your macOS, you'll need to install third-party software, such as OpenSC:  
 
 1. Install [OpenSC](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}_. 
-2. Insert your **PIV/CAC** card into your card reader.
+2. Insert your **PIV/CAC** into your card reader.
 3. To view all of the certificates on your Mac, enter:
 
     ```
 	    pkcs15-tool --list-public-keys
     ```  
 
-4. Note the ID for the **PIV AUTH pubkey** RSA key.
+4. Note the **ID** for the **PIV AUTH pubkey** RSA key:
 
    ```
 	Using reader with a card: SCR35xx Smart Card Reader
@@ -80,14 +80,14 @@ To enable PIV/CAC authentication for your macOS, you'll need to install third-pa
 
 5. To view your **public SSH key**, enter: 
 
-    ```
+   ```
 	pkcs15-tool --read-ssh-key 01
-    ```  
-> The _01_ value is the ID from above. When prompted, enter the PIV/CAC PIN. The SSH key will look like this:
+   ```  
+> The _01_ value is the ID from above. When prompted, enter your PIV/CAC PIN. The SSH key will look like this:
 
-    ```
+   ```
         ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU .... PIV AUTH pubkey
-    ```    
+   ```    
     
 6. Send the SSH key to the server administrator to set up your account.
 7. Once you have your account, you can log into the Linux server. Enter: 
@@ -96,13 +96,13 @@ To enable PIV/CAC authentication for your macOS, you'll need to install third-pa
 	ssh -I /usr/lib64/opensc-pkcs11.so <username>@<remote-host>
     ```    
     
-> If you do not want to specify the opensc-pkcs11.so using the **-I** for ssh command, you can update the setting in the **/etc/ssh_config** file to:
+> If you don't want to specify the _opensc-pkcs11.so_ using **-I**, you can update the setting in the **/etc/ssh_config** file to:
 
-    ```
+   ```
 	PKCS11Provider /usr/lib64/opensc-pkcs11.so
-    ```  
+   ```  
 
-8. The server will prompt for your PIV/CAC PIN. Enter your **PIN**. Once the PIN is validated, you will be logged into the server via SSH.
+8. The server will prompt for your PIV/CAC PIN. Enter your PIN. Once it's validated, you'll be logged into the server via SSH.
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %}
 
@@ -110,32 +110,32 @@ To enable PIV/CAC authentication for your macOS, you'll need to install third-pa
 
 Server administrators need to have root privileges for these steps. 
 
-{% include alert-info.html content = "These SSH configurations are examples only. Other configuration options are available, including Pluggable Authentication Modules (PAM) that look up user accounts and authorizations through directories. You can automate account set-ups by using centralized configuration management tools that can push or remove _authorized_keys_" %}
+{% include alert-info.html content = "These SSH configurations are examples only. Other configuration options are available, including Pluggable Authentication Modules (PAM) that look up user accounts and authorizations through directories. You can automate account set-ups by using centralized configuration management tools that can push or remove **authorized_keys**" %}
 
-1. By default, SSH keys are read from the **.ssh/authorized_keys** file in your home directory. You will need to create a **/home/&lt;username&gt;/.ssh** directory and change it to the requestor's ownership. You will also need to create an **authorized_keys** file in the **.ssh** directory and copy the requestor's SSH key to the **/home/&gt;user&gt;/.ssh/authorized_keys** file starting with **ssh-rsa &lt;public key&gt; &lt;key_name&gt;**:
+1. By default, SSH keys are read from the **.ssh/authorized_keys** file in your home directory. You'll need to create a **/home/&lt;username&gt;/.ssh** directory and change it to the requestor's ownership. Then, create an **authorized_keys** file in the **.ssh** directory and copy the requestor's SSH key to the **/home/&gt;user&gt;/.ssh/authorized_keys** file starting with **ssh-rsa &lt;public key&gt; &lt;key_name&gt;**:
 
-    ```
+   ```
 	    mkdir /home/<user>/.ssh
 	    chown <user> .ssh
 	    chgrp <user> .ssh
 	    chmod 700 .ssh
 	    cat > authorized_keys 
 	    ssh-rsa AAAAB3NzaC1yc2EAAAADAQA... CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4
-			
-    ```
+	    
+   ```
 
-2. Set the permissions on **authorized_keys** to **600** and change the ownership of **authorized_keys** to the user.
+2. Set the permissions for **authorized_keys** to **600** and change the **authorized_keys** ownership to the user:
 
-    ```
+   ```
 	     chmod 600 authorized_keys
 	     chown <user> authorized_keys
 	     chgrp <user> authorized_keys
-    ```
+   ```
    
 3. This step is only needed if you want to change the default SSH settings. You can change the location for the **authorized_keys** file in the **/etc/ssh/sshd_config** file and restart the **sshd**. You can also disable any alternative means of access (i.e., passwords), as needed:
 
-    ```
+   ```
 	   AuthorizedKeysFile /etc/ssh/authorized_keys/%u  
 	   PasswordAuthentication no
-    ```
-> If you change the default settings, you have to create the corresponding directory for **authorized_keys** under **/etc/ssh** and set up the authorized keys in this folder instead of user's home folder.
+   ```
+> If you change the default settings, you'll need to create a corresponding directory for **authorized_keys** under **/etc/ssh** and place the **authorized_keys** there instead of in the user's home folder.
