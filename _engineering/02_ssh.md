@@ -19,9 +19,9 @@ This guide uses open-source, smart-card software for Windows (PuTTY-CAC) and mac
 
 ## SSH from Windows
 
-These steps use PuTTY-CAC v0.70u2, which supports Crypto API (CAPI) integration. Pageant software is not required.
+These steps use PuTTY-CAC v0.70u2, which supports Cryptographic API (CAPI) integration. Pageant software is not required.
 
-1. You'll need to download [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_ to **C:\ssh\putty.exe**, or a similar folder. Select the 32-bit or 64-bit executable, based on your Windows OS. You don't need the MSI Installers. 
+1. You'll need to download [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"} to **C:\ssh\putty.exe**, or a similar folder. Select the 32-bit or 64-bit executable, based on your Windows OS. You don't need the MSI Installers. 
 1. Double-click on **putty.exe** to launch **PuTTY-CAC** and insert your **PIV/CAC** into your smart card reader.
 1. At the **PuTTY Configuration** window side-bar, go to **Connection &gt; SSH &gt; Certificate**. Click **Set CAPI Cert...**.  
 ![PuTTY Configuration Window]({{site.baseurl}}/img/ssh-putty-cac-1.png){:style="float:left"}  
@@ -48,9 +48,10 @@ To enable PIV/CAC authentication for your macOS, you'll need to install third-pa
 1. Install [OpenSC](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}. 
 1. Insert your **PIV/CAC** into your card reader.
 1. To view all of the certificates on your Mac, enter:  
-    ```
-	    pkcs15-tool --list-public-keys
-    ```  
+
+   ```
+	    pkcs15-tool --list-public-keys  
+   ```  
 1. Note the **ID** for the **PIV AUTH pubkey** RSA key:
 
    ```
@@ -83,7 +84,7 @@ To enable PIV/CAC authentication for your macOS, you'll need to install third-pa
 **Note:**&nbsp;&nbsp;The _01_ value is the ID from above. When prompted, enter your PIV/CAC PIN. The SSH key will look like this:  
 
    ```
-   ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU .... PIV AUTH pubkey
+     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU .... PIV AUTH pubkey  
    ```    
     
 1. Send the SSH key to the server administrator to set up your account.
@@ -91,7 +92,8 @@ To enable PIV/CAC authentication for your macOS, you'll need to install third-pa
 
     ```
 	ssh -I /usr/lib64/opensc-pkcs11.so <username>@<remote-host>  
-    ```  
+    ```
+
 **Note:**&nbsp;&nbsp;If you don't want to specify the _opensc-pkcs11.so_ using **-I**, you can update the setting in the **/etc/ssh_config** file to:  
 
    ```
@@ -116,18 +118,15 @@ Server administrators need to have root privileges for these steps.
 	    chgrp <user> .ssh
 	    chmod 700 .ssh
 	    cat > authorized_keys 
-	    ssh-rsa AAAAB3NzaC1yc2EAAAADAQA... CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4
-	    
+	    ssh-rsa AAAAB3NzaC1yc2EAAAADAQA... CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4    
    ```
-
 1. Set the permissions for **authorized_keys** to _600_ and change the **authorized_keys** ownership to the user:
 
    ```
 	     chmod 600 authorized_keys
 	     chown <user> authorized_keys
 	     chgrp <user> authorized_keys
-   ```
-   
+   ``` 
 1. This step is only needed if you want to change the default SSH settings. You can change the location for the **authorized_keys** file in the **/etc/ssh/sshd_config** file and restart the **sshd**. You can also disable any alternative means of access (i.e., passwords), as needed:
 
    ```
