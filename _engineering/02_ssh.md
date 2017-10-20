@@ -28,36 +28,34 @@ These steps use PuTTY-CAC v0.70u2, which supports Crypto API (CAPI) integration.
 4. At the **Windows Security** window, select your certificate. 
 5. If you don't know which certificate to choose, view its properties. At the certificate details tab, click **Enhanced Key Usage**. Select the one whose _value_ is _Client Authentication_ or _Smart Card Logon_. Click **OK** to select the certificate.
 ![PuTTY Certificate Display Details]({{site.baseurl}}/img/ssh-putty-cac-2.png){:style="float:left"} 
-6. Back at the **PuTTY Configuration** window, you'll see the certificate thumbprint. Click the _Copy to Clipboard_ button and paste your certificate's public key into a text file. The public key will look like this:
+6. Back at the **PuTTY Configuration** window, you'll see the certificate thumbprint. Click the _Copy to Clipboard_ button and paste your certificate's SSH key into a text file. The key will look like this:
 
     ```
         ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOF... CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4
     ```    
 7. Provide the text file to the administrator to set up your account. 
-8. Once your account has been set up with your public key on the Linux server, proceed with SSH login.
 8. At the **PuTTY Configuration** window, you can now see that the **Attempt Certificate Authentication** box is _checked_.
-9. Now you can create and save session profiles for each target server. Click **Session** and enter a remote server's **hostname** or **IP address**. For **Connection type**, click the **SSH** button and **22** will appear under **Port**. Enter a session name in **Saved Sessions** and click **Save**. 
-10. Once your account has been set up on the server, click **Open** to log into the Linux server using the **Sessions** window. A dialog box opens and displays the server's key fingerprint as a _hash value_.
-11. Verify and accept your public key and enter your username.
-12. When the server detects the smart card authentication, it will prompt for your PIV/CAC credential PIN. Enter your PIN. Once the PIN is validated, you will be logged into the server via SSH.
+9. You can create and save session profiles for each target server. Click **Session** and enter a remote server's **hostname** or **IP address**. For **Connection type**, click **SSH** and **22** will appear under **Port**. Enter a session name in **Saved Sessions** and click **Save**. 
+10. Once you have your account, select a **Saved Session**, click **Load** to load the server configuration, and click **Open** to connect to the Linux server. A dialog box opens and displays the server's key fingerprint as a _hash value_. Verify and accept the server key and enter your username.
+12. When the server detects the smart card authentication, it will prompt for your PIV/CAC PIN. Enter your PIN. Once the PIN is validated, you will be logged into the server via SSH.
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV/CAC until the login process has been completed." %}
 
 ## SSH from macOS
 
-To enable PIV/CAC authentication for your MacOS Desktop, you'll need to install third-party software, such as OpenSC:  
+To enable PIV/CAC authentication for your macOS, you'll need to install third-party software, such as OpenSC:  
 
 1. Install [OpenSC](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}_. 
 2. Insert your **PIV/CAC** card into your card reader.
-3. You can view the certificates from the smart card using the command below.
+3. To view all of the certificates on your Mac, enter:
 
     ```
 	    pkcs15-tool --list-public-keys
     ```  
 
-This command will list all the certificates. You should note the ID for the **PIV AUTH pubkey** RSA key.
+4. Note the ID for the **PIV AUTH pubkey** RSA key.
 
-	```
+   ```
 	Using reader with a card: SCR35xx Smart Card Reader
 	Public RSA Key [PIV AUTH pubkey]
 		Object Flags   : [0x0]
@@ -78,22 +76,21 @@ This command will list all the certificates. You should note the ID for the **PI
 		Native         : yes
 		ID             : 02
 		DirectValue    : <absent>
-	```  
+   ```  
 
-4. To view your **public SSH key**, use the command below. The <ID> value is the number from the ID of the certificate. Once prompted, you have to enter the PIV/CAC card PIN.
+5. To view your **public SSH key**, enter: 
 
     ```
-	pkcs15-tool --read-ssh-key <ID>
+	pkcs15-tool --read-ssh-key 01
     ```  
-    
-The public key will look like this:
+> The _01_ value is the ID from above. When prompted, enter the PIV/CAC PIN. The SSH key will look like this:
 
     ```
         ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU .... PIV AUTH pubkey
     ```    
     
-5. Send the SSH key to the server administrator for setup of your access to the linux server.
-6. To log into the remote server, enter:
+6. Send the SSH key to the server administrator to set up your account.
+7. Once you have your account, you can log into the Linux server. Enter: **STOPPED HERE**
 
     ```
 	ssh -I /usr/lib64/opensc-pkcs11.so <username>@<remote-host>
@@ -105,7 +102,7 @@ If you do not want to specify the opensc-pkcs11.so using the -I for ssh command,
 	PKCS11Provider /usr/lib64/opensc-pkcs11.so
     ```  
 
-7. At the PIV card password prompt, enter your **PIN**. You will now be logged into the Linux server via SSH.
+8. At the PIV card password prompt, enter your **PIN**. You will now be logged into the Linux server via SSH.
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %}
 
