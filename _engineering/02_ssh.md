@@ -84,20 +84,19 @@ To enable PIV/CAC authentication for your macOS, you'll need to install third-pa
 **Note:**&nbsp;&nbsp;The _01_ value is the ID from above. When prompted, enter your PIV/CAC PIN. The SSH key will look like this:  
 
    ```
-     ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU .... PIV AUTH pubkey  
+   ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU .... PIV AUTH pubkey  
    ```    
     
-1. Send the SSH key to the server administrator to set up your account.
+1. Send the SSH key to the server administrator to set up your account.  
 1. Once you have your account, you can log into the Linux server. Enter: 
 
     ```
-	ssh -I /usr/lib64/opensc-pkcs11.so <username>@<remote-host>  
+	ssh -I /usr/lib64/opensc-pkcs11.so <username>@<remote-host>
     ```
-
 **Note:**&nbsp;&nbsp;If you don't want to specify the _opensc-pkcs11.so_ using **-I**, you can update the setting in the **/etc/ssh_config** file to:  
 
    ```
-	PKCS11Provider /usr/lib64/opensc-pkcs11.so
+	    PKCS11Provider /usr/lib64/opensc-pkcs11.so&nbsp;
    ```  
 
 1. The server will prompt for your PIV/CAC PIN. Enter your PIN. Once it's validated, you'll be logged into the server via SSH.
