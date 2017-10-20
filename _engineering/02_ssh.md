@@ -90,19 +90,19 @@ To enable PIV/CAC authentication for your macOS, you'll need to install third-pa
     ```    
     
 6. Send the SSH key to the server administrator to set up your account.
-7. Once you have your account, you can log into the Linux server. Enter: **STOPPED HERE**
+7. Once you have your account, you can log into the Linux server. Enter: 
 
     ```
 	ssh -I /usr/lib64/opensc-pkcs11.so <username>@<remote-host>
     ```    
     
-If you do not want to specify the opensc-pkcs11.so using the -I for ssh command, you can update the /etc/ssh_config file.
+> If you do not want to specify the opensc-pkcs11.so using the **-I** for ssh command, you can update the setting in the **/etc/ssh_config** file to:
 
     ```
 	PKCS11Provider /usr/lib64/opensc-pkcs11.so
     ```  
 
-8. At the PIV card password prompt, enter your **PIN**. You will now be logged into the Linux server via SSH.
+8. The server will prompt for your PIV/CAC PIN. Enter your **PIN**. Once the PIN is validated, you will be logged into the server via SSH.
 
 {% include alert-warning.html heading = "The card reader may flash. **Do not** remove the PIV until the login process has been completed." %}
 
@@ -110,9 +110,9 @@ If you do not want to specify the opensc-pkcs11.so using the -I for ssh command,
 
 Server administrators need to have root privileges for these steps. 
 
-{% include alert-info.html content = "These SSH configurations are examples only. Other configuration options are available, including Pluggable Authentication Modules (PAM) that look up user accounts and authorizations through directories. You can automate setting up accounts by using centralized configuration management tools that can push or remove _authorized_keys_" %}
+{% include alert-info.html content = "These SSH configurations are examples only. Other configuration options are available, including Pluggable Authentication Modules (PAM) that look up user accounts and authorizations through directories. You can automate account set-ups by using centralized configuration management tools that can push or remove _authorized_keys_" %}
 
-1. By default, SSH keys are read from the **.ssh/authorized_keys** file in your home directory. You will need to create a **/home/&lt;username&gt;/.ssh** directory and change it to the requestor's ownership. You will also need to create an **authorized_keys** file in the **.ssh** directory and copy the requestor's PIV/CAC public key to the **/home/&gt;user&gt;/.ssh/authorized_keys** file starting with **ssh-rsa &lt;public key&gt; &lt;key_name&gt;**.
+1. By default, SSH keys are read from the **.ssh/authorized_keys** file in your home directory. You will need to create a **/home/&lt;username&gt;/.ssh** directory and change it to the requestor's ownership. You will also need to create an **authorized_keys** file in the **.ssh** directory and copy the requestor's SSH key to the **/home/&gt;user&gt;/.ssh/authorized_keys** file starting with **ssh-rsa &lt;public key&gt; &lt;key_name&gt;**:
 
     ```
 	    mkdir /home/<user>/.ssh
@@ -124,7 +124,7 @@ Server administrators need to have root privileges for these steps.
 			
     ```
 
-2. You should set the permissions on authorized_keys to 600 and change the ownership of authorized_keys to the user.
+2. Set the permissions on **authorized_keys** to **600** and change the ownership of **authorized_keys** to the user.
 
     ```
 	     chmod 600 authorized_keys
@@ -132,10 +132,10 @@ Server administrators need to have root privileges for these steps.
 	     chgrp <user> authorized_keys
     ```
    
-3. This step is only needed if you want to change the default SSH setting. You can change the configuration for the key file in the **/etc/ssh/sshd_config** file and restart the **sshd**. You can also disable any alternative means of access (i.e., passwords), as needed.
+3. This step is only needed if you want to change the default SSH settings. You can change the location for the **authorized_keys** file in the **/etc/ssh/sshd_config** file and restart the **sshd**. You can also disable any alternative means of access (i.e., passwords), as needed:
 
     ```
 	   AuthorizedKeysFile /etc/ssh/authorized_keys/%u  
 	   PasswordAuthentication no
     ```
-If you change the default settings, you have to create the corresponding directory for authorized_keys under /etc/ssh and setup the authorized keys in this folder instead of user's home folder.
+> If you change the default settings, you have to create the corresponding directory for **authorized_keys** under **/etc/ssh** and set up the authorized keys in this folder instead of user's home folder.
