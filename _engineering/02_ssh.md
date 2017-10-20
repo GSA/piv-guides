@@ -21,22 +21,23 @@ This guide uses open-source, smart-card software for Windows (PuTTY-CAC) and Ope
 
 These steps use PuTTY-CAC v0.70u2, which supports Crypto API (CAPI) integration. Pageant software is not required.
 
-1. You'll need to download [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_ to **C:\ssh\putty.exe**, or a similar folder. Select the 32-bit or 64-bit installer, based on your Windows OS. You don't need to install the complete PuTTY using one of the MSI Installers. <!-- Indrajit: For clarity, what PuTTY MSI Installer files does the engineer actually need so he/she doesn't need to guess? Celeste: There are multiple MSI Installer. It is not required to install using the MSI Installer. -->
-2. Launch **PuTTY** and insert your PIV/CAC card into your smart card reader.
-3. At the **PuTTY Configuration** window side-bar, go to **Connection &gt; SSH &gt; Certificate**. Click **Set CAPI Cert...** and **Open.**<!-- Celeste: Why did you change this to include **Open**? This is incorrect. Looks like you changed this from what I wrote originally. -->
+1. You'll need to download [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_ to **C:\ssh\putty.exe**, or a similar folder. Select the 32-bit or 64-bit executable, based on your Windows OS. You don't need the MSI Installers. 
+2. Double-click on **putty.exe** to launch **PuTTY-CAC** and insert your PIV/CAC card into your smart card reader.
+3. At the **PuTTY Configuration** window side-bar, go to **Connection &gt; SSH &gt; Certificate**. Click **Set CAPI Cert...**.
 ![PuTTY Configuration Window]({{site.baseurl}}/img/ssh-putty-cac-1.png){:style="float:left"}
-4. At the **Windows Security** window (**PuTTY:&nbsp;&nbsp;Select Certificate for CAPI Auth**), select your certificate. 
-5. If you don't know which one is yours, click the link <!-- Celeste: What link are you talking about? Looks like you changed this from what I wrote originally. --> to view its properties. At the **PuTTY Certificate Display** window, click the **Details** tab and then **Enhanced Key Usage**. If the certificate's _value_ is _Client Authentication_ or _Smart Card Logon_, then it's yours. The certificate details also appear in the inset window. <!-- From the screenshot, it looks like you click on E.K.U. only to see the policy OIDs, not to see the E.K.U. value (displays automatically). (Tom H's steps kind of imply this.) Do you need to select something from the "Show" drop-down? (Screenshot shows "All" selected.) Celeste -- I do not know what you are looking at from Tom H's instructions. I would keep my instructions as I tested. -->
+4. At the **Windows Security** window, select your certificate. 
+5. If you don't know which certificate to choose, view its properties. At the certificate details tab, click **Enhanced Key Usage**. Select the one whose _value_ is _Client Authentication_ or _Smart Card Logon_. Click **OK** to select the certificate.
 ![PuTTY Certificate Display Details]({{site.baseurl}}/img/ssh-putty-cac-2.png){:style="float:left"} 
-6. Back at the **PuTTY Configuration** window, click the _Copy to Clipboard_ button and paste your certificate's public key into a text file. The public key will look like this:
+6. Back at the **PuTTY Configuration** window, you'll see the certificate thumbprint. Click the _Copy to Clipboard_ button and paste your certificate's public key into a text file. The public key will look like this:
 
     ```
         ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOF... CAPI:05bf4653b3098a87b67816d81049f489d5b5ffb4
     ```    
-7. Provide the text file to the administrator to set up your account. Once your account has been set up with your public key on the linux server by the administrator (see the instructions for setting up the linux server below), you can proceed with the settings for SSH login below.
+7. Provide the text file to the administrator to set up your account. 
+8. Once your account has been set up with your public key on the Linux server, proceed with SSH login.
 8. At the **PuTTY Configuration** window, you can now see that the **Attempt Certificate Authentication** box is _checked_.
 9. Now you can create and save session profiles for each target server. Click **Session** and enter a remote server's **hostname** or **IP address**. For **Connection type**, click the **SSH** button and **22** will appear under **Port**. Enter a session name in **Saved Sessions** and click **Save**. 
-10. Click **Open** to log into the linux server using the **Sessions** window. A dialog box opens and displays the server's key fingerprint as a _hash value_.
+10. Once your account has been set up on the server, click **Open** to log into the Linux server using the **Sessions** window. A dialog box opens and displays the server's key fingerprint as a _hash value_.
 11. Verify and accept your public key and enter your username.
 12. When the server detects the smart card authentication, it will prompt for your PIV/CAC credential PIN. Enter your PIN. Once the PIN is validated, you will be logged into the server via SSH.
 
