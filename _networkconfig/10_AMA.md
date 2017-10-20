@@ -5,7 +5,7 @@ collection: networkconfig
 permalink: networkconfig/AMA/
 ---
 
-Your agency users need different privilege levels for agency systems and applications. To grant elevated privileges to these users when they log in with a PIV/CAC, you can use a Windows Active Directory (AD) feature called _Authentication Mechanism Assurance (AMA)_. AMA allows you to grant elevated privileges by adding a global group membership to a user’s PIV/CAC Kerberos token, based on the PIV/CAC’s certificate policy.
+Your agency users need different privilege levels for agency systems and applications. To grant elevated privileges when they log in with a PIV/CAC, you can use a Windows Active Directory (AD) feature called _Authentication Mechanism Assurance (AMA)_. AMA allows you to grant elevated privileges by adding a global group membership to a user’s PIV/CAC Kerberos token, based on the PIV/CAC’s certificate policy.
 
 {% include info-alert.html content=" AMA does not offer an option to require a specific login method (e.g., PIV/CAC login)." %}
 
