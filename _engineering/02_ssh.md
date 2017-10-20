@@ -23,11 +23,11 @@ These steps use PuTTY-CAC v0.70u2, which supports Crypto API (CAPI) integration.
 
 1. You'll need to download [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"}_ to **C:\ssh\putty.exe**, or a similar folder. Select the 32-bit or 64-bit executable, based on your Windows OS. You don't need the MSI Installers. 
 2. Double-click on **putty.exe** to launch **PuTTY-CAC** and insert your **PIV/CAC** into your smart card reader.
-3. At the **PuTTY Configuration** window side-bar, go to **Connection &gt; SSH &gt; Certificate**. Click **Set CAPI Cert...**.</BR>
-![PuTTY Configuration Window]({{site.baseurl}}/img/ssh-putty-cac-1.png){:style="float:left"}</BR>
-4. At the **Windows Security** window, select your certificate. 
-5. If you don't know which certificate to choose, view its properties. At the **Certificate Details** tab, click **Enhanced Key Usage**. Select the one whose _value_ is _Client Authentication_ or _Smart Card Logon_ and click **OK**.</BR>
-![PuTTY Certificate Display Details]({{site.baseurl}}/img/ssh-putty-cac-2.png){:style="float:left"} </BR>
+3. At the **PuTTY Configuration** window side-bar, go to **Connection &gt; SSH &gt; Certificate**. Click **Set CAPI Cert...**.  
+![PuTTY Configuration Window]({{site.baseurl}}/img/ssh-putty-cac-1.png){:style="float:left"}  
+4. At the **Windows Security** window, select your certificate.   
+5. If you don't know which certificate to choose, view its properties. At the **Certificate Details** tab, click **Enhanced Key Usage**. Select the one whose _value_ is _Client Authentication_ or _Smart Card Logon_ and click **OK**.  
+![PuTTY Certificate Display Details]({{site.baseurl}}/img/ssh-putty-cac-2.png){:style="float:left"}  
 6. Back at the **PuTTY Configuration** window, you'll see the certificate thumbprint. Click the _Copy to Clipboard_ button and paste your certificate's SSH key into a text file. The key will look like this:
 
     ```
@@ -46,14 +46,14 @@ These steps use PuTTY-CAC v0.70u2, which supports Crypto API (CAPI) integration.
 To enable PIV/CAC authentication for your macOS, you'll need to install third-party software, such as OpenSC:  
 
 1. Install [OpenSC](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}. 
-2. Insert your **PIV/CAC** into your card reader.
-3. To view all of the certificates on your Mac, enter:
+1. Insert your **PIV/CAC** into your card reader.
+1. To view all of the certificates on your Mac, enter:
 
     ```
 	    pkcs15-tool --list-public-keys
     ```  
 
-4. Note the **ID** for the **PIV AUTH pubkey** RSA key:
+1. Note the **ID** for the **PIV AUTH pubkey** RSA key:
 
    ```
 	Using reader with a card: SCR35xx Smart Card Reader
@@ -78,31 +78,30 @@ To enable PIV/CAC authentication for your macOS, you'll need to install third-pa
 		DirectValue    : <absent>
    ```  
 
-5. To view your **public SSH key**, enter: 
+1. To view your **public SSH key**, enter: 
 
    ```
 	pkcs15-tool --read-ssh-key 01
    ```  
-**Note:** The _01_ value is the ID from above. When prompted, enter your PIV/CAC PIN. The SSH key will look like this:  
+**Note:**&nbsp;&nbsp;The _01_ value is the ID from above. When prompted, enter your PIV/CAC PIN. The SSH key will look like this:  
 
    ```
-        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU .... PIV AUTH pubkey
+   ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyPn2dShOFLBnMraiP2MnLU .... PIV AUTH pubkey
    ```    
     
-6. Send the SSH key to the server administrator to set up your account.
-7. Once you have your account, you can log into the Linux server. Enter: 
+1. Send the SSH key to the server administrator to set up your account.
+1. Once you have your account, you can log into the Linux server. Enter: 
 
     ```
 	ssh -I /usr/lib64/opensc-pkcs11.so <username>@<remote-host>
-    ```    
-    
-**Note:** If you don't want to specify the _opensc-pkcs11.so_ using **-I**, you can update the setting in the **/etc/ssh_config** file to:  
+    ```
+**Note:**&nbsp;&nbsp;If you don't want to specify the _opensc-pkcs11.so_ using **-I**, you can update the setting in the **/etc/ssh_config** file to:  
 
    ```
 	PKCS11Provider /usr/lib64/opensc-pkcs11.so
    ```  
 
-8. The server will prompt for your PIV/CAC PIN. Enter your PIN. Once it's validated, you'll be logged into the server via SSH.
+1. The server will prompt for your PIV/CAC PIN. Enter your PIN. Once it's validated, you'll be logged into the server via SSH.
 
 {% include alert-warning.html heading = "The card reader may flash. Do not remove the PIV until the login process has been completed." %}
 
@@ -138,4 +137,4 @@ Server administrators need to have root privileges for these steps.
 	   AuthorizedKeysFile /etc/ssh/authorized_keys/%u  
 	   PasswordAuthentication no
    ```
-**Note:** If you change the default settings, you'll need to create a corresponding directory for **authorized_keys** under **/etc/ssh** and place the **authorized_keys** there instead of in the user's home folder.
+**Note:**&nbsp;&nbsp;If you change the default settings, you'll need to create a corresponding directory for **authorized_keys** under **/etc/ssh** and place the **authorized_keys** there instead of in the user's home folder.
