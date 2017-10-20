@@ -47,12 +47,10 @@ To enable PIV/CAC authentication for your macOS, you'll need to install third-pa
 
 1. Install [OpenSC](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}. 
 1. Insert your **PIV/CAC** into your card reader.
-1. To view all of the certificates on your Mac, enter:
-
+1. To view all of the certificates on your Mac, enter:  
     ```
 	    pkcs15-tool --list-public-keys
     ```  
-
 1. Note the **ID** for the **PIV AUTH pubkey** RSA key:
 
    ```
@@ -77,7 +75,6 @@ To enable PIV/CAC authentication for your macOS, you'll need to install third-pa
 		ID             : 02
 		DirectValue    : <absent>
    ```  
-
 1. To view your **public SSH key**, enter: 
 
    ```
