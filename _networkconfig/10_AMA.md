@@ -4,12 +4,13 @@ title: Authentication Mechanism Assurance
 collection: networkconfig
 permalink: networkconfig/AMA/
 ---
+IG Orig: You may want to provide higher privileges to users when they use their PIV/CAC card for login. In such a scenario, you can use Authentication Mechanism Assurance (AMA) feature of Windows Active Directory (AD). When the AMA is enabled, it will allow you to insert an administrator-designated, global group membership based on the certificate policy of the PIV/CAC card into the authentication Kerberos token.
 
-Your agency users need different privilege levels for agency systems and applications. To grant elevated privileges when they log in with a PIV/CAC, you can use a Windows Active Directory (AD) feature called _Authentication Mechanism Assurance (AMA)_. AMA allows you to grant elevated privileges by adding a global group membership to a user’s PIV/CAC Kerberos token, based on the PIV/CAC’s certificate policy.
+You may need to grant elevated privileges to your agency users when they log in their PIV/CAC credential. To help you do this, you can use a Windows Active Directory (AD) feature called _Authentication Mechanism Assurance (AMA)_. AMA allows you to add a global group membership to a user’s PIV/CAC Kerberos token, based on the PIV/CAC’s certificate policy.
 
 {% include info-alert.html content=" AMA does not offer an option to require a specific login method (e.g., PIV/CAC login)." %}
 
-For example, one  user (Joe) needs read access to SharePoint documents. His certificate's policy Object Identifier (OID) is _2.16.840.1.101.3.2.1.3.13_ and its name is _id-fpki-common-authentication_. Another user (Julie) needs write access to SharePoint documents. Her certificate's policy OID is _2.16.840.1.101.3.2.1.3.16_ and its name is _id-fpki-common-high_. To grant Joe and Julie the needed privileges, you will need to set up their 2 policies in AD DS. Then, you'll need to assign their global group memberships, based on their policy OIDs. 
+Let's take a look at how that works. You have one user (Joe) who needs read access to SharePoint documents. His certificate policy Object Identifier (OID) is _2.16.840.1.101.3.2.1.3.13_ and its name is _id-fpki-common-authentication_. Another user (Julie) needs write access to SharePoint documents. Her certificate policy OID is _2.16.840.1.101.3.2.1.3.16_ and its name is _id-fpki-common-high_. To grant Joe and Julie the needed privileges, you will need to set up their 2 policies in AD DS. Then, you'll need to assign their global group memberships, based on their policy OIDs. 
 
 Select the method below based on your Windows Server version (2012, 2008 R2).
 
