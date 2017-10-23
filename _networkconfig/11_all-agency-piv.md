@@ -5,10 +5,9 @@ collection: networkconfig
 permalink: networkconfig/11_accept-all-agency-piv.md/
 ---
 
-Published On: October 6th, 2017<br/>
-Last Updated On: October 14th, 2017
+##### Last Updated: October 23, 2017
 
-<!--Based on LaChelle's Use Case. More complete description. May edit further. LaChelle's notes say "any government user," not just those on detail or who collaborate on programs.-->Your agency provides network accounts to government users on detail, as well as those who cross-collaborate on special programs. They need to authenticate to your network with their home-agency PIV/CAC credentials, rather than issuing them new credentials. 
+Your agency provides network accounts to government users on detail, as well as those who cross-collaborate on special programs. They need to authenticate to your network with their home-agency PIV/CAC credentials, rather than issuing them new credentials. 
 
 This guide will help you configure Active Directory (AD) on your domains to allow government users with a PIV/CAC credential to authenticate. 
 
@@ -17,9 +16,7 @@ This guide will help you configure Active Directory (AD) on your domains to allo
 * [Trust Store &mdash; Import Agency-Specific PIV Issuer Certificates](#trust-store-import-agency-specific-piv-certificates)
 * [Account Linking &mdash; Other Agency Users](#account-linking-other-agency-users)
 * [List of PIV/CAC Issuers](#list-of-piv/cac-issuers)
-
-
-<!--I'm thinking that the following headings should be numbered to show that these are ordered steps--a bit of a roadmap-->
+* [List of Agencies and PIV/CAC Issuers](#list-of-agencies-and-piv/cac-issuers)
 
 ## Network Ports and Protocols &mdash; Open Access to OCSP and CRL
 
