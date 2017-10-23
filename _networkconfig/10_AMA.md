@@ -4,9 +4,8 @@ title: Authentication Mechanism Assurance
 collection: networkconfig
 permalink: networkconfig/AMA/
 ---
-IG Orig: You may want to provide higher privileges to users when they use their PIV/CAC card for login. In such a scenario, you can use Authentication Mechanism Assurance (AMA) feature of Windows Active Directory (AD). When the AMA is enabled, it will allow you to insert an administrator-designated, global group membership based on the certificate policy of the PIV/CAC card into the authentication Kerberos token.
 
-You may need to grant elevated privileges to your agency users when they log in their PIV/CAC credential. To help you do this, you can use a Windows Active Directory (AD) feature called _Authentication Mechanism Assurance (AMA)_. AMA allows you to add a global group membership to a user’s PIV/CAC Kerberos token, based on the PIV/CAC’s certificate policy.
+You may need to grant elevated privileges to your agency users when they log in with their PIV/CAC credential. To help you do this, you can use a Windows Active Directory (AD) feature called _Authentication Mechanism Assurance (AMA)_. AMA allows you to add a global group membership to a user’s Kerberos token, based on the PIV/CAC’s certificate policy.
 
 {% include info-alert.html content=" AMA does not offer an option to require a specific login method (e.g., PIV/CAC login)." %}
 
@@ -23,7 +22,7 @@ Select the method below based on your Windows Server version (2012, 2008 R2).
             [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]
             "ChainWithIssuancePolicyOIDs"=dword:00000001
 
-* This PowerShell script for the Federal Common and DoD Certificate Policies simplifies Microsoft TechNet's steps for Windows Server 2012:&nbsp;&nbsp;[AMA Certificate Issuance OIDs](https://github.com/GSA/ficam-scripts/tree/auth-mech-assurance/_AMA){:target="_blank"}. <**This link will change after the pull request is merged with staging**>
+* This PowerShell script for the Federal Common and DoD Certificate Policies simplifies Microsoft TechNet's steps for Windows Server 2012:&nbsp;&nbsp;[AMA Certificate Issuance OIDs](https://github.com/GSA/ficam-scripts-public/tree/auth-mech-assurance/_ama){:target="_blank"}.
 
 ## Windows Server® 2008 R2 AD DS
 
@@ -35,6 +34,3 @@ Select the method below based on your Windows Server version (2012, 2008 R2).
 
 * A Windows Server® 2008 R2-based Domain Hotfix corrects the known KDC error, "Access tokens are not updated correctly when you enable authentication mechanism assurance in a Windows Server 2008 R2-based domain." [Microsoft Hotfix](http://support.microsoft.com/kb/2771254){:target="_blank"}.
 
-## Windows Server® 2016
-
-* For Windows Server® 2016, Microsoft doesn't support AMA:&nbsp;&nbsp;[Windows Server 2016&mdash;What's New in Kerberos Authentication](https://docs.microsoft.com/en-us/windows-server/security/kerberos/whats-new-in-kerberos-authentication){:target="_blank"}. 
