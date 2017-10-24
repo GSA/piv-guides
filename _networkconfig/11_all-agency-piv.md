@@ -11,13 +11,13 @@ Your agency provides network accounts to government users on detail, as well as 
 
 This guide will help you configure Active Directory (AD) on your domains to allow government users with a PIV/CAC credential to authenticate. 
 
-* [Open Access to OCSP and CRL](#open-access-to-ocsp-and-crl)
+* [Network Ports and Protocols](#open-access-to-ocsp-and-crl)
 * [Add Agency UPN Suffix in AD](#add-agency-upn-suffix)
 * [Import Agency-Specific PIV Issuer Certificates](#import-agency-specific-piv-issuer-certificates)
 * [Link Account of the Other Agency Users](#account-linking-other-agency-users)
 * [List of PIV Issuers](#list-of-piv-issuers)
 
-## Open Access to OCSP and CRL
+## Network Ports and Protocols
 
 To allow government users to authenticate with their home-agency PIV/CAC credentials, you need to verify that your network allows access to their home agency's Certificate Issuer website to validate the certificate. Your agency's domain controllers, servers and workstations need to access the On-line Certificate Status Protocol (OCSP) and Certificate Revocation List (CRL) links for certificate validation in real-time. OCSP and CRL end-points are used to define configurations for the firewalls. You must allow access to these end-points through the firewalls so this will work.
 
