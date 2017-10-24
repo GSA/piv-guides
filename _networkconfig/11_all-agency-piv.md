@@ -7,42 +7,41 @@ permalink: networkconfig/11_accept-all-agency-piv.md/
 
 ##### Last Updated: October 24, 2017
 
-Your agency provides network accounts to government users on detail, as well as those who cross-collaborate on special programs. They need to authenticate to your network with their home-agency PIV/CAC credentials, rather than issuing them new credentials. 
+Your agency provides network accounts to government users on detail, as well as to those who cross-collaborate on special programs. Rather than issue them new credentials, you need to enable their home-agency PIV/CAC credentials so they can authenticate to your network. 
 
-This guide will help you configure Active Directory (AD) on your domains to allow government users with a PIV/CAC credential to authenticate. 
+This guide will help you configure Active Directory (AD) on your domains to allow government users with a PIV/CAC credential to authenticate.<!--There appear to be other steps neeed beyond configuring AD, so we need to summarize those very briefly here.-->
 
-* [Network Ports and Protocols](#open-access-to-ocsp-and-crl)
-* [Add Agency UPN Suffix in AD](#add-agency-upn-suffix)
-* [Import Agency-Specific PIV Issuer Certificates](#import-agency-specific-piv-issuer-certificates)
-* [Link Account of the Other Agency Users](#account-linking-other-agency-users)
+* [Network Ports and Protocols](#network-ports-and-protocols)
+* [Add Agency UPN Suffix in AD](#domain-controllers)
+* [Import Agency-Specific PIV Issuer Certificates](#trust-stores)
+* [Link Account of the Other Agency Users](#account-linking)
 * [List of PIV Issuers](#list-of-piv-issuers)
 
 ## Network Ports and Protocols
+<!--Where do network "ports and protocols" come in? We don't use those words. Re: Firewall configuration? Is the network access to Certificate (or PIV?) Issuer website in order for DCs, servers, and workstations to have access OCSP and CRLs? If so, then we can reduce some redundancy in this paragraph.-->
+<!--It sounds like the admin is validating the user's PIV/CAC certificate for first-time log in via the PIV Issuer website AND then validating it again via the OCSP and CRLs. Is this correct?-->To allow these users to authenticate, your network must have access to a user's home agency Certificate Issuer<!--"PIV Issuer"?--> website so you can validate their certificates<!--Is the "Certificate Issuer" the same as the "PIV Issuer"?-->. Your agency's domain controllers, servers, and workstations must also have access to the On-line Certificate Status Protocol (OCSP) Responder and Certificate Revocation List (CRL) links for real-time certificate validation. For this to work, you'll need to configure your firewalls to allow this access.<!--So the certificate validation will work? Correct meaning?-->
+You can find the OCSP and CRL links in the List of PIV Issuers table below.
 
-To allow government users to authenticate with their home-agency PIV/CAC credentials, you need to verify that your network allows access to their home agency's Certificate Issuer website to validate the certificate. Your agency's domain controllers, servers and workstations need to access the On-line Certificate Status Protocol (OCSP) and Certificate Revocation List (CRL) links for certificate validation in real-time. OCSP and CRL end-points are used to define configurations for the firewalls. You must allow access to these end-points through the firewalls so this will work.
+You can also use the CRL end-points to poll<!--Does the OCSP Responder poll the CRL end-points to import their data?-->the CRL data into your agency's local OCSP Responders (for those that have them installed!) and route your agency's intranet traffic to your agency's OCSP Responders. How would you do this?  We will tell you - this can be configured in your Microsoft domain as a setting.
 
-You can find the OCSP and CRL links in the List of Issuers table below.
+## Domain Controllers (Add Agency UPN Suffix to AD)
 
-You can also use the CRL end-points to poll the CRL data into<!--"Poll into" meaning?--> your local, internal, agency OCSP responders (for those that have them installed!) and route your internal, agency, intranet traffic to your internal agency OCSP responders. How would you do this?  We will tell you - this can be configured in your Microsoft domain as a setting.
-
-## Add Agency UPN Suffix to AD
-
-In order to trust PIV/CAC credentials from another agency, you'll have to add that agency's [UPN suffix](https://technet.microsoft.com/en-us/library/cc772007(v=ws.11).aspx){target="_blank"}_ to your agency's AD Domains and Trusts.
+In order for your agency to trust other agencies' users' PIV/CACs, you'll have to add those agencies' [UPN suffixes](https://technet.microsoft.com/en-us/library/cc772007(v=ws.11).aspx){target="_blank"}_ to your Windows AD Domains and Trusts:
 
 1. Click through _Start_ &gt; _Administrative Tools_ &gt; _Active Directory Domains and Trusts_.
 2. In the console tree, right-click _AD Domains and Trusts_ and then click _Properties_.
 3. On the _UPN Suffixes_ tab, type an alternative UPN suffix for the forest, and then click _Add_.
 
-## Import Agency-Specific PIV Issuer Certificates
+## Trust Stores (Import Agency-Specific PIV Issuer Certificates)
 
-Your agency will have to trust the Issuer's certificates for these other agencies. You will need to install ALL of the Intermediate and Issuing CA certificates into your NT Auth store for your agency networks. The agency-specific PIV/CAC Issuer certificates can be found in the Authority Information Access (AIA) link given in the PIV<!--/CAC--> Issuers table below. Download the .p7c file, where you will find the Issuer's public certificate. You will also be able to retrieve the other certificates in the chain to COMMON using the AIA extensions specified in those certificates.
+Your agency will have to trust the PIV Issuer's certificates for these other agencies. You will need to install ALL of the Intermediate and Issuing CA certificates into your NT Auth Trust Store for your agency networks. The agency-specific PIV Issuer certificates can be found in the Authority Information Access (AIA) link given in the PIV Issuers table below. Download the .p7c file, where you will find the Issuer's public certificate. You will also be able to retrieve the other certificates in the chain to COMMON using the AIA extensions specified in those certificates.
 
-The agency-specific PIV Issuer certificates can also be found in the [FPKI Crawler](https://fpki-graph.fpki-lab.gov/crawler/){target="_blank"}_ website. You will find the certificate listed by agency in the table _Certificate Files Grouped by Type_. Once you locate a specific agency, you can download the certificates and the path to COMMON in .p7b format.
+The agency-specific PIV Issuer certificates can also be found in the [FPKI Crawler](https://fpki-graph.fpki-lab.gov/crawler/){target="_blank"}_ website. These are listed by agency in the table, _Certificate Files Grouped by Type_. Once you locate a specific agency, you can download the certificates and the path to COMMON in .p7b format.
 {target="_blank"}_.
 
 Import the certificates into the Windows [NTAuth Trust Store](https://piv.idmanagement.gov/networkconfig/trustedroots/){target="_blank"}_.
 
-## Link Account of the Other Agency User
+## Account Linking (Link Account of the Other Agency User)
 
 When a user authenticates with another agency's PIV/CAC card, the credential of that user may not match the account created in the AD user set-up for your agency. There are multiple ways to [link that PIV/CAC credential](https://piv.idmanagement.gov/networkconfig/accounts/){target="_blank"} owner to the AD account.
 
