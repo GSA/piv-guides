@@ -9,11 +9,11 @@ permalink: networkconfig/11_accept-all-agency-piv.md/
 
 Your agency provides network accounts to government users on detail and those who cross-collaborate on special programs. Rather than issue them new credentials, you can enable their home-agency PIV/CAC credentials so they can authenticate to your network.
 
-* [Network Ports and Protocols](#network-ports-and-protocols)
-* [Add Agency UPN Suffix in AD](#domain-controllers)
-* [Import Agency-Specific PIV Issuer Certificates](#trust-stores)
-* [Link Account of the Other Agency Users](#account-linking)
-* [List of PIV Issuers](#list-of-piv-issuers)
+* [1 Network Ports and Protocols](#1-network-ports-and-protocols)
+* [2 Domain Controllers](#2-domain-controllers)
+* [3 Trust Stores](#3-trust-stores)
+* [4 Account Linking](#4-account-linking)
+* [PIV Issuers Lists](#piv-issuers-lists)
 
 ## 1&nbsp;&nbsp;Network Ports and Protocols
 <!--We don't use the terms "network ports and protocols" anywhere. Firewall configuration? Is the need for network access to PIV Issuer website in order for DCs, servers, and workstations to have access OCSP and CRLs? If so, then we can reduce some redundancy in this paragraph.-->
