@@ -7,7 +7,9 @@ permalink: networkconfig/11_accept-all-agency-piv/
 
 ##### Last Updated: October 25, 2017
 
-Your agency provides network accounts to government users on detail and those who cross-collaborate on special programs. Rather than issue them new credentials, you can enable their home-agency PIV/CAC credentials so they can authenticate to your network.
+Your agency provides network accounts to government users on detail and those who cross-collaborate on special programs. Rather than issue them new credentials, you can allow them to authenticate to your network with their home-agency PIV/CAC credentials.
+
+This guide will help you configure your Windows network domain to accept other agency users' PIV/CAC credentials.
 
 * [1 Network Ports and Protocols](#1-network-ports-and-protocols)
 * [2 Domain Controllers](#2-domain-controllers)
@@ -17,25 +19,23 @@ Your agency provides network accounts to government users on detail and those wh
 
 ## 1 Network Ports and Protocols
 
-Your networks must have access to the PIV/CAC Issuer websites for other agencies so you can validate their <**PIV Issuers', users'?**> certificates. Your agency's domain controllers, servers, and workstations must also have access to the PIV Issuers' On-line Certificate Status Protocol (OCSP) Responder and Certificate Revocation List (CRL) links so you can validate certificate-revocation statuses in real-time. For this to work, you'll need to configure your firewalls to allow these accesses. 
+Your network must have access to the PIV/CAC Issuers' websites for other agencies so it can validate their certificates. Your agency's domain controllers, servers, and workstations must have access to the PIV/CAC Issuers' On-line Certificate Status Protocol (OCSP) Responder and Certificate Revocation List (CRL) links so you can validate certificate-revocation statuses in real-time. OCSP and CRL end-points are used to define configurations for the firewalls. You must allow access to these end-points through the firewalls so this will work. For additional information, see the FPKI-Guides' [Network Ports and Protocols Playbook]({{site.baseurl}}/networkconfig/ports/#network-ports-and-protocols).
 
-You can find the OCSP and CRL links in the [PIV and CAC Issuers List](#piv-and-cac-issuers-list) below.
+You can find the OCSP and CRL links in the [PIV/CAC Issuers List](#piv-and-cac-issuers-list) below.
 
-Once your networks allow these accesses, you can also poll the CRL end-points to retrieve fresh data for your agency's own local OCSP Responders (for those that have them installed!) and route your agency's intranet traffic to them. How would you do this? You can configure your Microsoft domain through Windows AD setting.<**What are the setting steps? Provide Microsoft link?**>
-
-For additional information, see the FPKI-Guides' [Network Ports and Protocols Playbook]({{site.baseurl}}/networkconfig/ports/#network-ports-and-protocols).<!--Does it make sense to include links like this for additional information?-->
+Once your network allows these accesses, you can poll the CRL end-points to retrieve fresh data for your agency's own local OCSP Responders (for those that have them installed!) and route your agency's intranet traffic to them. How would you do this? Go to: [Configuring Certificate Revocation](https://technet.microsoft.com/en-us/library/cc771079(v=ws.11).aspx){:target="_blank"}.
 
 ## 2 Domain Controllers
 
-In order for your agency to trust a PIV/CAC credential from another agency, you'll have to add the user's home-agency's [UPN suffix](https://technet.microsoft.com/en-us/library/cc772007(v=ws.11).aspx){target="_blank"}_ to your Windows AD Domains and Trusts:
+In order for your network to trust a PIV/CAC credential from another agency, you'll have to add the user's home-agency's [UPN suffix](https://technet.microsoft.com/en-us/library/cc772007(v=ws.11).aspx){target="_blank"}_ to your Windows AD Domains and Trusts:
 
 1. Click through _Start_ &gt; _Administrative Tools_ &gt; _Active Directory Domains and Trusts_.
 2. In the console tree, right-click _AD Domains and Trusts_ and then click _Properties_.
-3. On the _UPN Suffixes_ tab, type an alternative UPN suffix for the forest, and then click _Add_.
+3. On the _UPN Suffixes_ tab, add the _UPN suffix_ for the agency, and then click _Add_.
 
 ## 3 Trust Stores
 
-To authenticate these users to your networks, you will need to trust their agencies' PIV/CAC Issuers' certificates by installing ALL of the Intermediate and Issuing CA certificates in the NT Auth Trust Store for your networks. The agency-specific, PIV/CAC Issuer certificates can be found via the Authority Information Access (AIA) links given in the [PIV and CAC Issuers List](#piv-and-cac-issuers-list) below. 
+To authenticate these users to your network, you will need to trust their agencies' PIV/CAC Issuers by installing ALL of the Intermediate and Issuing CA certificates in the NT Auth Trust Store. The PIV/CAC Issuer certificates can be found in the Authority Information Access (AIA) links given in the [PIV and CAC Issuers List](#piv-and-cac-issuers-list) below. 
 
 * Download the .p7c file, where you will find the PIV/CAC Issuer's public certificate. 
 * You can also retrieve and install the Intermediate and Issuing CA certificates in the chain to COMMON using the AIA extensions <!--Links?--->specified in those certificates.<!--"Those certificates" refers to which certificates?-->
@@ -55,7 +55,9 @@ This table contains the information for U.S. Executive Branch Agencies and the C
 
 **Questions:** How many certificates are there? This table exists as a machine readable file that can be downloaded here (from this repo) and will be a CSV? or YAML? or JSON?
 
-Table 1. PIV Issuer's List
+Table 1. PIV/CAC Issuer's List
+
+For DoD, go to: [DoD PKI](https://iase.disa.mil/pki-pke/interoperability/Pages/index.aspx#etWPQ7){:target="_blank"}.
 
 | Issuing Certification Authorities | AIA URIs | OCSP  | CRL |
 |------|-------|-------|------
