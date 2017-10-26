@@ -9,8 +9,6 @@ You may need to grant elevated privileges to your agency users when they log in 
 
 {% include info-alert.html content=" AMA does not offer an option to require a specific login method (e.g., PIV/CAC login)." %}
 
-Here's how that would work. Let's say you have one user (Joe) who needs read access to SharePoint documents. His certificate policy Object Identifier (OID) is _2.16.840.1.101.3.2.1.3.13_ and its name is _id-fpki-common-authentication_. Another user (Julie) needs write access to SharePoint documents. Her certificate policy OID is _2.16.840.1.101.3.2.1.3.16_ and its name is _id-fpki-common-high_. To grant Joe and Julie their required privileges, you will need to set up their 2 policies in AD DS. Then, you'll can assign their global group memberships, based on their policy OIDs. 
-
 Select the method below based on your Windows Server version (2012 or 2008 R2).
 
 {% include info-warning.html content=" Do not use AMA to provide privileged access to servers." %}
