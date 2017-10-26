@@ -17,17 +17,17 @@ Your agency provides network accounts to government users on detail and those wh
 
 ## 1 Network Ports and Protocols
 
-Your network must have access to the PIV/CAC Issuer websites for other agencies so you can validate their users' certificates. Your agency's domain controllers, servers, and workstations must also have access to the On-line Certificate Status Protocol (OCSP) Responder and Certificate Revocation List (CRL) links to validate their certificate-revocation statuses in real-time. For this to work, you'll need to configure your firewalls to allow these accesses. <!--These OCSP responders and CRL end-points relate to the user's home agency?-->
+Your networks must have access to the PIV/CAC Issuer websites for other agencies so you can validate their <**PIV Issuers', users'?**> certificates. Your agency's domain controllers, servers, and workstations must also have access to the PIV Issuers' On-line Certificate Status Protocol (OCSP) Responder and Certificate Revocation List (CRL) links so you can validate certificate-revocation statuses in real-time. For this to work, you'll need to configure your firewalls to allow these accesses. 
 
 You can find the OCSP and CRL links in the [PIV and CAC Issuers List](#piv-and-cac-issuers-list) below.
 
-You can also poll these CRL end-points to retrieve fresh data for your agency's own local OCSP Responders (for those that have them installed!) and route your agency's intranet traffic to them. How would you do this? You can configure your Microsoft domain through Windows AD setting.<**What is that setting? Add steps? Provide a link to steps?**>
+Once your networks allow these accesses, you can also poll the CRL end-points to retrieve fresh data for your agency's own local OCSP Responders (for those that have them installed!) and route your agency's intranet traffic to them. How would you do this? You can configure your Microsoft domain through Windows AD setting.<**What are the setting steps? Provide Microsoft link?**>
 
-For additional information, see the FPKI-Guides' [Network Ports and Protocols Playbook]({{site.baseurl}}/networkconfig/ports/#network-ports-and-protocols).
+For additional information, see the FPKI-Guides' [Network Ports and Protocols Playbook]({{site.baseurl}}/networkconfig/ports/#network-ports-and-protocols).<!--Does it make sense to include links like this for additional information?-->
 
 ## 2 Domain Controllers
 
-In order for your agency to trust a PIV/CAC credential from another agency, you'll have to add the user's home-agency's [UPN suffixes](https://technet.microsoft.com/en-us/library/cc772007(v=ws.11).aspx){target="_blank"}_ to your Windows AD Domains and Trusts:
+In order for your agency to trust a PIV/CAC credential from another agency, you'll have to add the user's home-agency's [UPN suffix](https://technet.microsoft.com/en-us/library/cc772007(v=ws.11).aspx){target="_blank"}_ to your Windows AD Domains and Trusts:
 
 1. Click through _Start_ &gt; _Administrative Tools_ &gt; _Active Directory Domains and Trusts_.
 2. In the console tree, right-click _AD Domains and Trusts_ and then click _Properties_.
@@ -35,12 +35,10 @@ In order for your agency to trust a PIV/CAC credential from another agency, you'
 
 ## 3 Trust Stores
 
-To authenticate these users to your network, your agency will have to trust their PIV/CAC Issuers' certificates. You'll need to install ALL of the Intermediate and Issuing CA certificates into the NT Auth Trust Store for your agency networks. The agency-specific, PIV/CAC Issuer certificates can be found via the Authority Information Access (AIA) links given in the [PIV and CAC Issuers List](#piv-and-cac-issuers-list) below. 
+To authenticate these users to your network, your agency will have to trust their PIV/CAC Issuers' certificates. You'll need to install ALL of the Intermediate and Issuing CA certificates into the NT Auth Trust Store for your networks. The agency-specific, PIV/CAC Issuer certificates can be found via the Authority Information Access (AIA) links given in the [PIV and CAC Issuers List](#piv-and-cac-issuers-list) below. 
 
 * Download the .p7c file, where you will find the PIV/CAC Issuer's public certificate.<!--One or multiple certificates? Next sentence says "those certificates."--> 
 * You can also retrieve and install the Intermediate and Issuing CA certificates in the chain to COMMON using the AIA extensions <!--Links?--->specified in those certificates.<!--"Those certificates" refers to which certificates?-->
-
-**CB STOPPED**
 
 The agency-specific PIV Issuer certificates can also be found in the [FPKI Crawler](https://fpki-graph.fpki-lab.gov/crawler/){target="_blank"}_ website. These are listed by agency in the table, _Certificate Files Grouped by Type_. Once you locate a specific agency, you can download the certificates and the path to COMMON in .p7b format.
 {target="_blank"}_.
