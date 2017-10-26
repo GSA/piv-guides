@@ -5,7 +5,7 @@ collection: networkconfig
 permalink: networkconfig/11_accept-all-agency-piv/
 ---
 
-##### Last Updated: October 25, 2017
+##### Last Updated: October 26, 2017
 
 Your agency provides network accounts to government users on detail and those who cross-collaborate on special programs. Rather than issue them new credentials, you can allow them to authenticate to your network with their home-agency PIV/CAC credentials.
 
