@@ -35,28 +35,27 @@ In order for your agency to trust a PIV/CAC credential from another agency, you'
 
 ## 3 Trust Stores
 
-To authenticate these users to your network, your agency will have to trust their PIV/CAC Issuers' certificates. You'll need to install ALL of the Intermediate and Issuing CA certificates into the NT Auth Trust Store for your networks. The agency-specific, PIV/CAC Issuer certificates can be found via the Authority Information Access (AIA) links given in the [PIV and CAC Issuers List](#piv-and-cac-issuers-list) below. 
+To authenticate these users to your networks, you will need to trust their agencies' PIV/CAC Issuers' certificates by installing ALL of the Intermediate and Issuing CA certificates in the NT Auth Trust Store for your networks. The agency-specific, PIV/CAC Issuer certificates can be found via the Authority Information Access (AIA) links given in the [PIV and CAC Issuers List](#piv-and-cac-issuers-list) below. 
 
-* Download the .p7c file, where you will find the PIV/CAC Issuer's public certificate.<!--One or multiple certificates? Next sentence says "those certificates."--> 
+* Download the .p7c file, where you will find the PIV/CAC Issuer's public certificate. 
 * You can also retrieve and install the Intermediate and Issuing CA certificates in the chain to COMMON using the AIA extensions <!--Links?--->specified in those certificates.<!--"Those certificates" refers to which certificates?-->
 
-The agency-specific PIV Issuer certificates can also be found in the [FPKI Crawler](https://fpki-graph.fpki-lab.gov/crawler/){target="_blank"}_ website. These are listed by agency in the table, _Certificate Files Grouped by Type_. Once you locate a specific agency, you can download the certificates and the path to COMMON in .p7b format.
+The agency-specific, PIV Issuer certificates can also be found in the [FPKI Crawler](https://fpki-graph.fpki-lab.gov/crawler/){target="_blank"}_ website. These are listed by agency in the table, _Certificate Files Grouped by Type_. Once you locate a specific agency, you can download the certificates and the path to COMMON in .p7b format.
 {target="_blank"}_.
 
 Import the certificates into the Windows [NTAuth Trust Store](https://piv.idmanagement.gov/networkconfig/trustedroots/){target="_blank"}_.
 
 ## 4 Account Linking
 
-When a user authenticates with his/her home-agency PIV/CAC card, the credential may not match the account created in the AD user set-up for your agency. There are multiple ways to [link that PIV/CAC credential](https://piv.idmanagement.gov/networkconfig/accounts/){target="_blank"} owner to the AD account.
+When a user authenticates with his/her home-agency PIV/CAC, the credential may not match the account created in the AD user set-up for your agency. There are multiple ways to [link that PIV/CAC credential](https://piv.idmanagement.gov/networkconfig/accounts/){target="_blank"} owner to the AD account.<!--Why would it not match the account created in AD user set-up?-->
 
 ## PIV Issuers List
 
-This table contains the information for U.S. Executive Branch Agencies and the Certification Authorities that are used for PIV/CAC credentials.
- 
-This table contains the links for downloading all the XXX number of certificates.  How many certificates are there?  
-This table exists as a machine readable file that can be downloaded here (from this repo) and will be a CSV? or YAML? or JSON?
+This table contains the information for U.S. Executive Branch Agencies and the Certification Authorities that are used for PIV/CAC credentials. It contains the links for downloading all the **XXX** number of certificates. 
 
-TABLE 1. PIV Issuer's List
+**Questions:** How many certificates are there? This table exists as a machine readable file that can be downloaded here (from this repo) and will be a CSV? or YAML? or JSON?
+
+Table 1. PIV Issuer's List
 
 | Issuing Certification Authorities | AIA URIs | OCSP  | CRL |
 |------|-------|-------|------
@@ -64,7 +63,7 @@ TABLE 1. PIV Issuer's List
 |{{ issuer.Issuer }}|[{{ issuer.AIA }}]({{ issuer.AIA }}){target="_blank"}|{{ issuer.OCSP }}|{{ issuer.CRL }}|
 {% endfor %}
 
-TABLE TWO
+Table 2. XXXXX List
 
 | Agency | Issuing Certification Authorities |
 |------|-------------|
