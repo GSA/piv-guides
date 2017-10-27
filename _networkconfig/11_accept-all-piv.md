@@ -19,7 +19,7 @@ This guide will help you configure your Windows network domain to accept other a
 
 ## 1 Network Ports and Protocols
 
-Your network must have access to the PIV/CAC Issuers' websites for other agencies so it can validate their certificates. Your agency's domain controllers, servers, and workstations must have access to the PIV/CAC Issuers' On-line Certificate Status Protocol (OCSP) Responder and Certificate Revocation List (CRL) links so you can validate certificate-revocation statuses in real-time. OCSP and CRL end-points are used to define configurations for the firewalls. You must allow access to these end-points through the firewalls so this will work. For additional information, see the FPKI-Guides' [Network Ports and Protocols Playbook]({{site.baseurl}}/networkconfig/ports/#network-ports-and-protocols).
+Your network must have access to the PIV/CAC Issuers' websites for other agencies so it can validate their certificates. Your agency's domain controllers, servers, and workstations must have access to the PIV/CAC Issuers' On-line Certificate Status Protocol (OCSP) Responder and Certificate Revocation List (CRL) links so you can validate certificate-revocation statuses in real-time. OCSP and CRL end-points are used to define configurations for the firewalls. You must allow access to these end-points through the firewalls so this will work. For additional information, see the PIV-Guides' [Network Ports and Protocols Playbook]({{site.baseurl}}/networkconfig/ports/#network-ports-and-protocols).
 
 You can find the OCSP and CRL links in the [PIV/CAC Issuers List](#piv-and-cac-issuers-list) below.
 
@@ -46,7 +46,7 @@ Import the certificates into the Windows [NTAuth Trust Store](https://piv.idmana
 
 ## 4 Account Linking
 
-When users authenticate with their home-agency PIV/CACs, the credentials may not match the accounts created in the AD user set-up for your agency. There are multiple ways to [link that PIV/CAC credential](https://piv.idmanagement.gov/networkconfig/accounts/){target="_blank"} owner to the AD account.
+When users authenticate with their home-agency PIV/CACs, the credentials may not match the accounts created in the AD user set-up for your agency. There are multiple ways to link the PIV/CAC credential owner to the AD account. See the PIV-Guides' [Account Linking](https://piv.idmanagement.gov/networkconfig/accounts/){target="_blank"}.
 
 ## PIV/CAC Issuers List
 
