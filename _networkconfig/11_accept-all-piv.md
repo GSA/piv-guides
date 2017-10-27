@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Configure Network Authentication To Accept Other Agency PIV/CAC Cards
+title: Accept All PIV/CAC Cards
 collection: networkconfig
-permalink: networkconfig/accept-all-agency-piv/
+permalink: networkconfig/accept-all-piv/
 ---
 
 ##### Last Updated: October 26, 2017
@@ -50,22 +50,18 @@ When users authenticate with their home-agency PIV/CACs, the credentials may not
 
 ## PIV/CAC Issuers List
 
-Table 1 contains the information for U.S. Executive Branch Agencies and the Certification Authorities that are used for PIV/CAC credentials. It contains the links for downloading all the **XXX** number of certificates. 
+Table 1 contains the information for U.S. Executive Branch Agencies and the Certification Authorities that are used for PIV/CAC credentials. It contains the links for downloading each certificate using the AIA URL. 
 
 Table 1. PIV/CAC Issuer's List
 
 For DoD, go to: [DoD PKI](https://iase.disa.mil/pki-pke/interoperability/Pages/index.aspx#etWPQ7){:target="_blank"}.
 
-| Issuing Certification Authorities | AIA URIs | OCSP  | CRL |
-|------|-------|-------|------
+| Issuing CA | Certificate Links |
+|------|-------|
 {% for issuer in site.data.pivissuers %}
-|{{ issuer.Issuer }}|[{{ issuer.AIA }}]({{ issuer.AIA }}){target="_blank"}|{{ issuer.OCSP }}|{{ issuer.CRL }}|
+|{{ issuer.Issuer }}|AIA: [{{ issuer.AIA }}]({{ issuer.AIA }}){target="_blank"}<br/>OCSP: {{ issuer.OCSP }}<br/>CRL: {{ issuer.CRL }}|
 {% endfor %}
 
-Table 2. Agency List of Issuing Certification Authorities
-
-| Agency | Issuing Certification Authorities |
-|------|-------------|
 
 
 
