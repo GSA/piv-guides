@@ -2,7 +2,7 @@
 layout: default
 title: Configure Network Authentication To Accept Other Agency PIV/CAC Cards
 collection: networkconfig
-permalink: networkconfig/11_accept-all-agency-piv/
+permalink: networkconfig/accept-all-agency-piv/
 ---
 
 ##### Last Updated: October 26, 2017
