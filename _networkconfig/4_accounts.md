@@ -9,7 +9,7 @@ For your network domains, you will need to associate the PIV credential to the u
 
 This page includes the information on the Identifiers for account linking in network authentication:
 
-- [Comparing using the Principal Name versus altSecurityIdentities options for the network](#principal-name-versus-altsecurityidentities-options)
+- [Comparing Principal Name versus altSecurityIdentities options for the network](#comparing-principal-name-versus-altsecurityidentities-options)
 - [Implementing altSecurityIdentities and PIV certificate mapping](#implementing-altsecurityidentities-and-piv-certificate-mapping)
 
 

@@ -4,12 +4,13 @@ title: Edit a Page
 permalink: /editpage/
 ---
 
-If you wish to Edit a page, or submit changes via a pull request you must:
+To Edit a page:
 
-1. **Establish a GitHub account.** In order to submit a comment through the GitHub “Issues” feature, you will need to create a GitHub account.  
-You can create an account by browsing to this site: https://github.com/join  
-GitHub allows you to remain pseudonymous, just make sure you select the options that suit you on the “Profile” and “Emails” pages of your “Personal Settings”.  
-We also highly encourage you to turn on **two-factor authentication** in the “Security” page, also part of “Personal Settings”.  
+1. **Establish a GitHub account.**  
+You can create an account by browsing to: [Join GitHub](https://github.com/join).  
+
+* GitHub allows you to remain almost anonymous if you prefer.  Make sure you select the options that suit you on the “Profile” and “Emails” pages of your “Personal Settings”.  
+* We also highly encourage you to turn on **two-factor authentication** in the “Security” page, also part of “Personal Settings”.  
   ![How to create account]({{site.baseurl}}/assets/img/create_github_account.png)
 
 2. When you want to Edit a Page, click on the **Edit this page** link in the upper right hand corner of the **webpage**  OR
