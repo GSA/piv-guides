@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Enable PIV/CAC for SSH
+title: Enable SSH
 collection: engineering
 permalink: engineering/ssh/
 ---
