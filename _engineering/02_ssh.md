@@ -39,7 +39,7 @@ These steps use PuTTY-CAC v0.70u2, which supports Cryptographic API (CAPI) integ
 1. Once you have an account, select a **Saved Session** and click **Load** to load the server configuration. Click **Open** to connect to the Linux server. A dialog box will open and display the server's key fingerprint as a _hash value_. Verify and accept the server key and enter your username.
 1. When the server detects your smart card authentication, it will prompt for your PIV/CAC PIN. Enter your PIN. Once it's validated, you'll be logged into the server via SSH.
 
-{% include alert-warning.html heading = "The card reader may flash. Do not remove the PIV/CAC until the login process has been completed." %}
+{% include alert-warning.html content = "The card reader may flash. Do not remove the PIV/CAC until the login process has been completed." %}
 
 ## SSH from macOS
 
@@ -101,7 +101,7 @@ To enable PIV/CAC authentication for your macOS, you'll need to install third-pa
 
 1. The server will prompt for your PIV/CAC PIN. Enter your PIN. Once it's validated, you'll be logged into the server via SSH.
 
-{% include alert-warning.html heading = "The card reader may flash. Do not remove the PIV until the login process has been completed." %}
+{% include alert-warning.html content = "The card reader may flash. Do not remove the PIV until the login process has been completed." %}
 
 ## Configure a Linux Server
 
