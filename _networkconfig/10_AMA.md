@@ -18,7 +18,11 @@ AMA is available in Windows Server 2008 R2 and later versions.
             [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]
             "ChainWithIssuancePolicyOIDs"=dword:00000001
 
-* This PowerShell script can be used to automate the setup for the Federal Common and DoD Certificate Policies. It simplifies Microsoft TechNet's steps for Windows Server 2012:&nbsp;&nbsp;[AMA Certificate Issuance OIDs](https://github.com/GSA/ficam-scripts-public/tree/auth-mech-assurance/_ama){:target="_blank"}.
+* [CertificateIssuanceOIDs.ps1](https://github.com/GSA/ficam-scripts-public/tree/master/_ama){:target="_blank"} is a PowerShell script that imports a list of certification policies in Microsoft Active Directory. This PowerShell script can be used to automate the setup for the Federal Common and DoD Certificate Policies. It simplifies Microsoft TechNet's steps for Windows Server 2012:&nbsp;&nbsp;.
+
+The script has a list of policies to import grouped under different categories. You should only import the policies that are applicable to your agency.
+
+As a network administrator for a Federal Government agency, you can use this script to configure Microsoft Windows Active Directory (AD) Domain Service's (DS) Authentication Mechanism Assurance (AMA). You will have to rename the script file and remove the .txt extension in order to execute the script.
 
 * Set the _Domain Functional Level_ to _Windows Server 2008 R2_.
 * Add a global group membership to the user’s Kerberos token. When a user's PIV/CAC login is authenticated, it will activate the group membership.
