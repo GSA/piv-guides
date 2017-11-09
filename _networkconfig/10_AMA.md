@@ -11,8 +11,8 @@ AMA is available in Windows Server® 2008 R2 and later versions. Go to:&nbsp;&nb
 
 {% include info-warning.html content="Do not use AMA to provide privileged user access to servers." %}
 
-### PowerShell Script For Setting Common Federal/DoD Certificate Policies
-[CertificateIssuanceOIDs.ps1](https://github.com/GSA/ficam-scripts-public/tree/master/_ama){:target="_blank"} is a PowerShell script that imports a list of Federal Common and DoD Certificate certification policies. It simplifies Microsoft TechNet's steps for setting up the policies. The script has a list of policies to import grouped under different categories. You should only import the policies that are applicable to your agency.
+### PowerShell Script To Import Common Federal/DoD Certificate Policies
+You can use this [CertificateIssuanceOIDs.ps1](https://github.com/GSA/ficam-scripts-public/tree/master/_ama){:target="_blank"} PowerShell script to import a list of Federal Common/DoD Certificate certification policies. This simplifies Microsoft TechNet's steps for setting up the policies. The script has a list of policies to import grouped under different categories. You should only import the policies that are applicable to your agency.
 
 You may have to change the [powershell script execution policy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1&viewFallbackFrom=powershell-Microsoft.PowerShell.Core) to execute this script or sign the script to execute it after downloading.
 
