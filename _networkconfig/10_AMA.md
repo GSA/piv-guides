@@ -42,4 +42,3 @@ An sample output of the script for one policy is shown below.
           [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]
           "ChainWithIssuancePolicyOIDs"=dword:00000001
 
-* Add a global group membership to the user’s Kerberos token. When a user's PIV/CAC login is authenticated, it will activate the group membership.
