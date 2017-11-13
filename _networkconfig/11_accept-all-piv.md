@@ -27,7 +27,7 @@ Once your network allows these accesses, you can poll the CRL end-points to retr
 
 ## 2 Domain Controllers
 
-In order for your network to trust a PIV/CAC credential from another agency, you'll have to add the user's home-agency's [UPN suffix](https://technet.microsoft.com/en-us/library/cc772007(v=ws.11).aspx){target="_blank"}_ to your Windows AD Domains and Trusts:
+In order for your network to trust a PIV/CAC credential from another agency, you'll have to add the user's home-agency's [UPN suffix](https://technet.microsoft.com/en-us/library/cc772007(v=ws.11).aspx){:target="_blank"}_ to your Windows AD Domains and Trusts:
 
 1. Click through _Start_ &gt; _Administrative Tools_ &gt; _Active Directory Domains and Trusts_.
 2. In the console tree, right-click _AD Domains and Trusts_ and then click _Properties_.
