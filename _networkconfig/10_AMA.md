@@ -9,10 +9,10 @@ You may need to make privilege decisions in applications for your agency users w
 
 AMA is available in Windows Server® 2008 R2 and later versions. Go to:&nbsp;&nbsp;[AMA Step-by-Step Guide](https://technet.microsoft.com/en-us/library/dd378897(v=WS.10).aspx){:target=_"blank"} to understand the implementation of AMA.
 
-{% include info-warning.html content="Do not use AMA to provide privileged user access to servers." %}
+{% include info-warning.html content="Do not use AMA to provide privileged user access to servers without another access control method in combination with AMA." %}
 
 ### PowerShell Script To Import Common Federal/DoD Certificate Policies
-You can use this [CertificateIssuanceOIDs.ps1](https://github.com/GSA/ficam-scripts-public/tree/master/_ama){:target="_blank"} PowerShell script to import a list of Federal Common/DoD Certificate certification policies. This simplifies Microsoft TechNet's steps for setting up the policies. The script has a list of policies to import grouped under different categories. You should only import the policies that are applicable to your agency. 
+You can use this [CertificateIssuanceOIDs.ps1](https://github.com/GSA/ficam-scripts-public/tree/master/_ama){:target="_blank"} PowerShell script to import a list of Federal Common/DoD Certificate issuance policies. This simplifies Microsoft TechNet's steps for setting up the policies. The script has a list of policies to import grouped under different categories. You should only import the policies that are applicable to your agency. 
 
 The script creates active directory security groups with the same name as the certificate issuance policies and links the policies to the groups. It also creates the active directory groups container (ou=Groups) if it does not exist under ou=Administrators.
 
