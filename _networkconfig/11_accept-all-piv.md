@@ -5,7 +5,7 @@ collection: networkconfig
 permalink: networkconfig/accept-all-piv/
 ---
 
-##### Last Updated: October 26, 2017
+##### Last Updated: November 13, 2017
 
 Your agency provides network accounts to government users on detail and those who cross-collaborate on special programs. Rather than issue them new credentials, you can allow them to authenticate to your network with their home-agency PIV/CAC credentials.
 
@@ -56,11 +56,23 @@ Table 1. PIV/CAC Issuer's List
 
 For DoD, go to: [DoD PKI](https://iase.disa.mil/pki-pke/interoperability/Pages/index.aspx#etWPQ7){:target="_blank"}.
 
-| Issuing CA | Certificate Links |
-|------|-------|
-{% for issuer in site.data.pivissuers %}
-|{{ issuer.Issuer }}|AIA: [{{ issuer.AIA }}]({{ issuer.AIA }}){target="_blank"}<br/>OCSP: {{ issuer.OCSP }}<br/>CRL: {{ issuer.CRL }}|
-{% endfor %}
+{% assign issuerdata=site.data.pivissuers %}
+<table>    
+    <thead>
+    {% for column in issuerdata[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in issuerdata %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
 
 
 
