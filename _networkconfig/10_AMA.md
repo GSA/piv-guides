@@ -32,7 +32,7 @@ An sample output of the script for one policy is shown below.
      Created CN=13.255922318A2AF32EC47D5B70735D4DB3,CN=OID,CN=Public Key Services,CN=Services,CN=Configuration,DC=agency,DC=gov
      AD AMA set for 2.16.840.1.101.3.2.1.3.13  id-fpki-common-authentication
 
-When you login to your workstation with a PIV/CAC credentials, you will see that you have been assigned the group based on the certificate policy in the PIV/CAC. To find the group membership, you can issue the command '_whoami /groups_'. An example is shown below for the group set above.
+When you login to your workstation with a PIV/CAC credentials, you will see that you have been assigned the group based on the certificate policy in your PIV/CAC. To find the group membership, you can issue the command '_whoami /groups_'. An example is shown below for the group set above.
 
      C:\whoami /groups
      .....
