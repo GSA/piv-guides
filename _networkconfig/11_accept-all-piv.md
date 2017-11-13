@@ -40,24 +40,25 @@ To authenticate these users to your network, you will need to trust their agenci
 * Download the .p7c file, where you will find the PIV/CAC Issuer's public certificate. 
 * You need to also retrieve and install the Intermediate and Root CA certificates in the chain to COMMON using the AIA extensions specified in the Issuers' certificates.
 
-The PIV/CAC Issuer certificates can also be found in the [FPKI Crawler](https://fpki-graph.fpki-lab.gov/crawler/){target="_blank"}_ website. These are listed by agency in the table, _Certificate Files Grouped by Type_. Once you locate a specific agency, you can download the certificates and the path to COMMON in .p7b format.
+The PIV/CAC Issuer certificates can also be found in the [FPKI Crawler](https://fpki-graph.fpki-lab.gov/crawler/){:target="_blank"}_ website. These are listed by agency in the table, _Certificate Files Grouped by Type_. Once you locate a specific agency, you can download the certificates and the path to COMMON in .p7b format.
 
-Import the certificates into the Windows [NTAuth Trust Store](https://piv.idmanagement.gov/networkconfig/trustedroots/){target="_blank"}_.
+Import the certificates into the Windows [NTAuth Trust Store](https://piv.idmanagement.gov/networkconfig/trustedroots/){:target="_blank"}_.
 
 ## 4 Account Linking
 
-When users authenticate with their home-agency PIV/CACs, the credentials may not match the accounts created in the AD user set-up for your agency. There are multiple ways to link the PIV/CAC credential owner to the AD account. See the PIV-Guides' [Account Linking](https://piv.idmanagement.gov/networkconfig/accounts/){target="_blank"}.
+When users authenticate with their home-agency PIV/CACs, the credentials may not match the accounts created in the AD user set-up for your agency. There are multiple ways to link the PIV/CAC credential owner to the AD account. See the [Account Linking](https://piv.idmanagement.gov/networkconfig/accounts/){:target="_blank"} section in PIV-Guides.
+
+You can [map a certificate to a user account](https://technet.microsoft.com/en-us/library/cc754866(v=ws.11).aspx){:target="_blank"} using the Active Directory User and Computers.
 
 ## PIV/CAC Issuers List
 
-Table 1 contains the information for U.S. Executive Branch Agencies and the Certification Authorities that are used for PIV/CAC credentials. It contains the links for downloading each certificate using the AIA URL. 
-
-Table 1. PIV/CAC Issuer's List
+Table 1 contains the information for U.S. Executive Branch Agencies and the Certification Authorities that are used for PIV/CAC credentials. It contains the information for downloading each certificate using the AIA URL. 
 
 For DoD, go to: [DoD PKI](https://iase.disa.mil/pki-pke/interoperability/Pages/index.aspx#etWPQ7){:target="_blank"}.
 
 {% assign issuerdata=site.data.pivissuers %}
-<table>    
+<table>        
+    <caption>Table 1: PIV/CAC Issuer's List</caption>
     <thead>
     {% for column in issuerdata[0] %}
         <th>{{ column[0] }}</th>
