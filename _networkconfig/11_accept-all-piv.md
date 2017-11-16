@@ -38,7 +38,7 @@ In order for your network to trust a PIV/CAC credential from another agency, you
 To authenticate these users to your network, you will need to trust their agencies' PIV/CAC Issuers by installing ALL of the Intermediate and Root CA certificates in the NTAuth Trust Store. The PIV/CAC Issuer certificates can be found in the Authority Information Access (AIA) links given in the [PIV/CAC Issuers List](#piv-and-cac-issuers-list) below. 
 
 * Download the .p7c file, where you will find the PIV/CAC Issuer's public certificate. 
-* You need to also retrieve and install the Intermediate and Root CA certificates in the chain to COMMON using the AIA extensions specified in the Issuers' certificates.
+* You need to also retrieve and install the intermediate certificates in the chain to COMMON using the AIA extensions specified in the issuers' certificates.
 
 The PIV/CAC Issuer certificates can also be found in the [FPKI Crawler](https://fpki-graph.fpki-lab.gov/crawler/){:target="_blank"}_ website. These are listed by agency in the table, _Certificate Files Grouped by Type_. Once you locate a specific agency, you can download the certificates and the path to COMMON in .p7b format.
 
