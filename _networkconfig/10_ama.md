@@ -2,7 +2,7 @@
 layout: default
 title: Authentication Mechanism Assurance
 collection: networkconfig
-permalink: networkconfig/AMA/
+permalink: networkconfig/ama/
 ---
 
 You may need to make privilege decisions in applications for your agency users when they log in with their PIV/CAC or client certificate credential versus another lower assurance authentication method. To help you do this, you can use a Windows Active Directory (AD) feature called _Authentication Mechanism Assurance (AMA)_. AMA allows you to add a global group membership to a user’s Kerberos token, based on the PIV/CAC's certificate policy.
