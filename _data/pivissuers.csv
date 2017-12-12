@@ -1,0 +1,29 @@
+Issuer,AIA,OCSP,CRL
+Carillon Federal Services PIV-I CA2,http://pub.carillonfedserv.com/CAcerts/CFSCA2.p7c,http://pub.carillonfedserv.com/ocsp,http://pub.carillonfedserv.com/CRL/CFSCA2.crl
+Department of Veterans Affairs CA,http://pki.treas.gov/vaca_ee_aia.p7c,http://ocsp.pki.va.gov,http://crl.pki.va.gov/PKI/CRL/VA_CA.crl
+DHS CA4,http://pki.dimc.dhs.gov/dhsca_ee_aia.p7c,http://ocsp.dimc.dhs.gov,http://pki.dimc.dhs.gov/DHS_CA1.crl
+DigiCert Accredited Direct Med CA,http://cacerts.digicert.com/DigiCertAccreditedDirectMedCA.crt,http://ocsp.digicert.com,http://crl3.digicert.com/DigiCertAccreditedDirectMedCA.crl
+DOE SSP CA,http://doesspweb.managed.entrust.com/AIA/CertsIssuedToDOESSPCA.p7c,http://doesspocsp.managed.entrust.com/OCSP/DOESSPCA,http://doesspweb.managed.entrust.com/CRLs/DOESSPCAc1.crl
+Entrust Managed Services SSP CA,http://sspweb.managed.entrust.com/AIA/CertsIssuedToEMSSSPCA.p7c,http://ocsp.managed.entrust.com/OCSP/EMSSSPCAResponder,http://sspweb.managed.entrust.com/CRLs/EMSSSPCA1.crl
+Entrust Managed Services SSP CA,http://sspweb.managed.entrust.com/AIA/CertsIssuedToEMSSSPCA.p7c,http://ocsp.xpki.com,http://crl01.xpki.com/CRLs/EMSSSPCA2.crl
+Entrust NFI Medium Assurance SSP CA,http://nfimediumsspweb.managed.entrust.com/AIA/CertsIssuedToNFIMediumSSPCA.p7c,http://nfiocsp.managed.entrust.com,http://nfimediumsspweb.managed.entrust.com/CRLs/NFIMEDIUMSSPCA.crl
+Executive Office of the President CA-B8,http://aia1.ssp-strong-id.net/CA/EOP-SSP-CA-B8.p7c,http://ocsp1.ssp-strong-id.net/EOP-SSP-CA-B8/,http://cdp1.ssp-strong-id.net/CDP/EOP-SSP-CA-B8.crl
+Fiscal Service,http://pki.treas.gov/fsca_ee_aia.p7c,http://ocsp.treas.gov/,http://pki.treas.gov/FS_CA5.crl
+FTI Certification Authority,http://pki.fti.org/fti_ca/certificates/FTICA.p7c,http://certstatus.fti.org,http://pki.fti.org/fti_ca/crl/FTICA.crl
+GPO SCA,http://gpo-crl.ois.gpo.gov/GPO-SCA-CACertificates.p7c,http://www.ocsp.gpo.gov,http://gpo-crl.ois.gpo.gov/GPO-SCA-CRLc15.crl
+HHS-FPKI-Intermediate-CA-E1,http://hhspkicrl.managed.entrust.com/AIA/CertsIssuedToHHSEntrustCA.p7c,http://ocsp.dhhs.gov,http://hhspkicrl.managed.entrust.com/CRLs/HHSEntrustCA.crl
+HHS-FPKI-Intermediate-CA-E1,http://hhspkicrl.managed.entrust.com/AIA/CertsIssuedToHHSEntrustCA.p7c,http://hhspkiocsp.managed.entrust.com/OCSP/HHSEntrustCA,http://hhspkicrl.managed.entrust.com/CRLs/HHSEntrustCA.crl
+IdenTrust ACES CA 1,http://apps.identrust.com/roots/acespublicsector1.p7c,http://aces.ocsp.identrust.com,http://crl.identrust.com/acespublicsector1.crl
+IdenTrust ACES CA 2,http://validation.identrust.com/certs/acesca2.p7c,https://aces.ocsp.identrust.com,http://validation.identrust.com/crl/acesca2.crl
+IGC CA 1,http://validation.identrust.com/certs/igcca1.cer,http://igc.ocsp.identrust.com,http://validation.identrust.com/crl/igcca1.crl
+NASA Operational CA,http://pki.treas.gov/noca_ee_aia.p7c,http://ocsp.treas.gov,http://hc.nasa.gov/combinedCRL3.crl
+OCIO CA,http://pki.treasury.gov/toca_ee_aia.p7c,http://ocsp.treasury.gov,http://pki.treasury.gov/OCIO_CA4.crl
+ORC SSP 4,http://crl-server.orc.com/caCerts/ORCSSP4.p7c,http://ssp4.eva.orc.com/,http://crl-server.orc.com/CRLs/ORCSSP4.crl
+Trans Sped Mobile QCA,https://TS-Mobile-QCA.aia.com-strong-id.net/CA/TS-Mobile-QCA.p7c,http://TS-Mobile-QCA.ocsp.com-strong-id.net/,http://TS-Mobile-QCA.crl.com-strong-id.net/CDP/TS-Mobile-QCA.crl
+U.S. Department of Education Device CA - G3,http://ssp-aia.verisign.com/SSPG3/DoEd_Device_G3.p7c,http://onsite-ocsp.verisign.com,http://onsitecrl.verisign.com/USDepartmentofEducationSSPDomainController256/LatestCRL.crl
+U.S. Department of State PIV CA,http://crls.pki.state.gov/AIA/CertsIssuedToDoSPIVCA.p7c,http://ocsp.pki.state.gov/OCSP/DoSOCSPResponder,http://crls.pki.state.gov/crls/DoSADPKIPIVCA.crl
+U.S. Department of Transportation Agency CA G4,http://ssp-aia.symauth.com/SSP/DoT_Agency_G4.p7c,http://ssp-ocsp.symauth.com,http://onsitecrl.verisign.com/USDepartmentofTransportationFAAPIVG4/LatestCRL.crl
+U.S. Department of Transportation SSP Device CA G3,http://ssp-aia.verisign.com/SSPG3/DoT_Device-G3.p7c,http://ssp-ocsp.verisign.com,http://onsitecrl.verisign.com/USDepartmentofTransportationFAADomainControllerG3/LatestCRL.crl
+USPTO_INTR_CA1,http://ipki.uspto.gov/IPKI/Certs/CAcertsIssuedToUSPTO.p7c,http://ocsp.uspto.gov,http://ipki.uspto.gov/IPKI/CRLs/CombinedCRL2.crl
+VeriSign Universal Root Certification Authority,http://ssp-aia.symauth.com/STNSSP/Certs_issued_to_Class3SSPCA-G3.p7c,http://s.symcd.com,http://s.symcb.com/universal-root.crl
+Veterans Affairs User CA B1,http://aia1.ssp-strong-id.net/CA/VAuserCA.p7c,http://ocsp.pki.va.gov/,http://crl.pki.va.gov/PKI/CRL/vauser.crl
