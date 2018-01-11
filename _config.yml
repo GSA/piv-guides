@@ -96,6 +96,11 @@ navigation:
 #  url: code
 #  internal: true
 #  coll: false
+- text: Frequently Asked Questions
+  url: faq/
+  internal: true
+  coll: true
+  collname: faq
 - text: Contribute
   url: contribute
   internal: true
