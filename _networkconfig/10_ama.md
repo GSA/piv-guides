@@ -5,14 +5,28 @@ collection: networkconfig
 permalink: networkconfig/ama/
 ---
 
-You may need to make privilege decisions in applications for your agency users when they log in with their PIV/CAC or client certificate credential versus another lower assurance authentication method. To help you do this, you can use a Windows Active Directory (AD) feature called _Authentication Mechanism Assurance (AMA)_. AMA allows you to add a global group membership to a user’s Kerberos token, based on the PIV/CAC's certificate policy.
+When a user authenticates and you've enabled single-sign-on to applications inside your network domain, you may need to know what type of authentication a user used: a username and password, a PIV or CAC credential, or an alternate authenticator.  You need to know the type of authentication to help you implement increasingly granular authorization policies, and grant or deny access to information in applications and shared network resources.   
 
-AMA is available in Windows Server® 2008 R2 and later versions. Go to:&nbsp;&nbsp;[AMA Step-by-Step Guide](https://technet.microsoft.com/en-us/library/dd378897(v=WS.10).aspx){:target=_"blank"} to understand the implementation of AMA.
+For Windows based environments, you can use a Windows Active Directory (AD) feature called _Authentication Mechanism Assurance (AMA)_. AMA allows you to add a group membership identifier to the user’s Kerberos token, based on the type of authentication used.
 
-{% include alert-warning.html content="Do not use AMA to provide privileged user access to servers without another access control method in combination with AMA." %}
+AMA is available for domains operating on Windows Server® 2008 R2 and later versions. Go to:&nbsp;&nbsp;[AMA Step-by-Step Guide](https://technet.microsoft.com/en-us/library/dd378897(v=WS.10).aspx){:target=_"blank"} to understand the implementation of AMA.
 
-### PowerShell Script To Import Common Federal/DoD Certificate Policies
+{% include alert-warning.html content="Do not use AMA to provide privileged user access via single sign on for any privileged actions." %}
+
+### Use Case Scenarios
+
+
+#### Authentication Pass-Through to Access Manager 
+
+#### Authentication Pass-Through to Integrated Windows Applications
+
+### Implementation Steps
+
+
+#### Import Certificate Policies
 You can use this [CertificateIssuanceOIDs.ps1](https://github.com/GSA/ficam-scripts-public/tree/master/_ama){:target="_blank"} PowerShell script to import a list of Federal Common/DoD Certificate issuance policies. This simplifies Microsoft TechNet's steps for setting up the policies. The script has a list of policies to import grouped under different categories. You should only import the policies that are applicable to your agency. 
+
+LL NOTE HERE:  We don't want a group for each policy OID.  We want one group mapped to many certificate policies; each group representing an AAL level.  A 1:1 mapping of OIDs to groups is not maintainable and scalable for authorization rules. 
 
 The script creates active directory security groups with the same name as the certificate issuance policies and links the policies to the groups. It also creates the active directory groups container (ou=Groups) if it does not exist under ou=Administrators.
 
@@ -40,12 +54,8 @@ When you login to your workstation with a PIV/CAC credentials, you will see that
           Mandatory group, Enabled by default, Enabled group
      .....
 
-### Windows Server® 2008 R2 Considerations
-* You should raise the Domain Functional Level to Windows Server 2008 R2 if not already set.
 
-* A Windows Server® 2008 R2-based Domain Hotfix corrects the known KDC error, "Access tokens are not updated correctly when you enable authentication mechanism assurance in a Windows Server 2008 R2-based domain." [Microsoft Hotfix](http://support.microsoft.com/kb/2771254){:target="_blank"}. No patch is requried for Windows Server® 2012 and later versions.
-
-### Other Considerations
+#### Other Considerations
 
 * Use the Windows Registry Editor to set the _AMA Priority_ above _Most Recently Issued Superior Certificate Heuristic_:
 
