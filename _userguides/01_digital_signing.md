@@ -8,9 +8,9 @@ permalink: userguides/signworddoc/
 description: A digital signature will encrypt your Word document after validating your certificate information. This will ensure that the document that you submit has not been tampered with by someone else. This user guide will show you how to digitally sign a Microsoft Word Document.
 ---
 
-{% include alert-info.html content="You will require your Federal agency issued credential certificate to sign a Word document." %} 
-
 A digital signature will encrypt your Word document after validating your certificate information. This will ensure that the document that you submit has not been tampered with by someone else. This user guide will show you how to digitally sign a Microsoft Word Document.
+
+{% include alert-info.html content="You will require your Federal agency issued credential certificate to sign a Word document." %}
 
 - [Sign Microsoft Word](#sign-microsoft-word)
 - [Change Signature Algorithm](#change-signature-algorithm)
