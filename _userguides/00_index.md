@@ -5,7 +5,7 @@ collection: userguides
 permalink: /userguides/
 ---
 
-These announcements and hot topics concern Federal Public Key Infrastucture changes that may affect your agency's operations.
+These user guides will help agency users with PIV related tasks.
 
 {% for item in site.userguides reversed %}
   {% assign link = item.permalink | remove: '/' %}

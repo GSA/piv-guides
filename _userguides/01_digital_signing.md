@@ -2,7 +2,7 @@
 layout: default
 navtitle: Sign Microsoft Word
 title: How To Digitally Sign Microsoft Word Document
-pubDate: March 16, 2018
+pubDate: March 23, 2018
 collection: userguides
 permalink: userguides/signworddoc/
 description: A digital signature will encrypt your Word document after validating your agency issued certificate. This will ensure that the document that you have submitted was not tampered with by someone else. This user guide will show you how to digitally sign a Microsoft Word Document.
@@ -10,7 +10,7 @@ description: A digital signature will encrypt your Word document after validatin
 
 A digital signature will encrypt your Word document after validating your agency issued certificate. This will ensure that the document that you have submitted was not tampered with by someone else. This user guide will show you how to digitally sign a Microsoft Word Document.
 
-{% include alert-info.html content="You will require your agency issued certificate to sign a Word document. This certificate may reside in your GFE or your PIV/CAC credential." %}
+{% include alert-info.html content="You will require your agency issued certificate to sign a Word document. This certificate may reside in your GFE or your PIV card." %}
 
 - [Sign Microsoft Word](#sign-microsoft-word)
 - [Remove Signature From Microsoft Word](#remove-signature-from-microsoft-word)
@@ -40,16 +40,20 @@ A digital signature will encrypt your Word document after validating your agency
 - It will display the information that the document is now digitally signed. Click '**OK**'.<br/>
 ![Signature Confirm]({{site.baseurl}}/img/word-signature-6.png)
 
-## Remove Signature From Microsoft Word
+- The document will now be marked as '**FINAL**' and editing the document will not be allowed.
+![Marked as final]({{site.baseurl}}/img/word-signature-7.png)
 
 {% include alert-info.html content="Once you have signed the document, you will not be able to modify the document without removing the signature line. You can repeat the signing process again after you complete editing the document." %}
+
+
+## Remove Signature From Microsoft Word
 
 To remove a signature:
 - Open the Word document and navigate to the signature line.
 - Right click on the signature.
 - Click '**Remove Signature**' and click '**Yes**' when prompted.
 
-![Remove Signature]({{site.baseurl}}/img/word-signature-7.png)
+![Remove Signature]({{site.baseurl}}/img/word-signature-8.png)
 
 ## Change Signature Algorithm
 
