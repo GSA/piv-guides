@@ -87,11 +87,11 @@ navigation:
   internal: true
   coll: true
   collname: engineering
-##- text: Administrator Guides
-##  url: userconfig/
-##  internal: true
-##  coll: true
-##  collname: userconfig
+- text: User Guides
+  url: userguides/
+  internal: true
+  coll: true
+  collname: userguides
 #- text: Script and Code Samples
 #  url: code
 #  internal: true
@@ -114,7 +114,10 @@ collections:
     label: "Engineering Guides"
     permalink: /engineering/:path/
     output: true
-
+  userguides:
+    label: "User Guides"
+    permalink: /userguides/:path/
+    output: true
 
 include:
 - _stylesheets
