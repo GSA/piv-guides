@@ -1,89 +1,87 @@
 ---
 layout: default
 navtitle: Sign Microsoft Word
-title: How To Digitally Sign Microsoft Word Document
+title: Digitally Sign Microsoft Word Document
 pubDate: March 23, 2018
 collection: userguides
 permalink: userguides/signworddoc/
-description: This user guide will show you how to digitally sign a Microsoft Word document with your PIV credential or similar digital certificates.
+description: This guide will help you to digitally sign a Microsoft Word document with your PIV credential or similar digital certificate.
 ---
 
-This user guide will show you how to digitally sign a Microsoft Word document with your PIV credential or similar digital certificates.
+<!--Suggest that we add for the non-technical user: "A digital signature is [simple definition]."-->This guide will help you to digitally sign a Microsoft Word document with your PIV credential or similar digital certificate.  
 
-You will find the following topics:
-- [Sign Microsoft Word Using Signature Line](#sign-microsoft-word-using-signature-line)
-- [Invisible Digital Signature](#invisible-digital-signature)
-- [Multiple Digital Signatures](#multiple-digital-signatures)
-- [Remove Signature From Microsoft Word](#remove-signature-from-microsoft-word)
-- [Verify Digital Signature](#verify-digital-signature)
-- [Change Signature Algorithm](#change-signature-algorithm)
+- [Add a Digital Signature Using Signature Line](#add-a-digital-signature-using-a-signature-line)
+- [Add an Invisible Digital Signature](#add-an-invisible-digital-signature)
+- [Add Multiple Digital Signatures](#add-multiple-digital-signatures)
+- [Remove a Signature](#remove-a-signature)
+- [Verify a Digital Signature](#verify-a-digital-signature)
+- [Change a Signature Algorithm](#change-a-signature-algorithm)
 - [Additional Resources](#additional-resources)
 
-## Sign Microsoft Word Using Signature Line
+## Add a Digital Signature Using a Signature Line
 
-{% include alert-info.html content="These instructions are relevant to Microsoft Word 2010, 2013 and 2016. The steps and screenshots might be different for older versions of MS Word software." %}
+{% include alert-info.html content="These digital-signing steps may be used for Microsoft Word 2010, 2013 and 2016. Certain steps and screen contents may differ for older versions of Microsoft Word." %}
 
-- Open the Microsoft Word document and scroll down to the section where you want your signature to be displayed.
-- Select '**Insert**' tab from the top menu and click on '**Signature Line**' in the '**Text**' group.<br/>
-![Signature Line]({{site.baseurl}}/img/word-signature-1.png)
+1. Open your Microsoft Word document and scroll to the area where you want to add your signature line.
+2. At the Word ribbon, first select the **Insert** tab and then click **Signature Line** in the **Text** group.<br/>
+![Insert Signature Line]({{site.baseurl}}/img/word-signature-1.png)
 
-- Enter your information in the **Signature Setup** pop-up box and click '**OK**'.<br/>
-![Signature Setup]({{site.baseurl}}/img/word-signature-2.png)
+3. _A **Signature Setup** pop-up box appears._ Enter your information in the text fields and click **OK**.<br/>
+![Signature Setup Box]({{site.baseurl}}/img/word-signature-2.png)
 
-- Once you click '**OK**' you will find a signature line created in the Word document as shown below. <br/>
+4. _A signature line appears._ Double-click on it. <br/>
 ![Signature Line]({{site.baseurl}}/img/word-signature-3.png)
 
-- Double click the signature link to display a pop-up box to sign. Type your name in the box. Verify that the '**Signing as:**' has your certificate information in the box. If not, you should switch certificate using the '_Change_' button. Click '**Sign**'.<br/>
-![Signature Box]({{site.baseurl}}/img/word-signature-4.png)
+5. _A **Sign** pop-up box appears._ At the **X**, type your name. Next, look at the **Signing as:** field. _You should see your name and certificate information._ If you don't, click the **Change** button to switch certificates and click **Sign**.<br/>
+![Sign Box]({{site.baseurl}}/img/word-signature-4.png)
 
-- You will be prompted to enter your certificate PIN. Click '**OK**'.<br/>
-![Certificate PIN]({{site.baseurl}}/img/word-signature-5.png)
+6. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
+![PIV PIN]({{site.baseurl}}/img/word-signature-5.png)
 
-- It will display the information that the document is now digitally signed. Click '**OK**'.<br/>
+7. _The **Signature Confirmation** box lets you know that your digital signature was saved._ Click **OK**. <br/>
 ![Signature Confirm]({{site.baseurl}}/img/word-signature-6.png)
 
-- The document will now be marked as '**FINAL**' and editing the document will not be allowed.
 ![Marked as final]({{site.baseurl}}/img/word-signature-7.png)
 
-{% include alert-info.html content="Once you have signed the document, you will not be able to modify the document without removing the signature line. You can repeat the signing process again after you complete editing the document." %}
+{% include alert-info.html content="Once you've digitally signed your document, if you edit the document, it will remove the digital signature. Don't worry--if editing _is_ needed, you can repeat the digital signing process above again." %}
 
 <br/>
 
-## Invisible Digital Signature
+## Add an Invisible Digital Signature
 
-You can also digitally sign a Word document without any signature line in the document. This serves the same purpose as above, however, the signature is not visible within the document. 
+If you don't want your name to appear in your Microsoft Word document, you can add an _invisible digital signature_.  
 
-- Open the Word document and click on the '**File**' tab.
+1. Open your Word document and click the **File** tab.
 
-- Click '**Info**' and then click '**Protect Document**'.<br/>
+2. Click **Info** and then click **Protect Document**.<br/>
 ![Protect Document]({{site.baseurl}}/img/word-signature-9.png)
 
-- From the drop down menu, click '**Add a Digital Signature**'.
+3. From the **Protect Document** drop-down menu, click **Add a Digital Signature**.
 
-- Select a '**Commitment Type**' and click '**Sign**'.<br/>
+4. Select a **Commitment Type** and click **Sign**.<br/>
 ![Sign Document]({{site.baseurl}}/img/word-signature-10.png)
 
-- You will be prompted to enter your certificate PIN. Click '**OK**'.<br/>
-![Certificate PIN]({{site.baseurl}}/img/word-signature-5.png)
+5. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
+![PIV PIN]({{site.baseurl}}/img/word-signature-5.png)
 
-- It will display the information that the document is now digitally signed. Click '**OK**'.<br/>
+6. _The **Signature Confirmation** box lets you know that your digital signature was saved._ Click **OK**.<br/>
 ![Signature Confirm]({{site.baseurl}}/img/word-signature-6.png)
 
 <br/>
 
-## Multiple Digital Signatures
+## Add Multiple Digital Signatures
 
-You can choose to digitally sign a Word document by multiple approvers either using the invisible signature or a signature line.
+If you need multiple approvers to digitally sign your Microsoft Word document, you can use either the signature line or invisible signature method.
 
-### Multiple Signatures Using Signature Line
+### Add Multiple Signatures Using Signature Lines
 
-If you want another person to sign your document, you will have to add a new signature line for that person to sign.
+If, after you've digitally signed your Word document, a second approver _also needs to digitally sign it, you can add a second signature line_.<!--How many total signers can be added to a document? We could say "up to X approvers may sign a document."  These instructions assume that the first approver has already digitally signed the document. Not so clear.-->
 
-- Open the Microsoft Word document and scroll down to the section where you want the approver's signature to be displayed.
-- Select '**Insert**' tab from the top menu and click on '**Signature Line**' in the '**Text**' group.<br/>
+1. For the second approver, open your Word document and scroll to the area where you want to add the approver's signature line.<!--Shouldn't the second approver be taking these actions himself?-->
+2. At the Word ribbon, first select the **Insert** tab and then click **Signature Line** in the **Text** group.<br/><br/>
 ![Signature Line]({{site.baseurl}}/img/word-signature-1.png)
 
-- Enter your information for the approver in the **Signature Setup** pop-up box and click '**OK**'.<br/>
+3. Enter your information for the approver in the **Signature Setup** pop-up box and click '**OK**'.<br/>
 ![Signature Setup]({{site.baseurl}}/img/word-signature-13.png)
 
 - Once you click '**OK**' you will find a signature line created in the Word document as with the approver's name. You should create all the signature lines before you sign the document.<br/>
@@ -92,21 +90,21 @@ If you want another person to sign your document, you will have to add a new sig
 - Double click your signature link to display a pop-up box to sign. Type your name in the box. Verify that the '**Signing as:**' has your certificate information in the box. If not, you should switch certificate using the '_Change_' button. Click '**Sign**'.<br/>
 ![Signature Box]({{site.baseurl}}/img/word-signature-4.png)
 
-- You will be prompted to enter your certificate PIN. Click '**OK**'.<br/>
+- You will be prompted to enter your Smart Card (PIV) PIN. Click '**OK**'.<br/>
 ![Certificate PIN]({{site.baseurl}}/img/word-signature-5.png)
 
-- It will display the information that the document is now digitally signed. Click '**OK**'.<br/>
+- _The **Signature Confirmation** box lets you know that your digital signature was saved._ Click **OK**..<br/>
 ![Signature Confirm]({{site.baseurl}}/img/word-signature-6.png)
 
 - Now you can send this digitally signed document to the approver. 
 
-- The approver will be able to open the document and double click the '**Signature Line**' corresponding to their name, and complete their signing process.
+- The approver will be able to open the document and double-click the '**Signature Line**' corresponding to their name, and complete their signing process.
 
 ### Multiple Signatures Using Invisible Signature
 
 You can allow another user to sign the document without the signature line using the 'Invisible Signature' method. You can follow the same steps as provided for the invisible signature. 
 
-- Open the Word document and click on the '**File**' tab.
+- Open your Word document and click on the '**File**' tab.
 
 - Click '**Info**' and then click '**Protect Document**'.<br/>
 ![Protect Document]({{site.baseurl}}/img/word-signature-15.png)
@@ -151,7 +149,7 @@ To remove a signature:
 
 ## Change Signature Algorithm
 
-Microsoft Word uses SHA-1 algorithm by default to digitally sign a Word document. SHA-1 algorithm is not considered as secure as other preferred algorithms such as SHA-256.
+Microsoft Word uses SHA-1 algorithm by default to digitally sign a Word document. The SHA-1 algorithm is no longer considered secure. Other algorithms such as SHA-256 are preferred.
 
 {% include alert-info.html content="These instructions require administrator privileges on your computer." %} 
 
@@ -169,7 +167,7 @@ Add or update the values as specified below.
 |**Value Type**|REG_SZ|
 |**Value**|sha256|
 
-You can also use **sha384** or **sha512** for more secure algorithm. Save the registry settings and restart your computer.
+You can also use **SHA-384** or **SHA-512** for more secure algorithms. Save the registry settings and restart your computer.
 
 ## Additional Resources
 
