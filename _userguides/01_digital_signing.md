@@ -122,7 +122,7 @@ _The final approver will see multiple "invisible" signatures in the document._<b
 <br/>
 You can view digital signatures in an incompatible Word document in one of two ways:
 
-1. Click the **View Signatures** button just below the Word ribbon.
+1. Click the **View Signatures** button just below the Word ribbon.<br/>
 ![View Signature]({{site.baseurl}}/img/word-signature-16.png)
 
 **_OR_**
@@ -130,7 +130,7 @@ You can view digital signatures in an incompatible Word document in one of two w
 2. Click the **File** tab and select **Info**. Then click **View Signatures**.<br/>
 ![View Signature]({{site.baseurl}}/img/word-signature-11.png)
 
-For either option, you will be able to see the digital signature details in the **Signatures** box.
+For either option, you will be able to see the digital signature details in the **Signatures** box.<br/>
 ![View Signature]({{site.baseurl}}/img/word-signature-17.png)
 
 <br/>
@@ -139,11 +139,11 @@ For either option, you will be able to see the digital signature details in the 
 
 1. If you want to remove a digital signature, open your Word document and go to the signature line. 
 2. If there is no signature line, click the **View Signatures** button just below the Word ribbon.
-3. From the **Signatures** box, select the signature you want to to delete.
+3. From the **Signatures** box, select the signature you want to to delete.<br/>
 ![View Signature]({{site.baseurl}}/img/word-signature-17.png)
 <br/>
 4. Right-click on the signature and then click **Remove Signature**.  
-5. When prompted, click **Yes**.
+5. When prompted, click **Yes**.<br/>
 ![Remove Signature]({{site.baseurl}}/img/word-signature-8.png)
 
 <br/>
