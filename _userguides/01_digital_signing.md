@@ -5,20 +5,23 @@ title: Digitally Sign a Microsoft Word Document
 pubDate: March 23, 2018
 collection: userguides
 permalink: userguides/signworddoc/
-description: This guide will help you to digitally sign a Microsoft Word document with your PIV credential or similar digital certificate.
+description: This guide will walk you through the steps for digitally signing a Microsoft Word document with your PIV credential or similar digital certificate.
 ---
 
-{% include alert-info.html content="Before you begin digitally signing Microsoft Word documents, please ask your Technical Support team to verify the digital signature settings on your computer. Federal Government policy prohibits the use of SHA-1 encryption, which Microsoft Word uses by default for digital signatures." %}
+{% include alert-info.html content="Before you begin digitally signing documents, please ask your Technical Support team to verify the digital signature settings on your computer by following the steps in the _**Verify Digital Signature Settings**_ section below." %}
 
-This guide will help you to digitally sign a document using Microsoft Word 2010, 2013, or 2016 with your PIV credential or similar digital certificate. (For older versions of Microsoft Word, certain steps and screens may differ.)<br/>
+This guide will walk you through the steps for digitally signing a document in Microsoft Word 2010, 2013, or 2016 using your PIV credential or digital certificate.
 
+To begin, choose the method you'd like to use for applying your digital signature:
 - [Add a Digital Signature Using a Signature Line](#add-a-digital-signature-using-a-signature-line)
 - [Add an Invisible Digital Signature](#add-an-invisible-digital-signature)
 - [Add Multiple Digital Signatures Using Signature Lines](#add-multiple-digital-signatures-using-signature-lines)
 - [Add Multiple Invisible Digital Signatures](#add-multiple-invisible-digital-signatures)
+
+The following links provide guidance to some related functionality and resources:
 - [Remove a Digital Signature](#remove-a-digital-signature)
 - [View Digital Signatures](#view-digital-signatures)
-- [Change a Signature Algorithm](#change-a-signature-algorithm)
+- [Verify Digital Signature Settings](#verify-digital-signature-settings)
 - [Additional Resources](#additional-resources)
 
 ## Add a Digital Signature Using a Signature Line
@@ -148,13 +151,13 @@ For either option, you will be able to see the digital signature details in the 
 
 <br/>
 
-## Change a Signature Algorithm
+## Verify Digital Signature Settings
 
 {% include alert-info.html content="Please ask your Technical Support staff for help. Administrator privileges are required for these steps." %} 
 
-By default, Microsoft Word uses the SHA-1 algorithm to encrypt digital signatures. The SHA-1 algorithm is no longer considered secure. Other algorithms, such as SHA-256, are preferred.
+By default, Microsoft Word uses the SHA-1 hash algorithm to generate digital signatures. The SHA-1 hash algorithm is no longer considered secure. Other hash algorithms, such as SHA-256, are preferred. [(See NIST's guidance on hash functions)](https://csrc.nist.gov/Projects/Hash-Functions/NIST-Policy-on-Hash-Functions)
 
-You can use either of the two options below to change the algorithm settings for Microsoft Office: 
+You can use either option below to verify/change the hash algorithm settings for Microsoft Office: 
 
 1. **Group Policy** settings:  [Digital Signature Settings in Office 2013](https://technet.microsoft.com/en-us/library/cc545900.aspx){:target="_blank"}.  (For additional information, consult Microsoft's technical documents.)
 2. **Computer registry** settings. Change the Microsoft Office signature algorithm, as follows:
