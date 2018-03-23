@@ -8,7 +8,7 @@ permalink: userguides/signworddoc/
 description: This guide will help you to digitally sign a Microsoft Word document with your PIV credential or similar digital certificate.
 ---
 
-{% include alert-warning.html content="Before you begin digitally signing Microsoft Word documents, please ask your Technical Support team to verify the digital signature settings on your computer. Federal Government policy prohibits the use of SHA-1 encryption, which Microsoft Word uses by default for digital signatures." %}
+{% include alert-info.html content="Before you begin digitally signing Microsoft Word documents, please ask your Technical Support team to verify the digital signature settings on your computer. Federal Government policy prohibits the use of SHA-1 encryption, which Microsoft Word uses by default for digital signatures." %}
 
 This guide will help you to digitally sign a document using Microsoft Word 2010, 2013, or 2016 with your PIV credential or similar digital certificate. (For older versions of Microsoft Word, certain steps and screens may differ.)<br/>
 
