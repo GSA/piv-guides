@@ -33,7 +33,7 @@ This guide will help you to digitally sign a document using Microsoft Word 2010,
 4. Double-click the _signature line_.<br/>
 ![Signature Line]({{site.baseurl}}/img/word-signature-3.png)
 
-5. _A **Sign** pop-up box appears._ At the **X**, type your name. Next, look at the **Signing as:** field. You will see a signing certificate. To ensure that this is the correct certificate to use, click the **Change** button. <br/>
+5. _A **Sign** pop-up box appears._ At the **X**, type your name. Next, look at the **Signing as:** field. Select the signing certificate. To ensure that this is the correct certificate, click the **Change** button. <br/>
 ![Sign Box]({{site.baseurl}}/img/word-signature-4.png)
 
 6. Click on **Click here to view certificate properties**. <br/>
@@ -42,7 +42,7 @@ This guide will help you to digitally sign a document using Microsoft Word 2010,
 7. _The **Certificate Details** box appears._ Go to the **Details** tab and scroll down to **Key Usage**. Single-click on it. The lower text box should now display _Digital Signature, Non-Repudiation_. If it does, then this is the right certificate. Click **OK**.<br/>
 ![Sign Box]({{site.baseurl}}/img/word-signature-20.png)
 
-8. If this is the _wrong_ certificate, click **OK**. Then click **More Choices** to see other available certificates. Select another certificate and repeat these steps until you find the correct certificate. <br/> 
+8. If this is the _wrong_ certificate, click **OK**. Then click **More Choices** to see other certificates. Select another certificate and repeat these steps until you find the correct certificate. <br/> 
 ![Sign Box]({{site.baseurl}}/img/word-signature-19.png)
 
 9. Click the **Sign** button to sign the document. Insert your PIV card into the card reader. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
@@ -97,7 +97,7 @@ Once you digitally sign a document, you can have others also digitally sign it. 
 6. Next, look at the **Signing as:** field. _You should see your name and certificate information._ If you don't, click the **Change** button to select a different certificate and click **Sign**.<br/>
 ![Signature Box]({{site.baseurl}}/img/word-signature-4.png)
 
-7. Insert your PIV card and enter your Smart Card (PIV) PIN and click **OK**.<br/>
+7. Insert your PIV card and enter your Smart Card (PIV) PIN. Click **OK**.<br/>
 ![Certificate PIN]({{site.baseurl}}/img/word-signature-5.png)
 
 8. _The **Signature Confirmation** box tells you that Word saved your digital signature._ Click **OK**. <br/>
