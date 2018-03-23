@@ -26,7 +26,7 @@ The following links provide guidance to some related functionality and resources
 
 ## Add a Digital Signature Using a Signature Line
 
-1. To add a digital signature, open your Microsoft Word document. Click where you want to add your signature line. 
+1. To add a digital signature, open your Microsoft Word document and click where you'd like to add your signature line. 
 2. From the Word ribbon, select the **Insert** tab and then click **Signature Line** in the **Text** group.<br/>
 ![Insert Signature Line]({{site.baseurl}}/img/word-signature-1.png)
 
@@ -155,7 +155,7 @@ For either option, you will be able to see the digital signature details in the 
 
 {% include alert-info.html content="Please ask your Technical Support staff for help. Administrator privileges are required for these steps." %} 
 
-By default, Microsoft Word uses the SHA-1 hash algorithm to generate digital signatures. The SHA-1 hash algorithm is no longer considered secure. Other hash algorithms, such as SHA-256, are preferred. [(See NIST's guidance on hash functions)](https://csrc.nist.gov/Projects/Hash-Functions/NIST-Policy-on-Hash-Functions)
+By default, Microsoft Word uses the SHA-1 hash algorithm to generate digital signatures. The SHA-1 hash algorithm is no longer considered secure. More secure hash algorithms, such as SHA-256, should be used. [(See NIST's guidance on hash functions)](https://csrc.nist.gov/Projects/Hash-Functions/NIST-Policy-on-Hash-Functions)
 
 You can use either option below to verify/change the hash algorithm settings for Microsoft Office: 
 
