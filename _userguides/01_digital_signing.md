@@ -8,20 +8,21 @@ permalink: userguides/signworddoc/
 description: This guide will help you to digitally sign a Microsoft Word document with your PIV credential or similar digital certificate.
 ---
 
-<!--Suggest that we add for the non-technical user: "A digital signature is [simple definition]."-->This guide will help you to digitally sign a Microsoft Word document with your PIV credential or similar digital certificate.<br/>
+{% include alert-warning.html content="Before you begin digitally signing Microsoft Word documents, please contact your Technical Support team to set up SHA-256 encryption for Microsoft Office on your computer. [Federal Government policy](https://www.idmanagement.gov/wp-content/uploads/sites/1171/uploads/fpki-x509-cert-common-policy.pdf){:target="_blank"} prohibits the use of SHA-1 encryption, which Microsoft Word uses by default for digital signatures." %}
 
-- [Add a Digital Signature Using Signature Line](#add-a-digital-signature-using-a-signature-line)
+
+This guide will help you to digitally sign a document using Microsoft Word 2010, 2013, or 2016 with your PIV credential or similar digital certificate. (For older versions of Microsoft Word, certain steps and screens may differ.)<br/>
+
+- [Add a Digital Signature Using a Signature Line](#add-a-digital-signature-using-a-signature-line)
 - [Add an Invisible Digital Signature](#add-an-invisible-digital-signature)
-- [Add Multiple Digital Signatures](#add-multiple-digital-signatures)
-- [Add Multiple Invisible Signatures](#add-multiple-invisible-signatures)
+- [Add Multiple Digital Signatures Using Signature Lines](#add-multiple-digital-signatures-using-signature-lines)
+- [Add Multiple Invisible Digital Signatures](#add-multiple-invisible-digital-signatures)
 - [Remove a Digital Signature](#remove-a-digital-signature)
 - [View Digital Signatures](#view-digital-signatures)
 - [Change a Signature Algorithm](#change-a-signature-algorithm)
 - [Additional Resources](#additional-resources)
 
 ## Add a Digital Signature Using a Signature Line
-
-{% include alert-info.html content="You can use these digital-signing steps for Microsoft Word 2010, 2013 and 2016. For older versions of Microsoft Word, certain steps and screens may be different." %}
 
 1. To add a digital signature, open your Microsoft Word document. Click where you want to add your signature line. 
 2. From the Word ribbon, select the **Insert** tab and then click **Signature Line** in the **Text** group.<br/>
@@ -33,27 +34,31 @@ description: This guide will help you to digitally sign a Microsoft Word documen
 4. Double-click the _signature line_.<br/>
 ![Signature Line]({{site.baseurl}}/img/word-signature-3.png)
 
-5. _A **Sign** pop-up box appears._ At the **X**, type your name. Next, look at the **Signing as:** field. You should select the correct signing certificate. Click the **Change** button to view the certificate details.<br/>
+5. _A **Sign** pop-up box appears._ At the **X**, type your name. Next, look at the **Signing as:** field. You should see the correct signing certificate. 
+
+6. To ensure that this is the correct certificate, select it. Click the **Change** button to see the certificate details. If this is not the right certificate, click the **Change** button again. <br/>  **&&&HOW DO YOU SELECT IT???&&&**
 ![Sign Box]({{site.baseurl}}/img/word-signature-4.png)
 
-6. Click on '**Click here to view certificate properties**' to view the certificate details for the selected certificate. Click '**More Choices**' to view the other certificates available to you. <br/>
+7. Click on **Click here to view certificate properties**. Click **More Choices** to see other available certificates. <br/>
 ![Sign Box]({{site.baseurl}}/img/word-signature-18.png)
 
-7. Once you select each certificate, you can view the properties for that certificate by clicking '**Click here to view certificate properties**'.<br/>
+8. To see the details for another certificate, click on **Click here to view certificate properties**.<br/>
 ![Sign Box]({{site.baseurl}}/img/word-signature-19.png)
 
-8. In the '**Details**' tab of the ""Certificate Details** box, verify that the **Key Usage** shows '**Digital Signature, Non-Repudiation**'. This is the correct certificate to use. Click '**OK**' twice to select the certificate.<br/>
+9. In the **Details** tab of the **Certificate Details** box, click on **Key Usage**. Now, look at the lower text box. It should now say _Digital Signature, Non-Repudiation_. This is the correct certificate. Click **OK** twice to select the certificate.<br/>
 ![Sign Box]({{site.baseurl}}/img/word-signature-20.png)
 
-9. Click on '**Sign**' to sign the document. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
+**Where do you insert your PIV card?** &&&& ?????
+
+10. Click the **Sign** button to sign the document. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
 ![PIV PIN]({{site.baseurl}}/img/word-signature-5.png)
 
-10. _The **Signature Confirmation** box tells you that Word saved your digital signature._ Click **OK**. <br/>
+11. _The **Signature Confirmation** box tells you that Word saved your digital signature._ Click **OK**. <br/>
 ![Signature Confirm]({{site.baseurl}}/img/word-signature-6.png)
 
 ![Marked as final]({{site.baseurl}}/img/word-signature-7.png)
 
-{% include alert-info.html content="Once you digitally sign your document, if you edit it, Word will remove the digital signature. Don't worry! You can always go back to Step 1 and digitally sign it again." %}
+{% include alert-info.html content="Once you've digitally signed your document, if you edit it, Word will remove the digital signature. Don't worry. You can always go back to Step 1 and digitally sign it again." %}
 
 <br/>
 
@@ -79,12 +84,8 @@ You can add an _invisible digital signature_ to prevent your name from appearing
 
 <br/>
 
-## Add Multiple Digital Signatures
+## Add Multiple Digital Signatures Using Signature Lines
 
-If two or more approvers need to digitally sign a document, you can use the _signature line_ or _invisible signature_ method.
-
-### Add Multiple Signatures Using Signature Lines
-**<NOTE: Whether the 1st approver creates all signature lines for all approvers and then sends to each one or whether each approver creates his/her own signature line is unclear. Steps seemed to say both.>**
 Once you digitally sign a document, you can send it to other approvers for them to digitally sign. (**Note:**&nbsp;&nbsp; The first approver should create the signature lines for all approvers before sending the document to the second approver.)
 
 1. If you are the second (or other) approver, open the document you've received. Double-click your signature line.  
@@ -110,9 +111,9 @@ Once you digitally sign a document, you can send it to other approvers for them 
 
 Now you can send the digitally signed document to the next approver. _Each successive approver will be able to open the document and double-click the **Signature Line** with his/her name and complete the signing process._
 
-### Add Multiple Invisible Signatures
-**<We don't need to repeat the procedures if we refer them to the previous "Invisible Signature" section. We can delete all but the very last statement: "Final approver will see multiple..." and final screenshot.>**
-One or more approvers may sign a document by using the _invisible signature_ method: [Add an Invisible Digital Signature](#add-an-invisible-digital-signature). 
+## Add Multiple Invisible Digital Signatures
+
+One or more approvers may sign a document by using the _invisible digital signature_ method: [Add an Invisible Digital Signature](#add-an-invisible-digital-signature). 
 
 1. Open your document and click the **File** tab.
 
@@ -147,7 +148,7 @@ For either option, you will be able to see the digital signature details in the 
 <br/>
 
 ## Remove a Digital Signature
-**<Is this correct?>**
+
 1. If you want to remove a digital signature, open your Word document and find the signature line. 
 2. If there is no signature line, click the **View Signatures** button just below the Word ribbon.
 3. From the **Signatures** box, select the signature you want to to delete.
@@ -160,29 +161,33 @@ For either option, you will be able to see the digital signature details in the 
 
 <br/>
 
-## Change Signature Algorithm
+## Change a Signature Algorithm
 
-{% include alert-info.html content="You'll need help from your Technical Support staff for these steps. Administrator privileges are required." %} 
+{% include alert-info.html content="Please request help from your Technical Support staff for these steps. Administrator privileges are required." %} 
 
-By default, Microsoft Word uses the SHA-1 algorithm to encrypt digital signatures in a Word document. The SHA-1 algorithm is no longer considered secure. Other algorithms, such as SHA-256, are preferred.
+By default, Microsoft Word uses the SHA-1 algorithm to encrypt digital signatures. The SHA-1 algorithm is no longer considered secure. Other algorithms, such as SHA-256, are preferred.
 
-Two options are available for setting different signature algorithms: 
+You can use either of the two options below to set the SHA-256 algorithm for Microsoft Office: 
 
-1. **Group Policy**<!--Object?--> settings. (See Microsoft TechNet articles on Group Policy settings.**<Provide link>**)
-2. **Computer registry** settings. To change a signature algorithm to SHA-256, use the following:
+1. **Group Policy** settings:  [Digital Signature Settings in Office 2013](https://technet.microsoft.com/en-us/library/cc545900.aspx){:target="_blank"}.  (For additional information, consult Microsoft's technical documents.)
+2. **Computer registry** settings. Change the Microsoft Office signature algorithm to SHA-256, as follows:
 
-- **Word 2010**: Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\14.0\common\signatures
-- **Word 2013**: Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\common\signatures
-- **Word 2016**: Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\common\signatures
-
-Add or update the values as specified below. Then, save the registry settings and restart your computer.
+```
+**Word 2010**: Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\14.0\common\signatures
+**Word 2013**: Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\common\signatures
+**Word 2016**: Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\common\signatures
+```
+* Add or update these values: 
 
 |**Value Name**|signaturehashalg|
 |**Value Type**|REG_SZ|
 |**Value**|sha256|
 
+* Save the registry settings and restart the computer.
+
 {% include alert-info.html content="You can also use even more secure algorithms, such as **SHA-384** or **SHA-512**." %}
- 
+
+(For additional information, consult Microsoft's technical documents.)
 
 ## Additional Resources
 
