@@ -160,9 +160,9 @@ You can use either of the two options below to change the algorithm settings for
 2. **Computer registry** settings. Change the Microsoft Office signature algorithm, as follows:
 
 ```
-**Word 2010**: Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\14.0\common\signatures
-**Word 2013**: Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\common\signatures
-**Word 2016**: Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\common\signatures
+Word 2010:  Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\14.0\common\signatures
+Word 2013:  Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\common\signatures
+Word 2016:  Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\common\signatures
 ```
 * Add or update these values: 
 
