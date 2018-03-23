@@ -1,6 +1,6 @@
 ---
 layout: default
-navtitle: Sign Microsoft Word
+navtitle: Digitally Signing in Microsoft Word
 title: Digitally Sign a Microsoft Word Document
 pubDate: March 23, 2018
 collection: userguides
