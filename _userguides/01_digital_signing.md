@@ -8,7 +8,7 @@ permalink: userguides/signworddoc/
 description: This guide will help you to digitally sign a Microsoft Word document with your PIV credential or similar digital certificate.
 ---
 
-{% include alert-warning.html content="Before you begin digitally signing Microsoft Word documents, please as your Technical Support team to set up SHA-256 encryption for Microsoft Office on your computer. [Federal Government policy](https://www.idmanagement.gov/wp-content/uploads/sites/1171/uploads/fpki-x509-cert-common-policy.pdf){:target="_blank"} prohibits the use of SHA-1 encryption, which Microsoft Word uses by default for digital signatures." %}
+{% include alert-warning.html content="Before you begin digitally signing Microsoft Word documents, please ask your Technical Support team to verify the digital signature settings on your computer. Federal Government policy prohibits the use of SHA-1 encryption, which Microsoft Word uses by default for digital signatures." %}
 
 This guide will help you to digitally sign a document using Microsoft Word 2010, 2013, or 2016 with your PIV credential or similar digital certificate. (For older versions of Microsoft Word, certain steps and screens may differ.)<br/>
 
@@ -137,28 +137,27 @@ For either option, you will be able to see the digital signature details in the 
 
 ## Remove a Digital Signature
 
-1. If you want to remove a digital signature, open your Word document and find the signature line. 
+1. If you want to remove a digital signature, open your Word document and go to the signature line. 
 2. If there is no signature line, click the **View Signatures** button just below the Word ribbon.
 3. From the **Signatures** box, select the signature you want to to delete.
 ![View Signature]({{site.baseurl}}/img/word-signature-17.png)
-
-3. Right-click on the signature and then click **Remove Signature**.  
-4. When prompted, click **Yes**.
-
+<br/>
+4. Right-click on the signature and then click **Remove Signature**.  
+5. When prompted, click **Yes**.
 ![Remove Signature]({{site.baseurl}}/img/word-signature-8.png)
 
 <br/>
 
 ## Change a Signature Algorithm
 
-{% include alert-info.html content="Please request help from your Technical Support staff for these steps. Administrator privileges are required." %} 
+{% include alert-info.html content="Please ask your Technical Support staff for help. Administrator privileges are required for these steps." %} 
 
 By default, Microsoft Word uses the SHA-1 algorithm to encrypt digital signatures. The SHA-1 algorithm is no longer considered secure. Other algorithms, such as SHA-256, are preferred.
 
-You can use either of the two options below to set the SHA-256 algorithm for Microsoft Office: 
+You can use either of the two options below to change the algorithm settings for Microsoft Office: 
 
 1. **Group Policy** settings:  [Digital Signature Settings in Office 2013](https://technet.microsoft.com/en-us/library/cc545900.aspx){:target="_blank"}.  (For additional information, consult Microsoft's technical documents.)
-2. **Computer registry** settings. Change the Microsoft Office signature algorithm to SHA-256, as follows:
+2. **Computer registry** settings. Change the Microsoft Office signature algorithm, as follows:
 
 ```
 **Word 2010**: Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\14.0\common\signatures
@@ -173,8 +172,6 @@ You can use either of the two options below to set the SHA-256 algorithm for Mic
 
 * Save the registry settings and restart the computer.
 
-{% include alert-info.html content="You can also use even more secure algorithms, such as SHA-384 or SHA-512." %}
-<br/>
 (For additional information, consult Microsoft's technical documents.)
 
 ## Additional Resources
