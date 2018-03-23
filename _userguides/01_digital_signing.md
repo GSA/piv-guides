@@ -100,7 +100,7 @@ Once you digitally sign a document, you can send it to other approvers for them 
 8. Now you can send the digitally signed document to the next approver. _Each successive approver will be able to open the document and double-click the **Signature Line** with his/her name and complete the signing process._
 
 ### Add Multiple Invisible Signatures
-**<We don't need to repeat the procedures if we refer them to the previous "Invisible Signature" section. Are the procedures identical?>**
+**<We don't need to repeat the procedures if we refer them to the previous "Invisible Signature" section. We can delete all but the very last statement: "Final approver will see multiple..." and final screenshot.>**
 One or more approvers may sign a document by using the _invisible signature_ method: [Add an Invisible Digital Signature](#add-an-invisible-digital-signature). 
 
 1. Open your document and click the **File** tab.
@@ -111,7 +111,7 @@ One or more approvers may sign a document by using the _invisible signature_ met
 3. From the **Protect Document** drop-down menu, click **Add a Digital Signature**.
 
 4. Complete the signing steps to add _invisible signatures_. _The final approver will see multiple invisible signatures in the document._
-
+<!--Don't understand how user gets to this screen-->
 ![View Signature]({{site.baseurl}}/img/word-signature-12.png)
 
 <br/>
@@ -119,26 +119,31 @@ One or more approvers may sign a document by using the _invisible signature_ met
 ## View Digital Signatures
 
 {% include alert-warning.html content="If you use Word 2013 and open digitally signed Word 2007 or 2010 documents, you may encounter compatibility issues." %} 
-<!--"Compatibility issues" means that the signatures will not be there?-->
-You can view digital signatures in a Word document in one of two ways:
+**<Compatibility issues" means that the signatures will not be there?>**
+You can view digital signatures in an incompatible Word document in one of two ways:
 
 1. Click the **View Signatures** button just below the Word ribbon.
 ![View Signature]({{site.baseurl}}/img/word-signature-16.png)
 
-2. Click the **File** tab and then click **View Signatures** in the **Info** section.<br/>
+**OR**
+
+2. Click the **File** tab and select **Info**. Then click **View Signatures**.<br/>
 ![View Signature]({{site.baseurl}}/img/word-signature-11.png)
 
-For either option, you will be able to see the signature details and status in the **Signatures** box.
+For either option, you will be able to see the digital signature details in the **Signatures** box.
 ![View Signature]({{site.baseurl}}/img/word-signature-17.png)
 
 <br/>
 
 ## Remove a Digital Signature
+**<Is this correct?>**
+1. If you want to remove a digital signature, open your Word document and find the signature line. 
+2. If there is no signature line, click the **View Signatures** button just below the Word ribbon.
+3. From the **Signatures** box, select the signature you want to to delete.
+![View Signature]({{site.baseurl}}/img/word-signature-17.png)
 
-To remove a signature:
-- Open the Word document and navigate to the signature line. If there is no signature line, you can select the signature to delete from the '**Signatures**' box.
-- Right click on the signature.
-- Click '**Remove Signature**' and click '**Yes**' when prompted.
+3. Right-click on the signature and then click **Remove Signature**.  
+4. When prompted, click **Yes**.
 
 ![Remove Signature]({{site.baseurl}}/img/word-signature-8.png)
 
@@ -146,29 +151,31 @@ To remove a signature:
 
 ## Change Signature Algorithm
 
-Microsoft Word uses SHA-1 algorithm by default to digitally sign a Word document. The SHA-1 algorithm is no longer considered secure. Other algorithms such as SHA-256 are preferred.
+By default, Microsoft Word uses the SHA-1 algorithm to encrypt digital signatures in a Word document. The SHA-1 algorithm is no longer considered secure. Other algorithms, such as SHA-256, are preferred.
 
-{% include alert-info.html content="These instructions require administrator privileges on your computer." %} 
+{% include alert-info.html content="These instructions require administrator privileges." %} 
 
-You can set signature algorithm using either **Group Policy** settings or changing the registry settings on each individual computer. You can refer to the guides provided by Microsoft for Group Policy settings.
- 
-To change the signature algorithm to SHA-256 using registry update, use the following registry setting:
+Two options are available for setting different signature algorithms: 
 
-- **Word 2010**: Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\office\14.0\common\signatures
-- **Word 2013**: Computer\HKEY_CURRENT_USER\software\policies\Microsoft\Office\15.0\common\signatures
-- **Word 2016**: Computer\HKEY_CURRENT_USER\software\policies\Microsoft\office\16.0\common\signatures
+1. **Group Policy**<!--Object?--> settings. (See Microsoft TechNet articles on Group Policy settings.**<Provide link>**)
+2. **Computer registry** settings. To change a signature algorithm to SHA-256, use the following:
 
-Add or update the values as specified below.
+- **Word 2010**: Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\14.0\common\signatures
+- **Word 2013**: Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\15.0\common\signatures
+- **Word 2016**: Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\common\signatures
+
+Add or update the values as specified below. Then, save the registry settings and restart your computer.
 
 |**Value Name**|signaturehashalg|
 |**Value Type**|REG_SZ|
 |**Value**|sha256|
 
-You can also use **SHA-384** or **SHA-512** for more secure algorithms. Save the registry settings and restart your computer.
+{% include alert-info.html content="You can also use even more secure algorithms, such as **SHA-384** or **SHA-512**." %}
+ 
 
 ## Additional Resources
 
-1. [Add or remove digital signature in Office files](https://support.office.com/en-us/article/add-or-remove-a-digital-signature-in-office-files-70d26dc9-be10-46f1-8efa-719c8b3f1a2d){:target="_blank"}
+1. [Add or Remove Digital Signature in Office Files](https://support.office.com/en-us/article/add-or-remove-a-digital-signature-in-office-files-70d26dc9-be10-46f1-8efa-719c8b3f1a2d){:target="_blank"}
 1. [XML Digital Signature](https://www.w3.org/TR/XAdES/
 ){:target="_blank"}
 1. [Digital Signatures in Office 2010](https://blogs.technet.microsoft.com/office2010/2009/12/08/digital-signatures-in-office-2010/){:target="_blank"}
