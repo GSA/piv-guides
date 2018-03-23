@@ -33,15 +33,22 @@ description: This guide will help you to digitally sign a Microsoft Word documen
 4. Double-click the _signature line_.<br/>
 ![Signature Line]({{site.baseurl}}/img/word-signature-3.png)
 
-5. _A **Sign** pop-up box appears._ At the **X**, type your name. 
-
-6. Next, look at the **Signing as:** field. _You should see your name and certificate information._ If you don't, click the **Change** button to select a different certificate and click **Sign**.<br/>
+5. _A **Sign** pop-up box appears._ At the **X**, type your name. Next, look at the **Signing as:** field. You should select the correct signing certificate. Click the **Change** button to view the certificate details.<br/>
 ![Sign Box]({{site.baseurl}}/img/word-signature-4.png)
 
-7. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
+6. Click on '**Click here to view certificate properties**' to view the certificate details for the selected certificate. Click '**More Choices**' to view the other certificates available to you. <br/>
+![Sign Box]({{site.baseurl}}/img/word-signature-18.png)
+
+7. Once you select each certificate, you can view the properties for that certificate by clicking '**Click here to view certificate properties**'.<br/>
+![Sign Box]({{site.baseurl}}/img/word-signature-19.png)
+
+8. In the '**Details**' tab of the ""Certificate Details** box, verify that the **Key Usage** shows '**Digital Signature, Non-Repudiation**'. This is the correct certificate to use. Click '**OK**' twice to select the certificate.<br/>
+![Sign Box]({{site.baseurl}}/img/word-signature-20.png)
+
+9. Click on '**Sign**' to sign the document. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
 ![PIV PIN]({{site.baseurl}}/img/word-signature-5.png)
 
-8. _The **Signature Confirmation** box tells you that Word saved your digital signature._ Click **OK**. <br/>
+10. _The **Signature Confirmation** box tells you that Word saved your digital signature._ Click **OK**. <br/>
 ![Signature Confirm]({{site.baseurl}}/img/word-signature-6.png)
 
 ![Marked as final]({{site.baseurl}}/img/word-signature-7.png)
