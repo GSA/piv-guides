@@ -20,10 +20,10 @@ description: This guide will help you to digitally sign a Microsoft Word documen
 - [Additional Resources](#additional-resources)
 
 ## Add a Digital Signature Using a Signature Line
-<!--For multiple approvers, couldn't we say "repeat these steps for multiple approvers to add their digital signatures"?-->
-{% include alert-info.html content="These digital-signing steps may be used for Microsoft Word 2010, 2013 and 2016. Certain steps and screens may differ for older versions of Microsoft Word." %}
 
-1. Open your Microsoft Word document. Click where you want to add your signature line. 
+{% include alert-info.html content="You can use these digital-signing steps for Microsoft Word 2010, 2013 and 2016. For older versions of Microsoft Word, certain steps and screens may be different." %}
+
+1. To add a digital signature, open your Microsoft Word document. Click where you want to add your signature line. 
 2. From the Word ribbon, select the **Insert** tab and then click **Signature Line** in the **Text** group.<br/>
 ![Insert Signature Line]({{site.baseurl}}/img/word-signature-1.png)
 
@@ -51,7 +51,7 @@ description: This guide will help you to digitally sign a Microsoft Word documen
 <br/>
 
 ## Add an Invisible Digital Signature
-<!--Where did the user here make his/her name invisible?  Don't see that step. Tested procedure and I can still see my name in the list of approvers and in the certificate information. Is it because the user didn't insert a signature line?  -->
+
 You can add an _invisible digital signature_ to prevent your name from appearing in a document.  
 
 1. Open your document and click the **File** tab.
@@ -74,7 +74,7 @@ You can add an _invisible digital signature_ to prevent your name from appearing
 
 ## Add Multiple Digital Signatures
 
-If two or more approvers need to digitally sign a document, you can use either the _signature line_ or _invisible signature_ method.
+If two or more approvers need to digitally sign a document, you can use the _signature line_ or _invisible signature_ method.
 
 ### Add Multiple Signatures Using Signature Lines
 **<NOTE: Whether the 1st approver creates all signature lines for all approvers and then sends to each one or whether each approver creates his/her own signature line is unclear. Steps seemed to say both.>**
@@ -115,14 +115,14 @@ One or more approvers may sign a document by using the _invisible signature_ met
 3. From the **Protect Document** drop-down menu, click **Add a Digital Signature**.
 
 4. Complete the signing steps to add _invisible signatures_. _The final approver will see multiple invisible signatures in the document._
-<!--Don't understand how user gets to this screen-->
+**<Don't understand how user gets to this screen>**
 ![View Signature]({{site.baseurl}}/img/word-signature-12.png)
 
 <br/>
 
 ## View Digital Signatures
 
-{% include alert-warning.html content="If you use Word 2013 and open digitally signed Word 2007 or 2010 documents, you may encounter compatibility issues." %} 
+{% include alert-warning.html content="If you use Word 2013 and open digitally signed Word 2007 or 2010 documents, you may have compatibility issues." %} 
 **<Compatibility issues" means that the signatures will not be there?>**
 You can view digital signatures in an incompatible Word document in one of two ways:
 
@@ -155,9 +155,9 @@ For either option, you will be able to see the digital signature details in the 
 
 ## Change Signature Algorithm
 
-By default, Microsoft Word uses the SHA-1 algorithm to encrypt digital signatures in a Word document. The SHA-1 algorithm is no longer considered secure. Other algorithms, such as SHA-256, are preferred.
+{% include alert-info.html content="You'll need help from your Technical Support staff for these steps. Administrator privileges are required." %} 
 
-{% include alert-info.html content="These instructions require administrator privileges." %} 
+By default, Microsoft Word uses the SHA-1 algorithm to encrypt digital signatures in a Word document. The SHA-1 algorithm is no longer considered secure. Other algorithms, such as SHA-256, are preferred.
 
 Two options are available for setting different signature algorithms: 
 
