@@ -1,15 +1,14 @@
 ---
 layout: default
 navtitle: Sign Microsoft Word
-title: Digitally Sign Microsoft Word Document
+title: Digitally Sign a Microsoft Word Document
 pubDate: March 23, 2018
 collection: userguides
 permalink: userguides/signworddoc/
 description: This guide will help you to digitally sign a Microsoft Word document with your PIV credential or similar digital certificate.
 ---
 
-{% include alert-warning.html content="Before you begin digitally signing Microsoft Word documents, please contact your Technical Support team to set up SHA-256 encryption for Microsoft Office on your computer. [Federal Government policy](https://www.idmanagement.gov/wp-content/uploads/sites/1171/uploads/fpki-x509-cert-common-policy.pdf){:target="_blank"} prohibits the use of SHA-1 encryption, which Microsoft Word uses by default for digital signatures." %}
-
+{% include alert-warning.html content="Before you begin digitally signing Microsoft Word documents, please as your Technical Support team to set up SHA-256 encryption for Microsoft Office on your computer. [Federal Government policy](https://www.idmanagement.gov/wp-content/uploads/sites/1171/uploads/fpki-x509-cert-common-policy.pdf){:target="_blank"} prohibits the use of SHA-1 encryption, which Microsoft Word uses by default for digital signatures." %}
 
 This guide will help you to digitally sign a document using Microsoft Word 2010, 2013, or 2016 with your PIV credential or similar digital certificate. (For older versions of Microsoft Word, certain steps and screens may differ.)<br/>
 
@@ -34,23 +33,19 @@ This guide will help you to digitally sign a document using Microsoft Word 2010,
 4. Double-click the _signature line_.<br/>
 ![Signature Line]({{site.baseurl}}/img/word-signature-3.png)
 
-5. _A **Sign** pop-up box appears._ At the **X**, type your name. Next, look at the **Signing as:** field. You should see the correct signing certificate. 
-
-6. To ensure that this is the correct certificate, select it. Click the **Change** button to see the certificate details. If this is not the right certificate, click the **Change** button again. <br/>  **&&&HOW DO YOU SELECT IT???&&&**
+5. _A **Sign** pop-up box appears._ At the **X**, type your name. Next, look at the **Signing as:** field. You will see a signing certificate. To ensure that this is the correct certificate to use, click the **Change** button. <br/>
 ![Sign Box]({{site.baseurl}}/img/word-signature-4.png)
 
-7. Click on **Click here to view certificate properties**. Click **More Choices** to see other available certificates. <br/>
+6. Click on **Click here to view certificate properties**. <br/>
 ![Sign Box]({{site.baseurl}}/img/word-signature-18.png)
 
-8. To see the details for another certificate, click on **Click here to view certificate properties**.<br/>
-![Sign Box]({{site.baseurl}}/img/word-signature-19.png)
-
-9. In the **Details** tab of the **Certificate Details** box, click on **Key Usage**. Now, look at the lower text box. It should now say _Digital Signature, Non-Repudiation_. This is the correct certificate. Click **OK** twice to select the certificate.<br/>
+7. _The **Certificate Details** box appears._ Go to the **Details** tab and scroll down to **Key Usage**. Single-click on it. The lower text box should now display _Digital Signature, Non-Repudiation_. If it does, then this is the right certificate. Click **OK**.<br/>
 ![Sign Box]({{site.baseurl}}/img/word-signature-20.png)
 
-**Where do you insert your PIV card?** &&&& ?????
+8. If this is the _wrong_ certificate, click **OK**. Then click **More Choices** to see other available certificates. Select another certificate and repeat these steps until you find the correct certificate. <br/> 
+![Sign Box]({{site.baseurl}}/img/word-signature-19.png)
 
-10. Click the **Sign** button to sign the document. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
+10. Click the **Sign** button to sign the document. Insert your PIV card into the card reader. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
 ![PIV PIN]({{site.baseurl}}/img/word-signature-5.png)
 
 11. _The **Signature Confirmation** box tells you that Word saved your digital signature._ Click **OK**. <br/>
@@ -76,7 +71,7 @@ You can add an _invisible digital signature_ to prevent your name from appearing
 4. Select a **Commitment Type**, such as _created and approved this document_, and then click **Sign**.<br/>
 ![Sign Document]({{site.baseurl}}/img/word-signature-10.png)
 
-5. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
+5. Insert your PIV card into the card reader. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
 ![PIV PIN]({{site.baseurl}}/img/word-signature-5.png)
 
 6. _The **Signature Confirmation** box tells you that Word saved your digital signature._ Click **OK**.<br/>
@@ -86,11 +81,12 @@ You can add an _invisible digital signature_ to prevent your name from appearing
 
 ## Add Multiple Digital Signatures Using Signature Lines
 
-Once you digitally sign a document, you can send it to other approvers for them to digitally sign. (**Note:**&nbsp;&nbsp; The first approver should create the signature lines for all approvers before sending the document to the second approver.)
+Once you digitally sign a document, you can have others also digitally sign it. (**Note:**&nbsp;&nbsp; If you are the first approver, you should create the signature lines for all of the approvers. Then, send the document to the second approver.)
 
-1. If you are the second (or other) approver, open the document you've received. Double-click your signature line.  
-2. From the Word ribbon, select the **Insert** tab and then click **Signature Line** in the **Text** group.<br/><br/>
-![Signature Line]({{site.baseurl}}/img/word-signature-1.png)
+1. If you are the second (or other) approver, open the document you've received. Double-click your signature line to sign. Follow the same steps above: [Add a Digital Signature Using a Signature Line](add-a-digital-signature-using-a-signature-line). <br/>
+![Signature Line]({{site.baseurl}}/img/word-signature-1.png) 
+
+**CELESTE STOPPED**
 
 3. _A **Signature Setup** pop-up box appears._ Enter your information in the text fields and click **OK**<br/>
 ![Signature Setup]({{site.baseurl}}/img/word-signature-13.png)
@@ -196,3 +192,5 @@ You can use either of the two options below to set the SHA-256 algorithm for Mic
 ){:target="_blank"}
 1. [Digital Signatures in Office 2010](https://blogs.technet.microsoft.com/office2010/2009/12/08/digital-signatures-in-office-2010/){:target="_blank"}
 1. [Digital Signature Settings in Office 2013](https://technet.microsoft.com/en-us/library/cc545900.aspx){:target="_blank"}
+1. [X.509 Certificate Policy for the U.S. Federal PKI Common Policy Framework](https://www.idmanagement.gov/wp-content/uploads/sites/1171/uploads/fpki-x509-cert-common-policy.pdf){:target="_blank"}
+1. [NIST Policy on Hash Functions](https://csrc.nist.gov/Projects/Hash-Functions/NIST-Policy-on-Hash-Functions){:target="_blank"}
