@@ -45,10 +45,10 @@ This guide will help you to digitally sign a document using Microsoft Word 2010,
 8. If this is the _wrong_ certificate, click **OK**. Then click **More Choices** to see other available certificates. Select another certificate and repeat these steps until you find the correct certificate. <br/> 
 ![Sign Box]({{site.baseurl}}/img/word-signature-19.png)
 
-10. Click the **Sign** button to sign the document. Insert your PIV card into the card reader. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
+9. Click the **Sign** button to sign the document. Insert your PIV card into the card reader. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
 ![PIV PIN]({{site.baseurl}}/img/word-signature-5.png)
 
-11. _The **Signature Confirmation** box tells you that Word saved your digital signature._ Click **OK**. <br/>
+10. _The **Signature Confirmation** box tells you that Word saved your digital signature._ Click **OK**. <br/>
 ![Signature Confirm]({{site.baseurl}}/img/word-signature-6.png)
 
 ![Marked as final]({{site.baseurl}}/img/word-signature-7.png)
@@ -83,15 +83,13 @@ You can add an _invisible digital signature_ to prevent your name from appearing
 
 Once you digitally sign a document, you can have others also digitally sign it. (**Note:**&nbsp;&nbsp; If you are the first approver, you should create the signature lines for all of the approvers. Then, send the document to the second approver.)
 
-1. If you are the second (or other) approver, open the document you've received. Double-click your signature line to sign. Follow the same steps above: [Add a Digital Signature Using a Signature Line](add-a-digital-signature-using-a-signature-line). <br/>
+1. If you are the second (or other) approver, open the document you've received. Double-click your signature line to sign. Follow Steps 4-10 from [Add a Digital Signature Using a Signature Line](#add-a-digital-signature-using-a-signature-line). <br/>
 ![Signature Line]({{site.baseurl}}/img/word-signature-1.png) 
-
-**CELESTE STOPPED**
 
 3. _A **Signature Setup** pop-up box appears._ Enter your information in the text fields and click **OK**<br/>
 ![Signature Setup]({{site.baseurl}}/img/word-signature-13.png)
 
-4. 4. Double-click the _signature line_ with your name.<br/> <!--Can the first approver create signature lines for all the approvers in advance? Before the 1st sends it to the 2nd and 3rd?--><br/>
+4. Double-click your _signature line_.<br/> 
 ![Signature Line]({{site.baseurl}}/img/word-signature-14.png)
 
 5. _A **Sign** pop-up box appears._ At the **X**, type your name. 
@@ -99,41 +97,35 @@ Once you digitally sign a document, you can have others also digitally sign it. 
 6. Next, look at the **Signing as:** field. _You should see your name and certificate information._ If you don't, click the **Change** button to select a different certificate and click **Sign**.<br/>
 ![Signature Box]({{site.baseurl}}/img/word-signature-4.png)
 
-7. Enter your Smart Card (PIV) PIN and click **OK**..<br/>
+7. Insert your PIV card and enter your Smart Card (PIV) PIN and click **OK**.<br/>
 ![Certificate PIN]({{site.baseurl}}/img/word-signature-5.png)
 
 8. _The **Signature Confirmation** box tells you that Word saved your digital signature._ Click **OK**. <br/>
 ![Signature Confirm]({{site.baseurl}}/img/word-signature-6.png)
 
-Now you can send the digitally signed document to the next approver. _Each successive approver will be able to open the document and double-click the **Signature Line** with his/her name and complete the signing process._
+9. Send the digitally signed document to the next approver. 
+
+_Each successive approver will be able to open the document and double-click the **Signature Line** with his/her name and complete the signing process._
 
 ## Add Multiple Invisible Digital Signatures
 
-One or more approvers may sign a document by using the _invisible digital signature_ method: [Add an Invisible Digital Signature](#add-an-invisible-digital-signature). 
+Multiple approvers may digitally sign a document. Use the same procedures as you would to add one invisibile digital signature: [Add an Invisible Digital Signature](#add-an-invisible-digital-signature). 
 
-1. Open your document and click the **File** tab.
-
-2. Click **Info** and then click **Protect Document**.<br/>
-![Protect Document]({{site.baseurl}}/img/word-signature-9.png)
-
-3. From the **Protect Document** drop-down menu, click **Add a Digital Signature**.
-
-4. Complete the signing steps to add _invisible signatures_. _The final approver will see multiple invisible signatures in the document._
-**<Don't understand how user gets to this screen>**
+_The final approver will see multiple "invisible" signatures in the document._
 ![View Signature]({{site.baseurl}}/img/word-signature-12.png)
 
 <br/>
 
 ## View Digital Signatures
 
-{% include alert-warning.html content="If you use Word 2013 and open digitally signed Word 2007 or 2010 documents, you may have compatibility issues." %} 
-**<Compatibility issues" means that the signatures will not be there?>**
+{% include alert-warning.html content="If you use Word 2013 and open a digitally signed Word 2007 or 2010 document, you may have compatibility issues." %} 
+<br/>
 You can view digital signatures in an incompatible Word document in one of two ways:
 
 1. Click the **View Signatures** button just below the Word ribbon.
 ![View Signature]({{site.baseurl}}/img/word-signature-16.png)
 
-**OR**
+**_OR_**
 
 2. Click the **File** tab and select **Info**. Then click **View Signatures**.<br/>
 ![View Signature]({{site.baseurl}}/img/word-signature-11.png)
@@ -181,8 +173,8 @@ You can use either of the two options below to set the SHA-256 algorithm for Mic
 
 * Save the registry settings and restart the computer.
 
-{% include alert-info.html content="You can also use even more secure algorithms, such as **SHA-384** or **SHA-512**." %}
-
+{% include alert-info.html content="You can also use even more secure algorithms, such as SHA-384 or SHA-512." %}
+<br/>
 (For additional information, consult Microsoft's technical documents.)
 
 ## Additional Resources
