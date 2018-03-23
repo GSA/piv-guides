@@ -111,7 +111,7 @@ _Each successive approver will be able to open the document and double-click the
 
 Multiple approvers may digitally sign a document. Use the same procedures as you would to add one invisibile digital signature: [Add an Invisible Digital Signature](#add-an-invisible-digital-signature). 
 
-_The final approver will see multiple "invisible" signatures in the document._
+_The final approver will see multiple "invisible" signatures in the document._<br/>
 ![View Signature]({{site.baseurl}}/img/word-signature-12.png)
 
 <br/>
