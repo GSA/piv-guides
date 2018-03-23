@@ -8,7 +8,7 @@ permalink: userguides/signworddoc/
 description: This guide will help you to digitally sign a Microsoft Word document with your PIV credential or similar digital certificate.
 ---
 
-<!--Suggest that we add for the non-technical user: "A digital signature is [simple definition]."-->This guide will help you to digitally sign a Microsoft Word document with your PIV credential or similar digital certificate.  
+<!--Suggest that we add for the non-technical user: "A digital signature is [simple definition]."-->This guide will help you to digitally sign a Microsoft Word document with your PIV credential or similar digital certificate.<br/>
 
 - [Add a Digital Signature Using Signature Line](#add-a-digital-signature-using-a-signature-line)
 - [Add an Invisible Digital Signature](#add-an-invisible-digital-signature)
@@ -30,16 +30,18 @@ description: This guide will help you to digitally sign a Microsoft Word documen
 3. _A **Signature Setup** pop-up box appears._ Enter your information in the text fields and click **OK**.<br/>
 ![Signature Setup Box]({{site.baseurl}}/img/word-signature-2.png)
 
-4. _A signature line appears._ Double-click on it. <br/>
+4. Double-click the _signature line_.<br/>
 ![Signature Line]({{site.baseurl}}/img/word-signature-3.png)
 
-5. _A **Sign** pop-up box appears._ At the **X**, type your name. Next, look at the **Signing as:** field. _You should see your name and certificate information._ If you don't, click the **Change** button to select a different certificate and click **Sign**.<br/>
+5. _A **Sign** pop-up box appears._ At the **X**, type your name. 
+
+6. Next, look at the **Signing as:** field. _You should see your name and certificate information._ If you don't, click the **Change** button to select a different certificate and click **Sign**.<br/>
 ![Sign Box]({{site.baseurl}}/img/word-signature-4.png)
 
-6. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
+7. Enter your Smart Card (PIV) PIN and click **OK**.<br/>
 ![PIV PIN]({{site.baseurl}}/img/word-signature-5.png)
 
-7. _The **Signature Confirmation** box tells you that Word saved your digital signature._ Click **OK**. <br/>
+8. _The **Signature Confirmation** box tells you that Word saved your digital signature._ Click **OK**. <br/>
 ![Signature Confirm]({{site.baseurl}}/img/word-signature-6.png)
 
 ![Marked as final]({{site.baseurl}}/img/word-signature-7.png)
@@ -85,19 +87,21 @@ Once you digitally sign a document, you can send it to other approvers for them 
 3. _A **Signature Setup** pop-up box appears._ Enter your information in the text fields and click **OK**<br/>
 ![Signature Setup]({{site.baseurl}}/img/word-signature-13.png)
 
-4. _A signature line appears with your name._ Double-click on it. <!--Can the first approver create signature lines for all the approvers in advance? Before the 1st sends it to the 2nd and 3rd?--><br/>
+4. 4. Double-click the _signature line_ with your name.<br/> <!--Can the first approver create signature lines for all the approvers in advance? Before the 1st sends it to the 2nd and 3rd?--><br/>
 ![Signature Line]({{site.baseurl}}/img/word-signature-14.png)
 
-5. _A **Sign** pop-up box appears._ At the **X**, type your name. Next, look at the **Signing as:** field. _You should see your name and certificate information._ If you don't, click the **Change** button to select a different certificate and click **Sign**.<br/>
+5. _A **Sign** pop-up box appears._ At the **X**, type your name. 
+
+6. Next, look at the **Signing as:** field. _You should see your name and certificate information._ If you don't, click the **Change** button to select a different certificate and click **Sign**.<br/>
 ![Signature Box]({{site.baseurl}}/img/word-signature-4.png)
 
-6. Enter your Smart Card (PIV) PIN and click **OK**..<br/>
+7. Enter your Smart Card (PIV) PIN and click **OK**..<br/>
 ![Certificate PIN]({{site.baseurl}}/img/word-signature-5.png)
 
-7. _The **Signature Confirmation** box tells you that Word saved your digital signature._ Click **OK**. <br/>
+8. _The **Signature Confirmation** box tells you that Word saved your digital signature._ Click **OK**. <br/>
 ![Signature Confirm]({{site.baseurl}}/img/word-signature-6.png)
 
-8. Now you can send the digitally signed document to the next approver. _Each successive approver will be able to open the document and double-click the **Signature Line** with his/her name and complete the signing process._
+Now you can send the digitally signed document to the next approver. _Each successive approver will be able to open the document and double-click the **Signature Line** with his/her name and complete the signing process._
 
 ### Add Multiple Invisible Signatures
 **<We don't need to repeat the procedures if we refer them to the previous "Invisible Signature" section. We can delete all but the very last statement: "Final approver will see multiple..." and final screenshot.>**
