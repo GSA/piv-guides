@@ -1,11 +1,12 @@
-{% assign current = page.url | downcase | split: '/' %}
+{% assign current = page.url | downcase | remove: '/' %}
 
 <aside class="sidenav" id="menu-content">
   <nav>
     <ul class="usa-sidenav-list">
       {% for link in site.navigation %}
-          <li class="group {% if page.title == link.text %}usa-current-section{% endif %}">
-            <a href="{% if link.internal == true %}{{ site.baseurl }}/{% endif %}{{ link.url }}" title="{{ link.text }}">{{ link.text }}</a>
+          {% assign navUrl = link.url | strip %}
+          <li class="group{% if navUrl == current %} usa-current-section{% endif %}">
+            <a href="{% if link.internal == true %}{{ site.baseurl }}/{% endif %}{{ link.url }}" title="{{ page.title }}">{{ link.text }}</a>
           
           {% if link.coll == true %}
           <button class="usa-sidenav-expand_subnav"
@@ -14,13 +15,18 @@
           
           {% assign collectionName = link.collname %}
           <ul class="nav-children usa-current-section" id="nav-collapsible-{{ forloop.index }}" aria-hidden="{% if page.collection == link.collname %}false{% else %}true{% endif %}">
-      
-            {%  assign slash = '/' %}
-            {% assign temp = slash | append: link.url %}
+
+          {%  assign slash = '/' %}
+          {% assign temp = slash | append: link.url %}
+		  
           {% for child in site.[collectionName] %}
+              {% assign navtext = child.title %}
+              {% if child.navtitle != null %}
+                {% assign navtext = child.navtitle %} 
+              {% endif %}
             {% if child.url != temp %}
           <li class="group {% if page.title == child.title %}usa-current{% endif %}">
-          <a href="{{ site.baseurl }}{{ child.url }}" title="{% if page.title == child.title %}Current Page {% else %}{{ child.title }}{% endif %}">{{ child.title }}</a>
+                <a href="{{ site.baseurl }}{{ child.url }}" title="{% if page.title == child.title %}Current Page {% else %}{{ child.title }}{% endif %}">{{ navtext }}</a>
           </li>
             {% endif %}
           {% endfor %}
