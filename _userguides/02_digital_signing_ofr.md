@@ -28,7 +28,7 @@ Do NOT use the Insert Signature function (under the INSERT tab in the Word ribbo
 5. Click **Protect Document**.
 6. Click **Add a Digital Signature**.
 
-![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG)
+![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG){:style="width:55%;"}
 
 7. In the **Sign** dialog box: 
 
