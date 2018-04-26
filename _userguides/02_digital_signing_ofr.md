@@ -1,35 +1,20 @@
 ---
 layout: default
-navtitle: Digitally Signing in Microsoft Word - Office of Federal Register
+navtitle: Digitally Signing in Microsoft Word - Office of the Federal Register
 title: Digitally Sign a Microsoft Word Document
 pubDate: April 27, 2018
 collection: userguides
 permalink: userguides/signworddoc-ofr/
-description: This guide will walk you through the Office of the Federal Register's steps for digitally signing a Microsoft Word document using invisible digital signatures with your PIV credential or similar digital certificate.
+description: This guide will walk you through the Office of the Federal Register's procedures for digitally signing a Microsoft Word document with invisible digital signatures using your PIV credential or similar digital certificate.
 ---
-
-#### OUR COPIED VERSION HERE ONLY IS BEING REPLACED BY OFR WRITE-UP - IN PROCESS ####
-
-
-
-To begin, choose the method you'd like to use for applying your digital signature:
-
-- [Add an Invisible Digital Signature](#add-an-invisible-digital-signature)
-- [Add Multiple Invisible Digital Signatures](#add-multiple-invisible-digital-signatures)
-
-The following links provide guidance to some related functionality and resources:
-- [Remove a Digital Signature](#remove-a-digital-signature)
-- [View Digital Signatures](#view-digital-signatures)
-
---------------ABOVE IS OUR STUFF----------------------
 
 **OFR WRITE-UP STARTS HERE**
 
 The digital signatory of a document MUST be the same person whose name is typed in the signature block.  The names must match exactly or meet the accepted standards listed in the Office of the Federal Register's _Document Drafting Handbook_, Chapter 1.  To verify the name as applied to the digital certificate, follow the instructions below in the “View signature certificate in Word” section.
 
-Using the native MS Word signing capability applies your PKI certificate to the document, guaranteeing the authenticity of the signer and the document.  Once applied, your document is protected and cannot be edited without removing the digital signature.  The MS Word signing process saves the signed document under the same filename!
+By using the native MS Word signing capability, it applies your Public Key Infrastructure (PKI) certificate to the document, guaranteeing the authenticity of the signer and the document.  Once applied, your document is protected and cannot be edited without removing the digital signature.  The Microsoft Word signing process saves the signed document under the same filename!
 
-Do NOT use the Insert Signature function (under the INSERT tab in the Word ribbon).  Follow the instructions below to sign the document invisibly as this is the format OFR will accept.
+Do NOT use the Insert Signature function (under the INSERT tab in the Word ribbon).  Follow the instructions below to invisibly sign the document (i.e., add an invisible signature), as this is the format that OFR will accept.
 
 - [Add Invisible Digital Signatures](#add-invisible-digital-signatures)
 - [Multiple Digital Signatories](#multiple-digital-signatories)
@@ -51,7 +36,7 @@ Do NOT use the Insert Signature function (under the INSERT tab in the Word ribbo
 
 7. In the **Sign** dialog box: 
 
-**INSERT IMAGE FOR SIGN DIALOG BOX** HERE
+![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_no_name_2.png)
 
 - Select a **Commitment Type** from the pull-down menu.
 - In the **Purpose for signing this document**, type the purpose or leave blank.
