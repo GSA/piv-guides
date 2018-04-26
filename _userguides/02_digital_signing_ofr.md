@@ -28,11 +28,11 @@ Do NOT use the Insert Signature function (under the INSERT tab in the Word ribbo
 5. Click **Protect Document**.
 6. Click **Add a Digital Signature**.
 
-![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.png)
+![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG)
 
 7. In the **Sign** dialog box: 
 
-![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_no_name_2.png)
+![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_no_name_2.PNG)
 
 - Select a **Commitment Type** from the pull-down menu.
 - In the **Purpose for signing this document**, type the purpose or leave blank.
