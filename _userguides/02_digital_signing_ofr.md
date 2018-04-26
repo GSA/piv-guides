@@ -36,7 +36,7 @@ Do NOT use the Insert Signature function (under the INSERT tab in the Word ribbo
 
 7. In the **Sign** dialog box: 
 
-![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_no_name_2.png)
+![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_no_name_2.png){:style="width:55%;float:left;"}
 
 - Select a **Commitment Type** from the pull-down menu.
 - In the **Purpose for signing this document**, type the purpose or leave blank.
