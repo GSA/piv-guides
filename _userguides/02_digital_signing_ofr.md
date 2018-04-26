@@ -40,7 +40,7 @@ In the **Sign** dialog box:
 4. Click **Sign**.
 5. Follow the prompt to enter your **PIN**, and then click **OK**.
 
-![Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:50%;"}
+![Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:40%;"}
 
 If the digital signature certificate and PIN are valid, the document is signed and automatically saved under the same filename.  This is the file that you submit to OFR via the web portal.
 
@@ -74,9 +74,10 @@ Open the Microsoft Word document that contains the invisible signature you want 
 1. In the header, you may see the option to **View Signatures**.  Click that button and proceed to step 5; otherwise:
 2. Click the **File** tab.
 3. Click **Info**.
-4. Click **View Signatures**. _The **Signatures** pane appears._
+4. Click **View Signatures**. 
+_The **Signatures** pane appears._
 
-![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:90%;"}
+![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:90%;"}&nbsp;
 
 6. Next to the signature name, click the drop-down arrow.
 7. Click **Remove Signature**.
@@ -96,5 +97,5 @@ Open the signed Word document containing the certificate(s) you want to check, o
 6. Click on **Signature Details**. _The signer’s name, as applied to the certificate, is listed, along with the Certification Authority (CA)._  
 7. Click the **View** button.  _A pop-up window appears._
 8. Ensure that the **General** tab is selected. _The valid dates of the certificate are listed. More technical details, such as the certification path and key usage values, are shown under other tabs._
-</br>
+
 
