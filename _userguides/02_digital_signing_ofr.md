@@ -1,7 +1,7 @@
 ---
 layout: default
 navtitle: Digitally Signing in Microsoft Word - Office of the Federal Register
-title: Digitally Sign a Microsoft Word Document
+title: Digitally Sign a Microsoft Word Document - Office of the Federal Register
 pubDate: April 27, 2018
 collection: userguides
 permalink: userguides/signworddoc-ofr/
