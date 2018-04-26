@@ -40,8 +40,7 @@ Do NOT use the Insert Signature function (under the INSERT tab in the Word ribbo
 - Click **Sign**.
 - Follow the prompt to enter your **PIN**, and then click **OK**.
 
-
-**INSERT PIV CARD INSERTION DIALOG (WINDOWS SECURITY BOX)**
+![Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:55%;"}
 
 If the digital signature certificate and PIN are valid, the document is signed and automatically saved under the same filename!  This is the file you submit to OFR via the web portal.
 
@@ -70,7 +69,7 @@ One of the issuing agencies should serve as the primary or lead coordinating age
 
 Open the Microsoft Word document that contains the invisible signature you want to remove.
 
-**INSERT MS WORD RIBBON SCREEN CAPTURE THAT SHOWS FILE->MARKED AS FINAL (YELLOW) AND SIGNATURES (YELLOW)**
+![Doc Invisible Signatures]({{site.baseurl}}/img/ofr_remove_invisible_sign_4.png){:style="width:55%;"}
 
 1. In the header, you may see the option to **View Signatures**.  Click that button and proceed to Step 5.
 Otherwise:
@@ -80,7 +79,7 @@ Otherwise:
 5. The **Signatures** pane appears.
 
 **INSERT MS WORD RIBBON SCREEN CAPTURE WITH SIGNATURES PANE TO RIGHT OF DOC VIEW**
-
+![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:55%;"}
 
 6. Next to the signature name, click the **drop-down arrow**.
 7. Click **Remove Signature**.
