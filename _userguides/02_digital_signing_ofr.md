@@ -27,20 +27,15 @@ Do NOT use the Insert Signature function (under the **INSERT** tab in the Micros
 4. Click **Info**. 
 5. Click **Protect Document**.
 6. From the drop-down list, click **Add a Digital Signature**.
-
-![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG){:style="width:60%;"}
-
-In the **Sign** dialog box: 
-
-![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_no_name_2.PNG){:style="width:50%;"}
-
-1. Select a **Commitment Type** from the pull-down menu.
-2. In the **Purpose for signing this document**, type the purpose or leave blank.
-3. Click **Change** if you need to change the signer.
-4. Click **Sign**.
-5. Follow the prompt to enter your **PIN**, and then click **OK**.
-
-![Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:40%;"}
+    ![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG){:style="width:60%;"}
+    In the **Sign** dialog box: 
+    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_no_name_2.PNG){:style="width:50%;"}
+7. Select a **Commitment Type** from the pull-down menu.
+8. In the **Purpose for signing this document**, type the purpose or leave blank.
+9. Click **Change** if you need to change the signer.
+10. Click **Sign**.
+11. Follow the prompt to enter your **PIN**, and then click **OK**.
+    ![Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:40%;"}
 
 If the digital signature certificate and PIN are valid, the document is signed and automatically saved under the same filename.  This is the file that you submit to OFR via the web portal.
 
@@ -68,8 +63,7 @@ One of the issuing agencies should serve as the primary or lead coordinating age
 ## Remove Invisible Digital Signatures
 
 Open the Microsoft Word document that contains the invisible signature you want to remove.
-
-![Doc Invisible Signatures]({{site.baseurl}}/img/ofr_remove_invisible_sign_4.png){:style="width:65%;"}
+    ![Doc Invisible Signatures]({{site.baseurl}}/img/ofr_remove_invisible_sign_4.png){:style="width:65%;"}
 
 1. In the header, you may see the option to **View Signatures**.  Click that button and proceed to step 5; otherwise:
 2. Click the **File** tab.
