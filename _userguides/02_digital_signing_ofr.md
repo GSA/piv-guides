@@ -29,15 +29,14 @@ Do NOT use the Insert Signature function (under the **INSERT** tab in the Micros
 6. From the drop-down list, click **Add a Digital Signature**.
     ![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG){:style="width:60%;"}
     
-    In the **Sign** dialog box: 
-    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_no_name_2.PNG){:style="width:50%;"}
+    In the **Sign** dialog box:
+        ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_no_name_2.PNG){:style="width:50%;"}
 7. Select a **Commitment Type** from the pull-down menu.
 8. In the **Purpose for signing this document**, type the purpose or leave blank.
 9. Click **Change** if you need to change the signer.
 10. Click **Sign**.
 11. Follow the prompt to enter your **PIN**, and then click **OK**.
     ![Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:40%;"}
-
 If the digital signature certificate and PIN are valid, the document is signed and automatically saved under the same filename.  This is the file that you submit to OFR via the web portal.
 
 For multiple-signatory documents (e.g., dual-agency submissions), the first signer forwards the signed document to the next signer, who repeats the signing process for the already-signed file.  (See the [Multiple Digital Signatories](#multiple-digital-signatories) section.)  All digital signatories' names and job titles must appear in the signature block of the document. 
