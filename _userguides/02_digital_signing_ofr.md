@@ -75,9 +75,7 @@ Open the Microsoft Word document that contains the invisible signature you want 
 2. Click the **File** tab.
 3. Click **Info**.
 4. Click **View Signatures**.
-
     ![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:90%;"}&nbsp;
-
 6. Next to the signature name, click the drop-down arrow.
 7. Click **Remove Signature**.
 8. Click **Yes**.
