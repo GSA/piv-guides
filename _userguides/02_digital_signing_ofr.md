@@ -74,7 +74,7 @@ Open the Microsoft Word document that contains the invisible signature you want 
 1. In the header, you may see the option to **View Signatures**.  Click that button and proceed to step 5; otherwise:
 2. Click the **File** tab.
 3. Click **Info**.
-4. Click **View Signatures**. _The **Signatures** pane appears._
+4. Click **View Signatures**.
     
     ![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:90%;"}&nbsp;
     
