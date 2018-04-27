@@ -28,6 +28,7 @@ Do NOT use the Insert Signature function (under the **INSERT** tab in the Micros
 5. Click **Protect Document**.
 6. From the drop-down list, click **Add a Digital Signature**.
     ![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG){:style="width:60%;"}
+    
     In the **Sign** dialog box: 
     ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_no_name_2.PNG){:style="width:50%;"}
 7. Select a **Commitment Type** from the pull-down menu.
@@ -63,7 +64,8 @@ One of the issuing agencies should serve as the primary or lead coordinating age
 ## Remove Invisible Digital Signatures
 
 Open the Microsoft Word document that contains the invisible signature you want to remove.
-    ![Doc Invisible Signatures]({{site.baseurl}}/img/ofr_remove_invisible_sign_4.png){:style="width:65%;"}
+
+![Doc Invisible Signatures]({{site.baseurl}}/img/ofr_remove_invisible_sign_4.png){:style="width:65%;"}
 
 1. In the header, you may see the option to **View Signatures**.  Click that button and proceed to step 5; otherwise:
 2. Click the **File** tab.
