@@ -2,7 +2,7 @@
 layout: default
 navtitle: Digitally Signing in Microsoft Word - Office of the Federal Register
 title: Digitally Sign a Microsoft Word Document - Office of the Federal Register
-pubDate: April 27, 2018
+pubDate: May 1, 2018
 collection: userguides
 permalink: userguides/signworddoc-ofr/
 description: This guide will walk you through the Office of the Federal Register's procedures for digitally signing a Microsoft Word document with invisible digital signatures using your PIV credential or similar digital certificate.
