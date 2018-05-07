@@ -4,20 +4,20 @@ title: Template Title of This Page
 permalink: /template/
 ---
 
-Markdown is a simple way of writing and formatting.  The formats can be used across many different platforms including for websites and documents.  We created a sample template to help you with your page. 
+Markdown is a simple way of writing and formatting.  The formats can be used across many different platforms, including for websites and documents.  We created a sample template to help you with your page. 
 
-To review information on how to contribute and how to Add a New Page: https://piv.idmanagement.gov/contribute 
-If you want to learn more about markdown formatting: https://guides.github.com/features/mastering-markdown/
+To review information about how to contribute and how to add a new page: https://piv.idmanagement.gov/contribute 
+If you want to learn more about Markdown formatting: https://guides.github.com/features/mastering-markdown/
 
-You can copy and paste this template into a new page, and use the sample markdown. 
+You can copy and paste this template into a new page, and use the sample Markdown below. 
 
-You probably noticed this block at the top of the page.  
+You probably noticed this block at the top of the page:  
 
 layout: default  
 title: Title of the Page  
 permalink: /template/  
 
-This block at the top of the page is used for website navigation when your guide is posted.  Update the _Title of the Page_ and the _/template/_ 
+This block at the top of the page is used for website navigation when your guide is posted.  Update the **title** (_Title of the Page_) and the ***permalink** (_/template/_). 
 
 ## Overview
 
@@ -31,16 +31,16 @@ Then add a table of contents link for each section. For example:
 
 We propose these sections for most guides:
 
-## Before You get Started
+## Before You Get Started
 This section should tell the user what to prepare before starting a set of procedures. Explain any assumptions as bulleted lists. Clearly state the hardware and software requirements. 
 
 ## Procedure 1
 This section should tell the user how to achieve the goal. Explain all steps simply and don't try to recreate other resources that are easily found.  Focus on the government and what can be unique when implementing or executing.
 
 ## Procedure 2
-This section should tell the user how to achieve the goal. Explain all steps simply and don't try to recreate other resources that are easily found.  Focus on the government and what can be unique when implementing or executing. 
+This section should tell the user how to achieve the goal. Explain all steps simply and don't try to recreate other resources that are easily found.  Focus on the government and what is unique when implementing or executing. 
 
-Here are sample markdown formats for you:
+Here are sample Markdown formats for you:
 
 Headings use the hash sign with a space. 
 
@@ -83,11 +83,11 @@ For example:
 
 ### Code Comments
 
-Code comments will be invisible in a webpage view, but others will be able to see the comment in GitHub Markdown. <!--For example, this code denotes a comment. It will not appear on a webpage but can be used as a reference for others viewing the file.-->
+Code comments will be invisible in a webpage view, but others will be able to see the comments in GitHub Markdown's **Edit** mode. <!--For example, this code denotes a comment. It will not appear on a webpage but can be used as a reference for others viewing the file.-->
 
 ### Images
 
-To insert an image into your Page, upload the image file to the **/img/** folder in the GitHub repository.  Then at the image insertion point in your page, add these formats to link to the image.
+To insert an image into your page, upload the image file to the **/img/** folder in the GitHub repository.  Then at the image insertion point in your page, add these formats to link to the image:
 
 ![This is what I want a screen reader to say for 508 compliance]({{site.baseurl}}/img/imagename.png)
 
