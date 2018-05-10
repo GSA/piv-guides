@@ -24,6 +24,9 @@
 					<h1 id="{{ page.title | slugify }}">
 						{{ page.title }}
 					</h1>
+					{% if page.pubDate != null %}
+					 &nbsp;<strong>Publish Date:</strong> {{ page.pubDate }}
+					{% endif %}
 					<div class="usa-serif">
 						{{ content }}
 					</div><!--/usa-serif -->
