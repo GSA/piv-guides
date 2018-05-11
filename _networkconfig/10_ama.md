@@ -28,28 +28,51 @@ AMA is available for domains operating on Windows Server 2008 R2 and later versi
 
 #### Authentication Pass-Through to a Federation service
 
-A Federal employee authenticates to their Agencies intranet using smartcard logon with their PIV Card and attempts to access a local SharePoint site. 
+A Federal employee authenticates to the agency's intranet using a PIV credential, and attempts to access an application hosted by a different federal agency. 
  
-The SharePoint site is restricted to only allow users access who have authenticated with a valid PIV Authentication Certificate. All other users are denied access to the SharePoint site. 
+- The application is restricted to only allow users access who have authenticated with a valid PIV Authentication Certificate. 
+- All other users are denied access to the website. 
  
-This Federal employee successfully accesses the local SharePoint site.
+This Federal employee successfully accesses the other federal agency application with minimal inputs. 
  
-This Federal employee is successful because at logon to their workstation their PIV Authentication Certificate is parsed and the Policy OID asserted within the certificate allows Microsoft Active Directory (AD) to place the user in an additional AD group. This AD group membership is specifically for PIV Card authenticated users. The SharePoint site is configured to restrict access to all users who are not members of the PIV Card authenticated users group.
+This Federal employee is successful because:
+
+- the employee's home agency has a Federation Service installed, and
+- the employee's home agency has integrated with the other federal agency's Federation Service
+
+During and after logon to the network, the following steps are executed without the Federal employee's intervention:
+ 
+1.	The PIV Authentication Certificate is parsed,
+2.  The Policy OID asserted within the certificate allows Microsoft AD on the home agency network to assign the user to a group specifically for PIV credential authenticated users, 
+2.	The user's session is granted a Kerberos ticket that includes the additional group membership,
+2.  The user browses to the other federal agency application,
+2.  The user's browser is redirected to their home agency Federation Service,
+2.  The Federation Service at the home agency finds the Kerberos ticket for the user's session,
+2.  A Security Assertion Markup Language (SAML) assertion is created by the Federation Service (this is a token translation),
+2.  The SAML assertion includes the AD group membership information signifying that the user authenticated with a PIV credential,
+2.  The user's browser is redirected back to the other federal agency application,
+2.  The user is successfully authenticated with the valid SAML assertion, and
+2.  The federal agency application is configured to only allow access to users who are authenticated using a PIV credential. 
+
+In this use case and steps, the user did **not** have to authenticate directly with the PIV credential to the other agency's application.  A federation model was used.    
+
+{% include alert-info.html content="One example to view this implementation pattern is Max.gov.  At the Max.gov login page, the bottom section contains the Login with Agency icons.  Each of those icons redirects the user back to their home agency federation services." %}
+
 
 #### Authentication Pass-Through for Integrated Windows Authentication
 
-A Federal employee authenticates to their Agencies Intranet using smartcard logon with their PIV Card and attempts to access to a website hosted by a different Federal Agency. 
+A Federal employee authenticates to their Agencies intranet using a PIV credential and attempts to access a local SharePoint site. 
+
+- The SharePoint site is restricted to only allow users access who have authenticated with a valid PIV Authentication Certificate. 
+- All other users are denied access to the SharePoint site. 
  
-The website is restricted to only allow users access who have authenticated with a valid PIV Authentication Certificate. All other users are denied access to the website. 
+The Federal employee successfully accesses the local SharePoint site.
  
-This Federal employee successfully accesses the other Federal Agency website.
+1.	The PIV Authentication Certificate is parsed,
+2.  The Policy OID asserted within the certificate allows Microsoft AD on the home agency network to assign the user to a group specifically for PIV credential authenticated users, 
+2.	The user's session is granted a Kerberos ticket that includes the additional group membership, and
+2.  The SharePoint site is configured to only allow access to users who are authenticated using a PIV credential.
  
-This Federal employee is successful because the employee’s Agency has an Active Directory Federation Services (ADFS) trust relationship established with the other Federal Agency hosting the website. At logon to their workstation:
- 
-1.	Their PIV Authentication Certificate is parsed and the Policy OID asserted within the certificate allows Microsoft AD to place the user in an additional AD group specifically for PIV Card authenticated users; and
-2.	They are granted a Kerberos ticket that includes the additional AD group membership.
- 
-This Federal employee attempts to access the other Federal Agency website and is redirected to their Agencies ADFS server to authenticate. Their Kerberos ticket is presented to the ADFS server and they are authenticated. After the successful authentication to ADFS a Security Assertion Markup Language (SAML) assertion is created. The SAML assertion includes the AD group membership information signifying them as having a valid PIV Card. They are redirected back to the other Federal Agency website and are successfully authenticated with the valid SAML assertion. The website is configured to restrict access to all users who are not members of the PIV Card authenticated users group. 
 
 ### Implementation
 You can use this PowerShell script [CertificateIssuanceOIDs.ps1](https://github.com/GSA/ficam-scripts-public/tree/master/_ama){:target="_blank"} to import a list of certificate issuance policies.  
