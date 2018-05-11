@@ -72,7 +72,7 @@ An sample output of the script is shown below. You have to specify the location 
 ```
   PS C:\> C:\AMA\Script\CertificateIssuanceOIDs.ps1 -GroupDN 'ou=groups,ou=security,dc=agency,dc=gov'
   
-  Created CN=id-fpki-common-authentication,OU=Groups,OU=Administrators,DC=agency,DC=gov  
+  Created CN=id-fpki-common-authentication,ou=groups,ou=security,dc=agency,dc=gov  
   2.16.840.1.101.3.2.1.3.13 -- Unknown ObjectId  
   
   Localized name added to DS store.
