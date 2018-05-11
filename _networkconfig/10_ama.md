@@ -26,9 +26,30 @@ AMA is available for domains operating on Windows Server 2008 R2 and later versi
 
 ### Use Case Scenarios
 
-Authentication Pass-Through to a Federation service
-Authentication Pass-Through for Integrated Windows Authentication
+#### Authentication Pass-Through to a Federation service
 
+A Federal employee authenticates to their Agencies intranet using smartcard logon with their PIV Card and attempts to access a local SharePoint site. 
+ 
+The SharePoint site is restricted to only allow users access who have authenticated with a valid PIV Authentication Certificate. All other users are denied access to the SharePoint site. 
+ 
+This Federal employee successfully accesses the local SharePoint site.
+ 
+This Federal employee is successful because at logon to their workstation their PIV Authentication Certificate is parsed and the Policy OID asserted within the certificate allows Microsoft Active Directory (AD) to place the user in an additional AD group. This AD group membership is specifically for PIV Card authenticated users. The SharePoint site is configured to restrict access to all users who are not members of the PIV Card authenticated users group.
+
+#### Authentication Pass-Through for Integrated Windows Authentication
+
+A Federal employee authenticates to their Agencies Intranet using smartcard logon with their PIV Card and attempts to access to a website hosted by a different Federal Agency. 
+ 
+The website is restricted to only allow users access who have authenticated with a valid PIV Authentication Certificate. All other users are denied access to the website. 
+ 
+This Federal employee successfully accesses the other Federal Agency website.
+ 
+This Federal employee is successful because the employee’s Agency has an Active Directory Federation Services (ADFS) trust relationship established with the other Federal Agency hosting the website. At logon to their workstation:
+ 
+1.	Their PIV Authentication Certificate is parsed and the Policy OID asserted within the certificate allows Microsoft AD to place the user in an additional AD group specifically for PIV Card authenticated users; and
+2.	They are granted a Kerberos ticket that includes the additional AD group membership.
+ 
+This Federal employee attempts to access the other Federal Agency website and is redirected to their Agencies ADFS server to authenticate. Their Kerberos ticket is presented to the ADFS server and they are authenticated. After the successful authentication to ADFS a Security Assertion Markup Language (SAML) assertion is created. The SAML assertion includes the AD group membership information signifying them as having a valid PIV Card. They are redirected back to the other Federal Agency website and are successfully authenticated with the valid SAML assertion. The website is configured to restrict access to all users who are not members of the PIV Card authenticated users group. 
 
 ### Implementation
 You can use this PowerShell script [CertificateIssuanceOIDs.ps1](https://github.com/GSA/ficam-scripts-public/tree/master/_ama){:target="_blank"} to import a list of certificate issuance policies.  
@@ -47,11 +68,12 @@ You will provide the script the Group Distinguished Name (DN) for where to creat
 
 You may have to change the [powershell script execution policy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1&viewFallbackFrom=powershell-Microsoft.PowerShell.Core){:target="_blank"} to execute this script or sign the script to execute it after downloading.
 
-An sample output of the script is shown below.
+An sample output of the script is shown below. You have to specify the location (GroupDN) where you want the AD groups to be created.
 
 ```
-  PS C:\> C:\AMA\Script\CertificateIssuanceOIDs.ps1  
-  Created CN=id-fpki-common-authentication,OU=Groups,OU=Administrators,DC=agency,DC=gov  
+  PS C:\> C:\AMA\Script\CertificateIssuanceOIDs.ps1 -GroupDN 'ou=groups,ou=security,dc=agency,dc=gov'
+  
+  Created CN=id-fpki-common-authentication,ou=groups,ou=security,dc=agency,dc=gov  
   2.16.840.1.101.3.2.1.3.13 -- Unknown ObjectId  
   
   Localized name added to DS store.
@@ -60,6 +82,18 @@ An sample output of the script is shown below.
   
   Created CN=13.255922318A2AF32EC47D5B70735D4DB3,CN=OID,CN=Public Key Services,CN=Services,CN=Configuration,DC=agency,DC=gov  
   AD AMA set for 2.16.840.1.101.3.2.1.3.13  id-fpki-common-authentication  
+```
+
+If the GroupDN is not entered in the command line while executing the script, it will prompt for the input.
+
+```
+PS C:\> C:\AMA\Script\CertificateIssuanceOIDs.ps1 
+cmdlet ama-script.ps1 at command pipeline position 1
+Supply values for the following parameters:
+GroupDN: ou=groups,ou=security,dc=agency,dc=gov
+==============================================
+Group DN entered is ou=groups,ou=security,dc=agency,dc=gov.
+
 ```
 
 ### Testing
