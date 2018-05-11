@@ -26,9 +26,30 @@ AMA is available for domains operating on Windows Server 2008 R2 and later versi
 
 ### Use Case Scenarios
 
-Authentication Pass-Through to a Federation service
-Authentication Pass-Through for Integrated Windows Authentication
+#### Authentication Pass-Through to a Federation service
 
+A Federal employee authenticates to their Agencies intranet using smartcard logon with their PIV Card and attempts to access a local SharePoint site. 
+ 
+The SharePoint site is restricted to only allow users access who have authenticated with a valid PIV Authentication Certificate. All other users are denied access to the SharePoint site. 
+ 
+This Federal employee successfully accesses the local SharePoint site.
+ 
+This Federal employee is successful because at logon to their workstation their PIV Authentication Certificate is parsed and the Policy OID asserted within the certificate allows Microsoft Active Directory (AD) to place the user in an additional AD group. This AD group membership is specifically for PIV Card authenticated users. The SharePoint site is configured to restrict access to all users who are not members of the PIV Card authenticated users group.
+
+#### Authentication Pass-Through for Integrated Windows Authentication
+
+A Federal employee authenticates to their Agencies Intranet using smartcard logon with their PIV Card and attempts to access to a website hosted by a different Federal Agency. 
+ 
+The website is restricted to only allow users access who have authenticated with a valid PIV Authentication Certificate. All other users are denied access to the website. 
+ 
+This Federal employee successfully accesses the other Federal Agency website.
+ 
+This Federal employee is successful because the employee’s Agency has an Active Directory Federation Services (ADFS) trust relationship established with the other Federal Agency hosting the website. At logon to their workstation:
+ 
+1.	Their PIV Authentication Certificate is parsed and the Policy OID asserted within the certificate allows Microsoft AD to place the user in an additional AD group specifically for PIV Card authenticated users; and
+2.	They are granted a Kerberos ticket that includes the additional AD group membership.
+ 
+This Federal employee attempts to access the other Federal Agency website and is redirected to their Agencies ADFS server to authenticate. Their Kerberos ticket is presented to the ADFS server and they are authenticated. After the successful authentication to ADFS a Security Assertion Markup Language (SAML) assertion is created. The SAML assertion includes the AD group membership information signifying them as having a valid PIV Card. They are redirected back to the other Federal Agency website and are successfully authenticated with the valid SAML assertion. The website is configured to restrict access to all users who are not members of the PIV Card authenticated users group. 
 
 ### Implementation
 You can use this PowerShell script [CertificateIssuanceOIDs.ps1](https://github.com/GSA/ficam-scripts-public/tree/master/_ama){:target="_blank"} to import a list of certificate issuance policies.  
