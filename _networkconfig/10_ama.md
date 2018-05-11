@@ -5,7 +5,7 @@ collection: networkconfig
 permalink: networkconfig/ama/
 ---
 
-When a user authenticates and you've enabled single-sign-on to applications inside your network domain, you may need to know what type of authenticator a user used: 
+When a user authenticates to the network and you've enabled single-sign-on to applications inside your network domain, you need to know what type of authenticator was used: 
 
 - A username and password, 
 - A PIV credential, or
@@ -36,13 +36,14 @@ You can use this PowerShell script [CertificateIssuanceOIDs.ps1](https://github.
 This script:
 
 - Simplifies the steps for setting up the policies 
-- Contains the list of certificate policy object identifiers focused on US Federal government agencies 
+- Contains the list of certificate policy object identifiers in use by US Federal Government agencies only
 - Creates security groups with the same name as the certificate issuance policies 
 - Links the policies to the groups
 
-You need to modify the script for the following variables:
+You will provide the script the Group Distinguished Name (DN) for where to create the security groups in your network directory. 
 
-- **insert variable here and what the modification should be**
+- CertificateIssuanceOIDs.ps1 -GroupDN \<group DN string>
+- Example:  CertificateIssuanceOIDs.ps1 -GroupDN 'OU=Groups,OU=Administrators,DC=agency,DC=gov'
 
 You may have to change the [powershell script execution policy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1&viewFallbackFrom=powershell-Microsoft.PowerShell.Core){:target="_blank"} to execute this script or sign the script to execute it after downloading.
 
