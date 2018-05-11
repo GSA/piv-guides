@@ -67,10 +67,11 @@ You need to modify the script for the following variables:
 
 You may have to change the [powershell script execution policy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1&viewFallbackFrom=powershell-Microsoft.PowerShell.Core){:target="_blank"} to execute this script or sign the script to execute it after downloading.
 
-An sample output of the script is shown below.
+An sample output of the script is shown below. You have to specify the location (GroupDN) where you want the AD groups to be created.
 
 ```
-  PS C:\> C:\AMA\Script\CertificateIssuanceOIDs.ps1  
+  PS C:\> C:\AMA\Script\CertificateIssuanceOIDs.ps1 -GroupDN 'ou=groups,ou=security,dc=agency,dc=gov'
+  
   Created CN=id-fpki-common-authentication,OU=Groups,OU=Administrators,DC=agency,DC=gov  
   2.16.840.1.101.3.2.1.3.13 -- Unknown ObjectId  
   
@@ -80,6 +81,18 @@ An sample output of the script is shown below.
   
   Created CN=13.255922318A2AF32EC47D5B70735D4DB3,CN=OID,CN=Public Key Services,CN=Services,CN=Configuration,DC=agency,DC=gov  
   AD AMA set for 2.16.840.1.101.3.2.1.3.13  id-fpki-common-authentication  
+```
+
+If the GroupDN is not entered in the command line while executing the script, it will prompt for the input.
+
+```
+PS C:\> C:\AMA\Script\CertificateIssuanceOIDs.ps1 
+cmdlet ama-script.ps1 at command pipeline position 1
+Supply values for the following parameters:
+GroupDN: ou=groups,ou=security,dc=agency,dc=gov
+==============================================
+Group DN entered is ou=groups,ou=security,dc=agency,dc=gov.
+
 ```
 
 ### Testing
