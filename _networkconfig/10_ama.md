@@ -5,15 +5,15 @@ collection: networkconfig
 permalink: networkconfig/ama/
 ---
 
-<!--This section's approach seem quite different that the 1st Use Case, which is complex but understandable. This section doesn't tell the same story. I'm not sure what this introduction is trying to say after reading Use Case 1.-->When a user authenticates to your network and you've enabled Single Sign-on to applications inside your network domain, you need to know which of these authenticators was used: 
+When a user authenticates to your network and you've enabled Single Sign-on to applications inside your network domain, you need to know which of these authenticators was used: 
 
 - A username and password 
 - A PIV credential
 - An alternate authenticator  
-<!--How does the engineer identify the authenticator type? It sounds like we are about to explain this, but then we don't. Is it a well-known process that doesn't need to be described?  The AMA process doesn't address this--only how to set more "granular" access privileges...?-->
-You need to know the type of authenticator to implement increasingly granular authorization policies, as well as to grant or deny a user access to information available from applications and shared network resources.   
+<!--It sounds like we're about to tell the engineer how to identify which authenticator type was used, but we don't.  The Use Cases focus only on PIV credential authentication and no other authenticator types are discussed beyond this point, so the reader may well be left wondering...how do I know which authenticator type the user used?-->
+You need to know the type of authenticator to implement increasingly granular authorization policies, as well as to grant or deny a user access to information available from applications and shared network resources. <!--Authorization policies are not discussed anywhere below that I could tell.-->  
 
-To grant more granular authorizations and accesses, you can use a Windows Active Directory (AD) feature called _Authentication Mechanism Assurance (AMA)_. AMA allows you to add a group membership identifier to the user’s Kerberos token, based on the type of authenticator used.
+To grant a user access to information, applications, and resources, you can use a Windows Active Directory (AD) feature called _Authentication Mechanism Assurance (AMA)_. AMA allows you to add a group membership identifier to the user’s Kerberos token, based on the type of authenticator used. This groupmember <!--Add a link that tells how to identify what authenticator type was used?  There's this one, which mentions AMA: [Was a smart-card used for logon?](https://social.technet.microsoft.com/wiki/contents/articles/11844.find-out-if-a-smart-card-was-used-for-logon.aspx){:target="_blank"}-->
 
 {% include alert-warning.html content="Do not use AMA to provide privileged user access." %}
 
