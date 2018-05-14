@@ -36,7 +36,7 @@ You can run the script with a few simple steps:
 1. You'll need to specify the Group Distinguished Name (GroupDN) within the script. This targets where you want to create the security groups in your network directory: 
 
 - `CertificateIssuanceOIDs.ps1 -GroupDN \<group DN string>`
-- `For example: CertificateIssuanceOIDs.ps1 -GroupDN 'OU=Groups,OU=Administrators,DC=agency,DC=gov'`
+- For example: `CertificateIssuanceOIDs.ps1 -GroupDN 'OU=Groups,OU=Administrators,DC=agency,DC=gov'`
 
 2. After downloading this script, you may need to change the [PowerShell script execution policy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1&viewFallbackFrom=powershell-Microsoft.PowerShell.Core){:target="_blank"} to execute the script or sign the script to execute it.
 
@@ -61,12 +61,12 @@ An sample output from the script is shown below:
 **Note:**&nbsp;&nbsp;If the GroupDN is not entered in the command line when executing the script, it will prompt for the input.
 
 ```
-PS C:\> C:\AMA\Script\CertificateIssuanceOIDs.ps1 
-cmdlet ama-script.ps1 at command pipeline position 1
-Supply values for the following parameters:
-GroupDN: ou=groups,ou=security,dc=agency,dc=gov
+  PS C:\> C:\AMA\Script\CertificateIssuanceOIDs.ps1 
+  cmdlet ama-script.ps1 at command pipeline position 1
+  Supply values for the following parameters:
+  GroupDN: ou=groups,ou=security,dc=agency,dc=gov
 ==============================================
-GroupDN entered is ou=groups,ou=security,dc=agency,dc=gov
+  GroupDN entered is ou=groups,ou=security,dc=agency,dc=gov
 
 ```
 
