@@ -10,10 +10,10 @@ When a user authenticates to your network and you've enabled Single Sign-on to a
 - A username and password 
 - A PIV credential
 - An alternate authenticator  
-<!--It sounds like we're about to tell the engineer how to identify which authenticator type was used, but we don't.  The Use Cases focus only on PIV credential authentication and no other authenticator types are discussed beyond this point, so the reader may well be left wondering...how do I know which authenticator type the user used?-->
-You need to know the type of authenticator to implement increasingly granular authorization policies, as well as to grant or deny a user access to information available from applications and shared network resources. <!--Authorization policies are not discussed anywhere below that I could tell.-->  
+<!--It sounds like we're about to explain how to identify which authenticator type was used, but we don't.  The Use Cases focus only on PIV credential authentication and no other authenticator types are discussed beyond this point, so the reader may well wonder: how do I know which authenticator type the user used? Add a link(?) that tells them how to identify what authenticator type was used?  There's this one, which mentions AMA: [Was a smart-card used for logon?](https://social.technet.microsoft.com/wiki/contents/articles/11844.find-out-if-a-smart-card-was-used-for-logon.aspx){:target="_blank"}-->
+You need to know the type of authenticator to implement increasingly granular authorization policies, as well as to grant or deny a user access to information available from applications and shared network resources.<!--Again, how do they find out?--> 
 
-To grant a user access to information, applications, and resources, you can use a Windows Active Directory (AD) feature called _Authentication Mechanism Assurance (AMA)_. AMA allows you to add a group membership identifier to the user’s Kerberos token, based on the type of authenticator used. This groupmember <!--Add a link that tells how to identify what authenticator type was used?  There's this one, which mentions AMA: [Was a smart-card used for logon?](https://social.technet.microsoft.com/wiki/contents/articles/11844.find-out-if-a-smart-card-was-used-for-logon.aspx){:target="_blank"}-->
+To grant a user access, based on the type of authenticator used, you can use a Windows Active Directory (AD) feature called _Authentication Mechanism Assurance (AMA)_. AMA allows you to add a group membership identifier to the user’s Kerberos token.
 
 {% include alert-warning.html content="Do not use AMA to provide privileged user access." %}
 
@@ -25,22 +25,22 @@ AMA is available for domains operating on Windows Server 2008 R2 and later versi
 - [Other Considerations](#other-considerations)
 
 ## Implementation
-You can use this PowerShell script [CertificateIssuanceOIDs.ps1](https://github.com/GSA/ficam-scripts-public/tree/master/_ama){:target="_blank"} to import and set up a list of certificate issuance policies so you can .... <!--What does it enable the engineer to do?-->. This script:
+You can use this PowerShell script [CertificateIssuanceOIDs.ps1](https://github.com/GSA/ficam-scripts-public/tree/master/_ama){:target="_blank"} to import and set up a list of certificate issuance policies. This script:
 
 - Contains a list of certificate issuance policy object identifiers (OIDs) used by U.S. Federal Government agencies
-- Creates security groups with the same names as the policies 
-- Links the policies to the groups
+- Creates security groups with the same names as the policies <!--Will they understand what a security group is-?->. 
+- Links the policies to the security groups
 
-Running the script requires only a few simple steps:
+You can run the script with a few simple steps:
 
-1. You'll need to specify the Group Distinguished Name (GroupDN) within the script to target where you want to create the security groups in your network directory: <!--This step seems to repeat the idea below: "You will need to specify the location (GroupDN)... -->
+1. You'll need to specify the Group Distinguished Name (GroupDN) within the script. This targets where you want to create the security groups in your network directory: 
 
 - `CertificateIssuanceOIDs.ps1 -GroupDN \<group DN string>`
 - `For example: CertificateIssuanceOIDs.ps1 -GroupDN 'OU=Groups,OU=Administrators,DC=agency,DC=gov'`
 
 2. After downloading this script, you may need to change the [PowerShell script execution policy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1&viewFallbackFrom=powershell-Microsoft.PowerShell.Core){:target="_blank"} to execute the script or sign the script to execute it.
 
-<!--This sounds like repeat of step #1 above-->You have to specify the location (GroupDN) where you want the AD groups to be created.
+<!--Delete? Repeat of step #1 above?-->You have to specify the location (GroupDN) where you want the AD groups to be created.
 
 An sample output from the script is shown below: 
 
@@ -66,12 +66,12 @@ cmdlet ama-script.ps1 at command pipeline position 1
 Supply values for the following parameters:
 GroupDN: ou=groups,ou=security,dc=agency,dc=gov
 ==============================================
-Group DN entered is ou=groups,ou=security,dc=agency,dc=gov.
+GroupDN entered is ou=groups,ou=security,dc=agency,dc=gov
 
 ```
 
 ## Testing
-To test the output on your network domain, you'll log in with your PIV credential and check the groups assigned.  
+To test the output on your network domain, log in with your PIV credential and check the groups assigned.  
 
 - Authenticate with your PIV credential
 - From the command line: `C:\whoami /groups`
@@ -88,7 +88,7 @@ To test the output on your network domain, you'll log in with your PIV credentia
 
 A federal employee authenticates to the agency's intranet using a PIV credential and attempts to access an application hosted by a different federal agency. 
  
-- The application is restricted to allow access by users who have authenticated with a valid PIV Authentication Certificate. 
+- The application is restricted to allow access by only users who have authenticated with a valid PIV Authentication Certificate. 
 - All other users are denied access to the application. 
  
 This federal employee successfully accesses the other federal agency's application with minimal inputs. The employee is successful because:
@@ -100,19 +100,19 @@ During and after the employee's logon to the network, the following steps were e
  
 1.	 The PIV Authentication Certificate is parsed
 2.  The Policy OID asserted within the certificate allows Microsoft AD on the home agency's network to assign the user to a group specifically for PIV-credentialed, authenticated users 
-2.	 The user's session is granted a Kerberos ticket that includes the additional group membership<!--group membership is authenticated users who can access other agencies' applications?-->
+2.	 The user's session is granted a Kerberos ticket that includes the additional group membership<!--group membership is authenticated PIV users?-->
 2.  The user browses to the other federal agency's application
-2.  The user's browser is redirected to his/her <!--fyi--"their" is actually incorrect grammar. "His/her" admittedly is more clunky but it's correct usage.-->home agency's Federation Service
+2.  The user's browser is redirected to his/her <!--"His/her" is admittedly more clunky but it's correct usage; "their" is incorrect.-->home agency's Federation Service
 2.  The Federation Service at the home agency finds the Kerberos ticket for the user's session
 2.  A Security Assertion Markup Language (SAML) assertion is created by the Federation Service (This is a token translation.)
-2.  The SAML assertion includes the AD group membership information that identifies that the user authenticated with a PIV credential
+2.  The SAML assertion includes the AD group membership information that identifies that this user authenticated with a PIV credential
 2.  The user's browser is redirected back to the other federal agency's application
 2.  The user is successfully authenticated with the valid SAML assertion
 2.  The other federal agency's application is configured to allow access to only those users who have authenticated using a PIV credential 
-<!--wow, that's complex!-->
+
 In this Use Case and steps, the user did **not** have to authenticate directly with a PIV credential to the other agency's application.  A federation model was used.    
 
-{% include alert-info.html content="One example for viewing this implementation pattern is Max.gov.  If you click on the upper right-hand Login button, you'll see the Max.gov LOGIN page. The bottom section allows you to click an agency icon.  Each of these icons redirects the user back to that agency's federation services." %}
+{% include alert-info.html content="One example for viewing this implementation pattern is Max.gov.  If you click on the upper right-hand Login button, you'll see the Max.gov LOGIN page. The bottom section allows you to click on an agency icon.  Each of these icons redirects the user back to that agency's Federation Service." %}
 
 ### Authentication Pass-Through for Integrated Windows Authentication
 
@@ -127,12 +127,12 @@ During and after the employee's logon to the network and attempt to access the S
  
 1.	The PIV Authentication Certificate is parsed
 2.  The Policy OID asserted within the certificate allows Microsoft AD on the home agency network to assign the user to a group specifically for PIV-credentialed, authenticated users
-2.	The user's session is granted a Kerberos ticket that includes the additional group membership<!--Otherwise the user would be able to log into the network but not the SharePoint site?-->
-2.  The SharePoint site is configured to only allow access to users who are authenticated using a PIV credential <!--Repeated idea.  This was stated above.-->
+2.	The user's session is granted a Kerberos ticket that includes the additional group membership
+2.  The SharePoint site is configured to only allow access to only those users who have authenticated using a PIV credential <!--Repeated idea.  This was stated above in first bullet.-->
  
 
 ## Other Considerations and References
-<!--Is this a needed extra step or nice-to-have and for what reason?  No explanation about when to take this step.-->
+<!--Is this a needed extra step or nice-to-have and for what reason?  When should engineers take this step?-->
 Use the Windows Registry Editor to set the _AMA Priority_ above _Most Recently Issued Superior Certificate Heuristic_:  
 
 - `[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]`
@@ -140,5 +140,4 @@ Use the Windows Registry Editor to set the _AMA Priority_ above _Most Recently I
 
 
 1. Refer to [AMA Step-by-Step Guide](https://technet.microsoft.com/en-us/library/dd378897(v=WS.10).aspx){:target=_"blank"} to understand the implementation of AMA.
-
 
