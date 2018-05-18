@@ -135,5 +135,5 @@ Use the Windows Registry Editor to set the _AMA Priority_ above _Most Recently I
 - `"ChainWithIssuancePolicyOIDs"=dword:00000001`
 
 
-1. Refer to [AMA Step-by-Step Guide](https://technet.microsoft.com/en-us/library/dd378897(v=WS.10).aspx){:target=_"blank"} to understand the implementation of AMA.
+Refer to [AMA Step-by-Step Guide](https://technet.microsoft.com/en-us/library/dd378897(v=WS.10).aspx){:target=_"blank"} to understand the implementation of AMA.
 
