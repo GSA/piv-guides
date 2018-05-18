@@ -10,8 +10,8 @@ When a user authenticates to your network and you've enabled Single Sign-on to a
 - A username and password 
 - A PIV credential
 - An alternate authenticator  
-<!--It sounds like we're about to explain how to identify which authenticator type was used, but we don't.  The Use Cases focus only on PIV credential authentication and no other authenticator types are discussed beyond this point, so the reader may well wonder: how do I know which authenticator type the user used? Add a link(?) that tells them how to identify what authenticator type was used?  There's this one, which mentions AMA: [Was a smart-card used for logon?](https://social.technet.microsoft.com/wiki/contents/articles/11844.find-out-if-a-smart-card-was-used-for-logon.aspx){:target="_blank"}-->
-You need to know the type of authenticator to implement increasingly granular authorization policies, as well as to grant or deny a user access to information available from applications and shared network resources.<!--Again, how do they find out?--> 
+  
+You need to know the type of authenticator to implement increasingly granular authorization policies, and grant or deny a user access to information available from applications and shared network resources. 
 
 To grant a user access, based on the type of authenticator used, you can use a Windows Active Directory (AD) feature called _Authentication Mechanism Assurance (AMA)_. AMA allows you to add a group membership identifier to the user’s Kerberos token.
 
@@ -28,19 +28,17 @@ AMA is available for domains operating on Windows Server 2008 R2 and later versi
 You can use this PowerShell script [CertificateIssuanceOIDs.ps1](https://github.com/GSA/ficam-scripts-public/tree/master/_ama){:target="_blank"} to import and set up a list of certificate issuance policies. This script:
 
 - Contains a list of certificate issuance policy object identifiers (OIDs) used by U.S. Federal Government agencies
-- Creates security groups with the same names as the policies <!--Will they understand what a security group is-?->. 
+- Creates security groups with the same names as the policies 
 - Links the policies to the security groups
 
-You can run the script with a few simple steps:
+You can run the script with a few simple steps.
 
-1. You'll need to specify the Group Distinguished Name (GroupDN) within the script. This targets where you want to create the security groups in your network directory: 
+- You'll need to specify the Group Distinguished Name (GroupDN) within the script. This targets where you want to create the security groups in your network directory: 
 
-- `CertificateIssuanceOIDs.ps1 -GroupDN \<group DN string>`
-- For example: `CertificateIssuanceOIDs.ps1 -GroupDN 'OU=Groups,OU=Administrators,DC=agency,DC=gov'`
+  - `CertificateIssuanceOIDs.ps1 -GroupDN \<group DN string>`
+  - For example: `CertificateIssuanceOIDs.ps1 -GroupDN 'OU=Groups,OU=Administrators,DC=agency,DC=gov'`
 
-2. After downloading this script, you may need to change the [PowerShell script execution policy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1&viewFallbackFrom=powershell-Microsoft.PowerShell.Core){:target="_blank"} to execute the script or sign the script to execute it.
-
-<!--Delete? Repeat of step #1 above?-->You have to specify the location (GroupDN) where you want the AD groups to be created.
+- After downloading this script, you may need to change the [PowerShell script execution policy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1&viewFallbackFrom=powershell-Microsoft.PowerShell.Core){:target="_blank"} to execute the script or sign the script to execute it.
 
 An sample output from the script is shown below: 
 
@@ -75,7 +73,6 @@ To test the output on your network domain, log in with your PIV credential and c
 
 - Authenticate with your PIV credential
 - From the command line: `C:\whoami /groups`
-<!--Below is the output from the command line entry?-->
 
 ```
   agency\id-fpki-common-authentication   Group  S-1-5-21-179144328 1-1764752353-2202401552-1113   
@@ -98,11 +95,11 @@ This federal employee successfully accesses the other federal agency's applicati
 
 During and after the employee's logon to the network, the following steps were executed without the employee's intervention:
  
-1.	 The PIV Authentication Certificate is parsed
-2.  The Policy OID asserted within the certificate allows Microsoft AD on the home agency's network to assign the user to a group specifically for PIV-credentialed, authenticated users 
-2.	 The user's session is granted a Kerberos ticket that includes the additional group membership<!--group membership is authenticated PIV users?-->
+1.	The PIV authentication certificate is parsed
+2.  The certificate policy OID asserted allows Microsoft AD on the home agency's network to assign the user to a group specifically for PIV authenticated users 
+2.	The user's session is granted a Kerberos ticket that includes the additional group membership
 2.  The user browses to the other federal agency's application
-2.  The user's browser is redirected to his/her <!--"His/her" is admittedly more clunky but it's correct usage; "their" is incorrect.-->home agency's Federation Service
+2.  The user's browser is redirected to his/her home agency's Federation Service
 2.  The Federation Service at the home agency finds the Kerberos ticket for the user's session
 2.  A Security Assertion Markup Language (SAML) assertion is created by the Federation Service (This is a token translation.)
 2.  The SAML assertion includes the AD group membership information that identifies that this user authenticated with a PIV credential
@@ -125,14 +122,13 @@ The federal employee successfully accesses the local SharePoint site.
 
 During and after the employee's logon to the network and attempt to access the SharePoint site, the following steps were executed without the employee's intervention:
  
-1.	The PIV Authentication Certificate is parsed
-2.  The Policy OID asserted within the certificate allows Microsoft AD on the home agency network to assign the user to a group specifically for PIV-credentialed, authenticated users
+1.	The PIV authentication certificate is parsed
+2.  The certificate policy OID asserted allows Microsoft AD on the home agency's network to assign the user to a group specifically for PIV authenticated users
 2.	The user's session is granted a Kerberos ticket that includes the additional group membership
-2.  The SharePoint site is configured to only allow access to only those users who have authenticated using a PIV credential <!--Repeated idea.  This was stated above in first bullet.-->
+2.  The SharePoint site is configured to only allow access to only those users who have authenticated using a PIV credential 
  
 
 ## Other Considerations and References
-<!--Is this a needed extra step or nice-to-have and for what reason?  When should engineers take this step?-->
 Use the Windows Registry Editor to set the _AMA Priority_ above _Most Recently Issued Superior Certificate Heuristic_:  
 
 - `[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\kdc]`
