@@ -22,7 +22,7 @@ Check the following items **before** reviewing these network guides and lessons 
 
 ## Configuration Checklist
 
-There are five configuration categories to review with your colleagues.  All five includes steps that need to be completed and it's best to review and complete in this order:    
+There are five configuration categories to review with your colleagues.  All five includes steps that must be completed and it's best to review and complete in this order:    
 
 - [Network Ports and Protocols]({{site.baseurl}}/networkconfig/ports/)
 - [Domain Controllers]({{site.baseurl}}/networkconfig/domaincontrollers/)
@@ -31,10 +31,11 @@ There are five configuration categories to review with your colleagues.  All fiv
 - [Group Policies and Enforcement]({{site.baseurl}}/networkconfig/grouppolicies/)
 
 
-There are two additional guides with pointers for tuning and using a local certification authority for domain controller certificates:
+There are three additional guides:
 
 - [Network Tuning]({{site.baseurl}}/networkconfig/tuning/)
 - [Local Certification Authority]({{site.baseurl}}/networkconfig/localca/)
+- [Authentication Assurance]({{site.baseurl}}/networkconfig/ama/)
 
 We want to add additional information for installing online certificate status protocol (OCSP) services, common errors and troubleshooting, and configuring MacOSX and other operating systems.  
 
