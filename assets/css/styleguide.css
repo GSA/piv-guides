@@ -1766,7 +1766,7 @@ p a,
   background-repeat: no-repeat;
   background-size: 4rem;
   margin-top: 1.5em;
-  margin-bottom: 3rem
+  margin-bottom: 3rem;
   padding: 1em; }
   @media screen and (min-width: 600px) {
     .usa-alert {
@@ -1801,21 +1801,33 @@ p a,
 
 .usa-alert-success {
   background-color: #e7f4e4;
+  padding-bottom: .5em;
+  padding-top: .5em;
+  background-position-y: .35em;
   background-image: url("../img/alerts/success.png");
   background-image: url("../img/alerts/success.svg"); }
 
 .usa-alert-warning {
   background-color: #fff1d2;
+  padding-bottom: .5em;
+  padding-top: .5em;
+  background-position-y: .35em;
   background-image: url("../img/alerts/warning.png");
   background-image: url("../img/alerts/warning.svg"); }
 
 .usa-alert-error {
   background-color: #f9dede;
+  padding-bottom: .5em;
+  padding-top: .5em;
+  background-position-y: .35em;
   background-image: url("../img/alerts/error.png");
   background-image: url("../img/alerts/error.svg"); }
 
 .usa-alert-info {
   background-color: #e1f3f8;
+  padding-bottom: .5em;
+  padding-top: .5em;
+  background-position-y: .35em;
   background-image: url("../img/alerts/info.png");
   background-image: url("../img/alerts/info.svg"); }
 
