@@ -8,30 +8,35 @@ permalink: userguides/signworddoc-ofr/
 description: This guide will walk you through the Office of the Federal Register's procedures for digitally signing a Microsoft Word document with invisible digital signatures using your PIV credential or similar digital certificate.
 ---
 
-The digital signatory of a document MUST be the same person whose name is typed in the signature block.  The names must match exactly or meet the accepted standards listed in the Office of the Federal Register's _Document Drafting Handbook_, Chapter 1.  To verify the name as applied to the digital certificate, follow the instructions below in the [View Signature Certificate](#view-signature-certificate) section.
+The digital signatory of a document MUST be the same person whose name is typed in the signature block.  The names must match exactly or meet the accepted standards listed in the Office of the Federal Register's _Document Drafting Handbook_ (DDH), Ch. 1.  To verify the name as applied to the digital certificate, follow the instructions below in the [View Signature Certificate in Word](#view-signature-certificate-in-word) section.
 
-By using the native Microsoft Word digital-signing capability, it will apply your Public Key Infrastructure (PKI) certificate to the document, guaranteeing the authenticity of the signer and the document.  Once applied, your document is protected and cannot be edited without removing the digital signature.  (**Note:**&nbsp;&nbsp;The Microsoft Word digital-signing process saves the signed document under the same filename.)
+Using the native Microsoft (MS) Word signing capability applies your Public Key Infrastructure (PKI) certificate to the document, guaranteeing the authenticity of the signer and the document.  Once applied, your document is protected and cannot be edited without removing the digital signature. The MS Word signing process also saves the signed document _under the same filename_!
 
-Do NOT use the Insert Signature function (under the **INSERT** tab in the Microsoft Word ribbon).  Follow the instructions below to invisibly sign your document (i.e., add an invisible signature), as this is the format that OFR will accept.
+Do NOT use the Insert Signature function (under the **INSERT** tab in the Word ribbon).  Follow the instructions below to sign the document invisibly as this is the format OFR will accept.
 
+**<Remove the links--Jordan?>**
 - [Add Invisible Digital Signatures](#add-invisible-digital-signatures)
 - [Multiple Digital Signatories](#multiple-digital-signatories)
 - [Remove Invisible Digital Signatures](#remove-invisible-digital-signatures)
-- [View Signature Certificate](#view-signature-certificate)
+- [View Signature Certificate in Word](#view-signature-certificate-in-word)
 
-## Add Invisible Digital Signatures
+## Add Invisible Digital Signatures in Word
 
-1. Open your Microsoft Word document.
-2. Insert your PIV card into your card reader. 
-3. Click the **File** tab.
+1. Open your MS Word document in Word. Any changes must be saved prior to signing.
+2. If you have a purchased PKI credential installed on your computer, proceed to Step 3. Otherwise, insert your Federal Government-issued Personal Identity Verification (PIV) card into your card reader. 
+3. Click the **File** tab.<br>
+    ![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_new_1.PNG){:style="width:60%;"}<br>
 4. Click **Info**. 
 5. Click **Protect Document**.
-6. From the drop-down list, click **Add a Digital Signature**.
-    ![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG){:style="width:60%;"}<br>
-    In the **Sign** dialog box:<br>
+6. Click **Add a Digital Signature**.
+7. In the **Sign** dialog box:<br>
     ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_no_name_2.PNG){:style="width:50%;"}
-7. Select a **Commitment Type** from the pull-down menu.
-8. In the **Purpose for signing this document**, type the purpose or leave blank.
+**Modify image above to include "[Name appears here]
+* Select a **Commitment Type** from the pull-down menu.
+* In the **Purpose for signing this document**, type the purpose or leave blank.
+* New
+* New
+
 9. Click **Change** if you need to change the signer.
 10. Click **Sign**.
 11. Follow the prompt to enter your **PIN**, and then click **OK**.<br>
@@ -74,7 +79,7 @@ Open the Microsoft Word document that contains the invisible signature you want 
 7. Click **Remove Signature**.
 8. Click **Yes**.
 
-## View Signature Certificate
+## View Signature Certificate in Word
 
 You can check the details of the digital certificate(s) used to sign a Microsoft Word document (e.g., the name assigned to the certificate or expiration date).
 
