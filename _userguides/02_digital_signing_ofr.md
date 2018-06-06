@@ -30,8 +30,7 @@ Do NOT use the Insert Signature function (under the **INSERT** tab in the Word r
 5. Click **Protect Document**.
 6. Click **Add a Digital Signature**.
 7. In the **Sign** dialog box:<br>
-    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_no_name_2.PNG){:style="width:50%;"}
-**Modify image above to include "[Name appears here]
+    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_2.png){:style="width:50%;"}
 * Select a **Commitment Type** from the pull-down menu.
 * In the **Purpose for signing this document**, type the purpose or leave blank.
 * New
