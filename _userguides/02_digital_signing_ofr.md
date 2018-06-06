@@ -25,7 +25,7 @@ Do NOT use the Insert Signature function (under the **INSERT** tab in the Word r
 1. Open your MS Word document in Word. Any changes must be saved prior to signing.
 2. If you have a purchased PKI credential installed on your computer, proceed to Step 3. Otherwise, insert your Federal Government-issued Personal Identity Verification (PIV) card into your card reader. 
 3. Click the **File** tab.<br>
-    ![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_new_1.PNG){:style="width:60%;"}<br>
+    ![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_new_1.png){:style="width:60%;"}<br>
 4. Click **Info**. 
 5. Click **Protect Document**.
 6. Click **Add a Digital Signature**.
