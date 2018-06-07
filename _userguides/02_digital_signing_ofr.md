@@ -26,17 +26,18 @@ Do NOT use the Insert Signature function (under the **INSERT** tab in the Word r
 5. Click **Protect Document**.
 6. Click **Add a Digital Signature**.
 7. In the **Sign** dialog box:<br>
-    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_3.png){:style="width:50%;"}<br>
+    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_3.png){:style="width:60%;"}<br><br>
 * Select a **Commitment Type** from the pull-down menu.
 * In the **Purpose for signing this document**, type the purpose or leave blank.
 * To ensure the correct certificate is used, click the **Change** button.
-* In the **Certificate Selection** box, there may be multiple certificates.  Select the first **unexpired** certificate with your name and then _Click here to view the certificate properties_.
+* In the **Certificate Selection** box, there may be multiple certificates.  Select the first **unexpired** certificate with your name and then _Click here to view the certificate properties_.<br>
     ![OFR Windows Security Certificate Type]({{site.baseurl}}/img/_windows_security_piv_or_purch_cert.png){:style="width:40%;"}<br>
 * The Certificate Details box appears.  Go to the Details tab and scroll down to Key Usage.  Single-click on it.  The lower text box should now display “Digital Signature, Non-Repudiation” (for PIV card certificate) or “Digital Signature” (for purchased certificate).  If it does, then this is the right certificate. Click OK to close the window and proceed with signing.
+* If this is the wrong certificate, click **OK**. Then select another certificate and repeat these steps until you find the correct certificate.
+* Click **Sign**.
 **CELESTE STOPPED HERE**
-9. Click **Change** if you need to change the signer.
-10. Click **Sign**.
-11. Follow the prompt to enter your **PIN**, and then click **OK**.<br>
+
+8. Follow prompt to enter **PIN**. Then click **OK**.<br>
     ![Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:40%;"}<br>
 If the digital signature certificate and PIN are valid, the document is signed and automatically saved under the same filename.  This is the file that you submit to OFR via the web portal.
 
