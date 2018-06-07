@@ -2,23 +2,19 @@
 layout: default
 navtitle: Digitally Signing in Microsoft Word - Office of the Federal Register
 title: Digitally Sign a Microsoft Word Document - Office of the Federal Register
-pubDate: May 1, 2018
+pubDate: June 11, 2018
 collection: userguides
 permalink: userguides/signworddoc-ofr/
 description: This guide will walk you through the Office of the Federal Register's procedures for digitally signing a Microsoft Word document with invisible digital signatures using your PIV credential or similar digital certificate.
 ---
+
+# Instructions for Digitally Signing Documents for Submission to the Office of the Federal Register (OFR)
 
 The digital signatory of a document MUST be the same person whose name is typed in the signature block.  The names must match exactly or meet the accepted standards listed in the Office of the Federal Register's _Document Drafting Handbook_ (DDH), Ch. 1.  To verify the name as applied to the digital certificate, follow the instructions below in the [View Signature Certificate in Word](#view-signature-certificate-in-word) section.
 
 Using the native Microsoft (MS) Word signing capability applies your Public Key Infrastructure (PKI) certificate to the document, guaranteeing the authenticity of the signer and the document.  Once applied, your document is protected and cannot be edited without removing the digital signature. The MS Word signing process also saves the signed document _under the same filename_!
 
 Do NOT use the Insert Signature function (under the **INSERT** tab in the Word ribbon).  Follow the instructions below to sign the document invisibly as this is the format OFR will accept.
-
-**<Remove the links--Jordan?>**
-- [Add Invisible Digital Signatures](#add-invisible-digital-signatures)
-- [Multiple Digital Signatories](#multiple-digital-signatories)
-- [Remove Invisible Digital Signatures](#remove-invisible-digital-signatures)
-- [View Signature Certificate in Word](#view-signature-certificate-in-word)
 
 ## Add Invisible Digital Signatures in Word
 
@@ -30,12 +26,14 @@ Do NOT use the Insert Signature function (under the **INSERT** tab in the Word r
 5. Click **Protect Document**.
 6. Click **Add a Digital Signature**.
 7. In the **Sign** dialog box:<br>
-    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_2.png){:style="width:50%;"}<br>
+    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_3.png){:style="width:50%;"}<br>
 * Select a **Commitment Type** from the pull-down menu.
 * In the **Purpose for signing this document**, type the purpose or leave blank.
-* New
-* New
-
+* To ensure the correct certificate is used, click the **Change** button.
+* In the **Certificate Selection** box, there may be multiple certificates.  Select the first **unexpired** certificate with your name and then _Click here to view the certificate properties_.
+    ![OFR Windows Security Certificate Type]({{site.baseurl}}/img/_windows_security_piv_or_purch_cert.png){:style="width:40%;"}<br>
+* The Certificate Details box appears.  Go to the Details tab and scroll down to Key Usage.  Single-click on it.  The lower text box should now display “Digital Signature, Non-Repudiation” (for PIV card certificate) or “Digital Signature” (for purchased certificate).  If it does, then this is the right certificate. Click OK to close the window and proceed with signing.
+**CELESTE STOPPED HERE**
 9. Click **Change** if you need to change the signer.
 10. Click **Sign**.
 11. Follow the prompt to enter your **PIN**, and then click **OK**.<br>
