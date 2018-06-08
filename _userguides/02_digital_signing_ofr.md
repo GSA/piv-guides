@@ -8,7 +8,7 @@ permalink: userguides/signworddoc-ofr/
 description: This guide will walk you through the Office of the Federal Register's procedures for digitally signing a Microsoft Word document with invisible digital signatures using your PIV credential or similar digital certificate.
 ---
 
-# Instructions for Digitally Signing Documents for Submission to the Office of the Federal Register (OFR)
+## Instructions for Digitally Signing Documents for Submission<br>to the Office of the Federal Register (OFR)
 
 The digital signatory of a document MUST be the same person whose name is typed in the signature block.  The names must match exactly or meet the accepted standards listed in the Office of the Federal Register's _Document Drafting Handbook_ (DDH), Ch. 1.  To verify the name as applied to the digital certificate, follow the instructions below in the [View Signature Certificate in Word](#view-signature-certificate-in-word) section.
 
@@ -26,12 +26,12 @@ Do NOT use the Insert Signature function (under the **INSERT** tab in the Word r
 5. Click **Protect Document**.
 6. Click **Add a Digital Signature**.
 7. In the **Sign** dialog box:<br>
-    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_3.png){:style="width:60%;"}<br><br>
+    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_3.png){:style="width:70%;"}<br><br>
 * Select a **Commitment Type** from the pull-down menu.
 * In the **Purpose for signing this document**, type the purpose or leave blank.
 * To ensure the correct certificate is used, click the **Change** button.
 * In the **Certificate Selection** box, there may be multiple certificates.  Select the first **unexpired** certificate with your name and then _Click here to view the certificate properties_.<br>
-    ![OFR Windows Security Certificate Type]({{site.baseurl}}/img/_windows_security_piv_or_purch_cert.png){:style="width:40%;"}<br>
+    ![OFR Windows Security Certificate Type]({{site.baseurl}}/img/ofr_windows_sec_piv_or_purch_cert.png){:style="width:40%;"}<br>
 * The Certificate Details box appears.  Go to the Details tab and scroll down to Key Usage.  Single-click on it.  The lower text box should now display “Digital Signature, Non-Repudiation” (for PIV card certificate) or “Digital Signature” (for purchased certificate).  If it does, then this is the right certificate. Click OK to close the window and proceed with signing.
 * If this is the wrong certificate, click **OK**. Then select another certificate and repeat these steps until you find the correct certificate.
 * Click **Sign**.
