@@ -26,16 +26,16 @@ Do NOT use the Insert Signature function (under the **INSERT** tab in the Word r
 5. Click **Protect Document**.
 6. Click **Add a Digital Signature**.
 7. In the **Sign** dialog box:<br>
-    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_3.png){:style="width:70%;"}<br><br>
-* a. Select a **Commitment Type** from the pull-down menu.
-* b. In the **Purpose for signing this document**, type the purpose or leave blank.
-* c. To ensure the correct certificate is used, click the **Change** button.
-* d. In the **Certificate Selection** box, there may be multiple certificates.  Select the first **unexpired** certificate with your name and then _Click here to view the certificate properties_.<br>
+    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_3.png){:style="width:70%;"}<br>
+* Select a **Commitment Type** from the pull-down menu.
+* In the **Purpose for signing this document**, type the purpose or leave blank.
+* To ensure the correct certificate is used, click the **Change** button.
+* In the **Certificate Selection** box, there may be multiple certificates.  Select the first **unexpired** certificate with your name and then _Click here to view the certificate properties_.<br>
     ![OFR Windows Security Certificate Type]({{site.baseurl}}/img/ofr_windows_sec_piv_or_purch_cert.png){:style="width:60%;"}<br>
-* e. The Certificate Details box appears.  Go to the Details tab and scroll down to Key Usage.  Single-click on it.  The lower text box should now display “Digital Signature, Non-Repudiation” (for PIV card certificate) or “Digital Signature” (for purchased certificate).  If it does, then this is the right certificate. Click OK to close the window and proceed with signing.<br>
+* The Certificate Details box appears.  Go to the Details tab and scroll down to Key Usage.  Single-click on it.  The lower text box should now display “Digital Signature, Non-Repudiation” (for PIV card certificate) or “Digital Signature” (for purchased certificate).  If it does, then this is the right certificate. Click OK to close the window and proceed with signing.<br>
     ![OFR Certificate Details]({{site.baseurl}}/img/ofr_certificate_details.png){:style="width:60%;"}<br>
-* f. If this is the wrong certificate, click **OK**. Then select another certificate and repeat these steps until you find the correct certificate.
-* g. Click **Sign**.
+* If this is the wrong certificate, click **OK**. Then select another certificate and repeat these steps until you find the correct certificate.
+* Click **Sign**.
 8. Follow prompt to enter **PIN**; then click **OK**.<br>
     ![OFR Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:45%;"}<br>
 If the digital signature certificate and PIN are valid, the document is signed and automatically saved under the same filename.  This is the file you submit to OFR via the web portal.<br>
@@ -46,8 +46,6 @@ For multiple-signatory documents (e.g., dual-agency submissions), the first sign
 A digital signature can be removed if necessary.  This might be handy if last-minute changes are needed or if a different signatory is desired. Remember that the document will have to be re-signed prior to submission to OFR.  See "Remove Invisible Digital Signatures in Word" below.
 
 ## **Add?** Multiple Digital Signatories??? in Word
-
-**CELESTE STOPPED HERE**
 
 Multi-agency digital submissions are not only possible but recommended.  Exactly like paper-and-disk submissions&mdash;if multiple agencies are submitting a document for publication, OFR receives only one document, signed by all agencies.  For example, if six agencies are jointly issuing a rule, OFR does NOT get six submissions of the same rule.  Regardless of the method of submission, the legal requirements are the same (i.e., representatives from all of the issuing agencies must sign the document, per DDH, Chapter 1.6).  If one or more of the agencies are unable or unwilling to digitally sign the document, it must be submitted via the conventional paper-and-disk procedure described in the DDH.
 
