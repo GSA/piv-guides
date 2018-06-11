@@ -73,7 +73,7 @@ One of the issuing agencies should serve as the primary or lead coordinating age
 3. Click the **File** tab.
 4. Click **Info**.
 5. Click **View Signatures**. _The **Signatures** pane appears._<br><br/>
-    ![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:110%;"}&nbsp;
+![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:120%;"}&nbsp;
     
 6. Next to the signature name, click the arrow.
 7. Click **Remove Signature**.
@@ -96,40 +96,40 @@ Open the signed MS Word document containing the certificate(s) you want to check
 
 ## FAQs
 
-### We’ve been using the free GSA Digital Signing Tool to sign documents.  Do we need to change?
+### 1. We’ve been using the free GSA Digital Signing Tool to sign documents.  Do we need to change?
 Not right away, but you need to follow the provided instructions to adopt the MS Word signing procedures sooner rather than later.  The GSA Digital Signing Tool is no longer supported and may malfunction.
 
-### Will the portal accept both “.p7m” and “.docx” files?
+### 2. Will the portal accept both “.p7m” and “.docx” files?
 Yes, for the time being.  Many agencies still use the signing process that creates a “.p7m” file for submission via the portal.  Since we will accept signed MS Word files with the “.docx” extension, the portal has been configured to accept both on an interim basis.
 
-### So “.p7m” files will eventually stop being accepted?
+### 3. So “.p7m” files will eventually stop being accepted?
 Exactly.  OFR encourages agencies to make the procedural migration to MS Word signing as soon as possible.
 
-### When will you stop accepting “.p7m” files?
+### 4. When will you stop accepting “.p7m” files?
 The end of FY2018, September 30.  We’ll give plenty of advance notice, including a blurb on the portal website.
 
-### But “.p7m” files are how we do it now.  It’s worked for years; why change?
+### 5. But “.p7m” files are how we do it now.  It’s worked for years; why change?
 The signing process that creates the “.p7m” file was adopted more than a decade ago as OFR’s technical and legal standard for ensuring the validity of submissions.  Now, the software used to create the “.p7m” file is no longer updated or supported; consequently, it is failing.  One of the options under consideration was procuring ongoing technical support for the software, an option that would easily run into hundreds of thousands of taxpayer dollars over the next few years.  However, technological and security improvements in MS Word allow OFR to adopt the native MS Word signing function as the secure standard for digitally signed documents.
 
-### I don’t get it.  What’s a “.p7m” file?
+### 6. I don’t get it.  What’s a “.p7m” file?
 If you don’t know, don’t worry about it.  Just follow the provided instructions to sign using MS Word.
 
-### What special software do we need to buy and install to make this work?
+### 7. What special software do we need to buy and install to make this work?
 None.  As a federal agency, you should already have MS Office 2010 or later installed.  Simply follow the provided instructions to digitally sign your documents.  
 
-### All we need is MS Word 2010 or later?
+### 8. All we need is MS Word 2010 or later?
 Yes, that and your signing credential, either the one on your PIV card or the one you purchased and is currently installed on your computer.  
 
-### We purchased our signing certificates from GPO or another vendor.  We use them to sign, which creates the .p7m file.  What do we do now?
+### 9. We purchased our signing certificates from GPO or another vendor.  We use them to sign, which creates the .p7m file.  What do we do now?
 If you are using purchased certificates, such as from an Entrust vendor, you can continue to use them.  Instead of being on a PIV card, your certificate is installed on your computer.  Follow the [Add Invisible Digital Signatures in Word](#add-invisible-digital-signatures-in-word) instructions above to sign your MS Word file.
 
-### How do I identify the PIV Card Certificates and Purchased Certificates when signing a document?
+### 10. How do I identify the PIV Card Certificates and Purchased Certificates when signing a document?
 You can identify the correct certificate, as detailed in Step 7 of the [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) instructions above. Note the different icons for the PIV and purchased certificates:<br><br/>
     ![Certificate Type Icons]({{site.baseurl}}/img/ofr_certificate_types.png){:style="width:40%;"}&nbsp;
 
-### Some of our signers use MS Word for Apple on iPad.  Will this work for PKI submission?
+### 11. Some of our signers use MS Word for Apple on iPad.  Will this work for PKI submission?
 Microsoft has not put that function (PKI-based digital signatures) into the MS Word for Mac (Office for Mac) software.  We recognize that some agencies have signers that use the Mac platform, and we expect to run testing when this function becomes available.  
 
-### I already have a web portal submission account.  Do I need to update it or reapply?
+### 12. I already have a web portal submission account.  Do I need to update it or reapply?
 No.
 
