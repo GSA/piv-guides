@@ -18,14 +18,14 @@ Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the MS W
 
 1. Open your MS Word document. Any changes must be saved prior to signing.
 2. If you have a purchased PKI credential installed on your computer, proceed to Step 3. Otherwise, insert your Federal Government-issued Personal Identity Verification (PIV) card into your card reader.
-3. Click the **File** tab.
+3. Click the **File** tab.<br><br/>
     ![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG){:style="width:70%;"}&nbsp;
 
 4. Click **Info**.
 5. Click **Protect Document**.
 6. Click **Add a Digital Signature**.
-7. In the **Sign** dialog box:<br/>
-    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_3.png){:style="width:75%;"}
+7. In the **Sign** dialog box:<br><br/>
+    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_3.png){:style="width:75%;"}&nbsp;
 8. Select a **Commitment Type** from the pull-down menu.
 9. In the **Purpose for signing this document**, type the purpose or leave blank.
 10. To ensure the correct certificate is used, click the **Change** button.
@@ -38,7 +38,7 @@ Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the MS W
 13. If this is the wrong certificate, click **OK**; then, select another certificate and repeat these steps until you find the correct certificate.
 14. Click **Sign**.
 15. Follow the prompt to enter your **PIN**; then, click **OK**.<br><br/>
-    ![OFR Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:58%;"}
+    ![OFR Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:58%;"}&nbsp;
     
 * If the digital signature certificate and PIN are valid, the document is signed and automatically saved under the same filename.  This is the file you submit to OFR via the web portal.<br><br/>
          ![OFR Signature Confirmation]({{site.baseurl}}/img/ofr_signature_confirmation.png){:style="width:58%;"}
