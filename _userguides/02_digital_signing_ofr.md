@@ -18,8 +18,9 @@ Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the MS W
 
 1. Open your MS Word document. Any changes must be saved prior to signing.
 2. If you have a purchased PKI credential installed on your computer, proceed to Step 3. Otherwise, insert your Federal Government-issued Personal Identity Verification (PIV) card into your card reader.
-3. Click the **File** tab.</br>
-    ![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG){:style="width:75%;"}&nbsp;
+3. Click the **File** tab.
+    ![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG){:style="width:70%;"}&nbsp;
+
 4. Click **Info**.
 5. Click **Protect Document**.
 6. Click **Add a Digital Signature**.
@@ -28,8 +29,8 @@ Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the MS W
 8. Select a **Commitment Type** from the pull-down menu.
 9. In the **Purpose for signing this document**, type the purpose or leave blank.
 10. To ensure the correct certificate is used, click the **Change** button.
-11. In the Certificate Selection box, there may be multiple certificates.  Select the first _unexpired_ certificate with your name and then _Click here to view the certificate properties_.<br/>
-    ![OFR Windows Security Certificate Type]({{site.baseurl}}/img/ofr_windows_sec_piv_or_purch_cert.png){:style="width:85%;"}&nbsp;
+11. In the Certificate Selection box, there may be multiple certificates.  Select the first _unexpired_ certificate with your name and then _Click here to view the certificate properties_.<br><br/>
+    ![OFR Windows Security Certificate Type]({{site.baseurl}}/img/ofr_windows_sec_piv_or_purch_cert.png){:style="width:80%;"}&nbsp;
      
 12. _The **Certificate Details** box appears._ Go to the _Details_ tab and scroll down to _Key Usage_.  Single-click on it.  The lower text box should now display “Digital Signature, Non-Repudiation” (for PIV card certificate) or “Digital Signature” (for purchased certificate).  If it does, then this is the right certificate. Click **OK** to close the window and proceed with signing.<br><br/>
     ![OFR Certificate Details]({{site.baseurl}}/img/ofr_certificate_details.png){:style="width:60%;"}&nbsp;
@@ -37,10 +38,10 @@ Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the MS W
 13. If this is the wrong certificate, click **OK**; then, select another certificate and repeat these steps until you find the correct certificate.
 14. Click **Sign**.
 15. Follow the prompt to enter your **PIN**; then, click **OK**.<br><br/>
-    ![OFR Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:55%;"}
+    ![OFR Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:58%;"}
     
 * If the digital signature certificate and PIN are valid, the document is signed and automatically saved under the same filename.  This is the file you submit to OFR via the web portal.<br><br/>
-         ![OFR Signature Confirmation]({{site.baseurl}}/img/ofr_signature_confirmation.png){:style="width:55%;"}
+         ![OFR Signature Confirmation]({{site.baseurl}}/img/ofr_signature_confirmation.png){:style="width:58%;"}
 
 * For multiple-signatory documents (for example, dual-agency submissions), the first signer forwards the signed document to the next signer, who repeats the signing process on the _already-signed file_. (See [Add Multiple Digital Signatories in MS Word](#add-multiple-digital-signatories-in-ms-word) below.)  All digital signatories must have their names and job titles typed in the signature block of the document. 
 
@@ -72,7 +73,7 @@ One of the issuing agencies should serve as the primary or lead coordinating age
 3. Click the **File** tab.
 4. Click **Info**.
 5. Click **View Signatures**. _The **Signatures** pane appears._<br><br/>
-    ![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:100%;"}&nbsp;
+    ![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:110%;"}&nbsp;
     
 6. Next to the signature name, click the arrow.
 7. Click **Remove Signature**.
