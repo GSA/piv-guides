@@ -55,7 +55,7 @@ One of the issuing agencies should serve as the primary or lead coordinating age
 
 1. Save the finalized version of the document as an MS Word file (.docx).  Be sure that the digital signatories’ names and job titles are pre-printed in the signature block section of the document.
 2. Coordinate among the issuing agencies the sequence of signing (i.e., determine who will sign first and forward the signed file on for the next signature).  Determine which agency will actually submit the signed file to OFR via the web portal once all signatures are completed.
-3. The representative from the first agency digitally signs the file using the same method as a single-agency submission. (See [Add Invisible Digital Signatories in MS Word](#add-invisible-digital-signatories-in-ms-word) above.)  All signers must ensure that their names and job titles are pre-printed in the signature block section of the document.
+3. The representative from the first agency digitally signs the file using the same method as a single-agency submission. (See [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) above.)  All signers must ensure that their names and job titles are pre-printed in the signature block section of the document.
 4. Email that **signed** file to the next agency for digital signature. 
 5. The representative from the next agency in sequence ensures that his/her name and job title is pre-printed in the signature block section of the document and then digitally signs the _already-signed_ file.  No changes can be made to the signed file without removing the existing signature(s). If changes are required to the Word document, the whole process starts anew with the corrected, unsigned MS Word document.
 6. If there are more issuing agencies, repeat Steps 4 and 5 until all agencies have digitally signed. 
@@ -121,7 +121,7 @@ None.  As a federal agency, you should already have MS Office 2010 or later inst
 Yes, that and your signing credential, either the one on your PIV card or the one your agency purchased that is currently installed on your computer.  
 
 ### 9. We purchased our signing certificates from GPO or another vendor.  We use them to sign, which creates the .p7m file.  What do we do now?
-If you are using purchased certificates, such as from an Entrust vendor, you can continue to use them.  Instead of being on a PIV card, your certificate is installed on your computer.  Follow the [Add Invisible Digital Signatures in Word](#add-invisible-digital-signatures-in-word) instructions above to sign your MS Word file.
+If you are using purchased certificates, such as from an Entrust vendor, you can continue to use them.  Instead of being on a PIV card, your certificate is installed on your computer.  Follow the [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) instructions above to sign your MS Word file.
 
 ### 10. How do I identify the PIV Card Certificates and Purchased Certificates when signing a document?
 You can identify the correct certificate, as detailed in Step 7 of the [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) instructions above. Note the different icons for the PIV and purchased certificates:<br><br/>
