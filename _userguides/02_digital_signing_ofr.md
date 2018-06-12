@@ -17,7 +17,7 @@ Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the MS W
 ## Add Invisible Digital Signatures in MS Word
 
 1. Open your MS Word document. Any changes must be saved prior to signing.
-2. If you have a purchased PKI credential installed on your computer, proceed to Step 3. Otherwise, insert your Federal Government-issued Personal Identity Verification (PIV) card into your card reader.
+2. If you have a purchased PKI credential installed on your computer, proceed to Step 3. Otherwise, insert your Federal Government-issued Personal Identity Verification (PIV) card into your card reader.<br/>
 3.&nbsp;Click the **File** tab.<br><br/>
     ![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG){:style="width:70%;"}&nbsp;
 
