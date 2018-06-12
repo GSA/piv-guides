@@ -18,7 +18,7 @@ Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the MS W
 
 1. Open your MS Word document. Any changes must be saved prior to signing.
 2. If you have a purchased PKI credential installed on your computer, proceed to Step 3. Otherwise, insert your Federal Government-issued Personal Identity Verification (PIV) card into your card reader.
-3. Click the **File** tab.<br><br/>
+3.&nbsp;Click the **File** tab.<br><br/>
     ![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG){:style="width:70%;"}&nbsp;
 
 4. Click **Info**.
@@ -118,7 +118,7 @@ If you don’t know, don’t worry about it.  Just follow the provided instructi
 None.  As a federal agency, you should already have MS Office 2010 or later installed.  Simply follow the provided instructions to digitally sign your documents.  
 
 ### 8. All we need is MS Word 2010 or later?
-Yes, that and your signing credential, either the one on your PIV card or the one you purchased and is currently installed on your computer.  
+Yes, that and your signing credential, either the one on your PIV card or the one your agency purchased that is currently installed on your computer.  
 
 ### 9. We purchased our signing certificates from GPO or another vendor.  We use them to sign, which creates the .p7m file.  What do we do now?
 If you are using purchased certificates, such as from an Entrust vendor, you can continue to use them.  Instead of being on a PIV card, your certificate is installed on your computer.  Follow the [Add Invisible Digital Signatures in Word](#add-invisible-digital-signatures-in-word) instructions above to sign your MS Word file.
@@ -128,7 +128,7 @@ You can identify the correct certificate, as detailed in Step 7 of the [Add Invi
     ![Certificate Type Icons]({{site.baseurl}}/img/ofr_certificate_types.png){:style="width:40%;"}&nbsp;
 
 ### 11. Some of our signers use MS Word for Apple on iPad.  Will this work for PKI submission?
-Microsoft has not put that function (PKI-based digital signatures) into the MS Word for Mac (Office for Mac) software.  We recognize that some agencies have signers that use the Mac platform, and we expect to run testing when this function becomes available.  
+Microsoft has not put that function (PKI-based digital signatures) into the MS Word for Mac (Office for Mac) software.  We recognize that some agencies have signers who use the Mac platform, and we expect to run testing when this function becomes available.  
 
 ### 12. I already have a web portal submission account.  Do I need to update it or reapply?
 No.
