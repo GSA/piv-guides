@@ -1,4 +1,4 @@
-This work is in beta stage and is led by the GSA FICAM Program in coordination with the ICAM Subcommittee of the Federal CIO Council.
+This work is in production and is led by the GSA FICAM Program in coordination with the ICAM Subcommittee of the Federal CIO Council.
 
 # FICAM Guides
 This repository is for the collaborative development of the Federal Identity, Credential, and Access Management **PIV Guides**:   
