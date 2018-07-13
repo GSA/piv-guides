@@ -18,9 +18,7 @@ Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the **Wo
 
 ## Add Invisible Digital Signatures in MS Word
 
-**CELESTE--TURN INTO AN INFO-ALERT BOX??**
-IMPORTANT:  The following instructions apply to MS Word 2013. The signing process for other MS Word versions (e.g., 2010, 2016, Office 365) may vary somewhat. If you have trouble with the signing process, contact OFR at ofrtechgroup@gpo.gov or (202) 741-6020 or your IT support.
-**CELESTE--END INFO-ALERT BOX**
+{% include alert-warning.html content = "IMPORTANT: The following instructions apply to MS Word 2013. The signing process for other MS Word versions (e.g., 2010, 2016, Office 365) may vary somewhat. If you have trouble with the signing process, contact OFR at ofrtechgroup@gpo.gov or 202-741-6020 or your IT support." %}
 
 1. Open your MS Word document in Word. Any changes must be saved before signing.
 2. If you have a purchased PKI credential installed on your computer, proceed to Step 3. Otherwise, insert your Federal Government-issued Personal Identity Verification (PIV) card into your card reader.
@@ -35,25 +33,27 @@ IMPORTANT:  The following instructions apply to MS Word 2013. The signing proces
 8. Select a **Commitment Type** from the pull-down menu.
 9. In the **Purpose for signing this document**, type the purpose or leave blank.
 10. To ensure the correct certificate is used, click the **Change** button.
-11. In the Certificate Selection box, there may be multiple certificates.  Select the first _unexpired_ certificate with your name and then _Click here to view the certificate properties_.<br><br/>
+11. In the **Windows Security** (_Select a certificate_) box, there may be multiple certificates.  Select the first **unexpired** certificate with your name and then _Click here to view the certificate properties_.<br><br/>
     ![OFR Windows Security Certificate Type]({{site.baseurl}}/img/ofr_windows_sec_piv_or_purch_cert.png){:style="width:80%;"}&nbsp;
      
 12. _The **Certificate Details** box appears._ Go to the _Details_ tab and scroll down to _Key Usage_.  Single-click on it.  The lower text box should now display “Digital Signature, Non-Repudiation” (for PIV card certificate) or “Digital Signature” (for purchased certificate).  If it does, then this is the right certificate. Click **OK** to close the window and proceed with signing.<br><br/>
     ![OFR Certificate Details]({{site.baseurl}}/img/ofr_certificate_details.png){:style="width:60%;"}&nbsp;
     
-13. If this is the wrong certificate, click **OK**; then, select another certificate and repeat these steps until you find the correct certificate.
+13. If this is the wrong certificate, click **OK**. Then, select another certificate and repeat these steps until you find the correct certificate.
 14. Click **Sign**.
-15. Follow the prompt to enter your **PIN**; then, click **OK**.<br><br/>
+15. Follow the prompt to enter your **PIN**. Then, click **OK**.<br><br/>
     ![OFR Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:58%;"}&nbsp;
     
-* If the digital signature certificate and PIN are valid, the document is signed and automatically saved under the same filename.  This is the file you submit to OFR via the web portal.<br><br/>
+If the digital signature certificate and PIN are valid, the document is signed and automatically saved _under the same filename!_  This is the file you submit to OFR via the web portal.<br><br/>
          ![OFR Signature Confirmation]({{site.baseurl}}/img/ofr_signature_confirmation.png){:style="width:58%;"}
 
-* For multiple-signatory documents (for example, dual-agency submissions), the first signer forwards the signed document to the next signer, who repeats the signing process on the _already-signed file_. (See [Add Multiple Digital Signatories in MS Word](#add-multiple-digital-signatories-in-ms-word) below.)  All digital signatories must have their names and job titles typed in the signature block of the document. 
+If you are signing multiple documents, leave MS Word open and your smart card inserted to sign without having to re-enter your PIN for each file.
 
-* A digital signature can be removed if necessary.  This might be handy if last-minute changes are needed or if a different signatory is desired. Remember that the document will have to be re-signed prior to submission to OFR.  (See [Remove Invisible Digital Signatures in MS Word](#remove-invisible-digital-signatures-in-ms-word) below.)
+For multiple-signatory documents (e.g., dual-agency submissions), the first signer forwards the signed document to the next signer, who repeats the signing process on the _already-signed file_. (See [Multiple Digital Signatories](#multiple-digital-signatories) section below.)  All digital signatories must have their names and titles typed into a separate signature block in the signature block area of the document. 
 
-## Add Multiple Digital Signatories in MS Word
+A digital signature can be removed if necessary.  This might be handy if last-minute changes are needed or if a different signatory is desired. Remember that the document will have to be re-signed prior to submission to OFR.  (See [Remove Invisible Digital Signatures in MS Word](#remove-invisible-digital-signatures-in-ms-word) below.)
+
+## Multiple Digital Signatories
 
 Multi-agency digital submissions are not only possible but recommended.  Exactly like paper-and-disk submissions, if multiple agencies are submitting a document for publication, OFR receives only one document, signed by all agencies (for example, if six agencies are jointly issuing a rule, OFR does NOT get six submissions of the same rule).  Regardless of the method of submission, the legal requirements are the same (i.e., representatives from all issuing agencies must sign the document, as described in the DDH, 1.6).  If one or more of the agencies are unable or unwilling to digitally sign, the document must be submitted via the conventional paper-and-disk procedure, as described in the DDH.
 
@@ -102,40 +102,40 @@ Open the signed MS Word document containing the certificate(s) you want to check
 
 ## FAQs
 
-### 1. We’ve been using the free GSA Digital Signing Tool to sign documents.  Do we need to change?
+### We’ve been using the free GSA Digital Signing Tool to sign documents.  Do we need to change?
 Not right away, but you need to follow the provided instructions to adopt the MS Word signing procedures sooner rather than later.  The GSA Digital Signing Tool is no longer supported and may malfunction.
 
-### 2. Will the portal accept both “.p7m” and “.docx” files?
-Yes, for the time being.  Many agencies still use the signing process that creates a “.p7m” file for submission via the portal.  Since we will accept signed MS Word files with the “.docx” extension, the portal has been configured to accept both on an interim basis.
+### Will the portal accept both “p7m” and “.docx” files?
+Yes, for the time being.  Many agencies still use the signing process that creates a “p7m” file for submission via the portal.  Since we will accept signed MS Word files with the “.docx” extension, the portal has been configured to accept both on an interim basis.
 
-### 3. So “.p7m” files will eventually stop being accepted?
+### So “p7m” files will eventually stop being accepted?
 Exactly.  OFR encourages agencies to make the procedural migration to MS Word signing as soon as possible.
 
-### 4. When will you stop accepting “.p7m” files?
+### When will you stop accepting “p7m” files?
 The end of FY2018, September 30.  We’ll give plenty of advance notice, including a blurb on the portal website.
 
-### 5. But “.p7m” files are how we do it now.  It’s worked for years; why change?
-The signing process that creates the “.p7m” file was adopted more than a decade ago as OFR’s technical and legal standard for ensuring the validity of submissions.  Now, the software used to create the “.p7m” file is no longer updated or supported; consequently, it is failing.  One of the options under consideration was procuring ongoing technical support for the software, an option that would easily run into hundreds of thousands of taxpayer dollars over the next few years.  However, technological and security improvements in MS Word allow OFR to adopt the native MS Word signing function as the secure standard for digitally signed documents.
+### But “p7m” files are how we do it now.  It’s worked for years; why change?
+The signing process that creates the “p7m” file was adopted more than a decade ago as OFR’s technical and legal standard for ensuring the validity of submissions.  Now, the software used to create the “p7m” file is no longer updated or supported; subsequently, it is failing.  One of the options under consideration was procuring ongoing technical support for the software, an option that would easily run into hundreds of thousands of taxpayer dollars over the next few years.  However, technological and security improvements in MS Word allow OFR to adopt the native MS Word signing function as the secure standard for digitally signed documents.
 
-### 6. I don’t get it.  What’s a “.p7m” file?
+### I don’t get it.  What’s a “p7m” file?
 If you don’t know, don’t worry about it.  Just follow the provided instructions to sign using MS Word.
 
-### 7. What special software do we need to buy and install to make this work?
+### What special software do we need to buy and install to make this work?
 None.  As a federal agency, you should already have MS Office 2010 or later installed.  Simply follow the provided instructions to digitally sign your documents.  
 
-### 8. All we need is MS Word 2010 or later?
+### All we need is MS Word 2010 or later?
 Yes, that and your signing credential, either the one on your PIV card or the one your agency purchased that is currently installed on your computer.  
 
-### 9. We purchased our signing certificates from GPO or another vendor.  We use them to sign, which creates the .p7m file.  What do we do now?
+### We purchased our signing certificates from GPO or another vendor.  We use them to sign, which creates the "p7m" file.  What do we do now?
 If you are using purchased certificates, such as from an Entrust vendor, you can continue to use them.  Instead of being on a PIV card, your certificate is installed on your computer.  Follow the [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) instructions above to sign your MS Word file.
 
-### 10. How do I identify the PIV Card Certificates and Purchased Certificates when signing a document?
+### How do I identify the PIV Card Certificates and Purchased Certificates when signing a document?
 You can identify the correct certificate, as detailed in Step 7 of the [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) instructions above. Note the different icons for the PIV and purchased certificates:<br><br/>
     ![Certificate Type Icons]({{site.baseurl}}/img/ofr_certificate_types.png){:style="width:40%;"}&nbsp;
 
-### 11. Some of our signers use MS Word for Apple on iPad.  Will this work for PKI submission?
+### Some of our signers use MS Word for Apple on iPad.  Will this work for PKI submission?
 Microsoft has not put that function (PKI-based digital signatures) into the MS Word for Mac (Office for Mac) software.  We recognize that some agencies have signers who use the Mac platform, and we expect to run testing when this function becomes available.  
 
-### 12. I already have a web portal submission account.  Do I need to update it or reapply?
+### I already have a web portal submission account.  Do I need to update it or reapply?
 No.
 
