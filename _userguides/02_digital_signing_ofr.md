@@ -2,21 +2,27 @@
 layout: default
 navtitle: Digitally Signing Documents for Submission to Office of the Federal Register
 title: Digitally Signing Documents for Submission to Office of the Federal Register
-pubDate: June 12, 2018
+pubDate: June 17, 2018
 collection: userguides
 permalink: userguides/signworddoc-ofr/
 description: This guide will walk you through the procedures for digitally signing a Microsoft Word document for submission to the Office of the Federal Register using your PIV credential or similar digital certificate.
 ---
 
-The digital signatory of a document MUST be the same person whose name is typed in the signature block.  The names must match exactly or meet the accepted standards listed in the Office of the Federal Register's DDH, Ch. 1.  To verify the name as applied to the digital certificate, follow the instructions below in the [View Signature Certificate in MS Word](#view-signature-certificate-in-ms-word) section.
+The digital signatory of a document MUST be the same person whose name is typed in the signature block.  The names must match exactly or meet the accepted standards listed in the DDH, Ch. 1.  To verify the name as applied to the digital certificate, follow the instructions below in the [View Signature Certificate in MS Word](#view-signature-certificate-in-ms-word) section.
 
-Using the native Microsoft (MS) Word signing capability applies your Public Key Infrastructure (PKI) certificate to the document, guaranteeing the authenticity of the signer and the document.  Once applied, your document is protected and cannot be edited without removing the digital signature. The MS Word signing process saves the signed document _under the same filename_!
+Using the native Microsoft Word signing capability applies your Public Key Infrastructure (PKI) certificate to the document, guaranteeing the authenticity of the signer and the document.  Once applied, your document is protected and cannot be edited without removing the digital signature. The MS Word signing process saves the signed document _under the same filename_!
 
-Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the MS Word ribbon).  Follow the instructions below to sign the document invisibly as this is the format OFR will accept.
+Use MS Word 2010 or later. Only submit ".docx" file types. Older versions of MS Word have no standard method to validate digital signatures.  The old file type ".doc" is not compatible with OFR's digital validation process and is not accepted in the web portal.
+
+Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the **Word** ribbon).  Follow the instructions below to sign the document invisibly as this is the format OFR will accept.
 
 ## Add Invisible Digital Signatures in MS Word
 
-1. Open your MS Word document. Any changes must be saved prior to signing.
+**CELESTE--TURN INTO AN INFO-ALERT BOX??**
+IMPORTANT:  The following instructions apply to MS Word 2013. The signing process for other MS Word versions (e.g., 2010, 2016, Office 365) may vary somewhat. If you have trouble with the signing process, contact OFR at ofrtechgroup@gpo.gov or (202) 741-6020 or your IT support.
+**CELESTE--END INFO-ALERT BOX**
+
+1. Open your MS Word document in Word. Any changes must be saved before signing.
 2. If you have a purchased PKI credential installed on your computer, proceed to Step 3. Otherwise, insert your Federal Government-issued Personal Identity Verification (PIV) card into your card reader.
 3. Click the **File** tab.<br><br/>
     ![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG){:style="width:70%;"}&nbsp;
