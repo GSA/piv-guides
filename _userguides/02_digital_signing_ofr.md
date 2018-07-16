@@ -49,56 +49,56 @@ If the digital signature certificate and PIN are valid, the document is signed a
 
 If you are signing multiple documents, leave MS Word open and your smart card inserted to sign without having to re-enter your PIN for each file.
 
-For multiple-signatory documents (e.g., dual-agency submissions), the first signer forwards the signed document to the next signer, who repeats the signing process on the _already-signed file_. (See [Multiple Digital Signatories](#multiple-digital-signatories) section below.)  All digital signatories must have their names and titles typed into a separate signature block in the signature block area of the document. 
+For multiple-signatory documents (e.g., dual-agency submissions), the first signer forwards the signed document to the next signer, who repeats the signing process on the _already-signed file_. (See [Multiple Digital Signatories in MS Word](#multiple-digital-signatories-in-ms-word) section below.)  All digital signatories must have their names and titles typed into a separate signature block in the signature block area of the document. 
 
 A digital signature can be removed if necessary.  This might be handy if last-minute changes are needed or if a different signatory is desired. Remember that the document will have to be re-signed prior to submission to OFR.  (See [Remove Invisible Digital Signatures in MS Word](#remove-invisible-digital-signatures-in-ms-word) below.)
 
-## Multiple Digital Signatories
+## Multiple Digital Signatories in MS Word
 
-Multi-agency digital submissions are not only possible but recommended.  Exactly like paper-and-disk submissions, if multiple agencies are submitting a document for publication, OFR receives only one document, signed by all agencies (for example, if six agencies are jointly issuing a rule, OFR does NOT get six submissions of the same rule).  Regardless of the method of submission, the legal requirements are the same (i.e., representatives from all issuing agencies must sign the document, as described in the DDH, 1.6).  If one or more of the agencies are unable or unwilling to digitally sign, the document must be submitted via the conventional paper-and-disk procedure, as described in the DDH.
+Multi-agency digital submissions are not only possible but recommended.  Exactly like paper-and-disk submissions, if multiple agencies are submitting a document for publication, OFR receives only one document, signed by all agencies. For example, if six agencies are jointly issuing a rule, OFR does NOT get six submissions of the same rule.  Regardless of the method of submission, the legal requirements are the same (i.e., representatives from all issuing agencies must sign the document (DDH, 1.6).  If one or more of the agencies are unable or unwilling to digitally sign, the document must be submitted via the conventional paper-and-disk procedure (DDH).
 
 One of the issuing agencies should serve as the primary or lead coordinating agency. Follow these steps for jointly-issued, digitally-signed documents:
 
-1. Save the finalized version of the document as an MS Word file (.docx).  Be sure that the digital signatories’ names and job titles are pre-printed in the signature block section of the document.
-2. Coordinate among the issuing agencies the sequence of signing (i.e., determine who will sign first and forward the signed file on for the next signature).  Determine which agency will actually submit the signed file to OFR via the web portal once all signatures are completed.
-3. The representative from the first agency digitally signs the file using the same method as a single-agency submission. (See [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) above.)  All signers must ensure that their names and job titles are pre-printed in the signature block section of the document.
+1. Save the finalized version of the document as an MS Word file (.docx).  Be sure that the digital signatories’ names and job titles are pre-inserted in the signature block section of the document.
+2. Coordinate among the issuing agencies the sequence of signing; i.e., who signs first and forwards the signed file on for the next signature.  Determine which agency will actually submit the signed file to OFR via the web portal once all signatures are completed.
+3. The representative from the first agency digitally signs the file using the same method as a single-agency submission; see [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) above.  All signers must ensure that their names and job titles are pre-inserted in the signature block area of the document.
 4. Email that **signed** file to the next agency for digital signature. 
-5. The representative from the next agency in sequence ensures that his/her name and job title is pre-printed in the signature block section of the document and then digitally signs the _already-signed_ file.  No changes can be made to the signed file without removing the existing signature(s). If changes are required to the Word document, the whole process starts anew with the corrected, unsigned MS Word document.
+5. The representative from the next agency in sequence ensures that his or her name and job title are pre-inserted in the signature block area of the document and then digitally signs the _already-signed_ file.  No changes can be made to the signed file without removing the existing signature(s). If changes are required to the Word document, the whole process starts anew with the corrected, unsigned Word document.
 6. If there are more issuing agencies, repeat Steps 4 and 5 until all agencies have digitally signed. 
 7. Once all agency signatures have been applied to the file, the file is sent to the agency that will submit it to OFR via the web portal.  From OFR’s perspective, it doesn’t matter who submits the file; we’re concerned with validating the digital signatories.
 8. The sending agency should include a special handling letter alerting OFR of the multi-agency submission with several signatories.  Be sure the special handling letter is digitally signed as well.  One signer is sufficient for the special handling letter.
-9. The sending agency logs into the web portal, uploads the signed Word file and special handling letter, and submits them.
-10. The signatures are validated in the web portal.  We will also check all of the digital signatories against their pre-printed signatures in the signature block section of the document.  The names must match exactly or meet the accepted standards listed in the DDH. (See Step 1.)
+9. The sending agency logs into the web portal, uploads the signed Word file and special handling letter, and submits.
+10. The signatures are validated in the web portal.  We will also check all digital signatories against their printed signature block in the document.  The names must match exactly or meet the accepted standards listed in the DDH. (See Step 1.)
 
 ## Remove Invisible Digital Signatures in MS Word
 
 1. Open the MS Word document that contains the invisible signature you want to remove.<br><br/>
     ![Doc Invisible Signatures]({{site.baseurl}}/img/ofr_remove_invisible_sign_4.png){:style="width:90%;"}&nbsp;
 
-2. In the header, you may see the option to **View Signatures**.  Click that button and proceed to Step 5. If you don't see this option:
+2. In the header, you may see the option to **View Signatures**.  Click that button and proceed to Step 5. Otherwise:
 3. Click the **File** tab.
 4. Click **Info**.
-5. Click **View Signatures**. _The **Signatures** pane appears._<br><br/>
+5. Click **View Signatures**. 
+> _The **Signatures** pane appears._<br><br/>
 ![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:120%;"}&nbsp;
-    
+
 6. Next to the signature name, click the arrow.
 7. Click **Remove Signature**.
 8. Click **Yes**.
 
 ## View Signature Certificate in MS Word
 
-You can check the details of the digital certificate(s) used to sign an MS Word document (for example, the name assigned to the certificate or expiration date).
+You can check the details of the digital certificate(s) used to sign a Word document; e.g., the name assigned to the certificate or expiration date.
 
-Open the signed MS Word document containing the certificate(s) you want to check, or have the signer sign a document via the instructions provided in the [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) section above.
+Open the signed Word document containing the certificate(s) you want to check, or have the signer sign a document via the instructions provided in the [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) section above.
 
-1. In the header, you may see the option to **View Signatures**.  Click that button and proceed to Step 5. If you don't see this option:
-2. Click the **File** tab.
+1. In the header, you may see the option to **View Signatures**.  Click that button and proceed to Step 5. Otherwise:
 3. Click **Info**.
 4. Click **View Signatures**.
-5. In the **Signatures** pane, hover over the name of the signer you want to check; then, click the small down arrow.
-6. Click on **Signature Details**. _The signer’s name as applied to the certificate is listed, along with the Certification Authority (CA)._  
-7. Click the **View** button. 
-8. _A pop-up window appears._ Be sure that the **General** tab is selected. _The valid dates of the certificate are listed. More technical details, such as the certification path and key usage values, are shown under other tabs._  
+5. In the **Signatures** pane, hover on the name of the signer you want to check, and then click the small down arrow.
+6. Click on **Signature Details**. 
+7. The signer’s name as applied to the certificate is listed, along with the Certification Authority (CA). Click the **View** button.  
+8. A pop-up window appears. Be sure that the **General** tab is selected. The valid dates of the certificate are listed. More technical details, such as the certification path and key usage values, are shown under other tabs.  
 
 ## FAQs
 
