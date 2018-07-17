@@ -22,30 +22,31 @@ Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the **Wo
 
 1. Open your MS Word document in Word. Any changes must be saved before signing.
 2. If you have a purchased PKI credential installed on your computer, proceed to Step 3. Otherwise, insert your Federal Government-issued Personal Identity Verification (PIV) card into your card reader.
-3.&nbsp;Click the **File** tab.<br><br/>
-    ![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG){:style="width:70%;"}&nbsp;
+3. Click the **File** tab.<br/>
+![Add Dig Sign]({{site.baseurl}}/img/ofr_word_add_digital_signature_1.PNG){:style="width:70%;"}
 
 4. Click **Info**.
 5. Click **Protect Document**.
 6. Click **Add a Digital Signature**.
-7. In the **Sign** dialog box:<br><br/>
-    ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_3.png){:style="width:75%;"}&nbsp;
+7. In the **Sign** dialog box:<br/>
+![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_3.png){:style="width:75%;"}
+
 8. Select a **Commitment Type** from the pull-down menu.
 9. In the **Purpose for signing this document**, type the purpose or leave blank.
 10. To ensure the correct certificate is used, click the **Change** button.
-11. In the Certification Selection box, there may be multiple certificates.  Select the first **unexpired** certificate with your name;  then _Click here to view the certificate properties_.<br><br/>
-    ![OFR Windows Security Certificate Type]({{site.baseurl}}/img/ofr_windows_sec_piv_or_purch_cert.png){:style="width:80%;"}&nbsp;
+11. In the Certification Selection box, there may be multiple certificates.  Select the first **unexpired** certificate with your name;  then _Click here to view the certificate properties_.<br/>
+![OFR Windows Security Certificate Type]({{site.baseurl}}/img/ofr_windows_sec_piv_or_purch_cert.png){:style="width:80%;"}
      
-12. The **Certificate Details** box appears. Go to the _Details_ tab and scroll down to _Key Usage_.  Single-click on it.  The lower text box should now display “Digital Signature, Non-Repudiation” (for PIV card certificate) or “Digital Signature” (for a purchased certificate).  If it does, then this is the right certificate. Click **OK** to close the window and proceed with signing.<br><br/>
-    ![OFR Certificate Details]({{site.baseurl}}/img/ofr_certificate_details.png){:style="width:60%;"}&nbsp;
+12. The **Certificate Details** box appears. Go to the _Details_ tab and scroll down to _Key Usage_.  Single-click on it.  The lower text box should now display “Digital Signature, Non-Repudiation” (for PIV card certificate) or “Digital Signature” (for a purchased certificate).  If it does, then this is the right certificate. Click **OK** to close the window and proceed with signing.<br/>
+![OFR Certificate Details]({{site.baseurl}}/img/ofr_certificate_details.png){:style="width:60%;"}
     
 13. If this is the wrong certificate, click **OK**. Then select another certificate and repeat these steps until you find the correct certificate.
 14. Click **Sign**.
-15. Follow the prompt to enter your **PIN**; then click **OK**.<br><br/>
-    ![OFR Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:58%;"}&nbsp;
+15. Follow the prompt to enter your **PIN**; then click **OK**.<br/>
+![OFR Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:58%;"}
     
-* If the digital signature certificate and PIN are valid, the document is signed and automatically saved _under the same filename!_  This is the file you submit to OFR via the web portal.<br><br/>
-         ![OFR Signature Confirmation]({{site.baseurl}}/img/ofr_signature_confirmation.png){:style="width:58%;"}
+* If the digital signature certificate and PIN are valid, the document is signed and automatically saved _under the same filename!_  This is the file you submit to OFR via the web portal.<br/>
+![OFR Signature Confirmation]({{site.baseurl}}/img/ofr_signature_confirmation.png){:style="width:58%;"}
 
 If you are signing multiple documents, leave MS Word open and your PIV card inserted to sign without having to re-enter your PIN for each file.
 
@@ -72,14 +73,14 @@ One of the issuing agencies should serve as the primary or lead coordinating age
 
 ## Remove Invisible Digital Signatures in MS Word
 
-1. Open the MS Word document that contains the invisible signature you want to remove.<br><br/>
-    ![Doc Invisible Signatures]({{site.baseurl}}/img/ofr_remove_invisible_sign_4.png){:style="width:90%;"}&nbsp;
+1. Open the MS Word document that contains the invisible signature you want to remove.<br/>
+![Doc Invisible Signatures]({{site.baseurl}}/img/ofr_remove_invisible_sign_4.png){:style="width:90%;"}
 
 2. In the header, you may see the option to **View Signatures**.  Click that button and proceed to Step 5. Otherwise:
 3. Click the **File** tab.
 4. Click **Info**.
-5. Click **View Signatures**. The **Signatures** pane appears.<br><br/>
-![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:120%;"}&nbsp;
+5. Click **View Signatures**. The **Signatures** pane appears.<br/>
+![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:120%;"}
 
 6. Next to the signature name, click the arrow.
 7. Click **Remove Signature**.
@@ -135,12 +136,11 @@ Yes, that and your signing credential, either the one on your PIV card or the on
 If you are using purchased certificates, such as from an Entrust vendor, you can continue to use them.  Instead of being on a PIV card, your certificate is installed on your computer.  Follow the [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) instructions above to sign your MS Word file.
 
 ### How do I identify the Purchased Certificates and PIV Card Certificates when signing a document?
-When checking for the correct certificate, as detailed in Step 7 of the [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) instructions above, note the different icons for the PIV and purchased certificates:<br><br/>
-    ![Certificate Type Icons]({{site.baseurl}}/img/ofr_certificate_types.png){:style="width:40%;"}&nbsp;
+When checking for the correct certificate, as detailed in Step 7 of the [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) instructions above, note the different icons for the PIV and purchased certificates:<br/>
+![Certificate Type Icons]({{site.baseurl}}/img/ofr_certificate_types.png){:style="width:40%;"}
 
 ### Some of our signers use MS Word for Apple on iPad.  Will this work for PKI submission?
 Microsoft has not put that function (PKI-based digital signature) into the MS Word for Mac (Office for Mac) software.  We recognize that some agencies have signers who use the Mac platform. We expect to run testing when this function becomes available.  
 
 ### I already have a web portal submission account.  Do I need to update it or reapply?
 No.
-
