@@ -42,6 +42,7 @@ Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the **Wo
     ![OFR Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:58%;"}
 16. If the digital signature certificate and PIN are valid, the document is signed and automatically saved _under the same filename!_  This is the file you submit to OFR via the web portal.<br />
     ![OFR Signature Confirmation]({{site.baseurl}}/img/ofr_signature_confirmation.png){:style="width:58%;"}
+
 If you are signing multiple documents, leave MS Word open and your PIV card inserted to sign without having to re-enter your PIN for each file.
 
 For multiple-signatory documents (e.g., dual-agency submissions), the first signer forwards the signed document to the next signer, who repeats the signing process on the _already-signed file_. See the [Multiple Digital Signatories in MS Word](#multiple-digital-signatories-in-ms-word) section below.  All digital signatories must have their names and titles typed into a separate signature block in the signature block area of the document. 
