@@ -47,7 +47,7 @@ Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the **Wo
 * If the digital signature certificate and PIN are valid, the document is signed and automatically saved _under the same filename!_  This is the file you submit to OFR via the web portal.<br><br/>
          ![OFR Signature Confirmation]({{site.baseurl}}/img/ofr_signature_confirmation.png){:style="width:58%;"}
 
-* If you are signing multiple documents, leave MS Word open and your smart card inserted to sign without having to re-enter your PIN for each file.
+If you are signing multiple documents, leave MS Word open and your PIV card inserted to sign without having to re-enter your PIN for each file.
 
 For multiple-signatory documents (e.g., dual-agency submissions), the first signer forwards the signed document to the next signer, who repeats the signing process on the _already-signed file_. See the [Multiple Digital Signatories in MS Word](#multiple-digital-signatories-in-ms-word) section below.  All digital signatories must have their names and titles typed into a separate signature block in the signature block area of the document. 
 
@@ -55,12 +55,12 @@ A digital signature can be removed if necessary.  This might be handy if last-mi
 
 ## Multiple Digital Signatories in MS Word
 
-Multi-agency digital submissions are not only possible but recommended.  Exactly like paper-and-disk submissions, if multiple agencies are submitting a document for publication, OFR receives only one document, signed by all agencies. For example, if six agencies are jointly issuing a rule, OFR does NOT get six submissions of the same rule.  Regardless of the method of submission, the legal requirements are the same, i.e., representatives from all issuing agencies must sign the document (DDH, 1.6).  If one or more of the agencies are unable or unwilling to digitally sign, the document must be submitted via the conventional paper-and-disk procedure (DDH).
+Multi-agency digital submissions are not only possible but recommended.  Exactly like paper-and-disk submissions, if multiple agencies are submitting a document for publication, OFR receives only one document, signed by all agencies. For example, if six agencies are jointly issuing a rule, OFR does NOT get six submissions of the same rule.  Regardless of the method of submission, the legal requirements are the same; i.e., representatives from all issuing agencies must sign the document (DDH, 1.6).  If one or more of the agencies are unable or unwilling to digitally sign, the document must be submitted via the conventional paper-and-disk procedure (DDH).
 
 One of the issuing agencies should serve as the primary or lead coordinating agency. Follow these steps for jointly-issued, digitally-signed documents:
 
-1. Save the finalized version of the document as an MS Word file (.docx).  Be sure that the digital signatories’ names and job titles are pre-inserted in the signature block section of the document.
-2. Coordinate among the issuing agencies the sequence of signing, i.e., who signs first and forwards the signed file on for the next signature.  Determine which agency will actually submit the signed file to OFR via the web portal once all signatures are completed.
+1. Save the finalized version of the document as an MS Word file (.docx).  Be sure that the digital signatories’ names and job titles are pre-inserted in the signature block area of the document.
+2. Coordinate among the issuing agencies the sequence of signing; i.e., who signs first and forwards the signed file on for the next signature.  Determine which agency will actually submit the signed file to OFR via the web portal once all signatures are completed.
 3. The representative from the first agency digitally signs the file using the same method as a single-agency submission. See [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) above.  All signers must ensure that their names and job titles are pre-inserted in the signature block area of the document.
 4. Email that **signed** file to the next agency for digital signature. 
 5. The representative from the next agency in sequence ensures that their name and job title are pre-inserted in the signature block area of the document and then digitally signs the _already-signed_ file.  No changes can be made to the signed file without removing the existing signature(s). If changes are required to the MS Word document, the whole process starts anew with the corrected, unsigned Word document.
@@ -88,7 +88,7 @@ One of the issuing agencies should serve as the primary or lead coordinating age
 
 ## View Signature Certificate in MS Word
 
-You can check the details of the digital certificate(s) used to sign an MS Word document; e.g., the name assigned to the certificate or expiration date.
+You can check the details of the digital certificate(s) used to sign an MS Word document (e.g., the name assigned to the certificate or expiration date).
 
 Open the signed MS Word document containing the certificate(s) you want to check, or have the signer sign a document via the instructions provided in the [Add Invisible Digital Signatures in MS Word](#add-invisible-digital-signatures-in-ms-word) section above.
 
@@ -96,7 +96,7 @@ Open the signed MS Word document containing the certificate(s) you want to check
 3. Click **Info**.
 4. Click **View Signatures**.
 > _The **Signatures** pane appears._<br><br/>
-5. In the **Signatures** pane, hover on the name of the signer you want to check; then, click the small down arrow.
+5. In the **Signatures** pane, hover on the name of the signer you want to check; then click the small down arrow.
 6. Click on **Signature Details**. 
 7. The signer’s name as applied to the certificate is listed, along with the Certification Authority (CA). Click the **View** button.  
 8. A pop-up window appears. Be sure that the **General** tab is selected. The valid dates of the certificate are listed. More technical details, such as the certification path and key usage values, are shown under other tabs.  
@@ -127,7 +127,7 @@ None.  As a federal agency, you should already have MS Office 2010 or later inst
 ### Do you accept any MS Word file?
 No. Your file must be saved as an XML-based MS Word document (".docx"). If you're using MS Word 2010 or later, this is generally the default setting. Otherwise, when you save the file, choose "Word Document" (.docx) in the "Save as type" pull-down.
 
-### We save everything as a ".doc" file and/or we're still using Word 2007 (or earlier). What are our options?
+### We save everything as a ".doc" file and/or we're still using MS Word 2007 (or earlier). What are our options?
 Paper-and-disk submission. Don't forget the CD and the signed certification letter!
 
 ### All we need is MS Word 2010 or later?
