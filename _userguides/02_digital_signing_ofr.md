@@ -39,8 +39,8 @@ Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the **Wo
 13. If this is the wrong certificate, click **OK**. Then select another certificate and repeat these steps until you find the correct certificate.
 14. Click **Sign**.
 15. Follow the prompt to enter your **PIN**; then click **OK**.<br />
-    ![OFR Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:58%;"}  
-* If the digital signature certificate and PIN are valid, the document is signed and automatically saved _under the same filename!_  This is the file you submit to OFR via the web portal.<br />
+    ![OFR Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:58%;"}
+16. If the digital signature certificate and PIN are valid, the document is signed and automatically saved _under the same filename!_  This is the file you submit to OFR via the web portal.<br />
     ![OFR Signature Confirmation]({{site.baseurl}}/img/ofr_signature_confirmation.png){:style="width:58%;"}
 If you are signing multiple documents, leave MS Word open and your PIV card inserted to sign without having to re-enter your PIN for each file.
 
