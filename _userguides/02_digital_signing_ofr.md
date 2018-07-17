@@ -27,26 +27,21 @@ Do NOT use the _Insert Signature_ function (under the **INSERT** tab in the **Wo
 4. Click **Info**.
 5. Click **Protect Document**.
 6. Click **Add a Digital Signature**.
-7. In the **Sign** dialog box:<br/>
-![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_3.png){:style="width:75%;"}
-
+7. In the **Sign** dialog box:<br />
+   ![OFR Sign Box]({{site.baseurl}}/img/ofr_sign_box_with_name_appears_here_3.png){:style="width:75%;"}
 8. Select a **Commitment Type** from the pull-down menu.
 9. In the **Purpose for signing this document**, type the purpose or leave blank.
 10. To ensure the correct certificate is used, click the **Change** button.
-11. In the Certification Selection box, there may be multiple certificates.  Select the first **unexpired** certificate with your name;  then _Click here to view the certificate properties_.<br/>
-![OFR Windows Security Certificate Type]({{site.baseurl}}/img/ofr_windows_sec_piv_or_purch_cert.png){:style="width:80%;"}
-     
-12. The **Certificate Details** box appears. Go to the _Details_ tab and scroll down to _Key Usage_.  Single-click on it.  The lower text box should now display “Digital Signature, Non-Repudiation” (for PIV card certificate) or “Digital Signature” (for a purchased certificate).  If it does, then this is the right certificate. Click **OK** to close the window and proceed with signing.<br/>
-![OFR Certificate Details]({{site.baseurl}}/img/ofr_certificate_details.png){:style="width:60%;"}
-    
+11. In the Certification Selection box, there may be multiple certificates.  Select the first **unexpired** certificate with your name;  then _Click here to view the certificate properties_.<br />
+    ![OFR Windows Security Certificate Type]({{site.baseurl}}/img/ofr_windows_sec_piv_or_purch_cert.png){:style="width:80%;"}  
+12. The **Certificate Details** box appears. Go to the _Details_ tab and scroll down to _Key Usage_.  Single-click on it.  The lower text box should now display “Digital Signature, Non-Repudiation” (for PIV card certificate) or “Digital Signature” (for a purchased certificate).  If it does, then this is the right certificate. Click **OK** to close the window and proceed with signing.<br />
+    ![OFR Certificate Details]({{site.baseurl}}/img/ofr_certificate_details.png){:style="width:60%;"} 
 13. If this is the wrong certificate, click **OK**. Then select another certificate and repeat these steps until you find the correct certificate.
 14. Click **Sign**.
-15. Follow the prompt to enter your **PIN**; then click **OK**.<br/>
-![OFR Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:58%;"}
-    
-* If the digital signature certificate and PIN are valid, the document is signed and automatically saved _under the same filename!_  This is the file you submit to OFR via the web portal.<br/>
-![OFR Signature Confirmation]({{site.baseurl}}/img/ofr_signature_confirmation.png){:style="width:58%;"}
-
+15. Follow the prompt to enter your **PIN**; then click **OK**.<br />
+    ![OFR Enter Your PIN]({{site.baseurl}}/img/ofr_enter_your_pin_3.png){:style="width:58%;"}  
+* If the digital signature certificate and PIN are valid, the document is signed and automatically saved _under the same filename!_  This is the file you submit to OFR via the web portal.<br />
+    ![OFR Signature Confirmation]({{site.baseurl}}/img/ofr_signature_confirmation.png){:style="width:58%;"}
 If you are signing multiple documents, leave MS Word open and your PIV card inserted to sign without having to re-enter your PIN for each file.
 
 For multiple-signatory documents (e.g., dual-agency submissions), the first signer forwards the signed document to the next signer, who repeats the signing process on the _already-signed file_. See the [Multiple Digital Signatories in MS Word](#multiple-digital-signatories-in-ms-word) section below.  All digital signatories must have their names and titles typed into a separate signature block in the signature block area of the document. 
@@ -72,15 +67,13 @@ One of the issuing agencies should serve as the primary or lead coordinating age
 
 ## Remove Invisible Digital Signatures in MS Word
 
-1. Open the MS Word document that contains the invisible signature you want to remove.<br/>
-![Doc Invisible Signatures]({{site.baseurl}}/img/ofr_remove_invisible_sign_4.png){:style="width:90%;"}
-
+1. Open the MS Word document that contains the invisible signature you want to remove.<br />
+   ![Doc Invisible Signatures]({{site.baseurl}}/img/ofr_remove_invisible_sign_4.png){:style="width:90%;"}
 2. In the header, you may see the option to **View Signatures**.  Click that button and proceed to Step 5. Otherwise:
 3. Click the **File** tab.
 4. Click **Info**.
-5. Click **View Signatures**. The **Signatures** pane appears.<br/>
-![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:120%;"}
-
+5. Click **View Signatures**. The **Signatures** pane appears.<br />
+   ![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:120%;"}
 6. Next to the signature name, click the arrow.
 7. Click **Remove Signature**.
 8. Click **Yes**.
