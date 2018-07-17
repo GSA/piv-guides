@@ -78,8 +78,7 @@ One of the issuing agencies should serve as the primary or lead coordinating age
 2. In the header, you may see the option to **View Signatures**.  Click that button and proceed to Step 5. Otherwise:
 3. Click the **File** tab.
 4. Click **Info**.
-5. Click **View Signatures**. 
-> _The **Signatures** pane appears._<br><br/>
+5. Click **View Signatures**. The **Signatures** pane appears.<br><br/>
 ![Signatures Pane]({{site.baseurl}}/img/ofr_signatures_pane_5.png){:style="width:120%;"}&nbsp;
 
 6. Next to the signature name, click the arrow.
@@ -94,8 +93,7 @@ Open the signed MS Word document containing the certificate(s) you want to check
 
 1. In the header, you may see the option to **View Signatures**.  Click that button and proceed to Step 5. Otherwise:
 3. Click **Info**.
-4. Click **View Signatures**.
-> _The **Signatures** pane appears._<br><br/>
+4. Click **View Signatures**. The **Signatures** pane appears.<br><br/>
 5. In the **Signatures** pane, hover on the name of the signer you want to check; then click the small down arrow.
 6. Click on **Signature Details**. 
 7. The signer’s name as applied to the certificate is listed, along with the Certification Authority (CA). Click the **View** button.  
