@@ -18,7 +18,7 @@ You need to publish the Federal Common Policy Certification Authority (COMMON) [
 You want to add the COMMON [root certificate]({{site.baseurl}}/pivcertchains/#download-root-and-intermediate-certificates) to a Group Policy Object to publish it as a _trusted root_ for ALL the devices and user objects.
 
 ## NTAuth Enterprise Trust Store
-The _NTAuth_ enterprise trust store is used by your network domain to determine which certificate authorities to trust specifically for authenticating users to the network.  To understand the difference between the typical network domain Trust Stores and NTAuth, you may want to think of NTAuth as an _explicit trust list_ of certificate authorities used for network authentication.
+The _NTAuth_ enterprise trust store is used by your network domain to determine which certification authorities to trust specifically for authenticating users to the network.  To understand the difference between the typical network domain Trust Stores and NTAuth, you may want to think of NTAuth as an _explicit trust list_ of certification authorities used for network authentication.
 
 There are two very different options for what certification authority certificates you need publish to the NTAuth trust store.  Each option depends on the choice you make for [linking your user accounts](../accounts/).
 
