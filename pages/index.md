@@ -22,7 +22,7 @@ The information on this page provides introductory information.
 
 A Personal Identity Verification (PIV) credential is a US Federal government-wide credential used to access Federally controlled facilities and information systems at the appropriate security level.
 
-PIV credentials have certificates and key pairs, pin numbers, biometrics like fingerprints and pictures, and other unique identifiers.  When put together into a PIV credential, we have the capabilities to implement multi-factor authentication for networks, applications and buildings.
+PIV credentials have certificates and key pairs, PIN numbers, biometrics like fingerprints and pictures, and other unique identifiers.  When put together into a PIV credential, we have the capabilities to implement multi-factor authentication for networks, applications and buildings.
 
 ## What information is in these PIV guides?  
 First, we cover the basics of PIV credentials including:
