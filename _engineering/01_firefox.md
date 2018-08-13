@@ -39,7 +39,7 @@ Launch **_Firefox_** and load a new security device using the OpenSC PKCS #11 dr
 * From the _Firefox_ taskbar, click the _Options_ icon ("gear" shape). 
 * Click the _Privacy & Security_ menu from the left-hand navigation.
 * Scroll down until you see the _Certificates_ heading, then click _Security Devices_.
-* At the _Device Manager_ window, click the _Load_ button and enter the certificate name: _OpenSC PKCS#11 Module_.
+* At the _Device Manager_ window, click the _Load_ button and enter the module name: _OpenSC PKCS#11 Module_.
 * Based on the OS, select the location of the pkcs11 driver.  The default locations include:
 
 | OS | Default driver location | File name | 
@@ -53,7 +53,7 @@ Launch **_Firefox_** and load a new security device using the OpenSC PKCS #11 dr
 ### Import PIV Issuer Certificate
 * Click the _View Certificates_ button. If prompted, enter your PIV credential PIN.
 * Click the _Authorities_ tab from the top navigation.
-* Click the _Import_ button to import a copy of your PIV credential issuer's certification authority certificate. Trust the certificate for _both_ identifying websites and email users.
+* Click the _Import_ button to import a copy of your PIV credential issuer's certification authority certificate. When prompted, trust the certificate for _both_ identifying websites and email users.
 * Click _OK_ and restart _Firefox_.
 
 ### Restart and Test Authentication
