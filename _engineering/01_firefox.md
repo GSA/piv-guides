@@ -31,13 +31,14 @@ You need to consider some items that are specific for the US Government.
 * You can push the packages to the enterprise workstations using your enterprise configuration management tools.
 
 ## Configure Firefox
+Perform the steps below to configure Firefox to enable PIV authentication.
 
-Next, you have to configure Firefox to recognize the OpenSC drivers.  
+### Load New Security Device
 
-Launch **_Firefox_** and configure the driver:
-
-* From the _Firefox_ taskbar, click the _Options_ icon ("wheel" shape). 
-* Click the _Advanced_ tab **>**&nbsp;_Certificates **>** Security Devices_.
+Launch **_Firefox_** and load a new security device using the OpenSC PKCS #11 driver:
+* From the _Firefox_ taskbar, click the _Options_ icon ("gear" shape). 
+* Click the _Privacy & Security_ menu from the left-hand navigation.
+* Scroll down until you see the _Certificates_ heading, then click _Security Devices_.
 * At the _Device Manager_ window, click the _Load_ button and enter the certificate name: _OpenSC PKCS#11 Module_.
 * Based on the OS, select the location of the pkcs11 driver.  The default locations include:
 
@@ -47,8 +48,14 @@ Launch **_Firefox_** and configure the driver:
 | MacOS  | /Library/OpenSC/lib/ | pkcs11.so | 
 | Linux  | /usr/lib/ | pkcs11.so | 
 
+* Click _Open_ and verify that the module has been loaded. Then, click _OK_ to return to the _Privacy & Security_ options.
 
-* Click _Open_ and verify that the module has been loaded. 
-* Click _OK_ and restart _Firefox_. 
-* Next, browse to a web application that requires a PIV to authenticate.  A common web application to use is **Max.gov**.
-* Firefox will prompt you to select the PIV certificate
+### Import PIV Issuer Certificate
+* Click the _View Certificates_ button. If prompted, enter your PIV credential PIN.
+* Click the _Authorities_ tab from the top navigation.
+* Click the _Import_ button to import a copy of your PIV credential issuer's certification authority certificate. Trust the certificate for _both_ identifying websites and email users.
+* Click _OK_ and restart _Firefox_.
+
+### Restart and Test Authentication
+* Browse to a web application that requires a PIV to authenticate.  A common web application to use is **Max.gov**.
+* Firefox will prompt you to enter your PIV credential PIN and select a certificate for authentication.
