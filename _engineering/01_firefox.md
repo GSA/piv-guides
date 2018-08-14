@@ -53,7 +53,6 @@ Launch **_Firefox_** and load a new _Security Device_ (i.e., the Security Device
 * Click the _Import_ button to import a copy of your PIV credential issuer's Certification Authority (CA) certificate. When prompted, trust the certificate for identifying websites _and_ email users.
 * Click _OK_ and restart _Firefox_.
 
-### Restart Firefox and Test Authentication
-* Restart Firefox. 
+### Test Authentication
 * Browse to a web application that requires authentication with a PIV credential.  A common web application to use as a test is [MAX.gov](https://max.gov/maxportal/home.action){:target="_blank"}. (**Note:** You'll need to have an existing MAX.gov account for this to work.)
 * Firefox will prompt you to enter your PIV credential PIN and select a certificate for authentication.
