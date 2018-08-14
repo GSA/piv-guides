@@ -50,7 +50,7 @@ Launch **_Firefox_** and load a new _Security Device_ (i.e., the Security Device
 ### Import PIV Issuer Certificate
 * Click the _View Certificates_ button. If prompted, enter your PIV credential PIN.
 * Click the _Authorities_ tab from the top navigation.
-* Click the _Import_ button to import a copy of your PIV credential issuer's Certification Authority (CA) certificate. When prompted, trust the certificate for identifying websites _and_ email users_.
+* Click the _Import_ button to import a copy of your PIV credential issuer's Certification Authority (CA) certificate. When prompted, trust the certificate for identifying websites _and_ email users.
 * Click _OK_ and restart _Firefox_.
 
 ### Restart Firefox and Test Authentication
