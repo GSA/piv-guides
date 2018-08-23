@@ -4,7 +4,7 @@ title: Certificate Trust
 permalink: /pivcertchains/
 ---
 
-One of the most common questions is "What are all these certificates and how do I configure my applications to use them?".  Answering this question involves explaining Trust, Certificate chains and Revocation.  
+One of the most common questions is "What are all these certificates and how do I configure my applications to use them?"  Answering this question involves explaining Trust, Certificate chains and Revocation.  
 
 - [Trust](#trust)
 - [Certificate *chains*](#certificate-chains)
@@ -24,7 +24,7 @@ The full process of proving identity when issuing the certificates, auditing the
 
 For the US Federal Government Executive branch agencies, there is one Root Certificate Authority named _Federal Common Policy Certificate Authority (COMMON)_, and dozens of Intermediate Certificate Authorities.  The US Federal Government has also established Trust with other Certificate Authorities which serve business communities, State and Local government communities, and international government communities.
 
-* [CLICK HERE: A graph of the federal public key infrastructure, including the business communities](https://fpki-graph.fpki-lab.gov/){:target="_blank"}
+* [CLICK HERE: A graph of the federal public key infrastructure, including the business communities](https://fpki.idmanagement.gov/tools/fpkigraph/){:target="_blank"}
 
 The participating Certificate Authorities and the policies, processes, and auditing is referred to as the [*Federal Public Key Infrastructure (FPKI)*](https://www.idmanagement.gov/IDM/s/article_content_old?tag=a0Gt0000000SfwP){:target="_blank"}
 
