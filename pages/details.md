@@ -11,7 +11,7 @@ This section will help you view the information stored on a PIV credential.  We 
 -   [Understanding PIV certificates](#understanding-piv-certificates)
 
 ## Viewing Your PIV Credential Certificates
-Almost **all** of the methods for using your PIV credential for networks, applications, digital signatures and encryption involve the certificates and key pairs stored on your PIV credential.  There are scenarios where the additional information such as biometrics are accessed and used. _We will cover how to view the information for these additional scenarios and for developers in a set of Developer Guides._
+Almost **all** of the methods for using your PIV credential for networks, applications, digital signatures and encryption involve the certificates and key pairs stored on your PIV credential.  There are scenarios where additional information (such as biometrics) is accessed and used. _We will cover how to view the information for these additional scenarios and for developers in a set of Developer Guides._
 
 To view your certificate information:
 
@@ -51,7 +51,7 @@ The table below outlines the general information for the PIV credential certific
 | PIV Authentication       |Always      | Digital Signature            | Client Authentication           | otherName = FASC-N; uniformResourceIdentifier = UUID; Principal Name = _prefix_@_suffix_  | Principal Name values are **not** required by policy to be present in all Subject Alternative Name extensions.  The Card UUID value is only required to be present for new or replacement PIV credentials issued after August 2014.  The Card UUID may also commonly be referred to as the Global Unique Identifier (GUID). |
 | Card Authentication      |Sometimes      | Digital Signature            | id-PIV-cardAuth            |  Name = FASC-N; uniformResourceIdentifier = UUID|   Card Authentication must be included in new and replacement PIV credentials issued after August 2014; it is not expected that **all** PIV credentials will have Card Authentication certificates until September 2019. The Card UUID value is only required to be present for new or replacement PIV credentials issued after August 2014. The Card UUID may also commonly be referred to as the GUID. |
 | Digital Signature        |Sometimes      | Digital Signature, Non-Repudiation            | _none required_            |  rfc822name = email address | Email address is **not** required by policy. Email address may be multi-valued attributes and include email aliases. |
-| Encryption               |Sometimes      | Key Encipherment            | _none required_            |  rfc822name = email address |  Email address is **not** required by policy. Multiple encryption certificates may be available representing the historical encryption key pairs available. |
+| Encryption               |Sometimes      | Key Encipherment            | _none required_            |  rfc822name = email address |  Email address is **not** required by policy. Multiple encryption certificates may be available representing the historical encryption key pairs available. <!--Ryan, Help with turning into plain language-->|
 
 Additional useful information:
 
