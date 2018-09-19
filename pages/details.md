@@ -4,14 +4,14 @@ title: Details of a PIV Credential
 permalink: /details/
 ---
 
-This section will help you view the information stored on a PIV credential.  We identify the simple methods for:
+You can use these simple methods to view, export, and understand the information stored on a PIV credential:
 
--   [Viewing your PIV credential certificates](#viewing-your-piv-credential-certificates)
--   [Exporting PIV certificates](#exporting-piv-certificates)
--   [Understanding PIV certificates](#understanding-piv-certificates)
+-   [View Your PIV credential certificates](#view-your-piv-credential-certificates)
+-   [Export PIV certificates](#export-piv-certificates)
+-   [Understand PIV certificates](#understand-piv-certificates)
 
-## Viewing Your PIV Credential Certificates
-Almost **all** of the methods for using your PIV credential for networks, applications, digital signatures and encryption involve the certificates and key pairs stored on your PIV credential.  There are scenarios where additional information (such as biometrics) is accessed and used. _We will cover how to view the information for these additional scenarios and for developers in a set of Developer Guides._
+## View Your PIV Credential Certificates
+Almost **all** of the methods for using your PIV credential for networks, applications, digital signatures, and encryption involve the certificates and key pairs stored on your PIV credential.  There are scenarios where additional information (such as biometrics) is accessed and used. _We cover how to view this information for these additional scenarios below._
 
 To view your certificate information:
 
@@ -28,42 +28,41 @@ To view your certificate information:
 
 {% include alert-info.html heading = "View" content="You may see many certificates.  To open and view the certificate details, double-click on any certificate." %}
 
-## Exporting PIV Certificates
+## Export PIV Certificates
 We won't always be using graphical user interfaces to view the PIV credential certificates.  Throughout the guides, we'll be adding examples of code, tools and common _command line_ options for viewing and troubleshooting configurations.  The examples may use files representing the _public_ certificate(s).
 
 {% include alert-info.html heading = "Export" content="Look for an Export button and save the file as DER or PEM encoded, with a file extension of cer (.cer)." %}
 
 {% include alert-warning.html heading = "Keys are safe!" content="Don't worry - the public certificates are public.  The private keys are always stored safely on your PIV credential and can never be exported. " %}
 
-## Understanding PIV Certificates
+## Understand PIV Certificates
 Viewing the certificate information on your PIV credential may be interesting if you are a general user.  Understanding the certificate information is a **must** if you are a program manager or engineer developing applications and designing solutions for using PIV credentials.
 
 Within the U.S. Federal Government, the certificate information and the PIV credential information are governed by standards, policies, and implementation-specific choices (options) across all agency credential providers.
-<!--CB: clarify language about pairs with Ryan-->
+
 Typically, there are four certificates and four key pairs on a PIV credential.  However, one pair (i.e., one certificate and one key pair) is *ALWAYS* on every PIV credential and three pairs (i.e., three certificates and three key pairs) are *SOMETIMES* on a PIV credential.  You can review [the basics of a PIV Credential](../elements/) to view the four pairs and purposes.
 
 The table below outlines the general information for the PIV credential certificates, certificate extensions, and design considerations.  All information is presented in human-readable formats.
 
-{% include alert-info.html heading = "Six Years" content="PIV credentials and certificates have changed over time due to updates in standards.  Since users may have credentials for up to six years and there are both optional and mandatory elements, the information presented is what is valid for ALL PIV credentials and certificates currently in use." %}
+{% include alert-info.html heading = "Six Years" content="PIV credentials and certificates have changed over time due to updates in standards.  Since users may have credentials for up to six years and there are both optional and mandatory elements, the information presented is what is valid for ALL PIV credentials and certificates currently in use. Please note: although your PIV card is valid for six years, the certificates contained on it are valid for only three years." %}
 
 | Certificate              | Required  | Key Usage  |  Extended Key Usage  | Subject Alternative Name | Design Considerations |
 | -------------            |:----:      |:----:               |:----:               |:----:|  ----|
-| PIV Authentication       |Always      | Digital Signature            | Client Authentication           | otherName = FASC-N; uniformResourceIdentifier = UUID; Principal Name = _prefix_@_suffix_  | Principal Name values are **not** required by policy to be present in all Subject Alternative Name extensions.  The Card UUID value is only required to be present for new or replacement PIV credentials issued after August 2014.  The Card UUID may also commonly be referred to as the Global Unique Identifier (GUID). |
-| Card Authentication      |Sometimes      | Digital Signature            | id-PIV-cardAuth            |  Name = FASC-N; uniformResourceIdentifier = UUID|   Card Authentication must be included in new and replacement PIV credentials issued after August 2014; it is not expected that **all** PIV credentials will have Card Authentication certificates until September 2019. The Card UUID value is only required to be present for new or replacement PIV credentials issued after August 2014. The Card UUID may also commonly be referred to as the GUID. |
-| Digital Signature        |Sometimes      | Digital Signature, Non-Repudiation            | _none required_            |  rfc822name = email address | Email address is **not** required by policy. Email address may be multi-valued attributes and include email aliases. |
-| Encryption               |Sometimes      | Key Encipherment            | _none required_            |  rfc822name = email address |  Email address is **not** required by policy. Multiple encryption certificates may be available representing the historical encryption key pairs available. <!--Ryan, Help with turning into plain language-->|
+| PIV Authentication       |Always      | Digital Signature            | Client Authentication           | otherName = FASC-N;<br> uniformResourceIdentifier = UUID;<br>Principal Name = _prefix_@_suffix_  | Principal Name values are **not** required by policy to be present in all Subject Alternative Name extensions. The Card UUID may also commonly be referred to as the Global Unique Identifier (GUID). |
+| Card Authentication      |Sometimes      | Digital Signature            | id-PIV-cardAuth            |  Name = FASC-N; <br>uniformResourceIdentifier = UUID|   Card Authentication must be included in new and replacement PIV credentials issued after August 2014; it is not expected that **all** PIV credentials will have Card Authentication certificates until September 2019. The Card UUID may also commonly be referred to as the GUID. |
+| Digital Signature        |Sometimes      | Digital Signature, Non-Repudiation            | _Specific EKU are required for certificates issued after June 2019_            |  rfc822name = email address | Email address is **not** required by policy. Email address may be multi-valued attributes and include email aliases. |
+| Encryption               |Sometimes      | Key Encipherment            | _Specific EKU are required for certificates issued after June 2019_            |  rfc822name = email address |  Email address is **not** required by policy. Multiple encryption certificates may be available representing the historical encryption key pairs available. 
 
 Additional useful information:
 
 -   All key pairs for users are 2048 bit (RSA) keys
 -   All certificates issued and certified as _PIV_ are SHA-256 signed
--   If you are working with _Common Access Cards_, you may still encounter "SHA-1 signed"
--   There has been testing in some infrastructures to migrate to Elliptic Curve Cryptography (ECC), but there are no ECC certificates for users in production as of the date of this guide<!--Is this still correct?-->
--   There has been testing in some infrastructures for migration to 3072 bit (RSA) certificates, but there are no 3072 bit certificates for users in production as of the date of this guide<!--Is this still correct?-->
+-   If you are working with _Common Access Cards_, you may still encounter "SHA-1 signed" and may not see a cardAuth certificate
+-   There has been testing in some infrastructures to migrate to Elliptic Curve Cryptography (ECC), but there are no ECC certificates for users in production as of the date of this guide
+-   There has been testing in some infrastructures for migration to 3072-bit (RSA) certificates, but there are no 3072-bit certificates for users in production as of the date of this guide
 
-In-depth details on the certificate profiles are contained in the current and historical Federal Public Key Infrastructure (FPKI) Policy documents.  This table contains links to the most recent documents:
+In-depth details on the certificate profiles are contained in the current and historical Federal Public Key Infrastructure (FPKI) Policy documents.  This table contains links to the most recent certificate profile document:
 
-| Certificates    | Policy Update Date  | Link to Profile Information|
+| Certificates    | Policy Date  | Profile Information|
 | -------------            |:----:               |:----:|
-| PIV Certificates           | July 17, 2017             | [Worksheets 4, 5, 6, and 7](https://www.idmanagement.gov/wp-content/uploads/sites/1171/uploads/fpki-x509-cert-profiles.pdf){:target="_blank"}|
-| PIV _Interoperable_ Certificates           | July 17, 2017             | [Worksheets 5, 6, 8, and 9](https://www.idmanagement.gov/wp-content/uploads/sites/1171/uploads/fpki-pivi-cert-profiles.pdf){:target="_blank"}|
+| PIV Certificates           | July 17, 2017             | [Worksheets 5, 6, 8, and 9](https://www.idmanagement.gov/wp-content/uploads/sites/1171/uploads/fpki-cert-profile-ssp.pdf){:target="_blank"}|
