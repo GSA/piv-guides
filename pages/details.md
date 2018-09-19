@@ -20,48 +20,48 @@ To view your certificate information:
 
 | Operating System     | Module   | Steps |
 | -------------             |----|----|
-| Microsoft   | Internet Explorer or Edge Browser  | Open _Internet Explorer Browser_ -> _Settings_ -> _Internet Options_ -> Choose _Content_ tab -> _Certificates_ -> Choose _Personal_ tab   |
+| Microsoft   | Internet Explorer or Edge Browser  | Open _Internet Explorer Browser_ -> _Settings_ -> _Internet Options_ -> Choose _Content_ tab -> _Certificates_ -> Choose _Personal_ tab, **OR**<br>Open a command window -> enter `certutil -scinfo`-> enter your PIN (several times as prompted)  |
 | Microsoft       | Microsoft Management Console (MMC) and Certificate Snap-in  |  Open _Microsoft Management Console_ -> _File_ -> _Add/Remove Snap-In_ -> Select _Certificates_ snap-in -> _Add_ -> _My user account_ -> _Finish_ -> Expand _Certificates - Current User_ -> Select _Personal_ -> Select _Certificates_   |
 | Any   | Chrome Browser  | Open _Settings_ -> _Show Advanced Settings_ -> HTTPS / SSL: _Manage Certificates_ -> Choose the _Your Certificates_ tab  |
-| Any   | Firefox Browser  | Open _Menu_ -> _Preferences_ -> _Advanced_ -> Choose _Certificates_ tab -> _View Certificates_ -> Choose the _Your Certificates_ tab|
+| Any   | Firefox Browser  | Click _Settings_ wheel -> _Privacy & Security_ -> _Security_ -> _Certificates_ > _View Certificates_ button -> _Certificates Manager_ -> _Your Certificates_ tab
 | macOS X   | Key Chain  | Open _Applications_ -> _Utilities_ -> _Keychain Access_ -> Select _Login_ -> From Categories, select _My Certificates_  |
 
 {% include alert-info.html heading = "View" content="You may see many certificates.  To open and view the certificate details, double-click on any certificate." %}
 
 ## Export PIV Certificates
-We won't always be using graphical user interfaces to view the PIV credential certificates.  Throughout the guides, we'll be adding examples of code, tools and common _command line_ options for viewing and troubleshooting configurations.  The examples may use files representing the _public_ certificate(s).
+We won't always be using graphical user interfaces to view the PIV credential certificates.  Throughout the guides, we'll be adding examples of code, tools, and common _command line_ options for viewing and troubleshooting configurations.  The examples may use files representing the _public_ certificate(s).
 
-{% include alert-info.html heading = "Export" content="Look for an Export button and save the file as DER or PEM encoded, with a file extension of cer (.cer)." %}
+{% include alert-info.html heading = "Export" content="Look for an Export button and save the file as DER or PEM-encoded, with a file extension of cer (.cer)." %}
 
 {% include alert-warning.html heading = "Keys are safe!" content="Don't worry - the public certificates are public.  The private keys are always stored safely on your PIV credential and can never be exported. " %}
 
 ## Understand PIV Certificates
 Viewing the certificate information on your PIV credential may be interesting if you are a general user.  Understanding the certificate information is a **must** if you are a program manager or engineer developing applications and designing solutions for using PIV credentials.
 
-Within the U.S. Federal Government, the certificate information and the PIV credential information are governed by standards, policies, and implementation-specific choices (options) across all agency credential providers.
+Within the U.S. Federal Government, the certificate and PIV credential information is governed by standards, policies, and implementation-specific choices (options) across all agency credential providers.
 
-Typically, there are four certificates and four key pairs on a PIV credential.  However, one pair (i.e., one certificate and one key pair) is *ALWAYS* on every PIV credential and three pairs (i.e., three certificates and three key pairs) are *SOMETIMES* on a PIV credential.  You can review [the basics of a PIV Credential](../elements/) to view the four pairs and purposes.
+Typically, there are four certificates and four key pairs on a PIV credential.  However, one pair (i.e., one certificate and one key pair) is *ALWAYS* on every PIV credential and three pairs (i.e., three certificates and three key pairs) are *SOMETIMES* on a PIV credential.  You can review the [Basics of a PIV Credential](../elements/) to view the four pairs and purposes.
 
-The table below outlines the general information for the PIV credential certificates, certificate extensions, and design considerations.  All information is presented in human-readable formats.
+The table below outlines the general information for the PIV credential certificates, certificate extensions, and design considerations. 
 
-{% include alert-info.html heading = "Six Years" content="PIV credentials and certificates have changed over time due to updates in standards.  Since users may have credentials for up to six years and there are both optional and mandatory elements, the information presented is what is valid for ALL PIV credentials and certificates currently in use. Please note: although your PIV card is valid for six years, the certificates contained on it are valid for only three years." %}
+{% include alert-info.html heading = "Six Years" content="PIV credentials and certificates have changed over time due to updates in standards.  Since users may have credentials for up to six years and there are both optional and mandatory elements, the information presented is what is valid for ALL PIV credentials and certificates currently in use. Note: Although your PIV card is valid for six years, the certificates contained on it are valid for only three years." %}
 
 | Certificate              | Required  | Key Usage  |  Extended Key Usage  | Subject Alternative Name | Design Considerations |
 | -------------            |:----:      |:----:               |:----:               |:----:|  ----|
 | PIV Authentication       |Always      | Digital Signature            | Client Authentication           | otherName = FASC-N;<br> uniformResourceIdentifier = UUID;<br>Principal Name = _prefix_@_suffix_  | Principal Name values are **not** required by policy to be present in all Subject Alternative Name extensions. The Card UUID may also commonly be referred to as the Global Unique Identifier (GUID). |
 | Card Authentication      |Sometimes      | Digital Signature            | id-PIV-cardAuth            |  Name = FASC-N; <br>uniformResourceIdentifier = UUID|   Card Authentication must be included in new and replacement PIV credentials issued after August 2014; it is not expected that **all** PIV credentials will have Card Authentication certificates until September 2019. The Card UUID may also commonly be referred to as the GUID. |
 | Digital Signature        |Sometimes      | Digital Signature, Non-Repudiation            | _Specific EKU are required for certificates issued after June 2019_            |  rfc822name = email address | Email address is **not** required by policy. Email address may be multi-valued attributes and include email aliases. |
-| Encryption               |Sometimes      | Key Encipherment            | _Specific EKU are required for certificates issued after June 2019_            |  rfc822name = email address |  Email address is **not** required by policy. Multiple encryption certificates may be available representing the historical encryption key pairs available. 
+| Encryption               |Sometimes      | Key Encipherment            | _Specific EKU are required for certificates issued after June 2019_            |  rfc822name = email address |  Email address is **not** required by policy. Multiple encryption certificates may appear representing the available, retired encryption key pairs, depending on issuer. 
 
 Additional useful information:
 
--   All key pairs for users are 2048 bit (RSA) keys
+-   All key pairs for users are 2048-bit (RSA) keys
 -   All certificates issued and certified as _PIV_ are SHA-256 signed
--   If you are working with _Common Access Cards_, you may still encounter "SHA-1 signed" and may not see a cardAuth certificate
+-   If you are working with _Common Access Cards_, you may still encounter "SHA-1 signed" and may _not_ see a cardAuth certificate
 -   There has been testing in some infrastructures to migrate to Elliptic Curve Cryptography (ECC), but there are no ECC certificates for users in production as of the date of this guide
 -   There has been testing in some infrastructures for migration to 3072-bit (RSA) certificates, but there are no 3072-bit certificates for users in production as of the date of this guide
 
-In-depth details on the certificate profiles are contained in the current and historical Federal Public Key Infrastructure (FPKI) Policy documents.  This table contains links to the most recent certificate profile document:
+In-depth details on the certificate profiles are contained in the current and historical Federal Public Key Infrastructure (FPKI) Policy documents.  This table contains links to the most recent, PIV-related certificate profiles document:
 
 | Certificates    | Policy Date  | Profile Information|
 | -------------            |:----:               |:----:|
