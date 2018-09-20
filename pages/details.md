@@ -6,9 +6,9 @@ permalink: /details/
 
 You can use these simple methods to view, export, and understand the information stored on a PIV credential.
 
--   [View Your PIV credential certificates](#view-your-piv-credential-certificates)
--   [Export PIV certificates](#export-piv-certificates)
--   [Understand PIV certificates](#understand-piv-certificates)
+-   [View Your PIV Credential Certificates](#view-your-piv-credential-certificates)
+-   [Export PIV Certificates](#export-piv-certificates)
+-   [Understand PIV Certificates](#understand-piv-certificates)
 
 ## View Your PIV Credential Certificates
 Almost **all** of the methods for using your PIV credential for networks, applications, digital signatures, and encryption involve the certificates and key pairs stored on your PIV credential.  There are also scenarios where additional information (such as biometrics) is also accessed and used. 
@@ -29,7 +29,7 @@ To view your certificate information:
 {% include alert-info.html heading = "View" content="You may see many certificates.  To open and view the certificate details, double-click on any certificate." %}
 
 ## Export PIV Certificates
-We won't always be using graphical user interfaces to view the PIV credential certificates.  Throughout the PIV and Federal PKI (FPKI) Guides, we're continuing to add useful procedures for network engineers and examples of code, tools, and common _command line_ options for viewing and troubleshooting configurations.  (**Note:** These examples may use files representing the _public_ certificate[s].)
+We won't always be using graphical user interfaces to view the PIV credential certificates.  Throughout the _PIV_ and _Federal PKI (FPKI) Guides_, we're continuing to add useful procedures for network engineers and examples of code, tools, and common _command line_ options for viewing and troubleshooting configurations.  (**Note:** These examples may use files representing _public_ certificates.)
 
 {% include alert-info.html heading = "Export" content="Look for an Export button and save the file as DER or PEM-encoded, with a file extension of cer (.cer)." %}
 
@@ -61,5 +61,5 @@ Additional useful information:
 -   There has been testing in some infrastructures to migrate to Elliptic Curve Cryptography (ECC), but there are no ECC certificates for users in production as of the date of this guide
 -   There has been testing in some infrastructures to migrate to 3072-bit (RSA) certificates, but there are no 3072-bit certificates for users in production as of the date of this guide
 
-In-depth details on the certificate profiles are contained in the current and historical Federal Public Key Infrastructure (FPKI) Policy documents. The most recent certificate policies and profile documents may be found on IDManagement.gov's [Federal Public Key Infrastructure page](https://www.idmanagement.gov/fpki/#certificate-policies){:target="_blank"}.
+In-depth details on the certificate profiles are contained in the current and historical Federal Public Key Infrastructure (FPKI) policy documents. The most recent policy and certificate profile documents may be found on IDManagement.gov's [Federal Public Key Infrastructure page](https://www.idmanagement.gov/fpki/#certificate-policies){:target="_blank"}.
 
