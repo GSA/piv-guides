@@ -57,7 +57,7 @@ Additional useful information:
 
 -   All key pairs for users are 2048-bit (RSA) keys
 -   All certificates issued and certified as _PIV_ are SHA-256 signed
--   If you are working with _Common Access Cards_, you may still encounter "SHA-1 signed" and might _not_ see a Card Authentication certificate
+-   If you are working with _Common Access Cards_, you may still encounter SHA-1-signed certificates and might _not_ see a Card Authentication certificate
 -   There has been testing in some infrastructures to migrate to Elliptic Curve Cryptography (ECC), but there are no ECC certificates for users in production as of the date of this guide
 -   There has been testing in some infrastructures to migrate to 3072-bit (RSA) certificates, but there are no 3072-bit certificates for users in production as of the date of this guide
 
