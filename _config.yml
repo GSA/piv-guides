@@ -16,6 +16,9 @@ editbranch: staging
 
 #ficam_playbooks_url: /ficam-guides/
 
+theme: uswds-jekyll
+search_site_handle: idmprod
+
 # Links
 # List links that you would like to appear on the top navigation bar here
 navbar:
