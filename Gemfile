@@ -1,2 +1,3 @@
 source 'https://rubygems.org'
-gem 'github-pages'
+gem 'jekyll'
+gem 'uswds-jekyll', :git => 'https://github.com/18F/uswds-jekyll.git'
