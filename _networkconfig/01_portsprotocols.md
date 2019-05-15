@@ -64,11 +64,6 @@ There are dozens of OCSP and CRL URLs for *all* issued PIV credentials.  If you 
 
 The Federal Common Policy Certificate Authority (COMMON) is the root certificate authority and has web services to publish both [certificate chains]({{site.baseurl}}/pivcertchains#certificate-chains) (p7b files) and [CRLs](../../pivcertchains#revocation) for all intermediate certificate authorities which the root signs.
 
-To enable communications with these Federal Common Policy Certificate Authority services, including those currently operational and any expansion, you should verify outbound communications to the Federal Public Key Infrastructure Management Authority address space as registered with the American Registry for Internet Numbers (ARIN) under FPKI-NET:
+To enable communications with these Federal Common Policy Certificate Authority services, including those currently operational and any expansion, you should verify outbound communications to the base domain of http.fpki.gov. For example, a successful connection to http://http.fpki.gov/fcpca/fcpca.crt will download a copy of the Federal Common Policy CA certificate.
 
-| IPv4  |  Net Range  | 199.167.92.0 - 199.167.95.255 |
-| IPv4  |  CIDR  | 199.167.92.0 / 22 |
-| IPv6  |  Net Range  | 2620:9B:C000::- 2620:9B:C00F:FFFF:FFFF:FFFF:FFFF:FFFF |
-| IPv6  |  CIDR  | 12620:9B:C000::/44 |
-
-You should consider allowing two protocols (port): HTTP (80) and DNS (53).  Although the web services for publishing CRLs is not currently served over HTTPS (443), you may want to allow HTTPS (443) to future proof for any expansion.
+You should consider allowing two protocols (port): HTTP (80) and DNS (53).  Although the web services for publishing CRLs are not currently served over HTTPS (443), you may want to allow HTTPS (443) to future proof for any expansion.
