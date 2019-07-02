@@ -1532,6 +1532,19 @@ li {
     .usa-unstyled-list li:after {
       display: none; }
 
+.usa-unstyled-header-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; 
+  display: table;}
+  .usa-unstyled-header-list li {
+    display: list-item;
+    margin: 10; }
+    .usa-unstyled-header-list li:before {
+      display: none; }
+    .usa-unstyled-header-list li:after {
+      display: none; }
+
 table {
   border-spacing: 0;
   margin: 2em 0;
