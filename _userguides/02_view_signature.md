@@ -5,7 +5,7 @@ title: View a Digital Signature
 pubDate: October 25, 2019
 collection: userguides
 permalink: userguides/viewdigsig/
-description: This guide will walk you through the steps for digitally signing a Microsoft Word document with your PIV credential or similar digital certificate.
+description: This guide will walk you through how to view an existing digital signature in a Microsoft Word document.
 ---
 
 In MS Word, you can view the details of a digital signature, including the name assigned to the certificate and the certificate expiration date.
