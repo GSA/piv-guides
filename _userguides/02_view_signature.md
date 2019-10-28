@@ -16,7 +16,7 @@ In MS Word, you can view the details of a digital signature, including the name 
 
     In the header, you may see a banner indicating the document has a digital signature.
     
-    <ViewSignatures.png>
+    ![View Signatures]({{site.baseurl}}/img/ViewSignatures.png)
     
 2. If you see the banner, click the **View Signatures** button and proceed to step 5.
 
@@ -27,13 +27,13 @@ In MS Word, you can view the details of a digital signature, including the name 
 3. In the left bar, click **Info**.
 4. Click **View Signatures**.
 
-    <FileInfo.png>
+    ![File Info]({{site.baseurl}}/img/FileInfo.png)
     
     The **Signatures** pane appears.
     
 5. Hover over the signature you want to view, and click the down arrow.
 
-    <SignaturesPane.png>
+    ![Signatures Pane]({{site.baseurl}}/img/SignaturesPane.png)
     
 6. Click **Signature Details**.
 
