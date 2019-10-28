@@ -12,13 +12,13 @@ This guide describes how you'll need to prepare and digitally sign a document to
 
 ## OFR Requirements
 
-The name of a digital signatory must match the name typed in the signature block, or meet the accepted standards in the Document Drafting Handbook (DDH), chapter 1.6.
+The name of a digital signatory must match the name typed in the signature block, or meet the accepted standards in the [Document Drafting Handbook (DDH)](https://www.archives.gov/files/federal-register/write/handbook/ddh.pdf){:target="_blank"}, chapter 1.6.
 
 Use MS Word 2010 or later, and submit only *.docx* files. Older versions of MS Word lack a standard method to validate digital signatures, and the old file type *.doc* is not compatible with OFR's digital validation process, and not accepted in the web portal.
 
 If multiple agencies submit a document for publication, they must submit one document that is signed by a representative from every issuing agency (DDH, 1.6). If one or more agencies are unable or unwilling to digitally sign, then the document must be submitted via the conventional paper-and-disk procedure (DDH, 6.3),
 
-{% include alert-info.html content="The OFR web portal accepts only invisible digital signatures on MS Word documents. For instructions, see Add an Invisible Digital Signature." %}
+{% include alert-info.html content="The OFR web portal accepts only invisible digital signatures on MS Word documents. For instructions, see [Add an Invisible Digital Signature]({{site.baseurl}}/userguides/signworddoc/)." %}
 
 ## Submit a Jointly-Issued Document to OFR
 
@@ -29,8 +29,8 @@ In this process, signatory 1 signs and sends the document to signatory 2, who si
 {% include alert-info.html content="Making a change to a digitally signed document removes any prior signatures. If you need to make any changes after any parties have digitally signed the document, you’ll have to restart the signing process from scratch." %}
 
 1. Coordinate the order of signatures among all the signatories.
-2. In MS Word, signatory 1 should create a signature line for each subsequent signatory (steps 1-4 of Add a Digital Signature Via a Signature Line), and save the final version of the document as a .docx file.
-3. Signatory 1 digitally signs the document using the process in Add an Invisible Digital Signature.
+2. In MS Word, signatory 1 should create a signature line for each subsequent signatory (steps 1-4 of [Add a Digital Signature Via a Signature Line]({{site.baseurl}}/userguides/signworddoc/)), and save the final version of the document as a .docx file.
+3. Signatory 1 digitally signs the document using the process in [Add an Invisible Digital Signature]({{site.baseurl}}/userguides/signworddoc/).
 4. Signatory 1 sends the signed document to signatory 2.
       Each signatory follows steps 3 and 4 until all issuing agencies have digitally signed the document.
 
@@ -38,7 +38,7 @@ In this process, signatory 1 signs and sends the document to signatory 2, who si
 
 After all of the issuing agencies have signed the document, the lead coordinating agency submits the document to OFR via the web portal. The corrdinating agency should include a special handling letter that alerts OFR of the multi-agency submission with multiple signatories. Ensure the special handling letter is digitally signed by at least one party.
 
-If you need assistance with digital signatures in MS Word, contact OFR at ofrtechgroup@gpo.gov or (202) 741-6020.
+If you need assistance with digital signatures in MS Word, contact OFR at <ofrtechgroup@gpo.gov> or (202) 741-6020.
 
 ## Frequently Asked Questions
 
@@ -68,11 +68,11 @@ Yes, that and your signing credential, either the one on your PIV card or the on
 
 ### We purchased our signing certificates from GPO or another vendor. We use them to sign, which creates the **.p7m** file. What do we do now?
 
-If you use purchased certificates, such as from an Entrust vendor, you can continue to use them. Simply select the purchased certificate from the list in step 9 of Add an Invisible Digital Signature.
+If you use purchased certificates, such as from an Entrust vendor, you can continue to use them. Simply select the purchased certificate from the list in step 9 of [Add an Invisible Digital Signature]({{site.baseurl}}/userguides/signworddoc/.
 
 ### How do I identify the Purchased Certificates and PIV Card Certificates when signing a document?
 
-In step 9 of Add an Invisible Digital Signature, in the **Windows Security** window, you can identify certificate types using the corresponding icons. These icons may vary depending on your operating system.
+In step 9 of [Add an Invisible Digital Signature]({{site.baseurl}}/userguides/signworddoc/, in the **Windows Security** window, you can identify certificate types using the corresponding icons. These icons may vary depending on your operating system.
 
 <CertificateIcons.png>
 
