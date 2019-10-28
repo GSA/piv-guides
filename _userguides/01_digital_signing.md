@@ -23,13 +23,13 @@ In this section, you'll find instructions for the following procedures:
 2. Insert your Federal Government-issued Personal Identity Verification (PIV) card into your card reader.
 3. On the **Insert** tab, in the **Text** group, click **Signature Line**.
 
-    <SignatureSetup.png>
+    ![Signature Setup]({{site.baseurl}}/img/SignatureSetup.png)
 
 4. Type your information, then click **OK**.
 
     The signature line appears in the document.
     
-    <SignatureLine.png>
+    ![Signature Line]({{site.baseurl}}/img/SignatureLine.png)
 
 5. Double-click the signature line.
 
@@ -53,13 +53,13 @@ In this section, you'll find instructions for the following procedures:
 3. In the ribbon, click **File**.
 4. In the left bar, click **Info**.
 
-    <AddDigitalSignature.png>
+    ![Add Digital Signature]({{site.baseurl}}/img/AddDigitalSignature.png)
     
 5. Click **Protect Document** > **Add a Digital Signature**.
 
     The **Sign** window appears.
     
-    <SignWindow.png>
+    ![Sign Window]({{site.baseurl}}/img/SignWindow.png)
     
 6. In the **Commitment Type** box, select the nature of your involvement with the document.
 7. In the **Purpose for signing this document** box, enter an optional short description.
@@ -98,7 +98,7 @@ You want to ensure that you use the correct certificate when you sign a document
 
 1. When you sign a document using any of the methods above, you'll see the **Sign** window.
 
-    <SignWindow.png>
+    ![Sign Window]({{site.baseurl}}/img/SignWindow.png)
     
 2. Click **Change**.
 
@@ -106,7 +106,7 @@ You want to ensure that you use the correct certificate when you sign a document
     
 3. In the list of certificates, select the first unexpired certificate with your name.
 
-    <CertificateList.png>
+    ![Certificate List]({{site.baseurl}}/img/CertificateList.png)
     
 4. Click **Click here to view certificate properties**.
 
@@ -116,6 +116,6 @@ You want to ensure that you use the correct certificate when you sign a document
 
     The value for the **Key Usage** field should include **Digital Signature** at a minimum or **Digital Signature, Non-Repudiation**. If this is not the correct certificate, go to step 3 and follow these steps with a different certificate.
     
-    <SignatureDetails.png>
+    ![Signature Details]({{site.baseurl}}/img/SignatureDetails.png)
     
 6. Click **OK**.
