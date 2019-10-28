@@ -74,7 +74,7 @@ If you use purchased certificates, such as from an Entrust vendor, you can conti
 
 In step 9 of [Add an Invisible Digital Signature]({{site.baseurl}}/userguides/signworddoc/, in the **Windows Security** window, you can identify certificate types using the corresponding icons. These icons may vary depending on your operating system.
 
-<CertificateIcons.png>
+![Certificate Icons]({{site.baseurl}}/img/CertificateIcons.png)
 
 ### Some of our signers use MS Word for Apple on iPad. Will this work for PKI submission?
 
