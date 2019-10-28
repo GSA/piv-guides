@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Digital Signatures
-collection: digitalsignatures
+collection: userguides
 permalink: /userguides/
 ---
 
