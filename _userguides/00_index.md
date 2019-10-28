@@ -1,11 +1,11 @@
 ---
 layout: default
-title: PIV User Guides
-collection: userguides
+title: Digital Signatures
+collection: digitalsignatures
 permalink: /userguides/
 ---
 
-These user guides will help agency users with PIV related tasks.
+These guides will help agency users with tasks related to digitally signing Microsoft Word documents.
 
 {% for item in site.userguides reversed %}
   {% assign link = item.permalink | remove: '/' %}
