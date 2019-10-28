@@ -2,10 +2,10 @@
 layout: default
 navtitle: Additional Resources
 title: Additional Resources
-pubDate: July 17, 2018
+pubDate: October 28, 2019
 collection: userguides
 permalink: userguides/additionalresources/
-description: This guide will walk you through the procedures for digitally signing a Microsoft Word document for submission to the Office of the Federal Register using your PIV credential or similar digital certificate.
+description: This page includes additional policies, Microsoft documentation, and administrator instructions related to digital signatures.
 ---
 
 For additional information about digital signatures and related policies, see the following resources:
