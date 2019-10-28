@@ -14,7 +14,7 @@ If you need a different signatory or to make last-minute changes to a document, 
     
     In the header, you may see a banner indicating that the document has a digital signature.
     
-    <ViewSignatures.png>
+    ![View Signatures]({{site.baseurl}}/img/ViewSignatures.png)
     
 2. If you see the banner, click the **View Signatures** button and proceed to step 5.
 
@@ -29,7 +29,7 @@ If you need a different signatory or to make last-minute changes to a document, 
     
 5. Hover over the signature you want to remove, and click the down arrow.
 
-    <SignaturesPane.png>
+    ![Signatures Pane]({{site.baseurl}}/img/SignaturesPane.png)
     
 6. Click **Remove Signature**.
 
