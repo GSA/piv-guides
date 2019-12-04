@@ -118,6 +118,18 @@ WinSCP is an open-source, secure copy protocol (SCP) and secure file transfer pr
 
 {% include alert-warning.html content = "Network administrator privileges are needed to use SSH for remote access." %}
 
+There are two options for configuring SSH clients to use a PIV/CAC device as the SSH key store:
+
+### Built-in PIV/CAC support (macOS High Sierra and later)
+
+1. Insert your PIV/CAC into your card reader.
+2. Use ` ssh-keygen -D /usr/lib/ssh-keychain.dylib` to get the OpenSSH-format public key fingerprint which can be added to your `authorized_keys` file, account profiles, etc.
+3. Add `PKCS11Provider=/usr/lib/ssh-keychain.dylib` to your `~/.ssh/ssh_config` file to tell `ssh` to scan the PIV profiles for keys when determining which keys to attempt on remote hosts.
+
+See https://support.apple.com/en-us/HT208372 for additional information
+
+### OpenSC
+
 You can use OpenSC on your macOS computer to authenticate to a remote server with your PIV/CAC card.  
 
 1. Install [OpenSC](https://www.github.com/OpenSC/OpenSC/wiki/Download-latest-OpenSC-stable-release){:target="_blank"}. 
