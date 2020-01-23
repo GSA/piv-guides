@@ -29,7 +29,7 @@ Commercial solutions are also available.
 ### SSH Using PuTTY-CAC
 
 PuTTY-CAC is an open-source SSH client that uses Microsoft's CryptoAPI (CAPI). (Pageant isn't needed with PuTTY-CAC for this solution.)
-1. You'll need to download [**PuTTY-CAC v0.70u5**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"} to _C:\ssh\putty.exe_ or a similar folder. Select either _32-bit_ or _64-bit_, based on your Windows OS. (Pageant and MSI Installers aren't needed.)
+1. You'll need to download [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"} to _C:\ssh\putty.exe_ or a similar folder. Select either _32-bit_ or _64-bit_, based on your Windows OS. (Pageant and MSI Installers aren't needed.)
 2. Double-click on _putty.exe_ and insert your PIV/CAC card into your card reader.
 3. At the **PuTTY Configuration** window, go to _Category:_ &gt; _Connection_ &gt; _SSH_ &gt; _Certificate_. Click the _Set CAPI Cert..._ button and _OK_.
 <br><br>
@@ -117,6 +117,18 @@ WinSCP is an open-source, secure copy protocol (SCP) and secure file transfer pr
 ## SSH from macOS
 
 {% include alert-warning.html content = "Network administrator privileges are needed to use SSH for remote access." %}
+
+There are two options for configuring SSH clients to use a PIV/CAC device as the SSH key store:
+
+### Built-in PIV/CAC support (macOS High Sierra and later)
+
+1. Insert your PIV/CAC into your card reader.
+2. Use ` ssh-keygen -D /usr/lib/ssh-keychain.dylib` to get the OpenSSH-format public key fingerprint which can be added to your `authorized_keys` file, account profiles, etc.
+3. Add `PKCS11Provider=/usr/lib/ssh-keychain.dylib` to your `~/.ssh/ssh_config` file to tell `ssh` to scan the PIV profiles for keys when determining which keys to attempt on remote hosts.
+
+See https://support.apple.com/en-us/HT208372 for additional information
+
+### OpenSC
 
 You can use OpenSC on your macOS computer to authenticate to a remote server with your PIV/CAC card.  
 
