@@ -29,7 +29,7 @@ Commercial solutions are also available.
 ### SSH Using PuTTY-CAC
 
 PuTTY-CAC is an open-source SSH client that uses Microsoft's CryptoAPI (CAPI). (Pageant isn't needed with PuTTY-CAC for this solution.)
-1. You'll need to download [**PuTTY-CAC v0.70u5**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"} to _C:\ssh\putty.exe_ or a similar folder. Select either _32-bit_ or _64-bit_, based on your Windows OS. (Pageant and MSI Installers aren't needed.)
+1. You'll need to download [**PuTTY-CAC**](https://www.github.com/NoMoreFood/putty-cac/releases){:target="_blank"} to _C:\ssh\putty.exe_ or a similar folder. Select either _32-bit_ or _64-bit_, based on your Windows OS. (Pageant and MSI Installers aren't needed.)
 2. Double-click on _putty.exe_ and insert your PIV/CAC card into your card reader.
 3. At the **PuTTY Configuration** window, go to _Category:_ &gt; _Connection_ &gt; _SSH_ &gt; _Certificate_. Click the _Set CAPI Cert..._ button and _OK_.
 <br><br>
