@@ -18,20 +18,9 @@ You need to publish the Federal Common Policy Certification Authority (COMMON) [
 You want to add the COMMON [root certificate]({{site.baseurl}}/pivcertchains/#download-root-and-intermediate-certificates) to a Group Policy Object to publish it as a _trusted root_ for ALL the devices and user objects.
 
 ## NTAuth Enterprise Trust Store
-The _NTAuth_ enterprise trust store is used by your network domain to determine which certification authorities to trust specifically for authenticating users to the network.  To understand the difference between the typical network domain Trust Stores and NTAuth, you may want to think of NTAuth as an _explicit trust list_ of certification authorities used for network authentication.
+The _NTAuth_ enterprise trust store is used by your Active Directory domain to determine which certification authorities to trust specifically for authenticating users to the network.  The certificate for the Issuing CA of both the Smart Card certificate and the Domain Controller certificate must be published to the NTAuth store.  If your agency will accept PIV credentials issued by another agency or partner, you will need to include all possible Issuing CAs into the NTAuth store.
 
-There are two very different options for what certification authority certificates you need publish to the NTAuth trust store.  Each option depends on the choice you make for [linking your user accounts](../accounts/).
-
-| Trust Store | Account Linking Approach | Certificates to Publish | Considerations|
-| ----- | -------| -------| ------|
-| NTAuth | Principal Name | COMMON and ALL Intermediate Certification Authority certificates | If your agency needs the ability to accept any PIV credentials for network authentication and has users with PIV credentials issued by another agency or partner, you will need to include all possible Intermediate Certification Authority certificates. |
-| NTAuth  | altSecurityIdentities _using_ Issuer+Subject as identifier | COMMON | _*Please note: this line is in draft and needs to be tested for bridged intermediate certification authorities._ |
-| NTAuth  | altSecurityIdentities _not using_ Issuer+Subject as identifier | COMMON and ALL Intermediate Certification Authority certificates | If your agency needs the ability to accept any PIV credentials for network authentication and has users with PIV credentials issued by another agency or partner, you will need to include all possible Intermediate Certification Authority certificates. |
-
-
-To publish a certificate to NTAuth, you can use either a group policy object (recommended) OR the certutil tool.  
-
-Using **certutil**, you will need to have Enterprise Admin permissions for the domain.  
+Use certutil to publish a certificate to the NTAuth store.  This will require Enterprise Admin permissions for the domain. 
 
 To publish / add a certificate to NTAuth:
 
@@ -46,8 +35,30 @@ To view all certificates in NTAuth:
   certutil –viewstore –enterprise NTAuth
 ```
 
-To propagate from the domain controller(s) to the enterprise, you'll want to do a _gpupdate_:  
+To remove certificates in NTAuth:  
+
+```
+  certutil –viewdelstore –enterprise NTAuth
+```
+
+Depending on your Active Directory topology, it could take several hours to propagate any changes throughout the agency. To propagate from the domain controller(s) to the enterprise, a group policy update can be forced to an OU via Group Policy Management Console.  If troubleshooing a single computer, either of the commands run as administrator should work: 
 
 ```
   gpupdate /force
 ```
+
+or
+
+```
+  certutil -pulse
+```
+
+However, the registry containing this information may not be updated if your agency has the Certificate Services Client - Auto-Enrollment disabled.
+
+In this case, an administrator can add it locally with the command:
+
+```
+  certutil -enterprise -addstore NTAuth IssuingCaFileName.cer
+```
+
+However, keep in mind that the way a certificate is added to a store (Trusted Root, NTAuth, etc.), is the way the certificate has to be removed from the store in the future.  For example, an administrator cannot add certificates via GPO, and then remove them via the command line.
