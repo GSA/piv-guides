@@ -13,9 +13,11 @@ There are two trust stores to consider for your network domain:
 - [NTAuth Enterprise Trust Store](#ntauth-enterprise-trust-store)
 
 ##  Trusted Root Certification Authorities
-You need to publish the Federal Common Policy Certification Authority (COMMON) [root certificate]({{site.baseurl}}/pivcertchains/#download-root-and-intermediate-certificates) to the trusted root certification authority trust stores on all your workstations, devices, servers and domain controllers.   
+You need to publish the Federal Common Policy Certification Authority (COMMON) [root certificate]({{site.baseurl}}/pivcertchains/#download-root-and-intermediate-certificates) to the Trusted Root Certification Authorities trust stores on all your workstations, devices, servers, and domain controllers.   
 
 You want to add the COMMON [root certificate]({{site.baseurl}}/pivcertchains/#download-root-and-intermediate-certificates) to a Group Policy Object to publish it as a _trusted root_ for ALL the devices and user objects.
+
+Additionally, the Root CA for the domain controller certificates must also be in the Trusted Root Certification Authorities trust store on all your workstations, devices, servers, and domain controllers for which the domain controller will be authorizing smart card logon.
 
 ## NTAuth Enterprise Trust Store
 The _NTAuth_ enterprise trust store is used by your Active Directory domain to determine which certification authorities to trust specifically for authenticating users to the network.  The certificate for the Issuing CA of both the Smart Card certificate and the Domain Controller certificate must be published to the NTAuth store.  If your agency will accept PIV credentials issued by another agency or partner, you will need to include all possible Issuing CAs into the NTAuth store.
