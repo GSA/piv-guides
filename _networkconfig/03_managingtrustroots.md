@@ -20,7 +20,7 @@ It is recommended to add the COMMON [root certificate]({{site.baseurl}}/pivcertc
 Additionally, the Root CA for the domain controller certificates must also be in the Trusted Root Certification Authorities trust store on all your workstations, devices, servers, and domain controllers for which the domain controller will be authorizing smart card logon.
 
 ## Enterprise NTAuth Trust Store
-The Enterprise _NTAuth_ trust store is used by your Active Directory domain to determine which certification authorities to trust specifically for authenticating users to the network.  The certificate for the Issuing CA of both the Smart Card certificate and the Domain Controller certificate must be published to the Enterprise NTAuth store.  If your agency will accept PIV credentials issued by another agency or partner, you will need to include all possible Issuing CAs into the Enterprise NTAuth store.
+The Enterprise _NTAuth_ trust store is used by your Active Directory domain to determine which certification authorities to trust for issuing certificates that are authorized for smart card logon.  The certificate for the Issuing CA of both the smart card certificate and the Domain Controller certificate must be published to the Enterprise NTAuth store.  If your agency will accept PIV credentials issued by another agency or partner, you will need to include all possible Issuing CAs into the Enterprise NTAuth store.
 
 Use certutil to publish a certificate to the NTAuth store.  This will require Enterprise Admin permissions for the domain. 
 
