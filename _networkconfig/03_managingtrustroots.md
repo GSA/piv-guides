@@ -9,17 +9,17 @@ You want your network domain to trust your users and their PIV credentials.  You
 
 There are two trust stores to consider for your network domain:
 
-- [Trusted Root Certification Authorities](#trusted-root-certification-authorities)
-- [NTAuth Enterprise Trust Store](#ntauth-enterprise-trust-store)
+- [Trusted Root Certification Authorities Trust Store](#trusted-root-certification-authorities-trust-store)
+- [Enterprise NTAuth Trust Store](#enterprise-ntauth-trust-store)
 
-##  Trusted Root Certification Authorities
+##  Trusted Root Certification Authorities Trust Store
 You need to publish the Federal Common Policy Certification Authority (COMMON) [root certificate]({{site.baseurl}}/pivcertchains/#download-root-and-intermediate-certificates) to the Trusted Root Certification Authorities trust stores on all your workstations, devices, servers, and domain controllers.   
 
-You want to add the COMMON [root certificate]({{site.baseurl}}/pivcertchains/#download-root-and-intermediate-certificates) to a Group Policy Object to publish it as a _trusted root_ for ALL the devices and user objects.
+It is recommended to add the COMMON [root certificate]({{site.baseurl}}/pivcertchains/#download-root-and-intermediate-certificates) to a Group Policy Object (GPO) to publish it as a _trusted root_ for ALL the devices and user objects.  It is also possible to install it via command line, however, keep in mind that the way a certificate is added to a store (Trusted Root, NTAuth, etc.), is the way the certificate has to be removed from the store in the future.  For example, an administrator cannot add certificates locally to a system via command line, and then remove the certificate later using a GPO.
 
 Additionally, the Root CA for the domain controller certificates must also be in the Trusted Root Certification Authorities trust store on all your workstations, devices, servers, and domain controllers for which the domain controller will be authorizing smart card logon.
 
-## NTAuth Enterprise Trust Store
+## Enterprise NTAuth Trust Store
 The _NTAuth_ enterprise trust store is used by your Active Directory domain to determine which certification authorities to trust specifically for authenticating users to the network.  The certificate for the Issuing CA of both the Smart Card certificate and the Domain Controller certificate must be published to the NTAuth store.  If your agency will accept PIV credentials issued by another agency or partner, you will need to include all possible Issuing CAs into the NTAuth store.
 
 Use certutil to publish a certificate to the NTAuth store.  This will require Enterprise Admin permissions for the domain. 
@@ -63,4 +63,3 @@ In this case, an administrator can add it locally with the command:
   certutil -enterprise -addstore NTAuth IssuingCaFileName.cer
 ```
 
-However, keep in mind that the way a certificate is added to a store (Trusted Root, NTAuth, etc.), is the way the certificate has to be removed from the store in the future.  For example, an administrator cannot add certificates via GPO, and then remove them via the command line.
