@@ -43,7 +43,7 @@ To remove certificates in NTAuth:
   certutil –viewdelstore –enterprise NTAuth
 ```
 
-Depending on your Active Directory topology, it could take several hours to propagate any changes throughout the agency. To propagate from the domain controller(s) to the enterprise, a group policy update can be forced to an OU via Group Policy Management Console.  If troubleshooing a single computer, either of the commands run as administrator on the local computer should work: 
+Depending on your Active Directory topology, it could take several hours to propagate any changes throughout the agency. To propagate from the domain controller(s) to the enterprise, a group policy update can be forced to an OU via Group Policy Management Console.  If troubleshooing a single computer, running either of the following commands, from an elevated command prompt, on the problem computer should work: 
 
 ```
   gpupdate /force
