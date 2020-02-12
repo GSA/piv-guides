@@ -5,9 +5,9 @@ collection: networkconfig
 permalink: networkconfig/trustedroots/
 ---
 
-You want your network domain to trust your users and their PIV credentials.  Your workstations and servers also need to be able to trust the network domain.  Trust and certificate chains are reviewed in the [Certificate Trust](../../pivcertchains) overview and this page includes information on configuring your network domain.
+You want your Active Directory domain, including servers and workstations, to trust user's PIV credentials for authentication.  Trust and certificate chains are reviewed in the [Certificate Trust](../../pivcertchains) overview, and this page includes information on configuring your Active Directory domain.
 
-There are two trust stores to consider for your network domain:
+There are two trust stores to consider for your Active Directory domain:
 
 - [Trusted Root Certification Authorities Trust Store](#trusted-root-certification-authorities-trust-store)
 - [Enterprise NTAuth Trust Store](#enterprise-ntauth-trust-store)
