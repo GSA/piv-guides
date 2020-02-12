@@ -28,7 +28,7 @@ To publish / add a certificate to NTAuth:
 
 
 ```
-  certutil –dspublish –f certificate_to_publish.cer NTAuthCA
+  certutil –dspublish –f IssuingCaFileName.cer NTAuthCA
 ```
 
 To view all certificates in NTAuth:  
