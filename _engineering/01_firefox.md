@@ -43,9 +43,12 @@ Launch **_Firefox_** and load a new _Security Device_ (i.e., the Security Device
 | ----- | -------| -------| 
 | **Windows** | C:\Windows\System32 | pkcs11.dll | 
 | **macOS**  | /Library/OpenSC/lib/ | pkcs11.so | 
+| **macOS** brew cask install opensc | /usr/local/Cellar/p11-kit/0.23.20_1/lib/pkcs11/ | p11-kit-client.so |
 | **Linux**  | /usr/lib/ | pkcs11.so | 
 
 * Click _Open_ and verify that the module has been loaded. Then, click _OK_ to return to the _Privacy & Security_ options.
+
+On macOS Catalina you can "brew cask install openSC" then select the file. Quit and restart Firefox, you'll see it reading the card, and you can authenticate to PIV-protected sites.
 
 ### Import PIV Issuer Certificate
 * Click the _View Certificates_ button. If prompted, enter your PIV credential PIN.
