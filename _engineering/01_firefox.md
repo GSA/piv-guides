@@ -43,7 +43,8 @@ Launch **_Firefox_** and load a new _Security Device_ (i.e., the Security Device
 | ----- | -------| -------| 
 | **Windows** | C:\Windows\System32 | pkcs11.dll | 
 | **macOS**  | /Library/OpenSC/lib/ | pkcs11.so | 
-| **Linux**  | /usr/lib/ | pkcs11.so | 
+| **Linux**  | /usr/lib/ | pkcs11.so |
+| **Ubuntu 20.04** | /usr/lib/x86_64-linux-gnu/pkcs11 | opensc-pkcs11.so |
 
 * Click _Open_ and verify that the module has been loaded. Then, click _OK_ to return to the _Privacy & Security_ options.
 
