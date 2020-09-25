@@ -186,3 +186,4 @@ Word 2016:  Computer\HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\c
 1. [Digital Signature Settings in Office 2013](https://technet.microsoft.com/en-us/library/cc545900.aspx){:target="_blank"}
 1. [X.509 Certificate Policy for the U.S. Federal PKI Common Policy Framework](https://www.idmanagement.gov/wp-content/uploads/sites/1171/uploads/fpki-x509-cert-common-policy.pdf){:target="_blank"}
 1. [NIST Policy on Hash Functions](https://csrc.nist.gov/Projects/Hash-Functions/NIST-Policy-on-Hash-Functions){:target="_blank"}
+1. [Electronic Signature's Legality](https://cocosign.com/resource/electronic-signatures-legality-in-the-world/){:target="_blank"}
