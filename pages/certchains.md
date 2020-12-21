@@ -4,7 +4,7 @@ title: Certificate Trust
 permalink: /pivcertchains/
 ---
 
-One of the most common questions is "What are all these certificates and how do I configure my applications to use them?"  Answering this question involves explaining Trust, Certificate chains and Revocation.  
+One of the most common questions is "What are all these certificates and how do I configure my applications to use them?"  Answering this question involves explaining trust, certificate chains and revocation.  
 
 - [Trust](#trust)
 - [Certificate *chains*](#certificate-chains)
@@ -16,22 +16,22 @@ If you are looking for the root certificates, you can quickly jump to the end of
 
 
 ## Trust
-Identity certificates are issued and digitally signed by a _Certification Authority_.  The _Certification Authority_ that signed your PIV certificates is called an _**Intermediate** Certification Authority_ because it was issued a certificate by another _Certification Authority_.  This process of issuing and signing continues until there is one  _Certification Authority_ that is called the _**Root** Certification Authority_.
+Identity certificates are issued and digitally signed by a _certification authority_.  The _certification authority_ that signed your PIV certificates is called an _**intermediate** certification authority_ because it was issued a certificate by another _certification authority_.  This process of issuing and signing continues until there is one  _certification authority_ that is called the _**root** certification authority_.
 
 The full process of proving identity when issuing the certificates, auditing the certification authorities, and the cryptographic protections of the digital signatures establish the basis of Trust for PIV credentials and certificates.
 
 ![Example of an identity certificate with intermediate and root]({{site.baseurl}}/img/certificatechain_small.png){:style="float:center"}
 
-For the US Federal Government Executive branch agencies, there is one Root Certification Authority named _Federal Common Policy Certification Authority (COMMON)_, and dozens of Intermediate Certification Authorities.  The US Federal Government has also established Trust with other Certification Authorities which serve business communities, State and Local government communities, and international government communities.
+For the US Federal Government Executive branch agencies, there is one root certification authority named _Federal Common Policy Certification Authority (COMMON)_, and dozens of intermediate certification Authorities.  The US Federal Government has also established trust with other certification authorities which serve business communities, State and Local government communities, and international government communities.
 
 * [CLICK HERE: A graph of the federal public key infrastructure, including the business communities](https://fpki.idmanagement.gov/tools/fpkigraph/){:target="_blank"}
 
-The participating Certification Authorities and the policies, processes, and auditing is referred to as the [*Federal Public Key Infrastructure (FPKI)*](https://www.idmanagement.gov/topics/fpki/){:target="_blank"}
+The participating certification authorities and the policies, processes, and auditing is referred to as the [*Federal Public Key Infrastructure (FPKI)*](https://www.idmanagement.gov/topics/fpki/){:target="_blank"}
 
 ## Certificate Chains
 To digitally trust YOU and your PIV credential certificates, the workstations, servers, applications and network domains will be configured. Understanding and managing certificate chains are one of the methods to configure trust.
 
-The certificate chain includes Intermediate Certification Authority certificates and the Federal Common Policy Certification Authority (COMMON) root certificate.
+The certificate chain includes intermediate certification authority certificates and the Federal Common Policy Certification Authority (COMMON) root certificate.
 
 ![Example of a PIV certificate chain to Common]({{site.baseurl}}/img/pivcertificatechain_small.png){:style="float:center"}
 
@@ -40,7 +40,7 @@ The certificate chain includes Intermediate Certification Authority certificates
 
 If you are an engineer working on implementing PIV authentication, you may need to download and install the root certificate (COMMON) for your workstations, servers, applications and network domains.
 
-Many applications may require Intermediate Certificates to successfully trust ALL PIV credentials, and may not support the automatic retrieval of certificate chains.  You should consider the possible unintended consequences of installing intermediate certificates which _only_ represent intermediate certificate chains for your agency users.  You may want to be able to Trust all PIV credentials from agencies, and credentials from our trusted partners.  It is increasingly more common for users from other agencies or partners to _authenticate_ to your networks or applications, and this usage is the foundation of PIV to promote trust, interoperability, authentication, and efficiency across the US Federal Government.  
+Many applications may require intermediate certificates to successfully trust ALL PIV credentials, and may not support the automatic retrieval of certificate chains.  You should consider the possible unintended consequences of installing intermediate certificates which _only_ represent intermediate certificate chains for your agency users.  You may want to be able to Trust all PIV credentials from agencies, and credentials from our trusted partners.  It is increasingly more common for users from other agencies or partners to _authenticate_ to your networks or applications, and this usage is the foundation of PIV to promote trust, interoperability, authentication, and efficiency across the US Federal Government.  
 
 General recommendations for trust and certificate chain management include:
 
@@ -67,7 +67,7 @@ There are two protocols available to verify if a PIV credential certificate has 
 - Online Certificate Status Protocol (OCSP)
 - Certificate Revocation Lists (CRLs)
 
-Some implementations also validate whether the Intermediate Certification Authority certificates have been _revoked_.  While a revocation of an Intermediate Certification Authority certificate does not occur often, this is a safeguard in place and each Intermediate Certification Authority and COMMON also publishes Certificate Revocation Lists for the certificates signed next in the chain.   
+Some implementations also validate whether the intermediate certification authority certificates have been _revoked_.  While a revocation of an intermediate certification authority certificate does not occur often, this is a safeguard in place and each intermediate certification Authority and COMMON also publishes Certificate Revocation Lists for the certificates signed next in the chain.   
 
 The table below outlines general information on each protocol, the certificate extension which contains the reference, and design considerations.
 
