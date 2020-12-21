@@ -40,4 +40,4 @@ The following electronic elements are for usage by YOU:
 - **Digital Signature**, which is a certificate and key pair allows the YOU to digitally sign a document or email, providing both integrity and non-repudiation.
 - **Encryption**, which is a certificate and key pair and allows YOU to digitally encrypt documents or email with your colleagues in the US Federal Government or with government Partners, providing confidentiality through ensuring that only authorized parties can read the document or email.
 
-The Card Authentication, PIV Authentication, Digital Signature, and Encryption all leverage four separate certificates and key pairs, issued from certificate authorities that are audited and certified by the Federal Public Key Infrastructure (FPKI).
+The Card Authentication, PIV Authentication, Digital Signature, and Encryption all leverage four separate certificates and key pairs, issued from certification authorities that are audited and certified by the Federal Public Key Infrastructure (FPKI).

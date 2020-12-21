@@ -16,27 +16,27 @@ If you are looking for the root certificates, you can quickly jump to the end of
 
 
 ## Trust
-Identity certificates are issued and digitally signed by a _Certificate Authority_.  The _Certificate Authority_ that signed your PIV certificates is called an _**Intermediate** Certificate Authority_ because it was issued a certificate by another _Certificate Authority_.  This process of issuing and signing continues until there is one  _Certificate Authority_ that is called the _**Root** Certificate Authority_.
+Identity certificates are issued and digitally signed by a _Certification Authority_.  The _Certification Authority_ that signed your PIV certificates is called an _**Intermediate** Certification Authority_ because it was issued a certificate by another _Certification Authority_.  This process of issuing and signing continues until there is one  _Certification Authority_ that is called the _**Root** Certification Authority_.
 
-The full process of proving identity when issuing the certificates, auditing the certificate authorities, and the cryptographic protections of the digital signatures establish the basis of Trust for PIV credentials and certificates.
+The full process of proving identity when issuing the certificates, auditing the certification authorities, and the cryptographic protections of the digital signatures establish the basis of Trust for PIV credentials and certificates.
 
 ![Example of an identity certificate with intermediate and root]({{site.baseurl}}/img/certificatechain_small.png){:style="float:center"}
 
-For the US Federal Government Executive branch agencies, there is one Root Certificate Authority named _Federal Common Policy Certificate Authority (COMMON)_, and dozens of Intermediate Certificate Authorities.  The US Federal Government has also established Trust with other Certificate Authorities which serve business communities, State and Local government communities, and international government communities.
+For the US Federal Government Executive branch agencies, there is one Root Certification Authority named _Federal Common Policy Certification Authority (COMMON)_, and dozens of Intermediate Certification Authorities.  The US Federal Government has also established Trust with other Certification Authorities which serve business communities, State and Local government communities, and international government communities.
 
 * [CLICK HERE: A graph of the federal public key infrastructure, including the business communities](https://fpki.idmanagement.gov/tools/fpkigraph/){:target="_blank"}
 
-The participating Certificate Authorities and the policies, processes, and auditing is referred to as the [*Federal Public Key Infrastructure (FPKI)*](https://www.idmanagement.gov/IDM/s/article_content_old?tag=a0Gt0000000SfwP){:target="_blank"}
+The participating Certification Authorities and the policies, processes, and auditing is referred to as the [*Federal Public Key Infrastructure (FPKI)*](https://www.idmanagement.gov/IDM/s/article_content_old?tag=a0Gt0000000SfwP){:target="_blank"}
 
 ## Certificate Chains
 To digitally trust YOU and your PIV credential certificates, the workstations, servers, applications and network domains will be configured. Understanding and managing certificate chains are one of the methods to configure trust.
 
-The certificate chain includes the Intermediate Certificate Authorities certificates and the Federal Common Policy Certificate Authority (COMMON) root certificate.
+The certificate chain includes Intermediate Certification Authority certificates and the Federal Common Policy Certification Authority (COMMON) root certificate.
 
 ![Example of a PIV certificate chain to Common]({{site.baseurl}}/img/pivcertificatechain_small.png){:style="float:center"}
 
 
-{% include alert-info.html heading = "Federal PKI Person Root - COMMON" content="The Federal Common Policy Certificate Authority (COMMON) root certificate is included in Microsoft, Adobe and some Apple trust stores by default.  It is not included by default in Mozilla, java, all mobile device operating systems, or Linux based operating systems." %}
+{% include alert-info.html heading = "Federal PKI Person Root - COMMON" content="The Federal Common Policy Certification Authority (COMMON) root certificate is included in Microsoft, Adobe and some Apple trust stores by default.  It is not included by default in Mozilla, java, all mobile device operating systems, or Linux based operating systems." %}
 
 If you are an engineer working on implementing PIV authentication, you may need to download and install the root certificate (COMMON) for your workstations, servers, applications and network domains.
 
@@ -44,36 +44,43 @@ Many applications may require Intermediate Certificates to successfully trust AL
 
 General recommendations for trust and certificate chain management include:
 
-- COMMON should be used as the trusted root certificate authority
-- Management of root and intermediate certificate authority certificates and distribution to network domains, workstations, servers and applications should be managed with group policy objects, secure automated distributions mechanisms, and enterprise policies and procedures to ensure updates are managed effectively.
+- COMMON should be used as the trusted root certification authority
+- Management of root and intermediate certification authority certificates and distribution to network domains, workstations, servers and applications should be managed with group policy objects, secure automated distributions mechanisms, and enterprise policies and procedures to ensure updates are managed effectively.
 - NIST published an [Information Technology Laboratory (ITL) bulletin](http://csrc.nist.gov/publications/nistbul/july-2012_itl-bulletin.pdf){:target="_blank"} in July 2012 which includes general practices to consider.
 
 Installation of the trusted root certificate and intermediate certificates is dependent upon operating systems and applications. Instructions for [downloading](#download-root-and-intermediate-certificates) are at the end of this page.
 
+{% include alert-info.html content= "Upcoming changes to the Federal Common Policy Certification Authority will impact your agency.  Learn more about this update <a href=\"https://fpki.idmanagement.gov/common/\" target=\"_blank\" rel=\"noreferrer\">here</a>." %}
+
+In <strong>October 2020</strong>, the Federal Government created a new FPKI root certification authority.  The new root is named the <strong>Federal Common Policy CA G2</strong>. Between December 2020 and May 2021, the intermediate certification authorities signed by the old root will be migrated to be signed by this new root: Federal Common Policy CA G2.  Once the migration is complete, the old root will be decommissioned.
+
+{% include alert-info.html content="We are collaborating with CISA on a series of webinars to communicate the upcoming changes and answer your questions.  Email fpkirootupdate@gsa.gov to join our next webinar on <strong>January 28, 2021 at 11 AM ET</strong>." %} 
+
+
 ## Revocation
 Revocation is the process and technology to identify a certificate as no longer valid - to tell computers and applications _"do not trust this certificate anymore"_.
 
-PIV credential certificates will be _revoked_ when a user terminates employment or a contract with an agency, is issued a new credential, is issued an updated PIV credential, or has a lost, stolen or damaged PIV credential.  The revocation of PIV credential certificates occurs with the PIV credential issuer and certificate authority.
+PIV credential certificates will be _revoked_ when a user terminates employment or a contract with an agency, is issued a new credential, is issued an updated PIV credential, or has a lost, stolen or damaged PIV credential.  The revocation of PIV credential certificates occurs with the PIV credential issuer and certification authority.
 
 There are two protocols available to verify if a PIV credential certificate has been revoked:
 
 - Online Certificate Status Protocol (OCSP)
 - Certificate Revocation Lists (CRLs)
 
-Some implementations also validate whether the Intermediate Certificate Authority certificates have been _revoked_.  While a revocation of an Intermediate Certificate Authority certificate does not occur often, this is a safeguard in place and each Intermediate Certificate Authority and COMMON also publishes Certificate Revocation Lists for the certificates signed next in the chain.   
+Some implementations also validate whether the Intermediate Certification Authority certificates have been _revoked_.  While a revocation of an Intermediate Certification Authority certificate does not occur often, this is a safeguard in place and each Intermediate Certification Authority and COMMON also publishes Certificate Revocation Lists for the certificates signed next in the chain.   
 
 The table below outlines general information on each protocol, the certificate extension which contains the reference, and design considerations.
 
 | Type | Certificate Extension | Protocol (Port) | Considerations|
 | ----- | -------| -------| ------|
-| OCSP | Authority Information Access | HTTP (80) | All PIV certificates have OCSP references and OCSP responder web services which are internet accessible and provided by the issuing certificate authority. Intermediate certificate authorities are **not** required to have OCSP available for the _intermediate_ certificates.|
-| CRL  | CRL Distribution Point (CDP) | HTTP (80) | All PIV certificates have CRL references and CRLs files published to internet accessible web services by the issuing certificate authority.  All intermediate certificate authority certificates also have CRL references, files and internet accessible web services.  CRL files have an expiration time which varies between 6 hours to 18 hours. CRL file sizes distributed by issuing certificate authorities as of the date of this guide range from a few kilobytes to **over 30 megabytes (MB)**.
+| OCSP | Authority Information Access | HTTP (80) | All PIV certificates have OCSP references and OCSP responder web services which are internet accessible and provided by the issuing certification authority. Intermediate certification authorities are **not** required to have OCSP available for the _intermediate_ certificates.|
+| CRL  | CRL Distribution Point (CDP) | HTTP (80) | All PIV certificates have CRL references and CRLs files published to internet accessible web services by the issuing certification authority.  All intermediate certification authority certificates also have CRL references, files and internet accessible web services.  CRL files have an expiration time which varies between 6 hours to 18 hours. CRL file sizes distributed by issuing certification authorities as of the date of this guide range from a few kilobytes to **over 30 megabytes (MB)**.
 
 For a portion of your implementations such as network authentication, the _revocation_ checks will occur as part of the operating system or server native functionality.  Other implementations may want to consider services such as implementing Server Certificate Validation Protocol (SCVP).  These are advanced topics to consider and will be covered in other areas of guides soon.  
 
 ## Download root and intermediate certificates
 
-The Federal Common Policy Certificate Authority (COMMON) root certificate can be retrieved via two methods: online or out of band.  We recommend requesting the root certificate using the out of band (email) method for engineers working in production environments.
+The Federal Common Policy Certification Authority (COMMON) and Federal Common Policy CA G2 root certificates can be retrieved via two methods: online or out of band.  We recommend the out of band (email) method for engineers working in production environments.
 
 #### Download root using out-of-band email
 - Send an email to: _fpki-help at gsa dot gov_
@@ -82,11 +89,18 @@ The Federal Common Policy Certificate Authority (COMMON) root certificate can be
 - A signed version of the certificate or email will be sent back to you
 
 #### Download root using online site
+
+##### Federal Common Policy CA
 - http://http.fpki.gov/fcpca/fcpca.crt
 - cn=Federal Common Policy CA, ou=FPKI, o=U.S. Government, c=US
 - SHA1 Hash: 90 5f 94 2f d9 f2 8f 67 9b 37 81 80 fd 4f 84 63 47 f6 45 c1
 
-{% include alert-warning.html heading = "Verify the hash of the files" content="Verify the hash of the fcpca.crt file matches the one listed above before using.  If the hash does not match, do NOT use the certificate file and please use the out-of-band email method." %}
+##### Federal Common Policy CA G2
+- http://repo.fpki.gov/fcpca/fcpcag2.crt
+- cn=Federal Common Policy CA G2, ou=FPKI, o=U.S. Government, c=US
+- SHA1 Hash: 99 B4 25 1E 2E EE 05 D8 29 2E 83 97 A9 01 65 29 3D 11 60 28
+
+{% include alert-warning.html heading = "Verify the hash of the files" content="Verify the hash of the root certificate file matches the entry above before using.  If the hash does not match, do NOT use the certificate file and please use the out-of-band email method." %}
 
 You can verify the hash using common utilities on operating systems, including:
 
@@ -102,14 +116,14 @@ You can verify the hash using common utilities on operating systems, including:
 	sha1sum fcpca.crt
 ```
 
-#### Download any additional Intermediate Certificate Authority certificates
+#### Download any additional Intermediate Certification Authority certificates
 
 You can contact your agency's information security teams for help on additional intermediate certificates, or find the intermediate certificates by using information in your PIV certificates directly.
 
 - View your PIV Authentication certificate. To review how to view your PIV Authentication certificate go to the [Details of a PIV Credential]({{site.baseurl}}/details)
 - In the **Authority Information Access (AIA)** extension, there is a URL (http://) which references a file with a .p7b or .p7c extension
-- Download the file, open it, and view the intermediate certificate authority certificates
-- Repeat the process using the AIA extension of the intermediate certificate authority certificates until the final reference finds an intermediate certificate authority certificate that is issued and signed by COMMON
+- Download the file, open it, and view the intermediate certification authority certificates
+- Repeat the process using the AIA extension of the intermediate certification authority certificates until the final reference finds an intermediate certification authority certificate that is issued and signed by COMMON
 
 Many products and implementations may automatically retrieve the intermediate certificates during a process called _certificate path building_ or _certificate path discovery_.   You will encounter varying implementations of the _certificate path discovery_ process based on differences in client operating systems, browsers, mobile devices, programming languages, and even applications directly. It can be challenging to understand all the options that impact your users and applications and we are seeking input and contributions to expand this information for you.     
 
