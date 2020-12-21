@@ -26,7 +26,7 @@ For the US Federal Government Executive branch agencies, there is one Root Certi
 
 * [CLICK HERE: A graph of the federal public key infrastructure, including the business communities](https://fpki.idmanagement.gov/tools/fpkigraph/){:target="_blank"}
 
-The participating Certification Authorities and the policies, processes, and auditing is referred to as the [*Federal Public Key Infrastructure (FPKI)*](https://www.idmanagement.gov/IDM/s/article_content_old?tag=a0Gt0000000SfwP){:target="_blank"}
+The participating Certification Authorities and the policies, processes, and auditing is referred to as the [*Federal Public Key Infrastructure (FPKI)*](https://www.idmanagement.gov/topics/fpki/){:target="_blank"}
 
 ## Certificate Chains
 To digitally trust YOU and your PIV credential certificates, the workstations, servers, applications and network domains will be configured. Understanding and managing certificate chains are one of the methods to configure trust.
@@ -36,7 +36,7 @@ The certificate chain includes Intermediate Certification Authority certificates
 ![Example of a PIV certificate chain to Common]({{site.baseurl}}/img/pivcertificatechain_small.png){:style="float:center"}
 
 
-{% include alert-info.html heading = "Federal PKI Person Root - COMMON" content="The Federal Common Policy Certification Authority (COMMON) root certificate is included in Microsoft, Adobe and some Apple trust stores by default.  It is not included by default in Mozilla, java, all mobile device operating systems, or Linux based operating systems." %}
+{% include alert-info.html heading = "Federal PKI Person Root - COMMON" content="The current Federal Common Policy Certification Authority (COMMON) root certificate is included in Microsoft, Adobe and some Apple trust stores by default.  It is not included by default in Mozilla, Java, all mobile device operating systems, or Linux based operating systems." %}
 
 If you are an engineer working on implementing PIV authentication, you may need to download and install the root certificate (COMMON) for your workstations, servers, applications and network domains.
 
