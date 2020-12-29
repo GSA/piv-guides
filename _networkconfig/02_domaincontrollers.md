@@ -44,9 +44,9 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
 ## Issue Domain Controller certificates
 
-Agencies should issue domain controller certificates from an only locally trusted or Enterprise trusted Certification Authority which may be Agency operated or commercialy sourced. If you have an existing local enterprise Certification Authority, [here are some tips.]({{site.baseurl}}/networkconfig/localca/)
+Agencies should issue domain controller certificates from an only locally trusted or Enterprise trusted Certification Authority which may be Agency operated or commercialy sourced. If you have an existing local enterprise Certification Authority, [here are some tips.]({{site.baseurl}}/networkconfig/localca/) If possible, do not use use a certificate from a Certification Authority certified under the Federal Public Key Infrastructure (FPKI) to limit the trust scope.
 
-Ensure the proper management and security protections are enabled before setting up a local enterprise certification authority.  Your Chief Information Security Officer (CISO) must have awareness and oversight established for the certification authority management.
+If your agency does not have a only locally trusted CA, ensure the proper management and security protections are enabled before setting one up. Your Chief Information Security Officer (CISO) must have awareness and oversight established for the certification authority management.
 
 Collaborate with your Chief Information Security Officer (CISO) or Information Security office for a definitive answer and direction.
 
