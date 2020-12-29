@@ -44,11 +44,9 @@ Domain Controller certificates must be issued with a set of specific extensions 
 
 ## Issue Domain Controller certificates
 
-US Federal Civilian agencies have a variety of information security policies.  These policies cover whether you should use a Domain Controller certificate issued from your agency's local enterprise certification authority, or whether the certificate must be issued from a certification authority managed and certified under the Federal Public Key Infrastructure (FPKI).  Each agency's information security policy should be followed.
+Agencies should issue domain controller certificates from an only locally trusted or Enterprise trusted Certification Authority which may be Agency operated or commercialy sourced. If you have an existing local enterprise Certification Authority, [here are some tips.]({{site.baseurl}}/networkconfig/localca/)
 
-It is not recommended to set up a local enterprise certification authority just to issue domain controller certificates without ensuring the proper management and security protections are enabled.  Your Chief Information Security Officer (CISO) must have awareness and oversight established for the certification authority management.
+Ensure the proper management and security protections are enabled before setting up a local enterprise certification authority.  Your Chief Information Security Officer (CISO) must have awareness and oversight established for the certification authority management.
 
 Collaborate with your Chief Information Security Officer (CISO) or Information Security office for a definitive answer and direction.
-
-If you do have a local enterprise Certification Authority, [here are some tips.]({{site.baseurl}}/networkconfig/localca/)
 
