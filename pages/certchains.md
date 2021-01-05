@@ -25,7 +25,7 @@ The full process of proving identity when issuing the certificates, auditing the
 For the US Federal Government Executive branch agencies, there is one root certification authority named _Federal Common Policy Certification Authority (COMMON)_, and dozens of intermediate certification Authorities.  The US Federal Government has also established trust with other certification authorities which serve business communities, State and Local government communities, and international government communities.
 
 * [FPKI GRAPH: A graph of the federal public key infrastructure, including the business communities](https://fpki.idmanagement.gov/tools/fpkigraph/){:target="_blank"}
-* [PIV CAs and Agenices: The page lists the certification authorities currently used for Personal Identity Verification (PIV) authentication certificates for federal government departments and agencies.](https://fpki.idmanagement.gov/crls/pivcas/){:target="_blank"}
+* [PIV CAs and Agenices: A list of the certification authorities currently used to issue Personal Identity Verification (PIV) authentication certificates for federal government departments and agencies.](https://fpki.idmanagement.gov/crls/pivcas/){:target="_blank"}
 
 The participating certification authorities and the policies, processes, and auditing is referred to as the [*Federal Public Key Infrastructure (FPKI)*](https://www.idmanagement.gov/topics/fpki/){:target="_blank"}
 
