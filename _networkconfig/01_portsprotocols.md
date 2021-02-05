@@ -5,7 +5,7 @@ collection: networkconfig
 permalink: networkconfig/ports/
 ---
 
-Your workstations, servers, network domain controllers and applications need to validate the [revocation]({{site.baseurl}}/pivcertchains#revocation) status of the PIV certificates and all intermediate certificate authority certificates.  In addition, the [certificate chain]({{site.baseurl}}/pivcertchains#certificate-chains) path building may retrieve and download the intermediate certificate authority certificates.
+Your workstations, servers, network domain controllers and applications need to validate the [revocation]({{site.baseurl}}/pivcertchains#revocation) status of the PIV certificates and all intermediate certification authority certificates.  In addition, the [certificate chain]({{site.baseurl}}/pivcertchains#certificate-chains) path building may retrieve and download the intermediate certification authority certificates.
 
 The validation occurs in real-time (with some caching) and requires ensuring network traffic is open and available to the destination web services, ports, and protocols.  Many US Federal agencies implement a layered network security model with demilitarized zones (DMZs), proxies and Trusted Internet Connections (TICs) to monitor, defend and protect the networks, applications and users.
 
@@ -53,8 +53,8 @@ The graphical user interface allows you to check OCSP, CRL, and AIA (intermediat
 
 | Type | Certificate Extension | Protocol (Port) | Considerations|
 | ----- | -------| -------| ------|
-| OCSP | Authority Information Access | HTTP (80) | All PIV certificates have OCSP references and OCSP URLs which are internet accessible and provided by the issuing certificate authority. Intermediate certificate authorities are **not** required to have OCSP available for the _intermediate_ certificates.|
-| CRL  | CRL Distribution Point (CDP) | HTTP (80) | All PIV certificates have CRL capabilities provided by the issuing certificate authority.  All intermediate certificate authority certificates have CRL capabilities.  CRL files have an expiration time which varies between 6 hours to 18 hours. CRL file sizes range from a few kilobytes to over 30 megabytes (MB).
+| OCSP | Authority Information Access | HTTP (80) | All PIV certificates have OCSP references and OCSP URLs which are internet accessible and provided by the issuing certification authority. Intermediate certification authorities are **not** required to have OCSP available for the _intermediate_ certificates.|
+| CRL  | CRL Distribution Point (CDP) | HTTP (80) | All PIV certificates have CRL capabilities provided by the issuing certification authority.  All intermediate certification authority certificates have CRL capabilities.  CRL files have an expiration time which varies between 6 hours to 18 hours. CRL file sizes range from a few kilobytes to over 30 megabytes (MB).
 
 Lightweight Directory Application Protocol (LDAP) for retrieving information is not preferred and has been increasingly deprecated therefore LDAP is not included.
 
@@ -62,8 +62,8 @@ There are dozens of OCSP and CRL URLs for *all* issued PIV credentials.  If you 
 
 ## Web services for the Federal Public Key Infrastructure
 
-The Federal Common Policy Certificate Authority (COMMON) is the root certificate authority and has web services to publish both [certificate chains]({{site.baseurl}}/pivcertchains#certificate-chains) (p7b files) and [CRLs](../../pivcertchains#revocation) for all intermediate certificate authorities which the root signs.
+The Federal Common Policy Certification Authority (COMMON) is the root certification authority and has web services to publish both [certificate chains]({{site.baseurl}}/pivcertchains#certificate-chains) (p7b files) and [CRLs](../../pivcertchains#revocation) for all intermediate certification authorities which the root signs.
 
-To enable communications with these Federal Common Policy Certificate Authority services, including those currently operational and any expansion, you should verify outbound communications to the base domain of http.fpki.gov. For example, a successful connection to http://http.fpki.gov/fcpca/fcpca.crt will download a copy of the Federal Common Policy CA certificate.
+To enable communications with these Federal Common Policy Certification Authority services, including those currently operational and any expansion, you should verify outbound communications to the base domain of http.fpki.gov. For example, a successful connection to http://http.fpki.gov/fcpca/fcpca.crt will download a copy of the Federal Common Policy CA certificate.
 
 You should consider allowing two protocols (port): HTTP (80) and DNS (53).  Although the web services for publishing CRLs are not currently served over HTTPS (443), you may want to allow HTTPS (443) to future proof for any expansion.
