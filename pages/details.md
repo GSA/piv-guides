@@ -22,7 +22,7 @@ To view your certificate information:
 | -------------             |----|----|
 | Microsoft   | Internet Explorer  | Open _Internet Explorer Browser_ -> _Tools_ wheel or Alt+X) -> _Internet Options_ -> _Content_ tab -> _Certificates_ button -> _Personal_ tab  |
 | Microsoft       | Microsoft Management Console (MMC) and Certificate Snap-in  |  Open _Microsoft Management Console_ -> _File_ -> _Add/Remove Snap-In_ -> _Certificates_ snap-in -> _Add_ -> _My user account_ -> _Finish_ -> Expand _Certificates - Current User_ -> _Personal_ -> _Certificates_   |
-| Any   | Chrome Browser  | Open _Chrome Browser_ -> _Settings_ -> _Show Advanced Settings_ -> _Manage Certificates_ (_Manage HTTPS/SSL Certificates and Settings_)  -> _Personal_ tab  |
+| Any   | Chrome Browser  | Open _Chrome Browser_ -> _Settings_ ->  _Security_ -> _Manage Certificates_ (_Manage HTTPS/SSL Certificates and Settings_)  -> _Personal_ tab  |
 | Any   | Firefox Browser  | Open _Firefox Browser_ -> _Settings_ wheel -> _Privacy & Security_ -> _Security_ -> _Certificates_ > _View Certificates_ button -> _Certificates Manager_ -> _Your Certificates_ tab
 | macOS X   | Keychain  | Open _Applications_ -> _Utilities_ -> _Keychain Access_ -> Select _Login_ -> _Categories_ -> _My Certificates_  |
 
