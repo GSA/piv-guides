@@ -2,7 +2,7 @@
 layout: default
 title: Introduction - PIV Guides
 permalink: /
-redirect_to: https://playbooks.idmanagement.gov/piv/intro-piv/
+<!--redirect_to: https://playbooks.idmanagement.gov/piv/intro-piv/-->
 ---
 
 These **Personal Identity Verification** (PIV) Guides are intended to help you implement common PIV configurations at your organization. These guides are [open source]({{ site.repo_url }}) and a _work in progress_ and we [welcome contributions](contribute/) from our colleagues.
