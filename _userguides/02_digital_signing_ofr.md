@@ -6,6 +6,7 @@ pubDate: July 17, 2018
 collection: userguides
 permalink: userguides/signworddoc-ofr/
 description: This guide will walk you through the procedures for digitally signing a Microsoft Word document for submission to the Office of the Federal Register using your PIV credential or similar digital certificate.
+redirect_to: https://playbooks.idmanagement.gov/signfedregister/
 ---
 
 The digital signatory of a document MUST be the same person whose name is typed in the signature block.  The names must match exactly or meet the accepted standards listed in the DDH, Ch. 1.  To verify the name as applied to the digital certificate, follow the instructions below in the [View Signature Certificate in MS Word](#view-signature-certificate-in-ms-word) section.

@@ -3,6 +3,7 @@ layout: default
 title: Introduction to Network Authentication Guides
 permalink: /networkconfig/
 collection: networkconfig
+redirect_to: https://playbooks.idmanagement.gov/piv/network/
 ---
 
 These Network Authentication guides will help you configure your Windows _network domain_ for smartcard logon using PIV credentials.

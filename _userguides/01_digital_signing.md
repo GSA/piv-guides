@@ -6,6 +6,7 @@ pubDate: March 23, 2018
 collection: userguides
 permalink: userguides/signworddoc/
 description: This guide will walk you through the steps for digitally signing a Microsoft Word document with your PIV credential or similar digital certificate.
+redirect_to: https://playbooks.idmanagement.gov/signword/
 ---
 
 {% include alert-info.html content="Before you begin digitally signing documents, please ask your Technical Support team to verify the digital signature settings on your computer by following the steps in the Verify Digital Signature Settings section below." %}

@@ -3,6 +3,7 @@ layout: default
 title: Trust Stores
 collection: networkconfig
 permalink: networkconfig/trustedroots/
+redirect_to: https://playbooks.idmanagement.gov/piv/network/trust-stores/
 ---
 
 You want your Active Directory domain, including servers and workstations, to trust user's PIV credentials for authentication.  Trust and certificate chains are reviewed in the [Certificate Trust](../../pivcertchains) overview, and this page includes information on configuring your Active Directory domain.

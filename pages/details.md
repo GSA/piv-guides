@@ -2,6 +2,7 @@
 layout: default
 title: Details of a PIV Credential
 permalink: /details/
+redirect_to: https://playbooks.idmanagement.gov/piv/details/
 ---
 
 You can use these simple methods to view, export, and understand the information stored on a PIV credential.

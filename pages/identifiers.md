@@ -2,6 +2,7 @@
 layout: default
 title: Identifiers in a PIV Credential
 permalink: /identifiers/
+redirect_to: https://playbooks.idmanagement.gov/piv/identifiers/
 ---
 
 In applications including network domains, you will associate the PIV credential with your accounts.  This is not a unique process to PIV credentials and usage, and is a general concept that occurs in many applications including your personal email accounts, your bank accounts, or your favorite social media app.  
