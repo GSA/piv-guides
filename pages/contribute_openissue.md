@@ -2,6 +2,7 @@
 layout: default
 title: Opening Issues
 permalink: /openissue/
+redirect_to: https://playbooks.idmanagement.gov/contribute/#open-an-issue
 ---
 
 To submit comments and open an Issue:
