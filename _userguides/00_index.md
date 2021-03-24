@@ -3,6 +3,7 @@ layout: default
 title: PIV User Guides
 collection: userguides
 permalink: /userguides/
+redirect_to: https://playbooks.idmanagement.gov/playbooks/
 ---
 
 These user guides will help agency users with PIV related tasks.
