@@ -3,6 +3,7 @@ layout: default
 title: Domain Controllers
 collection: networkconfig
 permalink: networkconfig/domaincontrollers/
+redirect_to: https://playbooks.idmanagement.gov/piv/network/dc/
 ---
 
 To use smartcards and PIV credentials for network authentication, all Domain Controllers need to have Domain Controller authentication certificates.
