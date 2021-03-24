@@ -2,6 +2,7 @@
 layout: default
 title: Certificate Trust
 permalink: /pivcertchains/
+redirect_to: https://playbooks.idmanagement.gov/piv/cert-trust/
 ---
 
 One of the most common questions is "What are all these certificates and how do I configure my applications to use them?"  Answering this question involves explaining trust, certificate chains and revocation.  
