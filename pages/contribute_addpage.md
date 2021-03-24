@@ -2,6 +2,7 @@
 layout: default
 title: Add a Page
 permalink: /addpage/
+redirect_to: https://playbooks.idmanagement.gov/contribute/#add-a-page
 ---
 
 To Add a page:
