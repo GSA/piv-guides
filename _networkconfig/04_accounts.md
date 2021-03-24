@@ -3,6 +3,7 @@ layout: default
 title: Account Linking
 collection: networkconfig
 permalink: networkconfig/accounts/
+redirect_to: https://playbooks.idmanagement.gov/piv/network/account/
 ---
 
 For your network domains, you will need to associate the PIV credential to the user accounts.  This is the [account linking]({{site.baseurl}}/identifiers) information discussed in the Identifiers section. The most common questions for US Federal Government and using PIV for network authentication are related to linking a PIV credential to network user accounts.  
