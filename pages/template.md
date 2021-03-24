@@ -2,6 +2,7 @@
 layout: default
 title: Template Title of This Page
 permalink: /template/
+redirect_to: https://playbooks.idmanagement.gov/
 ---
 
 Markdown is a simple way of writing and formatting.  The formats can be used across many different platforms including for websites and documents.  We created a sample template to help you with your page. 
