@@ -3,6 +3,7 @@ layout: default
 title: Enable SSH
 collection: engineering
 permalink: engineering/ssh/
+redirect_to: https://playbooks.idmanagement.gov/piv/engineer/ssh/
 ---
 
 For network engineers, this guide will help you authenticate with your PIV/CAC credential and use SSH to access a remote Linux server from a Windows or macOS computer. For server administrators, this guide will help you configure a Linux server for remote access.

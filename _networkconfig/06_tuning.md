@@ -3,6 +3,7 @@ layout: default
 title: Network Tuning
 collection: networkconfig
 permalink: networkconfig/tuning/
+redirect_to: https://playbooks.idmanagement.gov/piv/network/tuning/
 ---
 
 You can tune the network domain settings to help you and your users have a better experience and reduce errors.  This section highlights some of the _common_ tuning configurations for network domain logon.  There are additional tuning configurations and we encourage you to start with these first and contribute others.      

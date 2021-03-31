@@ -2,6 +2,7 @@
 layout: default
 title: Edit a Page
 permalink: /editpage/
+redirect_to: https://playbooks.idmanagement.gov/contribute/#edit-a-page
 ---
 
 To Edit a page:

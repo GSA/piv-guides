@@ -3,6 +3,7 @@ layout: default
 title: Introduction to PIV Engineering Guides
 permalink: /engineering/
 collection: engineering
+redirect_to: https://playbooks.idmanagement.gov/piv/engineer/
 ---
 
 PIV engineering guides are for engineers configuring agency infrastructure, servers and enterprise applications for authentication. The guides are focused on US Federal Government implementations. 

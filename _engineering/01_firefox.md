@@ -3,6 +3,7 @@ layout: default
 title: Configure Firefox
 collection: engineering
 permalink: engineering/firefox/
+redirect_to: https://playbooks.idmanagement.gov/piv/engineer/firefox/
 ---
 
 You may need to configure Firefox to enable your agency users to log into web applications using their PIV credentials. This can be tricky because Firefox supports a protocol (PKCS #11) that is not always natively supported by operating systems or OS default drivers. 

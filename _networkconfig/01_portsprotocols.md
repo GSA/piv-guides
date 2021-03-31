@@ -3,6 +3,7 @@ layout: default
 title: Network Ports and Protocols
 collection: networkconfig
 permalink: networkconfig/ports/
+redirect_to: https://playbooks.idmanagement.gov/piv/network/ports/
 ---
 
 Your workstations, servers, network domain controllers and applications need to validate the [revocation]({{site.baseurl}}/pivcertchains#revocation) status of the PIV certificates and all intermediate certification authority certificates.  In addition, the [certificate chain]({{site.baseurl}}/pivcertchains#certificate-chains) path building may retrieve and download the intermediate certification authority certificates.

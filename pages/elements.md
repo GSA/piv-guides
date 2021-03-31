@@ -2,6 +2,7 @@
 layout: default
 title: Basics of a PIV Credential
 permalink: /elements/
+redirect_to: https://playbooks.idmanagement.gov/piv/basics/
 ---
 
 There are two main categories for the features of a PIV credential: [_physical_ features](#physical-features) and [_electronic_ features](#electronic-features).

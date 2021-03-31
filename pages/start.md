@@ -2,6 +2,7 @@
 layout: default
 title: Getting Started
 permalink: /start/
+redirect_to: https://playbooks.idmanagement.gov/piv/gettingstarted/
 ---
 
 You need two items to begin using your PIV credential:

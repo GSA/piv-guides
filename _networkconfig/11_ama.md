@@ -3,6 +3,7 @@ layout: default
 title: Authentication Assurance
 collection: networkconfig
 permalink: networkconfig/ama/
+redirect_to: https://playbooks.idmanagement.gov/piv/network/auth/
 ---
 
 When a user authenticates to your network and you've enabled Single Sign-on to applications inside your network domain, you need to know which of these authenticators was used: 

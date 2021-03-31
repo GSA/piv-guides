@@ -2,6 +2,7 @@
 layout: default
 title: Local Certification Authority
 permalink: networkconfig/localca/
+redirect_to: https://playbooks.idmanagement.gov/piv/network/localca/
 ---
 
 This page provides some tips for using a local certification authority to issue a domain controller certificate.  This is for local Microsoft CAs. Other platforms may be used and have different procedures.    
